@@ -4,6 +4,7 @@ project:
 book:
   title: "Curso de Python 2023"
   author: "Lcdo. Diego Saavedra Mgtr."
+  date: today
   favicon: python-logo.png
   description: Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.
   keyword: Python, Programación, Fundamentos, Aplicaciones Prácticas, Instalación, Herramientas, API, Django Rest Framework, Bases de Datos, PostgreSQL, MongoDB, Control de Flujo, Funciones, Clases, Herencia, Módulos, Aprendizaje, Principiantes, Proyectos, Desarrollo Web, Django, Flask, Data Science, FastAPI, Práctica, Enseñanza, Gratis, Internet, Contribuir
@@ -12,6 +13,8 @@ book:
   sidebar: 
     logo: python-logo.png
     search: true
+    # background: "#ffffff"
+    
   repo-url: https://github.com/statick88/Course_of_python
   repo-subdir: book
   repo-branch: main
@@ -32,6 +35,11 @@ book:
     - unidad1.qmd
     - unidad2.qmd
     - unidad3.qmd
+    - unidad4.qmd
+    - unidad5.qmd
+    - unidad6.qmd
+    - unidad7.qmd
+    - unidad8.qmd
 
 format:
   html:

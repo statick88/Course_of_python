@@ -1,0 +1,98 @@
+# Módulos
+
+## Introducción
+
+### Contenido:
+
+En esta lección, exploraremos cómo trabajar con módulos en Python. Aprenderemos cómo dividir nuestro código en módulos reutilizables y cómo importarlos en otros programas.
+
+## Conceptos Clave:
+
+### Módulos
+
+Archivos que contienen código Python y se utilizan para organizar y reutilizar funciones, clases y variables.
+
+### Importar Módulos
+
+Se utiliza la palabra clave import para cargar un módulo en un programa.
+
+### Usar Funciones y Clases
+
+Después de importar un módulo, sus funciones y clases pueden ser utilizadas como si estuvieran definidas en el mismo archivo.
+
+## Ejemplo:
+
+``` python
+# En el archivo calculadora.py
+def suma(a, b):
+    return a + b
+
+# En otro archivo
+import calculadora
+
+resultado = calculadora.suma(3, 5)
+print("Resultado:", resultado)
+```
+## Explicación:
+
+En este ejemplo, se define una función suma en el módulo calculadora.py.
+
+En otro archivo, se importa el módulo calculadora utilizando import y se utiliza la función suma del módulo.
+
+:::{.callout-important}
+### Actividad Práctica:
+
+Crea un módulo llamado matematicas con una función multiplicacion que multiplique dos números.
+
+Importa el módulo en otro archivo y utiliza la función multiplicacion para calcular el producto de dos números.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación y uso de módulos en Python. Les ayuda a comprender cómo organizar su código en módulos reutilizables y cómo importar funciones y clases desde otros archivos.
+
+## Creando Nuestro Primer Módulo
+
+### Contenido:
+
+En esta lección, aprenderemos a crear nuestro propio módulo en Python. Crearemos un módulo que contenga funciones y clases para realizar operaciones matemáticas básicas.
+
+## Pasos para Crear un Módulo:
+
+Crea un archivo de Python con la extensión .py.
+
+Define funciones y clases en el archivo.
+
+Guarda el archivo en una ubicación accesible.
+
+## Ejemplo:
+
+```python
+# En el archivo operaciones.py
+def suma(a, b):
+    return a + b
+
+def resta(a, b):
+    return a - b
+
+class Calculadora:
+    def multiplicacion(self, a, b):
+        return a * b
+```
+## Explicación:
+
+En este ejemplo, se crea un módulo llamado operaciones.py.
+
+Se define una función suma y una función resta, junto con una clase Calculadora que tiene un método multiplicacion.
+
+:::{.callout-important}
+### Actividad Práctica:
+
+Crea un módulo llamado geometria con funciones para calcular el área de un círculo y el perímetro de un cuadrado.
+
+En otro archivo, importa el módulo geometria y utiliza las funciones para realizar cálculos geométricos.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de módulos con funciones y clases. Les ayuda a comprender cómo organizar diferentes funcionalidades en módulos separados y cómo importar esas funcionalidades en otros archivos.

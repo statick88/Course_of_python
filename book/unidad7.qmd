@@ -1,0 +1,288 @@
+# Objetos, Clases y Herencia
+
+## Introducción
+
+## Contenido:
+
+En esta lección, exploraremos el concepto de programación orientada a objetos (POO). Aprenderemos sobre objetos, clases y cómo la POO nos permite organizar y estructurar nuestro código de manera más eficiente.
+
+## Conceptos Clave:
+
+### Programación Orientada a Objetos (POO)
+
+Paradigma de programación que se basa en el uso de objetos y clases.
+
+### Objetos
+
+Instancias de clases que representan entidades en el mundo real.
+
+### Clases
+
+Plantillas o moldes que definen la estructura y el comportamiento de los objetos.
+
+### Atributos
+
+Características o propiedades de un objeto.
+
+### Métodos
+
+Funciones que definen el comportamiento de un objeto.
+
+## Ejemplo:
+
+```python
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def saludar(self):
+        print(f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años.")
+
+persona1 = Persona("Juan", 25)
+persona1.saludar()
+```
+
+## Explicación:
+
+En este ejemplo, se define una clase llamada Persona con un constructor (__init__) que inicializa atributos.
+
+La clase tiene un método llamado saludar que muestra un mensaje con el nombre y edad del objeto.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una clase llamada Libro con atributos titulo y autor, y un método mostrar_info que imprima los atributos.
+
+Crea una instancia de la clase Libro y llama al método mostrar_info.
+:::
+
+## Explicación de la Actividad:
+Esta actividad permite a los participantes practicar la definición de clases y la creación de objetos. Les ayuda a comprender cómo la POO nos permite modelar entidades y organizar el código de manera más estructurada y eficiente.
+
+## Objetos y Clases
+
+### Contenido:
+
+En esta lección, continuaremos explorando los conceptos de objetos y clases en la programación orientada a objetos. Aprenderemos cómo crear múltiples objetos a partir de una misma clase y cómo trabajar con sus atributos y métodos.
+
+## Conceptos Clave:
+
+### Instancias de Clase
+
+Cuando se crea un objeto a partir de una clase, se crea una instancia de esa clase.
+
+### Atributos de Instancia: 
+
+Características específicas de un objeto que se almacenan como variables en la instancia.
+
+### Métodos de Instancia
+
+Funciones definidas en la clase que operan en los atributos de la instancia.
+
+## Ejemplo:
+
+```python
+class Perro:
+    def __init__(self, nombre, raza):
+        self.nombre = nombre
+        self.raza = raza
+
+    def ladrar(self):
+        print(f"{self.nombre} está ladrando.")
+
+perro1 = Perro("Max", "Labrador")
+perro2 = Perro("Buddy", "Chihuahua")
+
+perro1.ladrar()
+perro2.ladrar()
+```
+
+## Explicación:
+
+En este ejemplo, se define una clase Perro con un constructor y un método ladrar.
+
+Se crean dos objetos (perro1 y perro2) a partir de la misma clase y se les asignan diferentes valores para sus atributos.
+
+Los métodos de instancia son llamados en cada objeto para realizar acciones específicas.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una clase Rectangulo con atributos ancho y alto, y un método calcular_area que calcule y retorne el área del rectángulo.
+
+Crea dos instancias de la clase Rectangulo con diferentes valores de ancho y alto, y llama al método calcular_area en cada una.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de instancias de clase y trabajar con sus atributos y métodos. Les ayuda a comprender cómo cada objeto puede tener valores diferentes para sus atributos y cómo ejecutar acciones específicas en cada objeto.
+
+## Métodos
+
+### Contenido:
+
+En esta lección, profundizaremos en el concepto de métodos en la programación orientada a objetos. Aprenderemos cómo definir y utilizar métodos en una clase, y cómo acceder a los atributos de instancia dentro de los métodos.
+
+## Conceptos Clave:
+
+### Métodos de Clase
+
+Funciones definidas dentro de una clase que operan en los atributos de instancia.
+
+### Acceso a Atributos 
+
+Dentro de un método, se puede acceder a los atributos de instancia utilizando self.atributo.
+
+## Ejemplo:
+
+```python
+class Circulo:
+    def __init__(self, radio):
+        self.radio = radio
+
+    def calcular_area(self):
+        area = 3.14 * self.radio ** 2
+        return area
+
+circulo1 = Circulo(5)
+area_circulo = circulo1.calcular_area()
+print("Área del círculo:", area_circulo)
+```
+## Explicación:
+
+En este ejemplo, se define una clase Circulo con un constructor y un método calcular_area.
+
+Dentro del método, se accede al atributo de instancia radio utilizando self.radio para calcular el área.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una clase Triangulo con atributos base y altura, y un método calcular_area que calcule y retorne el área del triángulo.
+
+Crea una instancia de la clase Triangulo y llama al método calcular_area para calcular el área.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la definición y uso de métodos en una clase. Les ayuda a comprender cómo trabajar con atributos de instancia dentro de los métodos y cómo implementar lógica específica para cada objeto.
+
+## Self, Eliminar Propiedades y Objetos
+
+### Contenido:
+
+En esta lección, aprenderemos más sobre el uso de self en los métodos de clase. También exploraremos cómo eliminar atributos de instancia y objetos en Python.
+
+## Conceptos Clave:
+
+### self
+
+Referencia al objeto actual en un método de clase.
+
+### Eliminar Atributos
+
+Se puede usar la palabra clave del para eliminar un atributo de instancia.
+
+### Eliminar Objetos
+
+Se utiliza la función del para eliminar un objeto y liberar memoria.
+
+## Ejemplo:
+
+``` python
+class Coche:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+    def mostrar_info(self):
+        print(f"Coche {self.marca} {self.modelo}")
+
+coche1 = Coche("Toyota", "Corolla")
+coche1.mostrar_info()
+
+# Eliminar el atributo 'modelo'
+del coche1.modelo
+
+# Intentar acceder al atributo eliminado generará un error
+# print(coche1.modelo)
+```
+## Explicación:
+
+En este ejemplo, se define una clase Coche con un constructor y un método mostrar_info.
+
+Se crea una instancia coche1 y se muestra su información.
+Luego, se elimina el atributo modelo utilizando del.
+
+::: {.callout-important}
+
+### Actividad Práctica:
+Crea una clase Estudiante con atributos nombre y edad, y un método mostrar_info para mostrar la información del estudiante.
+
+Crea una instancia de la clase Estudiante y llama al método mostrar_info.
+
+Utiliza del para eliminar el atributo nombre de la instancia y verifica el resultado.
+:::
+
+## Explicación de la Actividad:
+Esta actividad permite a los participantes practicar el uso de self en los métodos de clase y cómo eliminar atributos de instancia. Les ayuda a comprender cómo trabajar con objetos y atributos, y cómo gestionar la memoria en Python.
+
+## Herencia
+
+## Contenido:
+
+En esta lección, exploraremos el concepto de herencia en la programación orientada a objetos. Aprenderemos cómo crear clases que heredan atributos y métodos de una clase base.
+
+## Conceptos Clave:
+
+### Herencia
+
+Mecanismo que permite que una clase herede atributos y métodos de otra clase base.
+
+### Clase Padre (o Base)
+
+La clase de la que se heredan atributos y métodos.
+
+### Clase Hija (o Derivada)
+
+La clase que hereda de la clase base.
+
+## Ejemplo:
+
+```python
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def saludar(self):
+        print(f"{self.nombre} saluda")
+
+class Perro(Animal):
+    def ladrar(self):
+        print(f"{self.nombre} está ladrando")
+
+perro1 = Perro("Buddy")
+perro1.saludar()
+perro1.ladrar()
+```
+### Explicación:
+
+En este ejemplo, se define una clase base Animal con un constructor y un método saludar.
+
+Se define una clase derivada Perro que hereda de Animal y agrega un método adicional ladrar.
+
+Se crea una instancia perro1 de la clase Perro y se llama a sus métodos.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una clase Figura con un atributo color y un método mostrar_color para mostrar el color.
+
+Crea una clase derivada Circulo que herede de Figura y agrega un atributo radio y un método calcular_area para calcular el área del círculo.
+
+Crea una instancia de la clase Circulo, establece su color y calcula el área.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de clases derivadas y la herencia de atributos y métodos. Les ayuda a comprender cómo utilizar la herencia para reutilizar código y extender funcionalidades en las clases derivadas.

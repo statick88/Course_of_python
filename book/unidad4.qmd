@@ -1,0 +1,289 @@
+# Tipos de Datos
+
+## String y Números
+
+## Contenido:
+
+Los strings y los números son dos tipos de datos fundamentales en Python. Aprenderemos cómo trabajar con strings (cadenas de texto) y los diferentes tipos de números en Python.
+
+## Conceptos Clave:
+
+### String: 
+
+Secuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.
+
+### Números Enteros (int)
+
+Representan números enteros positivos o negativos.
+
+### Números de Punto Flotante (float)
+
+Representan números con decimales.
+
+## Ejemplo:
+
+``` python
+# Strings
+mensaje = "Hola, bienvenido al curso de Python."
+nombre = 'María'
+
+# Números
+edad = 25
+saldo = 1500.75
+```
+## Explicación:
+
+En este ejemplo, se crean variables que almacenan strings y números.
+
+Los strings se definen utilizando comillas simples o dobles.
+
+Los números enteros y de punto flotante se asignan directamente a variables.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una variable con tu canción favorita.
+
+Asigna tu edad a una variable y tu altura a otra variable.
+
+Combina las variables para crear un mensaje personalizado.
+::: 
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de strings y trabajar con números enteros y de punto flotante. 
+
+Les ayuda a comprender cómo almacenar y manipular diferentes tipos de datos en Python.
+
+## Listas
+
+### Contenido:
+
+Las listas son estructuras de datos que permiten almacenar varios elementos en una sola variable. Aprenderemos cómo crear y manipular listas en Python.
+
+## Conceptos Clave:
+
+### Listas
+
+Secuencias ordenadas de elementos que pueden ser de diferentes tipos.
+
+### Índices
+
+Números que indican la posición de un elemento en la lista.
+
+### Acceso a Elementos
+
+Se utiliza el índice para acceder a un elemento específico de la lista.
+
+## Ejemplo
+
+```python
+frutas = ["manzana", "banana", "naranja", "uva"]
+primer_fruta = frutas[0]
+segunda_fruta = frutas[1]
+```
+## Explicación:
+
+En este ejemplo, se crea una lista de frutas y se accede a elementos individuales utilizando índices.
+
+Los índices comienzan desde 0, por lo que la primera fruta tiene el índice 0.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una lista con los nombres de tus tres películas favoritas.
+
+Accede al segundo elemento de la lista e imprímelo en la consola.
+::: 
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de listas y el acceso a elementos utilizando índices. Les ayuda a comprender cómo organizar y acceder a múltiples elementos en una sola variable.
+
+## Tuplas
+
+### Contenido:
+Las tuplas son estructuras de datos similares a las listas, pero son inmutables, lo que significa que no se pueden modificar después de ser creadas. Aprenderemos cómo trabajar con tuplas en Python.
+
+## Conceptos Clave:
+
+### Tuplas
+
+Secuencias ordenadas de elementos que, a diferencia de las listas, no se pueden modificar.
+    
+### Inmutabilidad
+
+Una vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.
+
+### Acceso a Elementos
+
+Se utiliza el índice para acceder a un elemento específico de la tupla.
+
+## Ejemplo:
+
+```python
+coordenadas = (3, 5)
+x = coordenadas[0]
+y = coordenadas[1]
+```
+## Explicación:
+
+En este ejemplo, se crea una tupla que almacena coordenadas (x, y) y se accede a los valores individuales utilizando índices.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una tupla con las estaciones del año.
+
+Intenta modificar un elemento de la tupla y observa el error que se produce.
+::: 
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de tuplas y comprender la diferencia entre listas y tuplas en términos de inmutabilidad. Les ayuda a comprender cómo utilizar tuplas cuando necesitan almacenar datos que no deben cambiar.
+
+## Range
+
+### Contenido
+
+El tipo de dato range se utiliza para generar secuencias de números. Aprenderemos cómo utilizar range en Python para crear secuencias de números en rangos específicos.
+
+## Conceptos Clave:
+
+### range
+
+Tipo de dato utilizado para generar secuencias de números en un rango.
+
+### Parámetros de range
+
+Se pueden especificar el valor inicial, valor final y paso de la secuencia.
+
+### Conversión a Listas
+
+Es posible convertir un objeto range en una lista utilizando la función list().
+
+## Ejemplo
+
+``` python
+# Generación de secuencias de números
+secuencia1 = range(5)          # 0, 1, 2, 3, 4
+secuencia2 = range(2, 10)      # 2, 3, 4, 5, 6, 7, 8, 9
+secuencia3 = range(1, 11, 2)   # 1, 3, 5, 7, 9
+
+# Conversión a lista
+lista_secuencia1 = list(secuencia1)
+```
+
+## Explicación:
+
+En este ejemplo, se utilizan diferentes valores para crear secuencias de números utilizando el tipo de dato range.
+
+La función list() se utiliza para convertir una secuencia de range en una lista.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una secuencia de números del 10 al 20 con un paso de 2.
+
+Convierte la secuencia de números en una lista y muestra los elementos en la consola.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de secuencias de números utilizando range y cómo convertirlas en listas para trabajar con los elementos individualmente. Les ayuda a comprender cómo generar secuencias de números en diferentes rangos.
+
+## Diccionarios
+
+### Contenido:
+
+Los diccionarios son estructuras de datos que permiten almacenar pares clave-valor. Aprenderemos cómo crear y trabajar con diccionarios en Python.
+
+## Conceptos Clave:
+
+### Diccionarios
+
+Estructuras de datos que almacenan pares clave-valor.
+
+### Claves
+
+Son los nombres o etiquetas utilizados para acceder a los valores en el diccionario.
+
+### Valores
+
+Son los datos asociados a cada clave en el diccionario.
+
+## Ejemplo:
+
+``` python
+# Creación de un diccionario
+persona = {
+    "nombre": "Juan",
+    "edad": 30,
+    "ciudad": "México"
+}
+
+# Acceso a valores utilizando claves
+nombre = persona["nombre"]
+edad = persona["edad"]
+```
+
+## Explicación:
+
+En este ejemplo, se crea un diccionario que almacena información de una persona, como nombre, edad y ciudad.
+
+Se accede a los valores del diccionario utilizando las claves correspondientes.
+
+::: {.callout-important}
+### Actividad Práctica
+
+Crea un diccionario que almacene información de tus libros favoritos, incluyendo título y autor.
+
+Accede a los valores del diccionario utilizando las claves y muestra la información en la consola.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de diccionarios y acceder a los valores utilizando las claves. Les ayuda a comprender cómo organizar datos en pares clave-valor y cómo acceder a la información de manera eficiente.
+
+## Booleanos
+
+### Contenido
+
+Los booleanos son un tipo de dato que puede tener dos valores: True (verdadero) o False (falso). Aprenderemos cómo trabajar con booleanos en Python y cómo utilizarlos en expresiones lógicas.
+
+## Conceptos Clave:
+
+### Booleanos
+
+Tipo de dato que representa valores de verdad (True o False).
+
+Expresiones Lógicas: Combinaciones de valores booleanos utilizando operadores lógicos como and, or y not.
+
+## Ejemplo:
+
+```python
+# Variables booleanas
+es_mayor_de_edad = True
+tiene_tarjeta = False
+
+# Expresiones lógicas
+puede_ingresar = es_mayor_de_edad and tiene_tarjeta
+```
+
+## Explicación:
+
+En este ejemplo, se utilizan variables booleanas para representar si alguien es mayor de edad y si tiene una tarjeta.
+
+Se utiliza una expresión lógica para evaluar si alguien puede ingresar basado en ambas condiciones.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea variables booleanas que representen si tienes una mascota y si te gusta el deporte.
+
+Utiliza expresiones lógicas para determinar si puedes llevar a tu mascota a un lugar que requiere tu atención durante un partido de tu deporte favorito.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar el uso de variables booleanas y expresiones lógicas para tomar decisiones basadas en condiciones booleanas. Les ayuda a comprender cómo trabajar con valores de verdad y cómo utilizarlos para evaluar situaciones en el código.
