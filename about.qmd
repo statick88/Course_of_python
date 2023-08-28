@@ -1,0 +1,18 @@
+# Acerca de Nosotros
+
+¡Bienvenido a nuestro curso de Programación en Python! En esta plataforma, nos esforzamos por brindarte un aprendizaje efectivo y práctico en el mundo de la programación.
+
+## Nuestro Objetivo
+
+Nuestro objetivo es proporcionarte los conocimientos y las habilidades necesarias para comenzar a programar utilizando Python. Queremos que te sientas cómodo con los conceptos básicos y que estés preparado para abordar proyectos más desafiantes en el futuro.
+
+## Nuestro Equipo
+
+Nuestro equipo está formado por apasionados desarrolladores y educadores que tienen una amplia experiencia en el mundo de la programación. Estamos aquí para ayudarte en cada paso del camino y responder a tus preguntas.
+
+## Contacto
+
+Si tienes preguntas, comentarios o sugerencias, no dudes en ponerte en contacto con nosotros a través de nuestro correo electrónico o redes sociales.
+
+¡Esperamos que disfrutes aprendiendo con nosotros!
+
