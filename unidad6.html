@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Lcdo. Diego Saavedra Mgtr.">
-<meta name="dcterms.date" content="2023-08-28">
 <meta name="description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
 
-<title>Curso de Python 2023</title>
+<title>Curso de Python 2023 - 7&nbsp; Funciones</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./unidad1.html" rel="next">
+<link href="./unidad7.html" rel="next">
+<link href="./unidad5.html" rel="prev">
 <link href="./python-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="custom.css">
-<meta name="twitter:title" content="Curso de Python 2023">
+<meta name="twitter:title" content="Curso de Python 2023 - 7&nbsp; Funciones">
 <meta name="twitter:description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
 <meta name="twitter:site" content="@statick_ds">
 <meta name="twitter:card" content="summary">
@@ -84,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prefacio</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unidad6.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funciones</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -119,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prefacio</span></span></a>
   </div>
 </li>
@@ -155,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad6.html" class="sidebar-item-text sidebar-link">
+  <a href="./unidad6.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funciones</span></span></a>
   </div>
 </li>
@@ -181,45 +214,49 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#prefacio" id="toc-prefacio" class="nav-link active" data-scroll-target="#prefacio"><span class="header-section-number">1</span> Prefacio</a>
+  <li><a href="#introducción-a-funciones" id="toc-introducción-a-funciones" class="nav-link active" data-scroll-target="#introducción-a-funciones"><span class="header-section-number">7.1</span> Introducción a Funciones</a>
   <ul class="collapse">
-  <li><a href="#qué-es-este-curso" id="toc-qué-es-este-curso" class="nav-link" data-scroll-target="#qué-es-este-curso"><span class="header-section-number">1.1</span> ¿Qué es este Curso?</a></li>
-  <li><a href="#a-quién-está-dirigido" id="toc-a-quién-está-dirigido" class="nav-link" data-scroll-target="#a-quién-está-dirigido"><span class="header-section-number">1.2</span> ¿A quién está dirigido?</a></li>
-  <li><a href="#cómo-contribuir" id="toc-cómo-contribuir" class="nav-link" data-scroll-target="#cómo-contribuir"><span class="header-section-number">1.3</span> ¿Cómo contribuir?</a></li>
+  <li><a href="#contenido" id="toc-contenido" class="nav-link" data-scroll-target="#contenido"><span class="header-section-number">7.1.1</span> Contenido:</a></li>
   </ul></li>
+  <li><a href="#conceptos-clave" id="toc-conceptos-clave" class="nav-link" data-scroll-target="#conceptos-clave"><span class="header-section-number">7.2</span> Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#funciones." id="toc-funciones." class="nav-link" data-scroll-target="#funciones."><span class="header-section-number">7.2.1</span> Funciones.</a></li>
+  <li><a href="#definición-de-funciones" id="toc-definición-de-funciones" class="nav-link" data-scroll-target="#definición-de-funciones"><span class="header-section-number">7.2.2</span> Definición de Funciones</a></li>
+  <li><a href="#argumentos" id="toc-argumentos" class="nav-link" data-scroll-target="#argumentos"><span class="header-section-number">7.2.3</span> Argumentos</a></li>
+  </ul></li>
+  <li><a href="#retorno-de-valores" id="toc-retorno-de-valores" class="nav-link" data-scroll-target="#retorno-de-valores"><span class="header-section-number">7.3</span> Retorno de Valores</a></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">7.4</span> Ejemplo:</a></li>
+  <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación"><span class="header-section-number">7.5</span> Explicación:</a></li>
+  <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad"><span class="header-section-number">7.6</span> Explicación de la Actividad:</a></li>
+  <li><a href="#recursividad" id="toc-recursividad" class="nav-link" data-scroll-target="#recursividad"><span class="header-section-number">7.7</span> Recursividad</a>
+  <ul class="collapse">
+  <li><a href="#contenido-1" id="toc-contenido-1" class="nav-link" data-scroll-target="#contenido-1"><span class="header-section-number">7.7.1</span> Contenido:</a></li>
+  </ul></li>
+  <li><a href="#conceptos-clave-1" id="toc-conceptos-clave-1" class="nav-link" data-scroll-target="#conceptos-clave-1"><span class="header-section-number">7.8</span> Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#recursividad-1" id="toc-recursividad-1" class="nav-link" data-scroll-target="#recursividad-1"><span class="header-section-number">7.8.1</span> Recursividad</a></li>
+  <li><a href="#caso-base" id="toc-caso-base" class="nav-link" data-scroll-target="#caso-base"><span class="header-section-number">7.8.2</span> Caso Base</a></li>
+  <li><a href="#caso-recursivo" id="toc-caso-recursivo" class="nav-link" data-scroll-target="#caso-recursivo"><span class="header-section-number">7.8.3</span> Caso Recursivo</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1"><span class="header-section-number">7.9</span> Ejemplo:</a></li>
+  <li><a href="#explicación-1" id="toc-explicación-1" class="nav-link" data-scroll-target="#explicación-1"><span class="header-section-number">7.10</span> Explicación:</a></li>
+  <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1"><span class="header-section-number">7.11</span> Explicación de la Actividad:</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/index.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidad6.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidad6.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Curso de Python 2023</h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funciones</span></h1>
 </div>
 
-<div>
-  <div class="description">
-    Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Lcdo. Diego Saavedra Mgtr. </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 28, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -227,25 +264,121 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="prefacio" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Prefacio</h1>
-<p>¡Bienvenidos al Curso Completo de Python: Desde Fundamentos hasta Aplicaciones Prácticas!</p>
-<section id="qué-es-este-curso" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="qué-es-este-curso"><span class="header-section-number">1.1</span> ¿Qué es este Curso?</h2>
-<p>Este curso exhaustivo te llevará desde los fundamentos básicos de la programación hasta la creación de aplicaciones prácticas utilizando el lenguaje de programación Python. A través de una combinación de teoría y ejercicios prácticos, te sumergirás en los conceptos esenciales de la programación y avanzarás hacia la construcción de proyectos reales. Desde la instalación de herramientas hasta la creación de una API con Django Rest Framework, este curso te proporcionará una comprensión sólida y práctica de Python y su aplicación en el mundo real.</p>
+<section id="introducción-a-funciones" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="introducción-a-funciones"><span class="header-section-number">7.1</span> Introducción a Funciones</h2>
+<section id="contenido" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="contenido"><span class="header-section-number">7.1.1</span> Contenido:</h3>
+<p>En esta lección, exploraremos el concepto de funciones en Python. Aprenderemos cómo definir funciones, pasar argumentos y cómo retornar valores.</p>
 </section>
-<section id="a-quién-está-dirigido" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="a-quién-está-dirigido"><span class="header-section-number">1.2</span> ¿A quién está dirigido?</h2>
-<p>Este curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación. No importa si eres un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que desea aprender a programar: este curso es para ti. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo de la programación a través de Python.</p>
 </section>
-<section id="cómo-contribuir" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="cómo-contribuir"><span class="header-section-number">1.3</span> ¿Cómo contribuir?</h2>
-<p>Valoramos tu participación en este curso. Si encuentras errores, deseas sugerir mejoras o agregar contenido adicional, ¡nos encantaría escucharte! Puedes contribuir a través de nuestra plataforma en línea, donde puedes compartir tus comentarios y sugerencias. Juntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.</p>
-<p>Este libro ha sido creado con el objetivo de brindar acceso gratuito y universal al conocimiento. Estará disponible en línea para que cualquiera, sin importar su ubicación o circunstancias, pueda acceder y aprender a su propio ritmo.</p>
-<p>¡Esperamos que disfrutes este emocionante viaje de aprendizaje y descubrimiento en el mundo de la programación con Python!</p>
+<section id="conceptos-clave" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="conceptos-clave"><span class="header-section-number">7.2</span> Conceptos Clave:</h2>
+<section id="funciones." class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="funciones."><span class="header-section-number">7.2.1</span> Funciones.</h3>
+<p>Bloques de código reutilizables que realizan una tarea específica.</p>
+</section>
+<section id="definición-de-funciones" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="definición-de-funciones"><span class="header-section-number">7.2.2</span> Definición de Funciones</h3>
+<p>Se utiliza la palabra clave def para definir una función.</p>
+</section>
+<section id="argumentos" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="argumentos"><span class="header-section-number">7.2.3</span> Argumentos</h3>
+<p>Valores que se pasan a una función para que trabaje con ellos.</p>
+</section>
+</section>
+<section id="retorno-de-valores" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="retorno-de-valores"><span class="header-section-number">7.3</span> Retorno de Valores</h2>
+<p>Una función puede retornar un valor utilizando la palabra clave return.</p>
+</section>
+<section id="ejemplo" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">7.4</span> Ejemplo:</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar(nombre):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hola, "</span> <span class="op">+</span> nombre</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>mensaje <span class="op">=</span> saludar(<span class="st">"Juan"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mensaje)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="explicación"><span class="header-section-number">7.5</span> Explicación:</h2>
+<p>En este ejemplo, se define una función llamada saludar que toma un argumento nombre.</p>
+<p>La función retorna un saludo personalizado utilizando el argumento.</p>
+<p>El resultado se asigna a la variable mensaje y se muestra en la consola.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea una función llamada calcular_cuadrado que reciba un número como argumento y retorne el cuadrado de ese número.</p>
+<p>Utiliza la función para calcular el cuadrado de un número y mostrarlo en la consola.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="explicación-de-la-actividad"><span class="header-section-number">7.6</span> Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar la creación y uso de funciones en Python. Les ayuda a comprender cómo definir funciones, pasar argumentos y cómo trabajar con valores retornados por las funciones.</p>
+</section>
+<section id="recursividad" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="recursividad"><span class="header-section-number">7.7</span> Recursividad</h2>
+<section id="contenido-1" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="contenido-1"><span class="header-section-number">7.7.1</span> Contenido:</h3>
+<p>En esta lección, exploraremos el concepto de recursividad, que es cuando una función se llama a sí misma para resolver un problema. Aprenderemos cómo implementar funciones recursivas y cuándo es apropiado usarlas.</p>
+</section>
+</section>
+<section id="conceptos-clave-1" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="conceptos-clave-1"><span class="header-section-number">7.8</span> Conceptos Clave:</h2>
+<section id="recursividad-1" class="level3" data-number="7.8.1">
+<h3 data-number="7.8.1" class="anchored" data-anchor-id="recursividad-1"><span class="header-section-number">7.8.1</span> Recursividad</h3>
+<p>Técnica en la que una función se llama a sí misma para resolver un problema.</p>
+</section>
+<section id="caso-base" class="level3" data-number="7.8.2">
+<h3 data-number="7.8.2" class="anchored" data-anchor-id="caso-base"><span class="header-section-number">7.8.2</span> Caso Base</h3>
+<p>Condición que indica cuándo la recursión debe detenerse.</p>
+</section>
+<section id="caso-recursivo" class="level3" data-number="7.8.3">
+<h3 data-number="7.8.3" class="anchored" data-anchor-id="caso-recursivo"><span class="header-section-number">7.8.3</span> Caso Recursivo</h3>
+<p>Cómo se divide el problema en partes más pequeñas en cada llamada recursiva.</p>
+</section>
+</section>
+<section id="ejemplo-1" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="ejemplo-1"><span class="header-section-number">7.9</span> Ejemplo:</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> factorial(n):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n <span class="op">*</span> factorial(n <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> factorial(<span class="dv">5</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-1" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="explicación-1"><span class="header-section-number">7.10</span> Explicación:</h2>
+<p>En este ejemplo, se define una función recursiva llamada factorial para calcular el factorial de un número.</p>
+<p>La función utiliza un caso base (cuando n es 0) y un caso recursivo (llamando a la función con n - 1).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea una función recursiva llamada potencia que calcule la potencia de un número base elevado a un exponente.</p>
+<p>Utiliza la función para calcular 2^3 y muestra el resultado en la consola.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-1" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="explicación-de-la-actividad-1"><span class="header-section-number">7.11</span> Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar la implementación de funciones recursivas y comprender cómo se dividen los problemas en partes más pequeñas para resolverlos. Les ayuda a comprender cómo aplicar la recursividad de manera efectiva en la solución de problemas.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -599,10 +732,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./unidad5.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de Flujo</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./unidad1.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción a la programación.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./unidad7.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Objetos, Clases y Herencia</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
