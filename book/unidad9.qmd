@@ -1,0 +1,185 @@
+# Introducción a Bases de Datos
+
+## Introducción a Bases de Datos
+
+### Contenido:
+
+En esta lección, exploraremos el concepto de bases de datos y su importancia en el desarrollo de aplicaciones. Aprenderemos cómo las bases de datos nos permiten almacenar y recuperar información de manera eficiente.
+
+## Conceptos Clave:
+
+### Base de Datos
+
+Colección organizada de datos almacenados en formato estructurado.
+
+### Sistemas de Gestión de Bases de Datos (DBMS)
+
+Software que administra y gestiona una base de datos.
+
+### Beneficios de las Bases de Datos
+
+Almacenamiento eficiente, acceso rápido y seguridad de datos.
+
+## Ejemplo:
+
+```python
+# Ejemplo de una tabla 'usuarios' en una base de datos
+| id | nombre   | edad | email           |
+|----|----------|------|-----------------|
+| 1  | Juan     | 25   | juan@email.com |
+| 2  | María    | 30   | maria@email.com|
+```
+
+## Explicación:
+
+En este ejemplo, se muestra una tabla ficticia de una base de datos llamada 'usuarios'.
+
+La tabla contiene filas que representan registros de usuarios con diferentes atributos.
+
+:::{.callout-important}
+### Actividad Práctica:
+
+Investiga y elige un Sistema de Gestión de Bases de Datos (DBMS) para utilizar en el curso.
+
+Explica por qué es importante utilizar bases de datos en el desarrollo de aplicaciones.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes comprender la importancia de las bases de datos en el desarrollo de aplicaciones y seleccionar una opción adecuada de DBMS para usar en el curso. Les ayuda a familiarizarse con el concepto de bases de datos y sus beneficios.
+
+## Introducción a PostgreSQL
+
+### Contenido:
+
+En esta lección, nos centraremos en PostgreSQL, un Sistema de Gestión de Bases de Datos Relacionales (RDBMS) de código abierto. Aprenderemos cómo instalar PostgreSQL y cómo realizar operaciones básicas en una base de datos.
+
+## Instalación de PostgreSQL:
+
+Descargar e instalar PostgreSQL desde el sitio oficial.
+
+Configurar contraseña para el usuario 'postgres'.
+
+## Operaciones Básicas en PostgreSQL:
+
+### Crear una base de datos: 
+```sql
+CREATE DATABASE nombre;
+```
+### Conectar a una base de datos: 
+```sql	
+\c nombre;
+```
+### Crear una tabla: 
+```sql
+CREATE TABLE tabla (columna1 tipo, columna2 tipo);
+```
+
+### Insertar registros: 
+```sql	
+INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2);
+```
+
+### Consultar registros: 
+```sql	
+SELECT * FROM tabla;
+```	
+
+### Actualizar registros: 
+```sql	
+UPDATE tabla SET columna1 = valor WHERE condicion;**
+```
+
+### Eliminar registros: 
+```sql
+DELETE FROM tabla WHERE condicion;
+```
+
+## Ejemplo - Creación de una Tabla en PostgreSQL:
+
+```sql
+CREATE TABLE estudiantes (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    edad INTEGER
+);
+```
+:::{.callout-info}
+### Actividad Práctica:
+
+Instala PostgreSQL en tu entorno.
+
+Crea una base de datos llamada 'universidad'.
+
+Crea una tabla 'alumnos' con las columnas 'id', 'nombre' y 'edad'.
+
+Inserta al menos dos registros en la tabla.
+
+Realiza una consulta para obtener todos los registros de la tabla 'alumnos'.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes familiarizarse con la instalación de PostgreSQL y realizar operaciones básicas de creación de base de datos, creación de tablas, inserción y consulta de registros. Les ayuda a adquirir experiencia práctica en la gestión de bases de datos utilizando PostgreSQL.
+
+## Introducción a MongoDB
+
+### Contenido:
+En esta lección, nos centraremos en MongoDB, una base de datos NoSQL de código abierto. Aprenderemos cómo instalar MongoDB y cómo realizar operaciones básicas en una base de datos NoSQL.
+
+## Instalación de MongoDB:
+
+Descargar e instalar MongoDB desde el sitio oficial.
+
+Configurar directorio de datos y logs.
+
+## Operaciones Básicas en MongoDB:
+
+### Crear una base de datos: 
+```nosql
+use nombre;
+```
+### Crear una colección (tabla): 
+```nosql
+db.createCollection("coleccion");
+```
+### Insertar documentos (registros): 
+```nosql
+db.coleccion.insert({ campo1: valor1, campo2: valor2 });
+```    
+### Consultar documentos: 
+```nosql
+db.coleccion.find();
+```
+### Actualizar documentos: 
+```nosql
+db.coleccion.update({ campo: valor }, { $set: { campo_actualizado: nuevo_valor } });
+```
+### Eliminar documentos: 
+```nosql	
+db.coleccion.remove({ campo: valor });
+```
+
+## Ejemplo - Creación de una Colección en MongoDB:
+
+```nosql	
+use tienda;
+db.createCollection("productos");
+```
+:::{.callout-important}
+### Actividad Práctica:
+
+Instala MongoDB en tu entorno.
+
+Crea una base de datos llamada 'blog'.
+
+Crea una colección 'articulos'.
+
+Inserta al menos dos documentos (artículos) en la colección.
+
+Realiza una consulta para obtener todos los documentos de la colección 'articulos'.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes familiarizarse con la instalación de MongoDB y realizar operaciones básicas en una base de datos NoSQL. Les ayuda a adquirir experiencia práctica en la gestión de datos en MongoDB y a comprender las diferencias entre bases de datos SQL y NoSQL.

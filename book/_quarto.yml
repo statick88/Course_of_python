@@ -40,6 +40,11 @@ book:
     - unidad6.qmd
     - unidad7.qmd
     - unidad8.qmd
+    - unidad9.qmd
+    - unidad10.qmd
+    - unidad11.qmd
+    - unidad12.qmd
+    - ejercicios.qmd
 
 format:
   html:

@@ -1,0 +1,190 @@
+# ¿Cómo me amplío con Python?
+
+## Introducción a Data Science
+
+### Contenido:
+
+En esta lección, exploraremos el emocionante campo de la Ciencia de Datos y cómo Python se ha convertido en una herramienta esencial en este ámbito. Aprenderemos qué es la Ciencia de Datos, su importancia y cómo Python se utiliza para analizar y visualizar datos.
+
+## Conceptos Clave:
+
+### Ciencia de Datos: 
+
+Proceso de extracción de conocimiento y perspectivas a partir de datos.
+
+### Uso de Python en Data Science: 
+
+Bibliotecas como NumPy, Pandas y Matplotlib.
+
+### Ejemplos de Aplicación: 
+
+Análisis de datos, 
+
+Visualización, 
+
+Aprendizaje Automático, 
+
+etc.
+
+## Ejemplo - Uso de Pandas para Análisis de Datos:
+
+```python
+import pandas as pd
+
+data = {
+    'nombre': ['Juan', 'María', 'Pedro'],
+    'edad': [25, 30, 28]
+}
+
+df = pd.DataFrame(data)
+print(df)
+```
+:::{.callout-important}
+### Actividad Práctica:
+
+Investiga y elige un conjunto de datos disponible en línea.
+
+Utiliza la biblioteca Pandas para cargar y analizar los datos.
+
+Realiza un análisis simple, como calcular estadísticas descriptivas, en el conjunto de datos.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes explorar la aplicación de Python en el campo de la Ciencia de Datos. Les ayuda a comprender cómo utilizar bibliotecas como Pandas para analizar datos y extraer información útil.
+
+## Introducción a Django Framework
+
+### Contenido:
+
+En esta lección, nos adentraremos en el mundo de Django, un popular framework de desarrollo web en Python. Aprenderemos qué es Django, cómo instalarlo y cómo crear una aplicación web básica utilizando este framework.
+
+## Qué es Django:
+
+Django es un framework de desarrollo web de alto nivel y de código abierto.
+
+Proporciona una estructura organizada para crear aplicaciones web de manera eficiente.
+
+## Instalación de Django:
+
+### Instalar Django utilizando pip: 
+```bash
+pip install django
+```
+### Verificar la instalación: 
+```bash
+django-admin --version
+```
+## Creación de una Aplicación Web Básica:
+
+### Crear un nuevo proyecto: 
+
+```bash
+django-admin startproject proyecto .
+```
+### Crear una nueva aplicación dentro del proyecto: 
+```bash	
+python manage.py startapp app
+```
+
+## Ejemplo - Creación de una Página Web con Django:
+
+```python
+# views.py
+from django.http import HttpResponse
+
+def hola_mundo(request):
+    return HttpResponse("¡Hola, mundo!")
+```
+    
+```python
+# urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('hola/', views.hola_mundo, name='hola_mundo'),
+]
+```
+
+:::{.callout-important}
+### Actividad Práctica:
+
+Instala Django en tu entorno.
+
+Crea un proyecto llamado 'blog' y una aplicación llamada 'articulos'.
+
+Crea una vista que muestre un mensaje de bienvenida en la página principal.
+
+Configura una URL para acceder a la vista creada.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes experimentar con la creación de proyectos y aplicaciones utilizando Django. Les ayuda a comprender cómo estructurar una aplicación web utilizando este framework y cómo definir rutas y vistas para mostrar contenido en el navegador.
+
+## Introducción a FastAPI y PyScript
+
+### Contenido:
+
+En esta lección, exploraremos FastAPI, un moderno framework de desarrollo web en Python, y PyScript, una herramienta que permite crear scripts de Python en un entorno interactivo. Aprenderemos cómo utilizar FastAPI para construir APIs rápidas y cómo utilizar PyScript para escribir y ejecutar scripts de manera interactiva.
+
+## Qué es FastAPI:
+
+FastAPI es un framework de desarrollo web rápido (high-performance) basado en Python.
+
+Permite construir APIs rápidas y seguras de manera sencilla.
+
+## Instalación de FastAPI:
+
+### Instalar FastAPI utilizando pip: 
+```bash
+pip install fastapi
+```
+### Instalar el servidor ASGI (por ejemplo, Uvicorn): 
+```bash
+pip install uvicorn
+```
+## Creación de una API Básica con FastAPI:
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def leer_raiz():
+    return {"mensaje": "¡Hola desde FastAPI!"}
+```
+
+## Uso de PyScript:
+
+### Instalar PyScript utilizando pip: 
+```bash
+pip install pyscript
+```
+### Ejecutar PyScript en un entorno interactivo: 
+```bash	
+pyscript
+```
+## Ejemplo - Ejecución de PyScript:
+
+```python	
+a = 5
+b = 10
+a + b
+15
+```
+:::{.callout-important}
+### Actividad Práctica:
+
+Instala FastAPI en tu entorno.
+
+Crea una API con FastAPI que tenga al menos un endpoint para obtener información.
+
+Instala PyScript en tu entorno y realiza algunos cálculos y experimentos interactivos.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes experimentar con FastAPI y PyScript para crear una API básica y ejecutar scripts interactivos. Les ayuda a comprender cómo utilizar FastAPI para construir APIs de manera rápida y cómo utilizar PyScript para escribir y ejecutar código Python de manera interactiva en la consola.
