@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./unidad9.html" rel="next">
 <link href="./unidad7.html" rel="prev">
 <link href="./python-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -203,6 +204,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Módulos</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidad9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a Bases de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidad10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Operaciones Básicas en Bases de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidad11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">¿Cómo me amplío con Python?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidad12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Proyecto: API de Tareas con Django Rest Framework</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ejercicios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Ejercicios</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -234,6 +265,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1"><span class="header-section-number">9.8</span> Ejemplo:</a></li>
   <li><a href="#explicación-1" id="toc-explicación-1" class="nav-link" data-scroll-target="#explicación-1"><span class="header-section-number">9.9</span> Explicación:</a></li>
   <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1"><span class="header-section-number">9.10</span> Explicación de la Actividad:</a></li>
+  <li><a href="#renombrando-módulos-y-seleccionando-lo-importado" id="toc-renombrando-módulos-y-seleccionando-lo-importado" class="nav-link" data-scroll-target="#renombrando-módulos-y-seleccionando-lo-importado"><span class="header-section-number">9.11</span> Renombrando Módulos y Seleccionando lo Importado</a>
+  <ul class="collapse">
+  <li><a href="#contenido-2" id="toc-contenido-2" class="nav-link" data-scroll-target="#contenido-2"><span class="header-section-number">9.11.1</span> Contenido:</a></li>
+  </ul></li>
+  <li><a href="#renombrando-módulos-al-importar" id="toc-renombrando-módulos-al-importar" class="nav-link" data-scroll-target="#renombrando-módulos-al-importar"><span class="header-section-number">9.12</span> Renombrando Módulos al Importar:</a></li>
+  <li><a href="#seleccionando-elementos-específicos-para-importar" id="toc-seleccionando-elementos-específicos-para-importar" class="nav-link" data-scroll-target="#seleccionando-elementos-específicos-para-importar"><span class="header-section-number">9.13</span> Seleccionando Elementos Específicos para Importar:</a></li>
+  <li><a href="#ejemplo---renombrando-módulos" id="toc-ejemplo---renombrando-módulos" class="nav-link" data-scroll-target="#ejemplo---renombrando-módulos"><span class="header-section-number">9.14</span> Ejemplo - Renombrando Módulos:</a></li>
+  <li><a href="#ejemplo---seleccionando-elementos-específicos" id="toc-ejemplo---seleccionando-elementos-específicos" class="nav-link" data-scroll-target="#ejemplo---seleccionando-elementos-específicos"><span class="header-section-number">9.15</span> Ejemplo - Seleccionando Elementos Específicos:</a></li>
+  <li><a href="#explicación-de-la-actividad-2" id="toc-explicación-de-la-actividad-2" class="nav-link" data-scroll-target="#explicación-de-la-actividad-2"><span class="header-section-number">9.16</span> Explicación de la Actividad:</a></li>
+  <li><a href="#seleccionando-lo-importado-y-pip" id="toc-seleccionando-lo-importado-y-pip" class="nav-link" data-scroll-target="#seleccionando-lo-importado-y-pip"><span class="header-section-number">9.17</span> Seleccionando lo Importado y Pip</a>
+  <ul class="collapse">
+  <li><a href="#contenido-3" id="toc-contenido-3" class="nav-link" data-scroll-target="#contenido-3"><span class="header-section-number">9.17.1</span> Contenido:</a></li>
+  </ul></li>
+  <li><a href="#seleccionando-elementos-específicos-para-importar-1" id="toc-seleccionando-elementos-específicos-para-importar-1" class="nav-link" data-scroll-target="#seleccionando-elementos-específicos-para-importar-1"><span class="header-section-number">9.18</span> Seleccionando Elementos Específicos para Importar:</a>
+  <ul class="collapse">
+  <li><a href="#usando-pip" id="toc-usando-pip" class="nav-link" data-scroll-target="#usando-pip"><span class="header-section-number">9.18.1</span> Usando Pip:</a></li>
+  </ul></li>
+  <li><a href="#ejemplo---instalando-un-paquete-con-pip" id="toc-ejemplo---instalando-un-paquete-con-pip" class="nav-link" data-scroll-target="#ejemplo---instalando-un-paquete-con-pip"><span class="header-section-number">9.19</span> Ejemplo - Instalando un Paquete con Pip:</a></li>
+  <li><a href="#explicación-de-la-actividad-3" id="toc-explicación-de-la-actividad-3" class="nav-link" data-scroll-target="#explicación-de-la-actividad-3"><span class="header-section-number">9.20</span> Explicación de la Actividad:</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidad8.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidad8.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -362,6 +412,78 @@ Actividad Práctica:
 <section id="explicación-de-la-actividad-1" class="level2" data-number="9.10">
 <h2 data-number="9.10" class="anchored" data-anchor-id="explicación-de-la-actividad-1"><span class="header-section-number">9.10</span> Explicación de la Actividad:</h2>
 <p>Esta actividad permite a los participantes practicar la creación de módulos con funciones y clases. Les ayuda a comprender cómo organizar diferentes funcionalidades en módulos separados y cómo importar esas funcionalidades en otros archivos.</p>
+</section>
+<section id="renombrando-módulos-y-seleccionando-lo-importado" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="renombrando-módulos-y-seleccionando-lo-importado"><span class="header-section-number">9.11</span> Renombrando Módulos y Seleccionando lo Importado</h2>
+<section id="contenido-2" class="level3" data-number="9.11.1">
+<h3 data-number="9.11.1" class="anchored" data-anchor-id="contenido-2"><span class="header-section-number">9.11.1</span> Contenido:</h3>
+<p>En esta lección, aprenderemos cómo renombrar módulos al importarlos y cómo seleccionar elementos específicos para importar. Esto nos permitirá tener un mayor control sobre los nombres y las funcionalidades que utilizamos en nuestro código.</p>
+</section>
+</section>
+<section id="renombrando-módulos-al-importar" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="renombrando-módulos-al-importar"><span class="header-section-number">9.12</span> Renombrando Módulos al Importar:</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_largo <span class="im">as</span> ml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="seleccionando-elementos-específicos-para-importar" class="level2" data-number="9.13">
+<h2 data-number="9.13" class="anchored" data-anchor-id="seleccionando-elementos-específicos-para-importar"><span class="header-section-number">9.13</span> Seleccionando Elementos Específicos para Importar:</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> modulo <span class="im">import</span> funcion1, funcion2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ejemplo---renombrando-módulos" class="level2" data-number="9.14">
+<h2 data-number="9.14" class="anchored" data-anchor-id="ejemplo---renombrando-módulos"><span class="header-section-number">9.14</span> Ejemplo - Renombrando Módulos:</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> calculadora <span class="im">as</span> calc</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> calc.suma(<span class="dv">3</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ejemplo---seleccionando-elementos-específicos" class="level2" data-number="9.15">
+<h2 data-number="9.15" class="anchored" data-anchor-id="ejemplo---seleccionando-elementos-específicos"><span class="header-section-number">9.15</span> Ejemplo - Seleccionando Elementos Específicos:</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> operaciones <span class="im">import</span> resta, Calculadora</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> resta(<span class="dv">10</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::{.callout-important} ### Actividad Práctica:</p>
+<p>Renombra el módulo geometria como geo al importarlo en otro archivo.</p>
+<p>Importa solo la función para calcular el área de un círculo y calcula el área de un círculo con radio 5.</p>
+</section>
+<section id="explicación-de-la-actividad-2" class="level2" data-number="9.16">
+<h2 data-number="9.16" class="anchored" data-anchor-id="explicación-de-la-actividad-2"><span class="header-section-number">9.16</span> Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar cómo renombrar módulos al importarlos y cómo seleccionar funciones específicas para importar. Les ayuda a comprender cómo personalizar los nombres de los módulos y cómo importar solo las funcionalidades que necesitan en su código.</p>
+</section>
+<section id="seleccionando-lo-importado-y-pip" class="level2" data-number="9.17">
+<h2 data-number="9.17" class="anchored" data-anchor-id="seleccionando-lo-importado-y-pip"><span class="header-section-number">9.17</span> Seleccionando lo Importado y Pip</h2>
+<section id="contenido-3" class="level3" data-number="9.17.1">
+<h3 data-number="9.17.1" class="anchored" data-anchor-id="contenido-3"><span class="header-section-number">9.17.1</span> Contenido:</h3>
+<p>En esta lección, continuaremos explorando cómo seleccionar elementos específicos para importar y aprenderemos sobre pip, la herramienta de gestión de paquetes de Python. pip nos permite instalar y gestionar paquetes externos que contienen funcionalidades adicionales para nuestros programas.</p>
+</section>
+</section>
+<section id="seleccionando-elementos-específicos-para-importar-1" class="level2" data-number="9.18">
+<h2 data-number="9.18" class="anchored" data-anchor-id="seleccionando-elementos-específicos-para-importar-1"><span class="header-section-number">9.18</span> Seleccionando Elementos Específicos para Importar:</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> modulo <span class="im">import</span> funcion1, funcion2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="usando-pip" class="level3" data-number="9.18.1">
+<h3 data-number="9.18.1" class="anchored" data-anchor-id="usando-pip"><span class="header-section-number">9.18.1</span> Usando Pip:</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install nombre_del_paquete: Instalar un paquete.</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> uninstall nombre_del_paquete: Desinstalar un paquete.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ejemplo---instalando-un-paquete-con-pip" class="level2" data-number="9.19">
+<h2 data-number="9.19" class="anchored" data-anchor-id="ejemplo---instalando-un-paquete-con-pip"><span class="header-section-number">9.19</span> Ejemplo - Instalando un Paquete con Pip:</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install requests</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Utiliza pip para instalar el paquete matplotlib, que se utiliza para trazar gráficos en Python.</p>
+<p>En tu archivo de código, importa la función plot de matplotlib.pyplot y crea un gráfico simple.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-3" class="level2" data-number="9.20">
+<h2 data-number="9.20" class="anchored" data-anchor-id="explicación-de-la-actividad-3"><span class="header-section-number">9.20</span> Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar cómo utilizar pip para instalar paquetes externos y cómo importar funcionalidades específicas de esos paquetes en su código. Les ayuda a comprender cómo expandir las capacidades de Python utilizando bibliotecas externas.</p>
 
 
 </section>
@@ -722,6 +844,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./unidad9.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a Bases de Datos</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -8,7 +8,7 @@
 
 <meta name="description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
 
-<title>Curso de Python 2023 - Acerca de Nosotros</title>
+<title>Curso de Python 2023 - 13&nbsp; Proyecto: API de Tareas con Django Rest Framework</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,6 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./ejercicios.html" rel="next">
+<link href="./unidad11.html" rel="prev">
 <link href="./python-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -66,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="custom.css">
-<meta name="twitter:title" content="Curso de Python 2023 - Acerca de Nosotros">
+<meta name="twitter:title" content="Curso de Python 2023 - 13&nbsp; Proyecto: API de Tareas con Django Rest Framework">
 <meta name="twitter:description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
 <meta name="twitter:site" content="@statick_ds">
 <meta name="twitter:card" content="summary">
@@ -81,9 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Curso de Python 2023
-      </li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unidad12.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Proyecto: API de Tareas con Django Rest Framework</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -190,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad12.html" class="sidebar-item-text sidebar-link">
+  <a href="./unidad12.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Proyecto: API de Tareas con Django Rest Framework</span></span></a>
   </div>
 </li>
@@ -210,18 +244,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#nuestro-objetivo" id="toc-nuestro-objetivo" class="nav-link active" data-scroll-target="#nuestro-objetivo">Nuestro Objetivo</a></li>
-  <li><a href="#nuestro-equipo" id="toc-nuestro-equipo" class="nav-link" data-scroll-target="#nuestro-equipo">Nuestro Equipo</a></li>
-  <li><a href="#contacto" id="toc-contacto" class="nav-link" data-scroll-target="#contacto">Contacto</a></li>
+  <li><a href="#explicación" id="toc-explicación" class="nav-link active" data-scroll-target="#explicación"><span class="header-section-number">13.1</span> Explicación:</a></li>
+  <li><a href="#qué-se-necesita-conocer" id="toc-qué-se-necesita-conocer" class="nav-link" data-scroll-target="#qué-se-necesita-conocer"><span class="header-section-number">13.2</span> Qué se necesita conocer:</a></li>
+  <li><a href="#estructura-del-proyecto" id="toc-estructura-del-proyecto" class="nav-link" data-scroll-target="#estructura-del-proyecto"><span class="header-section-number">13.3</span> Estructura del Proyecto:</a></li>
+  <li><a href="#código" id="toc-código" class="nav-link" data-scroll-target="#código"><span class="header-section-number">13.4</span> Código:</a></li>
+  <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad"><span class="header-section-number">13.5</span> Explicación de la Actividad:</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/about.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/about.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidad12.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidad12.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Acerca de Nosotros</h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Proyecto: API de Tareas con Django Rest Framework</span></h1>
 </div>
 
 
@@ -236,19 +272,102 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>¡Bienvenido a nuestro curso de Programación en Python! En esta plataforma, nos esforzamos por brindarte un aprendizaje efectivo y práctico en el mundo de la programación.</p>
-<section id="nuestro-objetivo" class="level2">
-<h2 class="anchored" data-anchor-id="nuestro-objetivo">Nuestro Objetivo</h2>
-<p>Nuestro objetivo es proporcionarte los conocimientos y las habilidades necesarias para comenzar a programar utilizando Python. Queremos que te sientas cómodo con los conceptos básicos y que estés preparado para abordar proyectos más desafiantes en el futuro.</p>
+<section id="explicación" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="explicación"><span class="header-section-number">13.1</span> Explicación:</h2>
+<p>En este proyecto, construiremos una API utilizando Django Rest Framework para gestionar tareas. La API permitirá a los usuarios crear, actualizar, listar y eliminar tareas. Utilizaremos Django Rest Framework para definir los modelos, las vistas y las URL necesarias para interactuar con la API.</p>
 </section>
-<section id="nuestro-equipo" class="level2">
-<h2 class="anchored" data-anchor-id="nuestro-equipo">Nuestro Equipo</h2>
-<p>Nuestro equipo está formado por apasionados desarrolladores y educadores que tienen una amplia experiencia en el mundo de la programación. Estamos aquí para ayudarte en cada paso del camino y responder a tus preguntas.</p>
+<section id="qué-se-necesita-conocer" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="qué-se-necesita-conocer"><span class="header-section-number">13.2</span> Qué se necesita conocer:</h2>
+<ul>
+<li>Conocimientos básicos de Python.</li>
+<li>Familiaridad con Django y Django Rest Framework.</li>
+<li>Entorno de desarrollo configurado con Django y Django Rest Framework.</li>
+</ul>
 </section>
-<section id="contacto" class="level2">
-<h2 class="anchored" data-anchor-id="contacto">Contacto</h2>
-<p>Si tienes preguntas, comentarios o sugerencias, no dudes en ponerte en contacto con nosotros a través de nuestro correo electrónico o redes sociales.</p>
-<p>¡Esperamos que disfrutes aprendiendo con nosotros!</p>
+<section id="estructura-del-proyecto" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="estructura-del-proyecto"><span class="header-section-number">13.3</span> Estructura del Proyecto:</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>proyecto_api_tareas/</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── api_tareas/</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   ├── migrations/</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>│   ├── templates/</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>│   ├── __init__.py</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   ├── admin.py</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>│   ├── apps.py</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>│   ├── models.py</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>│   ├── serializers.py</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>│   ├── tests.py</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>│   └── views.py</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>├── proyecto_api_tareas/</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>│   ├── __init__.py</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>│   ├── asgi.py</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>│   ├── settings.py</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>│   ├── urls.py</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>│   └── wsgi.py</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>├── db.sqlite3</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>└── manage.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="código" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="código"><span class="header-section-number">13.4</span> Código:</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#models.py:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.db <span class="im">import</span> models</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Tarea(models.Model):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    titulo <span class="op">=</span> models.CharField(max_length<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    descripcion <span class="op">=</span> models.TextField()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    fecha_creacion <span class="op">=</span> models.DateTimeField(auto_now_add<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    completada <span class="op">=</span> models.BooleanField(default<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.titulo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#serializers.py:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> serializers</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Tarea</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TareaSerializer(serializers.ModelSerializer):</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Meta:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        model <span class="op">=</span> Tarea</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        fields <span class="op">=</span> <span class="st">'__all__'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#views.py:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> viewsets</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Tarea</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .serializers <span class="im">import</span> TareaSerializer</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TareaViewSet(viewsets.ModelViewSet):</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    queryset <span class="op">=</span> Tarea.objects.<span class="bu">all</span>()</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    serializer_class <span class="op">=</span> TareaSerializer</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    urls.py (api_tareas):</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework.routers <span class="im">import</span> DefaultRouter</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .views <span class="im">import</span> TareaViewSet</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>router <span class="op">=</span> DefaultRouter()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>router.register(<span class="vs">r'tareas'</span>, TareaViewSet)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> router.urls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A continuación en el archivo <strong>settings.py</strong> agregar <strong>‘rest_framework’</strong> y <strong>‘api_tareas’</strong> en <strong>INSTALLED_APPS</strong>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Configura un proyecto Django y una aplicación llamada ‘api_tareas’.</p>
+<p>Define el modelo Tarea en models.py con los campos necesarios.</p>
+<p>Crea un serializador en serializers.py para el modelo Tarea.</p>
+<p>Implementa las vistas en views.py utilizando Django Rest Framework.</p>
+<p>Configura las URLs en urls.py para las vistas de la API.</p>
+<p>Migrar y ejecutar el servidor para probar la API utilizando el navegador o herramientas como Postman.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="explicación-de-la-actividad"><span class="header-section-number">13.5</span> Explicación de la Actividad:</h2>
+<p>Este proyecto permite a los participantes aplicar los conocimientos adquiridos en Django y Django Rest Framework para crear una API de gestión de tareas. Aprenden cómo definir modelos, serializadores, vistas y URLs en Django Rest Framework para construir una API completa. Les ayuda a comprender cómo desarrollar aplicaciones web con APIs utilizando tecnologías modernas.</p>
 
 
 </section>
@@ -602,6 +721,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./unidad11.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">¿Cómo me amplío con Python?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ejercicios.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Ejercicios</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -611,7 +742,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">About</a>
+    <a class="nav-link" href="./about.html">About</a>
   </li>  
     <li class="nav-item">
     <a class="nav-link" href="./license.html">License</a>

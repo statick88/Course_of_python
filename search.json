@@ -1113,6 +1113,622 @@
     "text": "9.10 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de módulos con funciones y clases. Les ayuda a comprender cómo organizar diferentes funcionalidades en módulos separados y cómo importar esas funcionalidades en otros archivos."
   },
   {
+    "objectID": "unidad8.html#renombrando-módulos-y-seleccionando-lo-importado",
+    "href": "unidad8.html#renombrando-módulos-y-seleccionando-lo-importado",
+    "title": "9  Módulos",
+    "section": "9.11 Renombrando Módulos y Seleccionando lo Importado",
+    "text": "9.11 Renombrando Módulos y Seleccionando lo Importado\n\n9.11.1 Contenido:\nEn esta lección, aprenderemos cómo renombrar módulos al importarlos y cómo seleccionar elementos específicos para importar. Esto nos permitirá tener un mayor control sobre los nombres y las funcionalidades que utilizamos en nuestro código."
+  },
+  {
+    "objectID": "unidad8.html#renombrando-módulos-al-importar",
+    "href": "unidad8.html#renombrando-módulos-al-importar",
+    "title": "9  Módulos",
+    "section": "9.12 Renombrando Módulos al Importar:",
+    "text": "9.12 Renombrando Módulos al Importar:\nimport modulo_largo as ml"
+  },
+  {
+    "objectID": "unidad8.html#seleccionando-elementos-específicos-para-importar",
+    "href": "unidad8.html#seleccionando-elementos-específicos-para-importar",
+    "title": "9  Módulos",
+    "section": "9.13 Seleccionando Elementos Específicos para Importar:",
+    "text": "9.13 Seleccionando Elementos Específicos para Importar:\nfrom modulo import funcion1, funcion2"
+  },
+  {
+    "objectID": "unidad8.html#ejemplo---renombrando-módulos",
+    "href": "unidad8.html#ejemplo---renombrando-módulos",
+    "title": "9  Módulos",
+    "section": "9.14 Ejemplo - Renombrando Módulos:",
+    "text": "9.14 Ejemplo - Renombrando Módulos:\nimport calculadora as calc\n\nresultado = calc.suma(3, 4)"
+  },
+  {
+    "objectID": "unidad8.html#ejemplo---seleccionando-elementos-específicos",
+    "href": "unidad8.html#ejemplo---seleccionando-elementos-específicos",
+    "title": "9  Módulos",
+    "section": "9.15 Ejemplo - Seleccionando Elementos Específicos:",
+    "text": "9.15 Ejemplo - Seleccionando Elementos Específicos:\nfrom operaciones import resta, Calculadora\n\nresultado = resta(10, 5)\n:::{.callout-important} ### Actividad Práctica:\nRenombra el módulo geometria como geo al importarlo en otro archivo.\nImporta solo la función para calcular el área de un círculo y calcula el área de un círculo con radio 5."
+  },
+  {
+    "objectID": "unidad8.html#explicación-de-la-actividad-2",
+    "href": "unidad8.html#explicación-de-la-actividad-2",
+    "title": "9  Módulos",
+    "section": "9.16 Explicación de la Actividad:",
+    "text": "9.16 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar cómo renombrar módulos al importarlos y cómo seleccionar funciones específicas para importar. Les ayuda a comprender cómo personalizar los nombres de los módulos y cómo importar solo las funcionalidades que necesitan en su código."
+  },
+  {
+    "objectID": "unidad8.html#seleccionando-lo-importado-y-pip",
+    "href": "unidad8.html#seleccionando-lo-importado-y-pip",
+    "title": "9  Módulos",
+    "section": "9.17 Seleccionando lo Importado y Pip",
+    "text": "9.17 Seleccionando lo Importado y Pip\n\n9.17.1 Contenido:\nEn esta lección, continuaremos explorando cómo seleccionar elementos específicos para importar y aprenderemos sobre pip, la herramienta de gestión de paquetes de Python. pip nos permite instalar y gestionar paquetes externos que contienen funcionalidades adicionales para nuestros programas."
+  },
+  {
+    "objectID": "unidad8.html#seleccionando-elementos-específicos-para-importar-1",
+    "href": "unidad8.html#seleccionando-elementos-específicos-para-importar-1",
+    "title": "9  Módulos",
+    "section": "9.18 Seleccionando Elementos Específicos para Importar:",
+    "text": "9.18 Seleccionando Elementos Específicos para Importar:\nfrom modulo import funcion1, funcion2\n\n9.18.1 Usando Pip:\npip install nombre_del_paquete: Instalar un paquete.\npip uninstall nombre_del_paquete: Desinstalar un paquete."
+  },
+  {
+    "objectID": "unidad8.html#ejemplo---instalando-un-paquete-con-pip",
+    "href": "unidad8.html#ejemplo---instalando-un-paquete-con-pip",
+    "title": "9  Módulos",
+    "section": "9.19 Ejemplo - Instalando un Paquete con Pip:",
+    "text": "9.19 Ejemplo - Instalando un Paquete con Pip:\npip install requests\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nUtiliza pip para instalar el paquete matplotlib, que se utiliza para trazar gráficos en Python.\nEn tu archivo de código, importa la función plot de matplotlib.pyplot y crea un gráfico simple."
+  },
+  {
+    "objectID": "unidad8.html#explicación-de-la-actividad-3",
+    "href": "unidad8.html#explicación-de-la-actividad-3",
+    "title": "9  Módulos",
+    "section": "9.20 Explicación de la Actividad:",
+    "text": "9.20 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar cómo utilizar pip para instalar paquetes externos y cómo importar funcionalidades específicas de esos paquetes en su código. Les ayuda a comprender cómo expandir las capacidades de Python utilizando bibliotecas externas."
+  },
+  {
+    "objectID": "unidad9.html#introducción-a-bases-de-datos",
+    "href": "unidad9.html#introducción-a-bases-de-datos",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.1 Introducción a Bases de Datos",
+    "text": "10.1 Introducción a Bases de Datos\n\n10.1.1 Contenido:\nEn esta lección, exploraremos el concepto de bases de datos y su importancia en el desarrollo de aplicaciones. Aprenderemos cómo las bases de datos nos permiten almacenar y recuperar información de manera eficiente."
+  },
+  {
+    "objectID": "unidad9.html#conceptos-clave",
+    "href": "unidad9.html#conceptos-clave",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.2 Conceptos Clave:",
+    "text": "10.2 Conceptos Clave:\n\n10.2.1 Base de Datos\nColección organizada de datos almacenados en formato estructurado.\n\n\n10.2.2 Sistemas de Gestión de Bases de Datos (DBMS)\nSoftware que administra y gestiona una base de datos.\n\n\n10.2.3 Beneficios de las Bases de Datos\nAlmacenamiento eficiente, acceso rápido y seguridad de datos."
+  },
+  {
+    "objectID": "unidad9.html#ejemplo",
+    "href": "unidad9.html#ejemplo",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.3 Ejemplo:",
+    "text": "10.3 Ejemplo:\n# Ejemplo de una tabla 'usuarios' en una base de datos\n| id | nombre   | edad | email           |\n|----|----------|------|-----------------|\n| 1  | Juan     | 25   | juan@email.com |\n| 2  | María    | 30   | maria@email.com|"
+  },
+  {
+    "objectID": "unidad9.html#explicación",
+    "href": "unidad9.html#explicación",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.4 Explicación:",
+    "text": "10.4 Explicación:\nEn este ejemplo, se muestra una tabla ficticia de una base de datos llamada ‘usuarios’.\nLa tabla contiene filas que representan registros de usuarios con diferentes atributos.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInvestiga y elige un Sistema de Gestión de Bases de Datos (DBMS) para utilizar en el curso.\nExplica por qué es importante utilizar bases de datos en el desarrollo de aplicaciones."
+  },
+  {
+    "objectID": "unidad9.html#explicación-de-la-actividad",
+    "href": "unidad9.html#explicación-de-la-actividad",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.5 Explicación de la Actividad:",
+    "text": "10.5 Explicación de la Actividad:\nEsta actividad permite a los participantes comprender la importancia de las bases de datos en el desarrollo de aplicaciones y seleccionar una opción adecuada de DBMS para usar en el curso. Les ayuda a familiarizarse con el concepto de bases de datos y sus beneficios."
+  },
+  {
+    "objectID": "unidad9.html#introducción-a-postgresql",
+    "href": "unidad9.html#introducción-a-postgresql",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.6 Introducción a PostgreSQL",
+    "text": "10.6 Introducción a PostgreSQL\n\n10.6.1 Contenido:\nEn esta lección, nos centraremos en PostgreSQL, un Sistema de Gestión de Bases de Datos Relacionales (RDBMS) de código abierto. Aprenderemos cómo instalar PostgreSQL y cómo realizar operaciones básicas en una base de datos."
+  },
+  {
+    "objectID": "unidad9.html#instalación-de-postgresql",
+    "href": "unidad9.html#instalación-de-postgresql",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.7 Instalación de PostgreSQL:",
+    "text": "10.7 Instalación de PostgreSQL:\nDescargar e instalar PostgreSQL desde el sitio oficial.\nConfigurar contraseña para el usuario ‘postgres’."
+  },
+  {
+    "objectID": "unidad9.html#operaciones-básicas-en-postgresql",
+    "href": "unidad9.html#operaciones-básicas-en-postgresql",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.8 Operaciones Básicas en PostgreSQL:",
+    "text": "10.8 Operaciones Básicas en PostgreSQL:\n\n10.8.1 Crear una base de datos:\nCREATE DATABASE nombre;\n\n\n10.8.2 Conectar a una base de datos:\n\\c nombre;\n\n\n10.8.3 Crear una tabla:\nCREATE TABLE tabla (columna1 tipo, columna2 tipo);\n\n\n10.8.4 Insertar registros:\nINSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2);\n\n\n10.8.5 Consultar registros:\nSELECT * FROM tabla;\n\n\n10.8.6 Actualizar registros:\nUPDATE tabla SET columna1 = valor WHERE condicion;**\n\n\n10.8.7 Eliminar registros:\nDELETE FROM tabla WHERE condicion;"
+  },
+  {
+    "objectID": "unidad9.html#ejemplo---creación-de-una-tabla-en-postgresql",
+    "href": "unidad9.html#ejemplo---creación-de-una-tabla-en-postgresql",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.9 Ejemplo - Creación de una Tabla en PostgreSQL:",
+    "text": "10.9 Ejemplo - Creación de una Tabla en PostgreSQL:\nCREATE TABLE estudiantes (\n    id SERIAL PRIMARY KEY,\n    nombre VARCHAR(100),\n    edad INTEGER\n);\n\n10.9.1 Actividad Práctica:\nInstala PostgreSQL en tu entorno.\nCrea una base de datos llamada ‘universidad’.\nCrea una tabla ‘alumnos’ con las columnas ‘id’, ‘nombre’ y ‘edad’.\nInserta al menos dos registros en la tabla.\nRealiza una consulta para obtener todos los registros de la tabla ‘alumnos’."
+  },
+  {
+    "objectID": "unidad9.html#explicación-de-la-actividad-1",
+    "href": "unidad9.html#explicación-de-la-actividad-1",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.10 Explicación de la Actividad:",
+    "text": "10.10 Explicación de la Actividad:\nEsta actividad permite a los participantes familiarizarse con la instalación de PostgreSQL y realizar operaciones básicas de creación de base de datos, creación de tablas, inserción y consulta de registros. Les ayuda a adquirir experiencia práctica en la gestión de bases de datos utilizando PostgreSQL."
+  },
+  {
+    "objectID": "unidad9.html#introducción-a-mongodb",
+    "href": "unidad9.html#introducción-a-mongodb",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.11 Introducción a MongoDB",
+    "text": "10.11 Introducción a MongoDB\n\n10.11.1 Contenido:\nEn esta lección, nos centraremos en MongoDB, una base de datos NoSQL de código abierto. Aprenderemos cómo instalar MongoDB y cómo realizar operaciones básicas en una base de datos NoSQL."
+  },
+  {
+    "objectID": "unidad9.html#instalación-de-mongodb",
+    "href": "unidad9.html#instalación-de-mongodb",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.12 Instalación de MongoDB:",
+    "text": "10.12 Instalación de MongoDB:\nDescargar e instalar MongoDB desde el sitio oficial.\nConfigurar directorio de datos y logs."
+  },
+  {
+    "objectID": "unidad9.html#operaciones-básicas-en-mongodb",
+    "href": "unidad9.html#operaciones-básicas-en-mongodb",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.13 Operaciones Básicas en MongoDB:",
+    "text": "10.13 Operaciones Básicas en MongoDB:\n\n10.13.1 Crear una base de datos:\nuse nombre;\n\n\n10.13.2 Crear una colección (tabla):\ndb.createCollection(\"coleccion\");\n\n\n10.13.3 Insertar documentos (registros):\ndb.coleccion.insert({ campo1: valor1, campo2: valor2 });\n\n\n10.13.4 Consultar documentos:\ndb.coleccion.find();\n\n\n10.13.5 Actualizar documentos:\ndb.coleccion.update({ campo: valor }, { $set: { campo_actualizado: nuevo_valor } });\n\n\n10.13.6 Eliminar documentos:\ndb.coleccion.remove({ campo: valor });"
+  },
+  {
+    "objectID": "unidad9.html#ejemplo---creación-de-una-colección-en-mongodb",
+    "href": "unidad9.html#ejemplo---creación-de-una-colección-en-mongodb",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.14 Ejemplo - Creación de una Colección en MongoDB:",
+    "text": "10.14 Ejemplo - Creación de una Colección en MongoDB:\nuse tienda;\ndb.createCollection(\"productos\");\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInstala MongoDB en tu entorno.\nCrea una base de datos llamada ‘blog’.\nCrea una colección ‘articulos’.\nInserta al menos dos documentos (artículos) en la colección.\nRealiza una consulta para obtener todos los documentos de la colección ‘articulos’."
+  },
+  {
+    "objectID": "unidad9.html#explicación-de-la-actividad-2",
+    "href": "unidad9.html#explicación-de-la-actividad-2",
+    "title": "10  Introducción a Bases de Datos",
+    "section": "10.15 Explicación de la Actividad:",
+    "text": "10.15 Explicación de la Actividad:\nEsta actividad permite a los participantes familiarizarse con la instalación de MongoDB y realizar operaciones básicas en una base de datos NoSQL. Les ayuda a adquirir experiencia práctica en la gestión de datos en MongoDB y a comprender las diferencias entre bases de datos SQL y NoSQL."
+  },
+  {
+    "objectID": "unidad10.html#introducción-e-instalación",
+    "href": "unidad10.html#introducción-e-instalación",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.1 Introducción e Instalación",
+    "text": "11.1 Introducción e Instalación\n\n11.1.1 Contenido:\nEn esta lección, nos centraremos en realizar operaciones básicas en bases de datos utilizando diferentes sistemas de gestión: MySQL, PostgreSQL y MongoDB. Aprenderemos cómo realizar la instalación de estos sistemas y cómo conectarnos a las bases de datos."
+  },
+  {
+    "objectID": "unidad10.html#instalación-de-mysql",
+    "href": "unidad10.html#instalación-de-mysql",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.2 Instalación de MySQL:",
+    "text": "11.2 Instalación de MySQL:\nDescargar e instalar MySQL desde el sitio oficial.\nConfigurar contraseña para el usuario ‘root’."
+  },
+  {
+    "objectID": "unidad10.html#instalación-de-postgresql",
+    "href": "unidad10.html#instalación-de-postgresql",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.3 Instalación de PostgreSQL:",
+    "text": "11.3 Instalación de PostgreSQL:\nDescargar e instalar PostgreSQL desde el sitio oficial.\nConfigurar contraseña para el usuario ‘postgres’."
+  },
+  {
+    "objectID": "unidad10.html#instalación-de-mongodb",
+    "href": "unidad10.html#instalación-de-mongodb",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.4 Instalación de MongoDB:",
+    "text": "11.4 Instalación de MongoDB:\nDescargar e instalar MongoDB desde el sitio oficial.\nConfigurar directorio de datos y logs."
+  },
+  {
+    "objectID": "unidad10.html#conexión-a-la-base-de-datos",
+    "href": "unidad10.html#conexión-a-la-base-de-datos",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.5 Conexión a la Base de Datos:",
+    "text": "11.5 Conexión a la Base de Datos:\n\n11.5.1 MySQL y PostgreSQL:\nUsar bibliotecas como mysql-connector-python o psycopg2 para conectarse y realizar operaciones.\n\n\n11.5.2 MongoDB:\nUsar la biblioteca pymongo para conectarse y realizar operaciones."
+  },
+  {
+    "objectID": "unidad10.html#ejemplo---conexión-a-mysql",
+    "href": "unidad10.html#ejemplo---conexión-a-mysql",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.6 Ejemplo - Conexión a MySQL:",
+    "text": "11.6 Ejemplo - Conexión a MySQL:\nimport mysql.connector\n\n# Conexión a la base de datos\nconn = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"contraseña\",\n    database=\"basededatos\"\n)"
+  },
+  {
+    "objectID": "unidad10.html#ejemplo---conexión-a-mongodb",
+    "href": "unidad10.html#ejemplo---conexión-a-mongodb",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.7 Ejemplo - Conexión a MongoDB:",
+    "text": "11.7 Ejemplo - Conexión a MongoDB:\nimport pymongo\n\n# Conexión al servidor MongoDB\nclient = pymongo.MongoClient(\"mongodb://localhost:27017/\")\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInstala MySQL, PostgreSQL y MongoDB en tu entorno. Crea una base de datos en cada uno de los sistemas. Conéctate a cada una de las bases de datos utilizando las bibliotecas adecuadas. Realiza una consulta de prueba en cada sistema para verificar la conexión."
+  },
+  {
+    "objectID": "unidad10.html#explicación-de-la-actividad",
+    "href": "unidad10.html#explicación-de-la-actividad",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.8 Explicación de la Actividad:",
+    "text": "11.8 Explicación de la Actividad:\nEsta actividad permite a los participantes adquirir experiencia práctica en la instalación de diferentes sistemas de bases de datos y en la conexión a estas bases de datos utilizando las bibliotecas correspondientes. Les ayuda a comprender cómo establecer una conexión exitosa y cómo preparar el entorno para las operaciones futuras en bases de datos."
+  },
+  {
+    "objectID": "unidad10.html#bases-de-datos-en-mysql",
+    "href": "unidad10.html#bases-de-datos-en-mysql",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.9 Bases de Datos en MySQL",
+    "text": "11.9 Bases de Datos en MySQL\n\n11.9.1 Contenido:\nEn esta lección, aprenderemos a realizar operaciones básicas en una base de datos MySQL, como crear y eliminar tablas, insertar registros y realizar consultas."
+  },
+  {
+    "objectID": "unidad10.html#operaciones-en-mysql",
+    "href": "unidad10.html#operaciones-en-mysql",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.10 Operaciones en MySQL:",
+    "text": "11.10 Operaciones en MySQL:\n\n11.10.1 Crear una tabla:\nCREATE TABLE nombre (columna1 tipo, columna2 tipo);\n\n\n11.10.2 Insertar registros:\nINSERT INTO nombre (columna1, columna2) VALUES (valor1, valor2);\n\n\n11.10.3 Consultar registros:\nSELECT * FROM nombre;\n\n\n11.10.4 Actualizar registros:\nUPDATE nombre SET columna = valor WHERE condicion;\n\n\n11.10.5 Eliminar registros:\nDELETE FROM nombre WHERE condicion;\n\n\n11.10.6 Eliminar tabla:\nDROP TABLE nombre;"
+  },
+  {
+    "objectID": "unidad10.html#ejemplo---creación-de-una-tabla-en-mysql",
+    "href": "unidad10.html#ejemplo---creación-de-una-tabla-en-mysql",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.11 Ejemplo - Creación de una Tabla en MySQL:",
+    "text": "11.11 Ejemplo - Creación de una Tabla en MySQL:\nCREATE TABLE empleados (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(100),\n    salario DECIMAL(10, 2)\n);\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nConéctate a la base de datos MySQL.\nCrea una tabla ‘productos’ con las columnas ‘id’, ‘nombre’ y ‘precio’.\nInserta al menos dos registros en la tabla ‘productos’.\nRealiza una consulta para obtener todos los registros de la tabla ‘productos’."
+  },
+  {
+    "objectID": "unidad10.html#explicación-de-la-actividad-1",
+    "href": "unidad10.html#explicación-de-la-actividad-1",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.12 Explicación de la Actividad:",
+    "text": "11.12 Explicación de la Actividad:\nEsta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos MySQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en MySQL."
+  },
+  {
+    "objectID": "unidad10.html#crear-y-eliminar-tablas-en-postgresql",
+    "href": "unidad10.html#crear-y-eliminar-tablas-en-postgresql",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.13 Crear y Eliminar Tablas en PostgreSQL",
+    "text": "11.13 Crear y Eliminar Tablas en PostgreSQL\n\n11.13.1 Contenido:\nEn esta lección, aprenderemos a realizar operaciones básicas en una base de datos PostgreSQL, como crear y eliminar tablas, insertar registros y realizar consultas."
+  },
+  {
+    "objectID": "unidad10.html#operaciones-en-postgresql",
+    "href": "unidad10.html#operaciones-en-postgresql",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.14 Operaciones en PostgreSQL:",
+    "text": "11.14 Operaciones en PostgreSQL:\n\n11.14.1 Crear una tabla:\nCREATE TABLE nombre (columna1 tipo, columna2 tipo);\n\n\n11.14.2 Insertar registros:\nINSERT INTO nombre (columna1, columna2) VALUES (valor1, valor2);\n\n\n11.14.3 Consultar registros:\nSELECT * FROM nombre;\n\n\n11.14.4 Actualizar registros:\nUPDATE nombre SET columna = valor WHERE condicion;\n\n\n11.14.5 Eliminar registros:\nDELETE FROM nombre WHERE condicion;\n\n\n11.14.6 Eliminar tabla:\nDROP TABLE nombre;"
+  },
+  {
+    "objectID": "unidad10.html#ejemplo---creación-de-una-tabla-en-postgresql",
+    "href": "unidad10.html#ejemplo---creación-de-una-tabla-en-postgresql",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.15 Ejemplo - Creación de una Tabla en PostgreSQL:",
+    "text": "11.15 Ejemplo - Creación de una Tabla en PostgreSQL:\nCREATE TABLE empleados (\n    id SERIAL PRIMARY KEY,\n    nombre VARCHAR(100),\n    salario DECIMAL(10, 2)\n);\n\n\n\n\n\n\nActividad Práctica\n\n\n\n11.16 Conéctate a la base de datos PostgreSQL.\nCrea una tabla ‘clientes’ con las columnas ‘id’, ‘nombre’ y ‘email’.\nInserta al menos dos registros en la tabla ‘clientes’.\nRealiza una consulta para obtener todos los registros de la tabla ‘clientes’."
+  },
+  {
+    "objectID": "unidad10.html#conéctate-a-la-base-de-datos-postgresql.",
+    "href": "unidad10.html#conéctate-a-la-base-de-datos-postgresql.",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.16 Conéctate a la base de datos PostgreSQL.",
+    "text": "11.16 Conéctate a la base de datos PostgreSQL.\nCrea una tabla ‘clientes’ con las columnas ‘id’, ‘nombre’ y ‘email’.\nInserta al menos dos registros en la tabla ‘clientes’.\nRealiza una consulta para obtener todos los registros de la tabla ‘clientes’."
+  },
+  {
+    "objectID": "unidad10.html#explicación-de-la-actividad-2",
+    "href": "unidad10.html#explicación-de-la-actividad-2",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.17 Explicación de la Actividad:",
+    "text": "11.17 Explicación de la Actividad:\nEsta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos PostgreSQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en PostgreSQL."
+  },
+  {
+    "objectID": "unidad10.html#operaciones-básicas-en-mongodb",
+    "href": "unidad10.html#operaciones-básicas-en-mongodb",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.18 Operaciones Básicas en MongoDB",
+    "text": "11.18 Operaciones Básicas en MongoDB\n\n11.18.1 Contenido:\nEn esta lección, aprenderemos a realizar operaciones básicas en una base de datos MongoDB, como insertar documentos, consultar documentos y actualizar documentos."
+  },
+  {
+    "objectID": "unidad10.html#operaciones-en-mongodb",
+    "href": "unidad10.html#operaciones-en-mongodb",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.19 Operaciones en MongoDB:",
+    "text": "11.19 Operaciones en MongoDB:\n\n11.19.1 Insertar documentos:\ndb.coleccion.insert({ campo1: valor1, campo2: valor2 });\n\n\n11.19.2 Consultar documentos:\ndb.coleccion.find();\n\n\n11.19.3 Actualizar documentos:\ndb.coleccion.update({ campo: valor }, { $set: { campo_actualizado: nuevo_valor } });\n\n\n11.19.4 Eliminar documentos:\ndb.coleccion.remove({ campo: valor });"
+  },
+  {
+    "objectID": "unidad10.html#ejemplo---inserción-de-un-documento-en-mongodb",
+    "href": "unidad10.html#ejemplo---inserción-de-un-documento-en-mongodb",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.20 Ejemplo - Inserción de un Documento en MongoDB:",
+    "text": "11.20 Ejemplo - Inserción de un Documento en MongoDB:\n// Insertar un documento en la colección 'productos'\ndb.productos.insert({ nombre: \"Camiseta\", precio: 20 });\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nConéctate a la base de datos MongoDB.\nInserta al menos dos documentos en la colección ‘productos’.\nRealiza una consulta para obtener todos los documentos de la colección ‘productos’.\nActualiza el precio de uno de los documentos en la colección.\nElimina un documento de la colección."
+  },
+  {
+    "objectID": "unidad10.html#explicación-de-la-actividad-3",
+    "href": "unidad10.html#explicación-de-la-actividad-3",
+    "title": "11  Operaciones Básicas en Bases de Datos",
+    "section": "11.21 Explicación de la Actividad:",
+    "text": "11.21 Explicación de la Actividad:\nEsta actividad permite a los participantes aplicar los conocimientos adquiridos en la inserción, consulta, actualización y eliminación de documentos en una base de datos MongoDB. Les ayuda a ganar experiencia práctica en la manipulación de datos en una base de datos NoSQL."
+  },
+  {
+    "objectID": "unidad11.html#introducción-a-data-science",
+    "href": "unidad11.html#introducción-a-data-science",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.1 Introducción a Data Science",
+    "text": "12.1 Introducción a Data Science\n\n12.1.1 Contenido:\nEn esta lección, exploraremos el emocionante campo de la Ciencia de Datos y cómo Python se ha convertido en una herramienta esencial en este ámbito. Aprenderemos qué es la Ciencia de Datos, su importancia y cómo Python se utiliza para analizar y visualizar datos."
+  },
+  {
+    "objectID": "unidad11.html#conceptos-clave",
+    "href": "unidad11.html#conceptos-clave",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.2 Conceptos Clave:",
+    "text": "12.2 Conceptos Clave:\n\n12.2.1 Ciencia de Datos:\nProceso de extracción de conocimiento y perspectivas a partir de datos.\n\n\n12.2.2 Uso de Python en Data Science:\nBibliotecas como NumPy, Pandas y Matplotlib.\n\n\n12.2.3 Ejemplos de Aplicación:\nAnálisis de datos,\nVisualización,\nAprendizaje Automático,\netc."
+  },
+  {
+    "objectID": "unidad11.html#ejemplo---uso-de-pandas-para-análisis-de-datos",
+    "href": "unidad11.html#ejemplo---uso-de-pandas-para-análisis-de-datos",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.3 Ejemplo - Uso de Pandas para Análisis de Datos:",
+    "text": "12.3 Ejemplo - Uso de Pandas para Análisis de Datos:\nimport pandas as pd\n\ndata = {\n    'nombre': ['Juan', 'María', 'Pedro'],\n    'edad': [25, 30, 28]\n}\n\ndf = pd.DataFrame(data)\nprint(df)\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInvestiga y elige un conjunto de datos disponible en línea.\nUtiliza la biblioteca Pandas para cargar y analizar los datos.\nRealiza un análisis simple, como calcular estadísticas descriptivas, en el conjunto de datos."
+  },
+  {
+    "objectID": "unidad11.html#explicación-de-la-actividad",
+    "href": "unidad11.html#explicación-de-la-actividad",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.4 Explicación de la Actividad:",
+    "text": "12.4 Explicación de la Actividad:\nEsta actividad permite a los participantes explorar la aplicación de Python en el campo de la Ciencia de Datos. Les ayuda a comprender cómo utilizar bibliotecas como Pandas para analizar datos y extraer información útil."
+  },
+  {
+    "objectID": "unidad11.html#introducción-a-django-framework",
+    "href": "unidad11.html#introducción-a-django-framework",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.5 Introducción a Django Framework",
+    "text": "12.5 Introducción a Django Framework\n\n12.5.1 Contenido:\nEn esta lección, nos adentraremos en el mundo de Django, un popular framework de desarrollo web en Python. Aprenderemos qué es Django, cómo instalarlo y cómo crear una aplicación web básica utilizando este framework."
+  },
+  {
+    "objectID": "unidad11.html#qué-es-django",
+    "href": "unidad11.html#qué-es-django",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.6 Qué es Django:",
+    "text": "12.6 Qué es Django:\nDjango es un framework de desarrollo web de alto nivel y de código abierto.\nProporciona una estructura organizada para crear aplicaciones web de manera eficiente."
+  },
+  {
+    "objectID": "unidad11.html#instalación-de-django",
+    "href": "unidad11.html#instalación-de-django",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.7 Instalación de Django:",
+    "text": "12.7 Instalación de Django:\n\n12.7.1 Instalar Django utilizando pip:\npip install django\n\n\n12.7.2 Verificar la instalación:\ndjango-admin --version"
+  },
+  {
+    "objectID": "unidad11.html#creación-de-una-aplicación-web-básica",
+    "href": "unidad11.html#creación-de-una-aplicación-web-básica",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.8 Creación de una Aplicación Web Básica:",
+    "text": "12.8 Creación de una Aplicación Web Básica:\n\n12.8.1 Crear un nuevo proyecto:\ndjango-admin startproject proyecto .\n\n\n12.8.2 Crear una nueva aplicación dentro del proyecto:\npython manage.py startapp app"
+  },
+  {
+    "objectID": "unidad11.html#ejemplo---creación-de-una-página-web-con-django",
+    "href": "unidad11.html#ejemplo---creación-de-una-página-web-con-django",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.9 Ejemplo - Creación de una Página Web con Django:",
+    "text": "12.9 Ejemplo - Creación de una Página Web con Django:\n# views.py\nfrom django.http import HttpResponse\n\ndef hola_mundo(request):\n    return HttpResponse(\"¡Hola, mundo!\")\n# urls.py\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('hola/', views.hola_mundo, name='hola_mundo'),\n]\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInstala Django en tu entorno.\nCrea un proyecto llamado ‘blog’ y una aplicación llamada ‘articulos’.\nCrea una vista que muestre un mensaje de bienvenida en la página principal.\nConfigura una URL para acceder a la vista creada."
+  },
+  {
+    "objectID": "unidad11.html#explicación-de-la-actividad-1",
+    "href": "unidad11.html#explicación-de-la-actividad-1",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.10 Explicación de la Actividad:",
+    "text": "12.10 Explicación de la Actividad:\nEsta actividad permite a los participantes experimentar con la creación de proyectos y aplicaciones utilizando Django. Les ayuda a comprender cómo estructurar una aplicación web utilizando este framework y cómo definir rutas y vistas para mostrar contenido en el navegador."
+  },
+  {
+    "objectID": "unidad11.html#introducción-a-fastapi-y-pyscript",
+    "href": "unidad11.html#introducción-a-fastapi-y-pyscript",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.11 Introducción a FastAPI y PyScript",
+    "text": "12.11 Introducción a FastAPI y PyScript\n\n12.11.1 Contenido:\nEn esta lección, exploraremos FastAPI, un moderno framework de desarrollo web en Python, y PyScript, una herramienta que permite crear scripts de Python en un entorno interactivo. Aprenderemos cómo utilizar FastAPI para construir APIs rápidas y cómo utilizar PyScript para escribir y ejecutar scripts de manera interactiva."
+  },
+  {
+    "objectID": "unidad11.html#qué-es-fastapi",
+    "href": "unidad11.html#qué-es-fastapi",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.12 Qué es FastAPI:",
+    "text": "12.12 Qué es FastAPI:\nFastAPI es un framework de desarrollo web rápido (high-performance) basado en Python.\nPermite construir APIs rápidas y seguras de manera sencilla."
+  },
+  {
+    "objectID": "unidad11.html#instalación-de-fastapi",
+    "href": "unidad11.html#instalación-de-fastapi",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.13 Instalación de FastAPI:",
+    "text": "12.13 Instalación de FastAPI:\n\n12.13.1 Instalar FastAPI utilizando pip:\npip install fastapi\n\n\n12.13.2 Instalar el servidor ASGI (por ejemplo, Uvicorn):\npip install uvicorn"
+  },
+  {
+    "objectID": "unidad11.html#creación-de-una-api-básica-con-fastapi",
+    "href": "unidad11.html#creación-de-una-api-básica-con-fastapi",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.14 Creación de una API Básica con FastAPI:",
+    "text": "12.14 Creación de una API Básica con FastAPI:\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\ndef leer_raiz():\n    return {\"mensaje\": \"¡Hola desde FastAPI!\"}"
+  },
+  {
+    "objectID": "unidad11.html#uso-de-pyscript",
+    "href": "unidad11.html#uso-de-pyscript",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.15 Uso de PyScript:",
+    "text": "12.15 Uso de PyScript:\n\n12.15.1 Instalar PyScript utilizando pip:\npip install pyscript\n\n\n12.15.2 Ejecutar PyScript en un entorno interactivo:\npyscript"
+  },
+  {
+    "objectID": "unidad11.html#ejemplo---ejecución-de-pyscript",
+    "href": "unidad11.html#ejemplo---ejecución-de-pyscript",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.16 Ejemplo - Ejecución de PyScript:",
+    "text": "12.16 Ejemplo - Ejecución de PyScript:\na = 5\nb = 10\na + b\n15\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInstala FastAPI en tu entorno.\nCrea una API con FastAPI que tenga al menos un endpoint para obtener información.\nInstala PyScript en tu entorno y realiza algunos cálculos y experimentos interactivos."
+  },
+  {
+    "objectID": "unidad11.html#explicación-de-la-actividad-2",
+    "href": "unidad11.html#explicación-de-la-actividad-2",
+    "title": "12  ¿Cómo me amplío con Python?",
+    "section": "12.17 Explicación de la Actividad:",
+    "text": "12.17 Explicación de la Actividad:\nEsta actividad permite a los participantes experimentar con FastAPI y PyScript para crear una API básica y ejecutar scripts interactivos. Les ayuda a comprender cómo utilizar FastAPI para construir APIs de manera rápida y cómo utilizar PyScript para escribir y ejecutar código Python de manera interactiva en la consola."
+  },
+  {
+    "objectID": "unidad12.html#explicación",
+    "href": "unidad12.html#explicación",
+    "title": "13  Proyecto: API de Tareas con Django Rest Framework",
+    "section": "13.1 Explicación:",
+    "text": "13.1 Explicación:\nEn este proyecto, construiremos una API utilizando Django Rest Framework para gestionar tareas. La API permitirá a los usuarios crear, actualizar, listar y eliminar tareas. Utilizaremos Django Rest Framework para definir los modelos, las vistas y las URL necesarias para interactuar con la API."
+  },
+  {
+    "objectID": "unidad12.html#qué-se-necesita-conocer",
+    "href": "unidad12.html#qué-se-necesita-conocer",
+    "title": "13  Proyecto: API de Tareas con Django Rest Framework",
+    "section": "13.2 Qué se necesita conocer:",
+    "text": "13.2 Qué se necesita conocer:\n\nConocimientos básicos de Python.\nFamiliaridad con Django y Django Rest Framework.\nEntorno de desarrollo configurado con Django y Django Rest Framework."
+  },
+  {
+    "objectID": "unidad12.html#estructura-del-proyecto",
+    "href": "unidad12.html#estructura-del-proyecto",
+    "title": "13  Proyecto: API de Tareas con Django Rest Framework",
+    "section": "13.3 Estructura del Proyecto:",
+    "text": "13.3 Estructura del Proyecto:\nproyecto_api_tareas/\n├── api_tareas/\n│   ├── migrations/\n│   ├── templates/\n│   ├── __init__.py\n│   ├── admin.py\n│   ├── apps.py\n│   ├── models.py\n│   ├── serializers.py\n│   ├── tests.py\n│   └── views.py\n├── proyecto_api_tareas/\n│   ├── __init__.py\n│   ├── asgi.py\n│   ├── settings.py\n│   ├── urls.py\n│   └── wsgi.py\n├── db.sqlite3\n└── manage.py"
+  },
+  {
+    "objectID": "unidad12.html#código",
+    "href": "unidad12.html#código",
+    "title": "13  Proyecto: API de Tareas con Django Rest Framework",
+    "section": "13.4 Código:",
+    "text": "13.4 Código:\n#models.py:\nfrom django.db import models\n\nclass Tarea(models.Model):\n    titulo = models.CharField(max_length=100)\n    descripcion = models.TextField()\n    fecha_creacion = models.DateTimeField(auto_now_add=True)\n    completada = models.BooleanField(default=False)\n\n    def __str__(self):\n        return self.titulo\n#serializers.py:\n\nfrom rest_framework import serializers\nfrom .models import Tarea\n\nclass TareaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Tarea\n        fields = '__all__'\n#views.py:\nfrom rest_framework import viewsets\nfrom .models import Tarea\nfrom .serializers import TareaSerializer\n\nclass TareaViewSet(viewsets.ModelViewSet):\n    queryset = Tarea.objects.all()\n    serializer_class = TareaSerializer\n\n    urls.py (api_tareas):\nfrom rest_framework.routers import DefaultRouter\nfrom .views import TareaViewSet\n\nrouter = DefaultRouter()\nrouter.register(r'tareas', TareaViewSet)\n\nurlpatterns = router.urls\nA continuación en el archivo settings.py agregar ‘rest_framework’ y ‘api_tareas’ en INSTALLED_APPS.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nConfigura un proyecto Django y una aplicación llamada ‘api_tareas’.\nDefine el modelo Tarea en models.py con los campos necesarios.\nCrea un serializador en serializers.py para el modelo Tarea.\nImplementa las vistas en views.py utilizando Django Rest Framework.\nConfigura las URLs en urls.py para las vistas de la API.\nMigrar y ejecutar el servidor para probar la API utilizando el navegador o herramientas como Postman."
+  },
+  {
+    "objectID": "unidad12.html#explicación-de-la-actividad",
+    "href": "unidad12.html#explicación-de-la-actividad",
+    "title": "13  Proyecto: API de Tareas con Django Rest Framework",
+    "section": "13.5 Explicación de la Actividad:",
+    "text": "13.5 Explicación de la Actividad:\nEste proyecto permite a los participantes aplicar los conocimientos adquiridos en Django y Django Rest Framework para crear una API de gestión de tareas. Aprenden cómo definir modelos, serializadores, vistas y URLs en Django Rest Framework para construir una API completa. Les ayuda a comprender cómo desarrollar aplicaciones web con APIs utilizando tecnologías modernas."
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-1",
+    "href": "ejercicios.html#ejercicio-1",
+    "title": "14  Ejercicios",
+    "section": "14.1 Ejercicio 1:",
+    "text": "14.1 Ejercicio 1:\n¿Cómo se define una variable en Python?\n\n\nRespuesta:\n\nSe define una variable en Python asignándole un nombre y un valor. Por ejemplo:\nnombre = \"Juan\""
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-2",
+    "href": "ejercicios.html#ejercicio-2",
+    "title": "14  Ejercicios",
+    "section": "14.2 Ejercicio 2:",
+    "text": "14.2 Ejercicio 2:\n¿Cuál es el resultado de la siguiente expresión?\nx = 10\ny = 5\nresultado = x + y\nprint(resultado)\n\n\nRespuesta:\n\nEl resultado de la expresión es 15, ya que se suman los valores de las variables x (10) y y (5)."
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-3",
+    "href": "ejercicios.html#ejercicio-3",
+    "title": "14  Ejercicios",
+    "section": "14.3 Ejercicio 3:",
+    "text": "14.3 Ejercicio 3:\n¿Qué hace el siguiente fragmento de código?\nfrutas = [\"manzana\", \"banana\", \"naranja\"]\nfor fruta in frutas:\n    print(fruta)\n\n\nRespuesta:\n\nEl código recorre la lista frutas e imprime cada elemento en una línea separada:\nmanzana\nbanana\nnaranja"
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-4",
+    "href": "ejercicios.html#ejercicio-4",
+    "title": "14  Ejercicios",
+    "section": "14.4 Ejercicio 4:",
+    "text": "14.4 Ejercicio 4:\n¿Cuál es el valor de la variable resultado después de ejecutar el siguiente código?\nnumero = 7\nresultado = numero * 2\nresultado = resultado + 3\n\n\nRespuesta:\n\nEl valor de la variable resultado es 17, ya que se multiplica numero por 2 (14) y luego se le suma 3."
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-5",
+    "href": "ejercicios.html#ejercicio-5",
+    "title": "14  Ejercicios",
+    "section": "14.5 Ejercicio 5:",
+    "text": "14.5 Ejercicio 5:\n¿Qué tipo de dato es el resultado de la siguiente expresión?\nresultado = 10 / 2\n\n\nRespuesta:\n\nEl resultado es de tipo float (número de punto flotante), ya que la división produce un valor decimal."
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-6",
+    "href": "ejercicios.html#ejercicio-6",
+    "title": "14  Ejercicios",
+    "section": "14.6 Ejercicio 6:",
+    "text": "14.6 Ejercicio 6:\n¿Cómo se define una función en Python?\n\n\nRespuesta:\n\nUna función en Python se define utilizando la palabra clave def, seguida del nombre de la función y los parámetros entre paréntesis. Por ejemplo:\ndef saludar(nombre):\n    print(\"Hola,\", nombre)"
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-7",
+    "href": "ejercicios.html#ejercicio-7",
+    "title": "14  Ejercicios",
+    "section": "14.7 Ejercicio 7:",
+    "text": "14.7 Ejercicio 7:\n¿Cuál es la salida de este código?\nnumero = 5\nif numero &gt; 0:\n    print(\"El número es positivo\")\nelse:\n    print(\"El número no es positivo\")\n\n\nRespuesta:\n\nLa salida es:\nEl número es positivo\nya que el valor de numero (5) es mayor que 0."
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-8",
+    "href": "ejercicios.html#ejercicio-8",
+    "title": "14  Ejercicios",
+    "section": "14.8 Ejercicio 8:",
+    "text": "14.8 Ejercicio 8:\n¿Qué hace el siguiente código?\nfor i in range(3):\n    print(i)\n\n\nRespuesta:\n\nEl código imprime los números del 0 al 2 en líneas separadas:\n0\n1\n2"
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-9",
+    "href": "ejercicios.html#ejercicio-9",
+    "title": "14  Ejercicios",
+    "section": "14.9 Ejercicio 9:",
+    "text": "14.9 Ejercicio 9:\n¿Cuál es el valor de la variable longitud después de ejecutar este código?\nfrase = \"Hola, mundo\"\nlongitud = len(frase)\n\n\nRespuesta:\n\nEl valor de la variable longitud será 11, ya que la función len() retorna la cantidad de caracteres en la cadena."
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-10",
+    "href": "ejercicios.html#ejercicio-10",
+    "title": "14  Ejercicios",
+    "section": "14.10 Ejercicio 10:",
+    "text": "14.10 Ejercicio 10:\n¿Cuál es la sintaxis correcta para importar la biblioteca math en Python?\n\n\nRespuesta:\n\nLa sintaxis correcta es:\nimport math"
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-11",
+    "href": "ejercicios.html#ejercicio-11",
+    "title": "14  Ejercicios",
+    "section": "14.11 Ejercicio 11:",
+    "text": "14.11 Ejercicio 11:\n¿Qué método se utiliza para agregar un elemento al final de una lista?\n\n\nRespuesta:\n\nEl método utilizado para agregar un elemento al final de una lista es append(). Por ejemplo:\nmi_lista = [1, 2, 3]\nmi_lista.append(4)"
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-12",
+    "href": "ejercicios.html#ejercicio-12",
+    "title": "14  Ejercicios",
+    "section": "14.12 Ejercicio 12:",
+    "text": "14.12 Ejercicio 12:\n¿Cuál es el resultado de la siguiente expresión?\nresultado = 2 ** 3\n\n\nRespuesta:\n\nEl resultado de la expresión es 8, ya que 2 ** 3 representa la potencia de 2 elevado a la 3, que es 8."
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-13",
+    "href": "ejercicios.html#ejercicio-13",
+    "title": "14  Ejercicios",
+    "section": "14.13 Ejercicio 13:",
+    "text": "14.13 Ejercicio 13:\n¿Qué función se utiliza para convertir un valor a tipo int en Python?\n\n\nRespuesta:\n\nLa función utilizada para convertir un valor a tipo int es int(). Por ejemplo:\nnumero = int(\"10\")"
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-14",
+    "href": "ejercicios.html#ejercicio-14",
+    "title": "14  Ejercicios",
+    "section": "14.14 Ejercicio 14:",
+    "text": "14.14 Ejercicio 14:\n¿Qué método se utiliza para unir elementos de una lista en una cadena?\n\n\nRespuesta:\n\nEl método utilizado para unir elementos de una lista en una cadena es join(). Por ejemplo:\nelementos = [\"a\", \"b\", \"c\"]\ncadena = \"-\".join(elementos)"
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-15",
+    "href": "ejercicios.html#ejercicio-15",
+    "title": "14  Ejercicios",
+    "section": "14.15 Ejercicio 15:",
+    "text": "14.15 Ejercicio 15:\n¿Cuál es la salida de este código?\nfor i in range(1, 6):\n    if i == 3:\n        continue\n    print(i)\n\n\nRespuesta:\n\nLa salida es:\n1\n2\n4\n5\nya que el valor 3 es omitido debido al uso de continue."
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-16",
+    "href": "ejercicios.html#ejercicio-16",
+    "title": "14  Ejercicios",
+    "section": "14.16 Ejercicio 16:",
+    "text": "14.16 Ejercicio 16:\n¿Qué método se utiliza para eliminar un elemento específico de una lista?\n\n\nRespuesta:\n\nEl método utilizado para eliminar un elemento específico de una lista es remove(). Por ejemplo:\nmi_lista = [1, 2, 3]\nmi_lista.remove(2)"
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-17",
+    "href": "ejercicios.html#ejercicio-17",
+    "title": "14  Ejercicios",
+    "section": "14.17 Ejercicio 17:",
+    "text": "14.17 Ejercicio 17:\n¿Cómo se define una clase en Python?\n\n\nRespuesta:\n\nUna clase en Python se define utilizando la palabra clave class, seguida del nombre de la clase y los métodos y atributos definidos dentro de la clase. Por ejemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad"
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-18",
+    "href": "ejercicios.html#ejercicio-18",
+    "title": "14  Ejercicios",
+    "section": "14.18 Ejercicio 18:",
+    "text": "14.18 Ejercicio 18:\n¿Cuál es el resultado de la siguiente expresión?\nx = \"Hola\"\ny = \"Mundo\"\nresultado = x + \" \" + y\n\n\nRespuesta:\n\nEl resultado de la expresión es la cadena “Hola Mundo”, ya que se concatenan las cadenas x y y junto con un espacio."
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-19",
+    "href": "ejercicios.html#ejercicio-19",
+    "title": "14  Ejercicios",
+    "section": "14.19 Ejercicio 19:",
+    "text": "14.19 Ejercicio 19:\n¿Cómo se crea una nueva base de datos en PostgreSQL utilizando SQL?\n\n\nRespuesta:\n\nPara crear una nueva base de datos en PostgreSQL utilizando SQL, se utiliza la siguiente consulta:\nCREATE DATABASE nombre_basededatos;"
+  },
+  {
+    "objectID": "ejercicios.html#ejercicio-20",
+    "href": "ejercicios.html#ejercicio-20",
+    "title": "14  Ejercicios",
+    "section": "14.20 Ejercicio 20:",
+    "text": "14.20 Ejercicio 20:\n¿Cuál es la forma correcta de realizar una consulta a una colección en MongoDB?\n\n\nRespuesta:\n\nLa forma correcta de realizar una consulta a una colección en MongoDB es utilizando el método find(). Por ejemplo:\nresultados = db.coleccion.find({\"campo\": valor})"
+  },
+  {
     "objectID": "about.html#nuestro-objetivo",
     "href": "about.html#nuestro-objetivo",
     "title": "Acerca de Nosotros",
