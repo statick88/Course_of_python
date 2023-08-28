@@ -1,0 +1,506 @@
+# Ejercicios por Unidades.
+
+## UNIDAD I: Introducción a la programación
+
+Ejercicio 1:
+¿Cuál es el objetivo principal de la programación?
+<details>
+<summary>Respuesta:</summary>
+El objetivo principal de la programación es resolver problemas y automatizar tareas utilizando un lenguaje de programación.
+</details>
+
+Ejercicio 2:
+¿Qué es un algoritmo?
+<details>
+<summary>Respuesta:</summary>
+Un algoritmo es un conjunto de instrucciones ordenadas y precisas que describen cómo realizar una tarea o resolver un problema.
+</details>
+
+Ejercicio 3:
+¿Cuál es la importancia de la indentación en Python?
+<details>
+<summary>Respuesta:</summary>
+La indentación en Python es importante porque define el bloque de código perteneciente a una estructura, como un bucle o una función. Python utiliza la indentación en lugar de llaves u otros caracteres para delimitar bloques de código.
+</details>
+
+Ejercicio 4:
+¿Qué es un comentario en programación?
+<details>
+<summary>Respuesta:</summary>
+Un comentario en programación es un texto explicativo que se agrega en el código para hacerlo más comprensible. Los comentarios son ignorados por el intérprete y son útiles para documentar el código.
+</details>
+
+Ejercicio 5:
+Escribe un programa en Python que imprima "¡Hola, mundo!".
+<details>
+<summary>Respuesta:</summary>
+```python
+print("¡Hola, mundo!")
+```
+</details>
+
+## UNIDAD II: Instalación de Python y más herramientas
+
+Ejercicio 6:
+¿Cuál es la forma de verificar la versión de Python instalada en tu sistema?
+<details>
+<summary>Respuesta:</summary>
+Ejecutando el comando `python --version` en la línea de comandos.
+</details>
+
+Ejercicio 7:
+¿Cuál es el propósito de Git en el desarrollo de software?
+<details>
+<summary>Respuesta:</summary>
+Git es un sistema de control de versiones que permite rastrear cambios en el código, colaborar con otros desarrolladores y mantener un historial completo de modificaciones en un proyecto.
+</details>
+
+Ejercicio 8:
+¿Cómo se instala una extensión (extensión) en Visual Studio Code?
+<details>
+<summary>Respuesta:</summary>
+En Visual Studio Code, puedes instalar extensiones desde la barra lateral izquierda, haciendo clic en el ícono de extensiones (cuatro cuadros) y buscando la extensión que deseas instalar.
+</details>
+
+Ejercicio 9:
+¿Cuál es el resultado del siguiente código?
+
+```python
+print("Hola, " + "mundo")
+```
+<details>
+<summary>Respuesta:</summary>
+El resultado es la cadena "Hola, mundo" al concatenar las dos cadenas.
+</details>
+
+Ejercicio 10:
+¿Cuál es el propósito de un entorno virtual en Python?
+<details>
+<summary>Respuesta:</summary>
+Un entorno virtual en Python permite aislar y gestionar las dependencias y paquetes utilizados en un proyecto específico, evitando conflictos con otros proyectos y asegurando un entorno limpio y controlado.
+</details>
+
+## UNIDAD III: Introducción a Python
+
+Ejercicio 11:
+¿Cuál es la diferencia entre una variable y una constante en programación?
+<details>
+<summary>Respuesta:</summary>
+Una variable puede cambiar su valor a lo largo del programa, mientras que una constante mantiene su valor constante durante la ejecución.
+</details>
+
+Ejercicio 12:
+Escribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida con el nombre ingresado.
+<details>
+<summary>Respuesta:</summary>
+```python
+nombre = input("Ingresa tu nombre: ")
+print("¡Bienvenido,", nombre, "!")
+```
+</details>
+
+Ejercicio 13:
+¿Cuál es el valor de la variable resultado después de ejecutar el siguiente código?
+
+```python
+x = 5
+y = 2
+resultado = x // y
+```
+<details>
+<summary>Respuesta:</summary>
+El valor de la variable `resultado` será 2, ya que `//` realiza la división entera de 5 entre 2.
+</details>
+
+Ejercicio 14:
+Escribe un programa en Python que determine si un número ingresado por el usuario es par o impar.
+<details>
+<summary>Respuesta:</summary>
+```python
+numero = int(input("Ingresa un número: "))
+if numero % 2 == 0:
+    print("El número es par.")
+else:
+    print("El número es impar.")
+```
+</details>
+
+Ejercicio 15:
+¿Cuál es la función del operador not en Python?
+<details>
+<summary>Respuesta:</summary>
+El operador `not` se utiliza para negar una expresión booleana. Si la expresión es verdadera, `not` la convierte en falsa, y viceversa.
+</details>
+
+## UNIDAD IV: Tipos de Datos
+
+Ejercicio 16:
+¿Cuál es la diferencia entre una lista y una tupla en Python?
+<details>
+<summary>Respuesta:</summary>
+La principal diferencia es que las listas son mutables (pueden cambiar) y las tuplas son inmutables (no pueden cambiar). En otras palabras, puedes agregar, eliminar y modificar elementos en una lista, pero no en una tupla.
+</details>
+
+Ejercicio 17:
+Escribe un programa que ordene una lista de números en orden ascendente.
+<details>
+<summary>Respuesta:</summary>
+```python
+numeros = [4, 1, 6, 3, 2]
+numeros.sort()
+print(numeros)
+```
+</details>
+
+Ejercicio 18:
+¿Cómo se accede al tercer elemento de una lista en Python?
+<details>
+<summary>Respuesta:</summary>
+Utilizando el índice `2`. Por ejemplo, si la lista se llama `mi_lista`, puedes acceder al tercer elemento con `mi_lista[2]`.
+</details>
+
+Ejercicio 19:
+¿Qué método se utiliza para agregar un elemento al final de una lista?
+<details>
+<summary>Respuesta:</summary>
+El método utilizado es `append()`. Por ejemplo, `mi_lista.append(7)` agrega el número 7 al final de la lista.
+</details>
+
+Ejercicio 20:
+Escribe un programa que cuente cuántas veces aparece un elemento específico en una lista.
+<details>
+<summary>Respuesta:</summary>
+```python
+mi_lista = [2, 4, 6, 4, 8, 4, 10]
+elemento = 4
+contador = mi_lista.count(elemento)
+print("El elemento", elemento, "aparece", contador, "veces.")
+```
+</details>
+
+## UNIDAD V: Control de Flujo
+
+Ejercicio 21:
+Escribe un programa que determine si un número ingresado por el usuario es positivo, negativo o cero.
+<details>
+<summary>Respuesta:</summary>
+```python
+numero = int(input("Ingresa un número: "))
+if numero > 0:
+    print("El número es positivo.")
+elif numero < 0:
+    print("El número es negativo.")
+else:
+    print("El número es cero.")
+```
+</details>
+
+Ejercicio 22:
+¿Qué hace el siguiente código?
+
+```python
+contador = 0
+while contador < 5:
+    print(contador)
+    contador += 1
+```
+<details>
+<summary>Respuesta:</summary>
+El código imprime los números del 0 al 4 en líneas separadas utilizando un bucle `while`.
+</details>
+
+Ejercicio 23:
+¿Cuál es el resultado de la siguiente expresión?
+
+```python
+resultado = 0
+for i in range(1, 6):
+    resultado += i
+print(resultado)
+```
+<details>
+<summary>Respuesta:</summary>
+El resultado es 15, ya que se suma los números del 1 al 5 en el bucle `for`.
+</details>
+
+Ejercicio 24:
+Escribe un programa que calcule la suma de todos los números pares entre 1 y 100.
+<details>
+<summary>Respuesta:</summary>
+```python
+suma = 0
+for i in range(2, 101, 2):
+    suma += i
+print("La suma de los números pares entre 1 y 100 es:", suma)
+```
+</details>
+
+Ejercicio 25:
+¿Cuál es el propósito de la instrucción break en un bucle?
+<details>
+<summary>Respuesta:</summary>
+La instrucción `break` se utiliza para salir inmediatamente de un bucle, interrumpiendo su ejecución antes de que termine naturalmente.
+</details>
+
+## UNIDAD VI: Funciones
+
+Ejercicio 26:
+¿Qué es una función en programación?
+<details>
+<summary>Respuesta:</summary>
+Una función es un bloque de código reutilizable que realiza una tarea específica. Puede recibir argumentos, ejecutar instrucciones y devolver un valor.
+</details>
+
+Ejercicio 27:
+Escribe una función en Python que calcule el área de un círculo.
+<details>
+<summary>Respuesta:</summary>
+```python
+import math
+
+def area_circulo(radio):
+return math.pi * radio ** 2
+```
+</details>
+
+**Ejercicio 28:**
+¿Qué es la recursividad en programación?
+
+<details>
+<summary>Respuesta:</summary>
+La recursividad es una técnica donde una función se llama a sí misma para resolver un problema. Es útil para resolver problemas que se pueden descomponer en subproblemas similares.
+</details>
+
+**Ejercicio 29:**
+Escribe una función recursiva en Python para calcular el factorial de un número.
+
+<details>
+<summary>Respuesta:</summary>
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+```
+</details>
+
+Ejercicio 30:
+¿Por qué es importante utilizar funciones en la programación?
+<details>
+<summary>Respuesta:</summary>
+Las funciones permiten dividir el código en bloques más pequeños y manejables, lo que facilita la reutilización, la depuración y la comprensión del código. Además, promueven la modularidad y el diseño limpio.
+</details>
+
+## UNIDAD VII: Objetos, clases y herencia
+
+Ejercicio 31:
+¿Qué es una clase en programación orientada a objetos?
+<details>
+<summary>Respuesta:</summary>
+Una clase es un plano o plantilla para crear objetos en programación orientada a objetos. Define las propiedades (atributos) y comportamientos (métodos) que tendrán los objetos creados a partir de ella.
+</details>
+
+Ejercicio 32:
+Escribe una clase en Python llamada Persona con los atributos nombre y edad, y un método saludar() que imprima un saludo con el nombre de la persona.
+<details>
+<summary>Respuesta:</summary>
+```python
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+```
+```python
+def saludar(self):
+    print("¡Hola, soy", self.nombre, "y tengo", self.edad, "años!")
+```
+</details>
+
+**Ejercicio 33:**
+¿Qué es la herencia en programación orientada a objetos?
+
+<details>
+<summary>Respuesta:</summary>
+La herencia es un concepto en el que una clase (subclase) puede heredar atributos y métodos de otra clase (superclase). Permite reutilizar y extender el código de una clase existente para crear una nueva clase.
+</details>
+
+**Ejercicio 34:**
+Escribe una clase en Python llamada `Estudiante` que herede de la clase `Persona` y tenga un atributo adicional `curso`.
+
+<details>
+<summary>Respuesta:</summary>
+```python
+class Estudiante(Persona):
+    def __init__(self, nombre, edad, curso):
+        super().__init__(nombre, edad)
+        self.curso = curso
+```
+</details>
+
+Ejercicio 35:
+¿Por qué es beneficioso utilizar la herencia en programación?
+<details>
+<summary>Respuesta:</summary>
+La herencia permite reutilizar código, promover la coherencia y facilitar la actualización y mantenimiento. También permite crear jerarquías de clases para modelar relaciones entre objetos del mundo real.
+</details>
+
+## UNIDAD VIII: Módulos
+
+Ejercicio 36:
+¿Qué es un módulo en Python?
+<details>
+<summary>Respuesta:</summary>
+Un módulo en Python es un archivo que contiene definiciones y declaraciones de variables, funciones y clases. Permite organizar y reutilizar el código en diferentes programas.
+</details>
+
+Ejercicio 37:
+Escribe un módulo en Python llamado operaciones que contenga una función suma para sumar dos números.
+<details>
+<summary>Respuesta:</summary>
+Archivo `operaciones.py`:
+```python
+def suma(a, b):
+    return a + b
+```
+</details>
+
+Ejercicio 38:
+¿Cómo se importa un módulo en Python?
+<details>
+<summary>Respuesta:</summary>
+Se importa utilizando la palabra clave `import`, seguida del nombre del módulo. Por ejemplo, `import operaciones` importaría el módulo `operaciones`.
+</details>
+
+Ejercicio 39:
+Escribe un programa que utilice la función suma del módulo operaciones para sumar dos números ingresados por el usuario.
+<details>
+<summary>Respuesta:</summary>
+
+```python
+import operaciones
+
+num1 = float(input("Ingresa el primer número: "))
+num2 = float(input("Ingresa el segundo número: "))
+resultado = operaciones.suma(num1, num2)
+print("La suma es:", resultado)
+```
+</details>
+
+**Ejercicio 40:**
+¿Cuál es la ventaja de utilizar módulos en Python?
+
+<details>
+<summary>Respuesta:</summary>
+Los módulos permiten la modularidad, la reutilización de código y la organización efectiva del código en componentes separados. También facilitan la colaboración y la mantenibilidad.
+</details>
+
+## UNIDAD IX: Introducción a Bases de Datos
+
+Ejercicio 41:
+¿Qué es una base de datos en el contexto de la programación?
+<details>
+<summary>Respuesta:</summary>
+Una base de datos es un sistema organizado para almacenar, administrar y recuperar información de manera eficiente. Se utiliza para almacenar datos estructurados de manera persistente.
+</details>
+
+Ejercicio 42:
+¿Qué es PostgreSQL?
+<details>
+<summary>Respuesta:</summary>
+PostgreSQL es un sistema de gestión de bases de datos relacional de código abierto y potente. Es conocido por su capacidad de manejar cargas de trabajo complejas y por sus características avanzadas.
+</details>
+
+Ejercicio 43:
+¿Qué es MongoDB?
+<details>
+<summary>Respuesta:</summary>
+MongoDB es una base de datos NoSQL orientada a documentos. Almacena los datos en documentos JSON flexibles en lugar de en tablas tradicionales, lo que permite una gran flexibilidad y escalabilidad.
+</details>
+
+Ejercicio 44:
+¿Cuál es la ventaja de utilizar bases de datos en programas?
+<details>
+<summary>Respuesta:</summary>
+Las bases de datos permiten almacenar y administrar grandes cantidades de datos de manera estructurada y eficiente. Esto facilita el acceso y la manipulación de datos en aplicaciones.
+</details>
+
+Ejercicio 45:
+¿Cuál es el propósito de una clave primaria en una base de datos?
+<details>
+<summary>Respuesta:</summary>
+Una clave primaria es un campo único en una tabla que se utiliza para identificar de manera única cada registro en la tabla. Se utiliza como referencia para relacionar tablas y mantener la integridad de los datos.
+</details>
+UNIDAD X: MySQL, PostgreSQL y MongoDB: Operaciones básicas en bases de datos
+
+Ejercicio 46:
+¿Cómo se realiza una consulta básica a una tabla en SQL?
+<details>
+<summary>Respuesta:</summary>
+Utilizando la sentencia `SELECT`. Por ejemplo, `SELECT * FROM tabla` recuperará todos los registros de la tabla.
+</details>
+
+Ejercicio 47:
+¿Qué comando se utiliza para insertar un nuevo registro en una tabla en SQL?
+<details>
+<summary>Respuesta:</summary>
+El comando utilizado es `INSERT INTO`. Por ejemplo, `INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2)` insertará un nuevo registro en la tabla.
+</details>
+
+Ejercicio 48:
+¿Cómo se actualiza un registro en una tabla en SQL?
+<details>
+<summary>Respuesta:</summary>
+Utilizando el comando `UPDATE`. Por ejemplo, `UPDATE tabla SET columna = valor WHERE condicion` actualizará los registros que cumplan con la condición.
+</details>
+
+Ejercicio 49:
+¿Cuál es el propósito de la sentencia DELETE en SQL?
+<details>
+<summary>Respuesta:</summary>
+La sentencia `DELETE` se utiliza para eliminar uno o varios registros de una tabla. Por ejemplo, `DELETE FROM tabla WHERE condicion` eliminará los registros que cumplan con la condición.
+</details>
+
+Ejercicio 50:
+¿Cuál es la ventaja de utilizar bases de datos NoSQL como MongoDB?
+<details>
+<summary>Respuesta:</summary>
+Las bases de datos NoSQL, como MongoDB, son flexibles y escalables, lo que las hace ideales para manejar grandes cantidades de datos no estructurados o semiestructurados. Son adecuadas para aplicaciones web y móviles modernas.
+</details>
+
+## UNIDAD XI: ¿Cómo me amplío con Python?
+
+Ejercicio 51:
+¿Qué es la ciencia de datos y cómo se relaciona con Python?
+<details>
+<summary>Respuesta:</summary>
+La ciencia de datos es el proceso de extracción, transformación y análisis de datos para obtener conocimientos y tomar decisiones informadas. Python es ampliamente utilizado en la ciencia de datos debido a su amplio ecosistema de bibliotecas y herramientas.
+</details>
+
+Ejercicio 52:
+¿Qué es Django Framework y para qué se utiliza?
+<details>
+<summary>Respuesta:</summary>
+Django es un framework web de alto nivel en Python que facilita la creación de aplicaciones web robustas y escalables. Se utiliza para construir sitios web y aplicaciones con características como autenticación, seguridad y manejo de bases de datos.
+</details>
+
+Ejercicio 53:
+¿Qué es FastAPI y cómo se diferencia de otros frameworks?
+<details>
+<summary>Respuesta:</summary>
+FastAPI es un framework web moderno y de alto rendimiento para construir APIs en Python. Se destaca por su velocidad, facilidad de uso y generación automática de documentación interactiva. Utiliza anotaciones de tipo para validar datos y reducir errores.
+</details>
+
+Ejercicio 54:
+¿Cuál es el propósito de las APIs en el desarrollo web?
+<details>
+<summary>Respuesta:</summary>
+Las APIs (Interfaces de Programación de Aplicaciones) se utilizan para permitir la comunicación y la integración entre diferentes aplicaciones y sistemas. Facilitan el intercambio de datos y funcionalidades entre aplicaciones.
+</details>
+
+Ejercicio 55:
+¿Por qué es importante ampliarse en Python más allá de los conceptos básicos?
+<details>
+<summary>Respuesta:</summary>
+Ampliarse en Python permite abordar proyectos más complejos y desafiantes, como desarrollo web, análisis de datos, automatización, inteligencia artificial y más. Además, mejora las habilidades y la versatilidad como programador.
+</details>

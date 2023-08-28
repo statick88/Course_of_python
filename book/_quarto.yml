@@ -45,6 +45,7 @@ book:
     - unidad11.qmd
     - unidad12.qmd
     - ejercicios.qmd
+    - ejercicios2.qmd
 
 format:
   html:
