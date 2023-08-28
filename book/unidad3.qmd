@@ -1,0 +1,55 @@
+# Distintas formas de trabajar con Python
+
+## Contenido
+
+Python es un lenguaje de programación versátil que ofrece diferentes formas de interactuar con él. Aprenderemos las dos formas principales de trabajar con Python: **el intérprete interactivo** y los **scripts de Python**.
+
+## Conceptos Clave:
+
+### Intérprete Interactivo: 
+
+Permite ejecutar instrucciones de Python en tiempo real y ver los resultados inmediatamente en la consola.
+
+### Scripts de Python: 
+
+Son archivos que contienen una serie de instrucciones de Python que se pueden ejecutar en conjunto.
+
+### Ambientes Virtuales 
+
+Son entornos aislados que permiten tener instalaciones y bibliotecas de Python separadas para diferentes proyectos.
+
+### Ejemplo
+
+```python
+>>> 2 + 3 # <1>
+5
+
+# suma.py # <2>
+numero1 = 5
+numero2 = 7
+resultado = numero1 + numero2
+print("El resultado de la suma es:", resultado)
+# CTRL + S para guardar # <3>
+```
+1. Uso del intérprete interactivo
+2. Ejecución de un script de Python
+3. Guarda este código en un archivo llamado "suma.py"
+
+## Explicación
+
+El intérprete interactivo permite ejecutar expresiones de Python directamente en la consola y ver los resultados en tiempo real.
+
+Los scripts de Python son archivos que contienen un conjunto de instrucciones. En este ejemplo, se muestra cómo crear un script simple que calcula la suma de dos números y lo imprime en la consola.
+
+::: {.callout-important}
+
+### Actividad Práctica
+
+Abre el intérprete interactivo de Python y realiza algunas operaciones matemáticas simples.
+
+Crea un archivo llamado "operaciones.py" y escribe un programa que realice operaciones aritméticas básicas y las muestre en la consola.
+::: 
+
+### Explicación de la Actividad
+
+Esta actividad permite a los participantes experimentar con el intérprete interactivo de Python y crear su propio script para realizar operaciones matemáticas.

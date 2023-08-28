@@ -1,0 +1,49 @@
+# Introducción a la programación.
+
+## Contenido
+
+La programación es el proceso de crear secuencias de instrucciones que le indican a una computadora cómo realizar una tarea específica. Estas instrucciones se escriben en lenguajes de programación, que son conjuntos de reglas y símbolos utilizados para comunicarse con la máquina. La programación es una habilidad esencial en la era digital, ya que se aplica en una amplia variedad de campos, desde desarrollo de software y análisis de datos hasta diseño de juegos y automatización.
+
+## Conceptos Clave
+
+### Instrucciones
+
+Son comandos específicos que le indican a la computadora qué hacer. Pueden ser simples, como imprimir un mensaje en pantalla, o complejas, como realizar cálculos matemáticos.
+
+### Lenguajes de Programación
+
+Son sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reglas sintácticas y semánticas que determinan cómo se escriben y ejecutan las instrucciones.
+
+### Algoritmos
+
+Son conjuntos ordenados de instrucciones diseñados para resolver un problema específico. Los algoritmos son la base de la programación y se utilizan para desarrollar software eficiente.
+
+### Depuración
+
+Es el proceso de identificar y corregir errores en el código. Los programadores pasan tiempo depurando para asegurarse de que sus programas funcionen correctamente.
+
+**Ejemplo:**
+
+``` python
+print("Hola, bienvenido al mundo de la programación.") # <1>
+```
+
+1.  Este es un ejemplo sencillo de un programa en Python que imprime un mensaje en pantalla.
+
+### Explicación
+
+En Python, los comentarios comienzan con el símbolo `#`. No afectan la ejecución del programa, pero son útiles para documentar el código.
+
+La línea `print("Hola, bienvenido al mundo de la programación.")` es una instrucción de impresión. La función `print()` muestra el texto entre paréntesis en la consola.
+
+::: {.callout-important}
+
+### Actividad Práctica
+
+Escribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida personalizado.
+::: 
+
+### Explicación de la Actividad
+
+El programa utilizará la función `input()` para recibir la entrada del usuario.
+Luego, utilizará la entrada proporcionada para imprimir un mensaje de bienvenida personalizado.
