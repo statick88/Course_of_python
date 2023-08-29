@@ -1,6 +1,8 @@
 # Instalación de Python y más herramientas
 
-## Contenido:
+## Instalación de Python
+
+### Contenido:
 
 La instalación de Python es el primer paso para comenzar a programar en este lenguaje. Python es un lenguaje de programación versátil y ampliamente utilizado, conocido por su sintaxis clara y legible. Aquí aprenderemos cómo instalar Python en diferentes sistemas operativos.
 

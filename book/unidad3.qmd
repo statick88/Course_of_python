@@ -52,13 +52,13 @@ Abre el intérprete interactivo de Python y realiza algunas operaciones matemát
 Crea un archivo llamado "operaciones.py" y escribe un programa que realice operaciones aritméticas básicas y las muestre en la consola.
 ::: 
 
-### Explicación de la Actividad
+## Explicación de la Actividad
 
 Esta actividad permite a los participantes experimentar con el intérprete interactivo de Python y crear su propio script para realizar operaciones matemáticas.
 
 ## Las bases de Python
 
-## Contenido
+### Contenido
 
 En esta lección, exploraremos las bases fundamentales de Python. Aprenderemos sobre las variables, tipos de datos y operadores básicos que forman la base de cualquier programa en Python.
 
@@ -129,7 +129,7 @@ Esta actividad permite a los participantes aplicar los conceptos de variables, t
 
 ## Identación
 
-## Contenido
+### Contenido
 
 En Python, la identación (sangría) juega un papel crucial en la estructura y organización del código. Aprenderemos cómo se utiliza la identación para delimitar bloques de código y mejorar la legibilidad.
 
@@ -172,7 +172,7 @@ Esta actividad permite a los participantes comprender la importancia de la ident
 
 ## Comentarios
 
-## Contenido
+### Contenido
 
 Los comentarios son una herramienta importante en la programación para añadir explicaciones y notas en el código. Aprenderemos cómo agregar comentarios en Python y cómo pueden mejorar la comprensión del código.
 
@@ -190,7 +190,7 @@ Se crean con el símbolo "#" y abarcan una sola línea.
 
 Se crean entre triple comillas (""" o ''') y pueden abarcar múltiples líneas.
 
-### Ejemplo
+## Ejemplo
 
 ```python
 # Este es un comentario de una línea
@@ -225,7 +225,7 @@ Esta actividad permite a los participantes practicar la adición de comentarios 
 
 ## Variables
 
-## Contenido
+### Contenido
 
 Las variables son fundamentales en la programación ya que permiten almacenar y manipular datos. Aprenderemos cómo declarar y utilizar variables en Python.
 
@@ -240,7 +240,7 @@ Nombres que representan ubicaciones de memoria donde se almacenan datos.
 - Asignación de un valor a un nombre utilizando el operador "=".
 - Convenciones de Nombres: Siguen reglas para ser descriptivos y seguir una estructura (por ejemplo, letras minúsculas y guiones bajos para espacios).
 
-### Ejemplo
+## Ejemplo
 
 ``` python
 nombre = "Ana"
@@ -272,7 +272,7 @@ Les ayuda a comprender cómo almacenar y acceder a datos utilizando variables de
 
 ## Múltiples Variables
 
-## Contenido:
+### Contenido:
 
 En Python, es posible asignar valores a múltiples variables en una sola línea. Aprenderemos cómo declarar y utilizar múltiples variables de manera eficiente.
 
@@ -290,9 +290,9 @@ Se pueden asignar valores de una lista o tupla a múltiples variables en una sol
 
 Se pueden intercambiar los valores de dos variables utilizando asignación múltiple.
 
-### Ejemplo
+## Ejemplo
 
-``` python
+```python
 nombre, edad, altura = "María", 28, 1.65
 productos = ("Manzanas", "Peras", "Uvas")
 producto1, producto2, producto3 = productos
@@ -318,7 +318,7 @@ Les ayuda a comprender cómo trabajar eficientemente con múltiples variables y 
 
 ## Concatenación
 
-## Contenido:
+### Contenido:
 
 La concatenación es la unión de cadenas de texto. Aprenderemos cómo combinar cadenas de texto en Python para crear mensajes más complejos.
 
@@ -336,7 +336,7 @@ Se utiliza para concatenar cadenas de texto.
 
 Es necesario convertir valores no string a cadenas antes de concatenarlos.
 
-### Ejemplo
+## Ejemplo
 
 ```python
 nombre = "Luisa"

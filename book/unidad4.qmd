@@ -2,13 +2,13 @@
 
 ## String y Números
 
-## Contenido:
+### Contenido:
 
 Los strings y los números son dos tipos de datos fundamentales en Python. Aprenderemos cómo trabajar con strings (cadenas de texto) y los diferentes tipos de números en Python.
 
 ## Conceptos Clave:
 
-### String: 
+### String
 
 Secuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.
 
@@ -20,7 +20,7 @@ Representan números enteros positivos o negativos.
 
 Representan números con decimales.
 
-## Ejemplo:
+## Ejemplo
 
 ``` python
 # Strings
@@ -31,7 +31,7 @@ nombre = 'María'
 edad = 25
 saldo = 1500.75
 ```
-## Explicación:
+## Explicación
 
 En este ejemplo, se crean variables que almacenan strings y números.
 
@@ -57,7 +57,7 @@ Les ayuda a comprender cómo almacenar y manipular diferentes tipos de datos en 
 
 ## Listas
 
-### Contenido:
+#### Contenido:
 
 Las listas son estructuras de datos que permiten almacenar varios elementos en una sola variable. Aprenderemos cómo crear y manipular listas en Python.
 
@@ -82,7 +82,7 @@ frutas = ["manzana", "banana", "naranja", "uva"]
 primer_fruta = frutas[0]
 segunda_fruta = frutas[1]
 ```
-## Explicación:
+## Explicación
 
 En este ejemplo, se crea una lista de frutas y se accede a elementos individuales utilizando índices.
 
@@ -102,7 +102,7 @@ Esta actividad permite a los participantes practicar la creación de listas y el
 
 ## Tuplas
 
-### Contenido:
+#### Contenido:
 Las tuplas son estructuras de datos similares a las listas, pero son inmutables, lo que significa que no se pueden modificar después de ser creadas. Aprenderemos cómo trabajar con tuplas en Python.
 
 ## Conceptos Clave:
@@ -119,14 +119,14 @@ Una vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.
 
 Se utiliza el índice para acceder a un elemento específico de la tupla.
 
-## Ejemplo:
+## Ejemplo
 
 ```python
 coordenadas = (3, 5)
 x = coordenadas[0]
 y = coordenadas[1]
 ```
-## Explicación:
+## Explicación
 
 En este ejemplo, se crea una tupla que almacena coordenadas (x, y) y se accede a los valores individuales utilizando índices.
 
@@ -174,7 +174,7 @@ secuencia3 = range(1, 11, 2)   # 1, 3, 5, 7, 9
 lista_secuencia1 = list(secuencia1)
 ```
 
-## Explicación:
+## Explicación
 
 En este ejemplo, se utilizan diferentes valores para crear secuencias de números utilizando el tipo de dato range.
 
@@ -194,7 +194,7 @@ Esta actividad permite a los participantes practicar la creación de secuencias 
 
 ## Diccionarios
 
-### Contenido:
+#### Contenido:
 
 Los diccionarios son estructuras de datos que permiten almacenar pares clave-valor. Aprenderemos cómo crear y trabajar con diccionarios en Python.
 
@@ -212,7 +212,7 @@ Son los nombres o etiquetas utilizados para acceder a los valores en el dicciona
 
 Son los datos asociados a cada clave en el diccionario.
 
-## Ejemplo:
+## Ejemplo
 
 ``` python
 # Creación de un diccionario
@@ -227,7 +227,7 @@ nombre = persona["nombre"]
 edad = persona["edad"]
 ```
 
-## Explicación:
+## Explicación
 
 En este ejemplo, se crea un diccionario que almacena información de una persona, como nombre, edad y ciudad.
 
@@ -259,7 +259,7 @@ Tipo de dato que representa valores de verdad (True o False).
 
 Expresiones Lógicas: Combinaciones de valores booleanos utilizando operadores lógicos como and, or y not.
 
-## Ejemplo:
+## Ejemplo
 
 ```python
 # Variables booleanas
@@ -270,7 +270,7 @@ tiene_tarjeta = False
 puede_ingresar = es_mayor_de_edad and tiene_tarjeta
 ```
 
-## Explicación:
+## Explicación
 
 En este ejemplo, se utilizan variables booleanas para representar si alguien es mayor de edad y si tiene una tarjeta.
 
