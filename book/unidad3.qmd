@@ -4,7 +4,7 @@
 
 ## Contenido
 
- de programación versátil que ofrece diferentes formas de interactuar con él. Aprenderemos las dos formas principales de trabajar con Python: **el intérprete interactivo** y los **scripts de Python**.
+ Python es un lenguaje de programación versátil que ofrece diferentes formas de interactuar con él. Aprenderemos las dos formas principales de trabajar con Python: **el intérprete interactivo** y los **scripts de Python**.
 
 ## Conceptos Clave:
 
