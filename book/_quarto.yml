@@ -14,6 +14,7 @@ book:
   url: https://github.com/statick88/Course_of_python
   page-navigation: true
   downloads: [pdf, epub]
+  translator: [english, frances, spanish]
   sidebar: 
     logo: python-logo.png
     search: true
@@ -59,7 +60,6 @@ book:
         - unidades/unidad4/unidad4.4.qmd
         - unidades/unidad4/unidad4.5.qmd
         - unidades/unidad4/unidad4.6.qmd
-        - unidades/unidad4/unidad4.7.qmd
     - part: "Unidad 5: Control de Flujo"
       chapters: 
         - unidades/unidad5/unidad5.1.qmd
