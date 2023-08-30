@@ -28,25 +28,46 @@
     "text": "1.3 ¿Cómo contribuir?\nValoramos tu participación en este curso. Si encuentras errores, deseas sugerir mejoras o agregar contenido adicional, ¡nos encantaría escucharte! Puedes contribuir a través de nuestra plataforma en línea, donde puedes compartir tus comentarios y sugerencias. Juntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste libro ha sido creado con el objetivo de brindar acceso gratuito y universal al conocimiento. Estará disponible en línea para que cualquiera, sin importar su ubicación o circunstancias, pueda acceder y aprender a su propio ritmo.\n¡Esperamos que disfrutes este emocionante viaje de aprendizaje y descubrimiento en el mundo de la programación con Python!"
   },
   {
-    "objectID": "unidad1.html#contenido",
-    "href": "unidad1.html#contenido",
+    "objectID": "unidad1.html#introducción-general-a-la-programación",
+    "href": "unidad1.html#introducción-general-a-la-programación",
     "title": "2  Introducción a la programación.",
-    "section": "2.1 Contenido",
-    "text": "2.1 Contenido\nLa programación es el proceso de crear secuencias de instrucciones que le indican a una computadora cómo realizar una tarea específica.\nEstas instrucciones se escriben en lenguajes de programación, que son conjuntos de reglas y símbolos utilizados para comunicarse con la máquina. La programación es una habilidad esencial en la era digital, ya que se aplica en una amplia variedad de campos, desde desarrollo de software y análisis de datos hasta diseño de juegos y automatización."
+    "section": "2.1 Introducción general a la Programación",
+    "text": "2.1 Introducción general a la Programación\n\n2.1.1 Contenido\nLa programación es el proceso de crear secuencias de instrucciones que le indican a una computadora cómo realizar una tarea específica.\nEstas instrucciones se escriben en lenguajes de programación, que son conjuntos de reglas y símbolos utilizados para comunicarse con la máquina. La programación es una habilidad esencial en la era digital, ya que se aplica en una amplia variedad de campos, desde desarrollo de software y análisis de datos hasta diseño de juegos y automatización."
   },
   {
     "objectID": "unidad1.html#conceptos-clave",
     "href": "unidad1.html#conceptos-clave",
     "title": "2  Introducción a la programación.",
     "section": "2.2 Conceptos Clave",
-    "text": "2.2 Conceptos Clave\n\n2.2.1 Instrucciones\nSon comandos específicos que le indican a la computadora qué hacer. Pueden ser simples, como imprimir un mensaje en pantalla, o complejas, como realizar cálculos matemáticos.\n\n\n2.2.2 Lenguajes de Programación\nSon sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reglas sintácticas y semánticas que determinan cómo se escriben y ejecutan las instrucciones.\n\n\n2.2.3 Algoritmos\nSon conjuntos ordenados de instrucciones diseñados para resolver un problema específico. Los algoritmos son la base de la programación y se utilizan para desarrollar software eficiente.\n\n\n2.2.4 Depuración\nEs el proceso de identificar y corregir errores en el código. Los programadores pasan tiempo depurando para asegurarse de que sus programas funcionen correctamente.\nEjemplo:\n1print(\"Hola, bienvenido al mundo de la programación.\")\n\n1\n\nEste es un ejemplo sencillo de un programa en Python que imprime un mensaje en pantalla.\n\n\n\n\n2.2.5 Explicación\nEn Python, los comentarios comienzan con el símbolo #. No afectan la ejecución del programa, pero son útiles para documentar el código.\nLa línea print(\"Hola, bienvenido al mundo de la programación.\") es una instrucción de impresión. La función print() muestra el texto entre paréntesis en la consola.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nEscribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida personalizado.\n\n\n\n\n2.2.6 Explicación de la Actividad\nEl programa utilizará la función input() para recibir la entrada del usuario. Luego, utilizará la entrada proporcionada para imprimir un mensaje de bienvenida personalizado."
+    "text": "2.2 Conceptos Clave\n\n2.2.1 Instrucciones\nSon comandos específicos que le indican a la computadora qué hacer. Pueden ser simples, como imprimir un mensaje en pantalla, o complejas, como realizar cálculos matemáticos.\n\n\n2.2.2 Lenguajes de Programación\nSon sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reglas sintácticas y semánticas que determinan cómo se escriben y ejecutan las instrucciones.\n\n\n2.2.3 Algoritmos\nSon conjuntos ordenados de instrucciones diseñados para resolver un problema específico. Los algoritmos son la base de la programación y se utilizan para desarrollar software eficiente.\n\n\n2.2.4 Depuración\nEs el proceso de identificar y corregir errores en el código. Los programadores pasan tiempo depurando para asegurarse de que sus programas funcionen correctamente."
   },
   {
-    "objectID": "unidad2.html#contenido",
-    "href": "unidad2.html#contenido",
+    "objectID": "unidad1.html#ejemplo",
+    "href": "unidad1.html#ejemplo",
+    "title": "2  Introducción a la programación.",
+    "section": "2.3 Ejemplo:",
+    "text": "2.3 Ejemplo:\n1print(\"Hola, bienvenido al mundo de la programación.\")\n\n1\n\nEste es un ejemplo sencillo de un programa en Python que imprime un mensaje en pantalla."
+  },
+  {
+    "objectID": "unidad1.html#explicación",
+    "href": "unidad1.html#explicación",
+    "title": "2  Introducción a la programación.",
+    "section": "2.4 Explicación",
+    "text": "2.4 Explicación\nEn Python, los comentarios comienzan con el símbolo #. No afectan la ejecución del programa, pero son útiles para documentar el código.\nLa línea print(\"Hola, bienvenido al mundo de la programación.\") es una instrucción de impresión. La función print() muestra el texto entre paréntesis en la consola.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nEscribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida personalizado."
+  },
+  {
+    "objectID": "unidad1.html#explicación-de-la-actividad",
+    "href": "unidad1.html#explicación-de-la-actividad",
+    "title": "2  Introducción a la programación.",
+    "section": "2.5 Explicación de la Actividad",
+    "text": "2.5 Explicación de la Actividad\nEl programa utilizará la función input() para recibir la entrada del usuario. Luego, utilizará la entrada proporcionada para imprimir un mensaje de bienvenida personalizado."
+  },
+  {
+    "objectID": "unidad2.html#instalación-de-python",
+    "href": "unidad2.html#instalación-de-python",
     "title": "3  Instalación de Python y más herramientas",
-    "section": "3.1 Contenido:",
-    "text": "3.1 Contenido:\nLa instalación de Python es el primer paso para comenzar a programar en este lenguaje. Python es un lenguaje de programación versátil y ampliamente utilizado, conocido por su sintaxis clara y legible. Aquí aprenderemos cómo instalar Python en diferentes sistemas operativos."
+    "section": "3.1 Instalación de Python",
+    "text": "3.1 Instalación de Python\n\n3.1.1 Contenido:\nLa instalación de Python es el primer paso para comenzar a programar en este lenguaje. Python es un lenguaje de programación versátil y ampliamente utilizado, conocido por su sintaxis clara y legible. Aquí aprenderemos cómo instalar Python en diferentes sistemas operativos."
   },
   {
     "objectID": "unidad2.html#conceptos-clave",
@@ -88,7 +109,7 @@
     "href": "unidad3.html#contenido",
     "title": "4  Introducción a Python",
     "section": "4.2 Contenido",
-    "text": "4.2 Contenido\nde programación versátil que ofrece diferentes formas de interactuar con él. Aprenderemos las dos formas principales de trabajar con Python: el intérprete interactivo y los scripts de Python."
+    "text": "4.2 Contenido\nPython es un lenguaje de programación versátil que ofrece diferentes formas de interactuar con él. Aprenderemos las dos formas principales de trabajar con Python: el intérprete interactivo y los scripts de Python."
   },
   {
     "objectID": "unidad3.html#conceptos-clave",
@@ -102,21 +123,21 @@
     "href": "unidad3.html#explicación",
     "title": "4  Introducción a Python",
     "section": "4.4 Explicación",
-    "text": "4.4 Explicación\nEl intérprete interactivo permite ejecutar expresiones de Python directamente en la consola y ver los resultados en tiempo real.\nLos scripts de Python son archivos que contienen un conjunto de instrucciones. En este ejemplo, se muestra cómo crear un script simple que calcula la suma de dos números y lo imprime en la consola.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nAbre el intérprete interactivo de Python y realiza algunas operaciones matemáticas simples.\nCrea un archivo llamado “operaciones.py” y escribe un programa que realice operaciones aritméticas básicas y las muestre en la consola.\n\n\n\n4.4.1 Explicación de la Actividad\nEsta actividad permite a los participantes experimentar con el intérprete interactivo de Python y crear su propio script para realizar operaciones matemáticas."
+    "text": "4.4 Explicación\nEl intérprete interactivo permite ejecutar expresiones de Python directamente en la consola y ver los resultados en tiempo real.\nLos scripts de Python son archivos que contienen un conjunto de instrucciones. En este ejemplo, se muestra cómo crear un script simple que calcula la suma de dos números y lo imprime en la consola.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nAbre el intérprete interactivo de Python y realiza algunas operaciones matemáticas simples.\nCrea un archivo llamado “operaciones.py” y escribe un programa que realice operaciones aritméticas básicas y las muestre en la consola."
+  },
+  {
+    "objectID": "unidad3.html#explicación-de-la-actividad",
+    "href": "unidad3.html#explicación-de-la-actividad",
+    "title": "4  Introducción a Python",
+    "section": "4.5 Explicación de la Actividad",
+    "text": "4.5 Explicación de la Actividad\nEsta actividad permite a los participantes experimentar con el intérprete interactivo de Python y crear su propio script para realizar operaciones matemáticas."
   },
   {
     "objectID": "unidad3.html#las-bases-de-python",
     "href": "unidad3.html#las-bases-de-python",
     "title": "4  Introducción a Python",
-    "section": "4.5 Las bases de Python",
-    "text": "4.5 Las bases de Python"
-  },
-  {
-    "objectID": "unidad3.html#contenido-1",
-    "href": "unidad3.html#contenido-1",
-    "title": "4  Introducción a Python",
-    "section": "4.6 Contenido",
-    "text": "4.6 Contenido\nEn esta lección, exploraremos las bases fundamentales de Python. Aprenderemos sobre las variables, tipos de datos y operadores básicos que forman la base de cualquier programa en Python."
+    "section": "4.6 Las bases de Python",
+    "text": "4.6 Las bases de Python\n\n4.6.1 Contenido\nEn esta lección, exploraremos las bases fundamentales de Python. Aprenderemos sobre las variables, tipos de datos y operadores básicos que forman la base de cualquier programa en Python."
   },
   {
     "objectID": "unidad3.html#conceptos-clave-1",
@@ -144,392 +165,378 @@
     "href": "unidad3.html#identación",
     "title": "4  Introducción a Python",
     "section": "4.10 Identación",
-    "text": "4.10 Identación"
-  },
-  {
-    "objectID": "unidad3.html#contenido-2",
-    "href": "unidad3.html#contenido-2",
-    "title": "4  Introducción a Python",
-    "section": "4.11 Contenido",
-    "text": "4.11 Contenido\nEn Python, la identación (sangría) juega un papel crucial en la estructura y organización del código. Aprenderemos cómo se utiliza la identación para delimitar bloques de código y mejorar la legibilidad."
+    "text": "4.10 Identación\n\n4.10.1 Contenido\nEn Python, la identación (sangría) juega un papel crucial en la estructura y organización del código. Aprenderemos cómo se utiliza la identación para delimitar bloques de código y mejorar la legibilidad."
   },
   {
     "objectID": "unidad3.html#conceptos-clave-2",
     "href": "unidad3.html#conceptos-clave-2",
     "title": "4  Introducción a Python",
-    "section": "4.12 Conceptos Clave",
-    "text": "4.12 Conceptos Clave\n\n4.12.1 Identación\n\nEspacios o tabulaciones al comienzo de una línea que indican la estructura del código.\nBloques de Código: Conjuntos de instrucciones que se agrupan juntas y se ejecutan en conjunto.\nPEP 8: Guía de estilo para la escritura de código en Python que recomienda el uso de cuatro espacios para la identación.\n\n\n\n4.12.2 Ejemplo\n# Uso de la identación en un condicional\nnumero = 10\n\nif numero &gt; 5:\n    print(\"El número es mayor que 5\")\nelse:\n    print(\"El número no es mayor que 5\")"
+    "section": "4.11 Conceptos Clave",
+    "text": "4.11 Conceptos Clave\n\n4.11.1 Identación\n\nEspacios o tabulaciones al comienzo de una línea que indican la estructura del código.\nBloques de Código: Conjuntos de instrucciones que se agrupan juntas y se ejecutan en conjunto.\nPEP 8: Guía de estilo para la escritura de código en Python que recomienda el uso de cuatro espacios para la identación.\n\n\n\n4.11.2 Ejemplo\n# Uso de la identación en un condicional\nnumero = 10\n\nif numero &gt; 5:\n    print(\"El número es mayor que 5\")\nelse:\n    print(\"El número no es mayor que 5\")"
   },
   {
     "objectID": "unidad3.html#explicación-2",
     "href": "unidad3.html#explicación-2",
     "title": "4  Introducción a Python",
-    "section": "4.13 Explicación",
-    "text": "4.13 Explicación\n\nEn este ejemplo, la identación se utiliza para delimitar los bloques de código dentro de las instrucciones “if” y “else”.\nLa identación es crucial para que Python sepa qué instrucciones están dentro de un bloque y cuáles están fuera.\n\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nEscribe un programa que solicite al usuario su edad y muestre un mensaje según si es mayor de 18 años o no.\nIntenta cambiar la identación incorrectamente y observa cómo afecta al funcionamiento del programa."
+    "section": "4.12 Explicación",
+    "text": "4.12 Explicación\n\nEn este ejemplo, la identación se utiliza para delimitar los bloques de código dentro de las instrucciones “if” y “else”.\nLa identación es crucial para que Python sepa qué instrucciones están dentro de un bloque y cuáles están fuera.\n\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nEscribe un programa que solicite al usuario su edad y muestre un mensaje según si es mayor de 18 años o no.\nIntenta cambiar la identación incorrectamente y observa cómo afecta al funcionamiento del programa."
   },
   {
     "objectID": "unidad3.html#explicación-de-la-actividad.",
     "href": "unidad3.html#explicación-de-la-actividad.",
     "title": "4  Introducción a Python",
-    "section": "4.14 Explicación de la Actividad.",
-    "text": "4.14 Explicación de la Actividad.\nEsta actividad permite a los participantes comprender la importancia de la identación en Python al trabajar con bloques de código como los condicionales. Les ayuda a desarrollar el hábito de utilizar la identación adecuada para mantener el código organizado y legible."
+    "section": "4.13 Explicación de la Actividad.",
+    "text": "4.13 Explicación de la Actividad.\nEsta actividad permite a los participantes comprender la importancia de la identación en Python al trabajar con bloques de código como los condicionales. Les ayuda a desarrollar el hábito de utilizar la identación adecuada para mantener el código organizado y legible."
   },
   {
     "objectID": "unidad3.html#comentarios",
     "href": "unidad3.html#comentarios",
     "title": "4  Introducción a Python",
-    "section": "4.15 Comentarios",
-    "text": "4.15 Comentarios"
-  },
-  {
-    "objectID": "unidad3.html#contenido-3",
-    "href": "unidad3.html#contenido-3",
-    "title": "4  Introducción a Python",
-    "section": "4.16 Contenido",
-    "text": "4.16 Contenido\nLos comentarios son una herramienta importante en la programación para añadir explicaciones y notas en el código. Aprenderemos cómo agregar comentarios en Python y cómo pueden mejorar la comprensión del código."
+    "section": "4.14 Comentarios",
+    "text": "4.14 Comentarios\n\n4.14.1 Contenido\nLos comentarios son una herramienta importante en la programación para añadir explicaciones y notas en el código. Aprenderemos cómo agregar comentarios en Python y cómo pueden mejorar la comprensión del código."
   },
   {
     "objectID": "unidad3.html#conceptos-clave-3",
     "href": "unidad3.html#conceptos-clave-3",
     "title": "4  Introducción a Python",
-    "section": "4.17 Conceptos Clave:",
-    "text": "4.17 Conceptos Clave:\n\n4.17.1 Comentarios\nSon notas en el código que no se ejecutan y se utilizan para explicar el propósito y funcionamiento de partes del programa.\n\n\n4.17.2 Comentarios de una línea\nSe crean con el símbolo “#” y abarcan una sola línea.\n\n\n4.17.3 Comentarios de múltiples líneas\nSe crean entre triple comillas (““” o ’’’) y pueden abarcar múltiples líneas.\n\n\n4.17.4 Ejemplo\n# Este es un comentario de una línea\n\n\"\"\"\nEste es un comentario\nde múltiples líneas.\nPuede abarcar varias líneas.\n\"\"\"\n\nnumero = 42  # Este comentario está después de una instrucción"
+    "section": "4.15 Conceptos Clave:",
+    "text": "4.15 Conceptos Clave:\n\n4.15.1 Comentarios\nSon notas en el código que no se ejecutan y se utilizan para explicar el propósito y funcionamiento de partes del programa.\n\n\n4.15.2 Comentarios de una línea\nSe crean con el símbolo “#” y abarcan una sola línea.\n\n\n4.15.3 Comentarios de múltiples líneas\nSe crean entre triple comillas (““” o ’’’) y pueden abarcar múltiples líneas."
+  },
+  {
+    "objectID": "unidad3.html#ejemplo-3",
+    "href": "unidad3.html#ejemplo-3",
+    "title": "4  Introducción a Python",
+    "section": "4.16 Ejemplo",
+    "text": "4.16 Ejemplo\n# Este es un comentario de una línea\n\n\"\"\"\nEste es un comentario\nde múltiples líneas.\nPuede abarcar varias líneas.\n\"\"\"\n\nnumero = 42  # Este comentario está después de una instrucción"
   },
   {
     "objectID": "unidad3.html#explicación-3",
     "href": "unidad3.html#explicación-3",
     "title": "4  Introducción a Python",
-    "section": "4.18 Explicación:",
-    "text": "4.18 Explicación:\nLos comentarios son ignorados por el intérprete y no afectan la ejecución del código.\nLos comentarios son útiles para documentar el código, explicar partes difíciles de entender o dejar notas para otros programadores.\n\n\n\n\n\n\nImportant\n\n\n\nActividad Práctica:\nEscribe un programa que realice una tarea sencilla y agrega comentarios para explicar lo que hace cada parte.\nEscribe un comentario de múltiples líneas que explique el propósito general de tu programa."
+    "section": "4.17 Explicación:",
+    "text": "4.17 Explicación:\nLos comentarios son ignorados por el intérprete y no afectan la ejecución del código.\nLos comentarios son útiles para documentar el código, explicar partes difíciles de entender o dejar notas para otros programadores.\n\n\n\n\n\n\nImportant\n\n\n\nActividad Práctica:\nEscribe un programa que realice una tarea sencilla y agrega comentarios para explicar lo que hace cada parte.\nEscribe un comentario de múltiples líneas que explique el propósito general de tu programa."
   },
   {
     "objectID": "unidad3.html#explicación-de-la-actividad-2",
     "href": "unidad3.html#explicación-de-la-actividad-2",
     "title": "4  Introducción a Python",
-    "section": "4.19 Explicación de la Actividad",
-    "text": "4.19 Explicación de la Actividad\nEsta actividad permite a los participantes practicar la adición de comentarios en su código para mejorar la legibilidad y la comprensión. Les ayuda a desarrollar la habilidad de documentar su código de manera efectiva para ellos mismos y para otros programadores."
+    "section": "4.18 Explicación de la Actividad",
+    "text": "4.18 Explicación de la Actividad\nEsta actividad permite a los participantes practicar la adición de comentarios en su código para mejorar la legibilidad y la comprensión. Les ayuda a desarrollar la habilidad de documentar su código de manera efectiva para ellos mismos y para otros programadores."
   },
   {
     "objectID": "unidad3.html#variables-1",
     "href": "unidad3.html#variables-1",
     "title": "4  Introducción a Python",
-    "section": "4.20 Variables",
-    "text": "4.20 Variables"
-  },
-  {
-    "objectID": "unidad3.html#contenido-4",
-    "href": "unidad3.html#contenido-4",
-    "title": "4  Introducción a Python",
-    "section": "4.21 Contenido",
-    "text": "4.21 Contenido\nLas variables son fundamentales en la programación ya que permiten almacenar y manipular datos. Aprenderemos cómo declarar y utilizar variables en Python."
+    "section": "4.19 Variables",
+    "text": "4.19 Variables\n\n4.19.1 Contenido\nLas variables son fundamentales en la programación ya que permiten almacenar y manipular datos. Aprenderemos cómo declarar y utilizar variables en Python."
   },
   {
     "objectID": "unidad3.html#conceptos-clave-4",
     "href": "unidad3.html#conceptos-clave-4",
     "title": "4  Introducción a Python",
-    "section": "4.22 Conceptos Clave:",
-    "text": "4.22 Conceptos Clave:\n\n4.22.1 Variables\nNombres que representan ubicaciones de memoria donde se almacenan datos.\n\n\n4.22.2 Declaración de Variables.\n\nAsignación de un valor a un nombre utilizando el operador “=”.\nConvenciones de Nombres: Siguen reglas para ser descriptivos y seguir una estructura (por ejemplo, letras minúsculas y guiones bajos para espacios).\n\n\n\n4.22.3 Ejemplo\nnombre = \"Ana\"\nedad = 30\nsaldo_bancario = 1500.75\nes_mayor_de_edad = True"
+    "section": "4.20 Conceptos Clave:",
+    "text": "4.20 Conceptos Clave:\n\n4.20.1 Variables\nNombres que representan ubicaciones de memoria donde se almacenan datos.\n\n\n4.20.2 Declaración de Variables.\n\nAsignación de un valor a un nombre utilizando el operador “=”.\nConvenciones de Nombres: Siguen reglas para ser descriptivos y seguir una estructura (por ejemplo, letras minúsculas y guiones bajos para espacios)."
+  },
+  {
+    "objectID": "unidad3.html#ejemplo-4",
+    "href": "unidad3.html#ejemplo-4",
+    "title": "4  Introducción a Python",
+    "section": "4.21 Ejemplo",
+    "text": "4.21 Ejemplo\nnombre = \"Ana\"\nedad = 30\nsaldo_bancario = 1500.75\nes_mayor_de_edad = True"
   },
   {
     "objectID": "unidad3.html#explicación-4",
     "href": "unidad3.html#explicación-4",
     "title": "4  Introducción a Python",
-    "section": "4.23 Explicación:",
-    "text": "4.23 Explicación:\nEn este ejemplo, se declaran variables para almacenar el nombre de una persona, su edad, su saldo bancario y un valor booleano que indica si es mayor de edad.\nLos nombres de variables son descriptivos y siguen la convención de nombres recomendada (letras minúsculas y guiones bajos para espacios).\n\n\n\n\n\n\nActividad Práctica\n\n\n\nCrea variables para almacenar información personal, como tu ciudad, tu edad y tu ocupación.\nDeclara variables para almacenar cantidades numéricas, como el precio de un producto y la cantidad de unidades disponibles."
+    "section": "4.22 Explicación:",
+    "text": "4.22 Explicación:\nEn este ejemplo, se declaran variables para almacenar el nombre de una persona, su edad, su saldo bancario y un valor booleano que indica si es mayor de edad.\nLos nombres de variables son descriptivos y siguen la convención de nombres recomendada (letras minúsculas y guiones bajos para espacios).\n\n\n\n\n\n\nActividad Práctica\n\n\n\nCrea variables para almacenar información personal, como tu ciudad, tu edad y tu ocupación.\nDeclara variables para almacenar cantidades numéricas, como el precio de un producto y la cantidad de unidades disponibles."
   },
   {
     "objectID": "unidad3.html#explicación-de-la-actividad-3",
     "href": "unidad3.html#explicación-de-la-actividad-3",
     "title": "4  Introducción a Python",
-    "section": "4.24 Explicación de la Actividad",
-    "text": "4.24 Explicación de la Actividad\nEsta actividad permite a los participantes practicar la declaración de variables en Python y aplicar el concepto de convenciones de nombres.\nLes ayuda a comprender cómo almacenar y acceder a datos utilizando variables descriptivas y significativas."
+    "section": "4.23 Explicación de la Actividad",
+    "text": "4.23 Explicación de la Actividad\nEsta actividad permite a los participantes practicar la declaración de variables en Python y aplicar el concepto de convenciones de nombres.\nLes ayuda a comprender cómo almacenar y acceder a datos utilizando variables descriptivas y significativas."
   },
   {
     "objectID": "unidad3.html#múltiples-variables",
     "href": "unidad3.html#múltiples-variables",
     "title": "4  Introducción a Python",
-    "section": "4.25 Múltiples Variables",
-    "text": "4.25 Múltiples Variables"
-  },
-  {
-    "objectID": "unidad3.html#contenido-5",
-    "href": "unidad3.html#contenido-5",
-    "title": "4  Introducción a Python",
-    "section": "4.26 Contenido:",
-    "text": "4.26 Contenido:\nEn Python, es posible asignar valores a múltiples variables en una sola línea. Aprenderemos cómo declarar y utilizar múltiples variables de manera eficiente."
+    "section": "4.24 Múltiples Variables",
+    "text": "4.24 Múltiples Variables\n\n4.24.1 Contenido:\nEn Python, es posible asignar valores a múltiples variables en una sola línea. Aprenderemos cómo declarar y utilizar múltiples variables de manera eficiente."
   },
   {
     "objectID": "unidad3.html#conceptos-clave-5",
     "href": "unidad3.html#conceptos-clave-5",
     "title": "4  Introducción a Python",
-    "section": "4.27 Conceptos Clave:",
-    "text": "4.27 Conceptos Clave:\n\n4.27.1 Asignación Múltiple\nPermite asignar valores a varias variables en una línea.\n\n\n4.27.2 Desempaquetado de Valores\nSe pueden asignar valores de una lista o tupla a múltiples variables en una sola operación.\n\n\n4.27.3 Intercambio de Valores\nSe pueden intercambiar los valores de dos variables utilizando asignación múltiple.\n\n\n4.27.4 Ejemplo\nnombre, edad, altura = \"María\", 28, 1.65\nproductos = (\"Manzanas\", \"Peras\", \"Uvas\")\nproducto1, producto2, producto3 = productos"
+    "section": "4.25 Conceptos Clave:",
+    "text": "4.25 Conceptos Clave:\n\n4.25.1 Asignación Múltiple\nPermite asignar valores a varias variables en una línea.\n\n\n4.25.2 Desempaquetado de Valores\nSe pueden asignar valores de una lista o tupla a múltiples variables en una sola operación.\n\n\n4.25.3 Intercambio de Valores\nSe pueden intercambiar los valores de dos variables utilizando asignación múltiple."
+  },
+  {
+    "objectID": "unidad3.html#ejemplo-5",
+    "href": "unidad3.html#ejemplo-5",
+    "title": "4  Introducción a Python",
+    "section": "4.26 Ejemplo",
+    "text": "4.26 Ejemplo\nnombre, edad, altura = \"María\", 28, 1.65\nproductos = (\"Manzanas\", \"Peras\", \"Uvas\")\nproducto1, producto2, producto3 = productos"
   },
   {
     "objectID": "unidad3.html#explicación-5",
     "href": "unidad3.html#explicación-5",
     "title": "4  Introducción a Python",
-    "section": "4.28 Explicación:",
-    "text": "4.28 Explicación:\nEn el primer ejemplo, se utilizó la asignación múltiple para declarar tres variables en una sola línea.\nEn el segundo ejemplo, se desempaquetaron los valores de una tupla en variables individuales.\n::: {.callout-important} ### Actividad Práctica:\nCrea una lista con los nombres de tus tres colores favoritos.\nUtiliza la asignación múltiple para asignar los valores de la lista a tres variables individuales."
+    "section": "4.27 Explicación:",
+    "text": "4.27 Explicación:\nEn el primer ejemplo, se utilizó la asignación múltiple para declarar tres variables en una sola línea.\nEn el segundo ejemplo, se desempaquetaron los valores de una tupla en variables individuales.\n::: {.callout-important} ### Actividad Práctica:\nCrea una lista con los nombres de tus tres colores favoritos.\nUtiliza la asignación múltiple para asignar los valores de la lista a tres variables individuales."
   },
   {
     "objectID": "unidad3.html#explicación-de-la-actividad-4",
     "href": "unidad3.html#explicación-de-la-actividad-4",
     "title": "4  Introducción a Python",
-    "section": "4.29 Explicación de la Actividad",
-    "text": "4.29 Explicación de la Actividad\nEsta actividad permite a los participantes practicar la asignación múltiple y el desempaquetado de valores.\nLes ayuda a comprender cómo trabajar eficientemente con múltiples variables y cómo aprovechar estas técnicas para simplificar el código."
+    "section": "4.28 Explicación de la Actividad",
+    "text": "4.28 Explicación de la Actividad\nEsta actividad permite a los participantes practicar la asignación múltiple y el desempaquetado de valores.\nLes ayuda a comprender cómo trabajar eficientemente con múltiples variables y cómo aprovechar estas técnicas para simplificar el código."
   },
   {
     "objectID": "unidad3.html#concatenación",
     "href": "unidad3.html#concatenación",
     "title": "4  Introducción a Python",
-    "section": "4.30 Concatenación",
-    "text": "4.30 Concatenación"
-  },
-  {
-    "objectID": "unidad3.html#contenido-6",
-    "href": "unidad3.html#contenido-6",
-    "title": "4  Introducción a Python",
-    "section": "4.31 Contenido:",
-    "text": "4.31 Contenido:\nLa concatenación es la unión de cadenas de texto. Aprenderemos cómo combinar cadenas de texto en Python para crear mensajes más complejos."
+    "section": "4.29 Concatenación",
+    "text": "4.29 Concatenación\n\n4.29.1 Contenido:\nLa concatenación es la unión de cadenas de texto. Aprenderemos cómo combinar cadenas de texto en Python para crear mensajes más complejos."
   },
   {
     "objectID": "unidad3.html#conceptos-clave-6",
     "href": "unidad3.html#conceptos-clave-6",
     "title": "4  Introducción a Python",
-    "section": "4.32 Conceptos Clave:",
-    "text": "4.32 Conceptos Clave:\n\n4.32.1 Concatenación:\nOperación que combina dos o más cadenas de texto para formar una cadena más larga.\n\n\n4.32.2 Operador +\nSe utiliza para concatenar cadenas de texto.\n\n\n4.32.3 Conversión a Cadena\nEs necesario convertir valores no string a cadenas antes de concatenarlos.\n\n\n4.32.4 Ejemplo\nnombre = \"Luisa\"\nmensaje = \"Hola, \" + nombre + \". ¿Cómo estás?\"\nedad = 25\nmensaje_edad = \"Tienes \" + str(edad) + \" años.\""
+    "section": "4.30 Conceptos Clave:",
+    "text": "4.30 Conceptos Clave:\n\n4.30.1 Concatenación:\nOperación que combina dos o más cadenas de texto para formar una cadena más larga.\n\n\n4.30.2 Operador +\nSe utiliza para concatenar cadenas de texto.\n\n\n4.30.3 Conversión a Cadena\nEs necesario convertir valores no string a cadenas antes de concatenarlos."
+  },
+  {
+    "objectID": "unidad3.html#ejemplo-6",
+    "href": "unidad3.html#ejemplo-6",
+    "title": "4  Introducción a Python",
+    "section": "4.31 Ejemplo",
+    "text": "4.31 Ejemplo\nnombre = \"Luisa\"\nmensaje = \"Hola, \" + nombre + \". ¿Cómo estás?\"\nedad = 25\nmensaje_edad = \"Tienes \" + str(edad) + \" años.\""
   },
   {
     "objectID": "unidad3.html#explicación-6",
     "href": "unidad3.html#explicación-6",
     "title": "4  Introducción a Python",
-    "section": "4.33 Explicación:",
-    "text": "4.33 Explicación:\nEn este ejemplo, se utilizó el operador “+” para concatenar cadenas de texto.\nLa variable “edad” se convirtió a una cadena utilizando la función “str()” antes de concatenarla.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una variable con tu comida favorita. Utiliza la concatenación para crear un mensaje que incluya tu comida favorita."
+    "section": "4.32 Explicación:",
+    "text": "4.32 Explicación:\nEn este ejemplo, se utilizó el operador “+” para concatenar cadenas de texto.\nLa variable “edad” se convirtió a una cadena utilizando la función “str()” antes de concatenarla.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una variable con tu comida favorita. Utiliza la concatenación para crear un mensaje que incluya tu comida favorita."
   },
   {
     "objectID": "unidad3.html#explicación-de-la-actividad-5",
     "href": "unidad3.html#explicación-de-la-actividad-5",
     "title": "4  Introducción a Python",
-    "section": "4.34 Explicación de la Actividad",
-    "text": "4.34 Explicación de la Actividad\nEsta actividad permite a los participantes practicar la concatenación de cadenas de texto y comprender cómo construir mensajes más complejos utilizando variables y texto. Les ayuda a mejorar su capacidad para crear mensajes personalizados en sus programas."
+    "section": "4.33 Explicación de la Actividad",
+    "text": "4.33 Explicación de la Actividad\nEsta actividad permite a los participantes practicar la concatenación de cadenas de texto y comprender cómo construir mensajes más complejos utilizando variables y texto. Les ayuda a mejorar su capacidad para crear mensajes personalizados en sus programas."
   },
   {
     "objectID": "unidad4.html#string-y-números",
     "href": "unidad4.html#string-y-números",
     "title": "5  Tipos de Datos",
     "section": "5.1 String y Números",
-    "text": "5.1 String y Números"
-  },
-  {
-    "objectID": "unidad4.html#contenido",
-    "href": "unidad4.html#contenido",
-    "title": "5  Tipos de Datos",
-    "section": "5.2 Contenido:",
-    "text": "5.2 Contenido:\nLos strings y los números son dos tipos de datos fundamentales en Python. Aprenderemos cómo trabajar con strings (cadenas de texto) y los diferentes tipos de números en Python."
+    "text": "5.1 String y Números\n\n5.1.1 Contenido:\nLos strings y los números son dos tipos de datos fundamentales en Python. Aprenderemos cómo trabajar con strings (cadenas de texto) y los diferentes tipos de números en Python."
   },
   {
     "objectID": "unidad4.html#conceptos-clave",
     "href": "unidad4.html#conceptos-clave",
     "title": "5  Tipos de Datos",
-    "section": "5.3 Conceptos Clave:",
-    "text": "5.3 Conceptos Clave:\n\n5.3.1 String:\nSecuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.\n\n\n5.3.2 Números Enteros (int)\nRepresentan números enteros positivos o negativos.\n\n\n5.3.3 Números de Punto Flotante (float)\nRepresentan números con decimales."
+    "section": "5.2 Conceptos Clave:",
+    "text": "5.2 Conceptos Clave:\n\n5.2.1 String\nSecuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.\n\n\n5.2.2 Números Enteros (int)\nRepresentan números enteros positivos o negativos.\n\n\n5.2.3 Números de Punto Flotante (float)\nRepresentan números con decimales."
   },
   {
     "objectID": "unidad4.html#ejemplo",
     "href": "unidad4.html#ejemplo",
     "title": "5  Tipos de Datos",
-    "section": "5.4 Ejemplo:",
-    "text": "5.4 Ejemplo:\n# Strings\nmensaje = \"Hola, bienvenido al curso de Python.\"\nnombre = 'María'\n\n# Números\nedad = 25\nsaldo = 1500.75"
+    "section": "5.3 Ejemplo",
+    "text": "5.3 Ejemplo\n# Strings\nmensaje = \"Hola, bienvenido al curso de Python.\"\nnombre = 'María'\n\n# Números\nedad = 25\nsaldo = 1500.75"
   },
   {
     "objectID": "unidad4.html#explicación",
     "href": "unidad4.html#explicación",
     "title": "5  Tipos de Datos",
-    "section": "5.5 Explicación:",
-    "text": "5.5 Explicación:\nEn este ejemplo, se crean variables que almacenan strings y números.\nLos strings se definen utilizando comillas simples o dobles.\nLos números enteros y de punto flotante se asignan directamente a variables.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una variable con tu canción favorita.\nAsigna tu edad a una variable y tu altura a otra variable.\nCombina las variables para crear un mensaje personalizado."
+    "section": "5.4 Explicación",
+    "text": "5.4 Explicación\nEn este ejemplo, se crean variables que almacenan strings y números.\nLos strings se definen utilizando comillas simples o dobles.\nLos números enteros y de punto flotante se asignan directamente a variables.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una variable con tu canción favorita.\nAsigna tu edad a una variable y tu altura a otra variable.\nCombina las variables para crear un mensaje personalizado."
   },
   {
     "objectID": "unidad4.html#explicación-de-la-actividad",
     "href": "unidad4.html#explicación-de-la-actividad",
     "title": "5  Tipos de Datos",
-    "section": "5.6 Explicación de la Actividad:",
-    "text": "5.6 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de strings y trabajar con números enteros y de punto flotante.\nLes ayuda a comprender cómo almacenar y manipular diferentes tipos de datos en Python."
+    "section": "5.5 Explicación de la Actividad:",
+    "text": "5.5 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de strings y trabajar con números enteros y de punto flotante.\nLes ayuda a comprender cómo almacenar y manipular diferentes tipos de datos en Python."
   },
   {
     "objectID": "unidad4.html#listas",
     "href": "unidad4.html#listas",
     "title": "5  Tipos de Datos",
-    "section": "5.7 Listas",
-    "text": "5.7 Listas\n\n5.7.1 Contenido:\nLas listas son estructuras de datos que permiten almacenar varios elementos en una sola variable. Aprenderemos cómo crear y manipular listas en Python."
+    "section": "5.6 Listas",
+    "text": "5.6 Listas\n\n5.6.0.1 Contenido:\nLas listas son estructuras de datos que permiten almacenar varios elementos en una sola variable. Aprenderemos cómo crear y manipular listas en Python."
   },
   {
     "objectID": "unidad4.html#conceptos-clave-1",
     "href": "unidad4.html#conceptos-clave-1",
     "title": "5  Tipos de Datos",
-    "section": "5.8 Conceptos Clave:",
-    "text": "5.8 Conceptos Clave:\n\n5.8.1 Listas\nSecuencias ordenadas de elementos que pueden ser de diferentes tipos.\n\n\n5.8.2 Índices\nNúmeros que indican la posición de un elemento en la lista.\n\n\n5.8.3 Acceso a Elementos\nSe utiliza el índice para acceder a un elemento específico de la lista."
+    "section": "5.7 Conceptos Clave:",
+    "text": "5.7 Conceptos Clave:\n\n5.7.1 Listas\nSecuencias ordenadas de elementos que pueden ser de diferentes tipos.\n\n\n5.7.2 Índices\nNúmeros que indican la posición de un elemento en la lista.\n\n\n5.7.3 Acceso a Elementos\nSe utiliza el índice para acceder a un elemento específico de la lista."
   },
   {
     "objectID": "unidad4.html#ejemplo-1",
     "href": "unidad4.html#ejemplo-1",
     "title": "5  Tipos de Datos",
-    "section": "5.9 Ejemplo",
-    "text": "5.9 Ejemplo\nfrutas = [\"manzana\", \"banana\", \"naranja\", \"uva\"]\nprimer_fruta = frutas[0]\nsegunda_fruta = frutas[1]"
+    "section": "5.8 Ejemplo",
+    "text": "5.8 Ejemplo\nfrutas = [\"manzana\", \"banana\", \"naranja\", \"uva\"]\nprimer_fruta = frutas[0]\nsegunda_fruta = frutas[1]"
   },
   {
     "objectID": "unidad4.html#explicación-1",
     "href": "unidad4.html#explicación-1",
     "title": "5  Tipos de Datos",
-    "section": "5.10 Explicación:",
-    "text": "5.10 Explicación:\nEn este ejemplo, se crea una lista de frutas y se accede a elementos individuales utilizando índices.\nLos índices comienzan desde 0, por lo que la primera fruta tiene el índice 0.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una lista con los nombres de tus tres películas favoritas.\nAccede al segundo elemento de la lista e imprímelo en la consola."
+    "section": "5.9 Explicación",
+    "text": "5.9 Explicación\nEn este ejemplo, se crea una lista de frutas y se accede a elementos individuales utilizando índices.\nLos índices comienzan desde 0, por lo que la primera fruta tiene el índice 0.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una lista con los nombres de tus tres películas favoritas.\nAccede al segundo elemento de la lista e imprímelo en la consola."
   },
   {
     "objectID": "unidad4.html#explicación-de-la-actividad-1",
     "href": "unidad4.html#explicación-de-la-actividad-1",
     "title": "5  Tipos de Datos",
-    "section": "5.11 Explicación de la Actividad:",
-    "text": "5.11 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de listas y el acceso a elementos utilizando índices. Les ayuda a comprender cómo organizar y acceder a múltiples elementos en una sola variable."
+    "section": "5.10 Explicación de la Actividad:",
+    "text": "5.10 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de listas y el acceso a elementos utilizando índices. Les ayuda a comprender cómo organizar y acceder a múltiples elementos en una sola variable."
   },
   {
     "objectID": "unidad4.html#tuplas",
     "href": "unidad4.html#tuplas",
     "title": "5  Tipos de Datos",
-    "section": "5.12 Tuplas",
-    "text": "5.12 Tuplas\n\n5.12.1 Contenido:\nLas tuplas son estructuras de datos similares a las listas, pero son inmutables, lo que significa que no se pueden modificar después de ser creadas. Aprenderemos cómo trabajar con tuplas en Python."
+    "section": "5.11 Tuplas",
+    "text": "5.11 Tuplas\n\n5.11.0.1 Contenido:\nLas tuplas son estructuras de datos similares a las listas, pero son inmutables, lo que significa que no se pueden modificar después de ser creadas. Aprenderemos cómo trabajar con tuplas en Python."
   },
   {
     "objectID": "unidad4.html#conceptos-clave-2",
     "href": "unidad4.html#conceptos-clave-2",
     "title": "5  Tipos de Datos",
-    "section": "5.13 Conceptos Clave:",
-    "text": "5.13 Conceptos Clave:\n\n5.13.1 Tuplas\nSecuencias ordenadas de elementos que, a diferencia de las listas, no se pueden modificar.\n\n\n5.13.2 Inmutabilidad\nUna vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.\n\n\n5.13.3 Acceso a Elementos\nSe utiliza el índice para acceder a un elemento específico de la tupla."
+    "section": "5.12 Conceptos Clave:",
+    "text": "5.12 Conceptos Clave:\n\n5.12.1 Tuplas\nSecuencias ordenadas de elementos que, a diferencia de las listas, no se pueden modificar.\n\n\n5.12.2 Inmutabilidad\nUna vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.\n\n\n5.12.3 Acceso a Elementos\nSe utiliza el índice para acceder a un elemento específico de la tupla."
   },
   {
     "objectID": "unidad4.html#ejemplo-2",
     "href": "unidad4.html#ejemplo-2",
     "title": "5  Tipos de Datos",
-    "section": "5.14 Ejemplo:",
-    "text": "5.14 Ejemplo:\ncoordenadas = (3, 5)\nx = coordenadas[0]\ny = coordenadas[1]"
+    "section": "5.13 Ejemplo",
+    "text": "5.13 Ejemplo\ncoordenadas = (3, 5)\nx = coordenadas[0]\ny = coordenadas[1]"
   },
   {
     "objectID": "unidad4.html#explicación-2",
     "href": "unidad4.html#explicación-2",
     "title": "5  Tipos de Datos",
-    "section": "5.15 Explicación:",
-    "text": "5.15 Explicación:\nEn este ejemplo, se crea una tupla que almacena coordenadas (x, y) y se accede a los valores individuales utilizando índices.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una tupla con las estaciones del año.\nIntenta modificar un elemento de la tupla y observa el error que se produce."
+    "section": "5.14 Explicación",
+    "text": "5.14 Explicación\nEn este ejemplo, se crea una tupla que almacena coordenadas (x, y) y se accede a los valores individuales utilizando índices.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una tupla con las estaciones del año.\nIntenta modificar un elemento de la tupla y observa el error que se produce."
   },
   {
     "objectID": "unidad4.html#explicación-de-la-actividad-2",
     "href": "unidad4.html#explicación-de-la-actividad-2",
     "title": "5  Tipos de Datos",
-    "section": "5.16 Explicación de la Actividad:",
-    "text": "5.16 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de tuplas y comprender la diferencia entre listas y tuplas en términos de inmutabilidad. Les ayuda a comprender cómo utilizar tuplas cuando necesitan almacenar datos que no deben cambiar."
+    "section": "5.15 Explicación de la Actividad:",
+    "text": "5.15 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de tuplas y comprender la diferencia entre listas y tuplas en términos de inmutabilidad. Les ayuda a comprender cómo utilizar tuplas cuando necesitan almacenar datos que no deben cambiar."
   },
   {
     "objectID": "unidad4.html#range",
     "href": "unidad4.html#range",
     "title": "5  Tipos de Datos",
-    "section": "5.17 Range",
-    "text": "5.17 Range\n\n5.17.1 Contenido\nEl tipo de dato range se utiliza para generar secuencias de números. Aprenderemos cómo utilizar range en Python para crear secuencias de números en rangos específicos."
+    "section": "5.16 Range",
+    "text": "5.16 Range\n\n5.16.1 Contenido\nEl tipo de dato range se utiliza para generar secuencias de números. Aprenderemos cómo utilizar range en Python para crear secuencias de números en rangos específicos."
   },
   {
     "objectID": "unidad4.html#conceptos-clave-3",
     "href": "unidad4.html#conceptos-clave-3",
     "title": "5  Tipos de Datos",
-    "section": "5.18 Conceptos Clave:",
-    "text": "5.18 Conceptos Clave:\n\n5.18.1 range\nTipo de dato utilizado para generar secuencias de números en un rango.\n\n\n5.18.2 Parámetros de range\nSe pueden especificar el valor inicial, valor final y paso de la secuencia.\n\n\n5.18.3 Conversión a Listas\nEs posible convertir un objeto range en una lista utilizando la función list()."
+    "section": "5.17 Conceptos Clave:",
+    "text": "5.17 Conceptos Clave:\n\n5.17.1 range\nTipo de dato utilizado para generar secuencias de números en un rango.\n\n\n5.17.2 Parámetros de range\nSe pueden especificar el valor inicial, valor final y paso de la secuencia.\n\n\n5.17.3 Conversión a Listas\nEs posible convertir un objeto range en una lista utilizando la función list()."
   },
   {
     "objectID": "unidad4.html#ejemplo-3",
     "href": "unidad4.html#ejemplo-3",
     "title": "5  Tipos de Datos",
-    "section": "5.19 Ejemplo",
-    "text": "5.19 Ejemplo\n# Generación de secuencias de números\nsecuencia1 = range(5)          # 0, 1, 2, 3, 4\nsecuencia2 = range(2, 10)      # 2, 3, 4, 5, 6, 7, 8, 9\nsecuencia3 = range(1, 11, 2)   # 1, 3, 5, 7, 9\n\n# Conversión a lista\nlista_secuencia1 = list(secuencia1)"
+    "section": "5.18 Ejemplo",
+    "text": "5.18 Ejemplo\n# Generación de secuencias de números\nsecuencia1 = range(5)          # 0, 1, 2, 3, 4\nsecuencia2 = range(2, 10)      # 2, 3, 4, 5, 6, 7, 8, 9\nsecuencia3 = range(1, 11, 2)   # 1, 3, 5, 7, 9\n\n# Conversión a lista\nlista_secuencia1 = list(secuencia1)"
   },
   {
     "objectID": "unidad4.html#explicación-3",
     "href": "unidad4.html#explicación-3",
     "title": "5  Tipos de Datos",
-    "section": "5.20 Explicación:",
-    "text": "5.20 Explicación:\nEn este ejemplo, se utilizan diferentes valores para crear secuencias de números utilizando el tipo de dato range.\nLa función list() se utiliza para convertir una secuencia de range en una lista.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una secuencia de números del 10 al 20 con un paso de 2.\nConvierte la secuencia de números en una lista y muestra los elementos en la consola."
+    "section": "5.19 Explicación",
+    "text": "5.19 Explicación\nEn este ejemplo, se utilizan diferentes valores para crear secuencias de números utilizando el tipo de dato range.\nLa función list() se utiliza para convertir una secuencia de range en una lista.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una secuencia de números del 10 al 20 con un paso de 2.\nConvierte la secuencia de números en una lista y muestra los elementos en la consola."
   },
   {
     "objectID": "unidad4.html#explicación-de-la-actividad-3",
     "href": "unidad4.html#explicación-de-la-actividad-3",
     "title": "5  Tipos de Datos",
-    "section": "5.21 Explicación de la Actividad:",
-    "text": "5.21 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de secuencias de números utilizando range y cómo convertirlas en listas para trabajar con los elementos individualmente. Les ayuda a comprender cómo generar secuencias de números en diferentes rangos."
+    "section": "5.20 Explicación de la Actividad:",
+    "text": "5.20 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de secuencias de números utilizando range y cómo convertirlas en listas para trabajar con los elementos individualmente. Les ayuda a comprender cómo generar secuencias de números en diferentes rangos."
   },
   {
     "objectID": "unidad4.html#diccionarios",
     "href": "unidad4.html#diccionarios",
     "title": "5  Tipos de Datos",
-    "section": "5.22 Diccionarios",
-    "text": "5.22 Diccionarios\n\n5.22.1 Contenido:\nLos diccionarios son estructuras de datos que permiten almacenar pares clave-valor. Aprenderemos cómo crear y trabajar con diccionarios en Python."
+    "section": "5.21 Diccionarios",
+    "text": "5.21 Diccionarios\n\n5.21.0.1 Contenido:\nLos diccionarios son estructuras de datos que permiten almacenar pares clave-valor. Aprenderemos cómo crear y trabajar con diccionarios en Python."
   },
   {
     "objectID": "unidad4.html#conceptos-clave-4",
     "href": "unidad4.html#conceptos-clave-4",
     "title": "5  Tipos de Datos",
-    "section": "5.23 Conceptos Clave:",
-    "text": "5.23 Conceptos Clave:\n\n5.23.1 Diccionarios\nEstructuras de datos que almacenan pares clave-valor.\n\n\n5.23.2 Claves\nSon los nombres o etiquetas utilizados para acceder a los valores en el diccionario.\n\n\n5.23.3 Valores\nSon los datos asociados a cada clave en el diccionario."
+    "section": "5.22 Conceptos Clave:",
+    "text": "5.22 Conceptos Clave:\n\n5.22.1 Diccionarios\nEstructuras de datos que almacenan pares clave-valor.\n\n\n5.22.2 Claves\nSon los nombres o etiquetas utilizados para acceder a los valores en el diccionario.\n\n\n5.22.3 Valores\nSon los datos asociados a cada clave en el diccionario."
   },
   {
     "objectID": "unidad4.html#ejemplo-4",
     "href": "unidad4.html#ejemplo-4",
     "title": "5  Tipos de Datos",
-    "section": "5.24 Ejemplo:",
-    "text": "5.24 Ejemplo:\n# Creación de un diccionario\npersona = {\n    \"nombre\": \"Juan\",\n    \"edad\": 30,\n    \"ciudad\": \"México\"\n}\n\n# Acceso a valores utilizando claves\nnombre = persona[\"nombre\"]\nedad = persona[\"edad\"]"
+    "section": "5.23 Ejemplo",
+    "text": "5.23 Ejemplo\n# Creación de un diccionario\npersona = {\n    \"nombre\": \"Juan\",\n    \"edad\": 30,\n    \"ciudad\": \"México\"\n}\n\n# Acceso a valores utilizando claves\nnombre = persona[\"nombre\"]\nedad = persona[\"edad\"]"
   },
   {
     "objectID": "unidad4.html#explicación-4",
     "href": "unidad4.html#explicación-4",
     "title": "5  Tipos de Datos",
-    "section": "5.25 Explicación:",
-    "text": "5.25 Explicación:\nEn este ejemplo, se crea un diccionario que almacena información de una persona, como nombre, edad y ciudad.\nSe accede a los valores del diccionario utilizando las claves correspondientes.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nCrea un diccionario que almacene información de tus libros favoritos, incluyendo título y autor.\nAccede a los valores del diccionario utilizando las claves y muestra la información en la consola."
+    "section": "5.24 Explicación",
+    "text": "5.24 Explicación\nEn este ejemplo, se crea un diccionario que almacena información de una persona, como nombre, edad y ciudad.\nSe accede a los valores del diccionario utilizando las claves correspondientes.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nCrea un diccionario que almacene información de tus libros favoritos, incluyendo título y autor.\nAccede a los valores del diccionario utilizando las claves y muestra la información en la consola."
   },
   {
     "objectID": "unidad4.html#explicación-de-la-actividad-4",
     "href": "unidad4.html#explicación-de-la-actividad-4",
     "title": "5  Tipos de Datos",
-    "section": "5.26 Explicación de la Actividad:",
-    "text": "5.26 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de diccionarios y acceder a los valores utilizando las claves. Les ayuda a comprender cómo organizar datos en pares clave-valor y cómo acceder a la información de manera eficiente."
+    "section": "5.25 Explicación de la Actividad:",
+    "text": "5.25 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de diccionarios y acceder a los valores utilizando las claves. Les ayuda a comprender cómo organizar datos en pares clave-valor y cómo acceder a la información de manera eficiente."
   },
   {
     "objectID": "unidad4.html#booleanos",
     "href": "unidad4.html#booleanos",
     "title": "5  Tipos de Datos",
-    "section": "5.27 Booleanos",
-    "text": "5.27 Booleanos\n\n5.27.1 Contenido\nLos booleanos son un tipo de dato que puede tener dos valores: True (verdadero) o False (falso). Aprenderemos cómo trabajar con booleanos en Python y cómo utilizarlos en expresiones lógicas."
+    "section": "5.26 Booleanos",
+    "text": "5.26 Booleanos\n\n5.26.1 Contenido\nLos booleanos son un tipo de dato que puede tener dos valores: True (verdadero) o False (falso). Aprenderemos cómo trabajar con booleanos en Python y cómo utilizarlos en expresiones lógicas."
   },
   {
     "objectID": "unidad4.html#conceptos-clave-5",
     "href": "unidad4.html#conceptos-clave-5",
     "title": "5  Tipos de Datos",
-    "section": "5.28 Conceptos Clave:",
-    "text": "5.28 Conceptos Clave:\n\n5.28.1 Booleanos\nTipo de dato que representa valores de verdad (True o False).\nExpresiones Lógicas: Combinaciones de valores booleanos utilizando operadores lógicos como and, or y not."
+    "section": "5.27 Conceptos Clave:",
+    "text": "5.27 Conceptos Clave:\n\n5.27.1 Booleanos\nTipo de dato que representa valores de verdad (True o False).\nExpresiones Lógicas: Combinaciones de valores booleanos utilizando operadores lógicos como and, or y not."
   },
   {
     "objectID": "unidad4.html#ejemplo-5",
     "href": "unidad4.html#ejemplo-5",
     "title": "5  Tipos de Datos",
-    "section": "5.29 Ejemplo:",
-    "text": "5.29 Ejemplo:\n# Variables booleanas\nes_mayor_de_edad = True\ntiene_tarjeta = False\n\n# Expresiones lógicas\npuede_ingresar = es_mayor_de_edad and tiene_tarjeta"
+    "section": "5.28 Ejemplo",
+    "text": "5.28 Ejemplo\n# Variables booleanas\nes_mayor_de_edad = True\ntiene_tarjeta = False\n\n# Expresiones lógicas\npuede_ingresar = es_mayor_de_edad and tiene_tarjeta"
   },
   {
     "objectID": "unidad4.html#explicación-5",
     "href": "unidad4.html#explicación-5",
     "title": "5  Tipos de Datos",
-    "section": "5.30 Explicación:",
-    "text": "5.30 Explicación:\nEn este ejemplo, se utilizan variables booleanas para representar si alguien es mayor de edad y si tiene una tarjeta.\nSe utiliza una expresión lógica para evaluar si alguien puede ingresar basado en ambas condiciones.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea variables booleanas que representen si tienes una mascota y si te gusta el deporte.\nUtiliza expresiones lógicas para determinar si puedes llevar a tu mascota a un lugar que requiere tu atención durante un partido de tu deporte favorito."
+    "section": "5.29 Explicación",
+    "text": "5.29 Explicación\nEn este ejemplo, se utilizan variables booleanas para representar si alguien es mayor de edad y si tiene una tarjeta.\nSe utiliza una expresión lógica para evaluar si alguien puede ingresar basado en ambas condiciones.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea variables booleanas que representen si tienes una mascota y si te gusta el deporte.\nUtiliza expresiones lógicas para determinar si puedes llevar a tu mascota a un lugar que requiere tu atención durante un partido de tu deporte favorito."
   },
   {
     "objectID": "unidad4.html#explicación-de-la-actividad-5",
     "href": "unidad4.html#explicación-de-la-actividad-5",
     "title": "5  Tipos de Datos",
-    "section": "5.31 Explicación de la Actividad:",
-    "text": "5.31 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar el uso de variables booleanas y expresiones lógicas para tomar decisiones basadas en condiciones booleanas. Les ayuda a comprender cómo trabajar con valores de verdad y cómo utilizarlos para evaluar situaciones en el código."
+    "section": "5.30 Explicación de la Actividad:",
+    "text": "5.30 Explicación de la Actividad:\nEsta actividad permite a los participantes practicar el uso de variables booleanas y expresiones lógicas para tomar decisiones basadas en condiciones booleanas. Les ayuda a comprender cómo trabajar con valores de verdad y cómo utilizarlos para evaluar situaciones en el código."
   },
   {
     "objectID": "unidad5.html#introducción-a-if",
