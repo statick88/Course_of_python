@@ -1,27 +1,31 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Curso de Python 2023"
   author: "Lcdo. Diego Saavedra Mgtr."
+  output-file: "curso_python_2023"  
   date: today
+  date-format: medium
   favicon: python-logo.png
   description: Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.
   keyword: Python, Programación, Fundamentos, Aplicaciones Prácticas, Instalación, Herramientas, API, Django Rest Framework, Bases de Datos, PostgreSQL, MongoDB, Control de Flujo, Funciones, Clases, Herencia, Módulos, Aprendizaje, Principiantes, Proyectos, Desarrollo Web, Django, Flask, Data Science, FastAPI, Práctica, Enseñanza, Gratis, Internet, Contribuir
   url: https://github.com/statick88/Course_of_python
   page-navigation: true
+  downloads: [pdf, epub]
   sidebar: 
     logo: python-logo.png
     search: true
-    # background: "#ffffff"
+    collapse-level: 1
+
     
   repo-url: https://github.com/statick88/Course_of_python
   repo-subdir: book
   repo-branch: main
   repo-actions: [edit, issue, source]
-  twitter-card: 
-    site: "@statick_ds"
-  downloads: [pdf]
+  # twitter-card: 
+  #   site: "@statick_ds"
   image: python-logo.png
   page-footer:
     center: 
@@ -32,30 +36,153 @@ book:
 
   chapters:
     - index.qmd
-    - unidad1.qmd
-    - unidad2.qmd
-    - unidad3.qmd
-    - unidad4.qmd
-    - unidad5.qmd
-    - unidad6.qmd
-    - unidad7.qmd
-    - unidad8.qmd
-    - unidad9.qmd
-    - unidad10.qmd
-    - unidad11.qmd
-    - unidad12.qmd
-    - ejercicios.qmd
-    - ejercicios2.qmd
+    - part: "Unidad 1: Introducción a la Programación"
+      chapters: 
+        - unidades/unidad1/unidad1.qmd
+    - part: "Unidad 2: Instalación de Python y más herramientas"
+      chapters: 
+        - unidades/unidad2/unidad2.qmd
+    - part: "Unidad 3: Introducción a Python"
+      chapters: 
+        - unidades/unidad3/unidad3.1.qmd
+        - unidades/unidad3/unidad3.2.qmd
+        - unidades/unidad3/unidad3.3.qmd
+        - unidades/unidad3/unidad3.4.qmd
+        - unidades/unidad3/unidad3.5.qmd
+        - unidades/unidad3/unidad3.6.qmd
+        - unidades/unidad3/unidad3.7.qmd
+    - part: "Unidad 4: Tipos de Dato"
+      chapters: 
+        - unidades/unidad4/unidad4.1.qmd
+        - unidades/unidad4/unidad4.2.qmd
+        - unidades/unidad4/unidad4.3.qmd
+        - unidades/unidad4/unidad4.4.qmd
+        - unidades/unidad4/unidad4.5.qmd
+        - unidades/unidad4/unidad4.6.qmd
+        - unidades/unidad4/unidad4.7.qmd
+    - part: "Unidad 5: Control de Flujo"
+      chapters: 
+        - unidades/unidad5/unidad5.1.qmd
+        - unidades/unidad5/unidad5.2.qmd
+        - unidades/unidad5/unidad5.3.qmd
+        - unidades/unidad5/unidad5.4.qmd
+        - unidades/unidad5/unidad5.5.qmd
+        - unidades/unidad5/unidad5.6.qmd
+        - unidades/unidad5/unidad5.7.qmd
+        - unidades/unidad5/unidad5.8.qmd
+    - part: "Unidad 6: Funciones"
+      chapters: 
+        - unidades/unidad6/unidad6.1.qmd
+        - unidades/unidad6/unidad6.2.qmd
+    - part: "Unidad 7: Objetos, Clases y Herencia"
+      chapters: 
+        - unidades/unidad7/unidad7.1.qmd
+        - unidades/unidad7/unidad7.2.qmd
+        - unidades/unidad7/unidad7.3.qmd
+        - unidades/unidad7/unidad7.4.qmd
+        - unidades/unidad7/unidad7.5.qmd
+
+    - part: "Unidad 8: Módulos"
+      chapters: 
+        - unidades/unidad8/unidad8.1.qmd
+        - unidades/unidad8/unidad8.2.qmd
+        - unidades/unidad8/unidad8.3.qmd
+        - unidades/unidad8/unidad8.4.qmd
+    - part: "Unidad 9: Introducción a Bases de Datos"
+      chapters: 
+        - unidades/unidad9/unidad9.1.qmd
+        - unidades/unidad9/unidad9.2.qmd
+        - unidades/unidad9/unidad9.3.qmd
+    - part: "Unidad 10: Operaciones Básicas en Bases de Datos"
+      chapters: 
+        - unidades/unidad10/unidad10.1.qmd
+        - unidades/unidad10/unidad10.2.qmd
+        - unidades/unidad10/unidad10.3.qmd
+        - unidades/unidad10/unidad10.4.qmd
+    - part: "Unidad 11: ¿Cómo me amplío con Python?"
+      chapters: 
+        - unidades/unidad11/unidad11.1.qmd
+        - unidades/unidad11/unidad11.2.qmd
+        - unidades/unidad11/unidad11.3.qmd
+    - part: "Unidad 12: Proyecto: API de Tareas con Django Rest Framework"
+      chapters: 
+        - unidades/unidad12/unidad12.qmd
+    - part: "Ejercicios"
+      chapters: 
+        - unidades/ejercicios/ejercicio1.qmd
+        - unidades/ejercicios/ejercicio2.qmd
+        - unidades/ejercicios/ejercicio3.qmd
+        - unidades/ejercicios/ejercicio4.qmd
+        - unidades/ejercicios/ejercicio5.qmd
+        - unidades/ejercicios/ejercicio6.qmd
+        - unidades/ejercicios/ejercicio7.qmd
+        - unidades/ejercicios/ejercicio8.qmd
+        - unidades/ejercicios/ejercicio9.qmd
+        - unidades/ejercicios/ejercicio10.qmd
+        - unidades/ejercicios/ejercicio11.qmd
+        - unidades/ejercicios/ejercicio12.qmd
+        - unidades/ejercicios/ejercicio13.qmd
+        - unidades/ejercicios/ejercicio14.qmd
+        - unidades/ejercicios/ejercicio15.qmd
+        - unidades/ejercicios/ejercicio16.qmd
+        - unidades/ejercicios/ejercicio17.qmd
+        - unidades/ejercicios/ejercicio18.qmd
+        - unidades/ejercicios/ejercicio19.qmd
+        - unidades/ejercicios/ejercicio20.qmd
+        - unidades/ejercicios/ejerciciosUnidades.qmd
+
+bibliography: references.bib
+biblio-style: "apalike"
+
+lang: es
+language:
+  crossref-sec-prefix: "Lección"
 
 format:
   html:
-    theme:
+    number-sections: false
+    theme: 
       light: cosmo
-      dark: superhero
-    code-fold: false
-    css: custom.css
+      dark:  solar #slate, darkly, solar, superhero, vapor
+    number-depth: 4
+    link-external-icon: true
+    link-external-newwindow: true
+
+    css: css/styles.css
 
   pdf:
+    documentclass: scrreprt
+    classoption: ["onepage", "openany"]
+    papersize: a4
     toc: true
+    include-in-header: 
+      - "templates/latex/in-header.tex"
+    template-partials:
+      - "templates/latex/before-body.tex"
+      - "templates/latex/_titlepage.tex"
+    margin-top: 35mm
+    margin-left: 30mm
+    margin-bottom: 30mm
+    margin-right: 30mm
+    titlepage-geometry: 
+      - top=35mm
+      - bottom=30mm
+      - right=30mm
+      - left=30mm
+    title-bg-image: "templates/latex/cover_page.png" 
+    title-bg-location: "UL"
+    title-bg-size: 1
+
+  epub: 
+    belongs-to-collection: "Curso de Python 2023"
+    group-position: 0
+    creator: "Lcdo. Diego Saavedra Mgtr."
+    rights: "© Statick | 2023"
+    fig-responsive: true
     number-sections: true
-    colorlinks: true
+    html-math-method: mathml
+
+  docx: 
+    toc: true
+    reference-doc: templates/word/curso_python2023.docx
+    number-sections: true
