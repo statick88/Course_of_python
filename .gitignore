@@ -8,6 +8,19 @@ book/data_manipulation_cache/
 book/unidad1_cache/
 book/benchmarking_cache/
 index_cache/
+*images
+*img
+*index_files
+*.Rhistory
+*Bibliografia.bib
+*index-speaker.html
+*index.html
+*index.qmd
+*.rar
+
+
+
+
 
 ### Django ###
 *.log
