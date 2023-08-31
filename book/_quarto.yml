@@ -19,7 +19,6 @@ book:
     search: true
     collapse-level: 1
 
-    
   repo-url: https://github.com/statick88/Course_of_python
   repo-subdir: book
   repo-branch: main
@@ -33,7 +32,6 @@ book:
         href: about.qmd
       - text: "License"
         href: license.qmd
-
   chapters:
     - index.qmd
     - part: "Unidad 1: Introducción a la Programación"
@@ -133,10 +131,6 @@ book:
 bibliography: references.bib
 biblio-style: "apalike"
 
-lang: es
-language:
-  crossref-sec-prefix: "Lección"
-
 format:
   html:
     number-sections: false
@@ -154,11 +148,6 @@ format:
     classoption: ["onepage", "openany"]
     papersize: a4
     toc: true
-    include-in-header: 
-      - "templates/latex/in-header.tex"
-    template-partials:
-      - "templates/latex/before-body.tex"
-      - "templates/latex/_titlepage.tex"
     margin-top: 35mm
     margin-left: 30mm
     margin-bottom: 30mm
@@ -168,10 +157,6 @@ format:
       - bottom=30mm
       - right=30mm
       - left=30mm
-    title-bg-image: "templates/latex/cover_page.png" 
-    title-bg-location: "UL"
-    title-bg-size: 1
-
   epub: 
     belongs-to-collection: "Curso de Python 2023"
     group-position: 0
@@ -179,4 +164,3 @@ format:
     rights: "© Statick | 2023"
     fig-responsive: true
     number-sections: true
-    html-math-method: mathml
