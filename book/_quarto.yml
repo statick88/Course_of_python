@@ -50,7 +50,7 @@ book:
         - unidades/unidad3/unidad3.5.qmd
         - unidades/unidad3/unidad3.6.qmd
         - unidades/unidad3/unidad3.7.qmd
-    - part: "Unidad 4: Tipos de Dato"
+    - part: "Unidad 4: Tipos de Datos"
       chapters: 
         - unidades/unidad4/unidad4.1.qmd
         - unidades/unidad4/unidad4.2.qmd

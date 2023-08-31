@@ -56,34 +56,6 @@
     "text": "Explicación de la Actividad\nEl programa utilizará la función input() para recibir la entrada del usuario. Luego, utilizará la entrada proporcionada para imprimir un mensaje de bienvenida personalizado."
   },
   {
-    "objectID": "unidades/unidad1/unidad1.html#conceptos-clave-1",
-    "href": "unidades/unidad1/unidad1.html#conceptos-clave-1",
-    "title": "Introducción general a la Programación",
-    "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nInstrucciones\nSon comandos específicos que le indican a la computadora qué hacer. Pueden ser simples, como imprimir un mensaje en pantalla, o complejas, como realizar cálculos matemáticos.\n\n\nLenguajes de Programación\nSon sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reglas sintácticas y semánticas que determinan cómo se escriben y ejecutan las instrucciones.\n\n\nAlgoritmos\nSon conjuntos ordenados de instrucciones diseñados para resolver un problema específico. Los algoritmos son la base de la programación y se utilizan para desarrollar software eficiente.\n\n\nDepuración\nEs el proceso de identificar y corregir errores en el código. Los programadores pasan tiempo depurando para asegurarse de que sus programas funcionen correctamente."
-  },
-  {
-    "objectID": "unidades/unidad1/unidad1.html#ejemplo-1",
-    "href": "unidades/unidad1/unidad1.html#ejemplo-1",
-    "title": "Introducción general a la Programación",
-    "section": "Ejemplo:",
-    "text": "Ejemplo:\n1print(\"Hola, bienvenido al mundo de la programación.\")\n\n1\n\nEste es un ejemplo sencillo de un programa en Python que imprime un mensaje en pantalla."
-  },
-  {
-    "objectID": "unidades/unidad1/unidad1.html#explicación-1",
-    "href": "unidades/unidad1/unidad1.html#explicación-1",
-    "title": "Introducción general a la Programación",
-    "section": "Explicación",
-    "text": "Explicación\nEn Python, los comentarios comienzan con el símbolo #. No afectan la ejecución del programa, pero son útiles para documentar el código.\nLa línea print(\"Hola, bienvenido al mundo de la programación.\") es una instrucción de impresión. La función print() muestra el texto entre paréntesis en la consola.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nEscribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida personalizado."
-  },
-  {
-    "objectID": "unidades/unidad1/unidad1.html#explicación-de-la-actividad-1",
-    "href": "unidades/unidad1/unidad1.html#explicación-de-la-actividad-1",
-    "title": "Introducción general a la Programación",
-    "section": "Explicación de la Actividad",
-    "text": "Explicación de la Actividad\n\n\n\n\n\n\n\ne8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9 El programa utilizará la función input() para recibir la entrada del usuario. Luego, utilizará la entrada proporcionada para imprimir un mensaje de bienvenida personalizado."
-  },
-  {
     "objectID": "unidades/unidad2/unidad2.html#conceptos-clave",
     "href": "unidades/unidad2/unidad2.html#conceptos-clave",
     "title": "Instalación de Python",
@@ -112,291 +84,25 @@
     "text": "Explicación de la Actividad\nEsta actividad permite a los participantes aplicar lo aprendido instalando Python en su propio sistema y ejecutando un programa sencillo para confirmar que la instalación fue exitosa."
   },
   {
-    "objectID": "unidades/unidad12/unidad12.html#qué-se-necesita-conocer",
-    "href": "unidades/unidad12/unidad12.html#qué-se-necesita-conocer",
-    "title": "Explicación del Proyecto",
-    "section": "Qué se necesita conocer:",
-    "text": "Qué se necesita conocer:\n\nConocimientos básicos de Python.\nFamiliaridad con Django y Django Rest Framework.\nEntorno de desarrollo configurado con Django y Django Rest Framework."
-  },
-  {
-    "objectID": "unidades/unidad12/unidad12.html#estructura-del-proyecto",
-    "href": "unidades/unidad12/unidad12.html#estructura-del-proyecto",
-    "title": "Explicación del Proyecto",
-    "section": "Estructura del Proyecto:",
-    "text": "Estructura del Proyecto:\nproyecto_api_tareas/\n├── api_tareas/\n│   ├── migrations/\n│   ├── templates/\n│   ├── __init__.py\n│   ├── admin.py\n│   ├── apps.py\n│   ├── models.py\n│   ├── serializers.py\n│   ├── tests.py\n│   └── views.py\n├── proyecto_api_tareas/\n│   ├── __init__.py\n│   ├── asgi.py\n│   ├── settings.py\n│   ├── urls.py\n│   └── wsgi.py\n├── db.sqlite3\n└── manage.py"
-  },
-  {
-    "objectID": "unidades/unidad12/unidad12.html#código",
-    "href": "unidades/unidad12/unidad12.html#código",
-    "title": "Explicación del Proyecto",
-    "section": "Código:",
-    "text": "Código:\n#models.py:\nfrom django.db import models\n\nclass Tarea(models.Model):\n    titulo = models.CharField(max_length=100)\n    descripcion = models.TextField()\n    fecha_creacion = models.DateTimeField(auto_now_add=True)\n    completada = models.BooleanField(default=False)\n\n    def __str__(self):\n        return self.titulo\n#serializers.py:\n\nfrom rest_framework import serializers\nfrom .models import Tarea\n\nclass TareaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Tarea\n        fields = '__all__'\n#views.py:\nfrom rest_framework import viewsets\nfrom .models import Tarea\nfrom .serializers import TareaSerializer\n\nclass TareaViewSet(viewsets.ModelViewSet):\n    queryset = Tarea.objects.all()\n    serializer_class = TareaSerializer\n\n    urls.py (api_tareas):\nfrom rest_framework.routers import DefaultRouter\nfrom .views import TareaViewSet\n\nrouter = DefaultRouter()\nrouter.register(r'tareas', TareaViewSet)\n\nurlpatterns = router.urls\nA continuación en el archivo settings.py agregar ‘rest_framework’ y ‘api_tareas’ en INSTALLED_APPS.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nConfigura un proyecto Django y una aplicación llamada ‘api_tareas’.\nDefine el modelo Tarea en models.py con los campos necesarios.\nCrea un serializador en serializers.py para el modelo Tarea.\nImplementa las vistas en views.py utilizando Django Rest Framework.\nConfigura las URLs en urls.py para las vistas de la API.\nMigrar y ejecutar el servidor para probar la API utilizando el navegador o herramientas como Postman."
-  },
-  {
-    "objectID": "unidades/unidad12/unidad12.html#explicación-de-la-actividad",
-    "href": "unidades/unidad12/unidad12.html#explicación-de-la-actividad",
-    "title": "Explicación del Proyecto",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEste proyecto permite a los participantes aplicar los conocimientos adquiridos en Django y Django Rest Framework para crear una API de gestión de tareas. Aprenden cómo definir modelos, serializadores, vistas y URLs en Django Rest Framework para construir una API completa. Les ayuda a comprender cómo desarrollar aplicaciones web con APIs utilizando tecnologías modernas."
-  },
-  {
-    "objectID": "unidades/unidad12/unidad12.html#qué-se-necesita-conocer-1",
-    "href": "unidades/unidad12/unidad12.html#qué-se-necesita-conocer-1",
-    "title": "Explicación del Proyecto",
-    "section": "Qué se necesita conocer:",
-    "text": "Qué se necesita conocer:\n\nConocimientos básicos de Python.\nFamiliaridad con Django y Django Rest Framework.\nEntorno de desarrollo configurado con Django y Django Rest Framework."
-  },
-  {
-    "objectID": "unidades/unidad12/unidad12.html#estructura-del-proyecto-1",
-    "href": "unidades/unidad12/unidad12.html#estructura-del-proyecto-1",
-    "title": "Explicación del Proyecto",
-    "section": "Estructura del Proyecto:",
-    "text": "Estructura del Proyecto:\nproyecto_api_tareas/\n├── api_tareas/\n│   ├── migrations/\n│   ├── templates/\n│   ├── __init__.py\n│   ├── admin.py\n│   ├── apps.py\n│   ├── models.py\n│   ├── serializers.py\n│   ├── tests.py\n│   └── views.py\n├── proyecto_api_tareas/\n│   ├── __init__.py\n│   ├── asgi.py\n│   ├── settings.py\n│   ├── urls.py\n│   └── wsgi.py\n├── db.sqlite3\n└── manage.py"
-  },
-  {
-    "objectID": "unidades/unidad12/unidad12.html#código-1",
-    "href": "unidades/unidad12/unidad12.html#código-1",
-    "title": "Explicación del Proyecto",
-    "section": "Código:",
-    "text": "Código:\n#models.py:\nfrom django.db import models\n\nclass Tarea(models.Model):\n    titulo = models.CharField(max_length=100)\n    descripcion = models.TextField()\n    fecha_creacion = models.DateTimeField(auto_now_add=True)\n    completada = models.BooleanField(default=False)\n\n    def __str__(self):\n        return self.titulo\n#serializers.py:\n\nfrom rest_framework import serializers\nfrom .models import Tarea\n\nclass TareaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Tarea\n        fields = '__all__'\n#views.py:\nfrom rest_framework import viewsets\nfrom .models import Tarea\nfrom .serializers import TareaSerializer\n\nclass TareaViewSet(viewsets.ModelViewSet):\n    queryset = Tarea.objects.all()\n    serializer_class = TareaSerializer\n\n    urls.py (api_tareas):\nfrom rest_framework.routers import DefaultRouter\nfrom .views import TareaViewSet\n\nrouter = DefaultRouter()\nrouter.register(r'tareas', TareaViewSet)\n\nurlpatterns = router.urls\nA continuación en el archivo settings.py agregar ‘rest_framework’ y ‘api_tareas’ en INSTALLED_APPS.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nConfigura un proyecto Django y una aplicación llamada ‘api_tareas’.\nDefine el modelo Tarea en models.py con los campos necesarios.\nCrea un serializador en serializers.py para el modelo Tarea.\nImplementa las vistas en views.py utilizando Django Rest Framework.\nConfigura las URLs en urls.py para las vistas de la API.\nMigrar y ejecutar el servidor para probar la API utilizando el navegador o herramientas como Postman."
-  },
-  {
-    "objectID": "unidades/unidad12/unidad12.html#explicación-de-la-actividad-1",
-    "href": "unidades/unidad12/unidad12.html#explicación-de-la-actividad-1",
-    "title": "Explicación del Proyecto",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\n\n\n\n\n\n\n\ne8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9 Este proyecto permite a los participantes aplicar los conocimientos adquiridos en Django y Django Rest Framework para crear una API de gestión de tareas. Aprenden cómo definir modelos, serializadores, vistas y URLs en Django Rest Framework para construir una API completa. Les ayuda a comprender cómo desarrollar aplicaciones web con APIs utilizando tecnologías modernas."
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicio1.html",
-    "href": "unidades/ejercicios/ejercicio1.html",
-    "title": "Ejercicio 1:",
-    "section": "",
-    "text": "¿Cómo se define una variable en Python?\n\n\nRespuesta:\n\nSe define una variable en Python asignándole un nombre y un valor. Por ejemplo:\nnombre = \"Juan\""
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.1.html#conceptos-clave",
-    "href": "unidades/unidad7/unidad7.1.html#conceptos-clave",
-    "title": "Introducción",
+    "objectID": "unidades/unidad3/unidad3.1.html#conceptos-clave",
+    "href": "unidades/unidad3/unidad3.1.html#conceptos-clave",
+    "title": "Distintas formas de trabajar con Python",
     "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nProgramación Orientada a Objetos (POO)\nParadigma de programación que se basa en el uso de objetos y clases.\n\n\nObjetos\nInstancias de clases que representan entidades en el mundo real.\n\n\nClases\nPlantillas o moldes que definen la estructura y el comportamiento de los objetos.\n\n\nAtributos\nCaracterísticas o propiedades de un objeto.\n\n\nMétodos\nFunciones que definen el comportamiento de un objeto."
+    "text": "Conceptos Clave:\n\nIntérprete Interactivo:\nPermite ejecutar instrucciones de Python en tiempo real y ver los resultados inmediatamente en la consola.\n\n\nScripts de Python:\nSon archivos que contienen una serie de instrucciones de Python que se pueden ejecutar en conjunto.\n\n\nAmbientes Virtuales\nSon entornos aislados que permiten tener instalaciones y bibliotecas de Python separadas para diferentes proyectos.\n\n\nEjemplo\n1&gt;&gt;&gt; 2 + 3\n5\n\n2# suma.py\nnumero1 = 5\nnumero2 = 7\nresultado = numero1 + numero2\nprint(\"El resultado de la suma es:\", resultado)\n3# CTRL + S para guardar\n\n1\n\nUso del intérprete interactivo\n\n2\n\nEjecución de un script de Python\n\n3\n\nGuarda este código en un archivo llamado “suma.py”"
   },
   {
-    "objectID": "unidades/unidad7/unidad7.1.html#ejemplo",
-    "href": "unidades/unidad7/unidad7.1.html#ejemplo",
-    "title": "Introducción",
-    "section": "Ejemplo:",
-    "text": "Ejemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n\n    def saludar(self):\n        print(f\"Hola, mi nombre es {self.nombre} y tengo {self.edad} años.\")\n\npersona1 = Persona(\"Juan\", 25)\npersona1.saludar()"
+    "objectID": "unidades/unidad3/unidad3.1.html#explicación",
+    "href": "unidades/unidad3/unidad3.1.html#explicación",
+    "title": "Distintas formas de trabajar con Python",
+    "section": "Explicación",
+    "text": "Explicación\nEl intérprete interactivo permite ejecutar expresiones de Python directamente en la consola y ver los resultados en tiempo real.\nLos scripts de Python son archivos que contienen un conjunto de instrucciones. En este ejemplo, se muestra cómo crear un script simple que calcula la suma de dos números y lo imprime en la consola.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nAbre el intérprete interactivo de Python y realiza algunas operaciones matemáticas simples.\nCrea un archivo llamado “operaciones.py” y escribe un programa que realice operaciones aritméticas básicas y las muestre en la consola."
   },
   {
-    "objectID": "unidades/unidad7/unidad7.1.html#explicación",
-    "href": "unidades/unidad7/unidad7.1.html#explicación",
-    "title": "Introducción",
-    "section": "Explicación:",
-    "text": "Explicación:\nEn este ejemplo, se define una clase llamada Persona con un constructor (init) que inicializa atributos.\nLa clase tiene un método llamado saludar que muestra un mensaje con el nombre y edad del objeto.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una clase llamada Libro con atributos titulo y autor, y un método mostrar_info que imprima los atributos.\nCrea una instancia de la clase Libro y llama al método mostrar_info."
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.1.html#explicación-de-la-actividad",
-    "href": "unidades/unidad7/unidad7.1.html#explicación-de-la-actividad",
-    "title": "Introducción",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la definición de clases y la creación de objetos. Les ayuda a comprender cómo la POO nos permite modelar entidades y organizar el código de manera más estructurada y eficiente."
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.1.html#conceptos-clave-1",
-    "href": "unidades/unidad7/unidad7.1.html#conceptos-clave-1",
-    "title": "Introducción",
-    "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nProgramación Orientada a Objetos (POO)\nParadigma de programación que se basa en el uso de objetos y clases.\n\n\nObjetos\nInstancias de clases que representan entidades en el mundo real.\n\n\nClases\nPlantillas o moldes que definen la estructura y el comportamiento de los objetos.\n\n\nAtributos\nCaracterísticas o propiedades de un objeto.\n\n\nMétodos\nFunciones que definen el comportamiento de un objeto."
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.1.html#ejemplo-1",
-    "href": "unidades/unidad7/unidad7.1.html#ejemplo-1",
-    "title": "Introducción",
-    "section": "Ejemplo:",
-    "text": "Ejemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n\n    def saludar(self):\n        print(f\"Hola, mi nombre es {self.nombre} y tengo {self.edad} años.\")\n\npersona1 = Persona(\"Juan\", 25)\npersona1.saludar()"
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.1.html#explicación-1",
-    "href": "unidades/unidad7/unidad7.1.html#explicación-1",
-    "title": "Introducción",
-    "section": "Explicación:",
-    "text": "Explicación:\nEn este ejemplo, se define una clase llamada Persona con un constructor (init) que inicializa atributos.\nLa clase tiene un método llamado saludar que muestra un mensaje con el nombre y edad del objeto.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una clase llamada Libro con atributos titulo y autor, y un método mostrar_info que imprima los atributos.\nCrea una instancia de la clase Libro y llama al método mostrar_info."
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.1.html#explicación-de-la-actividad-1",
-    "href": "unidades/unidad7/unidad7.1.html#explicación-de-la-actividad-1",
-    "title": "Introducción",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la definición de clases y la creación de objetos. Les ayuda a comprender cómo la POO nos permite modelar entidades y organizar el código de manera más estructurada y eficiente.\n\n\n\n\n\n\n\ne8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9"
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.2.html#conceptos-clave",
-    "href": "unidades/unidad7/unidad7.2.html#conceptos-clave",
-    "title": "Objetos y Clases",
-    "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nInstancias de Clase\nCuando se crea un objeto a partir de una clase, se crea una instancia de esa clase.\n\n\nAtributos de Instancia:\nCaracterísticas específicas de un objeto que se almacenan como variables en la instancia.\n\n\nMétodos de Instancia\nFunciones definidas en la clase que operan en los atributos de la instancia."
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.2.html#ejemplo",
-    "href": "unidades/unidad7/unidad7.2.html#ejemplo",
-    "title": "Objetos y Clases",
-    "section": "Ejemplo:",
-    "text": "Ejemplo:\nclass Perro:\n    def __init__(self, nombre, raza):\n        self.nombre = nombre\n        self.raza = raza\n\n    def ladrar(self):\n        print(f\"{self.nombre} está ladrando.\")\n\nperro1 = Perro(\"Max\", \"Labrador\")\nperro2 = Perro(\"Buddy\", \"Chihuahua\")\n\nperro1.ladrar()\nperro2.ladrar()"
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.2.html#explicación",
-    "href": "unidades/unidad7/unidad7.2.html#explicación",
-    "title": "Objetos y Clases",
-    "section": "Explicación:",
-    "text": "Explicación:\nEn este ejemplo, se define una clase Perro con un constructor y un método ladrar.\nSe crean dos objetos (perro1 y perro2) a partir de la misma clase y se les asignan diferentes valores para sus atributos.\nLos métodos de instancia son llamados en cada objeto para realizar acciones específicas.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una clase Rectangulo con atributos ancho y alto, y un método calcular_area que calcule y retorne el área del rectángulo.\nCrea dos instancias de la clase Rectangulo con diferentes valores de ancho y alto, y llama al método calcular_area en cada una."
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.2.html#explicación-de-la-actividad",
-    "href": "unidades/unidad7/unidad7.2.html#explicación-de-la-actividad",
-    "title": "Objetos y Clases",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de instancias de clase y trabajar con sus atributos y métodos. Les ayuda a comprender cómo cada objeto puede tener valores diferentes para sus atributos y cómo ejecutar acciones específicas en cada objeto."
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.2.html#conceptos-clave-1",
-    "href": "unidades/unidad7/unidad7.2.html#conceptos-clave-1",
-    "title": "Objetos y Clases",
-    "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nInstancias de Clase\nCuando se crea un objeto a partir de una clase, se crea una instancia de esa clase.\n\n\nAtributos de Instancia:\nCaracterísticas específicas de un objeto que se almacenan como variables en la instancia.\n\n\nMétodos de Instancia\nFunciones definidas en la clase que operan en los atributos de la instancia."
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.2.html#ejemplo-1",
-    "href": "unidades/unidad7/unidad7.2.html#ejemplo-1",
-    "title": "Objetos y Clases",
-    "section": "Ejemplo:",
-    "text": "Ejemplo:\nclass Perro:\n    def __init__(self, nombre, raza):\n        self.nombre = nombre\n        self.raza = raza\n\n    def ladrar(self):\n        print(f\"{self.nombre} está ladrando.\")\n\nperro1 = Perro(\"Max\", \"Labrador\")\nperro2 = Perro(\"Buddy\", \"Chihuahua\")\n\nperro1.ladrar()\nperro2.ladrar()"
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.2.html#explicación-1",
-    "href": "unidades/unidad7/unidad7.2.html#explicación-1",
-    "title": "Objetos y Clases",
-    "section": "Explicación:",
-    "text": "Explicación:\nEn este ejemplo, se define una clase Perro con un constructor y un método ladrar.\nSe crean dos objetos (perro1 y perro2) a partir de la misma clase y se les asignan diferentes valores para sus atributos.\nLos métodos de instancia son llamados en cada objeto para realizar acciones específicas.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una clase Rectangulo con atributos ancho y alto, y un método calcular_area que calcule y retorne el área del rectángulo.\nCrea dos instancias de la clase Rectangulo con diferentes valores de ancho y alto, y llama al método calcular_area en cada una."
-  },
-  {
-    "objectID": "unidades/unidad7/unidad7.2.html#explicación-de-la-actividad-1",
-    "href": "unidades/unidad7/unidad7.2.html#explicación-de-la-actividad-1",
-    "title": "Objetos y Clases",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de instancias de clase y trabajar con sus atributos y métodos. Les ayuda a comprender cómo cada objeto puede tener valores diferentes para sus atributos y cómo ejecutar acciones específicas en cada objeto.\n\n\n\n\n\n\n\ne8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9"
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.1.html#conceptos-clave",
-    "href": "unidades/unidad11/unidad11.1.html#conceptos-clave",
-    "title": "Introducción a Data Science",
-    "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nCiencia de Datos:\nProceso de extracción de conocimiento y perspectivas a partir de datos.\n\n\nUso de Python en Data Science:\nBibliotecas como NumPy, Pandas y Matplotlib.\n\n\nEjemplos de Aplicación:\nAnálisis de datos,\nVisualización,\nAprendizaje Automático,\netc."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.1.html#ejemplo---uso-de-pandas-para-análisis-de-datos",
-    "href": "unidades/unidad11/unidad11.1.html#ejemplo---uso-de-pandas-para-análisis-de-datos",
-    "title": "Introducción a Data Science",
-    "section": "Ejemplo - Uso de Pandas para Análisis de Datos:",
-    "text": "Ejemplo - Uso de Pandas para Análisis de Datos:\nimport pandas as pd\n\ndata = {\n    'nombre': ['Juan', 'María', 'Pedro'],\n    'edad': [25, 30, 28]\n}\n\ndf = pd.DataFrame(data)\nprint(df)\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInvestiga y elige un conjunto de datos disponible en línea.\nUtiliza la biblioteca Pandas para cargar y analizar los datos.\nRealiza un análisis simple, como calcular estadísticas descriptivas, en el conjunto de datos."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.1.html#explicación-de-la-actividad",
-    "href": "unidades/unidad11/unidad11.1.html#explicación-de-la-actividad",
-    "title": "Introducción a Data Science",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes explorar la aplicación de Python en el campo de la Ciencia de Datos. Les ayuda a comprender cómo utilizar bibliotecas como Pandas para analizar datos y extraer información útil."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.1.html#conceptos-clave-1",
-    "href": "unidades/unidad11/unidad11.1.html#conceptos-clave-1",
-    "title": "Introducción a Data Science",
-    "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nCiencia de Datos:\nProceso de extracción de conocimiento y perspectivas a partir de datos.\n\n\nUso de Python en Data Science:\nBibliotecas como NumPy, Pandas y Matplotlib.\n\n\nEjemplos de Aplicación:\nAnálisis de datos,\nVisualización,\nAprendizaje Automático,\netc."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.1.html#ejemplo---uso-de-pandas-para-análisis-de-datos-1",
-    "href": "unidades/unidad11/unidad11.1.html#ejemplo---uso-de-pandas-para-análisis-de-datos-1",
-    "title": "Introducción a Data Science",
-    "section": "Ejemplo - Uso de Pandas para Análisis de Datos:",
-    "text": "Ejemplo - Uso de Pandas para Análisis de Datos:\nimport pandas as pd\n\ndata = {\n    'nombre': ['Juan', 'María', 'Pedro'],\n    'edad': [25, 30, 28]\n}\n\ndf = pd.DataFrame(data)\nprint(df)\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInvestiga y elige un conjunto de datos disponible en línea.\nUtiliza la biblioteca Pandas para cargar y analizar los datos.\nRealiza un análisis simple, como calcular estadísticas descriptivas, en el conjunto de datos."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.1.html#explicación-de-la-actividad-1",
-    "href": "unidades/unidad11/unidad11.1.html#explicación-de-la-actividad-1",
-    "title": "Introducción a Data Science",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\n\n\n\n\n\n\n\ne8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9 Esta actividad permite a los participantes explorar la aplicación de Python en el campo de la Ciencia de Datos. Les ayuda a comprender cómo utilizar bibliotecas como Pandas para analizar datos y extraer información útil."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.2.html#qué-es-django",
-    "href": "unidades/unidad11/unidad11.2.html#qué-es-django",
-    "title": "Introducción a Django Framework",
-    "section": "Qué es Django:",
-    "text": "Qué es Django:\nDjango es un framework de desarrollo web de alto nivel y de código abierto.\nProporciona una estructura organizada para crear aplicaciones web de manera eficiente."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.2.html#instalación-de-django",
-    "href": "unidades/unidad11/unidad11.2.html#instalación-de-django",
-    "title": "Introducción a Django Framework",
-    "section": "Instalación de Django:",
-    "text": "Instalación de Django:\n\nInstalar Django utilizando pip:\npip install django\n\n\nVerificar la instalación:\ndjango-admin --version"
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.2.html#creación-de-una-aplicación-web-básica",
-    "href": "unidades/unidad11/unidad11.2.html#creación-de-una-aplicación-web-básica",
-    "title": "Introducción a Django Framework",
-    "section": "Creación de una Aplicación Web Básica:",
-    "text": "Creación de una Aplicación Web Básica:\n\nCrear un nuevo proyecto:\ndjango-admin startproject proyecto .\n\n\nCrear una nueva aplicación dentro del proyecto:\npython manage.py startapp app"
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.2.html#ejemplo---creación-de-una-página-web-con-django",
-    "href": "unidades/unidad11/unidad11.2.html#ejemplo---creación-de-una-página-web-con-django",
-    "title": "Introducción a Django Framework",
-    "section": "Ejemplo - Creación de una Página Web con Django:",
-    "text": "Ejemplo - Creación de una Página Web con Django:\n# views.py\nfrom django.http import HttpResponse\n\ndef hola_mundo(request):\n    return HttpResponse(\"¡Hola, mundo!\")\n# urls.py\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('hola/', views.hola_mundo, name='hola_mundo'),\n]\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInstala Django en tu entorno.\nCrea un proyecto llamado ‘blog’ y una aplicación llamada ‘articulos’.\nCrea una vista que muestre un mensaje de bienvenida en la página principal.\nConfigura una URL para acceder a la vista creada."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.2.html#explicación-de-la-actividad",
-    "href": "unidades/unidad11/unidad11.2.html#explicación-de-la-actividad",
-    "title": "Introducción a Django Framework",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes experimentar con la creación de proyectos y aplicaciones utilizando Django. Les ayuda a comprender cómo estructurar una aplicación web utilizando este framework y cómo definir rutas y vistas para mostrar contenido en el navegador."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.2.html#qué-es-django-1",
-    "href": "unidades/unidad11/unidad11.2.html#qué-es-django-1",
-    "title": "Introducción a Django Framework",
-    "section": "Qué es Django:",
-    "text": "Qué es Django:\nDjango es un framework de desarrollo web de alto nivel y de código abierto.\nProporciona una estructura organizada para crear aplicaciones web de manera eficiente."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.2.html#instalación-de-django-1",
-    "href": "unidades/unidad11/unidad11.2.html#instalación-de-django-1",
-    "title": "Introducción a Django Framework",
-    "section": "Instalación de Django:",
-    "text": "Instalación de Django:\n\nInstalar Django utilizando pip:\npip install django\n\n\nVerificar la instalación:\ndjango-admin --version"
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.2.html#creación-de-una-aplicación-web-básica-1",
-    "href": "unidades/unidad11/unidad11.2.html#creación-de-una-aplicación-web-básica-1",
-    "title": "Introducción a Django Framework",
-    "section": "Creación de una Aplicación Web Básica:",
-    "text": "Creación de una Aplicación Web Básica:\n\nCrear un nuevo proyecto:\ndjango-admin startproject proyecto .\n\n\nCrear una nueva aplicación dentro del proyecto:\npython manage.py startapp app"
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.2.html#ejemplo---creación-de-una-página-web-con-django-1",
-    "href": "unidades/unidad11/unidad11.2.html#ejemplo---creación-de-una-página-web-con-django-1",
-    "title": "Introducción a Django Framework",
-    "section": "Ejemplo - Creación de una Página Web con Django:",
-    "text": "Ejemplo - Creación de una Página Web con Django:\n# views.py\nfrom django.http import HttpResponse\n\ndef hola_mundo(request):\n    return HttpResponse(\"¡Hola, mundo!\")\n# urls.py\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('hola/', views.hola_mundo, name='hola_mundo'),\n]\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInstala Django en tu entorno.\nCrea un proyecto llamado ‘blog’ y una aplicación llamada ‘articulos’.\nCrea una vista que muestre un mensaje de bienvenida en la página principal.\nConfigura una URL para acceder a la vista creada."
-  },
-  {
-    "objectID": "unidades/unidad11/unidad11.2.html#explicación-de-la-actividad-1",
-    "href": "unidades/unidad11/unidad11.2.html#explicación-de-la-actividad-1",
-    "title": "Introducción a Django Framework",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes experimentar con la creación de proyectos y aplicaciones utilizando Django. Les ayuda a comprender cómo estructurar una aplicación web utilizando este framework y cómo definir rutas y vistas para mostrar contenido en el navegador.\n\n\n\n\n\n\n\ne8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9"
+    "objectID": "unidades/unidad3/unidad3.1.html#explicación-de-la-actividad",
+    "href": "unidades/unidad3/unidad3.1.html#explicación-de-la-actividad",
+    "title": "Distintas formas de trabajar con Python",
+    "section": "Explicación de la Actividad",
+    "text": "Explicación de la Actividad\nEsta actividad permite a los participantes experimentar con el intérprete interactivo de Python y crear su propio script para realizar operaciones matemáticas."
   },
   {
     "objectID": "unidades/unidad3/unidad3.2.html#conceptos-clave",
@@ -1008,6 +714,62 @@
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la implementación de funciones recursivas y comprender cómo se dividen los problemas en partes más pequeñas para resolverlos. Les ayuda a comprender cómo aplicar la recursividad de manera efectiva en la solución de problemas."
   },
   {
+    "objectID": "unidades/unidad7/unidad7.1.html#conceptos-clave",
+    "href": "unidades/unidad7/unidad7.1.html#conceptos-clave",
+    "title": "Introducción",
+    "section": "Conceptos Clave:",
+    "text": "Conceptos Clave:\n\nProgramación Orientada a Objetos (POO)\nParadigma de programación que se basa en el uso de objetos y clases.\n\n\nObjetos\nInstancias de clases que representan entidades en el mundo real.\n\n\nClases\nPlantillas o moldes que definen la estructura y el comportamiento de los objetos.\n\n\nAtributos\nCaracterísticas o propiedades de un objeto.\n\n\nMétodos\nFunciones que definen el comportamiento de un objeto."
+  },
+  {
+    "objectID": "unidades/unidad7/unidad7.1.html#ejemplo",
+    "href": "unidades/unidad7/unidad7.1.html#ejemplo",
+    "title": "Introducción",
+    "section": "Ejemplo:",
+    "text": "Ejemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n\n    def saludar(self):\n        print(f\"Hola, mi nombre es {self.nombre} y tengo {self.edad} años.\")\n\npersona1 = Persona(\"Juan\", 25)\npersona1.saludar()"
+  },
+  {
+    "objectID": "unidades/unidad7/unidad7.1.html#explicación",
+    "href": "unidades/unidad7/unidad7.1.html#explicación",
+    "title": "Introducción",
+    "section": "Explicación:",
+    "text": "Explicación:\nEn este ejemplo, se define una clase llamada Persona con un constructor (init) que inicializa atributos.\nLa clase tiene un método llamado saludar que muestra un mensaje con el nombre y edad del objeto.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una clase llamada Libro con atributos titulo y autor, y un método mostrar_info que imprima los atributos.\nCrea una instancia de la clase Libro y llama al método mostrar_info."
+  },
+  {
+    "objectID": "unidades/unidad7/unidad7.1.html#explicación-de-la-actividad",
+    "href": "unidades/unidad7/unidad7.1.html#explicación-de-la-actividad",
+    "title": "Introducción",
+    "section": "Explicación de la Actividad:",
+    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la definición de clases y la creación de objetos. Les ayuda a comprender cómo la POO nos permite modelar entidades y organizar el código de manera más estructurada y eficiente."
+  },
+  {
+    "objectID": "unidades/unidad7/unidad7.2.html#conceptos-clave",
+    "href": "unidades/unidad7/unidad7.2.html#conceptos-clave",
+    "title": "Objetos y Clases",
+    "section": "Conceptos Clave:",
+    "text": "Conceptos Clave:\n\nInstancias de Clase\nCuando se crea un objeto a partir de una clase, se crea una instancia de esa clase.\n\n\nAtributos de Instancia:\nCaracterísticas específicas de un objeto que se almacenan como variables en la instancia.\n\n\nMétodos de Instancia\nFunciones definidas en la clase que operan en los atributos de la instancia."
+  },
+  {
+    "objectID": "unidades/unidad7/unidad7.2.html#ejemplo",
+    "href": "unidades/unidad7/unidad7.2.html#ejemplo",
+    "title": "Objetos y Clases",
+    "section": "Ejemplo:",
+    "text": "Ejemplo:\nclass Perro:\n    def __init__(self, nombre, raza):\n        self.nombre = nombre\n        self.raza = raza\n\n    def ladrar(self):\n        print(f\"{self.nombre} está ladrando.\")\n\nperro1 = Perro(\"Max\", \"Labrador\")\nperro2 = Perro(\"Buddy\", \"Chihuahua\")\n\nperro1.ladrar()\nperro2.ladrar()"
+  },
+  {
+    "objectID": "unidades/unidad7/unidad7.2.html#explicación",
+    "href": "unidades/unidad7/unidad7.2.html#explicación",
+    "title": "Objetos y Clases",
+    "section": "Explicación:",
+    "text": "Explicación:\nEn este ejemplo, se define una clase Perro con un constructor y un método ladrar.\nSe crean dos objetos (perro1 y perro2) a partir de la misma clase y se les asignan diferentes valores para sus atributos.\nLos métodos de instancia son llamados en cada objeto para realizar acciones específicas.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una clase Rectangulo con atributos ancho y alto, y un método calcular_area que calcule y retorne el área del rectángulo.\nCrea dos instancias de la clase Rectangulo con diferentes valores de ancho y alto, y llama al método calcular_area en cada una."
+  },
+  {
+    "objectID": "unidades/unidad7/unidad7.2.html#explicación-de-la-actividad",
+    "href": "unidades/unidad7/unidad7.2.html#explicación-de-la-actividad",
+    "title": "Objetos y Clases",
+    "section": "Explicación de la Actividad:",
+    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de instancias de clase y trabajar con sus atributos y métodos. Les ayuda a comprender cómo cada objeto puede tener valores diferentes para sus atributos y cómo ejecutar acciones específicas en cada objeto."
+  },
+  {
     "objectID": "unidades/unidad7/unidad7.3.html#conceptos-clave",
     "href": "unidades/unidad7/unidad7.3.html#conceptos-clave",
     "title": "Métodos",
@@ -1386,6 +1148,62 @@
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes aplicar los conocimientos adquiridos en la inserción, consulta, actualización y eliminación de documentos en una base de datos MongoDB. Les ayuda a ganar experiencia práctica en la manipulación de datos en una base de datos NoSQL."
   },
   {
+    "objectID": "unidades/unidad11/unidad11.1.html#conceptos-clave",
+    "href": "unidades/unidad11/unidad11.1.html#conceptos-clave",
+    "title": "Introducción a Data Science",
+    "section": "Conceptos Clave:",
+    "text": "Conceptos Clave:\n\nCiencia de Datos:\nProceso de extracción de conocimiento y perspectivas a partir de datos.\n\n\nUso de Python en Data Science:\nBibliotecas como NumPy, Pandas y Matplotlib.\n\n\nEjemplos de Aplicación:\nAnálisis de datos,\nVisualización,\nAprendizaje Automático,\netc."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.1.html#ejemplo---uso-de-pandas-para-análisis-de-datos",
+    "href": "unidades/unidad11/unidad11.1.html#ejemplo---uso-de-pandas-para-análisis-de-datos",
+    "title": "Introducción a Data Science",
+    "section": "Ejemplo - Uso de Pandas para Análisis de Datos:",
+    "text": "Ejemplo - Uso de Pandas para Análisis de Datos:\nimport pandas as pd\n\ndata = {\n    'nombre': ['Juan', 'María', 'Pedro'],\n    'edad': [25, 30, 28]\n}\n\ndf = pd.DataFrame(data)\nprint(df)\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInvestiga y elige un conjunto de datos disponible en línea.\nUtiliza la biblioteca Pandas para cargar y analizar los datos.\nRealiza un análisis simple, como calcular estadísticas descriptivas, en el conjunto de datos."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.1.html#explicación-de-la-actividad",
+    "href": "unidades/unidad11/unidad11.1.html#explicación-de-la-actividad",
+    "title": "Introducción a Data Science",
+    "section": "Explicación de la Actividad:",
+    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes explorar la aplicación de Python en el campo de la Ciencia de Datos. Les ayuda a comprender cómo utilizar bibliotecas como Pandas para analizar datos y extraer información útil."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.2.html#qué-es-django",
+    "href": "unidades/unidad11/unidad11.2.html#qué-es-django",
+    "title": "Introducción a Django Framework",
+    "section": "Qué es Django:",
+    "text": "Qué es Django:\nDjango es un framework de desarrollo web de alto nivel y de código abierto.\nProporciona una estructura organizada para crear aplicaciones web de manera eficiente."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.2.html#instalación-de-django",
+    "href": "unidades/unidad11/unidad11.2.html#instalación-de-django",
+    "title": "Introducción a Django Framework",
+    "section": "Instalación de Django:",
+    "text": "Instalación de Django:\n\nInstalar Django utilizando pip:\npip install django\n\n\nVerificar la instalación:\ndjango-admin --version"
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.2.html#creación-de-una-aplicación-web-básica",
+    "href": "unidades/unidad11/unidad11.2.html#creación-de-una-aplicación-web-básica",
+    "title": "Introducción a Django Framework",
+    "section": "Creación de una Aplicación Web Básica:",
+    "text": "Creación de una Aplicación Web Básica:\n\nCrear un nuevo proyecto:\ndjango-admin startproject proyecto .\n\n\nCrear una nueva aplicación dentro del proyecto:\npython manage.py startapp app"
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.2.html#ejemplo---creación-de-una-página-web-con-django",
+    "href": "unidades/unidad11/unidad11.2.html#ejemplo---creación-de-una-página-web-con-django",
+    "title": "Introducción a Django Framework",
+    "section": "Ejemplo - Creación de una Página Web con Django:",
+    "text": "Ejemplo - Creación de una Página Web con Django:\n# views.py\nfrom django.http import HttpResponse\n\ndef hola_mundo(request):\n    return HttpResponse(\"¡Hola, mundo!\")\n# urls.py\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('hola/', views.hola_mundo, name='hola_mundo'),\n]\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInstala Django en tu entorno.\nCrea un proyecto llamado ‘blog’ y una aplicación llamada ‘articulos’.\nCrea una vista que muestre un mensaje de bienvenida en la página principal.\nConfigura una URL para acceder a la vista creada."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.2.html#explicación-de-la-actividad",
+    "href": "unidades/unidad11/unidad11.2.html#explicación-de-la-actividad",
+    "title": "Introducción a Django Framework",
+    "section": "Explicación de la Actividad:",
+    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes experimentar con la creación de proyectos y aplicaciones utilizando Django. Les ayuda a comprender cómo estructurar una aplicación web utilizando este framework y cómo definir rutas y vistas para mostrar contenido en el navegador."
+  },
+  {
     "objectID": "unidades/unidad11/unidad11.3.html#qué-es-fastapi",
     "href": "unidades/unidad11/unidad11.3.html#qué-es-fastapi",
     "title": "Introducción a FastAPI y PyScript",
@@ -1426,6 +1244,41 @@
     "title": "Introducción a FastAPI y PyScript",
     "section": "Explicación de la Actividad:",
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes experimentar con FastAPI y PyScript para crear una API básica y ejecutar scripts interactivos. Les ayuda a comprender cómo utilizar FastAPI para construir APIs de manera rápida y cómo utilizar PyScript para escribir y ejecutar código Python de manera interactiva en la consola."
+  },
+  {
+    "objectID": "unidades/unidad12/unidad12.html#qué-se-necesita-conocer",
+    "href": "unidades/unidad12/unidad12.html#qué-se-necesita-conocer",
+    "title": "Explicación del Proyecto",
+    "section": "Qué se necesita conocer:",
+    "text": "Qué se necesita conocer:\n\nConocimientos básicos de Python.\nFamiliaridad con Django y Django Rest Framework.\nEntorno de desarrollo configurado con Django y Django Rest Framework."
+  },
+  {
+    "objectID": "unidades/unidad12/unidad12.html#estructura-del-proyecto",
+    "href": "unidades/unidad12/unidad12.html#estructura-del-proyecto",
+    "title": "Explicación del Proyecto",
+    "section": "Estructura del Proyecto:",
+    "text": "Estructura del Proyecto:\nproyecto_api_tareas/\n├── api_tareas/\n│   ├── migrations/\n│   ├── templates/\n│   ├── __init__.py\n│   ├── admin.py\n│   ├── apps.py\n│   ├── models.py\n│   ├── serializers.py\n│   ├── tests.py\n│   └── views.py\n├── proyecto_api_tareas/\n│   ├── __init__.py\n│   ├── asgi.py\n│   ├── settings.py\n│   ├── urls.py\n│   └── wsgi.py\n├── db.sqlite3\n└── manage.py"
+  },
+  {
+    "objectID": "unidades/unidad12/unidad12.html#código",
+    "href": "unidades/unidad12/unidad12.html#código",
+    "title": "Explicación del Proyecto",
+    "section": "Código:",
+    "text": "Código:\n#models.py:\nfrom django.db import models\n\nclass Tarea(models.Model):\n    titulo = models.CharField(max_length=100)\n    descripcion = models.TextField()\n    fecha_creacion = models.DateTimeField(auto_now_add=True)\n    completada = models.BooleanField(default=False)\n\n    def __str__(self):\n        return self.titulo\n#serializers.py:\n\nfrom rest_framework import serializers\nfrom .models import Tarea\n\nclass TareaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Tarea\n        fields = '__all__'\n#views.py:\nfrom rest_framework import viewsets\nfrom .models import Tarea\nfrom .serializers import TareaSerializer\n\nclass TareaViewSet(viewsets.ModelViewSet):\n    queryset = Tarea.objects.all()\n    serializer_class = TareaSerializer\n\n    urls.py (api_tareas):\nfrom rest_framework.routers import DefaultRouter\nfrom .views import TareaViewSet\n\nrouter = DefaultRouter()\nrouter.register(r'tareas', TareaViewSet)\n\nurlpatterns = router.urls\nA continuación en el archivo settings.py agregar ‘rest_framework’ y ‘api_tareas’ en INSTALLED_APPS.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nConfigura un proyecto Django y una aplicación llamada ‘api_tareas’.\nDefine el modelo Tarea en models.py con los campos necesarios.\nCrea un serializador en serializers.py para el modelo Tarea.\nImplementa las vistas en views.py utilizando Django Rest Framework.\nConfigura las URLs en urls.py para las vistas de la API.\nMigrar y ejecutar el servidor para probar la API utilizando el navegador o herramientas como Postman."
+  },
+  {
+    "objectID": "unidades/unidad12/unidad12.html#explicación-de-la-actividad",
+    "href": "unidades/unidad12/unidad12.html#explicación-de-la-actividad",
+    "title": "Explicación del Proyecto",
+    "section": "Explicación de la Actividad:",
+    "text": "Explicación de la Actividad:\nEste proyecto permite a los participantes aplicar los conocimientos adquiridos en Django y Django Rest Framework para crear una API de gestión de tareas. Aprenden cómo definir modelos, serializadores, vistas y URLs en Django Rest Framework para construir una API completa. Les ayuda a comprender cómo desarrollar aplicaciones web con APIs utilizando tecnologías modernas."
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicio1.html",
+    "href": "unidades/ejercicios/ejercicio1.html",
+    "title": "Ejercicio 1:",
+    "section": "",
+    "text": "¿Cómo se define una variable en Python?\n\n\nRespuesta:\n\nSe define una variable en Python asignándole un nombre y un valor. Por ejemplo:\nnombre = \"Juan\""
   },
   {
     "objectID": "unidades/ejercicios/ejercicio2.html",
@@ -1622,5 +1475,54 @@
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD XI: ¿Cómo me amplío con Python?",
     "text": "UNIDAD XI: ¿Cómo me amplío con Python?\nEjercicio 51: ¿Qué es la ciencia de datos y cómo se relaciona con Python?\n\n\nRespuesta:\n\nLa ciencia de datos es el proceso de extracción, transformación y análisis de datos para obtener conocimientos y tomar decisiones informadas. Python es ampliamente utilizado en la ciencia de datos debido a su amplio ecosistema de bibliotecas y herramientas.\n\nEjercicio 52: ¿Qué es Django Framework y para qué se utiliza?\n\n\nRespuesta:\n\nDjango es un framework web de alto nivel en Python que facilita la creación de aplicaciones web robustas y escalables. Se utiliza para construir sitios web y aplicaciones con características como autenticación, seguridad y manejo de bases de datos.\n\nEjercicio 53: ¿Qué es FastAPI y cómo se diferencia de otros frameworks?\n\n\nRespuesta:\n\nFastAPI es un framework web moderno y de alto rendimiento para construir APIs en Python. Se destaca por su velocidad, facilidad de uso y generación automática de documentación interactiva. Utiliza anotaciones de tipo para validar datos y reducir errores.\n\nEjercicio 54: ¿Cuál es el propósito de las APIs en el desarrollo web?\n\n\nRespuesta:\n\nLas APIs (Interfaces de Programación de Aplicaciones) se utilizan para permitir la comunicación y la integración entre diferentes aplicaciones y sistemas. Facilitan el intercambio de datos y funcionalidades entre aplicaciones.\n\nEjercicio 55: ¿Por qué es importante ampliarse en Python más allá de los conceptos básicos?\n\n\nRespuesta:\n\nAmpliarse en Python permite abordar proyectos más complejos y desafiantes, como desarrollo web, análisis de datos, automatización, inteligencia artificial y más. Además, mejora las habilidades y la versatilidad como programador."
+  },
+  {
+    "objectID": "about.html#nuestro-objetivo",
+    "href": "about.html#nuestro-objetivo",
+    "title": "Acerca de Nosotros",
+    "section": "Nuestro Objetivo",
+    "text": "Nuestro Objetivo\nNuestro objetivo es proporcionarte los conocimientos y las habilidades necesarias para comenzar a programar utilizando Python. Queremos que te sientas cómodo con los conceptos básicos y que estés preparado para abordar proyectos más desafiantes en el futuro."
+  },
+  {
+    "objectID": "about.html#nuestro-equipo",
+    "href": "about.html#nuestro-equipo",
+    "title": "Acerca de Nosotros",
+    "section": "Nuestro Equipo",
+    "text": "Nuestro Equipo\nNuestro equipo está formado por apasionados desarrolladores y educadores que tienen una amplia experiencia en el mundo de la programación. Estamos aquí para ayudarte en cada paso del camino y responder a tus preguntas."
+  },
+  {
+    "objectID": "about.html#contacto",
+    "href": "about.html#contacto",
+    "title": "Acerca de Nosotros",
+    "section": "Contacto",
+    "text": "Contacto\nSi tienes preguntas, comentarios o sugerencias, no dudes en ponerte en contacto con nosotros a través de nuestro correo electrónico o redes sociales.\n¡Esperamos que disfrutes aprendiendo con nosotros!"
+  },
+  {
+    "objectID": "license.html#uso-permitido",
+    "href": "license.html#uso-permitido",
+    "title": "Licencia",
+    "section": "Uso Permitido",
+    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   }
 ]
