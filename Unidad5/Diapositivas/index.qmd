@@ -1,34 +1,41 @@
-<<<<<<< HEAD
 ---
 title: "Unidad V: Control de Flujo"
 # subtitle: "Modelos Discretos"
 date: "today"
 author: "Lcdo. Diego Medardo Saavedra García. Mgtr."
 lang: "es"
-format:
-  revealjs:
-    #chalkboard: 
-      #buttons: false
-    toc: true
-    incremental: false
-    slide-number: true
-    preview-links: auto
-    # logo: img/logo.png
-    # footer: <https://espe.edu.ec>
-    theme: dark
-    makeindex: true
-    multiplex: true
-    transition: fade
-    chalkboard: true #Pizarra
-    auto-stretch: false
-    smaller: false
-    scrollable: true
-    #presentation-title-slide-text-alig: left
-    presentation-slide-text-align: center
-    menu: true
-    codeBlock: {data-trim: true}
-    execute: true
-    executeCode: true
+
+format: 
+  beamer: 
+    aspectratio: 32
+    navigation: horizontal
+    theme: AnnArbor
+    colortheme: lily
+
+# format:
+#   revealjs:
+#     #chalkboard: 
+#       #buttons: false
+#     toc: true
+#     incremental: false
+#     slide-number: true
+#     preview-links: auto
+#     # logo: img/logo.png
+#     # footer: <https://espe.edu.ec>
+#     theme: dark
+#     makeindex: true
+#     multiplex: true
+#     transition: fade
+#     chalkboard: true #Pizarra
+#     auto-stretch: false
+#     smaller: false
+#     scrollable: true
+#     #presentation-title-slide-text-alig: left
+#     presentation-slide-text-align: center
+#     menu: true
+#     codeBlock: {data-trim: true}
+#     execute: true
+#     executeCode: true
   #html: 
     
     #code-fold: true
@@ -122,129 +129,4 @@ while contador <= 5:
 ## Referencias:
 
 Python.org. (2023). Control Flow. https://docs.python.org/3/tutorial/controlflow.html
-=======
----
-title: "Unidad V: Control de Flujo"
-# subtitle: "Modelos Discretos"
-date: "today"
-author: "Lcdo. Diego Medardo Saavedra García. Mgtr."
-lang: "es"
-format:
-  revealjs:
-    #chalkboard: 
-      #buttons: false
-    toc: true
-    incremental: false
-    slide-number: true
-    preview-links: auto
-    # logo: img/logo.png
-    # footer: <https://espe.edu.ec>
-    theme: dark
-    makeindex: true
-    multiplex: true
-    transition: fade
-    chalkboard: true #Pizarra
-    auto-stretch: false
-    smaller: false
-    scrollable: true
-    #presentation-title-slide-text-alig: left
-    presentation-slide-text-align: center
-    menu: true
-    codeBlock: {data-trim: true}
-    execute: true
-    executeCode: true
-  #html: 
-    
-    #code-fold: true
-    #html-math-method: katex
-    #multiplex: true
-    #transition: fade
-    #auto-stretch: false
-
-editor_options: 
-  chunk_output_type: console
----
-
-# Unidad V: Control de Flujo
-
-## Control de Flujo en Python
-
-**Objetivo:** Aprender cómo controlar el flujo de ejecución en un programa utilizando estructuras condicionales y bucles.
-
----
-
-### Introducción a If
-
-- La estructura `if` permite ejecutar un bloque de código si una condición es verdadera.
-- Ejemplo: 
-
-```python
-  edad = 18
-  if edad >= 18:
-      print("Eres mayor de edad.")
-```
-### If y Condicionales
-
-- Uso de operadores de comparación (<, >, <=, >=, ==, !=) en condiciones.
-    
-Ejemplo:
-
-```python
-numero = 5
-if numero % 2 == 0:
-  print("El número es par.")
-else:
-  print("El número es impar.")
-```
-
-- If, elif y else
-
-- Estructura elif para añadir múltiples condiciones.
-
-Ejemplo:
-
-```python
-nota = 85
-if nota >= 90:
-  print("A")
-elif nota >= 80:
-  print("B")
-else:
-  print("C")
-```
-And y Or
-
-- Operadores and y or para combinar condiciones.
-
-Ejemplo:
-
-```python
-edad = 25
-if edad >= 18 and edad <= 65:
-  print("Eres elegible para trabajar.")
-```
-### Introducción a While
-
-- Bucle while para ejecutar un bloque de código mientras una condición sea verdadera.
-
-Ejemplo:
-
-```python
-contador = 1
-while contador <= 5:
-  print("Contador:", contador)
-  contador += 1
-```
-## Ejemplo Práctico
-
-- Crea un programa que solicite al usuario un número y determine si es positivo, negativo o cero.
-
-## Actividad Práctica
-
-- Escribe un bucle while que imprima los primeros 10 números pares.
-
-## Referencias:
-
-Python.org. (2023). Control Flow. https://docs.python.org/3/tutorial/controlflow.html
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 Sweigart, A. (2015). Automate the Boring Stuff with Python. No Starch Press.

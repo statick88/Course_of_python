@@ -8,16 +8,18 @@ book/data_manipulation_cache/
 book/unidad1_cache/
 book/benchmarking_cache/
 index_cache/
-Unidad*/.../*images/
-Unidad*/.../*img*
-Unidad*/.../*index_files/
-Unidad*/.../*.Rhistory
-Unidad*/.../*Bibliografia.bib
-Unidad*/.../*index-speaker.html
-Unidad*/.../*index.html
-Unidad*/.../*.qmd
-Unidad*/*.rar
-Unidad*/index_files/*
+Unidad*/Diapositivas/*images/
+Unidad*/Diapositivas/*img*
+Unidad*/Diapositivas/*index_files/
+Unidad*/Diapositivas/.Rhistory
+*.rar
+Unidad*/Diapositivas/index-speaker.html
+Unidad*/Diapositivas/index.html
+Unidad*/Diapositivas/Bibliografia.bib
+Unidad*/Diapositivas/index.qmd
+
+
+
 
 
 
