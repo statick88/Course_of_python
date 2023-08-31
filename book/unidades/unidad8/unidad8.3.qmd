@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Renombrando Módulos
 
 En esta lección, aprenderemos cómo renombrar módulos al importarlos y cómo seleccionar elementos específicos para importar. Esto nos permitirá tener un mayor control sobre los nombres y las funcionalidades que utilizamos en nuestro código.
@@ -34,3 +35,41 @@ Importa solo la función para calcular el área de un círculo y calcula el áre
 
 ## Explicación de la Actividad:
 Esta actividad permite a los participantes practicar cómo renombrar módulos al importarlos y cómo seleccionar funciones específicas para importar. Les ayuda a comprender cómo personalizar los nombres de los módulos y cómo importar solo las funcionalidades que necesitan en su código.
+=======
+## Renombrando Módulos
+
+En esta lección, aprenderemos cómo renombrar módulos al importarlos y cómo seleccionar elementos específicos para importar. Esto nos permitirá tener un mayor control sobre los nombres y las funcionalidades que utilizamos en nuestro código.
+
+## Renombrando Módulos al Importar:
+
+```python
+import modulo_largo as ml
+```
+## Seleccionando Elementos Específicos para Importar:
+```python
+from modulo import funcion1, funcion2
+```
+## Ejemplo - Renombrando Módulos:
+
+```python
+import calculadora as calc
+
+resultado = calc.suma(3, 4)
+```
+## Ejemplo - Seleccionando Elementos Específicos:
+
+```python
+from operaciones import resta, Calculadora
+
+resultado = resta(10, 5)
+```
+:::{.callout-important}
+### Actividad Práctica:
+
+Renombra el módulo geometria como geo al importarlo en otro archivo.
+
+Importa solo la función para calcular el área de un círculo y calcula el área de un círculo con radio 5.
+
+## Explicación de la Actividad:
+Esta actividad permite a los participantes practicar cómo renombrar módulos al importarlos y cómo seleccionar funciones específicas para importar. Les ayuda a comprender cómo personalizar los nombres de los módulos y cómo importar solo las funcionalidades que necesitan en su código.
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

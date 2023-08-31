@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Introducción a Data Science
 
 En esta lección, exploraremos el emocionante campo de la Ciencia de Datos y cómo Python se ha convertido en una herramienta esencial en este ámbito. Aprenderemos qué es la Ciencia de Datos, su importancia y cómo Python se utiliza para analizar y visualizar datos.
@@ -47,4 +48,55 @@ Realiza un análisis simple, como calcular estadísticas descriptivas, en el con
 
 ## Explicación de la Actividad:
 
+=======
+## Introducción a Data Science
+
+En esta lección, exploraremos el emocionante campo de la Ciencia de Datos y cómo Python se ha convertido en una herramienta esencial en este ámbito. Aprenderemos qué es la Ciencia de Datos, su importancia y cómo Python se utiliza para analizar y visualizar datos.
+
+## Conceptos Clave:
+
+### Ciencia de Datos: 
+
+Proceso de extracción de conocimiento y perspectivas a partir de datos.
+
+### Uso de Python en Data Science: 
+
+Bibliotecas como NumPy, Pandas y Matplotlib.
+
+### Ejemplos de Aplicación: 
+
+Análisis de datos, 
+
+Visualización, 
+
+Aprendizaje Automático, 
+
+etc.
+
+## Ejemplo - Uso de Pandas para Análisis de Datos:
+
+```python
+import pandas as pd
+
+data = {
+    'nombre': ['Juan', 'María', 'Pedro'],
+    'edad': [25, 30, 28]
+}
+
+df = pd.DataFrame(data)
+print(df)
+```
+:::{.callout-important}
+### Actividad Práctica:
+
+Investiga y elige un conjunto de datos disponible en línea.
+
+Utiliza la biblioteca Pandas para cargar y analizar los datos.
+
+Realiza un análisis simple, como calcular estadísticas descriptivas, en el conjunto de datos.
+:::
+
+## Explicación de la Actividad:
+
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 Esta actividad permite a los participantes explorar la aplicación de Python en el campo de la Ciencia de Datos. Les ayuda a comprender cómo utilizar bibliotecas como Pandas para analizar datos y extraer información útil.

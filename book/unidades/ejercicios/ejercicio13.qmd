@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Ejercicio 13:
 
 ¿Qué función se utiliza para convertir un valor a tipo int en Python?
@@ -11,4 +12,19 @@ La función utilizada para convertir un valor a tipo `int` es `int()`. Por ejemp
 ```python
 numero = int("10")
 ```
+=======
+## Ejercicio 13:
+
+¿Qué función se utiliza para convertir un valor a tipo int en Python?
+
+<details>
+
+<summary>Respuesta:</summary>
+
+La función utilizada para convertir un valor a tipo `int` es `int()`. Por ejemplo:
+
+```python
+numero = int("10")
+```
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 </details>

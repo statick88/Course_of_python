@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## If y Condicionales
 
 En esta lección, aprenderemos cómo trabajar con múltiples condiciones utilizando la estructura if, elif y else. Esto permite ejecutar diferentes bloques de código según diferentes condiciones.
@@ -45,3 +46,52 @@ Utiliza una estructura if, elif y else para mostrar mensajes diferentes según l
 
 Esta actividad permite a los participantes practicar el uso de la estructura if, elif y else para manejar múltiples condiciones y decisiones en sus programas. Les ayuda a comprender cómo ejecutar diferentes bloques de código en función de los resultados de las pruebas.
 
+=======
+## If y Condicionales
+
+En esta lección, aprenderemos cómo trabajar con múltiples condiciones utilizando la estructura if, elif y else. Esto permite ejecutar diferentes bloques de código según diferentes condiciones.
+
+## Conceptos Clave
+
+### Estructura elif 
+
+Permite verificar una condición adicional si la condición anterior es falsa.
+
+### Estructura else 
+
+Define un bloque de código que se ejecuta si todas las condiciones anteriores son falsas.
+
+### Anidación de Estructuras if
+
+Es posible anidar múltiples estructuras if para manejar situaciones más complejas.
+
+## Ejemplo:
+
+```python
+puntaje = 85
+
+if puntaje >= 90:
+    print("¡Excelente trabajo!")
+elif puntaje >= 70:
+    print("Buen trabajo.")
+else:
+    print("Necesitas mejorar.")
+```
+
+## Explicación:
+
+En este ejemplo, se utiliza la estructura if, elif y else para evaluar diferentes rangos de puntajes y mostrar mensajes correspondientes.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una variable que represente tu calificación en un examen.
+
+Utiliza una estructura if, elif y else para mostrar mensajes diferentes según la calificación obtenida.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar el uso de la estructura if, elif y else para manejar múltiples condiciones y decisiones en sus programas. Les ayuda a comprender cómo ejecutar diferentes bloques de código en función de los resultados de las pruebas.
+
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

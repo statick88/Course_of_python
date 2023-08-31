@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Ejercicio 19:
 
 ¿Cómo se crea una nueva base de datos en PostgreSQL utilizando SQL?
@@ -11,4 +12,19 @@ Para crear una nueva base de datos en PostgreSQL utilizando SQL, se utiliza la s
 CREATE DATABASE nombre_basededatos;
 ```
 
+=======
+## Ejercicio 19:
+
+¿Cómo se crea una nueva base de datos en PostgreSQL utilizando SQL?
+
+<details>
+
+<summary>Respuesta:</summary>
+Para crear una nueva base de datos en PostgreSQL utilizando SQL, se utiliza la siguiente consulta:
+
+```sql
+CREATE DATABASE nombre_basededatos;
+```
+
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 </details>

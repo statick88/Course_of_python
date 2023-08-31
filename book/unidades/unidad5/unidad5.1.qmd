@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Introducción a If
 
 El control de flujo es fundamental en la programación para tomar decisiones basadas en condiciones. Aprenderemos cómo utilizar la estructura if para ejecutar diferentes bloques de código según una condición.
@@ -42,4 +43,50 @@ Utiliza una estructura if para mostrar un mensaje diferente según si tu puntuac
 
 ## Explicación de la Actividad:
 
+=======
+## Introducción a If
+
+El control de flujo es fundamental en la programación para tomar decisiones basadas en condiciones. Aprenderemos cómo utilizar la estructura if para ejecutar diferentes bloques de código según una condición.
+
+## Conceptos Clave:
+
+### Control de Flujo
+
+Manejo de la ejecución del código basado en condiciones.
+
+### Estructura if
+
+Permite ejecutar un bloque de código si una condición es verdadera.
+
+### Bloque de Código
+
+Conjunto de instrucciones que se ejecutan si la condición es verdadera.
+
+## Ejemplo:
+
+``` python
+edad = 18
+
+if edad >= 18:
+    print("Eres mayor de edad.")
+```
+
+## Explicación:
+
+En este ejemplo, se utiliza la estructura if para verificar si la variable "edad" es mayor o igual a 18.
+
+Si la condición es verdadera, se ejecuta el bloque de código que muestra un mensaje.
+
+::: {.callout-important}
+
+### Actividad Práctica:
+
+Crea una variable que represente tu puntuación en un juego.
+
+Utiliza una estructura if para mostrar un mensaje diferente según si tu puntuación es mayor o igual a 100.
+:::
+
+## Explicación de la Actividad:
+
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 Esta actividad permite a los participantes practicar la utilización de la estructura if para tomar decisiones basadas en condiciones. Les ayuda a comprender cómo ejecutar diferentes bloques de código según la situación y cómo utilizar el control de flujo en sus programas.

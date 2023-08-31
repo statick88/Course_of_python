@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Introducción a Python"
 # subtitle: "Modelos Discretos"
@@ -91,3 +92,98 @@ print("¡Hola, mundo!")
 Python Software Foundation. (2023). The Python Programming Language. https://www.python.org/
 Van Rossum, G. (2007). History and License. Python.org. https://www.python.org/doc/essays/cp4e/
 
+=======
+---
+title: "Introducción a Python"
+# subtitle: "Modelos Discretos"
+date: "today"
+author: "Lcdo. Diego Medardo Saavedra García. Mgtr."
+lang: "es"
+
+format: 
+  beamer: 
+    aspectratio: 32
+    navigation: horizontal
+    theme: AnnArbor
+    colortheme: lily
+# format:
+#   revealjs:
+#     #chalkboard: 
+#       #buttons: false
+#     toc: true
+#     incremental: false
+#     slide-number: true
+#     preview-links: auto
+#     # logo: img/logo.png
+#     # footer: <https://espe.edu.ec>
+#     theme: dark
+#     makeindex: true
+#     multiplex: true
+#     transition: fade
+#     chalkboard: true #Pizarra
+#     auto-stretch: false
+#     smaller: false
+#     scrollable: true
+#     #presentation-title-slide-text-alig: left
+#     presentation-slide-text-align: center
+#     menu: true
+#     codeBlock: {data-trim: true}
+#     execute: true
+#     executeCode: true
+  #html: 
+    
+    #code-fold: true
+    #html-math-method: katex
+    #multiplex: true
+    #transition: fade
+    #auto-stretch: false
+
+editor_options: 
+  chunk_output_type: console
+---
+
+# Unidad II: Instalación de Python y más herramientas
+
+## Instalación de Python y más herramientas
+
+**Objetivo:** Aprender cómo instalar Python y otras herramientas esenciales para el desarrollo.
+
+---
+
+### Instalación de Python
+
+- Descarga la última versión de Python desde [python.org](https://www.python.org/downloads/).
+- Sigue las instrucciones del instalador.
+- Verifica la instalación con `python --version`.
+
+---
+
+### Instalación de Git
+
+- Descarga e instala Git desde [git-scm.com](https://git-scm.com/downloads).
+- Configura tu nombre y correo electrónico con `git config`.
+
+---
+
+### Instalación de VS Code
+
+- Descarga e instala Visual Studio Code desde [code.visualstudio.com](https://code.visualstudio.com/).
+- Instala extensiones útiles como "Python", "Git" y "Python Docstring Generator".
+
+---
+
+### Primer Hola Mundo en Python
+
+```python
+print("¡Hola, mundo!")
+```
+## Pregunta de Reflexión
+
+¿Por qué es importante tener herramientas como Git y VS Code en el proceso de desarrollo?
+
+## Referencias
+
+Python Software Foundation. (2023). The Python Programming Language. https://www.python.org/
+Van Rossum, G. (2007). History and License. Python.org. https://www.python.org/doc/essays/cp4e/
+
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

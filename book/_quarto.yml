@@ -59,7 +59,6 @@ book:
         - unidades/unidad4/unidad4.4.qmd
         - unidades/unidad4/unidad4.5.qmd
         - unidades/unidad4/unidad4.6.qmd
-        - unidades/unidad4/unidad4.7.qmd
     - part: "Unidad 5: Control de Flujo"
       chapters: 
         - unidades/unidad5/unidad5.1.qmd
@@ -181,8 +180,3 @@ format:
     fig-responsive: true
     number-sections: true
     html-math-method: mathml
-
-  docx: 
-    toc: true
-    reference-doc: templates/word/curso_python2023.docx
-    number-sections: true

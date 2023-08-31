@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Bases de Datos en MySQL
 
 En esta lección, aprenderemos a realizar operaciones básicas en una base de datos MySQL, como crear y eliminar tablas, insertar registros y realizar consultas.
@@ -54,3 +55,61 @@ Realiza una consulta para obtener todos los registros de la tabla 'productos'.
 
 Esta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos MySQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en MySQL.
 
+=======
+## Bases de Datos en MySQL
+
+En esta lección, aprenderemos a realizar operaciones básicas en una base de datos MySQL, como crear y eliminar tablas, insertar registros y realizar consultas.
+
+## Operaciones en MySQL:
+
+### Crear una tabla: 
+```sql
+CREATE TABLE nombre (columna1 tipo, columna2 tipo);
+```
+### Insertar registros: 
+```sql
+INSERT INTO nombre (columna1, columna2) VALUES (valor1, valor2);
+```
+### Consultar registros: 
+```sql
+SELECT * FROM nombre;
+```
+### Actualizar registros: 
+```sql
+UPDATE nombre SET columna = valor WHERE condicion;
+```
+### Eliminar registros: 
+```sql
+DELETE FROM nombre WHERE condicion;
+```
+### Eliminar tabla: 
+```sql
+DROP TABLE nombre;
+```
+
+## Ejemplo - Creación de una Tabla en MySQL:
+
+```sql
+CREATE TABLE empleados (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(100),
+    salario DECIMAL(10, 2)
+);
+```
+:::{.callout-important}
+### Actividad Práctica:
+
+Conéctate a la base de datos MySQL.
+
+Crea una tabla 'productos' con las columnas 'id', 'nombre' y 'precio'.
+
+Inserta al menos dos registros en la tabla 'productos'.
+
+Realiza una consulta para obtener todos los registros de la tabla 'productos'.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos MySQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en MySQL.
+
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

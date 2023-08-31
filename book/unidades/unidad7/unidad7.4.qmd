@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Self, Eliminar Propiedades y Objetos
 
 En esta lección, aprenderemos más sobre el uso de self en los métodos de clase. También exploraremos cómo eliminar atributos de instancia y objetos en Python.
@@ -56,3 +57,63 @@ Utiliza del para eliminar el atributo nombre de la instancia y verifica el resul
 ## Explicación de la Actividad:
 Esta actividad permite a los participantes practicar el uso de self en los métodos de clase y cómo eliminar atributos de instancia. Les ayuda a comprender cómo trabajar con objetos y atributos, y cómo gestionar la memoria en Python.
 
+=======
+## Self, Eliminar Propiedades y Objetos
+
+En esta lección, aprenderemos más sobre el uso de self en los métodos de clase. También exploraremos cómo eliminar atributos de instancia y objetos en Python.
+
+## Conceptos Clave:
+
+### self
+
+Referencia al objeto actual en un método de clase.
+
+### Eliminar Atributos
+
+Se puede usar la palabra clave del para eliminar un atributo de instancia.
+
+### Eliminar Objetos
+
+Se utiliza la función del para eliminar un objeto y liberar memoria.
+
+## Ejemplo:
+
+``` python
+class Coche:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+    def mostrar_info(self):
+        print(f"Coche {self.marca} {self.modelo}")
+
+coche1 = Coche("Toyota", "Corolla")
+coche1.mostrar_info()
+
+# Eliminar el atributo 'modelo'
+del coche1.modelo
+
+# Intentar acceder al atributo eliminado generará un error
+# print(coche1.modelo)
+```
+## Explicación:
+
+En este ejemplo, se define una clase Coche con un constructor y un método mostrar_info.
+
+Se crea una instancia coche1 y se muestra su información.
+Luego, se elimina el atributo modelo utilizando del.
+
+::: {.callout-important}
+
+### Actividad Práctica:
+Crea una clase Estudiante con atributos nombre y edad, y un método mostrar_info para mostrar la información del estudiante.
+
+Crea una instancia de la clase Estudiante y llama al método mostrar_info.
+
+Utiliza del para eliminar el atributo nombre de la instancia y verifica el resultado.
+:::
+
+## Explicación de la Actividad:
+Esta actividad permite a los participantes practicar el uso de self en los métodos de clase y cómo eliminar atributos de instancia. Les ayuda a comprender cómo trabajar con objetos y atributos, y cómo gestionar la memoria en Python.
+
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

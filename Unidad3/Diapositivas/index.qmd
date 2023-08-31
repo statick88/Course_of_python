@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Unidad III: Introducción a Python"
 # subtitle: "Modelos Discretos"
@@ -104,3 +105,111 @@ Crea un programa que solicite al usuario su nombre y edad, luego imprime un mens
 
 - Python.org. (2023). Python Documentation. https://docs.python.org/
 - McKinney, W. (2017). Python for Data Analysis. O'Reilly Media.
+=======
+---
+title: "Unidad III: Introducción a Python"
+# subtitle: "Modelos Discretos"
+date: "today"
+author: "Lcdo. Diego Medardo Saavedra García. Mgtr."
+lang: "es"
+
+format: 
+  beamer: 
+    aspectratio: 32
+    navigation: horizontal
+    theme: AnnArbor
+    colortheme: lily
+
+# format:
+  # revealjs:
+  #   #chalkboard: 
+  #     #buttons: false
+  #   toc: true
+  #   incremental: false
+  #   slide-number: true
+  #   preview-links: auto
+  #   # logo: img/logo.png
+  #   # footer: <https://espe.edu.ec>
+  #   theme: dark
+  #   makeindex: true
+  #   multiplex: true
+  #   transition: fade
+  #   chalkboard: true #Pizarra
+  #   adeBlock: {data-trim: true}
+    # execute: true
+    # executeCode: true
+  #html: 
+    
+    #code-fold: true
+    #html-math-method: katex
+    #multiplex: true
+    #transition: fade
+    #auto-stretch: falseuto-stretch: false
+    smaller: false
+    scrollable: true
+    #presentation-title-slide-text-alig: left
+    presentation-slide-text-align: center
+    menu: true
+
+editor_options: 
+  chunk_output_type: console
+---
+
+# Unidad III: Introducción a Python
+
+## Las bases de Python
+
+**Objetivo:** Comprender los fundamentos de la programación en Python.
+
+---
+
+### Distintas formas de trabajar con Python
+
+- Interactivo (consola de Python).
+- Utilizando scripts (archivos .py).
+- Entornos de desarrollo integrados (IDEs) como VS Code.
+
+---
+
+### Identación
+
+- Python utiliza la identación para definir bloques de código.
+- Evitar llaves y paréntesis, en su lugar, se utilizan dos puntos y espacios.
+
+---
+
+### Comentarios
+
+- Los comentarios se crean con el símbolo `#`.
+- Los comentarios son útiles para explicar el código y hacerlo más legible.
+
+---
+
+### Variables
+
+- Una variable es un nombre asociado a un valor.
+- Se asigna un valor a una variable utilizando el operador `=`.
+
+---
+
+### Múltiples Variables
+
+- Es posible asignar valores a múltiples variables en una sola línea.
+- Ejemplo: `x, y, z = 10, 20, 30`.
+
+---
+
+### Concatenación
+
+- Unir cadenas de texto utilizando el operador `+`.
+- Ejemplo: `nombre = "Juan"; mensaje = "Hola, " + nombre + "!"`.
+
+## Ejemplo Práctico
+
+Crea un programa que solicite al usuario su nombre y edad, luego imprime un mensaje personalizado.
+
+## Referencias:
+
+- Python.org. (2023). Python Documentation. https://docs.python.org/
+- McKinney, W. (2017). Python for Data Analysis. O'Reilly Media.
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .dataframe {
     display: inline-block;
 }
@@ -30,4 +31,38 @@ tbody tr:hover {background: rgba(66, 165, 245, 0.2);}
   font-family: "FiraCode";
   src: url("font/FiraCode-Regular.ttf");
 }
+=======
+.dataframe {
+    display: inline-block;
+}
+.dataframe td {
+    vertical-align: middle;
+    text-align: right;
+}
+tbody tr:hover {background: rgba(66, 165, 245, 0.2);}
+
+.nav-tabs .nav-item .nav-link {
+  background-color: #e9e9e9;
+  color: #585858;
+  border-radius: 25% 10%;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+  background-color: #5f7ba7;
+  color: #f0eded;
+}
+
+.nav-tabs .nav-link:hover {
+   border-color: white;
+   border-width: 2px;
+   background-color: #5f7ba7;
+   color: #f0eded;
+} 
+
+/* To change Font
+@font-face {
+  font-family: "FiraCode";
+  src: url("font/FiraCode-Regular.ttf");
+}
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 */

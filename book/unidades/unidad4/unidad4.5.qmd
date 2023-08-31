@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Diccionarios
 
 Los diccionarios son estructuras de datos que permiten almacenar pares clave-valor. Aprenderemos cómo crear y trabajar con diccionarios en Python.
@@ -47,4 +48,55 @@ Accede a los valores del diccionario utilizando las claves y muestra la informac
 
 ## Explicación de la Actividad:
 
+=======
+## Diccionarios
+
+Los diccionarios son estructuras de datos que permiten almacenar pares clave-valor. Aprenderemos cómo crear y trabajar con diccionarios en Python.
+
+## Conceptos Clave:
+
+### Diccionarios
+
+Estructuras de datos que almacenan pares clave-valor.
+
+### Claves
+
+Son los nombres o etiquetas utilizados para acceder a los valores en el diccionario.
+
+### Valores
+
+Son los datos asociados a cada clave en el diccionario.
+
+## Ejemplo
+
+``` python
+# Creación de un diccionario
+persona = {
+    "nombre": "Juan",
+    "edad": 30,
+    "ciudad": "México"
+}
+
+# Acceso a valores utilizando claves
+nombre = persona["nombre"]
+edad = persona["edad"]
+```
+
+## Explicación
+
+En este ejemplo, se crea un diccionario que almacena información de una persona, como nombre, edad y ciudad.
+
+Se accede a los valores del diccionario utilizando las claves correspondientes.
+
+::: {.callout-important}
+### Actividad Práctica
+
+Crea un diccionario que almacene información de tus libros favoritos, incluyendo título y autor.
+
+Accede a los valores del diccionario utilizando las claves y muestra la información en la consola.
+:::
+
+## Explicación de la Actividad:
+
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 Esta actividad permite a los participantes practicar la creación de diccionarios y acceder a los valores utilizando las claves. Les ayuda a comprender cómo organizar datos en pares clave-valor y cómo acceder a la información de manera eficiente.

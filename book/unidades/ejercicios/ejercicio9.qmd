@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Ejercicio 9:
 
 ¿Cuál es el valor de la variable longitud después de ejecutar este código?
@@ -9,4 +10,17 @@ longitud = len(frase)
 <details>
 <summary>Respuesta:</summary>
 El valor de la variable `longitud` será 11, ya que la función `len()` retorna la cantidad de caracteres en la cadena.
+=======
+## Ejercicio 9:
+
+¿Cuál es el valor de la variable longitud después de ejecutar este código?
+
+```python
+frase = "Hola, mundo"
+longitud = len(frase)
+```
+<details>
+<summary>Respuesta:</summary>
+El valor de la variable `longitud` será 11, ya que la función `len()` retorna la cantidad de caracteres en la cadena.
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 </details>

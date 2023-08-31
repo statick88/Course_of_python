@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Métodos
 
 En esta lección, profundizaremos en el concepto de métodos en la programación orientada a objetos. Aprenderemos cómo definir y utilizar métodos en una clase, y cómo acceder a los atributos de instancia dentro de los métodos.
@@ -45,3 +46,52 @@ Crea una instancia de la clase Triangulo y llama al método calcular_area para c
 
 Esta actividad permite a los participantes practicar la definición y uso de métodos en una clase. Les ayuda a comprender cómo trabajar con atributos de instancia dentro de los métodos y cómo implementar lógica específica para cada objeto.
 
+=======
+## Métodos
+
+En esta lección, profundizaremos en el concepto de métodos en la programación orientada a objetos. Aprenderemos cómo definir y utilizar métodos en una clase, y cómo acceder a los atributos de instancia dentro de los métodos.
+
+## Conceptos Clave:
+
+### Métodos de Clase
+
+Funciones definidas dentro de una clase que operan en los atributos de instancia.
+
+### Acceso a Atributos 
+
+Dentro de un método, se puede acceder a los atributos de instancia utilizando self.atributo.
+
+## Ejemplo:
+
+```python
+class Circulo:
+    def __init__(self, radio):
+        self.radio = radio
+
+    def calcular_area(self):
+        area = 3.14 * self.radio ** 2
+        return area
+
+circulo1 = Circulo(5)
+area_circulo = circulo1.calcular_area()
+print("Área del círculo:", area_circulo)
+```
+## Explicación:
+
+En este ejemplo, se define una clase Circulo con un constructor y un método calcular_area.
+
+Dentro del método, se accede al atributo de instancia radio utilizando self.radio para calcular el área.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una clase Triangulo con atributos base y altura, y un método calcular_area que calcule y retorne el área del triángulo.
+
+Crea una instancia de la clase Triangulo y llama al método calcular_area para calcular el área.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la definición y uso de métodos en una clase. Les ayuda a comprender cómo trabajar con atributos de instancia dentro de los métodos y cómo implementar lógica específica para cada objeto.
+
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

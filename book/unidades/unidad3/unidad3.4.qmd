@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Comentarios
 
 Los comentarios son una herramienta importante en la programación para añadir explicaciones y notas en el código. Aprenderemos cómo agregar comentarios en Python y cómo pueden mejorar la comprensión del código.
@@ -48,3 +49,55 @@ Escribe un comentario de múltiples líneas que explique el propósito general d
 ## Explicación de la Actividad
 
 Esta actividad permite a los participantes practicar la adición de comentarios en su código para mejorar la legibilidad y la comprensión. Les ayuda a desarrollar la habilidad de documentar su código de manera efectiva para ellos mismos y para otros programadores.
+=======
+## Comentarios
+
+Los comentarios son una herramienta importante en la programación para añadir explicaciones y notas en el código. Aprenderemos cómo agregar comentarios en Python y cómo pueden mejorar la comprensión del código.
+
+## Conceptos Clave:
+
+### Comentarios
+
+Son notas en el código que no se ejecutan y se utilizan para explicar el propósito y funcionamiento de partes del programa.
+
+### Comentarios de una línea
+
+Se crean con el símbolo "#" y abarcan una sola línea.
+
+### Comentarios de múltiples líneas
+
+Se crean entre triple comillas (""" o ''') y pueden abarcar múltiples líneas.
+
+## Ejemplo
+
+```python
+# Este es un comentario de una línea
+
+"""
+Este es un comentario
+de múltiples líneas.
+Puede abarcar varias líneas.
+"""
+
+numero = 42  # Este comentario está después de una instrucción
+```
+
+## Explicación:
+
+Los comentarios son ignorados por el intérprete y no afectan la ejecución del código.
+
+Los comentarios son útiles para documentar el código, explicar partes difíciles de entender o dejar notas para otros programadores.
+
+::: {.callout-important}
+
+Actividad Práctica:
+
+Escribe un programa que realice una tarea sencilla y agrega comentarios para explicar lo que hace cada parte.
+
+Escribe un comentario de múltiples líneas que explique el propósito general de tu programa.
+::: 
+
+## Explicación de la Actividad
+
+Esta actividad permite a los participantes practicar la adición de comentarios en su código para mejorar la legibilidad y la comprensión. Les ayuda a desarrollar la habilidad de documentar su código de manera efectiva para ellos mismos y para otros programadores.
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

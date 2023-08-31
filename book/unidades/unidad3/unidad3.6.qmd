@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Múltiples Variables
 
 En Python, es posible asignar valores a múltiples variables en una sola línea. Aprenderemos cómo declarar y utilizar múltiples variables de manera eficiente.
@@ -41,3 +42,48 @@ Utiliza la asignación múltiple para asignar los valores de la lista a tres var
 Esta actividad permite a los participantes practicar la asignación múltiple y el desempaquetado de valores. 
 
 Les ayuda a comprender cómo trabajar eficientemente con múltiples variables y cómo aprovechar estas técnicas para simplificar el código.
+=======
+## Múltiples Variables
+
+En Python, es posible asignar valores a múltiples variables en una sola línea. Aprenderemos cómo declarar y utilizar múltiples variables de manera eficiente.
+
+## Conceptos Clave:
+
+### Asignación Múltiple
+
+Permite asignar valores a varias variables en una línea.
+
+### Desempaquetado de Valores
+
+Se pueden asignar valores de una lista o tupla a múltiples variables en una sola operación.
+
+### Intercambio de Valores
+
+Se pueden intercambiar los valores de dos variables utilizando asignación múltiple.
+
+## Ejemplo
+
+```python
+nombre, edad, altura = "María", 28, 1.65
+productos = ("Manzanas", "Peras", "Uvas")
+producto1, producto2, producto3 = productos
+```
+## Explicación:
+
+En el primer ejemplo, se utilizó la asignación múltiple para declarar tres variables en una sola línea.
+
+En el segundo ejemplo, se desempaquetaron los valores de una tupla en variables individuales.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una lista con los nombres de tus tres colores favoritos.
+
+Utiliza la asignación múltiple para asignar los valores de la lista a tres variables individuales.
+
+## Explicación de la Actividad
+
+Esta actividad permite a los participantes practicar la asignación múltiple y el desempaquetado de valores. 
+
+Les ayuda a comprender cómo trabajar eficientemente con múltiples variables y cómo aprovechar estas técnicas para simplificar el código.
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

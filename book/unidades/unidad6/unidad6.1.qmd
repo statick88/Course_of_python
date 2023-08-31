@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Introducción a Funciones
 
 En esta lección, exploraremos el concepto de funciones en Python. Aprenderemos cómo definir funciones, pasar argumentos y cómo retornar valores.
@@ -51,3 +52,58 @@ Utiliza la función para calcular el cuadrado de un número y mostrarlo en la co
 
 Esta actividad permite a los participantes practicar la creación y uso de funciones en Python. Les ayuda a comprender cómo definir funciones, pasar argumentos y cómo trabajar con valores retornados por las funciones.
 
+=======
+## Introducción a Funciones
+
+En esta lección, exploraremos el concepto de funciones en Python. Aprenderemos cómo definir funciones, pasar argumentos y cómo retornar valores.
+
+## Conceptos Clave:
+
+### Funciones.
+
+Bloques de código reutilizables que realizan una tarea específica.
+
+### Definición de Funciones
+
+Se utiliza la palabra clave def para definir una función.
+
+### Argumentos
+
+Valores que se pasan a una función para que trabaje con ellos.
+
+## Retorno de Valores
+
+Una función puede retornar un valor utilizando la palabra clave return.
+
+## Ejemplo:
+
+```python
+def saludar(nombre):
+    return "Hola, " + nombre
+
+mensaje = saludar("Juan")
+print(mensaje)
+```
+
+## Explicación:
+
+En este ejemplo, se define una función llamada saludar que toma un argumento nombre.
+
+La función retorna un saludo personalizado utilizando el argumento.
+
+El resultado se asigna a la variable mensaje y se muestra en la consola.
+
+:::{.callout-important}
+
+### Actividad Práctica:
+
+Crea una función llamada calcular_cuadrado que reciba un número como argumento y retorne el cuadrado de ese número.
+
+Utiliza la función para calcular el cuadrado de un número y mostrarlo en la consola.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación y uso de funciones en Python. Les ayuda a comprender cómo definir funciones, pasar argumentos y cómo trabajar con valores retornados por las funciones.
+
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

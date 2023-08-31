@@ -144,7 +144,7 @@
     "href": "unidades/unidad3/unidad3.3.html#explicación-de-la-actividad.",
     "title": "Identación",
     "section": "Explicación de la Actividad.",
-    "text": "Explicación de la Actividad.\nEsta actividad permite a los participantes comprender la importancia de la identación en Python al trabajar con bloques de código como los condicionales. Les ayuda a desarrollar el hábito de utilizar la identación adecuada para mantener el código organizado y legible."
+    "text": "Explicación de la Actividad."
   },
   {
     "objectID": "unidades/unidad3/unidad3.4.html#conceptos-clave",
@@ -172,7 +172,7 @@
     "href": "unidades/unidad3/unidad3.4.html#explicación-de-la-actividad",
     "title": "Comentarios",
     "section": "Explicación de la Actividad",
-    "text": "Explicación de la Actividad\nEsta actividad permite a los participantes practicar la adición de comentarios en su código para mejorar la legibilidad y la comprensión. Les ayuda a desarrollar la habilidad de documentar su código de manera efectiva para ellos mismos y para otros programadores."
+    "text": "Explicación de la Actividad"
   },
   {
     "objectID": "unidades/unidad3/unidad3.5.html#conceptos-clave",
@@ -1524,5 +1524,82 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.3.html",
+    "href": "unidades/unidad3/unidad3.3.html",
+    "title": "Identación",
+    "section": "",
+    "text": "Esta actividad permite a los participantes comprender la importancia de la identación en Python al trabajar con bloques de código como los condicionales. Les ayuda a desarrollar el hábito de utilizar la identación adecuada para mantener el código organizado y legible."
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.3.html#identación-1",
+    "href": "unidades/unidad3/unidad3.3.html#identación-1",
+    "title": "Identación",
+    "section": "Identación",
+    "text": "Identación\nEn Python, la identación (sangría) juega un papel crucial en la estructura y organización del código. Aprenderemos cómo se utiliza la identación para delimitar bloques de código y mejorar la legibilidad."
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.3.html#conceptos-clave-1",
+    "href": "unidades/unidad3/unidad3.3.html#conceptos-clave-1",
+    "title": "Identación",
+    "section": "Conceptos Clave",
+    "text": "Conceptos Clave\n\nIdentación\n\nEspacios o tabulaciones al comienzo de una línea que indican la estructura del código.\nBloques de Código: Conjuntos de instrucciones que se agrupan juntas y se ejecutan en conjunto.\nPEP 8: Guía de estilo para la escritura de código en Python que recomienda el uso de cuatro espacios para la identación.\n\n\n\nEjemplo\n# Uso de la identación en un condicional\nnumero = 10\n\nif numero &gt; 5:\n    print(\"El número es mayor que 5\")\nelse:\n    print(\"El número no es mayor que 5\")"
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.3.html#explicación-1",
+    "href": "unidades/unidad3/unidad3.3.html#explicación-1",
+    "title": "Identación",
+    "section": "Explicación",
+    "text": "Explicación\n\nEn este ejemplo, la identación se utiliza para delimitar los bloques de código dentro de las instrucciones “if” y “else”.\nLa identación es crucial para que Python sepa qué instrucciones están dentro de un bloque y cuáles están fuera.\n\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nEscribe un programa que solicite al usuario su edad y muestre un mensaje según si es mayor de 18 años o no.\nIntenta cambiar la identación incorrectamente y observa cómo afecta al funcionamiento del programa."
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.3.html#explicación-de-la-actividad.-1",
+    "href": "unidades/unidad3/unidad3.3.html#explicación-de-la-actividad.-1",
+    "title": "Identación",
+    "section": "Explicación de la Actividad.",
+    "text": "Explicación de la Actividad.\nEsta actividad permite a los participantes comprender la importancia de la identación en Python al trabajar con bloques de código como los condicionales. Les ayuda a desarrollar el hábito de utilizar la identación adecuada para mantener el código organizado y legible. &gt;&gt;&gt;&gt;&gt;&gt;&gt; e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9"
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.4.html",
+    "href": "unidades/unidad3/unidad3.4.html",
+    "title": "Comentarios",
+    "section": "",
+    "text": "Esta actividad permite a los participantes practicar la adición de comentarios en su código para mejorar la legibilidad y la comprensión. Les ayuda a desarrollar la habilidad de documentar su código de manera efectiva para ellos mismos y para otros programadores."
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.4.html#comentarios-1",
+    "href": "unidades/unidad3/unidad3.4.html#comentarios-1",
+    "title": "Comentarios",
+    "section": "Comentarios",
+    "text": "Comentarios\nLos comentarios son una herramienta importante en la programación para añadir explicaciones y notas en el código. Aprenderemos cómo agregar comentarios en Python y cómo pueden mejorar la comprensión del código."
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.4.html#conceptos-clave-1",
+    "href": "unidades/unidad3/unidad3.4.html#conceptos-clave-1",
+    "title": "Comentarios",
+    "section": "Conceptos Clave:",
+    "text": "Conceptos Clave:\n\nComentarios\nSon notas en el código que no se ejecutan y se utilizan para explicar el propósito y funcionamiento de partes del programa.\n\n\nComentarios de una línea\nSe crean con el símbolo “#” y abarcan una sola línea.\n\n\nComentarios de múltiples líneas\nSe crean entre triple comillas (““” o ’’’) y pueden abarcar múltiples líneas."
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.4.html#ejemplo-1",
+    "href": "unidades/unidad3/unidad3.4.html#ejemplo-1",
+    "title": "Comentarios",
+    "section": "Ejemplo",
+    "text": "Ejemplo\n# Este es un comentario de una línea\n\n\"\"\"\nEste es un comentario\nde múltiples líneas.\nPuede abarcar varias líneas.\n\"\"\"\n\nnumero = 42  # Este comentario está después de una instrucción"
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.4.html#explicación-1",
+    "href": "unidades/unidad3/unidad3.4.html#explicación-1",
+    "title": "Comentarios",
+    "section": "Explicación:",
+    "text": "Explicación:\nLos comentarios son ignorados por el intérprete y no afectan la ejecución del código.\nLos comentarios son útiles para documentar el código, explicar partes difíciles de entender o dejar notas para otros programadores.\n\n\n\n\n\n\nImportante\n\n\n\nActividad Práctica:\nEscribe un programa que realice una tarea sencilla y agrega comentarios para explicar lo que hace cada parte.\nEscribe un comentario de múltiples líneas que explique el propósito general de tu programa."
+  },
+  {
+    "objectID": "unidades/unidad3/unidad3.4.html#explicación-de-la-actividad-1",
+    "href": "unidades/unidad3/unidad3.4.html#explicación-de-la-actividad-1",
+    "title": "Comentarios",
+    "section": "Explicación de la Actividad",
+    "text": "Explicación de la Actividad\nEsta actividad permite a los participantes practicar la adición de comentarios en su código para mejorar la legibilidad y la comprensión. Les ayuda a desarrollar la habilidad de documentar su código de manera efectiva para ellos mismos y para otros programadores. &gt;&gt;&gt;&gt;&gt;&gt;&gt; e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9"
   }
 ]

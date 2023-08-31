@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Ejercicio 11:
 
 ¿Qué método se utiliza para agregar un elemento al final de una lista?
@@ -11,4 +12,19 @@ El método utilizado para agregar un elemento al final de una lista es `append()
 mi_lista = [1, 2, 3]
 mi_lista.append(4)
 ```
+=======
+## Ejercicio 11:
+
+¿Qué método se utiliza para agregar un elemento al final de una lista?
+
+<details>
+<summary>Respuesta:</summary>
+
+El método utilizado para agregar un elemento al final de una lista es `append()`. Por ejemplo:
+
+```python
+mi_lista = [1, 2, 3]
+mi_lista.append(4)
+```
+>>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 </details>
