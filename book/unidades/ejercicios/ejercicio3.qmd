@@ -1,0 +1,18 @@
+## Ejercicio 3:
+
+¿Qué hace el siguiente fragmento de código?
+
+```python
+frutas = ["manzana", "banana", "naranja"]
+for fruta in frutas:
+    print(fruta)
+```
+<details>
+<summary>Respuesta:</summary>
+El código recorre la lista `frutas` e imprime cada elemento en una línea separada:
+```python
+manzana
+banana
+naranja
+```
+</details>

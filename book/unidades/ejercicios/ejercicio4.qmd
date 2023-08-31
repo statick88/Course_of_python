@@ -1,0 +1,12 @@
+## Ejercicio 4:
+¿Cuál es el valor de la variable resultado después de ejecutar el siguiente código?
+
+```python
+numero = 7
+resultado = numero * 2
+resultado = resultado + 3
+```
+<details>
+<summary>Respuesta:</summary>
+El valor de la variable `resultado` es 17, ya que se multiplica `numero` por 2 (14) y luego se le suma 3.
+</details>

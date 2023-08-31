@@ -1,0 +1,12 @@
+## Ejercicio 6:
+
+¿Cómo se define una función en Python?
+
+<details>
+<summary>Respuesta:</summary>
+Una función en Python se define utilizando la palabra clave `def`, seguida del nombre de la función y los parámetros entre paréntesis. Por ejemplo:
+```python
+def saludar(nombre):
+    print("Hola,", nombre)
+```
+</details>

@@ -1,0 +1,15 @@
+## Ejercicio 16:
+
+¿Qué método se utiliza para eliminar un elemento específico de una lista?
+
+<details>
+<summary>Respuesta:</summary>
+
+El método utilizado para eliminar un elemento específico de una lista es `remove()`. Por ejemplo:
+
+```python
+mi_lista = [1, 2, 3]
+mi_lista.remove(2)
+```
+
+</details>

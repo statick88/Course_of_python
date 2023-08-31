@@ -181,8 +181,3 @@ format:
     fig-responsive: true
     number-sections: true
     html-math-method: mathml
-
-  docx: 
-    toc: true
-    reference-doc: templates/word/curso_python2023.docx
-    number-sections: true

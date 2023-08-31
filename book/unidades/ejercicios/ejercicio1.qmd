@@ -1,0 +1,11 @@
+## Ejercicio 1:
+
+¿Cómo se define una variable en Python?
+
+<details>
+<summary>Respuesta:</summary>
+Se define una variable en Python asignándole un nombre y un valor. Por ejemplo:
+```python
+nombre = "Juan"
+```
+</details>

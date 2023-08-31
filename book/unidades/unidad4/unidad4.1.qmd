@@ -1,0 +1,52 @@
+## String y Números
+
+Los strings y los números son dos tipos de datos fundamentales en Python. Aprenderemos cómo trabajar con strings (cadenas de texto) y los diferentes tipos de números en Python.
+
+## Conceptos Clave:
+
+### String
+
+Secuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.
+
+### Números Enteros (int)
+
+Representan números enteros positivos o negativos.
+
+### Números de Punto Flotante (float)
+
+Representan números con decimales.
+
+## Ejemplo
+
+``` python
+# Strings
+mensaje = "Hola, bienvenido al curso de Python."
+nombre = 'María'
+
+# Números
+edad = 25
+saldo = 1500.75
+```
+## Explicación
+
+En este ejemplo, se crean variables que almacenan strings y números.
+
+Los strings se definen utilizando comillas simples o dobles.
+
+Los números enteros y de punto flotante se asignan directamente a variables.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una variable con tu canción favorita.
+
+Asigna tu edad a una variable y tu altura a otra variable.
+
+Combina las variables para crear un mensaje personalizado.
+::: 
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de strings y trabajar con números enteros y de punto flotante. 
+
+Les ayuda a comprender cómo almacenar y manipular diferentes tipos de datos en Python.

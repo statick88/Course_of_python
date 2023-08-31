@@ -1,0 +1,38 @@
+
+\usepackage{hyphenat}
+\usepackage{graphicx}
+\usepackage{wallpaper} % for the background image on title page
+\usepackage{geometry}
+
+%% Rediseño de part
+
+\renewcaptionname{spanish}{\partname}{Lección\ }
+
+%% Incluir part label in TOC
+\RedeclareSectionCommand[
+    tocnumwidth=7em
+]{part}
+
+\let\oldaddparttocentry\addparttocentry
+\renewcommand{\addparttocentry}[2]{%
+  \ifstr{#1}{}{%
+    \oldaddparttocentry{#1}{#2}}{%
+    \oldaddparttocentry{\partname{} #1}{#2}%
+}}
+
+
+%%%%%% Encabezado y pie %%%%%%%
+\usepackage{fancyhdr}
+
+% Encabezado para todas las paginas
+\pagestyle{fancy}
+\fancyhead{}
+\lhead{}
+\rhead{MÓDULO 0:\\Plantilla para lecciones de UNIGIS América Latina}
+\fancyfoot{}
+\lfoot{© UNIGIS | 2022}
+\rfoot{\thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+\setlength{\headheight}{35.44pt}
+\setlength{\footskip}{30.44pt}
+\fancypagestyle{plain}{\pagestyle{fancy}}

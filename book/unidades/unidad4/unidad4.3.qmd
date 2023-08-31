@@ -1,0 +1,40 @@
+## Tuplas
+
+Las tuplas son estructuras de datos similares a las listas, pero son inmutables, lo que significa que no se pueden modificar después de ser creadas. Aprenderemos cómo trabajar con tuplas en Python.
+
+## Conceptos Clave:
+
+### Tuplas
+
+Secuencias ordenadas de elementos que, a diferencia de las listas, no se pueden modificar.
+    
+### Inmutabilidad
+
+Una vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.
+
+### Acceso a Elementos
+
+Se utiliza el índice para acceder a un elemento específico de la tupla.
+
+## Ejemplo
+
+```python
+coordenadas = (3, 5)
+x = coordenadas[0]
+y = coordenadas[1]
+```
+## Explicación
+
+En este ejemplo, se crea una tupla que almacena coordenadas (x, y) y se accede a los valores individuales utilizando índices.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una tupla con las estaciones del año.
+
+Intenta modificar un elemento de la tupla y observa el error que se produce.
+::: 
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de tuplas y comprender la diferencia entre listas y tuplas en términos de inmutabilidad. Les ayuda a comprender cómo utilizar tuplas cuando necesitan almacenar datos que no deben cambiar.

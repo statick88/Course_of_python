@@ -1,0 +1,11 @@
+## Ejercicio 5:
+
+¿Qué tipo de dato es el resultado de la siguiente expresión?
+
+```python
+resultado = 10 / 2
+```
+<details>
+<summary>Respuesta:</summary>
+El resultado es de tipo `float` (número de punto flotante), ya que la división produce un valor decimal.
+</details>

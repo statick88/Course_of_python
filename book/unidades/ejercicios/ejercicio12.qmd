@@ -1,0 +1,13 @@
+## Ejercicio 12:
+
+¿Cuál es el resultado de la siguiente expresión?
+
+```python
+resultado = 2 ** 3
+```
+<details>
+<summary>Respuesta:</summary>
+
+El resultado de la expresión es 8, ya que `2 ** 3` representa la potencia de 2 elevado a la 3, que es 8.
+
+</details>

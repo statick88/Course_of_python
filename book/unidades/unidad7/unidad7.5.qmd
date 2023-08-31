@@ -1,0 +1,57 @@
+## Herencia
+
+En esta lección, exploraremos el concepto de herencia en la programación orientada a objetos. Aprenderemos cómo crear clases que heredan atributos y métodos de una clase base.
+
+## Conceptos Clave:
+
+### Herencia
+
+Mecanismo que permite que una clase herede atributos y métodos de otra clase base.
+
+### Clase Padre (o Base)
+
+La clase de la que se heredan atributos y métodos.
+
+### Clase Hija (o Derivada)
+
+La clase que hereda de la clase base.
+
+## Ejemplo:
+
+```python
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def saludar(self):
+        print(f"{self.nombre} saluda")
+
+class Perro(Animal):
+    def ladrar(self):
+        print(f"{self.nombre} está ladrando")
+
+perro1 = Perro("Buddy")
+perro1.saludar()
+perro1.ladrar()
+```
+### Explicación:
+
+En este ejemplo, se define una clase base Animal con un constructor y un método saludar.
+
+Se define una clase derivada Perro que hereda de Animal y agrega un método adicional ladrar.
+
+Se crea una instancia perro1 de la clase Perro y se llama a sus métodos.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una clase Figura con un atributo color y un método mostrar_color para mostrar el color.
+
+Crea una clase derivada Circulo que herede de Figura y agrega un atributo radio y un método calcular_area para calcular el área del círculo.
+
+Crea una instancia de la clase Circulo, establece su color y calcula el área.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de clases derivadas y la herencia de atributos y métodos. Les ayuda a comprender cómo utilizar la herencia para reutilizar código y extender funcionalidades en las clases derivadas.
