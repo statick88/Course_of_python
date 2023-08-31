@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.433">
@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Lcdo. Diego Saavedra Mgtr.">
-<meta name="dcterms.date" content="2023-08-29">
 <meta name="description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
 
 <title>Curso de Python 2023</title>
@@ -33,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./unidad1.html" rel="next">
+<link href="./unidades/unidad1/unidad1.html" rel="next">
 <link href="./python-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -54,25 +53,21 @@ ul.task-list li input[type="checkbox"] {
   "type": "textbox",
   "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
 
-<link rel="stylesheet" href="custom.css">
-<meta name="twitter:title" content="Curso de Python 2023">
-<meta name="twitter:description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
-<meta name="twitter:site" content="@statick_ds">
-<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -81,11 +76,11 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prefacio</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Bienvenida</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -105,108 +100,512 @@ ul.task-list li input[type="checkbox"] {
       <a href="./">Curso de Python 2023</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/statick88/Course_of_python/tree/main/book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./Curso-de-Python-2023.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./curso_python_2023.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./curso_python_2023.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prefacio</span></span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Bienvenida</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Unidad 1: Introducción a la Programación</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción a la programación.</span></span></a>
+  <a href="./unidades/unidad1/unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción general a la Programación</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Unidad 2: Instalación de Python y más herramientas</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Instalación de Python y más herramientas</span></span></a>
+  <a href="./unidades/unidad2/unidad2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instalación de Python</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Unidad 3: Introducción a Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Python</span></span></a>
+  <a href="./unidades/unidad3/unidad3.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Distintas formas de trabajar con Python</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tipos de Datos</span></span></a>
+  <a href="./unidades/unidad3/unidad3.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Las bases de Python</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de Flujo</span></span></a>
+  <a href="./unidades/unidad3/unidad3.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Identación</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funciones</span></span></a>
+  <a href="./unidades/unidad3/unidad3.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Comentarios</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Objetos, Clases y Herencia</span></span></a>
+  <a href="./unidades/unidad3/unidad3.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Módulos</span></span></a>
+  <a href="./unidades/unidad3/unidad3.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Múltiples Variables</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a Bases de Datos</span></span></a>
+  <a href="./unidades/unidad3/unidad3.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concatenación</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Unidad 4: Tipos de Dato</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Operaciones Básicas en Bases de Datos</span></span></a>
+  <a href="./unidades/unidad4/unidad4.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">String y Números</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">¿Cómo me amplío con Python?</span></span></a>
+  <a href="./unidades/unidad4/unidad4.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Listas</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unidad12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Proyecto: API de Tareas con Django Rest Framework</span></span></a>
+  <a href="./unidades/unidad4/unidad4.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tuplas</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ejercicios.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Ejercicios</span></span></a>
+  <a href="./unidades/unidad4/unidad4.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Range</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ejercicios2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ejercicios por Unidades.</span></span></a>
+  <a href="./unidades/unidad4/unidad4.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Diccionarios</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad4/unidad4.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Booleanos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Unidad 5: Control de Flujo</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad5/unidad5.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a If</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad5/unidad5.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If y Condicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad5/unidad5.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If, elif y else</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad5/unidad5.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">And y Or</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad5/unidad5.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a While</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad5/unidad5.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">While loop</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad5/unidad5.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">While, break y continue</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad5/unidad5.8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">For Loop</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Unidad 6: Funciones</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad6/unidad6.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad6/unidad6.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursividad</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Unidad 7: Objetos, Clases y Herencia</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad7/unidad7.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad7/unidad7.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Objetos y Clases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad7/unidad7.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Métodos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad7/unidad7.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Self, Eliminar Propiedades y Objetos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad7/unidad7.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Herencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Unidad 8: Módulos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad8/unidad8.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad8/unidad8.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creando Nuestro Primer Módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Renombrando Módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad8/unidad8.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Seleccionando lo Importado y Pip</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">Unidad 9: Introducción a Bases de Datos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad9/unidad9.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Bases de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad9/unidad9.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a PostgreSQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad9/unidad9.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a MongoDB</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+ <span class="menu-text">Unidad 10: Operaciones Básicas en Bases de Datos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad10/unidad10.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción e Instalación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad10/unidad10.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bases de Datos en MySQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad10/unidad10.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Crear y Eliminar Tablas en PostgreSQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad10/unidad10.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Operaciones Básicas en MongoDB</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">Unidad 11: ¿Cómo me amplío con Python?</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad11/unidad11.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Data Science</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad11/unidad11.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django Framework</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad11/unidad11.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a FastAPI y PyScript</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+ <span class="menu-text">Unidad 12: Proyecto: API de Tareas con Django Rest Framework</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/unidad12/unidad12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Explicación del Proyecto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+ <span class="menu-text">Ejercicios</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 1:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 2:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 3:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 4:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 5:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 6:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 7:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 8:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 9:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 10:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 11:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 12:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio13.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 13:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio14.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 14:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio15.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 15:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio16.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 16:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio17.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 17:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio18.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 18:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio19.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 19:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejercicio20.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 20:</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidades/ejercicios/ejerciciosUnidades.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">UNIDAD I: Introducción a la programación</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -214,17 +613,17 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#prefacio" id="toc-prefacio" class="nav-link active" data-scroll-target="#prefacio"><span class="header-section-number">1</span> Prefacio</a>
+  <li><a href="#bienvenida" id="toc-bienvenida" class="nav-link active" data-scroll-target="#bienvenida">Bienvenida</a>
   <ul class="collapse">
-  <li><a href="#qué-es-este-curso" id="toc-qué-es-este-curso" class="nav-link" data-scroll-target="#qué-es-este-curso"><span class="header-section-number">1.1</span> ¿Qué es este Curso?</a></li>
-  <li><a href="#a-quién-está-dirigido" id="toc-a-quién-está-dirigido" class="nav-link" data-scroll-target="#a-quién-está-dirigido"><span class="header-section-number">1.2</span> ¿A quién está dirigido?</a></li>
-  <li><a href="#cómo-contribuir" id="toc-cómo-contribuir" class="nav-link" data-scroll-target="#cómo-contribuir"><span class="header-section-number">1.3</span> ¿Cómo contribuir?</a></li>
+  <li><a href="#qué-es-este-curso" id="toc-qué-es-este-curso" class="nav-link" data-scroll-target="#qué-es-este-curso">¿Qué es este Curso?</a></li>
+  <li><a href="#a-quién-está-dirigido" id="toc-a-quién-está-dirigido" class="nav-link" data-scroll-target="#a-quién-está-dirigido">¿A quién está dirigido?</a></li>
+  <li><a href="#cómo-contribuir" id="toc-cómo-contribuir" class="nav-link" data-scroll-target="#cómo-contribuir">¿Cómo contribuir?</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/index.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/index.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Informar de un problema</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/index.qmd" class="toc-action">Ver el código</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -244,16 +643,16 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
     <div class="quarto-title-meta-contents">
              <p>Lcdo. Diego Saavedra Mgtr. </p>
           </div>
   </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 29, 2023</p>
+      <p class="date">30 ago 2023</p>
     </div>
   </div>
   
@@ -263,19 +662,19 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="prefacio" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Prefacio</h1>
+<section id="bienvenida" class="level1">
+<h1>Bienvenida</h1>
 <p>¡Bienvenidos al Curso Completo de Python: Desde Fundamentos hasta Aplicaciones Prácticas!</p>
-<section id="qué-es-este-curso" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="qué-es-este-curso"><span class="header-section-number">1.1</span> ¿Qué es este Curso?</h2>
+<section id="qué-es-este-curso" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-este-curso">¿Qué es este Curso?</h2>
 <p>Este curso exhaustivo te llevará desde los fundamentos básicos de la programación hasta la creación de aplicaciones prácticas utilizando el lenguaje de programación Python. A través de una combinación de teoría y ejercicios prácticos, te sumergirás en los conceptos esenciales de la programación y avanzarás hacia la construcción de proyectos reales. Desde la instalación de herramientas hasta la creación de una API con Django Rest Framework, este curso te proporcionará una comprensión sólida y práctica de Python y su aplicación en el mundo real.</p>
 </section>
-<section id="a-quién-está-dirigido" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="a-quién-está-dirigido"><span class="header-section-number">1.2</span> ¿A quién está dirigido?</h2>
+<section id="a-quién-está-dirigido" class="level2">
+<h2 class="anchored" data-anchor-id="a-quién-está-dirigido">¿A quién está dirigido?</h2>
 <p>Este curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación. No importa si eres un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que desea aprender a programar: este curso es para ti. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo de la programación a través de Python.</p>
 </section>
-<section id="cómo-contribuir" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="cómo-contribuir"><span class="header-section-number">1.3</span> ¿Cómo contribuir?</h2>
+<section id="cómo-contribuir" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-contribuir">¿Cómo contribuir?</h2>
 <p>Valoramos tu participación en este curso. Si encuentras errores, deseas sugerir mejoras o agregar contenido adicional, ¡nos encantaría escucharte! Puedes contribuir a través de nuestra plataforma en línea, donde puedes compartir tus comentarios y sugerencias. Juntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.</p>
 <p>Este libro ha sido creado con el objetivo de brindar acceso gratuito y universal al conocimiento. Estará disponible en línea para que cualquiera, sin importar su ubicación o circunstancias, pueda acceder y aprender a su propio ritmo.</p>
 <p>¡Esperamos que disfrutes este emocionante viaje de aprendizaje y descubrimiento en el mundo de la programación con Python!</p>
@@ -454,12 +853,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -631,14 +1030,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./unidad1.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción a la programación.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./unidades/unidad1/unidad1.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Introducción general a la Programación</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

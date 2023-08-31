@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
+
+<title>Curso de Python 2023 - 5&nbsp; Tipos de Datos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Unidades/unidad5.html" rel="next">
+<link href="../Unidades/unidad3.html" rel="prev">
+<link href="../python-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../custom.css">
+<meta name="twitter:title" content="Curso de Python 2023 - 5&nbsp; Tipos de Datos">
+<meta name="twitter:description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
+<meta name="twitter:site" content="@statick_ds">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Unidades/unidad4.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tipos de Datos</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../python-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Curso de Python 2023</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/statick88/Course_of_python/tree/main/book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="../Curso-de-Python-2023.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bienvenida</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción a la programación.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Instalación de Python y más herramientas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad4.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tipos de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de Flujo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funciones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Objetos, Clases y Herencia</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Módulos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a Bases de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Operaciones Básicas en Bases de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">¿Cómo me amplío con Python?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Unidades/unidad12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Proyecto: API de Tareas con Django Rest Framework</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Ejercicios</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ejercicios por Unidades.</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#string-y-números" id="toc-string-y-números" class="nav-link active" data-scroll-target="#string-y-números"><span class="header-section-number">5.1</span> String y Números</a>
+  <ul class="collapse">
+  <li><a href="#contenido" id="toc-contenido" class="nav-link" data-scroll-target="#contenido"><span class="header-section-number">5.1.1</span> Contenido:</a></li>
+  </ul></li>
+  <li><a href="#conceptos-clave" id="toc-conceptos-clave" class="nav-link" data-scroll-target="#conceptos-clave"><span class="header-section-number">5.2</span> Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#string" id="toc-string" class="nav-link" data-scroll-target="#string"><span class="header-section-number">5.2.1</span> String</a></li>
+  <li><a href="#números-enteros-int" id="toc-números-enteros-int" class="nav-link" data-scroll-target="#números-enteros-int"><span class="header-section-number">5.2.2</span> Números Enteros (int)</a></li>
+  <li><a href="#números-de-punto-flotante-float" id="toc-números-de-punto-flotante-float" class="nav-link" data-scroll-target="#números-de-punto-flotante-float"><span class="header-section-number">5.2.3</span> Números de Punto Flotante (float)</a></li>
+  </ul></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">5.3</span> Ejemplo</a></li>
+  <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación"><span class="header-section-number">5.4</span> Explicación</a></li>
+  <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad"><span class="header-section-number">5.5</span> Explicación de la Actividad:</a></li>
+  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas"><span class="header-section-number">5.6</span> Listas</a></li>
+  <li><a href="#conceptos-clave-1" id="toc-conceptos-clave-1" class="nav-link" data-scroll-target="#conceptos-clave-1"><span class="header-section-number">5.7</span> Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#listas-1" id="toc-listas-1" class="nav-link" data-scroll-target="#listas-1"><span class="header-section-number">5.7.1</span> Listas</a></li>
+  <li><a href="#índices" id="toc-índices" class="nav-link" data-scroll-target="#índices"><span class="header-section-number">5.7.2</span> Índices</a></li>
+  <li><a href="#acceso-a-elementos" id="toc-acceso-a-elementos" class="nav-link" data-scroll-target="#acceso-a-elementos"><span class="header-section-number">5.7.3</span> Acceso a Elementos</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1"><span class="header-section-number">5.8</span> Ejemplo</a></li>
+  <li><a href="#explicación-1" id="toc-explicación-1" class="nav-link" data-scroll-target="#explicación-1"><span class="header-section-number">5.9</span> Explicación</a></li>
+  <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1"><span class="header-section-number">5.10</span> Explicación de la Actividad:</a></li>
+  <li><a href="#tuplas" id="toc-tuplas" class="nav-link" data-scroll-target="#tuplas"><span class="header-section-number">5.11</span> Tuplas</a></li>
+  <li><a href="#conceptos-clave-2" id="toc-conceptos-clave-2" class="nav-link" data-scroll-target="#conceptos-clave-2"><span class="header-section-number">5.12</span> Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#tuplas-1" id="toc-tuplas-1" class="nav-link" data-scroll-target="#tuplas-1"><span class="header-section-number">5.12.1</span> Tuplas</a></li>
+  <li><a href="#inmutabilidad" id="toc-inmutabilidad" class="nav-link" data-scroll-target="#inmutabilidad"><span class="header-section-number">5.12.2</span> Inmutabilidad</a></li>
+  <li><a href="#acceso-a-elementos-1" id="toc-acceso-a-elementos-1" class="nav-link" data-scroll-target="#acceso-a-elementos-1"><span class="header-section-number">5.12.3</span> Acceso a Elementos</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-2" id="toc-ejemplo-2" class="nav-link" data-scroll-target="#ejemplo-2"><span class="header-section-number">5.13</span> Ejemplo</a></li>
+  <li><a href="#explicación-2" id="toc-explicación-2" class="nav-link" data-scroll-target="#explicación-2"><span class="header-section-number">5.14</span> Explicación</a></li>
+  <li><a href="#explicación-de-la-actividad-2" id="toc-explicación-de-la-actividad-2" class="nav-link" data-scroll-target="#explicación-de-la-actividad-2"><span class="header-section-number">5.15</span> Explicación de la Actividad:</a></li>
+  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">5.16</span> Range</a>
+  <ul class="collapse">
+  <li><a href="#contenido-3" id="toc-contenido-3" class="nav-link" data-scroll-target="#contenido-3"><span class="header-section-number">5.16.1</span> Contenido</a></li>
+  </ul></li>
+  <li><a href="#conceptos-clave-3" id="toc-conceptos-clave-3" class="nav-link" data-scroll-target="#conceptos-clave-3"><span class="header-section-number">5.17</span> Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#range-1" id="toc-range-1" class="nav-link" data-scroll-target="#range-1"><span class="header-section-number">5.17.1</span> range</a></li>
+  <li><a href="#parámetros-de-range" id="toc-parámetros-de-range" class="nav-link" data-scroll-target="#parámetros-de-range"><span class="header-section-number">5.17.2</span> Parámetros de range</a></li>
+  <li><a href="#conversión-a-listas" id="toc-conversión-a-listas" class="nav-link" data-scroll-target="#conversión-a-listas"><span class="header-section-number">5.17.3</span> Conversión a Listas</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-3" id="toc-ejemplo-3" class="nav-link" data-scroll-target="#ejemplo-3"><span class="header-section-number">5.18</span> Ejemplo</a></li>
+  <li><a href="#explicación-3" id="toc-explicación-3" class="nav-link" data-scroll-target="#explicación-3"><span class="header-section-number">5.19</span> Explicación</a></li>
+  <li><a href="#explicación-de-la-actividad-3" id="toc-explicación-de-la-actividad-3" class="nav-link" data-scroll-target="#explicación-de-la-actividad-3"><span class="header-section-number">5.20</span> Explicación de la Actividad:</a></li>
+  <li><a href="#diccionarios" id="toc-diccionarios" class="nav-link" data-scroll-target="#diccionarios"><span class="header-section-number">5.21</span> Diccionarios</a></li>
+  <li><a href="#conceptos-clave-4" id="toc-conceptos-clave-4" class="nav-link" data-scroll-target="#conceptos-clave-4"><span class="header-section-number">5.22</span> Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#diccionarios-1" id="toc-diccionarios-1" class="nav-link" data-scroll-target="#diccionarios-1"><span class="header-section-number">5.22.1</span> Diccionarios</a></li>
+  <li><a href="#claves" id="toc-claves" class="nav-link" data-scroll-target="#claves"><span class="header-section-number">5.22.2</span> Claves</a></li>
+  <li><a href="#valores" id="toc-valores" class="nav-link" data-scroll-target="#valores"><span class="header-section-number">5.22.3</span> Valores</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-4" id="toc-ejemplo-4" class="nav-link" data-scroll-target="#ejemplo-4"><span class="header-section-number">5.23</span> Ejemplo</a></li>
+  <li><a href="#explicación-4" id="toc-explicación-4" class="nav-link" data-scroll-target="#explicación-4"><span class="header-section-number">5.24</span> Explicación</a></li>
+  <li><a href="#explicación-de-la-actividad-4" id="toc-explicación-de-la-actividad-4" class="nav-link" data-scroll-target="#explicación-de-la-actividad-4"><span class="header-section-number">5.25</span> Explicación de la Actividad:</a></li>
+  <li><a href="#booleanos" id="toc-booleanos" class="nav-link" data-scroll-target="#booleanos"><span class="header-section-number">5.26</span> Booleanos</a>
+  <ul class="collapse">
+  <li><a href="#contenido-5" id="toc-contenido-5" class="nav-link" data-scroll-target="#contenido-5"><span class="header-section-number">5.26.1</span> Contenido</a></li>
+  </ul></li>
+  <li><a href="#conceptos-clave-5" id="toc-conceptos-clave-5" class="nav-link" data-scroll-target="#conceptos-clave-5"><span class="header-section-number">5.27</span> Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#booleanos-1" id="toc-booleanos-1" class="nav-link" data-scroll-target="#booleanos-1"><span class="header-section-number">5.27.1</span> Booleanos</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-5" id="toc-ejemplo-5" class="nav-link" data-scroll-target="#ejemplo-5"><span class="header-section-number">5.28</span> Ejemplo</a></li>
+  <li><a href="#explicación-5" id="toc-explicación-5" class="nav-link" data-scroll-target="#explicación-5"><span class="header-section-number">5.29</span> Explicación</a></li>
+  <li><a href="#explicación-de-la-actividad-5" id="toc-explicación-de-la-actividad-5" class="nav-link" data-scroll-target="#explicación-de-la-actividad-5"><span class="header-section-number">5.30</span> Explicación de la Actividad:</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/Unidades/unidad4.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/Unidades/unidad4.qmd" class="toc-action">View source</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tipos de Datos</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="string-y-números" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="string-y-números"><span class="header-section-number">5.1</span> String y Números</h2>
+<section id="contenido" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="contenido"><span class="header-section-number">5.1.1</span> Contenido:</h3>
+<p>Los strings y los números son dos tipos de datos fundamentales en Python. Aprenderemos cómo trabajar con strings (cadenas de texto) y los diferentes tipos de números en Python.</p>
+</section>
+</section>
+<section id="conceptos-clave" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="conceptos-clave"><span class="header-section-number">5.2</span> Conceptos Clave:</h2>
+<section id="string" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="string"><span class="header-section-number">5.2.1</span> String</h3>
+<p>Secuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.</p>
+</section>
+<section id="números-enteros-int" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="números-enteros-int"><span class="header-section-number">5.2.2</span> Números Enteros (int)</h3>
+<p>Representan números enteros positivos o negativos.</p>
+</section>
+<section id="números-de-punto-flotante-float" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="números-de-punto-flotante-float"><span class="header-section-number">5.2.3</span> Números de Punto Flotante (float)</h3>
+<p>Representan números con decimales.</p>
+</section>
+</section>
+<section id="ejemplo" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">5.3</span> Ejemplo</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Strings</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mensaje <span class="op">=</span> <span class="st">"Hola, bienvenido al curso de Python."</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="st">'María'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Números</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>saldo <span class="op">=</span> <span class="fl">1500.75</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="explicación"><span class="header-section-number">5.4</span> Explicación</h2>
+<p>En este ejemplo, se crean variables que almacenan strings y números.</p>
+<p>Los strings se definen utilizando comillas simples o dobles.</p>
+<p>Los números enteros y de punto flotante se asignan directamente a variables.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea una variable con tu canción favorita.</p>
+<p>Asigna tu edad a una variable y tu altura a otra variable.</p>
+<p>Combina las variables para crear un mensaje personalizado.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="explicación-de-la-actividad"><span class="header-section-number">5.5</span> Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar la creación de strings y trabajar con números enteros y de punto flotante.</p>
+<p>Les ayuda a comprender cómo almacenar y manipular diferentes tipos de datos en Python.</p>
+</section>
+<section id="listas" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="listas"><span class="header-section-number">5.6</span> Listas</h2>
+<section id="contenido-1" class="level4" data-number="5.6.0.1">
+<h4 data-number="5.6.0.1" class="anchored" data-anchor-id="contenido-1"><span class="header-section-number">5.6.0.1</span> Contenido:</h4>
+<p>Las listas son estructuras de datos que permiten almacenar varios elementos en una sola variable. Aprenderemos cómo crear y manipular listas en Python.</p>
+</section>
+</section>
+<section id="conceptos-clave-1" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="conceptos-clave-1"><span class="header-section-number">5.7</span> Conceptos Clave:</h2>
+<section id="listas-1" class="level3" data-number="5.7.1">
+<h3 data-number="5.7.1" class="anchored" data-anchor-id="listas-1"><span class="header-section-number">5.7.1</span> Listas</h3>
+<p>Secuencias ordenadas de elementos que pueden ser de diferentes tipos.</p>
+</section>
+<section id="índices" class="level3" data-number="5.7.2">
+<h3 data-number="5.7.2" class="anchored" data-anchor-id="índices"><span class="header-section-number">5.7.2</span> Índices</h3>
+<p>Números que indican la posición de un elemento en la lista.</p>
+</section>
+<section id="acceso-a-elementos" class="level3" data-number="5.7.3">
+<h3 data-number="5.7.3" class="anchored" data-anchor-id="acceso-a-elementos"><span class="header-section-number">5.7.3</span> Acceso a Elementos</h3>
+<p>Se utiliza el índice para acceder a un elemento específico de la lista.</p>
+</section>
+</section>
+<section id="ejemplo-1" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="ejemplo-1"><span class="header-section-number">5.8</span> Ejemplo</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="op">=</span> [<span class="st">"manzana"</span>, <span class="st">"banana"</span>, <span class="st">"naranja"</span>, <span class="st">"uva"</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>primer_fruta <span class="op">=</span> frutas[<span class="dv">0</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>segunda_fruta <span class="op">=</span> frutas[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-1" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="explicación-1"><span class="header-section-number">5.9</span> Explicación</h2>
+<p>En este ejemplo, se crea una lista de frutas y se accede a elementos individuales utilizando índices.</p>
+<p>Los índices comienzan desde 0, por lo que la primera fruta tiene el índice 0.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea una lista con los nombres de tus tres películas favoritas.</p>
+<p>Accede al segundo elemento de la lista e imprímelo en la consola.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-1" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="explicación-de-la-actividad-1"><span class="header-section-number">5.10</span> Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar la creación de listas y el acceso a elementos utilizando índices. Les ayuda a comprender cómo organizar y acceder a múltiples elementos en una sola variable.</p>
+</section>
+<section id="tuplas" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="tuplas"><span class="header-section-number">5.11</span> Tuplas</h2>
+<section id="contenido-2" class="level4" data-number="5.11.0.1">
+<h4 data-number="5.11.0.1" class="anchored" data-anchor-id="contenido-2"><span class="header-section-number">5.11.0.1</span> Contenido:</h4>
+<p>Las tuplas son estructuras de datos similares a las listas, pero son inmutables, lo que significa que no se pueden modificar después de ser creadas. Aprenderemos cómo trabajar con tuplas en Python.</p>
+</section>
+</section>
+<section id="conceptos-clave-2" class="level2" data-number="5.12">
+<h2 data-number="5.12" class="anchored" data-anchor-id="conceptos-clave-2"><span class="header-section-number">5.12</span> Conceptos Clave:</h2>
+<section id="tuplas-1" class="level3" data-number="5.12.1">
+<h3 data-number="5.12.1" class="anchored" data-anchor-id="tuplas-1"><span class="header-section-number">5.12.1</span> Tuplas</h3>
+<p>Secuencias ordenadas de elementos que, a diferencia de las listas, no se pueden modificar.</p>
+</section>
+<section id="inmutabilidad" class="level3" data-number="5.12.2">
+<h3 data-number="5.12.2" class="anchored" data-anchor-id="inmutabilidad"><span class="header-section-number">5.12.2</span> Inmutabilidad</h3>
+<p>Una vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.</p>
+</section>
+<section id="acceso-a-elementos-1" class="level3" data-number="5.12.3">
+<h3 data-number="5.12.3" class="anchored" data-anchor-id="acceso-a-elementos-1"><span class="header-section-number">5.12.3</span> Acceso a Elementos</h3>
+<p>Se utiliza el índice para acceder a un elemento específico de la tupla.</p>
+</section>
+</section>
+<section id="ejemplo-2" class="level2" data-number="5.13">
+<h2 data-number="5.13" class="anchored" data-anchor-id="ejemplo-2"><span class="header-section-number">5.13</span> Ejemplo</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>coordenadas <span class="op">=</span> (<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> coordenadas[<span class="dv">0</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> coordenadas[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-2" class="level2" data-number="5.14">
+<h2 data-number="5.14" class="anchored" data-anchor-id="explicación-2"><span class="header-section-number">5.14</span> Explicación</h2>
+<p>En este ejemplo, se crea una tupla que almacena coordenadas (x, y) y se accede a los valores individuales utilizando índices.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea una tupla con las estaciones del año.</p>
+<p>Intenta modificar un elemento de la tupla y observa el error que se produce.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-2" class="level2" data-number="5.15">
+<h2 data-number="5.15" class="anchored" data-anchor-id="explicación-de-la-actividad-2"><span class="header-section-number">5.15</span> Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar la creación de tuplas y comprender la diferencia entre listas y tuplas en términos de inmutabilidad. Les ayuda a comprender cómo utilizar tuplas cuando necesitan almacenar datos que no deben cambiar.</p>
+</section>
+<section id="range" class="level2" data-number="5.16">
+<h2 data-number="5.16" class="anchored" data-anchor-id="range"><span class="header-section-number">5.16</span> Range</h2>
+<section id="contenido-3" class="level3" data-number="5.16.1">
+<h3 data-number="5.16.1" class="anchored" data-anchor-id="contenido-3"><span class="header-section-number">5.16.1</span> Contenido</h3>
+<p>El tipo de dato range se utiliza para generar secuencias de números. Aprenderemos cómo utilizar range en Python para crear secuencias de números en rangos específicos.</p>
+</section>
+</section>
+<section id="conceptos-clave-3" class="level2" data-number="5.17">
+<h2 data-number="5.17" class="anchored" data-anchor-id="conceptos-clave-3"><span class="header-section-number">5.17</span> Conceptos Clave:</h2>
+<section id="range-1" class="level3" data-number="5.17.1">
+<h3 data-number="5.17.1" class="anchored" data-anchor-id="range-1"><span class="header-section-number">5.17.1</span> range</h3>
+<p>Tipo de dato utilizado para generar secuencias de números en un rango.</p>
+</section>
+<section id="parámetros-de-range" class="level3" data-number="5.17.2">
+<h3 data-number="5.17.2" class="anchored" data-anchor-id="parámetros-de-range"><span class="header-section-number">5.17.2</span> Parámetros de range</h3>
+<p>Se pueden especificar el valor inicial, valor final y paso de la secuencia.</p>
+</section>
+<section id="conversión-a-listas" class="level3" data-number="5.17.3">
+<h3 data-number="5.17.3" class="anchored" data-anchor-id="conversión-a-listas"><span class="header-section-number">5.17.3</span> Conversión a Listas</h3>
+<p>Es posible convertir un objeto range en una lista utilizando la función list().</p>
+</section>
+</section>
+<section id="ejemplo-3" class="level2" data-number="5.18">
+<h2 data-number="5.18" class="anchored" data-anchor-id="ejemplo-3"><span class="header-section-number">5.18</span> Ejemplo</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generación de secuencias de números</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>secuencia1 <span class="op">=</span> <span class="bu">range</span>(<span class="dv">5</span>)          <span class="co"># 0, 1, 2, 3, 4</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>secuencia2 <span class="op">=</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">10</span>)      <span class="co"># 2, 3, 4, 5, 6, 7, 8, 9</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>secuencia3 <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>, <span class="dv">2</span>)   <span class="co"># 1, 3, 5, 7, 9</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Conversión a lista</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>lista_secuencia1 <span class="op">=</span> <span class="bu">list</span>(secuencia1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-3" class="level2" data-number="5.19">
+<h2 data-number="5.19" class="anchored" data-anchor-id="explicación-3"><span class="header-section-number">5.19</span> Explicación</h2>
+<p>En este ejemplo, se utilizan diferentes valores para crear secuencias de números utilizando el tipo de dato range.</p>
+<p>La función list() se utiliza para convertir una secuencia de range en una lista.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea una secuencia de números del 10 al 20 con un paso de 2.</p>
+<p>Convierte la secuencia de números en una lista y muestra los elementos en la consola.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-3" class="level2" data-number="5.20">
+<h2 data-number="5.20" class="anchored" data-anchor-id="explicación-de-la-actividad-3"><span class="header-section-number">5.20</span> Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar la creación de secuencias de números utilizando range y cómo convertirlas en listas para trabajar con los elementos individualmente. Les ayuda a comprender cómo generar secuencias de números en diferentes rangos.</p>
+</section>
+<section id="diccionarios" class="level2" data-number="5.21">
+<h2 data-number="5.21" class="anchored" data-anchor-id="diccionarios"><span class="header-section-number">5.21</span> Diccionarios</h2>
+<section id="contenido-4" class="level4" data-number="5.21.0.1">
+<h4 data-number="5.21.0.1" class="anchored" data-anchor-id="contenido-4"><span class="header-section-number">5.21.0.1</span> Contenido:</h4>
+<p>Los diccionarios son estructuras de datos que permiten almacenar pares clave-valor. Aprenderemos cómo crear y trabajar con diccionarios en Python.</p>
+</section>
+</section>
+<section id="conceptos-clave-4" class="level2" data-number="5.22">
+<h2 data-number="5.22" class="anchored" data-anchor-id="conceptos-clave-4"><span class="header-section-number">5.22</span> Conceptos Clave:</h2>
+<section id="diccionarios-1" class="level3" data-number="5.22.1">
+<h3 data-number="5.22.1" class="anchored" data-anchor-id="diccionarios-1"><span class="header-section-number">5.22.1</span> Diccionarios</h3>
+<p>Estructuras de datos que almacenan pares clave-valor.</p>
+</section>
+<section id="claves" class="level3" data-number="5.22.2">
+<h3 data-number="5.22.2" class="anchored" data-anchor-id="claves"><span class="header-section-number">5.22.2</span> Claves</h3>
+<p>Son los nombres o etiquetas utilizados para acceder a los valores en el diccionario.</p>
+</section>
+<section id="valores" class="level3" data-number="5.22.3">
+<h3 data-number="5.22.3" class="anchored" data-anchor-id="valores"><span class="header-section-number">5.22.3</span> Valores</h3>
+<p>Son los datos asociados a cada clave en el diccionario.</p>
+</section>
+</section>
+<section id="ejemplo-4" class="level2" data-number="5.23">
+<h2 data-number="5.23" class="anchored" data-anchor-id="ejemplo-4"><span class="header-section-number">5.23</span> Ejemplo</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación de un diccionario</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>persona <span class="op">=</span> {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"nombre"</span>: <span class="st">"Juan"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"edad"</span>: <span class="dv">30</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ciudad"</span>: <span class="st">"México"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Acceso a valores utilizando claves</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> persona[<span class="st">"nombre"</span>]</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> persona[<span class="st">"edad"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-4" class="level2" data-number="5.24">
+<h2 data-number="5.24" class="anchored" data-anchor-id="explicación-4"><span class="header-section-number">5.24</span> Explicación</h2>
+<p>En este ejemplo, se crea un diccionario que almacena información de una persona, como nombre, edad y ciudad.</p>
+<p>Se accede a los valores del diccionario utilizando las claves correspondientes.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea un diccionario que almacene información de tus libros favoritos, incluyendo título y autor.</p>
+<p>Accede a los valores del diccionario utilizando las claves y muestra la información en la consola.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-4" class="level2" data-number="5.25">
+<h2 data-number="5.25" class="anchored" data-anchor-id="explicación-de-la-actividad-4"><span class="header-section-number">5.25</span> Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar la creación de diccionarios y acceder a los valores utilizando las claves. Les ayuda a comprender cómo organizar datos en pares clave-valor y cómo acceder a la información de manera eficiente.</p>
+</section>
+<section id="booleanos" class="level2" data-number="5.26">
+<h2 data-number="5.26" class="anchored" data-anchor-id="booleanos"><span class="header-section-number">5.26</span> Booleanos</h2>
+<section id="contenido-5" class="level3" data-number="5.26.1">
+<h3 data-number="5.26.1" class="anchored" data-anchor-id="contenido-5"><span class="header-section-number">5.26.1</span> Contenido</h3>
+<p>Los booleanos son un tipo de dato que puede tener dos valores: True (verdadero) o False (falso). Aprenderemos cómo trabajar con booleanos en Python y cómo utilizarlos en expresiones lógicas.</p>
+</section>
+</section>
+<section id="conceptos-clave-5" class="level2" data-number="5.27">
+<h2 data-number="5.27" class="anchored" data-anchor-id="conceptos-clave-5"><span class="header-section-number">5.27</span> Conceptos Clave:</h2>
+<section id="booleanos-1" class="level3" data-number="5.27.1">
+<h3 data-number="5.27.1" class="anchored" data-anchor-id="booleanos-1"><span class="header-section-number">5.27.1</span> Booleanos</h3>
+<p>Tipo de dato que representa valores de verdad (True o False).</p>
+<p>Expresiones Lógicas: Combinaciones de valores booleanos utilizando operadores lógicos como and, or y not.</p>
+</section>
+</section>
+<section id="ejemplo-5" class="level2" data-number="5.28">
+<h2 data-number="5.28" class="anchored" data-anchor-id="ejemplo-5"><span class="header-section-number">5.28</span> Ejemplo</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables booleanas</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>es_mayor_de_edad <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>tiene_tarjeta <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Expresiones lógicas</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>puede_ingresar <span class="op">=</span> es_mayor_de_edad <span class="kw">and</span> tiene_tarjeta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-5" class="level2" data-number="5.29">
+<h2 data-number="5.29" class="anchored" data-anchor-id="explicación-5"><span class="header-section-number">5.29</span> Explicación</h2>
+<p>En este ejemplo, se utilizan variables booleanas para representar si alguien es mayor de edad y si tiene una tarjeta.</p>
+<p>Se utiliza una expresión lógica para evaluar si alguien puede ingresar basado en ambas condiciones.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea variables booleanas que representen si tienes una mascota y si te gusta el deporte.</p>
+<p>Utiliza expresiones lógicas para determinar si puedes llevar a tu mascota a un lugar que requiere tu atención durante un partido de tu deporte favorito.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-5" class="level2" data-number="5.30">
+<h2 data-number="5.30" class="anchored" data-anchor-id="explicación-de-la-actividad-5"><span class="header-section-number">5.30</span> Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar el uso de variables booleanas y expresiones lógicas para tomar decisiones basadas en condiciones booleanas. Les ayuda a comprender cómo trabajar con valores de verdad y cómo utilizarlos para evaluar situaciones en el código.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../Unidades/unidad3.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Python</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../Unidades/unidad5.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de Flujo</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../license.html">License</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
