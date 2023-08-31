@@ -14,7 +14,6 @@ book:
   url: https://github.com/statick88/Course_of_python
   page-navigation: true
   downloads: [pdf, epub]
-  translator: [english, frances, spanish]
   sidebar: 
     logo: python-logo.png
     search: true
