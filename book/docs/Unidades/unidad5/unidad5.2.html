@@ -659,6 +659,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo:</a></li>
   <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación:</a></li>
   <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad:</a></li>
+  <li><a href="#conceptos-clave-1" id="toc-conceptos-clave-1" class="nav-link" data-scroll-target="#conceptos-clave-1">Conceptos Clave</a>
+  <ul class="collapse">
+  <li><a href="#estructura-elif-1" id="toc-estructura-elif-1" class="nav-link" data-scroll-target="#estructura-elif-1">Estructura elif</a></li>
+  <li><a href="#estructura-else-1" id="toc-estructura-else-1" class="nav-link" data-scroll-target="#estructura-else-1">Estructura else</a></li>
+  <li><a href="#anidación-de-estructuras-if-1" id="toc-anidación-de-estructuras-if-1" class="nav-link" data-scroll-target="#anidación-de-estructuras-if-1">Anidación de Estructuras if</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1">Ejemplo:</a></li>
+  <li><a href="#explicación-1" id="toc-explicación-1" class="nav-link" data-scroll-target="#explicación-1">Explicación:</a></li>
+  <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1">Explicación de la Actividad:</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad5/unidad5.2.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Informar de un problema</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad5/unidad5.2.qmd" class="toc-action">Ver el código</a></p></div></div></nav>
     </div>
@@ -682,6 +691,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>En esta lección, aprenderemos cómo trabajar con múltiples condiciones utilizando la estructura if, elif y else. Esto permite ejecutar diferentes bloques de código según diferentes condiciones.</p>
 <section id="conceptos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave</h2>
@@ -730,6 +740,71 @@ Actividad Práctica:
 <section id="explicación-de-la-actividad" class="level2">
 <h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad:</h2>
 <p>Esta actividad permite a los participantes practicar el uso de la estructura if, elif y else para manejar múltiples condiciones y decisiones en sus programas. Les ayuda a comprender cómo ejecutar diferentes bloques de código en función de los resultados de las pruebas.</p>
+<p>======= ## If y Condicionales</p>
+<p>En esta lección, aprenderemos cómo trabajar con múltiples condiciones utilizando la estructura if, elif y else. Esto permite ejecutar diferentes bloques de código según diferentes condiciones.</p>
+</section>
+<section id="conceptos-clave-1" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-clave-1">Conceptos Clave</h2>
+<section id="estructura-elif-1" class="level3">
+<h3 class="anchored" data-anchor-id="estructura-elif-1">Estructura elif</h3>
+<p>Permite verificar una condición adicional si la condición anterior es falsa.</p>
+</section>
+<section id="estructura-else-1" class="level3">
+<h3 class="anchored" data-anchor-id="estructura-else-1">Estructura else</h3>
+<p>Define un bloque de código que se ejecuta si todas las condiciones anteriores son falsas.</p>
+</section>
+<section id="anidación-de-estructuras-if-1" class="level3">
+<h3 class="anchored" data-anchor-id="anidación-de-estructuras-if-1">Anidación de Estructuras if</h3>
+<p>Es posible anidar múltiples estructuras if para manejar situaciones más complejas.</p>
+</section>
+</section>
+<section id="ejemplo-1" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-1">Ejemplo:</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>puntaje <span class="op">=</span> <span class="dv">85</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> puntaje <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"¡Excelente trabajo!"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> puntaje <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Buen trabajo."</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Necesitas mejorar."</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-1">Explicación:</h2>
+<p>En este ejemplo, se utiliza la estructura if, elif y else para evaluar diferentes rangos de puntajes y mostrar mensajes correspondientes.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea una variable que represente tu calificación en un examen.</p>
+<p>Utiliza una estructura if, elif y else para mostrar mensajes diferentes según la calificación obtenida.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-de-la-actividad-1">Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar el uso de la estructura if, elif y else para manejar múltiples condiciones y decisiones en sus programas. Les ayuda a comprender cómo ejecutar diferentes bloques de código en función de los resultados de las pruebas.</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 </section>

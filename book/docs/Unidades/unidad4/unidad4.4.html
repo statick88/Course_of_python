@@ -659,6 +659,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo</a></li>
   <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
   <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad:</a></li>
+  <li><a href="#conceptos-clave-1" id="toc-conceptos-clave-1" class="nav-link" data-scroll-target="#conceptos-clave-1">Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#range-1" id="toc-range-1" class="nav-link" data-scroll-target="#range-1">range</a></li>
+  <li><a href="#parámetros-de-range-1" id="toc-parámetros-de-range-1" class="nav-link" data-scroll-target="#parámetros-de-range-1">Parámetros de range</a></li>
+  <li><a href="#conversión-a-listas-1" id="toc-conversión-a-listas-1" class="nav-link" data-scroll-target="#conversión-a-listas-1">Conversión a Listas</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1">Ejemplo</a></li>
+  <li><a href="#explicación-1" id="toc-explicación-1" class="nav-link" data-scroll-target="#explicación-1">Explicación</a></li>
+  <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1">Explicación de la Actividad:</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad4/unidad4.4.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Informar de un problema</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad4/unidad4.4.qmd" class="toc-action">Ver el código</a></p></div></div></nav>
     </div>
@@ -682,6 +691,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>El tipo de dato range se utiliza para generar secuencias de números. Aprenderemos cómo utilizar range en Python para crear secuencias de números en rangos específicos.</p>
 <section id="conceptos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave:</h2>
@@ -730,6 +740,71 @@ Actividad Práctica:
 <section id="explicación-de-la-actividad" class="level2">
 <h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad:</h2>
 <p>Esta actividad permite a los participantes practicar la creación de secuencias de números utilizando range y cómo convertirlas en listas para trabajar con los elementos individualmente. Les ayuda a comprender cómo generar secuencias de números en diferentes rangos.</p>
+<p>======= ## Range</p>
+<p>El tipo de dato range se utiliza para generar secuencias de números. Aprenderemos cómo utilizar range en Python para crear secuencias de números en rangos específicos.</p>
+</section>
+<section id="conceptos-clave-1" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-clave-1">Conceptos Clave:</h2>
+<section id="range-1" class="level3">
+<h3 class="anchored" data-anchor-id="range-1">range</h3>
+<p>Tipo de dato utilizado para generar secuencias de números en un rango.</p>
+</section>
+<section id="parámetros-de-range-1" class="level3">
+<h3 class="anchored" data-anchor-id="parámetros-de-range-1">Parámetros de range</h3>
+<p>Se pueden especificar el valor inicial, valor final y paso de la secuencia.</p>
+</section>
+<section id="conversión-a-listas-1" class="level3">
+<h3 class="anchored" data-anchor-id="conversión-a-listas-1">Conversión a Listas</h3>
+<p>Es posible convertir un objeto range en una lista utilizando la función list().</p>
+</section>
+</section>
+<section id="ejemplo-1" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-1">Ejemplo</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generación de secuencias de números</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>secuencia1 <span class="op">=</span> <span class="bu">range</span>(<span class="dv">5</span>)          <span class="co"># 0, 1, 2, 3, 4</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>secuencia2 <span class="op">=</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">10</span>)      <span class="co"># 2, 3, 4, 5, 6, 7, 8, 9</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>secuencia3 <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>, <span class="dv">2</span>)   <span class="co"># 1, 3, 5, 7, 9</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Conversión a lista</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>lista_secuencia1 <span class="op">=</span> <span class="bu">list</span>(secuencia1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-1">Explicación</h2>
+<p>En este ejemplo, se utilizan diferentes valores para crear secuencias de números utilizando el tipo de dato range.</p>
+<p>La función list() se utiliza para convertir una secuencia de range en una lista.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea una secuencia de números del 10 al 20 con un paso de 2.</p>
+<p>Convierte la secuencia de números en una lista y muestra los elementos en la consola.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-de-la-actividad-1">Explicación de la Actividad:</h2>
+<p>Esta actividad permite a los participantes practicar la creación de secuencias de números utilizando range y cómo convertirlas en listas para trabajar con los elementos individualmente. Les ayuda a comprender cómo generar secuencias de números en diferentes rangos.</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 </section>

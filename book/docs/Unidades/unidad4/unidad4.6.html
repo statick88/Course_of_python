@@ -657,6 +657,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo</a></li>
   <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
   <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad:</a></li>
+  <li><a href="#conceptos-clave-1" id="toc-conceptos-clave-1" class="nav-link" data-scroll-target="#conceptos-clave-1">Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#booleanos-1" id="toc-booleanos-1" class="nav-link" data-scroll-target="#booleanos-1">Booleanos</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1">Ejemplo</a></li>
+  <li><a href="#explicación-1" id="toc-explicación-1" class="nav-link" data-scroll-target="#explicación-1">Explicación</a></li>
+  <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1">Explicación de la Actividad:</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad4/unidad4.6.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Informar de un problema</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad4/unidad4.6.qmd" class="toc-action">Ver el código</a></p></div></div></nav>
     </div>
@@ -680,6 +687,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>Los booleanos son un tipo de dato que puede tener dos valores: True (verdadero) o False (falso). Aprenderemos cómo trabajar con booleanos en Python y cómo utilizarlos en expresiones lógicas.</p>
 <section id="conceptos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave:</h2>
@@ -719,7 +727,62 @@ Actividad Práctica:
 </section>
 <section id="explicación-de-la-actividad" class="level2">
 <h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad:</h2>
-<p>Esta actividad permite a los participantes practicar el uso de variables booleanas y expresiones lógicas para tomar decisiones basadas en condiciones booleanas. Les ayuda a comprender cómo trabajar con valores de verdad y cómo utilizarlos para evaluar situaciones en el código.</p>
+<p>======= ## Booleanos</p>
+<p>Los booleanos son un tipo de dato que puede tener dos valores: True (verdadero) o False (falso). Aprenderemos cómo trabajar con booleanos en Python y cómo utilizarlos en expresiones lógicas.</p>
+</section>
+<section id="conceptos-clave-1" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-clave-1">Conceptos Clave:</h2>
+<section id="booleanos-1" class="level3">
+<h3 class="anchored" data-anchor-id="booleanos-1">Booleanos</h3>
+<p>Tipo de dato que representa valores de verdad (True o False).</p>
+<p>Expresiones Lógicas: Combinaciones de valores booleanos utilizando operadores lógicos como and, or y not.</p>
+</section>
+</section>
+<section id="ejemplo-1" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-1">Ejemplo</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables booleanas</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>es_mayor_de_edad <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>tiene_tarjeta <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Expresiones lógicas</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>puede_ingresar <span class="op">=</span> es_mayor_de_edad <span class="kw">and</span> tiene_tarjeta</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-1">Explicación</h2>
+<p>En este ejemplo, se utilizan variables booleanas para representar si alguien es mayor de edad y si tiene una tarjeta.</p>
+<p>Se utiliza una expresión lógica para evaluar si alguien puede ingresar basado en ambas condiciones.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea variables booleanas que representen si tienes una mascota y si te gusta el deporte.</p>
+<p>Utiliza expresiones lógicas para determinar si puedes llevar a tu mascota a un lugar que requiere tu atención durante un partido de tu deporte favorito.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-de-la-actividad-1">Explicación de la Actividad:</h2>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9 Esta actividad permite a los participantes practicar el uso de variables booleanas y expresiones lógicas para tomar decisiones basadas en condiciones booleanas. Les ayuda a comprender cómo trabajar con valores de verdad y cómo utilizarlos para evaluar situaciones en el código.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 </section>

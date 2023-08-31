@@ -658,6 +658,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo</a></li>
   <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación:</a></li>
   <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad</a></li>
+  <li><a href="#conceptos-clave-1" id="toc-conceptos-clave-1" class="nav-link" data-scroll-target="#conceptos-clave-1">Conceptos Clave:</a>
+  <ul class="collapse">
+  <li><a href="#sentencia-continue-1" id="toc-sentencia-continue-1" class="nav-link" data-scroll-target="#sentencia-continue-1">Sentencia continue</a></li>
+  <li><a href="#saltar-iteraciones-1" id="toc-saltar-iteraciones-1" class="nav-link" data-scroll-target="#saltar-iteraciones-1">Saltar Iteraciones</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1">Ejemplo</a></li>
+  <li><a href="#explicación-1" id="toc-explicación-1" class="nav-link" data-scroll-target="#explicación-1">Explicación:</a></li>
+  <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1">Explicación de la Actividad</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad5/unidad5.7.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Informar de un problema</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad5/unidad5.7.qmd" class="toc-action">Ver el código</a></p></div></div></nav>
     </div>
@@ -681,6 +689,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>En esta lección, continuaremos explorando cómo trabajar con la estructura while y aprenderemos a utilizar la sentencia continue para saltar a la siguiente iteración del bucle.</p>
 <section id="conceptos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave:</h2>
@@ -725,6 +734,67 @@ Actividad Práctica:
 <section id="explicación-de-la-actividad" class="level2">
 <h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad</h2>
 <p>Esta actividad permite a los participantes practicar el uso de la sentencia continue para omitir iteraciones específicas en un bucle while. Les ayuda a comprender cómo controlar la ejecución de un bucle y realizar acciones selectivas en cada iteración.</p>
+<p>======= ## While, break y continue</p>
+<p>En esta lección, continuaremos explorando cómo trabajar con la estructura while y aprenderemos a utilizar la sentencia continue para saltar a la siguiente iteración del bucle.</p>
+</section>
+<section id="conceptos-clave-1" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-clave-1">Conceptos Clave:</h2>
+<section id="sentencia-continue-1" class="level3">
+<h3 class="anchored" data-anchor-id="sentencia-continue-1">Sentencia continue</h3>
+<p>Se utiliza para saltar a la siguiente iteración del bucle sin ejecutar el resto del código en esa iteración.</p>
+</section>
+<section id="saltar-iteraciones-1" class="level3">
+<h3 class="anchored" data-anchor-id="saltar-iteraciones-1">Saltar Iteraciones</h3>
+<p>La sentencia continue permite omitir ciertas iteraciones basadas en una condición.</p>
+</section>
+</section>
+<section id="ejemplo-1" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-1">Ejemplo</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>contador <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> contador <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    contador <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> contador <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Contador:"</span>, contador)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-1">Explicación:</h2>
+<p>En este ejemplo, se utiliza un bucle while para imprimir el valor del contador.</p>
+<p>Se utiliza la sentencia continue para omitir la iteración cuando el contador es igual a 3.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Crea un bucle while que imprima los números del 1 al 10, pero omite la impresión del número 5.</p>
+<p>Utiliza la sentencia continue para lograr esto.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-de-la-actividad-1">Explicación de la Actividad</h2>
+<p>Esta actividad permite a los participantes practicar el uso de la sentencia continue para omitir iteraciones específicas en un bucle while. Les ayuda a comprender cómo controlar la ejecución de un bucle y realizar acciones selectivas en cada iteración.</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 </section>

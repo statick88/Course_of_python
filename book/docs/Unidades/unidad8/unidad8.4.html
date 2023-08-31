@@ -656,6 +656,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#ejemplo---instalando-un-paquete-con-pip" id="toc-ejemplo---instalando-un-paquete-con-pip" class="nav-link" data-scroll-target="#ejemplo---instalando-un-paquete-con-pip">Ejemplo - Instalando un Paquete con Pip:</a></li>
   <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad:</a></li>
+  <li><a href="#seleccionando-elementos-específicos-para-importar-1" id="toc-seleccionando-elementos-específicos-para-importar-1" class="nav-link" data-scroll-target="#seleccionando-elementos-específicos-para-importar-1">Seleccionando Elementos Específicos para Importar:</a>
+  <ul class="collapse">
+  <li><a href="#usando-pip-1" id="toc-usando-pip-1" class="nav-link" data-scroll-target="#usando-pip-1">Usando Pip:</a></li>
+  </ul></li>
+  <li><a href="#ejemplo---instalando-un-paquete-con-pip-1" id="toc-ejemplo---instalando-un-paquete-con-pip-1" class="nav-link" data-scroll-target="#ejemplo---instalando-un-paquete-con-pip-1">Ejemplo - Instalando un Paquete con Pip:</a></li>
+  <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1">Explicación de la Actividad:</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad8/unidad8.4.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Informar de un problema</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad8/unidad8.4.qmd" class="toc-action">Ver el código</a></p></div></div></nav>
     </div>
@@ -679,6 +685,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>En esta lección, continuaremos explorando cómo seleccionar elementos específicos para importar y aprenderemos sobre pip, la herramienta de gestión de paquetes de Python. pip nos permite instalar y gestionar paquetes externos que contienen funcionalidades adicionales para nuestros programas.</p>
 <section id="seleccionando-elementos-específicos-para-importar" class="level2">
 <h2 class="anchored" data-anchor-id="seleccionando-elementos-específicos-para-importar">Seleccionando Elementos Específicos para Importar:</h2>
@@ -709,7 +716,53 @@ Actividad Práctica:
 </section>
 <section id="explicación-de-la-actividad" class="level2">
 <h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad:</h2>
-<p>Esta actividad permite a los participantes practicar cómo utilizar pip para instalar paquetes externos y cómo importar funcionalidades específicas de esos paquetes en su código. Les ayuda a comprender cómo expandir las capacidades de Python utilizando bibliotecas externas.</p>
+<p>======= ## Seleccionando lo Importado y Pip</p>
+<p>En esta lección, continuaremos explorando cómo seleccionar elementos específicos para importar y aprenderemos sobre pip, la herramienta de gestión de paquetes de Python. pip nos permite instalar y gestionar paquetes externos que contienen funcionalidades adicionales para nuestros programas.</p>
+</section>
+<section id="seleccionando-elementos-específicos-para-importar-1" class="level2">
+<h2 class="anchored" data-anchor-id="seleccionando-elementos-específicos-para-importar-1">Seleccionando Elementos Específicos para Importar:</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> modulo <span class="im">import</span> funcion1, funcion2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="usando-pip-1" class="level3">
+<h3 class="anchored" data-anchor-id="usando-pip-1">Usando Pip:</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install nombre_del_paquete: <span class="co">#Instalar un paquete.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> uninstall nombre_del_paquete: <span class="co">#Desinstalar un paquete.</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ejemplo---instalando-un-paquete-con-pip-1" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo---instalando-un-paquete-con-pip-1">Ejemplo - Instalando un Paquete con Pip:</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install requests</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Utiliza pip para instalar el paquete matplotlib, que se utiliza para trazar gráficos en Python.</p>
+<p>En tu archivo de código, importa la función plot de matplotlib.pyplot y crea un gráfico simple.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-de-la-actividad-1">Explicación de la Actividad:</h2>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9 Esta actividad permite a los participantes practicar cómo utilizar pip para instalar paquetes externos y cómo importar funcionalidades específicas de esos paquetes en su código. Les ayuda a comprender cómo expandir las capacidades de Python utilizando bibliotecas externas.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 </section>

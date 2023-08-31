@@ -654,6 +654,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#estructura-del-proyecto" id="toc-estructura-del-proyecto" class="nav-link" data-scroll-target="#estructura-del-proyecto">Estructura del Proyecto:</a></li>
   <li><a href="#código" id="toc-código" class="nav-link" data-scroll-target="#código">Código:</a></li>
   <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad:</a></li>
+  <li><a href="#qué-se-necesita-conocer-1" id="toc-qué-se-necesita-conocer-1" class="nav-link" data-scroll-target="#qué-se-necesita-conocer-1">Qué se necesita conocer:</a></li>
+  <li><a href="#estructura-del-proyecto-1" id="toc-estructura-del-proyecto-1" class="nav-link" data-scroll-target="#estructura-del-proyecto-1">Estructura del Proyecto:</a></li>
+  <li><a href="#código-1" id="toc-código-1" class="nav-link" data-scroll-target="#código-1">Código:</a></li>
+  <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1">Explicación de la Actividad:</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad12/unidad12.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Informar de un problema</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad12/unidad12.qmd" class="toc-action">Ver el código</a></p></div></div></nav>
     </div>
@@ -677,6 +681,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>En este proyecto, construiremos una API utilizando Django Rest Framework para gestionar tareas. La API permitirá a los usuarios crear, actualizar, listar y eliminar tareas. Utilizaremos Django Rest Framework para definir los modelos, las vistas y las URL necesarias para interactuar con la API.</p>
 <section id="qué-se-necesita-conocer" class="level2">
 <h2 class="anchored" data-anchor-id="qué-se-necesita-conocer">Qué se necesita conocer:</h2>
@@ -769,7 +774,115 @@ Actividad Práctica:
 </section>
 <section id="explicación-de-la-actividad" class="level2">
 <h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad:</h2>
-<p>Este proyecto permite a los participantes aplicar los conocimientos adquiridos en Django y Django Rest Framework para crear una API de gestión de tareas. Aprenden cómo definir modelos, serializadores, vistas y URLs en Django Rest Framework para construir una API completa. Les ayuda a comprender cómo desarrollar aplicaciones web con APIs utilizando tecnologías modernas.</p>
+<p>======= ## Explicación del Proyecto</p>
+<p>En este proyecto, construiremos una API utilizando Django Rest Framework para gestionar tareas. La API permitirá a los usuarios crear, actualizar, listar y eliminar tareas. Utilizaremos Django Rest Framework para definir los modelos, las vistas y las URL necesarias para interactuar con la API.</p>
+</section>
+<section id="qué-se-necesita-conocer-1" class="level2">
+<h2 class="anchored" data-anchor-id="qué-se-necesita-conocer-1">Qué se necesita conocer:</h2>
+<ul>
+<li>Conocimientos básicos de Python.</li>
+<li>Familiaridad con Django y Django Rest Framework.</li>
+<li>Entorno de desarrollo configurado con Django y Django Rest Framework.</li>
+</ul>
+</section>
+<section id="estructura-del-proyecto-1" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-del-proyecto-1">Estructura del Proyecto:</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>proyecto_api_tareas/</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>├── api_tareas/</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>│   ├── migrations/</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>│   ├── templates/</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>│   ├── __init__.py</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>│   ├── admin.py</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>│   ├── apps.py</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>│   ├── models.py</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>│   ├── serializers.py</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>│   ├── tests.py</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>│   └── views.py</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>├── proyecto_api_tareas/</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>│   ├── __init__.py</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>│   ├── asgi.py</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>│   ├── settings.py</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>│   ├── urls.py</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>│   └── wsgi.py</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>├── db.sqlite3</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>└── manage.py</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="código-1" class="level2">
+<h2 class="anchored" data-anchor-id="código-1">Código:</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#models.py:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.db <span class="im">import</span> models</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Tarea(models.Model):</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    titulo <span class="op">=</span> models.CharField(max_length<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    descripcion <span class="op">=</span> models.TextField()</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    fecha_creacion <span class="op">=</span> models.DateTimeField(auto_now_add<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    completada <span class="op">=</span> models.BooleanField(default<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.titulo</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#serializers.py:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> serializers</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Tarea</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TareaSerializer(serializers.ModelSerializer):</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Meta:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        model <span class="op">=</span> Tarea</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        fields <span class="op">=</span> <span class="st">'__all__'</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#views.py:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> viewsets</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Tarea</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .serializers <span class="im">import</span> TareaSerializer</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TareaViewSet(viewsets.ModelViewSet):</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    queryset <span class="op">=</span> Tarea.objects.<span class="bu">all</span>()</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    serializer_class <span class="op">=</span> TareaSerializer</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    urls.py (api_tareas):</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework.routers <span class="im">import</span> DefaultRouter</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .views <span class="im">import</span> TareaViewSet</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>router <span class="op">=</span> DefaultRouter()</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>router.register(<span class="vs">r'tareas'</span>, TareaViewSet)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> router.urls</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A continuación en el archivo <strong>settings.py</strong> agregar <strong>‘rest_framework’</strong> y <strong>‘api_tareas’</strong> en <strong>INSTALLED_APPS</strong>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Configura un proyecto Django y una aplicación llamada ‘api_tareas’.</p>
+<p>Define el modelo Tarea en models.py con los campos necesarios.</p>
+<p>Crea un serializador en serializers.py para el modelo Tarea.</p>
+<p>Implementa las vistas en views.py utilizando Django Rest Framework.</p>
+<p>Configura las URLs en urls.py para las vistas de la API.</p>
+<p>Migrar y ejecutar el servidor para probar la API utilizando el navegador o herramientas como Postman.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-de-la-actividad-1">Explicación de la Actividad:</h2>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9 Este proyecto permite a los participantes aplicar los conocimientos adquiridos en Django y Django Rest Framework para crear una API de gestión de tareas. Aprenden cómo definir modelos, serializadores, vistas y URLs en Django Rest Framework para construir una API completa. Les ayuda a comprender cómo desarrollar aplicaciones web con APIs utilizando tecnologías modernas.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 </section>

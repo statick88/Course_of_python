@@ -661,6 +661,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#ejemplo---creación-de-una-tabla-en-postgresql" id="toc-ejemplo---creación-de-una-tabla-en-postgresql" class="nav-link" data-scroll-target="#ejemplo---creación-de-una-tabla-en-postgresql">Ejemplo - Creación de una Tabla en PostgreSQL:</a></li>
   <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad:</a></li>
+  <li><a href="#operaciones-en-postgresql-1" id="toc-operaciones-en-postgresql-1" class="nav-link" data-scroll-target="#operaciones-en-postgresql-1">Operaciones en PostgreSQL:</a>
+  <ul class="collapse">
+  <li><a href="#crear-una-tabla-1" id="toc-crear-una-tabla-1" class="nav-link" data-scroll-target="#crear-una-tabla-1">Crear una tabla:</a></li>
+  <li><a href="#insertar-registros-1" id="toc-insertar-registros-1" class="nav-link" data-scroll-target="#insertar-registros-1">Insertar registros:</a></li>
+  <li><a href="#consultar-registros-1" id="toc-consultar-registros-1" class="nav-link" data-scroll-target="#consultar-registros-1">Consultar registros:</a></li>
+  <li><a href="#actualizar-registros-1" id="toc-actualizar-registros-1" class="nav-link" data-scroll-target="#actualizar-registros-1">Actualizar registros:</a></li>
+  <li><a href="#eliminar-registros-1" id="toc-eliminar-registros-1" class="nav-link" data-scroll-target="#eliminar-registros-1">Eliminar registros:</a></li>
+  <li><a href="#eliminar-tabla-1" id="toc-eliminar-tabla-1" class="nav-link" data-scroll-target="#eliminar-tabla-1">Eliminar tabla:</a></li>
+  </ul></li>
+  <li><a href="#ejemplo---creación-de-una-tabla-en-postgresql-1" id="toc-ejemplo---creación-de-una-tabla-en-postgresql-1" class="nav-link" data-scroll-target="#ejemplo---creación-de-una-tabla-en-postgresql-1">Ejemplo - Creación de una Tabla en PostgreSQL:</a></li>
+  <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1">Explicación de la Actividad:</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad10/unidad10.3.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Informar de un problema</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad10/unidad10.3.qmd" class="toc-action">Ver el código</a></p></div></div></nav>
     </div>
@@ -684,6 +695,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>En esta lección, aprenderemos a realizar operaciones básicas en una base de datos PostgreSQL, como crear y eliminar tablas, insertar registros y realizar consultas.</p>
 <section id="operaciones-en-postgresql" class="level2">
 <h2 class="anchored" data-anchor-id="operaciones-en-postgresql">Operaciones en PostgreSQL:</h2>
@@ -738,7 +750,77 @@ Actividad Práctica
 </section>
 <section id="explicación-de-la-actividad" class="level2">
 <h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad:</h2>
-<p>Esta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos PostgreSQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en PostgreSQL.</p>
+<p>======= ## Crear y Eliminar Tablas en PostgreSQL</p>
+<p>En esta lección, aprenderemos a realizar operaciones básicas en una base de datos PostgreSQL, como crear y eliminar tablas, insertar registros y realizar consultas.</p>
+</section>
+<section id="operaciones-en-postgresql-1" class="level2">
+<h2 class="anchored" data-anchor-id="operaciones-en-postgresql-1">Operaciones en PostgreSQL:</h2>
+<section id="crear-una-tabla-1" class="level3">
+<h3 class="anchored" data-anchor-id="crear-una-tabla-1">Crear una tabla:</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> nombre (columna1 tipo, columna2 tipo);</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="insertar-registros-1" class="level3">
+<h3 class="anchored" data-anchor-id="insertar-registros-1">Insertar registros:</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> nombre (columna1, columna2) <span class="kw">VALUES</span> (valor1, valor2);</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="consultar-registros-1" class="level3">
+<h3 class="anchored" data-anchor-id="consultar-registros-1">Consultar registros:</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> nombre;</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="actualizar-registros-1" class="level3">
+<h3 class="anchored" data-anchor-id="actualizar-registros-1">Actualizar registros:</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> nombre <span class="kw">SET</span> columna <span class="op">=</span> valor <span class="kw">WHERE</span> condicion;</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="eliminar-registros-1" class="level3">
+<h3 class="anchored" data-anchor-id="eliminar-registros-1">Eliminar registros:</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> nombre <span class="kw">WHERE</span> condicion;</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="eliminar-tabla-1" class="level3">
+<h3 class="anchored" data-anchor-id="eliminar-tabla-1">Eliminar tabla:</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> nombre;</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ejemplo---creación-de-una-tabla-en-postgresql-1" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo---creación-de-una-tabla-en-postgresql-1">Ejemplo - Creación de una Tabla en PostgreSQL:</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> empleados (</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">id</span> SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    nombre <span class="dt">VARCHAR</span>(<span class="dv">100</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    salario <span class="dt">DECIMAL</span>(<span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica
+</div>
+</div>
+<section id="conéctate-a-la-base-de-datos-postgresql.-1" class="level2 callout-body-container callout-body">
+<h2 class="anchored" data-anchor-id="conéctate-a-la-base-de-datos-postgresql.-1">Conéctate a la base de datos PostgreSQL.</h2>
+<p>Crea una tabla ‘clientes’ con las columnas ‘id’, ‘nombre’ y ‘email’.</p>
+<p>Inserta al menos dos registros en la tabla ‘clientes’.</p>
+<p>Realiza una consulta para obtener todos los registros de la tabla ‘clientes’.</p>
+</section>
+</div>
+</section>
+<section id="explicación-de-la-actividad-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-de-la-actividad-1">Explicación de la Actividad:</h2>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9 Esta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos PostgreSQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en PostgreSQL.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 </section>

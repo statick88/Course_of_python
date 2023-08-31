@@ -625,6 +625,15 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#ejemplo---inserción-de-un-documento-en-mongodb" id="toc-ejemplo---inserción-de-un-documento-en-mongodb" class="nav-link" data-scroll-target="#ejemplo---inserción-de-un-documento-en-mongodb">Ejemplo - Inserción de un Documento en MongoDB:</a></li>
   <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad:</a></li>
+  <li><a href="#operaciones-en-mongodb-1" id="toc-operaciones-en-mongodb-1" class="nav-link" data-scroll-target="#operaciones-en-mongodb-1">Operaciones en MongoDB:</a>
+  <ul class="collapse">
+  <li><a href="#insertar-documentos-1" id="toc-insertar-documentos-1" class="nav-link" data-scroll-target="#insertar-documentos-1">Insertar documentos:</a></li>
+  <li><a href="#consultar-documentos-1" id="toc-consultar-documentos-1" class="nav-link" data-scroll-target="#consultar-documentos-1">Consultar documentos:</a></li>
+  <li><a href="#actualizar-documentos-1" id="toc-actualizar-documentos-1" class="nav-link" data-scroll-target="#actualizar-documentos-1">Actualizar documentos:</a></li>
+  <li><a href="#eliminar-documentos-1" id="toc-eliminar-documentos-1" class="nav-link" data-scroll-target="#eliminar-documentos-1">Eliminar documentos:</a></li>
+  </ul></li>
+  <li><a href="#ejemplo---inserción-de-un-documento-en-mongodb-1" id="toc-ejemplo---inserción-de-un-documento-en-mongodb-1" class="nav-link" data-scroll-target="#ejemplo---inserción-de-un-documento-en-mongodb-1">Ejemplo - Inserción de un Documento en MongoDB:</a></li>
+  <li><a href="#explicación-de-la-actividad-1" id="toc-explicación-de-la-actividad-1" class="nav-link" data-scroll-target="#explicación-de-la-actividad-1">Explicación de la Actividad:</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad10/unidad10.4.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Informar de un problema</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad10/unidad10.4.qmd" class="toc-action">Ver el código</a></p></div></div></nav>
     </div>
@@ -648,6 +657,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>En esta lección, aprenderemos a realizar operaciones básicas en una base de datos MongoDB, como insertar documentos, consultar documentos y actualizar documentos.</p>
 <section id="operaciones-en-mongodb" class="level2">
 <h2 class="anchored" data-anchor-id="operaciones-en-mongodb">Operaciones en MongoDB:</h2>
@@ -692,7 +702,67 @@ Actividad Práctica:
 </section>
 <section id="explicación-de-la-actividad" class="level2">
 <h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad:</h2>
-<p>Esta actividad permite a los participantes aplicar los conocimientos adquiridos en la inserción, consulta, actualización y eliminación de documentos en una base de datos MongoDB. Les ayuda a ganar experiencia práctica en la manipulación de datos en una base de datos NoSQL.</p>
+<p>======= ## Operaciones Básicas en MongoDB</p>
+<p>En esta lección, aprenderemos a realizar operaciones básicas en una base de datos MongoDB, como insertar documentos, consultar documentos y actualizar documentos.</p>
+</section>
+<section id="operaciones-en-mongodb-1" class="level2">
+<h2 class="anchored" data-anchor-id="operaciones-en-mongodb-1">Operaciones en MongoDB:</h2>
+<section id="insertar-documentos-1" class="level3">
+<h3 class="anchored" data-anchor-id="insertar-documentos-1">Insertar documentos:</h3>
+<pre class="nosql"><code>db.coleccion.insert({ campo1: valor1, campo2: valor2 });</code></pre>
+</section>
+<section id="consultar-documentos-1" class="level3">
+<h3 class="anchored" data-anchor-id="consultar-documentos-1">Consultar documentos:</h3>
+<pre class="nosql"><code>db.coleccion.find();</code></pre>
+</section>
+<section id="actualizar-documentos-1" class="level3">
+<h3 class="anchored" data-anchor-id="actualizar-documentos-1">Actualizar documentos:</h3>
+<pre class="nosql"><code>db.coleccion.update({ campo: valor }, { $set: { campo_actualizado: nuevo_valor } });</code></pre>
+</section>
+<section id="eliminar-documentos-1" class="level3">
+<h3 class="anchored" data-anchor-id="eliminar-documentos-1">Eliminar documentos:</h3>
+<pre class="nosql"><code>db.coleccion.remove({ campo: valor });</code></pre>
+</section>
+</section>
+<section id="ejemplo---inserción-de-un-documento-en-mongodb-1" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo---inserción-de-un-documento-en-mongodb-1">Ejemplo - Inserción de un Documento en MongoDB:</h2>
+<pre class="nosql"><code>// Insertar un documento en la colección 'productos'
+db.productos.insert({ nombre: "Camiseta", precio: 20 });</code></pre>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Actividad Práctica:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Conéctate a la base de datos MongoDB.</p>
+<p>Inserta al menos dos documentos en la colección ‘productos’.</p>
+<p>Realiza una consulta para obtener todos los documentos de la colección ‘productos’.</p>
+<p>Actualiza el precio de uno de los documentos en la colección.</p>
+<p>Elimina un documento de la colección.</p>
+</div>
+</div>
+</section>
+<section id="explicación-de-la-actividad-1" class="level2">
+<h2 class="anchored" data-anchor-id="explicación-de-la-actividad-1">Explicación de la Actividad:</h2>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9 Esta actividad permite a los participantes aplicar los conocimientos adquiridos en la inserción, consulta, actualización y eliminación de documentos en una base de datos MongoDB. Les ayuda a ganar experiencia práctica en la manipulación de datos en una base de datos NoSQL.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 </section>
