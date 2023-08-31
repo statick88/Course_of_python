@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Seleccionando lo Importado y Pip
 
 
@@ -29,36 +28,4 @@ En tu archivo de código, importa la función plot de matplotlib.pyplot y crea u
 
 ## Explicación de la Actividad:
 
-=======
-## Seleccionando lo Importado y Pip
-
-
-En esta lección, continuaremos explorando cómo seleccionar elementos específicos para importar y aprenderemos sobre pip, la herramienta de gestión de paquetes de Python. pip nos permite instalar y gestionar paquetes externos que contienen funcionalidades adicionales para nuestros programas.
-
-## Seleccionando Elementos Específicos para Importar:
-
-```python
-from modulo import funcion1, funcion2
-```
-### Usando Pip:
-
-```bash
-pip install nombre_del_paquete: #Instalar un paquete.
-pip uninstall nombre_del_paquete: #Desinstalar un paquete.
-```
-## Ejemplo - Instalando un Paquete con Pip:
-```bash
-pip install requests
-```
-:::{.callout-important}
-### Actividad Práctica:
-
-Utiliza pip para instalar el paquete matplotlib, que se utiliza para trazar gráficos en Python.
-
-En tu archivo de código, importa la función plot de matplotlib.pyplot y crea un gráfico simple.
-:::
-
-## Explicación de la Actividad:
-
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 Esta actividad permite a los participantes practicar cómo utilizar pip para instalar paquetes externos y cómo importar funcionalidades específicas de esos paquetes en su código. Les ayuda a comprender cómo expandir las capacidades de Python utilizando bibliotecas externas.

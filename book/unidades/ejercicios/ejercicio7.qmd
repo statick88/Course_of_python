@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Ejercicio 7:
 ¿Cuál es la salida de este código?
 
@@ -17,23 +16,3 @@ El número es positivo
 ```
 ya que el valor de `numero` (5) es mayor que 0.
 </details>
-=======
-## Ejercicio 7:
-¿Cuál es la salida de este código?
-
-```python
-numero = 5
-if numero > 0:
-    print("El número es positivo")
-else:
-    print("El número no es positivo")
-```
-<details>
-<summary>Respuesta:</summary>
-La salida es:
-```bash
-El número es positivo
-```
-ya que el valor de `numero` (5) es mayor que 0.
-</details>
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

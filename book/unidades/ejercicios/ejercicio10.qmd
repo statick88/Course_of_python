@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Ejercicio 10:
 
 ¿Cuál es la sintaxis correcta para importar la biblioteca math en Python?
@@ -11,18 +10,4 @@ La sintaxis correcta es:
 ```python
 import math
 ```
-=======
-## Ejercicio 10:
-
-¿Cuál es la sintaxis correcta para importar la biblioteca math en Python?
-
-<details>
-<summary>Respuesta:</summary>
-
-La sintaxis correcta es:
-
-```python
-import math
-```
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 </details>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Ejercicio 20:
 
 ¿Cuál es la forma correcta de realizar una consulta a una colección en MongoDB?
@@ -11,18 +10,4 @@ La forma correcta de realizar una consulta a una colección en MongoDB es utiliz
 ```python
 resultados = db.coleccion.find({"campo": valor})
 ```
-=======
-## Ejercicio 20:
-
-¿Cuál es la forma correcta de realizar una consulta a una colección en MongoDB?
-
-<details>
-
-<summary>Respuesta:</summary>
-La forma correcta de realizar una consulta a una colección en MongoDB es utilizando el método `find()`. Por ejemplo:
-
-```python
-resultados = db.coleccion.find({"campo": valor})
-```
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 </details>

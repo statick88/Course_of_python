@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Ejercicio 3:
 
 ¿Qué hace el siguiente fragmento de código?
@@ -16,23 +15,4 @@ manzana
 banana
 naranja
 ```
-=======
-## Ejercicio 3:
-
-¿Qué hace el siguiente fragmento de código?
-
-```python
-frutas = ["manzana", "banana", "naranja"]
-for fruta in frutas:
-    print(fruta)
-```
-<details>
-<summary>Respuesta:</summary>
-El código recorre la lista `frutas` e imprime cada elemento en una línea separada:
-```python
-manzana
-banana
-naranja
-```
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 </details>

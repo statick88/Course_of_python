@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Ejercicio 15:
 
 ¿Cuál es la salida de este código?
@@ -21,28 +20,4 @@ La salida es:
 5
 ```
 ya que el valor `3` es omitido debido al uso de `continue`.
-=======
-## Ejercicio 15:
-
-¿Cuál es la salida de este código?
-
-```python
-for i in range(1, 6):
-    if i == 3:
-        continue
-    print(i)
-```
-<details>
-
-<summary>Respuesta:</summary>
-
-La salida es:
-```bash
-1
-2
-4
-5
-```
-ya que el valor `3` es omitido debido al uso de `continue`.
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 </details>

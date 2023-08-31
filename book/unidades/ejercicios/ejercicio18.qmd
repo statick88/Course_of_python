@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Ejercicio 18:
 
 ¿Cuál es el resultado de la siguiente expresión?
@@ -14,21 +13,4 @@ resultado = x + " " + y
 
 El resultado de la expresión es la cadena "Hola Mundo", ya que se concatenan las cadenas `x` y `y` junto con un espacio.
 
-=======
-## Ejercicio 18:
-
-¿Cuál es el resultado de la siguiente expresión?
-
-```python
-x = "Hola"
-y = "Mundo"
-resultado = x + " " + y
-```
-<details>
-
-<summary>Respuesta:</summary>
-
-El resultado de la expresión es la cadena "Hola Mundo", ya que se concatenan las cadenas `x` y `y` junto con un espacio.
-
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 </details>

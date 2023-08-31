@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Operaciones Básicas en MongoDB
 
 En esta lección, aprenderemos a realizar operaciones básicas en una base de datos MongoDB, como insertar documentos, consultar documentos y actualizar documentos.
@@ -44,51 +43,4 @@ Elimina un documento de la colección.
 
 ## Explicación de la Actividad:
 
-=======
-## Operaciones Básicas en MongoDB
-
-En esta lección, aprenderemos a realizar operaciones básicas en una base de datos MongoDB, como insertar documentos, consultar documentos y actualizar documentos.
-
-## Operaciones en MongoDB:
-
-### Insertar documentos: 
-```nosql
-db.coleccion.insert({ campo1: valor1, campo2: valor2 });
-```
-### Consultar documentos: 
-```nosql
-db.coleccion.find();
-```
-### Actualizar documentos: 
-```nosql
-db.coleccion.update({ campo: valor }, { $set: { campo_actualizado: nuevo_valor } });
-```
-### Eliminar documentos: 
-```nosql
-db.coleccion.remove({ campo: valor });
-```
-## Ejemplo - Inserción de un Documento en MongoDB:
-
-```nosql	
-// Insertar un documento en la colección 'productos'
-db.productos.insert({ nombre: "Camiseta", precio: 20 });
-```
-
-:::{.callout-important}
-### Actividad Práctica:
-
-Conéctate a la base de datos MongoDB.
-
-Inserta al menos dos documentos en la colección 'productos'.
-
-Realiza una consulta para obtener todos los documentos de la colección 'productos'.
-
-Actualiza el precio de uno de los documentos en la colección.
-
-Elimina un documento de la colección.
-:::
-
-## Explicación de la Actividad:
-
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 Esta actividad permite a los participantes aplicar los conocimientos adquiridos en la inserción, consulta, actualización y eliminación de documentos en una base de datos MongoDB. Les ayuda a ganar experiencia práctica en la manipulación de datos en una base de datos NoSQL.

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Las bases de Python
 
 En esta lección, exploraremos las bases fundamentales de Python. Aprenderemos sobre las variables, tipos de datos y operadores básicos que forman la base de cualquier programa en Python.
@@ -68,74 +67,3 @@ Combina expresiones booleanas utilizando operadores lógicos y observa los resul
 
 Esta actividad permite a los participantes aplicar los conceptos de variables, tipos de datos y operadores en ejemplos prácticos. Les ayuda a comprender cómo trabajar con diferentes tipos de datos y cómo realizar operaciones básicas en Python.
 
-=======
-## Las bases de Python
-
-En esta lección, exploraremos las bases fundamentales de Python. Aprenderemos sobre las variables, tipos de datos y operadores básicos que forman la base de cualquier programa en Python.
-
-## Conceptos Clave
-
-### Variables
-
-Son nombres que se utilizan para almacenar valores en la memoria de la computadora.
-
-### Tipos de Datos
-
-Incluyen enteros, flotantes, cadenas, booleanos y más. Cada tipo de dato tiene sus propias características y operaciones.
-
-### Operadores
-
-Incluyen operadores aritméticos, de comparación y lógicos que se utilizan para realizar diferentes tipos de cálculos y comparaciones.
-
-### Ejemplo
-
-``` python
-
-# Variables y tipos de datos
-nombre = "Juan"
-edad = 25
-altura = 1.75
-es_mayor_de_edad = True
-
-# Operadores aritméticos
-suma = 5 + 3
-resta = 10 - 2
-multiplicacion = 4 * 6
-division = 15 / 3
-
-# Operadores de comparación
-igual = 5 == 5
-mayor_que = 10 > 5
-menor_que = 7 < 12
-
-# Operadores lógicos
-and_logico = True and False
-or_logico = True or False
-not_logico = not True
-```
-
-## Explicación:
-
-Las variables se utilizan para almacenar información, como el nombre, la edad, la altura y si una persona es mayor de edad.
-
-Los operadores aritméticos se utilizan para realizar cálculos matemáticos básicos.
-
-Los operadores de comparación se utilizan para comparar valores y devuelven un valor booleano (verdadero o falso).
-
-Los operadores lógicos se utilizan para combinar expresiones booleanas y realizar operaciones lógicas.
-
-::: {.callout-important}
-### Actividad Práctica:
-
-Crea variables que almacenen información sobre ti, como tu nombre, edad y altura.
-
-Realiza operaciones aritméticas y utiliza operadores de comparación para comparar valores.
-
-Combina expresiones booleanas utilizando operadores lógicos y observa los resultados.
-::: 
-
-## Explicación de la Actividad
-
-Esta actividad permite a los participantes aplicar los conceptos de variables, tipos de datos y operadores en ejemplos prácticos. Les ayuda a comprender cómo trabajar con diferentes tipos de datos y cómo realizar operaciones básicas en Python.
-
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Range
 
 El tipo de dato range se utiliza para generar secuencias de números. Aprenderemos cómo utilizar range en Python para crear secuencias de números en rangos específicos.
@@ -47,53 +46,3 @@ Convierte la secuencia de números en una lista y muestra los elementos en la co
 
 Esta actividad permite a los participantes practicar la creación de secuencias de números utilizando range y cómo convertirlas en listas para trabajar con los elementos individualmente. Les ayuda a comprender cómo generar secuencias de números en diferentes rangos.
 
-=======
-## Range
-
-El tipo de dato range se utiliza para generar secuencias de números. Aprenderemos cómo utilizar range en Python para crear secuencias de números en rangos específicos.
-
-## Conceptos Clave:
-
-### range
-
-Tipo de dato utilizado para generar secuencias de números en un rango.
-
-### Parámetros de range
-
-Se pueden especificar el valor inicial, valor final y paso de la secuencia.
-
-### Conversión a Listas
-
-Es posible convertir un objeto range en una lista utilizando la función list().
-
-## Ejemplo
-
-``` python
-# Generación de secuencias de números
-secuencia1 = range(5)          # 0, 1, 2, 3, 4
-secuencia2 = range(2, 10)      # 2, 3, 4, 5, 6, 7, 8, 9
-secuencia3 = range(1, 11, 2)   # 1, 3, 5, 7, 9
-
-# Conversión a lista
-lista_secuencia1 = list(secuencia1)
-```
-
-## Explicación
-
-En este ejemplo, se utilizan diferentes valores para crear secuencias de números utilizando el tipo de dato range.
-
-La función list() se utiliza para convertir una secuencia de range en una lista.
-
-::: {.callout-important}
-### Actividad Práctica:
-
-Crea una secuencia de números del 10 al 20 con un paso de 2.
-
-Convierte la secuencia de números en una lista y muestra los elementos en la consola.
-:::
-
-## Explicación de la Actividad:
-
-Esta actividad permite a los participantes practicar la creación de secuencias de números utilizando range y cómo convertirlas en listas para trabajar con los elementos individualmente. Les ayuda a comprender cómo generar secuencias de números en diferentes rangos.
-
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

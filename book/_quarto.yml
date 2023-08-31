@@ -13,7 +13,6 @@ book:
   keyword: Python, Programación, Fundamentos, Aplicaciones Prácticas, Instalación, Herramientas, API, Django Rest Framework, Bases de Datos, PostgreSQL, MongoDB, Control de Flujo, Funciones, Clases, Herencia, Módulos, Aprendizaje, Principiantes, Proyectos, Desarrollo Web, Django, Flask, Data Science, FastAPI, Práctica, Enseñanza, Gratis, Internet, Contribuir
   url: https://github.com/statick88/Course_of_python
   page-navigation: true
-  downloads: [pdf, epub]
   sidebar: 
     logo: python-logo.png
     search: true
@@ -23,15 +22,17 @@ book:
   repo-subdir: book
   repo-branch: main
   repo-actions: [edit, issue, source]
-  # twitter-card: 
-  #   site: "@statick_ds"
+  sharing: [twitter, linkedin]
+  downloads: [pdf, epub]
   image: python-logo.png
+
   page-footer:
     center: 
       - text: "About"
         href: about.qmd
       - text: "License"
         href: license.qmd
+        
   chapters:
     - index.qmd
     - part: "Unidad 1: Introducción a la Programación"
@@ -140,7 +141,6 @@ format:
     number-depth: 4
     link-external-icon: true
     link-external-newwindow: true
-
     css: css/styles.css
 
   pdf:

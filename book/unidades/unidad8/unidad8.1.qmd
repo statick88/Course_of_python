@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Introducción
 
 En esta lección, exploraremos cómo trabajar con módulos en Python. Aprenderemos cómo dividir nuestro código en módulos reutilizables y cómo importarlos en otros programas.
@@ -48,54 +47,3 @@ Importa el módulo en otro archivo y utiliza la función multiplicacion para cal
 
 Esta actividad permite a los participantes practicar la creación y uso de módulos en Python. Les ayuda a comprender cómo organizar su código en módulos reutilizables y cómo importar funciones y clases desde otros archivos.
 
-=======
-## Introducción
-
-En esta lección, exploraremos cómo trabajar con módulos en Python. Aprenderemos cómo dividir nuestro código en módulos reutilizables y cómo importarlos en otros programas.
-
-## Conceptos Clave:
-
-### Módulos
-
-Archivos que contienen código Python y se utilizan para organizar y reutilizar funciones, clases y variables.
-
-### Importar Módulos
-
-Se utiliza la palabra clave import para cargar un módulo en un programa.
-
-### Usar Funciones y Clases
-
-Después de importar un módulo, sus funciones y clases pueden ser utilizadas como si estuvieran definidas en el mismo archivo.
-
-## Ejemplo:
-
-``` python
-# En el archivo calculadora.py
-def suma(a, b):
-    return a + b
-
-# En otro archivo
-import calculadora
-
-resultado = calculadora.suma(3, 5)
-print("Resultado:", resultado)
-```
-## Explicación:
-
-En este ejemplo, se define una función suma en el módulo calculadora.py.
-
-En otro archivo, se importa el módulo calculadora utilizando import y se utiliza la función suma del módulo.
-
-:::{.callout-important}
-### Actividad Práctica:
-
-Crea un módulo llamado matematicas con una función multiplicacion que multiplique dos números.
-
-Importa el módulo en otro archivo y utiliza la función multiplicacion para calcular el producto de dos números.
-:::
-
-## Explicación de la Actividad:
-
-Esta actividad permite a los participantes practicar la creación y uso de módulos en Python. Les ayuda a comprender cómo organizar su código en módulos reutilizables y cómo importar funciones y clases desde otros archivos.
-
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

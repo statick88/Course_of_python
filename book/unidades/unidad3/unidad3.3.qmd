@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Identación
 
 En Python, la identación (sangría) juega un papel crucial en la estructura y organización del código. Aprenderemos cómo se utiliza la identación para delimitar bloques de código y mejorar la legibilidad.
@@ -39,45 +38,3 @@ Intenta cambiar la identación incorrectamente y observa cómo afecta al funcion
 ## Explicación de la Actividad.
 
 Esta actividad permite a los participantes comprender la importancia de la identación en Python al trabajar con bloques de código como los condicionales. Les ayuda a desarrollar el hábito de utilizar la identación adecuada para mantener el código organizado y legible.
-=======
-## Identación
-
-En Python, la identación (sangría) juega un papel crucial en la estructura y organización del código. Aprenderemos cómo se utiliza la identación para delimitar bloques de código y mejorar la legibilidad.
-
-## Conceptos Clave
-
-### Identación
-
-- Espacios o tabulaciones al comienzo de una línea que indican la estructura del código.
-- Bloques de Código: Conjuntos de instrucciones que se agrupan juntas y se ejecutan en conjunto.
-- PEP 8: Guía de estilo para la escritura de código en Python que recomienda el uso de cuatro espacios para la identación.
-
-### Ejemplo
-
-``` python
-# Uso de la identación en un condicional
-numero = 10
-
-if numero > 5:
-    print("El número es mayor que 5")
-else:
-    print("El número no es mayor que 5")
-```
-## Explicación
-
-- En este ejemplo, la identación se utiliza para delimitar los bloques de código dentro de las instrucciones "if" y "else".
-- La identación es crucial para que Python sepa qué instrucciones están dentro de un bloque y cuáles están fuera.
-
-::: {.callout-important}
-
-### Actividad Práctica:
-
-Escribe un programa que solicite al usuario su edad y muestre un mensaje según si es mayor de 18 años o no.
-
-Intenta cambiar la identación incorrectamente y observa cómo afecta al funcionamiento del programa.
-::: 
-
-## Explicación de la Actividad.
-
-Esta actividad permite a los participantes comprender la importancia de la identación en Python al trabajar con bloques de código como los condicionales. Les ayuda a desarrollar el hábito de utilizar la identación adecuada para mantener el código organizado y legible.
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9

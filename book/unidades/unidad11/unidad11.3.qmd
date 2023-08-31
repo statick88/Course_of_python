@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Introducción a FastAPI y PyScript
 
 En esta lección, exploraremos FastAPI, un moderno framework de desarrollo web en Python, y PyScript, una herramienta que permite crear scripts de Python en un entorno interactivo. Aprenderemos cómo utilizar FastAPI para construir APIs rápidas y cómo utilizar PyScript para escribir y ejecutar scripts de manera interactiva.
@@ -60,67 +59,4 @@ Instala PyScript en tu entorno y realiza algunos cálculos y experimentos intera
 
 ## Explicación de la Actividad:
 
-=======
-## Introducción a FastAPI y PyScript
-
-En esta lección, exploraremos FastAPI, un moderno framework de desarrollo web en Python, y PyScript, una herramienta que permite crear scripts de Python en un entorno interactivo. Aprenderemos cómo utilizar FastAPI para construir APIs rápidas y cómo utilizar PyScript para escribir y ejecutar scripts de manera interactiva.
-
-## Qué es FastAPI:
-
-FastAPI es un framework de desarrollo web rápido (high-performance) basado en Python.
-
-Permite construir APIs rápidas y seguras de manera sencilla.
-
-## Instalación de FastAPI:
-
-### Instalar FastAPI utilizando pip: 
-```bash
-pip install fastapi
-```
-### Instalar el servidor ASGI (por ejemplo, Uvicorn): 
-```bash
-pip install uvicorn
-```
-## Creación de una API Básica con FastAPI:
-
-```python
-from fastapi import FastAPI
-
-app = FastAPI()
-
-@app.get("/")
-def leer_raiz():
-    return {"mensaje": "¡Hola desde FastAPI!"}
-```
-## Uso de PyScript:
-
-### Instalar PyScript utilizando pip: 
-```bash
-pip install pyscript
-```
-### Ejecutar PyScript en un entorno interactivo: 
-```bash	
-pyscript
-```
-## Ejemplo - Ejecución de PyScript:
-
-```python	
-a = 5
-b = 10
-a + b
-15
-```
-:::{.callout-important}
-### Actividad Práctica:
-
-Instala FastAPI en tu entorno.
-
-Crea una API con FastAPI que tenga al menos un endpoint para obtener información.
-
-Instala PyScript en tu entorno y realiza algunos cálculos y experimentos interactivos.
-:::
-
-## Explicación de la Actividad:
-
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
 Esta actividad permite a los participantes experimentar con FastAPI y PyScript para crear una API básica y ejecutar scripts interactivos. Les ayuda a comprender cómo utilizar FastAPI para construir APIs de manera rápida y cómo utilizar PyScript para escribir y ejecutar código Python de manera interactiva en la consola.

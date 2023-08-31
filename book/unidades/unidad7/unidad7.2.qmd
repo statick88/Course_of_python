@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Objetos y Clases
 
 En esta lección, continuaremos explorando los conceptos de objetos y clases en la programación orientada a objetos. Aprenderemos cómo crear múltiples objetos a partir de una misma clase y cómo trabajar con sus atributos y métodos.
@@ -55,61 +54,3 @@ Crea dos instancias de la clase Rectangulo con diferentes valores de ancho y alt
 
 Esta actividad permite a los participantes practicar la creación de instancias de clase y trabajar con sus atributos y métodos. Les ayuda a comprender cómo cada objeto puede tener valores diferentes para sus atributos y cómo ejecutar acciones específicas en cada objeto.
 
-=======
-## Objetos y Clases
-
-En esta lección, continuaremos explorando los conceptos de objetos y clases en la programación orientada a objetos. Aprenderemos cómo crear múltiples objetos a partir de una misma clase y cómo trabajar con sus atributos y métodos.
-
-## Conceptos Clave:
-
-### Instancias de Clase
-
-Cuando se crea un objeto a partir de una clase, se crea una instancia de esa clase.
-
-### Atributos de Instancia: 
-
-Características específicas de un objeto que se almacenan como variables en la instancia.
-
-### Métodos de Instancia
-
-Funciones definidas en la clase que operan en los atributos de la instancia.
-
-## Ejemplo:
-
-```python
-class Perro:
-    def __init__(self, nombre, raza):
-        self.nombre = nombre
-        self.raza = raza
-
-    def ladrar(self):
-        print(f"{self.nombre} está ladrando.")
-
-perro1 = Perro("Max", "Labrador")
-perro2 = Perro("Buddy", "Chihuahua")
-
-perro1.ladrar()
-perro2.ladrar()
-```
-
-## Explicación:
-
-En este ejemplo, se define una clase Perro con un constructor y un método ladrar.
-
-Se crean dos objetos (perro1 y perro2) a partir de la misma clase y se les asignan diferentes valores para sus atributos.
-
-Los métodos de instancia son llamados en cada objeto para realizar acciones específicas.
-
-::: {.callout-important}
-### Actividad Práctica:
-
-Crea una clase Rectangulo con atributos ancho y alto, y un método calcular_area que calcule y retorne el área del rectángulo.
-
-Crea dos instancias de la clase Rectangulo con diferentes valores de ancho y alto, y llama al método calcular_area en cada una.
-:::
-
-## Explicación de la Actividad:
-
-Esta actividad permite a los participantes practicar la creación de instancias de clase y trabajar con sus atributos y métodos. Les ayuda a comprender cómo cada objeto puede tener valores diferentes para sus atributos y cómo ejecutar acciones específicas en cada objeto.
-
->>>>>>> e8ed08b1a5bbe1e369719187cfc4de7f7e2a41a9
