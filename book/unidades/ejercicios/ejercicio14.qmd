@@ -1,0 +1,15 @@
+## Ejercicio 14:
+
+¿Qué método se utiliza para unir elementos de una lista en una cadena?
+
+<details>
+
+<summary>Respuesta:</summary>
+
+El método utilizado para unir elementos de una lista en una cadena es `join()`. Por ejemplo:
+
+```python
+elementos = ["a", "b", "c"]
+cadena = "-".join(elementos)
+```
+</details>

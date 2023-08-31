@@ -1,0 +1,13 @@
+## Ejercicio 10:
+
+¿Cuál es la sintaxis correcta para importar la biblioteca math en Python?
+
+<details>
+<summary>Respuesta:</summary>
+
+La sintaxis correcta es:
+
+```python
+import math
+```
+</details>

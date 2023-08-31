@@ -1,0 +1,71 @@
+## Introducción a PostgreSQL
+
+En esta lección, nos centraremos en PostgreSQL, un Sistema de Gestión de Bases de Datos Relacionales (RDBMS) de código abierto. Aprenderemos cómo instalar PostgreSQL y cómo realizar operaciones básicas en una base de datos.
+
+### Instalación de PostgreSQL:
+
+Descargar e instalar PostgreSQL desde el sitio oficial.
+
+Configurar contraseña para el usuario 'postgres'.
+
+### Operaciones Básicas en PostgreSQL:
+
+### Crear una base de datos: 
+```sql
+CREATE DATABASE nombre;
+```
+### Conectar a una base de datos: 
+```sql	
+\c nombre;
+```
+### Crear una tabla: 
+```sql
+CREATE TABLE tabla (columna1 tipo, columna2 tipo);
+```
+
+### Insertar registros: 
+```sql	
+INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2);
+```
+
+### Consultar registros: 
+```sql	
+SELECT * FROM tabla;
+```	
+
+### Actualizar registros: 
+```sql	
+UPDATE tabla SET columna1 = valor WHERE condicion;**
+```
+
+### Eliminar registros: 
+```sql
+DELETE FROM tabla WHERE condicion;
+```
+
+## Ejemplo - Creación de una Tabla en PostgreSQL:
+
+```sql
+CREATE TABLE estudiantes (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    edad INTEGER
+);
+```
+:::{.callout-info}
+### Actividad Práctica:
+
+Instala PostgreSQL en tu entorno.
+
+Crea una base de datos llamada 'universidad'.
+
+Crea una tabla 'alumnos' con las columnas 'id', 'nombre' y 'edad'.
+
+Inserta al menos dos registros en la tabla.
+
+Realiza una consulta para obtener todos los registros de la tabla 'alumnos'.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes familiarizarse con la instalación de PostgreSQL y realizar operaciones básicas de creación de base de datos, creación de tablas, inserción y consulta de registros. Les ayuda a adquirir experiencia práctica en la gestión de bases de datos utilizando PostgreSQL.

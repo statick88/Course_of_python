@@ -1,0 +1,18 @@
+
+## Ejercicio 17:
+
+¿Cómo se define una clase en Python?
+
+<details>
+
+<summary>Respuesta:</summary>
+
+Una clase en Python se define utilizando la palabra clave `class`, seguida del nombre de la clase y los métodos y atributos definidos dentro de la clase. Por ejemplo:
+
+```python
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+```
+</details>

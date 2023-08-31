@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
+
+<title>Curso de Python 2023 - 15&nbsp; Ejercicios por Unidades.</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ejercicios.html" rel="prev">
+<link href="./python-logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="custom.css">
+<meta name="twitter:title" content="Curso de Python 2023 - 15&nbsp; Ejercicios por Unidades.">
+<meta name="twitter:description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
+<meta name="twitter:site" content="@statick_ds">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ejercicios2.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ejercicios por Unidades.</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./python-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Curso de Python 2023</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/statick88/Course_of_python/tree/main/book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Curso-de-Python-2023.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bienvenida</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción a la programación.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Instalación de Python y más herramientas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tipos de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de Flujo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funciones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Objetos, Clases y Herencia</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Módulos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a Bases de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Operaciones Básicas en Bases de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">¿Cómo me amplío con Python?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Unidades/unidad12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Proyecto: API de Tareas con Django Rest Framework</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ejercicios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Ejercicios</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ejercicios2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ejercicios por Unidades.</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#unidad-i-introducción-a-la-programación" id="toc-unidad-i-introducción-a-la-programación" class="nav-link active" data-scroll-target="#unidad-i-introducción-a-la-programación"><span class="header-section-number">15.1</span> UNIDAD I: Introducción a la programación</a></li>
+  <li><a href="#unidad-ii-instalación-de-python-y-más-herramientas" id="toc-unidad-ii-instalación-de-python-y-más-herramientas" class="nav-link" data-scroll-target="#unidad-ii-instalación-de-python-y-más-herramientas"><span class="header-section-number">15.2</span> UNIDAD II: Instalación de Python y más herramientas</a></li>
+  <li><a href="#unidad-iii-introducción-a-python" id="toc-unidad-iii-introducción-a-python" class="nav-link" data-scroll-target="#unidad-iii-introducción-a-python"><span class="header-section-number">15.3</span> UNIDAD III: Introducción a Python</a></li>
+  <li><a href="#unidad-iv-tipos-de-datos" id="toc-unidad-iv-tipos-de-datos" class="nav-link" data-scroll-target="#unidad-iv-tipos-de-datos"><span class="header-section-number">15.4</span> UNIDAD IV: Tipos de Datos</a></li>
+  <li><a href="#unidad-v-control-de-flujo" id="toc-unidad-v-control-de-flujo" class="nav-link" data-scroll-target="#unidad-v-control-de-flujo"><span class="header-section-number">15.5</span> UNIDAD V: Control de Flujo</a></li>
+  <li><a href="#unidad-vi-funciones" id="toc-unidad-vi-funciones" class="nav-link" data-scroll-target="#unidad-vi-funciones"><span class="header-section-number">15.6</span> UNIDAD VI: Funciones</a></li>
+  <li><a href="#unidad-vii-objetos-clases-y-herencia" id="toc-unidad-vii-objetos-clases-y-herencia" class="nav-link" data-scroll-target="#unidad-vii-objetos-clases-y-herencia"><span class="header-section-number">15.7</span> UNIDAD VII: Objetos, clases y herencia</a></li>
+  <li><a href="#unidad-viii-módulos" id="toc-unidad-viii-módulos" class="nav-link" data-scroll-target="#unidad-viii-módulos"><span class="header-section-number">15.8</span> UNIDAD VIII: Módulos</a></li>
+  <li><a href="#unidad-ix-introducción-a-bases-de-datos" id="toc-unidad-ix-introducción-a-bases-de-datos" class="nav-link" data-scroll-target="#unidad-ix-introducción-a-bases-de-datos"><span class="header-section-number">15.9</span> UNIDAD IX: Introducción a Bases de Datos</a></li>
+  <li><a href="#unidad-xi-cómo-me-amplío-con-python" id="toc-unidad-xi-cómo-me-amplío-con-python" class="nav-link" data-scroll-target="#unidad-xi-cómo-me-amplío-con-python"><span class="header-section-number">15.10</span> UNIDAD XI: ¿Cómo me amplío con Python?</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/statick88/Course_of_python/edit/main/book/ejercicios2.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/statick88/Course_of_python/blob/main/book/ejercicios2.qmd" class="toc-action">View source</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ejercicios por Unidades.</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="unidad-i-introducción-a-la-programación" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="unidad-i-introducción-a-la-programación"><span class="header-section-number">15.1</span> UNIDAD I: Introducción a la programación</h2>
+Ejercicio 1: ¿Cuál es el objetivo principal de la programación?
+<details>
+<summary>
+Respuesta:
+</summary>
+El objetivo principal de la programación es resolver problemas y automatizar tareas utilizando un lenguaje de programación.
+</details>
+Ejercicio 2: ¿Qué es un algoritmo?
+<details>
+<summary>
+Respuesta:
+</summary>
+Un algoritmo es un conjunto de instrucciones ordenadas y precisas que describen cómo realizar una tarea o resolver un problema.
+</details>
+Ejercicio 3: ¿Cuál es la importancia de la indentación en Python?
+<details>
+<summary>
+Respuesta:
+</summary>
+La indentación en Python es importante porque define el bloque de código perteneciente a una estructura, como un bucle o una función. Python utiliza la indentación en lugar de llaves u otros caracteres para delimitar bloques de código.
+</details>
+Ejercicio 4: ¿Qué es un comentario en programación?
+<details>
+<summary>
+Respuesta:
+</summary>
+Un comentario en programación es un texto explicativo que se agrega en el código para hacerlo más comprensible. Los comentarios son ignorados por el intérprete y son útiles para documentar el código.
+</details>
+Ejercicio 5: Escribe un programa en Python que imprima “¡Hola, mundo!”.
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"¡Hola, mundo!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="unidad-ii-instalación-de-python-y-más-herramientas" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="unidad-ii-instalación-de-python-y-más-herramientas"><span class="header-section-number">15.2</span> UNIDAD II: Instalación de Python y más herramientas</h2>
+Ejercicio 6: ¿Cuál es la forma de verificar la versión de Python instalada en tu sistema?
+<details>
+<summary>
+Respuesta:
+</summary>
+Ejecutando el comando <code>python --version</code> en la línea de comandos.
+</details>
+Ejercicio 7: ¿Cuál es el propósito de Git en el desarrollo de software?
+<details>
+<summary>
+Respuesta:
+</summary>
+Git es un sistema de control de versiones que permite rastrear cambios en el código, colaborar con otros desarrolladores y mantener un historial completo de modificaciones en un proyecto.
+</details>
+Ejercicio 8: ¿Cómo se instala una extensión (extensión) en Visual Studio Code?
+<details>
+<summary>
+Respuesta:
+</summary>
+En Visual Studio Code, puedes instalar extensiones desde la barra lateral izquierda, haciendo clic en el ícono de extensiones (cuatro cuadros) y buscando la extensión que deseas instalar.
+</details>
+<p>Ejercicio 9: ¿Cuál es el resultado del siguiente código?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, "</span> <span class="op">+</span> <span class="st">"mundo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Respuesta:
+</summary>
+El resultado es la cadena “Hola, mundo” al concatenar las dos cadenas.
+</details>
+Ejercicio 10: ¿Cuál es el propósito de un entorno virtual en Python?
+<details>
+<summary>
+Respuesta:
+</summary>
+Un entorno virtual en Python permite aislar y gestionar las dependencias y paquetes utilizados en un proyecto específico, evitando conflictos con otros proyectos y asegurando un entorno limpio y controlado.
+</details>
+</section>
+<section id="unidad-iii-introducción-a-python" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="unidad-iii-introducción-a-python"><span class="header-section-number">15.3</span> UNIDAD III: Introducción a Python</h2>
+Ejercicio 11: ¿Cuál es la diferencia entre una variable y una constante en programación?
+<details>
+<summary>
+Respuesta:
+</summary>
+Una variable puede cambiar su valor a lo largo del programa, mientras que una constante mantiene su valor constante durante la ejecución.
+</details>
+Ejercicio 12: Escribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida con el nombre ingresado.
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ingresa tu nombre: "</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"¡Bienvenido,"</span>, nombre, <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<p>Ejercicio 13: ¿Cuál es el valor de la variable resultado después de ejecutar el siguiente código?</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> x <span class="op">//</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Respuesta:
+</summary>
+El valor de la variable <code>resultado</code> será 2, ya que <code>//</code> realiza la división entera de 5 entre 2.
+</details>
+Ejercicio 14: Escribe un programa en Python que determine si un número ingresado por el usuario es par o impar.
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ingresa un número: "</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> numero <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El número es par."</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El número es impar."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+Ejercicio 15: ¿Cuál es la función del operador not en Python?
+<details>
+<summary>
+Respuesta:
+</summary>
+El operador <code>not</code> se utiliza para negar una expresión booleana. Si la expresión es verdadera, <code>not</code> la convierte en falsa, y viceversa.
+</details>
+</section>
+<section id="unidad-iv-tipos-de-datos" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="unidad-iv-tipos-de-datos"><span class="header-section-number">15.4</span> UNIDAD IV: Tipos de Datos</h2>
+Ejercicio 16: ¿Cuál es la diferencia entre una lista y una tupla en Python?
+<details>
+<summary>
+Respuesta:
+</summary>
+La principal diferencia es que las listas son mutables (pueden cambiar) y las tuplas son inmutables (no pueden cambiar). En otras palabras, puedes agregar, eliminar y modificar elementos en una lista, pero no en una tupla.
+</details>
+Ejercicio 17: Escribe un programa que ordene una lista de números en orden ascendente.
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">2</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>numeros.sort()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numeros)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+Ejercicio 18: ¿Cómo se accede al tercer elemento de una lista en Python?
+<details>
+<summary>
+Respuesta:
+</summary>
+Utilizando el índice <code>2</code>. Por ejemplo, si la lista se llama <code>mi_lista</code>, puedes acceder al tercer elemento con <code>mi_lista[2]</code>.
+</details>
+Ejercicio 19: ¿Qué método se utiliza para agregar un elemento al final de una lista?
+<details>
+<summary>
+Respuesta:
+</summary>
+El método utilizado es <code>append()</code>. Por ejemplo, <code>mi_lista.append(7)</code> agrega el número 7 al final de la lista.
+</details>
+Ejercicio 20: Escribe un programa que cuente cuántas veces aparece un elemento específico en una lista.
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mi_lista <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">10</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>elemento <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>contador <span class="op">=</span> mi_lista.count(elemento)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El elemento"</span>, elemento, <span class="st">"aparece"</span>, contador, <span class="st">"veces."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="unidad-v-control-de-flujo" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="unidad-v-control-de-flujo"><span class="header-section-number">15.5</span> UNIDAD V: Control de Flujo</h2>
+Ejercicio 21: Escribe un programa que determine si un número ingresado por el usuario es positivo, negativo o cero.
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ingresa un número: "</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> numero <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El número es positivo."</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> numero <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El número es negativo."</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El número es cero."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<p>Ejercicio 22: ¿Qué hace el siguiente código?</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>contador <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> contador <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(contador)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    contador <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Respuesta:
+</summary>
+El código imprime los números del 0 al 4 en líneas separadas utilizando un bucle <code>while</code>.
+</details>
+<p>Ejercicio 23: ¿Cuál es el resultado de la siguiente expresión?</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    resultado <span class="op">+=</span> i</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Respuesta:
+</summary>
+El resultado es 15, ya que se suma los números del 1 al 5 en el bucle <code>for</code>.
+</details>
+Ejercicio 24: Escribe un programa que calcule la suma de todos los números pares entre 1 y 100.
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>suma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">101</span>, <span class="dv">2</span>):</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    suma <span class="op">+=</span> i</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"La suma de los números pares entre 1 y 100 es:"</span>, suma)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+Ejercicio 25: ¿Cuál es el propósito de la instrucción break en un bucle?
+<details>
+<summary>
+Respuesta:
+</summary>
+La instrucción <code>break</code> se utiliza para salir inmediatamente de un bucle, interrumpiendo su ejecución antes de que termine naturalmente.
+</details>
+</section>
+<section id="unidad-vi-funciones" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="unidad-vi-funciones"><span class="header-section-number">15.6</span> UNIDAD VI: Funciones</h2>
+Ejercicio 26: ¿Qué es una función en programación?
+<details>
+<summary>
+Respuesta:
+</summary>
+Una función es un bloque de código reutilizable que realiza una tarea específica. Puede recibir argumentos, ejecutar instrucciones y devolver un valor.
+</details>
+Ejercicio 27: Escribe una función en Python que calcule el área de un círculo.
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> area_circulo(radio):</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> math.pi <span class="op">*</span> radio <span class="op">**</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<p><strong>Ejercicio 28:</strong> ¿Qué es la recursividad en programación?</p>
+<details>
+<summary>
+Respuesta:
+</summary>
+La recursividad es una técnica donde una función se llama a sí misma para resolver un problema. Es útil para resolver problemas que se pueden descomponer en subproblemas similares.
+</details>
+<p><strong>Ejercicio 29:</strong> Escribe una función recursiva en Python para calcular el factorial de un número.</p>
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> factorial(n):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n <span class="op">*</span> factorial(n <span class="op">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+Ejercicio 30: ¿Por qué es importante utilizar funciones en la programación?
+<details>
+<summary>
+Respuesta:
+</summary>
+Las funciones permiten dividir el código en bloques más pequeños y manejables, lo que facilita la reutilización, la depuración y la comprensión del código. Además, promueven la modularidad y el diseño limpio.
+</details>
+</section>
+<section id="unidad-vii-objetos-clases-y-herencia" class="level2" data-number="15.7">
+<h2 data-number="15.7" class="anchored" data-anchor-id="unidad-vii-objetos-clases-y-herencia"><span class="header-section-number">15.7</span> UNIDAD VII: Objetos, clases y herencia</h2>
+Ejercicio 31: ¿Qué es una clase en programación orientada a objetos?
+<details>
+<summary>
+Respuesta:
+</summary>
+Una clase es un plano o plantilla para crear objetos en programación orientada a objetos. Define las propiedades (atributos) y comportamientos (métodos) que tendrán los objetos creados a partir de ella.
+</details>
+Ejercicio 32: Escribe una clase en Python llamada Persona con los atributos nombre y edad, y un método saludar() que imprima un saludo con el nombre de la persona.
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Persona:</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, edad):</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.edad <span class="op">=</span> edad</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar(<span class="va">self</span>):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"¡Hola, soy"</span>, <span class="va">self</span>.nombre, <span class="st">"y tengo"</span>, <span class="va">self</span>.edad, <span class="st">"años!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<p><strong>Ejercicio 33:</strong> ¿Qué es la herencia en programación orientada a objetos?</p>
+<details>
+<summary>
+Respuesta:
+</summary>
+La herencia es un concepto en el que una clase (subclase) puede heredar atributos y métodos de otra clase (superclase). Permite reutilizar y extender el código de una clase existente para crear una nueva clase.
+</details>
+<p><strong>Ejercicio 34:</strong> Escribe una clase en Python llamada <code>Estudiante</code> que herede de la clase <code>Persona</code> y tenga un atributo adicional <code>curso</code>.</p>
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Estudiante(Persona):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, edad, curso):</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(nombre, edad)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.curso <span class="op">=</span> curso</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+Ejercicio 35: ¿Por qué es beneficioso utilizar la herencia en programación?
+<details>
+<summary>
+Respuesta:
+</summary>
+La herencia permite reutilizar código, promover la coherencia y facilitar la actualización y mantenimiento. También permite crear jerarquías de clases para modelar relaciones entre objetos del mundo real.
+</details>
+</section>
+<section id="unidad-viii-módulos" class="level2" data-number="15.8">
+<h2 data-number="15.8" class="anchored" data-anchor-id="unidad-viii-módulos"><span class="header-section-number">15.8</span> UNIDAD VIII: Módulos</h2>
+Ejercicio 36: ¿Qué es un módulo en Python?
+<details>
+<summary>
+Respuesta:
+</summary>
+Un módulo en Python es un archivo que contiene definiciones y declaraciones de variables, funciones y clases. Permite organizar y reutilizar el código en diferentes programas.
+</details>
+Ejercicio 37: Escribe un módulo en Python llamado operaciones que contenga una función suma para sumar dos números.
+<details>
+<summary>
+Respuesta:
+</summary>
+<p>Archivo <code>operaciones.py</code>:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> suma(a, b):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+Ejercicio 38: ¿Cómo se importa un módulo en Python?
+<details>
+<summary>
+Respuesta:
+</summary>
+Se importa utilizando la palabra clave <code>import</code>, seguida del nombre del módulo. Por ejemplo, <code>import operaciones</code> importaría el módulo <code>operaciones</code>.
+</details>
+Ejercicio 39: Escribe un programa que utilice la función suma del módulo operaciones para sumar dos números ingresados por el usuario.
+<details>
+<summary>
+Respuesta:
+</summary>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> operaciones</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>num1 <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Ingresa el primer número: "</span>))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>num2 <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Ingresa el segundo número: "</span>))</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> operaciones.suma(num1, num2)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"La suma es:"</span>, resultado)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<p><strong>Ejercicio 40:</strong> ¿Cuál es la ventaja de utilizar módulos en Python?</p>
+<details>
+<summary>
+Respuesta:
+</summary>
+Los módulos permiten la modularidad, la reutilización de código y la organización efectiva del código en componentes separados. También facilitan la colaboración y la mantenibilidad.
+</details>
+</section>
+<section id="unidad-ix-introducción-a-bases-de-datos" class="level2" data-number="15.9">
+<h2 data-number="15.9" class="anchored" data-anchor-id="unidad-ix-introducción-a-bases-de-datos"><span class="header-section-number">15.9</span> UNIDAD IX: Introducción a Bases de Datos</h2>
+Ejercicio 41: ¿Qué es una base de datos en el contexto de la programación?
+<details>
+<summary>
+Respuesta:
+</summary>
+Una base de datos es un sistema organizado para almacenar, administrar y recuperar información de manera eficiente. Se utiliza para almacenar datos estructurados de manera persistente.
+</details>
+Ejercicio 42: ¿Qué es PostgreSQL?
+<details>
+<summary>
+Respuesta:
+</summary>
+PostgreSQL es un sistema de gestión de bases de datos relacional de código abierto y potente. Es conocido por su capacidad de manejar cargas de trabajo complejas y por sus características avanzadas.
+</details>
+Ejercicio 43: ¿Qué es MongoDB?
+<details>
+<summary>
+Respuesta:
+</summary>
+MongoDB es una base de datos NoSQL orientada a documentos. Almacena los datos en documentos JSON flexibles en lugar de en tablas tradicionales, lo que permite una gran flexibilidad y escalabilidad.
+</details>
+Ejercicio 44: ¿Cuál es la ventaja de utilizar bases de datos en programas?
+<details>
+<summary>
+Respuesta:
+</summary>
+Las bases de datos permiten almacenar y administrar grandes cantidades de datos de manera estructurada y eficiente. Esto facilita el acceso y la manipulación de datos en aplicaciones.
+</details>
+Ejercicio 45: ¿Cuál es el propósito de una clave primaria en una base de datos?
+<details>
+<summary>
+Respuesta:
+</summary>
+Una clave primaria es un campo único en una tabla que se utiliza para identificar de manera única cada registro en la tabla. Se utiliza como referencia para relacionar tablas y mantener la integridad de los datos.
+</details>
+<p>UNIDAD X: MySQL, PostgreSQL y MongoDB: Operaciones básicas en bases de datos</p>
+Ejercicio 46: ¿Cómo se realiza una consulta básica a una tabla en SQL?
+<details>
+<summary>
+Respuesta:
+</summary>
+Utilizando la sentencia <code>SELECT</code>. Por ejemplo, <code>SELECT * FROM tabla</code> recuperará todos los registros de la tabla.
+</details>
+Ejercicio 47: ¿Qué comando se utiliza para insertar un nuevo registro en una tabla en SQL?
+<details>
+<summary>
+Respuesta:
+</summary>
+El comando utilizado es <code>INSERT INTO</code>. Por ejemplo, <code>INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2)</code> insertará un nuevo registro en la tabla.
+</details>
+Ejercicio 48: ¿Cómo se actualiza un registro en una tabla en SQL?
+<details>
+<summary>
+Respuesta:
+</summary>
+Utilizando el comando <code>UPDATE</code>. Por ejemplo, <code>UPDATE tabla SET columna = valor WHERE condicion</code> actualizará los registros que cumplan con la condición.
+</details>
+Ejercicio 49: ¿Cuál es el propósito de la sentencia DELETE en SQL?
+<details>
+<summary>
+Respuesta:
+</summary>
+La sentencia <code>DELETE</code> se utiliza para eliminar uno o varios registros de una tabla. Por ejemplo, <code>DELETE FROM tabla WHERE condicion</code> eliminará los registros que cumplan con la condición.
+</details>
+Ejercicio 50: ¿Cuál es la ventaja de utilizar bases de datos NoSQL como MongoDB?
+<details>
+<summary>
+Respuesta:
+</summary>
+Las bases de datos NoSQL, como MongoDB, son flexibles y escalables, lo que las hace ideales para manejar grandes cantidades de datos no estructurados o semiestructurados. Son adecuadas para aplicaciones web y móviles modernas.
+</details>
+</section>
+<section id="unidad-xi-cómo-me-amplío-con-python" class="level2" data-number="15.10">
+<h2 data-number="15.10" class="anchored" data-anchor-id="unidad-xi-cómo-me-amplío-con-python"><span class="header-section-number">15.10</span> UNIDAD XI: ¿Cómo me amplío con Python?</h2>
+Ejercicio 51: ¿Qué es la ciencia de datos y cómo se relaciona con Python?
+<details>
+<summary>
+Respuesta:
+</summary>
+La ciencia de datos es el proceso de extracción, transformación y análisis de datos para obtener conocimientos y tomar decisiones informadas. Python es ampliamente utilizado en la ciencia de datos debido a su amplio ecosistema de bibliotecas y herramientas.
+</details>
+Ejercicio 52: ¿Qué es Django Framework y para qué se utiliza?
+<details>
+<summary>
+Respuesta:
+</summary>
+Django es un framework web de alto nivel en Python que facilita la creación de aplicaciones web robustas y escalables. Se utiliza para construir sitios web y aplicaciones con características como autenticación, seguridad y manejo de bases de datos.
+</details>
+Ejercicio 53: ¿Qué es FastAPI y cómo se diferencia de otros frameworks?
+<details>
+<summary>
+Respuesta:
+</summary>
+FastAPI es un framework web moderno y de alto rendimiento para construir APIs en Python. Se destaca por su velocidad, facilidad de uso y generación automática de documentación interactiva. Utiliza anotaciones de tipo para validar datos y reducir errores.
+</details>
+Ejercicio 54: ¿Cuál es el propósito de las APIs en el desarrollo web?
+<details>
+<summary>
+Respuesta:
+</summary>
+Las APIs (Interfaces de Programación de Aplicaciones) se utilizan para permitir la comunicación y la integración entre diferentes aplicaciones y sistemas. Facilitan el intercambio de datos y funcionalidades entre aplicaciones.
+</details>
+Ejercicio 55: ¿Por qué es importante ampliarse en Python más allá de los conceptos básicos?
+<details>
+<summary>
+Respuesta:
+</summary>
+Ampliarse en Python permite abordar proyectos más complejos y desafiantes, como desarrollo web, análisis de datos, automatización, inteligencia artificial y más. Además, mejora las habilidades y la versatilidad como programador.
+</details>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ejercicios.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Ejercicios</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./license.html">License</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

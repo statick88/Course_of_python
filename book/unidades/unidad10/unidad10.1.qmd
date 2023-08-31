@@ -1,0 +1,66 @@
+## Introducción e Instalación
+
+En esta lección, nos centraremos en realizar operaciones básicas en bases de datos utilizando diferentes sistemas de gestión: MySQL, PostgreSQL y MongoDB. Aprenderemos cómo realizar la instalación de estos sistemas y cómo conectarnos a las bases de datos.
+
+## Instalación de MySQL:
+
+Descargar e instalar MySQL desde el sitio oficial.
+
+Configurar contraseña para el usuario 'root'.
+
+## Instalación de PostgreSQL:
+
+Descargar e instalar PostgreSQL desde el sitio oficial.
+
+Configurar contraseña para el usuario 'postgres'.
+
+## Instalación de MongoDB:
+
+Descargar e instalar MongoDB desde el sitio oficial.
+
+Configurar directorio de datos y logs.
+
+## Conexión a la Base de Datos:
+
+### MySQL y PostgreSQL: 
+
+Usar bibliotecas como mysql-connector-python o psycopg2 para conectarse y realizar operaciones.
+
+### MongoDB: 
+
+Usar la biblioteca pymongo para conectarse y realizar operaciones.
+
+## Ejemplo - Conexión a MySQL:
+
+```python
+import mysql.connector
+
+# Conexión a la base de datos
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="contraseña",
+    database="basededatos"
+)
+```
+
+## Ejemplo - Conexión a MongoDB:
+
+```python
+import pymongo
+
+# Conexión al servidor MongoDB
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+```
+:::{.callout-important}
+### Actividad Práctica:
+
+Instala MySQL, PostgreSQL y MongoDB en tu entorno.
+Crea una base de datos en cada uno de los sistemas.
+Conéctate a cada una de las bases de datos utilizando las bibliotecas adecuadas.
+Realiza una consulta de prueba en cada sistema para verificar la conexión.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes adquirir experiencia práctica en la instalación de diferentes sistemas de bases de datos y en la conexión a estas bases de datos utilizando las bibliotecas correspondientes. Les ayuda a comprender cómo establecer una conexión exitosa y cómo preparar el entorno para las operaciones futuras en bases de datos.

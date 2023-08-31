@@ -1,0 +1,16 @@
+## Ejercicio 8:
+¿Qué hace el siguiente código?
+
+```python
+for i in range(3):
+    print(i)
+```
+<details>
+<summary>Respuesta:</summary>
+El código imprime los números del 0 al 2 en líneas separadas:
+```bash
+0
+1
+2
+```
+</details>

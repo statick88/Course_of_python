@@ -1,0 +1,41 @@
+## Introducción a While
+
+En esta lección, introduciremos la estructura while, que permite ejecutar un bloque de código repetidamente mientras se cumpla una condición.
+
+## Conceptos Clave:
+
+### Estructura while
+
+Permite ejecutar un bloque de código mientras una condición sea verdadera.
+
+### Condición
+
+La condición se verifica antes de cada iteración. Si es verdadera, se ejecuta el bloque de código.
+
+## Ejemplo:
+
+``` python
+contador = 0
+
+while contador < 5:
+    print("Contador:", contador)
+    contador += 1
+```
+
+## Explicación:
+
+En este ejemplo, se utiliza la estructura while para imprimir el valor del contador mientras sea menor que 5.
+
+Después de cada iteración, se incrementa el contador en 1.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una variable que represente la cantidad de intentos de un usuario para ingresar una contraseña correcta.
+
+Utiliza una estructura while para pedir al usuario que ingrese su contraseña hasta que lo haga correctamente.
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar el uso de la estructura while para crear bucles que se ejecutan repetidamente mientras se cumple una condición. Les ayuda a comprender cómo implementar lógica de repetición en sus programas.
+

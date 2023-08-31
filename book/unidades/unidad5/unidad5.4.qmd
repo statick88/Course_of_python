@@ -1,0 +1,48 @@
+## And y Or
+
+En esta lección, exploraremos los operadores lógicos and y or, que permiten combinar condiciones para crear expresiones más complejas en las estructuras if, elif y else.
+
+## Conceptos Clave:
+
+### Operador and 
+
+Retorna True si ambas condiciones son verdaderas.
+
+### Operador or
+
+Retorna True si al menos una de las condiciones es verdadera.
+
+### Combinación de Condiciones
+
+Los operadores and y or permiten combinar múltiples condiciones en una sola expresión.
+
+## Ejemplo:
+
+```python
+edad = 20
+tiene_permiso = True
+
+if edad >= 18 and tiene_permiso:
+    print("Puedes ingresar.")
+else:
+    print("No puedes ingresar.")
+```
+
+## Explicación:
+
+En este ejemplo, se utiliza el operador and para evaluar si la edad es mayor o igual a 18 y si el usuario tiene permiso.
+
+Si ambas condiciones son verdaderas, se permite el ingreso.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea dos variables que representen si un usuario tiene una cuenta premium y si su suscripción está activa.
+
+Utiliza una estructura if y el operador and para determinar si el usuario tiene acceso premium.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la combinación de condiciones utilizando los operadores and y or. Les ayuda a comprender cómo crear expresiones más complejas para tomar decisiones basadas en múltiples condiciones en sus programas.
+

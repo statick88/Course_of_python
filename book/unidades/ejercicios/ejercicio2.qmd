@@ -1,0 +1,13 @@
+## Ejercicio 2:
+¿Cuál es el resultado de la siguiente expresión?
+
+```python
+x = 10
+y = 5
+resultado = x + y
+print(resultado)
+```
+<details>
+<summary>Respuesta:</summary>
+El resultado de la expresión es 15, ya que se suman los valores de las variables `x` (10) y `y` (5).
+</details>

@@ -1,0 +1,60 @@
+## Introducción a MongoDB
+
+En esta lección, nos centraremos en MongoDB, una base de datos NoSQL de código abierto. Aprenderemos cómo instalar MongoDB y cómo realizar operaciones básicas en una base de datos NoSQL.
+
+## Instalación de MongoDB:
+
+Descargar e instalar MongoDB desde el sitio oficial.
+
+Configurar directorio de datos y logs.
+
+## Operaciones Básicas en MongoDB:
+
+### Crear una base de datos: 
+```nosql
+use nombre;
+```
+### Crear una colección (tabla): 
+```nosql
+db.createCollection("coleccion");
+```
+### Insertar documentos (registros): 
+```nosql
+db.coleccion.insert({ campo1: valor1, campo2: valor2 });
+```    
+### Consultar documentos: 
+```nosql
+db.coleccion.find();
+```
+### Actualizar documentos: 
+```nosql
+db.coleccion.update({ campo: valor }, { $set: { campo_actualizado: nuevo_valor } });
+```
+### Eliminar documentos: 
+```nosql	
+db.coleccion.remove({ campo: valor });
+```
+
+## Ejemplo - Creación de una Colección en MongoDB:
+
+```nosql	
+use tienda;
+db.createCollection("productos");
+```
+:::{.callout-important}
+### Actividad Práctica:
+
+Instala MongoDB en tu entorno.
+
+Crea una base de datos llamada 'blog'.
+
+Crea una colección 'articulos'.
+
+Inserta al menos dos documentos (artículos) en la colección.
+
+Realiza una consulta para obtener todos los documentos de la colección 'articulos'.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes familiarizarse con la instalación de MongoDB y realizar operaciones básicas en una base de datos NoSQL. Les ayuda a adquirir experiencia práctica en la gestión de datos en MongoDB y a comprender las diferencias entre bases de datos SQL y NoSQL.

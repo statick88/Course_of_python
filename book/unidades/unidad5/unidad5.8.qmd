@@ -1,0 +1,44 @@
+## For Loop
+
+En esta lección, aprenderemos sobre el bucle for, que se utiliza para iterar sobre secuencias como listas, tuplas o cadenas de texto.
+
+## Conceptos Clave:
+
+### Bucle for
+
+Se utiliza para recorrer elementos en una secuencia uno por uno.
+
+### Iteración
+
+En cada iteración del bucle, se ejecuta un bloque de código con un valor diferente de la secuencia.
+
+### range() con Bucles for
+
+Se puede utilizar la función range() para generar una secuencia de números y recorrerla con un bucle for.
+
+## Ejemplo:
+
+```python
+frutas = ["manzana", "banana", "naranja"]
+
+for fruta in frutas:
+    print("Me gusta", fruta)
+```
+
+## Explicación:
+
+En este ejemplo, se utiliza un bucle for para recorrer una lista de frutas.
+
+En cada iteración, se asigna el valor actual de la lista a la variable fruta.
+
+::: {.callout-important}
+### Actividad Práctica:
+
+Crea una lista de colores.
+
+Utiliza un bucle for para imprimir cada color en la lista precedido por la palabra "Color:".
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar el uso del bucle for para iterar sobre elementos en una secuencia. Les ayuda a comprender cómo trabajar con bucles para recorrer listas y otros tipos de secuencias en sus programas.  

@@ -1,0 +1,68 @@
+## Introducción a Django Framework
+
+En esta lección, nos adentraremos en el mundo de Django, un popular framework de desarrollo web en Python. Aprenderemos qué es Django, cómo instalarlo y cómo crear una aplicación web básica utilizando este framework.
+
+## Qué es Django:
+
+Django es un framework de desarrollo web de alto nivel y de código abierto.
+
+Proporciona una estructura organizada para crear aplicaciones web de manera eficiente.
+
+## Instalación de Django:
+
+### Instalar Django utilizando pip: 
+```bash
+pip install django
+```
+### Verificar la instalación: 
+```bash
+django-admin --version
+```
+## Creación de una Aplicación Web Básica:
+
+### Crear un nuevo proyecto: 
+
+```bash
+django-admin startproject proyecto .
+```
+### Crear una nueva aplicación dentro del proyecto: 
+```bash	
+python manage.py startapp app
+```
+
+## Ejemplo - Creación de una Página Web con Django:
+
+```python
+# views.py
+from django.http import HttpResponse
+
+def hola_mundo(request):
+    return HttpResponse("¡Hola, mundo!")
+```
+    
+```python
+# urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('hola/', views.hola_mundo, name='hola_mundo'),
+]
+```
+
+:::{.callout-important}
+### Actividad Práctica:
+
+Instala Django en tu entorno.
+
+Crea un proyecto llamado 'blog' y una aplicación llamada 'articulos'.
+
+Crea una vista que muestre un mensaje de bienvenida en la página principal.
+
+Configura una URL para acceder a la vista creada.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes experimentar con la creación de proyectos y aplicaciones utilizando Django. Les ayuda a comprender cómo estructurar una aplicación web utilizando este framework y cómo definir rutas y vistas para mostrar contenido en el navegador.
+
