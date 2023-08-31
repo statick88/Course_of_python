@@ -1,0 +1,107 @@
+---
+title: "Unidad IV: Tipos de Datos"
+# subtitle: "Modelos Discretos"
+date: "today"
+author: "Lcdo. Diego Medardo Saavedra García. Mgtr."
+lang: "es"
+format:
+  revealjs:
+    #chalkboard: 
+      #buttons: false
+    toc: true
+    incremental: false
+    slide-number: true
+    preview-links: auto
+    # logo: img/logo.png
+    # footer: <https://espe.edu.ec>
+    theme: dark
+    makeindex: true
+    multiplex: true
+    transition: fade
+    chalkboard: true #Pizarra
+    auto-stretch: false
+    smaller: false
+    scrollable: true
+    #presentation-title-slide-text-alig: left
+    presentation-slide-text-align: center
+    menu: true
+    codeBlock: {data-trim: true}
+    execute: true
+    executeCode: true
+  #html: 
+    
+    #code-fold: true
+    #html-math-method: katex
+    #multiplex: true
+    #transition: fade
+    #auto-stretch: false
+
+editor_options: 
+  chunk_output_type: console
+---
+
+# Unidad IV: Tipos de Datos
+
+## String y Números
+
+**Objetivo:** Aprender sobre los tipos de datos básicos en Python.
+
+---
+
+### String (Cadena de Texto)
+
+- Representa texto y se encierra entre comillas simples o dobles.
+- Ejemplo: `nombre = "María"`.
+
+---
+
+### Números
+
+- Tipos numéricos: entero (int) y flotante (float).
+- Ejemplo: `edad = 25; altura = 1.75`.
+
+---
+
+### Listas
+
+- Estructura que almacena varios elementos en un orden específico.
+- Ejemplo: `colores = ["rojo", "verde", "azul"]`.
+
+---
+
+### Tuplas
+
+- Similar a las listas, pero no se pueden modificar después de creadas.
+- Ejemplo: `coordenadas = (10, 20)`.
+
+---
+
+### Range
+
+- Secuencia de números generados automáticamente.
+- Útil para iteraciones.
+- Ejemplo: `numeros = range(1, 6)`.
+
+---
+
+### Diccionarios
+
+- Estructura clave-valor para almacenar información.
+- Ejemplo: `persona = {"nombre": "Carlos", "edad": 30}`.
+
+---
+
+### Booleanos
+
+- Tipo de dato para representar verdadero (True) o falso (False).
+- Útil en expresiones condicionales.
+- Ejemplo: `es_mayor_de_edad = True`.
+
+## Ejemplo Práctico
+
+Crea una lista de tareas pendientes e imprime cada tarea en una línea.
+
+## Referencias:
+
+- Python.org. (2023). Built-in Types. https://docs.python.org/3/library/stdtypes.html
+- Downey, A. B. (2015). Think Python. O'Reilly Media.
