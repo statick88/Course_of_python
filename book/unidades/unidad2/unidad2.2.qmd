@@ -1,0 +1,115 @@
+## Uso del REPL, PEP 8 y el Zen de Python
+
+![](images/repl.png){fig-align="center" width="400"}
+
+### El REPL (Read-Eval-Print Loop).
+
+**Definición y Propósito del REPL.**
+
+-   El REPL (Read-Eval-Print Loop) es una herramienta interactiva que permite ejecutar código Python de forma inmediata y ver los resultados de las operaciones en tiempo real. Es una excelente manera de probar pequeños fragmentos de código, experimentar y depurar sin necesidad de escribir un programa completo.
+
+**Uso Básico del REPL**
+
+Para iniciar el REPL, simplemente abre una terminal o línea de comandos y escribe python o python3 (dependiendo de tu instalación) seguido de Enter. Esto te llevará al entorno interactivo de Python.
+
+### Ejemplos de Interacción con el REPL
+
+``` python
+# Ejemplo 1: Realizar cálculos simples
+>>> 5 + 3
+8
+
+# Ejemplo 2: Definir variables y realizar operaciones
+>>> x = 10
+>>> y = 5
+>>> x * y
+50
+
+# Ejemplo 3: Trabajar con cadenas de texto
+>>> mensaje = "Hola, mundo!"
+>>> mensaje.upper()
+'HOLA, MUNDO!'
+
+# Ejemplo 4: Importar módulos y usar funciones
+>>> import math
+>>> math.sqrt(16)
+4.0
+```
+
+### PEP 8: Guía de Estilo de Python.
+
+![](images/Que%20es%20pep8.png){fig-align="center" width="200"}
+
+**¿Qué es PEP 8 y Por Qué es Importante?**
+
+PEP 8 (Python Enhancement Proposal 8) es una guía de estilo que establece convenciones para escribir código Python legible y consistente. La adopción de PEP 8 es importante porque facilita la colaboración en proyectos, mejora la legibilidad del código y ayuda a mantener una base de código ordenada y coherente.
+
+**Convenciones de Nombres**
+
+PEP 8 establece reglas para nombrar variables, funciones, clases y módulos en Python. Algunas convenciones clave incluyen:
+
+-   Las variables y funciones deben usar minúsculas y palabras separadas por guiones bajos (snake_case).
+
+-   Las clases deben usar CamelCase (con la primera letra en mayúscula). Los módulos deben tener nombres cortos y en minúsculas.
+
+**Reglas de Formato y Estilo**
+
+PEP 8 también define reglas de formato, como el uso de espacios en lugar de tabulaciones, la longitud máxima de línea y la organización de importaciones.
+
+**Herramientas para Verificar el Cumplimiento de PEP 8**
+
+Existen herramientas como flake8 y complementos para editores de código que pueden analizar el código en busca de posibles violaciones de PEP 8 y proporcionar sugerencias de corrección. 2.4.3. El Zen de Python
+
+### Introducción al Zen de Python (PEP 20).
+
+![](images/import%20this-2.png){fig-align="center" width="200"}
+
+El Zen de Python es un conjunto de principios y filosofía de diseño que guían el desarrollo de Python. Estos principios se pueden acceder desde el intérprete de Python utilizando el siguiente comando:
+
+``` python
+import this
+```
+
+Los principios del Zen de Python proporcionan orientación sobre cómo escribir código Python de manera clara y elegante.
+
+**Principios y Filosofía de Diseño de Python**
+
+Algunos de los principios más destacados del Zen de Python incluyen:
+
+-   **La legibilidad cuenta:** El código debe ser legible para los humanos, ya que se lee con más frecuencia de lo que se escribe.
+-   **Explícito es mejor que implícito:** El código debe ser claro y no dejar lugar a ambigüedades.
+-   **La simplicidad vence a la complejidad:** Debe preferirse la simplicidad en el diseño y la implementación.
+-   **Los errores nunca deben pasar en silencio:** Los errores deben manejarse adecuadamente y, si es posible, informar de manera explícita.
+
+### Ejercicios Prácticos
+
+-   **Ejercicio 1:** Uso del REPL para Realizar Cálculos Simples
+
+1.  Abre el REPL de Python.
+2.  Realiza los siguientes cálculos:
+    -   Suma: 10 + 5
+    -   Resta: 20 - 7
+    -   Multiplicación: 8 \* 4
+    -   División: 15 / 3
+
+-   **Ejercicio 2:** Verificación de Cumplimiento de PEP 8 en Código Python
+
+-   Escribe un pequeño programa en Python que incluya variables, funciones y comentarios.
+
+-   Utiliza la herramienta flake8 o un complemento de tu editor de código para verificar si tu código cumple con las reglas de PEP 8.
+
+-   Corrige cualquier violación de PEP 8 y vuelve a verificar el código.
+
+-   **Ejercicio 3:** Exploración y Reflexión sobre los Principios del Zen de Python
+
+-   Ejecuta el comando import this en el REPL para acceder a los principios del Zen de Python.
+
+-   Lee y reflexiona sobre cada uno de los principios.
+
+-   Escribe un breve párrafo sobre cómo un principio específico del Zen de Python puede aplicarse al desarrollo de software.
+
+## Actividad Práctica
+
+-   Desarrolla un pequeño programa Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. Asegúrate de que el código sea legible y cumpla con las convenciones de nombres y formato de PEP 8.
+
+-   Esta subunidad proporciona a los estudiantes una comprensión más profunda de las herramientas y las convenciones de estilo que se utilizan en la programación en Python. Además, les ayuda a reflexionar sobre la filosofía de diseño de Python y cómo aplicarla en la práctica.

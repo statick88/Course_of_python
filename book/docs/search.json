@@ -56,32 +56,39 @@
     "text": "Explicación de la Actividad\nEl programa utilizará la función input() para recibir la entrada del usuario. Luego, utilizará la entrada proporcionada para imprimir un mensaje de bienvenida personalizado."
   },
   {
-    "objectID": "unidades/unidad2/unidad2.html#conceptos-clave",
-    "href": "unidades/unidad2/unidad2.html#conceptos-clave",
+    "objectID": "unidades/unidad2/unidad2.1.html#conceptos-clave",
+    "href": "unidades/unidad2/unidad2.1.html#conceptos-clave",
     "title": "Instalación de Python",
     "section": "Conceptos Clave",
     "text": "Conceptos Clave\n\nPython\n\n\n\n\n\nLenguaje de programación de alto nivel que se utiliza para desarrollar aplicaciones web, científicas, de automatización y más.\n\n\nInterprete\n\n\n\n\n\nPython es un lenguaje interpretado, lo que significa que se ejecuta línea por línea en tiempo real.\n\n\nIDE\n\n\n\n\n\nLos entornos de desarrollo integrados (IDE) como Visual Studio Code (VS Code) o PyCharm brindan herramientas para escribir, depurar y ejecutar código de manera más eficiente."
   },
   {
-    "objectID": "unidades/unidad2/unidad2.html#ejemplo",
-    "href": "unidades/unidad2/unidad2.html#ejemplo",
+    "objectID": "unidades/unidad2/unidad2.1.html#ejemplo",
+    "href": "unidades/unidad2/unidad2.1.html#ejemplo",
     "title": "Instalación de Python",
     "section": "Ejemplo",
     "text": "Ejemplo\nNo se necesita código para esta lección, ya que se trata de instrucciones para la instalación de Python en diferentes sistemas operativos."
   },
   {
-    "objectID": "unidades/unidad2/unidad2.html#explicación",
-    "href": "unidades/unidad2/unidad2.html#explicación",
+    "objectID": "unidades/unidad2/unidad2.1.html#explicación",
+    "href": "unidades/unidad2/unidad2.1.html#explicación",
     "title": "Instalación de Python",
     "section": "Explicación",
     "text": "Explicación\nPara instalar Python en sistemas Windows, macOS y Linux, se pueden seguir las instrucciones detalladas proporcionadas en el sitio web oficial de Python www.python.org/downloads/.\nLa instalación de Python generalmente incluye el intérprete de Python y una serie de herramientas y bibliotecas estándar que hacen que sea fácil comenzar a programar.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nInstala Python en tu sistema operativo siguiendo las instrucciones del sitio web oficial de Python. Luego, verifica que Python esté correctamente instalado ejecutando el intérprete y escribiendo el siguiente código:\nprint(\"Python se ha instalado correctamente.\")"
   },
   {
-    "objectID": "unidades/unidad2/unidad2.html#explicación-de-la-actividad",
-    "href": "unidades/unidad2/unidad2.html#explicación-de-la-actividad",
+    "objectID": "unidades/unidad2/unidad2.1.html#explicación-de-la-actividad",
+    "href": "unidades/unidad2/unidad2.1.html#explicación-de-la-actividad",
     "title": "Instalación de Python",
     "section": "Explicación de la Actividad",
     "text": "Explicación de la Actividad\nEsta actividad permite a los participantes aplicar lo aprendido instalando Python en su propio sistema y ejecutando un programa sencillo para confirmar que la instalación fue exitosa."
+  },
+  {
+    "objectID": "unidades/unidad2/unidad2.2.html#actividad-práctica",
+    "href": "unidades/unidad2/unidad2.2.html#actividad-práctica",
+    "title": "Uso del REPL, PEP 8 y el Zen de Python",
+    "section": "Actividad Práctica",
+    "text": "Actividad Práctica\n\nDesarrolla un pequeño programa Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. Asegúrate de que el código sea legible y cumpla con las convenciones de nombres y formato de PEP 8.\nEsta subunidad proporciona a los estudiantes una comprensión más profunda de las herramientas y las convenciones de estilo que se utilizan en la programación en Python. Además, les ayuda a reflexionar sobre la filosofía de diseño de Python y cómo aplicarla en la práctica."
   },
   {
     "objectID": "unidades/unidad3/unidad3.1.html#conceptos-clave",
@@ -263,21 +270,21 @@
     "href": "unidades/unidad4/unidad4.1.html#conceptos-clave",
     "title": "String y Números",
     "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nString\nSecuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.\n\n\nNúmeros Enteros (int)\nRepresentan números enteros positivos o negativos.\n\n\nNúmeros de Punto Flotante (float)\nRepresentan números con decimales."
+    "text": "Conceptos Clave:\n\nString\n\n\n\n\n\nSecuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.\n\n\nNúmeros Enteros (int)\n\n\n\n\n\nRepresentan números enteros positivos o negativos.\n\n\nNúmeros de Punto Flotante (float)\n\n\n\n\n\nRepresentan números con decimales."
   },
   {
     "objectID": "unidades/unidad4/unidad4.1.html#ejemplo",
     "href": "unidades/unidad4/unidad4.1.html#ejemplo",
     "title": "String y Números",
     "section": "Ejemplo",
-    "text": "Ejemplo\n# Strings\nmensaje = \"Hola, bienvenido al curso de Python.\"\nnombre = 'María'\n\n# Números\nedad = 25\nsaldo = 1500.75"
+    "text": "Ejemplo\n# Strings\nmassage = \"Hola, bienvenido al curso de Python.\"\nname = 'María'\n\n# Números\nage = 25\nbalance = 1500.75"
   },
   {
     "objectID": "unidades/unidad4/unidad4.1.html#explicación",
     "href": "unidades/unidad4/unidad4.1.html#explicación",
     "title": "String y Números",
     "section": "Explicación",
-    "text": "Explicación\nEn este ejemplo, se crean variables que almacenan strings y números.\nLos strings se definen utilizando comillas simples o dobles.\nLos números enteros y de punto flotante se asignan directamente a variables.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una variable con tu canción favorita.\nAsigna tu edad a una variable y tu altura a otra variable.\nCombina las variables para crear un mensaje personalizado."
+    "text": "Explicación\nEn este ejemplo, se crean variables que almacenan strings y números.\nLos strings se definen utilizando comillas simples o dobles.\nLos números enteros y de punto flotante se asignan directamente a variables.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\n\nCrea una variable con tu canción favorita.\nAsigna tu edad a una variable y tu altura a otra variable.\nCombina las variables para crear un mensaje personalizado."
   },
   {
     "objectID": "unidades/unidad4/unidad4.1.html#explicación-de-la-actividad",
@@ -291,7 +298,7 @@
     "href": "unidades/unidad4/unidad4.2.html#conceptos-clave",
     "title": "Listas",
     "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nListas\nSecuencias ordenadas de elementos que pueden ser de diferentes tipos.\n\n\nÍndices\nNúmeros que indican la posición de un elemento en la lista.\n\n\nAcceso a Elementos\nSe utiliza el índice para acceder a un elemento específico de la lista."
+    "text": "Conceptos Clave:\n\nListas\n\n\n\n\n\nSecuencias ordenadas de elementos que pueden ser de diferentes tipos.\n\n\nÍndices\n\n\n\n\n\nNúmeros que indican la posición de un elemento en la lista.\n\n\nAcceso a Elementos.\n\n\n\n\n\nSe utiliza el índice para acceder a un elemento específico de la lista."
   },
   {
     "objectID": "unidades/unidad4/unidad4.2.html#ejemplo",
@@ -317,28 +324,28 @@
   {
     "objectID": "unidades/unidad4/unidad4.3.html#conceptos-clave",
     "href": "unidades/unidad4/unidad4.3.html#conceptos-clave",
-    "title": "Tuplas",
+    "title": "Tuplas.",
     "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nTuplas\nSecuencias ordenadas de elementos que, a diferencia de las listas, no se pueden modificar.\n\n\nInmutabilidad\nUna vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.\n\n\nAcceso a Elementos\nSe utiliza el índice para acceder a un elemento específico de la tupla."
+    "text": "Conceptos Clave:\n\nTuplas\n\n\n\n\n\nSecuencias ordenadas de elementos que, a diferencia de las listas, no se pueden modificar.\n\n\nInmutabilidad\n\n\n\n\n\nUna vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.\n\n\nAcceso a Elementos\nSe utiliza el índice para acceder a un elemento específico de la tupla."
   },
   {
     "objectID": "unidades/unidad4/unidad4.3.html#ejemplo",
     "href": "unidades/unidad4/unidad4.3.html#ejemplo",
-    "title": "Tuplas",
+    "title": "Tuplas.",
     "section": "Ejemplo",
     "text": "Ejemplo\ncoordenadas = (3, 5)\nx = coordenadas[0]\ny = coordenadas[1]"
   },
   {
     "objectID": "unidades/unidad4/unidad4.3.html#explicación",
     "href": "unidades/unidad4/unidad4.3.html#explicación",
-    "title": "Tuplas",
+    "title": "Tuplas.",
     "section": "Explicación",
     "text": "Explicación\nEn este ejemplo, se crea una tupla que almacena coordenadas (x, y) y se accede a los valores individuales utilizando índices.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una tupla con las estaciones del año.\nIntenta modificar un elemento de la tupla y observa el error que se produce."
   },
   {
     "objectID": "unidades/unidad4/unidad4.3.html#explicación-de-la-actividad",
     "href": "unidades/unidad4/unidad4.3.html#explicación-de-la-actividad",
-    "title": "Tuplas",
+    "title": "Tuplas.",
     "section": "Explicación de la Actividad:",
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de tuplas y comprender la diferencia entre listas y tuplas en términos de inmutabilidad. Les ayuda a comprender cómo utilizar tuplas cuando necesitan almacenar datos que no deben cambiar."
   },
@@ -1524,47 +1531,5 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
-    "objectID": "unidades/unidad2/unidad2.2.html",
-    "href": "unidades/unidad2/unidad2.2.html",
-    "title": "Uso del REPL, PEP 8 y el Zen de Python",
-    "section": "",
-    "text": "El REPL (Read-Eval-Print Loop).\nDefinición y Propósito del REPL.\n\nEl REPL (Read-Eval-Print Loop) es una herramienta interactiva que permite ejecutar código Python de forma inmediata y ver los resultados de las operaciones en tiempo real. Es una excelente manera de probar pequeños fragmentos de código, experimentar y depurar sin necesidad de escribir un programa completo.\n\nUso Básico del REPL\nPara iniciar el REPL, simplemente abre una terminal o línea de comandos y escribe python o python3 (dependiendo de tu instalación) seguido de Enter. Esto te llevará al entorno interactivo de Python.\n\n\nEjemplos de Interacción con el REPL\n# Ejemplo 1: Realizar cálculos simples\n&gt;&gt;&gt; 5 + 3\n8\n\n# Ejemplo 2: Definir variables y realizar operaciones\n&gt;&gt;&gt; x = 10\n&gt;&gt;&gt; y = 5\n&gt;&gt;&gt; x * y\n50\n\n# Ejemplo 3: Trabajar con cadenas de texto\n&gt;&gt;&gt; mensaje = \"Hola, mundo!\"\n&gt;&gt;&gt; mensaje.upper()\n'HOLA, MUNDO!'\n\n# Ejemplo 4: Importar módulos y usar funciones\n&gt;&gt;&gt; import math\n&gt;&gt;&gt; math.sqrt(16)\n4.0\n\n\nPEP 8: Guía de Estilo de Python.\n\n\n\n\n\n¿Qué es PEP 8 y Por Qué es Importante?\nPEP 8 (Python Enhancement Proposal 8) es una guía de estilo que establece convenciones para escribir código Python legible y consistente. La adopción de PEP 8 es importante porque facilita la colaboración en proyectos, mejora la legibilidad del código y ayuda a mantener una base de código ordenada y coherente.\nConvenciones de Nombres\nPEP 8 establece reglas para nombrar variables, funciones, clases y módulos en Python. Algunas convenciones clave incluyen:\n\nLas variables y funciones deben usar minúsculas y palabras separadas por guiones bajos (snake_case).\nLas clases deben usar CamelCase (con la primera letra en mayúscula). Los módulos deben tener nombres cortos y en minúsculas.\n\nReglas de Formato y Estilo\nPEP 8 también define reglas de formato, como el uso de espacios en lugar de tabulaciones, la longitud máxima de línea y la organización de importaciones.\nHerramientas para Verificar el Cumplimiento de PEP 8\nExisten herramientas como flake8 y complementos para editores de código que pueden analizar el código en busca de posibles violaciones de PEP 8 y proporcionar sugerencias de corrección. 2.4.3. El Zen de Python\n\n\nIntroducción al Zen de Python (PEP 20).\n\n\n\n\n\nEl Zen de Python es un conjunto de principios y filosofía de diseño que guían el desarrollo de Python. Estos principios se pueden acceder desde el intérprete de Python utilizando el siguiente comando:\nimport this\nLos principios del Zen de Python proporcionan orientación sobre cómo escribir código Python de manera clara y elegante.\nPrincipios y Filosofía de Diseño de Python\nAlgunos de los principios más destacados del Zen de Python incluyen:\nLa legibilidad cuenta: El código debe ser legible para los humanos, ya que se lee con más frecuencia de lo que se escribe.\nExplícito es mejor que implícito: El código debe ser claro y no dejar lugar a ambigüedades.\nLa simplicidad vence a la complejidad: Debe preferirse la simplicidad en el diseño y la implementación.\nLos errores nunca deben pasar en silencio: Los errores deben manejarse adecuadamente y, si es posible, informar de manera explícita.\n2.4.4. Ejercicios Prácticos\nEjercicio 1: Uso del REPL para Realizar Cálculos Simples\nAbre el REPL de Python.\nRealiza los siguientes cálculos:\n    Suma: 10 + 5\n    Resta: 20 - 7\n    Multiplicación: 8 * 4\n    División: 15 / 3\nEjercicio 2: Verificación de Cumplimiento de PEP 8 en Código Python\nEscribe un pequeño programa en Python que incluya variables, funciones y comentarios.\nUtiliza la herramienta flake8 o un complemento de tu editor de código para verificar si tu código cumple con las reglas de PEP 8.\nCorrige cualquier violación de PEP 8 y vuelve a verificar el código.\nEjercicio 3: Exploración y Reflexión sobre los Principios del Zen de Python\nEjecuta el comando import this en el REPL para acceder a los principios del Zen de Python.\nLee y reflexiona sobre cada uno de los principios.\nEscribe un breve párrafo sobre cómo un principio específico del Zen de Python puede aplicarse al desarrollo de software.\n2.4.5. Actividad Práctica\nDesarrolla un pequeño programa Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. Asegúrate de que el código sea legible y cumpla con las convenciones de nombres y formato de PEP 8.\nEsta subunidad proporciona a los estudiantes una comprensión más profunda de las herramientas y las convenciones de estilo que se utilizan en la programación en Python. Además, les ayuda a reflexionar sobre la filosofía de diseño de Python y cómo aplicarla en la práctica."
-  },
-  {
-    "objectID": "unidades/unidad2/unidad2.1.html#conceptos-clave",
-    "href": "unidades/unidad2/unidad2.1.html#conceptos-clave",
-    "title": "Instalación de Python",
-    "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nPython\n\n\n\n\n\nLenguaje de programación de alto nivel que se utiliza para desarrollar aplicaciones web, científicas, de automatización y más.\n\n\nInterprete\n\n\n\n\n\nPython es un lenguaje interpretado, lo que significa que se ejecuta línea por línea en tiempo real.\n\n\nIDE\n\n\n\n\n\nLos entornos de desarrollo integrados (IDE) como Visual Studio Code (VS Code) o PyCharm brindan herramientas para escribir, depurar y ejecutar código de manera más eficiente."
-  },
-  {
-    "objectID": "unidades/unidad2/unidad2.1.html#ejemplo",
-    "href": "unidades/unidad2/unidad2.1.html#ejemplo",
-    "title": "Instalación de Python",
-    "section": "Ejemplo",
-    "text": "Ejemplo\nNo se necesita código para esta lección, ya que se trata de instrucciones para la instalación de Python en diferentes sistemas operativos."
-  },
-  {
-    "objectID": "unidades/unidad2/unidad2.1.html#explicación",
-    "href": "unidades/unidad2/unidad2.1.html#explicación",
-    "title": "Instalación de Python",
-    "section": "Explicación",
-    "text": "Explicación\nPara instalar Python en sistemas Windows, macOS y Linux, se pueden seguir las instrucciones detalladas proporcionadas en el sitio web oficial de Python www.python.org/downloads/.\nLa instalación de Python generalmente incluye el intérprete de Python y una serie de herramientas y bibliotecas estándar que hacen que sea fácil comenzar a programar.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nInstala Python en tu sistema operativo siguiendo las instrucciones del sitio web oficial de Python. Luego, verifica que Python esté correctamente instalado ejecutando el intérprete y escribiendo el siguiente código:\nprint(\"Python se ha instalado correctamente.\")"
-  },
-  {
-    "objectID": "unidades/unidad2/unidad2.1.html#explicación-de-la-actividad",
-    "href": "unidades/unidad2/unidad2.1.html#explicación-de-la-actividad",
-    "title": "Instalación de Python",
-    "section": "Explicación de la Actividad",
-    "text": "Explicación de la Actividad\nEsta actividad permite a los participantes aplicar lo aprendido instalando Python en su propio sistema y ejecutando un programa sencillo para confirmar que la instalación fue exitosa."
-  },
-  {
-    "objectID": "unidades/unidad2/unidad2.2.html#actividad-práctica",
-    "href": "unidades/unidad2/unidad2.2.html#actividad-práctica",
-    "title": "Uso del REPL, PEP 8 y el Zen de Python",
-    "section": "Actividad Práctica",
-    "text": "Actividad Práctica\n\nDesarrolla un pequeño programa Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. Asegúrate de que el código sea legible y cumpla con las convenciones de nombres y formato de PEP 8.\nEsta subunidad proporciona a los estudiantes una comprensión más profunda de las herramientas y las convenciones de estilo que se utilizan en la programación en Python. Además, les ayuda a reflexionar sobre la filosofía de diseño de Python y cómo aplicarla en la práctica."
   }
 ]

@@ -113,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad4/unidad4.1.html">Unidad 4: Tipos de Datos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad4/unidad4.2.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Listas</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad4/unidad4.1.html">Unidad 4: Tipos de Datos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad4/unidad4.2.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Listas</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -211,7 +211,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad2/unidad2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instalación de Python</span></a>
+  <a href="../../unidades/unidad2/unidad2.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instalación de Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad2/unidad2.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Uso del REPL, PEP 8 y el Zen de Python</span></a>
   </div>
 </li>
       </ul>
@@ -283,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tuplas</span></a>
+  <a href="../../unidades/unidad4/unidad4.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tuplas.</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -671,7 +676,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas">Listas</a></li>
   <li><a href="#índices" id="toc-índices" class="nav-link" data-scroll-target="#índices">Índices</a></li>
-  <li><a href="#acceso-a-elementos" id="toc-acceso-a-elementos" class="nav-link" data-scroll-target="#acceso-a-elementos">Acceso a Elementos</a></li>
+  <li><a href="#acceso-a-elementos." id="toc-acceso-a-elementos." class="nav-link" data-scroll-target="#acceso-a-elementos.">Acceso a Elementos.</a></li>
   </ul></li>
   <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo</a></li>
   <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
@@ -699,19 +704,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Las listas son estructuras de datos que permiten almacenar varios elementos en una sola variable. Aprenderemos cómo crear y manipular listas en Python.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lista001.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Las listas son estructuras de datos que permiten almacenar <strong>varios elementos en una sola variable</strong>. Aprenderemos cómo <strong>crear</strong> y <strong>manipular listas</strong> en Python.</p>
 <section id="conceptos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave:</h2>
 <section id="listas" class="level3">
 <h3 class="anchored" data-anchor-id="listas">Listas</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lista002.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <p>Secuencias ordenadas de elementos que pueden ser de diferentes tipos.</p>
 </section>
 <section id="índices" class="level3">
 <h3 class="anchored" data-anchor-id="índices">Índices</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lista003.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <p>Números que indican la posición de un elemento en la lista.</p>
 </section>
-<section id="acceso-a-elementos" class="level3">
-<h3 class="anchored" data-anchor-id="acceso-a-elementos">Acceso a Elementos</h3>
+<section id="acceso-a-elementos." class="level3">
+<h3 class="anchored" data-anchor-id="acceso-a-elementos.">Acceso a Elementos.</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lista004.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <p>Se utiliza el índice para acceder a un elemento específico de la lista.</p>
 </section>
 </section>
@@ -1120,7 +1145,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../unidades/unidad4/unidad4.3.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Tuplas</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Tuplas.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
