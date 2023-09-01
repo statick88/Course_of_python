@@ -2,19 +2,21 @@
 
 El tipo de dato range se utiliza para generar secuencias de números. Aprenderemos cómo utilizar range en Python para crear secuencias de números en rangos específicos.
 
+![](images/range.png){fig-align="center" width="400"}
+
 ## Conceptos Clave:
 
 ### range
 
-Tipo de dato utilizado para generar secuencias de números en un rango.
+-   Tipo de dato utilizado para generar secuencias de números en un rango.
 
 ### Parámetros de range
 
-Se pueden especificar el valor inicial, valor final y paso de la secuencia.
+-   Se pueden especificar el valor inicial, valor final y paso de la secuencia.
 
 ### Conversión a Listas
 
-Es posible convertir un objeto range en una lista utilizando la función list().
+-   Es posible convertir un objeto range en una lista utilizando la función list().
 
 ## Ejemplo
 
@@ -34,7 +36,7 @@ En este ejemplo, se utilizan diferentes valores para crear secuencias de número
 
 La función list() se utiliza para convertir una secuencia de range en una lista.
 
-::: {.callout-important}
+::: callout-important
 ### Actividad Práctica:
 
 Crea una secuencia de números del 10 al 20 con un paso de 2.
@@ -45,4 +47,3 @@ Convierte la secuencia de números en una lista y muestra los elementos en la co
 ## Explicación de la Actividad:
 
 Esta actividad permite a los participantes practicar la creación de secuencias de números utilizando range y cómo convertirlas en listas para trabajar con los elementos individualmente. Les ayuda a comprender cómo generar secuencias de números en diferentes rangos.
-

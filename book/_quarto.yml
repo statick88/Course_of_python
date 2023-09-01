@@ -137,8 +137,8 @@ format:
   html:
     number-sections: false
     theme: 
-      light: cosmo
       dark:  solar #slate, darkly, solar, superhero, vapor
+      light: cosmo
     number-depth: 4
     link-external-icon: true
     link-external-newwindow: true

@@ -1,4 +1,6 @@
-## Booleanos
+## Booleanos.
+
+![](images/boolean.png){fig-align="center" width="400"}
 
 Los booleanos son un tipo de dato que puede tener dos valores: True (verdadero) o False (falso). Aprenderemos cómo trabajar con booleanos en Python y cómo utilizarlos en expresiones lógicas.
 
@@ -12,7 +14,7 @@ Expresiones Lógicas: Combinaciones de valores booleanos utilizando operadores l
 
 ## Ejemplo
 
-```python
+``` python
 # Variables booleanas
 es_mayor_de_edad = True
 tiene_tarjeta = False
@@ -27,7 +29,7 @@ En este ejemplo, se utilizan variables booleanas para representar si alguien es 
 
 Se utiliza una expresión lógica para evaluar si alguien puede ingresar basado en ambas condiciones.
 
-::: {.callout-important}
+::: callout-important
 ### Actividad Práctica:
 
 Crea variables booleanas que representen si tienes una mascota y si te gusta el deporte.

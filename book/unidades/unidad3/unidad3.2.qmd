@@ -1,4 +1,6 @@
-## Las bases de Python
+## Las bases de Python.
+
+![](images/las%20bases%20de%20python.png){fig-align="center"}
 
 En esta lección, exploraremos las bases fundamentales de Python. Aprenderemos sobre las variables, tipos de datos y operadores básicos que forman la base de cualquier programa en Python.
 
@@ -6,13 +8,19 @@ En esta lección, exploraremos las bases fundamentales de Python. Aprenderemos s
 
 ### Variables
 
+![](images/variables-2.png){fig-align="center"}
+
 Son nombres que se utilizan para almacenar valores en la memoria de la computadora.
 
 ### Tipos de Datos
 
+![](images/operadores-3.png){fig-align="center" width="585"}
+
 Incluyen enteros, flotantes, cadenas, booleanos y más. Cada tipo de dato tiene sus propias características y operaciones.
 
 ### Operadores
+
+![](images/operadores-2.png){fig-align="center" width="585"}
 
 Incluyen operadores aritméticos, de comparación y lógicos que se utilizan para realizar diferentes tipos de cálculos y comparaciones.
 
@@ -53,7 +61,7 @@ Los operadores de comparación se utilizan para comparar valores y devuelven un 
 
 Los operadores lógicos se utilizan para combinar expresiones booleanas y realizar operaciones lógicas.
 
-::: {.callout-important}
+::: callout-important
 ### Actividad Práctica:
 
 Crea variables que almacenen información sobre ti, como tu nombre, edad y altura.
@@ -61,9 +69,8 @@ Crea variables que almacenen información sobre ti, como tu nombre, edad y altur
 Realiza operaciones aritméticas y utiliza operadores de comparación para comparar valores.
 
 Combina expresiones booleanas utilizando operadores lógicos y observa los resultados.
-::: 
+:::
 
 ## Explicación de la Actividad
 
 Esta actividad permite a los participantes aplicar los conceptos de variables, tipos de datos y operadores en ejemplos prácticos. Les ayuda a comprender cómo trabajar con diferentes tipos de datos y cómo realizar operaciones básicas en Python.
-

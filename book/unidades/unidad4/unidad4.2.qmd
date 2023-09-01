@@ -1,6 +1,6 @@
 ## Listas
 
-![](images/lista001.png){fig-align="center"}
+![](images/list.png){fig-align="center" width="400"}
 
 Las listas son estructuras de datos que permiten almacenar **varios elementos en una sola variable**. Aprenderemos cómo **crear** y **manipular listas** en Python.
 
@@ -8,19 +8,19 @@ Las listas son estructuras de datos que permiten almacenar **varios elementos en
 
 ### Listas
 
-![](images/lista002.png){fig-align="center"}
+![](images/vocales.png){fig-align="center" width="400"}
 
 Secuencias ordenadas de elementos que pueden ser de diferentes tipos.
 
 ### Índices
 
-![](images/lista003.png){fig-align="center"}
+![](images/indice.png){fig-align="center" width="400"}
 
 Números que indican la posición de un elemento en la lista.
 
 ### Acceso a Elementos.
 
-![](images/lista004.png){fig-align="center"}
+![](images/posición.png){fig-align="center" width="400"}
 
 Se utiliza el índice para acceder a un elemento específico de la lista.
 

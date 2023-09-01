@@ -2,25 +2,25 @@
 
 Los strings y los números son dos tipos de datos fundamentales en Python. Aprenderemos cómo trabajar con strings (cadenas de texto) y los diferentes tipos de números en Python.
 
-![](images/string-3.png){fig-align="center" width="800"}
+![](images/stringAndNumber.png){fig-align="center" width="400"}
 
 ## Conceptos Clave:
 
 ### String
 
-![](images/string001-2.png){fig-align="center"}
+![](images/string-4.png){fig-align="center" width="400"}
 
 Secuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.
 
 ### Números Enteros (int)
 
-![](images/int001.png){fig-align="center"}
+![](images/number.png){fig-align="center" width="400"}
 
 Representan números enteros positivos o negativos.
 
 ### Números de Punto Flotante (float)
 
-![](images/float001.png){fig-align="center"}
+![](images/float.png){fig-align="center" width="400"}
 
 Representan números con decimales.
 

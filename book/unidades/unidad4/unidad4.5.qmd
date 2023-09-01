@@ -1,10 +1,14 @@
 ## Diccionarios
 
+![](images/diccionary.png){fig-align="center" width="400"}
+
 Los diccionarios son estructuras de datos que permiten almacenar pares clave-valor. Aprenderemos cómo crear y trabajar con diccionarios en Python.
 
 ## Conceptos Clave:
 
 ### Diccionarios
+
+![](images/diccionary001.png){width="400"}
 
 Estructuras de datos que almacenan pares clave-valor.
 
@@ -37,7 +41,7 @@ En este ejemplo, se crea un diccionario que almacena información de una persona
 
 Se accede a los valores del diccionario utilizando las claves correspondientes.
 
-::: {.callout-important}
+::: callout-important
 ### Actividad Práctica
 
 Crea un diccionario que almacene información de tus libros favoritos, incluyendo título y autor.

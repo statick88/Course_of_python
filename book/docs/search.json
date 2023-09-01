@@ -93,63 +93,63 @@
   {
     "objectID": "unidades/unidad3/unidad3.1.html#conceptos-clave",
     "href": "unidades/unidad3/unidad3.1.html#conceptos-clave",
-    "title": "Distintas formas de trabajar con Python",
+    "title": "Distintas formas de trabajar con Python.",
     "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nIntérprete Interactivo:\nPermite ejecutar instrucciones de Python en tiempo real y ver los resultados inmediatamente en la consola.\n\n\nScripts de Python:\nSon archivos que contienen una serie de instrucciones de Python que se pueden ejecutar en conjunto.\n\n\nAmbientes Virtuales\nSon entornos aislados que permiten tener instalaciones y bibliotecas de Python separadas para diferentes proyectos.\n\n\nEjemplo\n1&gt;&gt;&gt; 2 + 3\n5\n\n2# suma.py\nnumero1 = 5\nnumero2 = 7\nresultado = numero1 + numero2\nprint(\"El resultado de la suma es:\", resultado)\n3# CTRL + S para guardar\n\n1\n\nUso del intérprete interactivo\n\n2\n\nEjecución de un script de Python\n\n3\n\nGuarda este código en un archivo llamado “suma.py”"
+    "text": "Conceptos Clave:\n\nIntérprete Interactivo:\n\n\n\n\n\nPermite ejecutar instrucciones de Python en tiempo real y ver los resultados inmediatamente en la consola.\n\n\nScripts de Python:\n\n\n\n\n\nSon archivos que contienen una serie de instrucciones de Python que se pueden ejecutar en conjunto.\n\n\nAmbientes Virtuales\n\n\n\n\n\nSon entornos aislados que permiten tener instalaciones y bibliotecas de Python separadas para diferentes proyectos.\n\n\nEjemplo\n1&gt;&gt;&gt; 2 + 3\n5\n\n2# suma.py\nnumero1 = 5\nnumero2 = 7\nresultado = numero1 + numero2\nprint(\"El resultado de la suma es:\", resultado)\n3# CTRL + S para guardar\n\n1\n\nUso del intérprete interactivo\n\n2\n\nEjecución de un script de Python\n\n3\n\nGuarda este código en un archivo llamado “suma.py”"
   },
   {
     "objectID": "unidades/unidad3/unidad3.1.html#explicación",
     "href": "unidades/unidad3/unidad3.1.html#explicación",
-    "title": "Distintas formas de trabajar con Python",
+    "title": "Distintas formas de trabajar con Python.",
     "section": "Explicación",
     "text": "Explicación\nEl intérprete interactivo permite ejecutar expresiones de Python directamente en la consola y ver los resultados en tiempo real.\nLos scripts de Python son archivos que contienen un conjunto de instrucciones. En este ejemplo, se muestra cómo crear un script simple que calcula la suma de dos números y lo imprime en la consola.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nAbre el intérprete interactivo de Python y realiza algunas operaciones matemáticas simples.\nCrea un archivo llamado “operaciones.py” y escribe un programa que realice operaciones aritméticas básicas y las muestre en la consola."
   },
   {
     "objectID": "unidades/unidad3/unidad3.1.html#explicación-de-la-actividad",
     "href": "unidades/unidad3/unidad3.1.html#explicación-de-la-actividad",
-    "title": "Distintas formas de trabajar con Python",
+    "title": "Distintas formas de trabajar con Python.",
     "section": "Explicación de la Actividad",
     "text": "Explicación de la Actividad\nEsta actividad permite a los participantes experimentar con el intérprete interactivo de Python y crear su propio script para realizar operaciones matemáticas."
   },
   {
     "objectID": "unidades/unidad3/unidad3.2.html#conceptos-clave",
     "href": "unidades/unidad3/unidad3.2.html#conceptos-clave",
-    "title": "Las bases de Python",
+    "title": "Las bases de Python.",
     "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nVariables\nSon nombres que se utilizan para almacenar valores en la memoria de la computadora.\n\n\nTipos de Datos\nIncluyen enteros, flotantes, cadenas, booleanos y más. Cada tipo de dato tiene sus propias características y operaciones.\n\n\nOperadores\nIncluyen operadores aritméticos, de comparación y lógicos que se utilizan para realizar diferentes tipos de cálculos y comparaciones.\n\n\nEjemplo\n\n# Variables y tipos de datos\nnombre = \"Juan\"\nedad = 25\naltura = 1.75\nes_mayor_de_edad = True\n\n# Operadores aritméticos\nsuma = 5 + 3\nresta = 10 - 2\nmultiplicacion = 4 * 6\ndivision = 15 / 3\n\n# Operadores de comparación\nigual = 5 == 5\nmayor_que = 10 &gt; 5\nmenor_que = 7 &lt; 12\n\n# Operadores lógicos\nand_logico = True and False\nor_logico = True or False\nnot_logico = not True"
+    "text": "Conceptos Clave\n\nVariables\n\n\n\n\n\nSon nombres que se utilizan para almacenar valores en la memoria de la computadora.\n\n\nTipos de Datos\n\n\n\n\n\nIncluyen enteros, flotantes, cadenas, booleanos y más. Cada tipo de dato tiene sus propias características y operaciones.\n\n\nOperadores\n\n\n\n\n\nIncluyen operadores aritméticos, de comparación y lógicos que se utilizan para realizar diferentes tipos de cálculos y comparaciones.\n\n\nEjemplo\n\n# Variables y tipos de datos\nnombre = \"Juan\"\nedad = 25\naltura = 1.75\nes_mayor_de_edad = True\n\n# Operadores aritméticos\nsuma = 5 + 3\nresta = 10 - 2\nmultiplicacion = 4 * 6\ndivision = 15 / 3\n\n# Operadores de comparación\nigual = 5 == 5\nmayor_que = 10 &gt; 5\nmenor_que = 7 &lt; 12\n\n# Operadores lógicos\nand_logico = True and False\nor_logico = True or False\nnot_logico = not True"
   },
   {
     "objectID": "unidades/unidad3/unidad3.2.html#explicación",
     "href": "unidades/unidad3/unidad3.2.html#explicación",
-    "title": "Las bases de Python",
+    "title": "Las bases de Python.",
     "section": "Explicación:",
     "text": "Explicación:\nLas variables se utilizan para almacenar información, como el nombre, la edad, la altura y si una persona es mayor de edad.\nLos operadores aritméticos se utilizan para realizar cálculos matemáticos básicos.\nLos operadores de comparación se utilizan para comparar valores y devuelven un valor booleano (verdadero o falso).\nLos operadores lógicos se utilizan para combinar expresiones booleanas y realizar operaciones lógicas.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea variables que almacenen información sobre ti, como tu nombre, edad y altura.\nRealiza operaciones aritméticas y utiliza operadores de comparación para comparar valores.\nCombina expresiones booleanas utilizando operadores lógicos y observa los resultados."
   },
   {
     "objectID": "unidades/unidad3/unidad3.2.html#explicación-de-la-actividad",
     "href": "unidades/unidad3/unidad3.2.html#explicación-de-la-actividad",
-    "title": "Las bases de Python",
+    "title": "Las bases de Python.",
     "section": "Explicación de la Actividad",
     "text": "Explicación de la Actividad\nEsta actividad permite a los participantes aplicar los conceptos de variables, tipos de datos y operadores en ejemplos prácticos. Les ayuda a comprender cómo trabajar con diferentes tipos de datos y cómo realizar operaciones básicas en Python."
   },
   {
     "objectID": "unidades/unidad3/unidad3.3.html#conceptos-clave",
     "href": "unidades/unidad3/unidad3.3.html#conceptos-clave",
-    "title": "Identación",
+    "title": "Identación.",
     "section": "Conceptos Clave",
     "text": "Conceptos Clave\n\nIdentación\n\nEspacios o tabulaciones al comienzo de una línea que indican la estructura del código.\nBloques de Código: Conjuntos de instrucciones que se agrupan juntas y se ejecutan en conjunto.\nPEP 8: Guía de estilo para la escritura de código en Python que recomienda el uso de cuatro espacios para la identación.\n\n\n\nEjemplo\n# Uso de la identación en un condicional\nnumero = 10\n\nif numero &gt; 5:\n    print(\"El número es mayor que 5\")\nelse:\n    print(\"El número no es mayor que 5\")"
   },
   {
     "objectID": "unidades/unidad3/unidad3.3.html#explicación",
     "href": "unidades/unidad3/unidad3.3.html#explicación",
-    "title": "Identación",
+    "title": "Identación.",
     "section": "Explicación",
     "text": "Explicación\n\nEn este ejemplo, la identación se utiliza para delimitar los bloques de código dentro de las instrucciones “if” y “else”.\nLa identación es crucial para que Python sepa qué instrucciones están dentro de un bloque y cuáles están fuera.\n\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nEscribe un programa que solicite al usuario su edad y muestre un mensaje según si es mayor de 18 años o no.\nIntenta cambiar la identación incorrectamente y observa cómo afecta al funcionamiento del programa."
   },
   {
     "objectID": "unidades/unidad3/unidad3.3.html#explicación-de-la-actividad.",
     "href": "unidades/unidad3/unidad3.3.html#explicación-de-la-actividad.",
-    "title": "Identación",
+    "title": "Identación.",
     "section": "Explicación de la Actividad.",
     "text": "Explicación de la Actividad.\nEsta actividad permite a los participantes comprender la importancia de la identación en Python al trabajar con bloques de código como los condicionales. Les ayuda a desarrollar el hábito de utilizar la identación adecuada para mantener el código organizado y legible."
   },
@@ -354,7 +354,7 @@
     "href": "unidades/unidad4/unidad4.4.html#conceptos-clave",
     "title": "Range",
     "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nrange\nTipo de dato utilizado para generar secuencias de números en un rango.\n\n\nParámetros de range\nSe pueden especificar el valor inicial, valor final y paso de la secuencia.\n\n\nConversión a Listas\nEs posible convertir un objeto range en una lista utilizando la función list()."
+    "text": "Conceptos Clave:\n\nrange\n\nTipo de dato utilizado para generar secuencias de números en un rango.\n\n\n\nParámetros de range\n\nSe pueden especificar el valor inicial, valor final y paso de la secuencia.\n\n\n\nConversión a Listas\n\nEs posible convertir un objeto range en una lista utilizando la función list()."
   },
   {
     "objectID": "unidades/unidad4/unidad4.4.html#ejemplo",
@@ -408,28 +408,28 @@
   {
     "objectID": "unidades/unidad4/unidad4.6.html#conceptos-clave",
     "href": "unidades/unidad4/unidad4.6.html#conceptos-clave",
-    "title": "Booleanos",
+    "title": "Booleanos.",
     "section": "Conceptos Clave:",
     "text": "Conceptos Clave:\n\nBooleanos\nTipo de dato que representa valores de verdad (True o False).\nExpresiones Lógicas: Combinaciones de valores booleanos utilizando operadores lógicos como and, or y not."
   },
   {
     "objectID": "unidades/unidad4/unidad4.6.html#ejemplo",
     "href": "unidades/unidad4/unidad4.6.html#ejemplo",
-    "title": "Booleanos",
+    "title": "Booleanos.",
     "section": "Ejemplo",
     "text": "Ejemplo\n# Variables booleanas\nes_mayor_de_edad = True\ntiene_tarjeta = False\n\n# Expresiones lógicas\npuede_ingresar = es_mayor_de_edad and tiene_tarjeta"
   },
   {
     "objectID": "unidades/unidad4/unidad4.6.html#explicación",
     "href": "unidades/unidad4/unidad4.6.html#explicación",
-    "title": "Booleanos",
+    "title": "Booleanos.",
     "section": "Explicación",
     "text": "Explicación\nEn este ejemplo, se utilizan variables booleanas para representar si alguien es mayor de edad y si tiene una tarjeta.\nSe utiliza una expresión lógica para evaluar si alguien puede ingresar basado en ambas condiciones.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea variables booleanas que representen si tienes una mascota y si te gusta el deporte.\nUtiliza expresiones lógicas para determinar si puedes llevar a tu mascota a un lugar que requiere tu atención durante un partido de tu deporte favorito."
   },
   {
     "objectID": "unidades/unidad4/unidad4.6.html#explicación-de-la-actividad",
     "href": "unidades/unidad4/unidad4.6.html#explicación-de-la-actividad",
-    "title": "Booleanos",
+    "title": "Booleanos.",
     "section": "Explicación de la Actividad:",
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar el uso de variables booleanas y expresiones lógicas para tomar decisiones basadas en condiciones booleanas. Les ayuda a comprender cómo trabajar con valores de verdad y cómo utilizarlos para evaluar situaciones en el código."
   },
