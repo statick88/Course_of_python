@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Curso de Python 2023"
-  author: "Lcdo. Diego Saavedra Mgtr."
+  author: "Diego Saavedra"
   output-file: "curso_python_2023"  
   date: today
   date-format: medium
@@ -40,7 +40,8 @@ book:
         - unidades/unidad1/unidad1.qmd
     - part: "Unidad 2: Instalación de Python y más herramientas"
       chapters: 
-        - unidades/unidad2/unidad2.qmd
+        - unidades/unidad2/unidad2.1.qmd
+        - unidades/unidad2/unidad2.2.qmd
     - part: "Unidad 3: Introducción a Python"
       chapters: 
         - unidades/unidad3/unidad3.1.qmd

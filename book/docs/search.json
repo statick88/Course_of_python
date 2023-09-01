@@ -4,35 +4,35 @@
     "href": "index.html",
     "title": "Curso de Python 2023",
     "section": "",
-    "text": "Bienvenida\n¡Bienvenidos al Curso Completo de Python: Desde Fundamentos hasta Aplicaciones Prácticas!"
+    "text": "Bienvenida\n¡Bienvenidos al Curso Completo de Python, analizaremos desde los fundamentos hasta aplicaciones prácticas!"
   },
   {
     "objectID": "index.html#qué-es-este-curso",
     "href": "index.html#qué-es-este-curso",
     "title": "Curso de Python 2023",
     "section": "¿Qué es este Curso?",
-    "text": "¿Qué es este Curso?\nEste curso exhaustivo te llevará desde los fundamentos básicos de la programación hasta la creación de aplicaciones prácticas utilizando el lenguaje de programación Python. A través de una combinación de teoría y ejercicios prácticos, te sumergirás en los conceptos esenciales de la programación y avanzarás hacia la construcción de proyectos reales. Desde la instalación de herramientas hasta la creación de una API con Django Rest Framework, este curso te proporcionará una comprensión sólida y práctica de Python y su aplicación en el mundo real."
+    "text": "¿Qué es este Curso?\n\n\n\n\n\nEste curso exhaustivo te llevará desde los fundamentos básicos de la programación hasta la creación de aplicaciones prácticas utilizando el lenguaje de programación Python. A través de una combinación de teoría y ejercicios prácticos, te sumergirás en los conceptos esenciales de la programación y avanzarás hacia la construcción de proyectos reales. Desde la instalación de herramientas hasta la creación de una API con Django Rest Framework, este curso te proporcionará una comprensión sólida y práctica de Python y su aplicación en el mundo real."
   },
   {
     "objectID": "index.html#a-quién-está-dirigido",
     "href": "index.html#a-quién-está-dirigido",
     "title": "Curso de Python 2023",
     "section": "¿A quién está dirigido?",
-    "text": "¿A quién está dirigido?\nEste curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación. No importa si eres un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que desea aprender a programar: este curso es para ti. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo de la programación a través de Python."
+    "text": "¿A quién está dirigido?\n\n\n\n\n\nEste curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación. No importa si eres un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que desea aprender a programar: este curso es para ti. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo de la programación a través de Python."
   },
   {
     "objectID": "index.html#cómo-contribuir",
     "href": "index.html#cómo-contribuir",
     "title": "Curso de Python 2023",
     "section": "¿Cómo contribuir?",
-    "text": "¿Cómo contribuir?\nValoramos tu participación en este curso. Si encuentras errores, deseas sugerir mejoras o agregar contenido adicional, ¡nos encantaría escucharte! Puedes contribuir a través de nuestra plataforma en línea, donde puedes compartir tus comentarios y sugerencias. Juntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste libro ha sido creado con el objetivo de brindar acceso gratuito y universal al conocimiento. Estará disponible en línea para que cualquiera, sin importar su ubicación o circunstancias, pueda acceder y aprender a su propio ritmo.\n¡Esperamos que disfrutes este emocionante viaje de aprendizaje y descubrimiento en el mundo de la programación con Python!"
+    "text": "¿Cómo contribuir?\n\n\n\n\n\nValoramos tu participación en este curso. Si encuentras errores, deseas sugerir mejoras o agregar contenido adicional, ¡nos encantaría escucharte! Puedes contribuir a través de nuestra plataforma en línea, donde puedes compartir tus comentarios y sugerencias. Juntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste libro ha sido creado con el objetivo de brindar acceso gratuito y universal al conocimiento. Estará disponible en línea para que cualquiera, sin importar su ubicación o circunstancias, pueda acceder y aprender a su propio ritmo.\n¡Esperamos que disfrutes este emocionante viaje de aprendizaje y descubrimiento en el mundo de la programación con Python!"
   },
   {
     "objectID": "unidades/unidad1/unidad1.html#conceptos-clave",
     "href": "unidades/unidad1/unidad1.html#conceptos-clave",
     "title": "Introducción general a la Programación",
     "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nInstrucciones\nSon comandos específicos que le indican a la computadora qué hacer. Pueden ser simples, como imprimir un mensaje en pantalla, o complejas, como realizar cálculos matemáticos.\n\n\nLenguajes de Programación\nSon sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reglas sintácticas y semánticas que determinan cómo se escriben y ejecutan las instrucciones.\n\n\nAlgoritmos\nSon conjuntos ordenados de instrucciones diseñados para resolver un problema específico. Los algoritmos son la base de la programación y se utilizan para desarrollar software eficiente.\n\n\nDepuración\nEs el proceso de identificar y corregir errores en el código. Los programadores pasan tiempo depurando para asegurarse de que sus programas funcionen correctamente."
+    "text": "Conceptos Clave\n\nInstrucciones\nSon comandos específicos que le indican a la computadora qué hacer. Pueden ser simples, como imprimir un mensaje en pantalla, o complejas, como realizar cálculos matemáticos.\n\n\nLenguajes de Programación.\n\n\n\n\n\nSon sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reglas sintácticas y semánticas que determinan cómo se escriben y ejecutan las instrucciones.\n\n\nAlgoritmos\n\n\n\n\n\nSon conjuntos ordenados de instrucciones diseñados para resolver un problema específico. Los algoritmos son la base de la programación y se utilizan para desarrollar software eficiente.\n\n\nDepuración\n\n\n\n\n\nEs el proceso de identificar y corregir errores en el código. Los programadores pasan tiempo depurando para asegurarse de que sus programas funcionen correctamente."
   },
   {
     "objectID": "unidades/unidad1/unidad1.html#ejemplo",
@@ -60,7 +60,7 @@
     "href": "unidades/unidad2/unidad2.html#conceptos-clave",
     "title": "Instalación de Python",
     "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nPython\nLenguaje de programación de alto nivel que se utiliza para desarrollar aplicaciones web, científicas, de automatización y más.\n\n\nInterprete\nPython es un lenguaje interpretado, lo que significa que se ejecuta línea por línea en tiempo real.\n\n\nIDE\nLos entornos de desarrollo integrados (IDE) como Visual Studio Code (VS Code) o PyCharm brindan herramientas para escribir, depurar y ejecutar código de manera más eficiente."
+    "text": "Conceptos Clave\n\nPython\n\n\n\n\n\nLenguaje de programación de alto nivel que se utiliza para desarrollar aplicaciones web, científicas, de automatización y más.\n\n\nInterprete\n\n\n\n\n\nPython es un lenguaje interpretado, lo que significa que se ejecuta línea por línea en tiempo real.\n\n\nIDE\n\n\n\n\n\nLos entornos de desarrollo integrados (IDE) como Visual Studio Code (VS Code) o PyCharm brindan herramientas para escribir, depurar y ejecutar código de manera más eficiente."
   },
   {
     "objectID": "unidades/unidad2/unidad2.html#ejemplo",
@@ -1524,5 +1524,47 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad2/unidad2.2.html",
+    "href": "unidades/unidad2/unidad2.2.html",
+    "title": "Uso del REPL, PEP 8 y el Zen de Python",
+    "section": "",
+    "text": "El REPL (Read-Eval-Print Loop).\nDefinición y Propósito del REPL.\n\nEl REPL (Read-Eval-Print Loop) es una herramienta interactiva que permite ejecutar código Python de forma inmediata y ver los resultados de las operaciones en tiempo real. Es una excelente manera de probar pequeños fragmentos de código, experimentar y depurar sin necesidad de escribir un programa completo.\n\nUso Básico del REPL\nPara iniciar el REPL, simplemente abre una terminal o línea de comandos y escribe python o python3 (dependiendo de tu instalación) seguido de Enter. Esto te llevará al entorno interactivo de Python.\n\n\nEjemplos de Interacción con el REPL\n# Ejemplo 1: Realizar cálculos simples\n&gt;&gt;&gt; 5 + 3\n8\n\n# Ejemplo 2: Definir variables y realizar operaciones\n&gt;&gt;&gt; x = 10\n&gt;&gt;&gt; y = 5\n&gt;&gt;&gt; x * y\n50\n\n# Ejemplo 3: Trabajar con cadenas de texto\n&gt;&gt;&gt; mensaje = \"Hola, mundo!\"\n&gt;&gt;&gt; mensaje.upper()\n'HOLA, MUNDO!'\n\n# Ejemplo 4: Importar módulos y usar funciones\n&gt;&gt;&gt; import math\n&gt;&gt;&gt; math.sqrt(16)\n4.0\n\n\nPEP 8: Guía de Estilo de Python.\n\n\n\n\n\n¿Qué es PEP 8 y Por Qué es Importante?\nPEP 8 (Python Enhancement Proposal 8) es una guía de estilo que establece convenciones para escribir código Python legible y consistente. La adopción de PEP 8 es importante porque facilita la colaboración en proyectos, mejora la legibilidad del código y ayuda a mantener una base de código ordenada y coherente.\nConvenciones de Nombres\nPEP 8 establece reglas para nombrar variables, funciones, clases y módulos en Python. Algunas convenciones clave incluyen:\n\nLas variables y funciones deben usar minúsculas y palabras separadas por guiones bajos (snake_case).\nLas clases deben usar CamelCase (con la primera letra en mayúscula). Los módulos deben tener nombres cortos y en minúsculas.\n\nReglas de Formato y Estilo\nPEP 8 también define reglas de formato, como el uso de espacios en lugar de tabulaciones, la longitud máxima de línea y la organización de importaciones.\nHerramientas para Verificar el Cumplimiento de PEP 8\nExisten herramientas como flake8 y complementos para editores de código que pueden analizar el código en busca de posibles violaciones de PEP 8 y proporcionar sugerencias de corrección. 2.4.3. El Zen de Python\n\n\nIntroducción al Zen de Python (PEP 20).\n\n\n\n\n\nEl Zen de Python es un conjunto de principios y filosofía de diseño que guían el desarrollo de Python. Estos principios se pueden acceder desde el intérprete de Python utilizando el siguiente comando:\nimport this\nLos principios del Zen de Python proporcionan orientación sobre cómo escribir código Python de manera clara y elegante.\nPrincipios y Filosofía de Diseño de Python\nAlgunos de los principios más destacados del Zen de Python incluyen:\nLa legibilidad cuenta: El código debe ser legible para los humanos, ya que se lee con más frecuencia de lo que se escribe.\nExplícito es mejor que implícito: El código debe ser claro y no dejar lugar a ambigüedades.\nLa simplicidad vence a la complejidad: Debe preferirse la simplicidad en el diseño y la implementación.\nLos errores nunca deben pasar en silencio: Los errores deben manejarse adecuadamente y, si es posible, informar de manera explícita.\n2.4.4. Ejercicios Prácticos\nEjercicio 1: Uso del REPL para Realizar Cálculos Simples\nAbre el REPL de Python.\nRealiza los siguientes cálculos:\n    Suma: 10 + 5\n    Resta: 20 - 7\n    Multiplicación: 8 * 4\n    División: 15 / 3\nEjercicio 2: Verificación de Cumplimiento de PEP 8 en Código Python\nEscribe un pequeño programa en Python que incluya variables, funciones y comentarios.\nUtiliza la herramienta flake8 o un complemento de tu editor de código para verificar si tu código cumple con las reglas de PEP 8.\nCorrige cualquier violación de PEP 8 y vuelve a verificar el código.\nEjercicio 3: Exploración y Reflexión sobre los Principios del Zen de Python\nEjecuta el comando import this en el REPL para acceder a los principios del Zen de Python.\nLee y reflexiona sobre cada uno de los principios.\nEscribe un breve párrafo sobre cómo un principio específico del Zen de Python puede aplicarse al desarrollo de software.\n2.4.5. Actividad Práctica\nDesarrolla un pequeño programa Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. Asegúrate de que el código sea legible y cumpla con las convenciones de nombres y formato de PEP 8.\nEsta subunidad proporciona a los estudiantes una comprensión más profunda de las herramientas y las convenciones de estilo que se utilizan en la programación en Python. Además, les ayuda a reflexionar sobre la filosofía de diseño de Python y cómo aplicarla en la práctica."
+  },
+  {
+    "objectID": "unidades/unidad2/unidad2.1.html#conceptos-clave",
+    "href": "unidades/unidad2/unidad2.1.html#conceptos-clave",
+    "title": "Instalación de Python",
+    "section": "Conceptos Clave",
+    "text": "Conceptos Clave\n\nPython\n\n\n\n\n\nLenguaje de programación de alto nivel que se utiliza para desarrollar aplicaciones web, científicas, de automatización y más.\n\n\nInterprete\n\n\n\n\n\nPython es un lenguaje interpretado, lo que significa que se ejecuta línea por línea en tiempo real.\n\n\nIDE\n\n\n\n\n\nLos entornos de desarrollo integrados (IDE) como Visual Studio Code (VS Code) o PyCharm brindan herramientas para escribir, depurar y ejecutar código de manera más eficiente."
+  },
+  {
+    "objectID": "unidades/unidad2/unidad2.1.html#ejemplo",
+    "href": "unidades/unidad2/unidad2.1.html#ejemplo",
+    "title": "Instalación de Python",
+    "section": "Ejemplo",
+    "text": "Ejemplo\nNo se necesita código para esta lección, ya que se trata de instrucciones para la instalación de Python en diferentes sistemas operativos."
+  },
+  {
+    "objectID": "unidades/unidad2/unidad2.1.html#explicación",
+    "href": "unidades/unidad2/unidad2.1.html#explicación",
+    "title": "Instalación de Python",
+    "section": "Explicación",
+    "text": "Explicación\nPara instalar Python en sistemas Windows, macOS y Linux, se pueden seguir las instrucciones detalladas proporcionadas en el sitio web oficial de Python www.python.org/downloads/.\nLa instalación de Python generalmente incluye el intérprete de Python y una serie de herramientas y bibliotecas estándar que hacen que sea fácil comenzar a programar.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nInstala Python en tu sistema operativo siguiendo las instrucciones del sitio web oficial de Python. Luego, verifica que Python esté correctamente instalado ejecutando el intérprete y escribiendo el siguiente código:\nprint(\"Python se ha instalado correctamente.\")"
+  },
+  {
+    "objectID": "unidades/unidad2/unidad2.1.html#explicación-de-la-actividad",
+    "href": "unidades/unidad2/unidad2.1.html#explicación-de-la-actividad",
+    "title": "Instalación de Python",
+    "section": "Explicación de la Actividad",
+    "text": "Explicación de la Actividad\nEsta actividad permite a los participantes aplicar lo aprendido instalando Python en su propio sistema y ejecutando un programa sencillo para confirmar que la instalación fue exitosa."
+  },
+  {
+    "objectID": "unidades/unidad2/unidad2.2.html#actividad-práctica",
+    "href": "unidades/unidad2/unidad2.2.html#actividad-práctica",
+    "title": "Uso del REPL, PEP 8 y el Zen de Python",
+    "section": "Actividad Práctica",
+    "text": "Actividad Práctica\n\nDesarrolla un pequeño programa Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. Asegúrate de que el código sea legible y cumpla con las convenciones de nombres y formato de PEP 8.\nEsta subunidad proporciona a los estudiantes una comprensión más profunda de las herramientas y las convenciones de estilo que se utilizan en la programación en Python. Además, les ayuda a reflexionar sobre la filosofía de diseño de Python y cómo aplicarla en la práctica."
   }
 ]

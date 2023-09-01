@@ -10,15 +10,21 @@ Estas instrucciones se escriben en lenguajes de programación, que son conjuntos
 
 Son comandos específicos que le indican a la computadora qué hacer. Pueden ser simples, como imprimir un mensaje en pantalla, o complejas, como realizar cálculos matemáticos.
 
-### Lenguajes de Programación
+### Lenguajes de Programación.
+
+![](images/lenguajes.png){fig-align="center"}
 
 Son sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reglas sintácticas y semánticas que determinan cómo se escriben y ejecutan las instrucciones.
 
 ### Algoritmos
 
+![](images/algoritmo.png){fig-align="center" width="417"}
+
 Son conjuntos ordenados de instrucciones diseñados para resolver un problema específico. Los algoritmos son la base de la programación y se utilizan para desarrollar software eficiente.
 
 ### Depuración
+
+![](images/debug.png){fig-align="center"}
 
 Es el proceso de identificar y corregir errores en el código. Los programadores pasan tiempo depurando para asegurarse de que sus programas funcionen correctamente.
 
