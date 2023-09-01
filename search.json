@@ -270,21 +270,21 @@
     "href": "unidades/unidad4/unidad4.1.html#conceptos-clave",
     "title": "String y Números",
     "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nString\nSecuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.\n\n\nNúmeros Enteros (int)\nRepresentan números enteros positivos o negativos.\n\n\nNúmeros de Punto Flotante (float)\nRepresentan números con decimales."
+    "text": "Conceptos Clave:\n\nString\n\n\n\n\n\nSecuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.\n\n\nNúmeros Enteros (int)\n\n\n\n\n\nRepresentan números enteros positivos o negativos.\n\n\nNúmeros de Punto Flotante (float)\n\n\n\n\n\nRepresentan números con decimales."
   },
   {
     "objectID": "unidades/unidad4/unidad4.1.html#ejemplo",
     "href": "unidades/unidad4/unidad4.1.html#ejemplo",
     "title": "String y Números",
     "section": "Ejemplo",
-    "text": "Ejemplo\n# Strings\nmensaje = \"Hola, bienvenido al curso de Python.\"\nnombre = 'María'\n\n# Números\nedad = 25\nsaldo = 1500.75"
+    "text": "Ejemplo\n# Strings\nmassage = \"Hola, bienvenido al curso de Python.\"\nname = 'María'\n\n# Números\nage = 25\nbalance = 1500.75"
   },
   {
     "objectID": "unidades/unidad4/unidad4.1.html#explicación",
     "href": "unidades/unidad4/unidad4.1.html#explicación",
     "title": "String y Números",
     "section": "Explicación",
-    "text": "Explicación\nEn este ejemplo, se crean variables que almacenan strings y números.\nLos strings se definen utilizando comillas simples o dobles.\nLos números enteros y de punto flotante se asignan directamente a variables.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una variable con tu canción favorita.\nAsigna tu edad a una variable y tu altura a otra variable.\nCombina las variables para crear un mensaje personalizado."
+    "text": "Explicación\nEn este ejemplo, se crean variables que almacenan strings y números.\nLos strings se definen utilizando comillas simples o dobles.\nLos números enteros y de punto flotante se asignan directamente a variables.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\n\nCrea una variable con tu canción favorita.\nAsigna tu edad a una variable y tu altura a otra variable.\nCombina las variables para crear un mensaje personalizado."
   },
   {
     "objectID": "unidades/unidad4/unidad4.1.html#explicación-de-la-actividad",
@@ -298,7 +298,7 @@
     "href": "unidades/unidad4/unidad4.2.html#conceptos-clave",
     "title": "Listas",
     "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nListas\nSecuencias ordenadas de elementos que pueden ser de diferentes tipos.\n\n\nÍndices\nNúmeros que indican la posición de un elemento en la lista.\n\n\nAcceso a Elementos\nSe utiliza el índice para acceder a un elemento específico de la lista."
+    "text": "Conceptos Clave:\n\nListas\n\n\n\n\n\nSecuencias ordenadas de elementos que pueden ser de diferentes tipos.\n\n\nÍndices\n\n\n\n\n\nNúmeros que indican la posición de un elemento en la lista.\n\n\nAcceso a Elementos.\n\n\n\n\n\nSe utiliza el índice para acceder a un elemento específico de la lista."
   },
   {
     "objectID": "unidades/unidad4/unidad4.2.html#ejemplo",
@@ -324,28 +324,28 @@
   {
     "objectID": "unidades/unidad4/unidad4.3.html#conceptos-clave",
     "href": "unidades/unidad4/unidad4.3.html#conceptos-clave",
-    "title": "Tuplas",
+    "title": "Tuplas.",
     "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nTuplas\nSecuencias ordenadas de elementos que, a diferencia de las listas, no se pueden modificar.\n\n\nInmutabilidad\nUna vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.\n\n\nAcceso a Elementos\nSe utiliza el índice para acceder a un elemento específico de la tupla."
+    "text": "Conceptos Clave:\n\nTuplas\n\n\n\n\n\nSecuencias ordenadas de elementos que, a diferencia de las listas, no se pueden modificar.\n\n\nInmutabilidad\n\n\n\n\n\nUna vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.\n\n\nAcceso a Elementos\nSe utiliza el índice para acceder a un elemento específico de la tupla."
   },
   {
     "objectID": "unidades/unidad4/unidad4.3.html#ejemplo",
     "href": "unidades/unidad4/unidad4.3.html#ejemplo",
-    "title": "Tuplas",
+    "title": "Tuplas.",
     "section": "Ejemplo",
     "text": "Ejemplo\ncoordenadas = (3, 5)\nx = coordenadas[0]\ny = coordenadas[1]"
   },
   {
     "objectID": "unidades/unidad4/unidad4.3.html#explicación",
     "href": "unidades/unidad4/unidad4.3.html#explicación",
-    "title": "Tuplas",
+    "title": "Tuplas.",
     "section": "Explicación",
     "text": "Explicación\nEn este ejemplo, se crea una tupla que almacena coordenadas (x, y) y se accede a los valores individuales utilizando índices.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una tupla con las estaciones del año.\nIntenta modificar un elemento de la tupla y observa el error que se produce."
   },
   {
     "objectID": "unidades/unidad4/unidad4.3.html#explicación-de-la-actividad",
     "href": "unidades/unidad4/unidad4.3.html#explicación-de-la-actividad",
-    "title": "Tuplas",
+    "title": "Tuplas.",
     "section": "Explicación de la Actividad:",
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación de tuplas y comprender la diferencia entre listas y tuplas en términos de inmutabilidad. Les ayuda a comprender cómo utilizar tuplas cuando necesitan almacenar datos que no deben cambiar."
   },
