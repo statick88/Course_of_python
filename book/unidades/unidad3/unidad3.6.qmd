@@ -35,6 +35,7 @@ En el segundo ejemplo, se desempaquetaron los valores de una tupla en variables 
 Crea una lista con los nombres de tus tres colores favoritos.
 
 Utiliza la asignación múltiple para asignar los valores de la lista a tres variables individuales.
+:::
 
 ## Explicación de la Actividad
 
