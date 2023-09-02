@@ -228,7 +228,7 @@
     "href": "unidades/unidad3/unidad3.6.html#explicación",
     "title": "Múltiples Variables",
     "section": "Explicación:",
-    "text": "Explicación:\nEn el primer ejemplo, se utilizó la asignación múltiple para declarar tres variables en una sola línea.\nEn el segundo ejemplo, se desempaquetaron los valores de una tupla en variables individuales.\n::: {.callout-important} ### Actividad Práctica:\nCrea una lista con los nombres de tus tres colores favoritos.\nUtiliza la asignación múltiple para asignar los valores de la lista a tres variables individuales."
+    "text": "Explicación:\nEn el primer ejemplo, se utilizó la asignación múltiple para declarar tres variables en una sola línea.\nEn el segundo ejemplo, se desempaquetaron los valores de una tupla en variables individuales.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una lista con los nombres de tus tres colores favoritos.\nUtiliza la asignación múltiple para asignar los valores de la lista a tres variables individuales."
   },
   {
     "objectID": "unidades/unidad3/unidad3.6.html#explicación-de-la-actividad",
