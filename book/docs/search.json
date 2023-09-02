@@ -382,7 +382,7 @@
     "href": "unidades/unidad4/unidad4.5.html#conceptos-clave",
     "title": "Diccionarios",
     "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nDiccionarios\nEstructuras de datos que almacenan pares clave-valor.\n\n\nClaves\nSon los nombres o etiquetas utilizados para acceder a los valores en el diccionario.\n\n\nValores\nSon los datos asociados a cada clave en el diccionario."
+    "text": "Conceptos Clave:\n\nDiccionarios\n\nEstructuras de datos que almacenan pares clave-valor.\n\n\nClaves\nSon los nombres o etiquetas utilizados para acceder a los valores en el diccionario.\n\n\nValores\nSon los datos asociados a cada clave en el diccionario."
   },
   {
     "objectID": "unidades/unidad4/unidad4.5.html#ejemplo",
