@@ -8,7 +8,7 @@
 
 <meta name="description" content="Este libro de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Frameworsk como Django, Flask, Fast Api, PyScript y Regex. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con Bases de datos, APIs y más.">
 
-<title>Python 2023 - Self, Eliminar Propiedades y Objetos</title>
+<title>Python 2023 - Self, Eliminar Propiedades y Objetos.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Objetos, Clases y Herencia</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.4.html"><span class="chapter-title">Self, Eliminar Propiedades y Objetos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Objetos, Clases y Herencia</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.4.html"><span class="chapter-title">Self, Eliminar Propiedades y Objetos.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -396,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  <a href="../../unidades/unidad7/unidad7.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Orientada a Objetos (POO)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -411,12 +411,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Self, Eliminar Propiedades y Objetos</span></a>
+  <a href="../../unidades/unidad7/unidad7.4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Self, Eliminar Propiedades y Objetos.</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad7/unidad7.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Herencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad7/unidad7.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Polimorfismo</span></a>
   </div>
 </li>
       </ul>
@@ -682,24 +687,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#conceptos-clave" id="toc-conceptos-clave" class="nav-link active" data-scroll-target="#conceptos-clave">Conceptos Clave:</a>
-  <ul class="collapse">
-  <li><a href="#self" id="toc-self" class="nav-link" data-scroll-target="#self">self</a></li>
-  <li><a href="#eliminar-atributos" id="toc-eliminar-atributos" class="nav-link" data-scroll-target="#eliminar-atributos">Eliminar Atributos</a></li>
+  <li><a href="#eliminar-atributos" id="toc-eliminar-atributos" class="nav-link active" data-scroll-target="#eliminar-atributos">Eliminar Atributos</a></li>
   <li><a href="#eliminar-objetos" id="toc-eliminar-objetos" class="nav-link" data-scroll-target="#eliminar-objetos">Eliminar Objetos</a></li>
-  </ul></li>
-  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo:</a></li>
-  <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación:</a></li>
-  <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad:</a></li>
+  <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad7/unidad7.4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad7/unidad7.4.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Objetos, Clases y Herencia</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.4.html"><span class="chapter-title">Self, Eliminar Propiedades y Objetos</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Objetos, Clases y Herencia</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.4.html"><span class="chapter-title">Self, Eliminar Propiedades y Objetos.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Self, Eliminar Propiedades y Objetos</span></h1>
+<h1 class="title"><span class="chapter-title">Self, Eliminar Propiedades y Objetos.</span></h1>
 </div>
 
 
@@ -715,46 +714,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>En esta lección, aprenderemos más sobre el uso de self en los métodos de clase. También exploraremos cómo eliminar atributos de instancia y objetos en Python.</p>
-<section id="conceptos-clave" class="level2">
-<h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave:</h2>
-<section id="self" class="level3">
-<h3 class="anchored" data-anchor-id="self">self</h3>
-<p>Referencia al objeto actual en un método de clase.</p>
-</section>
+<p>En esta lección, aprenderemos más sobre el uso de <strong>“self”</strong> en los métodos de clase. También exploraremos cómo eliminar atributos de instancia y objetos en Python. Self</p>
+<p>La palabra clave <strong>“self”</strong> se refiere al objeto actual en un método de clase. Permite acceder y manipular los atributos de instancia dentro de ese método.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Persona:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, edad):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.edad <span class="op">=</span> edad</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> presentarse(<span class="va">self</span>):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Me llamo </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> y tengo </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>edad<span class="sc">}</span><span class="ss"> años."</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una instancia de Persona</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>persona1 <span class="op">=</span> Persona(<span class="st">"Carlos"</span>, <span class="dv">28</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar al método para presentarse</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>persona1.presentarse()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, <strong>“self”</strong> se utiliza para acceder a los atributos <strong>“nombre”</strong> y <strong>“edad”</strong> dentro del método “presentarse”.</p>
 <section id="eliminar-atributos" class="level3">
 <h3 class="anchored" data-anchor-id="eliminar-atributos">Eliminar Atributos</h3>
-<p>Se puede usar la palabra clave del para eliminar un atributo de instancia.</p>
+<p>Se puede eliminar un atributo de instancia utilizando la palabra clave <strong>“del”</strong>.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Coche:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, marca, modelo):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.marca <span class="op">=</span> marca</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.modelo <span class="op">=</span> modelo</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mostrar_info(<span class="va">self</span>):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Coche </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>marca<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>modelo<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una instancia de Coche</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>coche1 <span class="op">=</span> Coche(<span class="st">"Toyota"</span>, <span class="st">"Corolla"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Eliminar el atributo 'modelo'</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> coche1.modelo</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Intentar acceder al atributo eliminado generará un error</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># print(coche1.modelo)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aquí, hemos creado una instancia de “Coche” y luego eliminado el atributo “modelo” utilizando “del”.</p>
 </section>
 <section id="eliminar-objetos" class="level3">
 <h3 class="anchored" data-anchor-id="eliminar-objetos">Eliminar Objetos</h3>
-<p>Se utiliza la función del para eliminar un objeto y liberar memoria.</p>
-</section>
-</section>
-<section id="ejemplo" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplo">Ejemplo:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Coche:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, marca, modelo):</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.marca <span class="op">=</span> marca</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.modelo <span class="op">=</span> modelo</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mostrar_info(<span class="va">self</span>):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Coche </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>marca<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>modelo<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>coche1 <span class="op">=</span> Coche(<span class="st">"Toyota"</span>, <span class="st">"Corolla"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>coche1.mostrar_info()</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Eliminar el atributo 'modelo'</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> coche1.modelo</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Intentar acceder al atributo eliminado generará un error</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># print(coche1.modelo)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="explicación" class="level2">
-<h2 class="anchored" data-anchor-id="explicación">Explicación:</h2>
-<p>En este ejemplo, se define una clase Coche con un constructor y un método mostrar_info.</p>
-<p>Se crea una instancia coche1 y se muestra su información. Luego, se elimina el atributo modelo utilizando del.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>Para eliminar un objeto y liberar memoria, se utiliza la función “del” seguida del nombre del objeto.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Punto:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mostrar(<span class="va">self</span>):</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Punto (</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>y<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una instancia de Punto</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>punto1 <span class="op">=</span> Punto(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar al método para mostrar el punto</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>punto1.mostrar()</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Eliminar el objeto punto1</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> punto1</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Intentar acceder al objeto eliminado generará un error</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># punto1.mostrar()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, creamos una instancia <strong>“punto1”</strong> de la clase <strong>“Punto”</strong> y luego la eliminamos utilizando “del”.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -764,15 +787,50 @@ Actividad Práctica:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Crea una clase Estudiante con atributos nombre y edad, y un método mostrar_info para mostrar la información del estudiante.</p>
-<p>Crea una instancia de la clase Estudiante y llama al método mostrar_info.</p>
-<p>Utiliza del para eliminar el atributo nombre de la instancia y verifica el resultado.</p>
+<p>Crea una clase Estudiante con atributos “nombre” y “edad”, y un método “mostrar_info” para mostrar la información del estudiante.</p>
 </div>
 </div>
+<details>
+<p><sumary>Ejemplo de Clase Triángulo</sumary></p>
+<p><strong>Resumen</strong>:</p>
+<p>Este ejemplo demuestra cómo crear una clase Estudiante con atributos, un método para mostrar información, y cómo eliminar atributos de instancia.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clase Estudiante</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Estudiante:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, edad):</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.edad <span class="op">=</span> edad</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mostrar_info(<span class="va">self</span>):</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Estudiante: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss">, Edad: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>edad<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una instancia de Estudiante</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>estudiante1 <span class="op">=</span> Estudiante(<span class="st">"María"</span>, <span class="dv">22</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar al método para mostrar la información</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>estudiante1.mostrar_info()</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Eliminar el atributo 'nombre' de la instancia</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> estudiante1.nombre</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Intentar acceder al atributo eliminado generará un error</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># estudiante1.mostrar_info()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Resolución</strong>.</p>
+<ul>
+<li><p>Hemos definido una clase llamada Estudiante con un constructor (<strong>init</strong>) que toma dos atributos: nombre y edad. Estos atributos representan el nombre y la edad del estudiante.</p></li>
+<li><p>La clase Estudiante también tiene un método llamado mostrar_info que imprime la información del estudiante en un formato específico.</p></li>
+<li><p>Luego, hemos creado una instancia estudiante1 de la clase Estudiante con el nombre “María” y la edad 22.</p></li>
+<li><p>Hemos llamado al método mostrar_info en la instancia estudiante1, lo que muestra la información del estudiante en la consola.</p></li>
+<li><p>Finalmente, hemos utilizado la palabra clave del para eliminar el atributo nombre de la instancia estudiante1.</p></li>
+</ul>
+<p>Esto se hace para mostrar cómo eliminar un atributo de instancia.</p>
+<p><strong>Explicación</strong>:</p>
+<p>Este código muestra cómo definir una clase en Python, crear una instancia de esa clase y llamar a sus métodos.</p>
+<p>También ilustra cómo se pueden eliminar atributos de instancia utilizando del. La eliminación de atributos es útil en situaciones específicas donde se necesita gestionar dinámicamente los atributos de un objeto.</p>
+</details>
 </section>
-<section id="explicación-de-la-actividad" class="level2">
-<h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad:</h2>
-<p>Esta actividad permite a los participantes practicar el uso de self en los métodos de clase y cómo eliminar atributos de instancia. Les ayuda a comprender cómo trabajar con objetos y atributos, y cómo gestionar la memoria en Python.</p>
+<section id="explicación" class="level3">
+<h3 class="anchored" data-anchor-id="explicación">Explicación</h3>
+<p>Esta actividad te permite practicar el uso de “self” en los métodos de clase, cómo eliminar atributos de instancia y objetos en Python, y cómo gestionar la memoria.</p>
 
 
 </section>

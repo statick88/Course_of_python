@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/unidad8/unidad8.1.html" rel="next">
+<link href="../../unidades/unidad7/unidad7.6.html" rel="next">
 <link href="../../unidades/unidad7/unidad7.4.html" rel="prev">
 <link href="../../python-logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -396,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  <a href="../../unidades/unidad7/unidad7.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Orientada a Objetos (POO)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -411,12 +411,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Self, Eliminar Propiedades y Objetos</span></a>
+  <a href="../../unidades/unidad7/unidad7.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Self, Eliminar Propiedades y Objetos.</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad7/unidad7.5.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Herencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad7/unidad7.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Polimorfismo</span></a>
   </div>
 </li>
       </ul>
@@ -682,17 +687,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#conceptos-clave" id="toc-conceptos-clave" class="nav-link active" data-scroll-target="#conceptos-clave">Conceptos Clave:</a>
-  <ul class="collapse">
-  <li><a href="#herencia" id="toc-herencia" class="nav-link" data-scroll-target="#herencia">Herencia</a></li>
-  <li><a href="#clase-padre-o-base" id="toc-clase-padre-o-base" class="nav-link" data-scroll-target="#clase-padre-o-base">Clase Padre (o Base)</a></li>
-  <li><a href="#clase-hija-o-derivada" id="toc-clase-hija-o-derivada" class="nav-link" data-scroll-target="#clase-hija-o-derivada">Clase Hija (o Derivada)</a></li>
-  </ul></li>
-  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo:</a>
-  <ul class="collapse">
-  <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación:</a></li>
-  </ul></li>
-  <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad:</a></li>
+  <li><a href="#herencia" id="toc-herencia" class="nav-link active" data-scroll-target="#herencia">Herencia</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad7/unidad7.5.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad7/unidad7.5.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -718,23 +713,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>En esta lección, exploraremos el concepto de herencia en la programación orientada a objetos. Aprenderemos cómo crear clases que heredan atributos y métodos de una clase base.</p>
-<section id="conceptos-clave" class="level2">
-<h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave:</h2>
 <section id="herencia" class="level3">
 <h3 class="anchored" data-anchor-id="herencia">Herencia</h3>
-<p>Mecanismo que permite que una clase herede atributos y métodos de otra clase base.</p>
-</section>
-<section id="clase-padre-o-base" class="level3">
-<h3 class="anchored" data-anchor-id="clase-padre-o-base">Clase Padre (o Base)</h3>
-<p>La clase de la que se heredan atributos y métodos.</p>
-</section>
-<section id="clase-hija-o-derivada" class="level3">
-<h3 class="anchored" data-anchor-id="clase-hija-o-derivada">Clase Hija (o Derivada)</h3>
-<p>La clase que hereda de la clase base.</p>
-</section>
-</section>
-<section id="ejemplo" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplo">Ejemplo:</h2>
+<p>La herencia es un mecanismo que permite que una clase herede atributos y métodos de otra clase base. Esto facilita la creación de jerarquías de clases y la reutilización de código.</p>
+<p><strong>Ejemplo</strong>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre):</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
@@ -746,15 +728,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ladrar(<span class="va">self</span>):</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> está ladrando"</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>perro1 <span class="op">=</span> Perro(<span class="st">"Buddy"</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>perro1.saludar()</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>perro1.ladrar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="explicación" class="level3">
-<h3 class="anchored" data-anchor-id="explicación">Explicación:</h3>
-<p>En este ejemplo, se define una clase base Animal con un constructor y un método saludar.</p>
-<p>Se define una clase derivada Perro que hereda de Animal y agrega un método adicional ladrar.</p>
-<p>Se crea una instancia perro1 de la clase Perro y se llama a sus métodos.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una instancia de la clase Perro</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>perro1 <span class="op">=</span> Perro(<span class="st">"Buddy"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a métodos de la clase base y derivada</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>perro1.saludar()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>perro1.ladrar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, tenemos una clase base <strong>“Animal”</strong> con un constructor y un método <strong>“saludar”</strong>. Luego, creamos una clase derivada <strong>“Perro”</strong> que hereda de <strong>“Animal”</strong> y agrega su propio método <strong>“ladrar”</strong>. Las instancias de <strong>“Perro”</strong> heredan los atributos y métodos de <strong>“Animal”</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -764,16 +745,52 @@ Actividad Práctica:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Crea una clase Figura con un atributo color y un método mostrar_color para mostrar el color.</p>
-<p>Crea una clase derivada Circulo que herede de Figura y agrega un atributo radio y un método calcular_area para calcular el área del círculo.</p>
-<p>Crea una instancia de la clase Circulo, establece su color y calcula el área.</p>
+<p>Crea una clase Figura con un atributo “color” y un método “mostrar_color” para mostrar el color de la figura.</p>
+<p>Crea una clase derivada Circulo que herede de “Figura” y agregue un atributo “radio” y un método “calcular_area” para calcular el área del círculo.</p>
 </div>
 </div>
-</section>
-</section>
-<section id="explicación-de-la-actividad" class="level2">
-<h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad:</h2>
-<p>Esta actividad permite a los participantes practicar la creación de clases derivadas y la herencia de atributos y métodos. Les ayuda a comprender cómo utilizar la herencia para reutilizar código y extender funcionalidades en las clases derivadas.</p>
+<details>
+<summary>
+Posible solución
+</summary>
+<p><strong>Resumen</strong>:</p>
+<p>En este código, se crea una clase base llamada “Figura” que tiene un atributo “color” y un método “mostrar_color”. Luego, se define una clase derivada “Circulo” que hereda de “Figura” y agrega un atributo “radio” y un método “calcular_area”. Se crea una instancia de “Circulo”, se muestra su color y se calcula su área.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definición de la clase base "Figura" con un constructor que toma el atributo "color".</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Figura:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, color):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Método en la clase base para mostrar el color de la figura.</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mostrar_color(<span class="va">self</span>):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Color: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>color<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Definición de la clase derivada "Circulo" que hereda de "Figura" y agrega un atributo "radio".</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Circulo(Figura):</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, color, radio):</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Llamamos al constructor de la clase base "Figura" utilizando "super()".</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(color)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.radio <span class="op">=</span> radio</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Método en la clase derivada para calcular el área del círculo.</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calcular_area(<span class="va">self</span>):</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        area <span class="op">=</span> <span class="fl">3.14</span> <span class="op">*</span> <span class="va">self</span>.radio <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> area</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación de una instancia de la clase "Circulo" llamada "circulo1" con color "Rojo" y radio 5.</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>circulo1 <span class="op">=</span> Circulo(<span class="st">"Rojo"</span>, <span class="dv">5</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamada al método "mostrar_color" de la clase base para mostrar el color del círculo.</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>circulo1.mostrar_color()</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamada al método "calcular_area" de la clase derivada para calcular el área del círculo.</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> circulo1.calcular_area()</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimir el resultado del cálculo del área.</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Área del círculo: </span><span class="sc">{</span>area<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explicación</strong>:</p>
+<p>En esta actividad, creamos una clase base <strong>“Figura”</strong> con un atributo <strong>“color”</strong> y un método <strong>“mostrar_color”</strong>. Luego, creamos una clase derivada <strong>“Circulo”</strong> que hereda de <strong>“Figura”</strong> y agrega un atributo <strong>“radio”</strong> y un método <strong>“calcular_area”</strong>. Las instancias de <strong>“Circulo”</strong> heredan los atributos y métodos de <strong>“Figura”</strong> y extienden su funcionalidad.</p>
+</details>
+<p>Esta práctica te ayudará a comprender cómo usar la herencia para crear clases derivadas y reutilizar código de clases base.</p>
 
 
 </section>
@@ -1286,12 +1303,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../unidades/unidad7/unidad7.4.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Self, Eliminar Propiedades y Objetos</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Self, Eliminar Propiedades y Objetos.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/unidad8/unidad8.1.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Introducción</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/unidad7/unidad7.6.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Polimorfismo</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
