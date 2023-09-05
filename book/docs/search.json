@@ -1222,7 +1222,7 @@
     "href": "unidades/unidad11/unidad11.4.html#instalación-de-flask",
     "title": "Introducción a Flask Framework",
     "section": "Instalación de Flask",
-    "text": "Instalación de Flask\n\nCómo Instalar Flask Usando pip\nPara comenzar a trabajar con Flask, primero debes instalarlo en tu entorno de desarrollo (virtualenv o docker). Puedes hacerlo utilizando la herramienta pip, que es el administrador de paquetes de Python.\nEjecuta el siguiente comando en tu terminal:\npip install flask\n\n\nCreación de un Entorno Virtual para Proyectos Flask.\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda crear un entorno virtual para cada proyecto Flask.\n\n\n\n\n\n\n\n\nNote\n\n\n\nUn entorno virtual es un espacio aislado donde puedes instalar las dependencias específicas de tu proyecto sin interferir con otras aplicaciones.\n\n\nPara crear un entorno virtual, sigue estos pasos:\n\nAbre una terminal y navega hasta la carpeta de tu proyecto.\nEjecuta el siguiente comando para crear un entorno virtual:\n\npython3 -m venv venv\nActiva el entorno virtual:\nEn Windows:\nvenv\\Scripts\\activate\nEn Linux o macOS:\nsource venv/bin/activate\nAhora estás listo para trabajar en tu proyecto Flask en un entorno aislado."
+    "text": "Instalación de Flask\n\nCómo Instalar Flask Usando pip\nPara comenzar a trabajar con Flask, primero debes instalarlo en tu entorno de desarrollo (virtualenv o docker). Puedes hacerlo utilizando la herramienta pip, que es el administrador de paquetes de Python.\nEjecuta el siguiente comando en tu terminal:\npip install flask\n\n\nCreación de un Entorno Virtual para Proyectos Flask.\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda crear un entorno virtual para cada proyecto Flask.\n\n\n\n\n\n\n\n\nNote\n\n\n\nUn entorno virtual es un espacio aislado donde puedes instalar las dependencias específicas de tu proyecto sin interferir con otras aplicaciones.\n\n\nPara crear un entorno virtual, sigue estos pasos:\n\nAbre una terminal y navega hasta la carpeta de tu proyecto.\nEjecuta el siguiente comando para crear un entorno virtual.\n\npython3 -m venv venv\nActiva el entorno virtual:\nEn Windows:\nvenv\\Scripts\\activate\nEn Linux o macOS:\nsource venv/bin/activate\nAhora estás listo para trabajar en tu proyecto Flask en un entorno aislado."
   },
   {
     "objectID": "unidades/unidad11/unidad11.4.html#tu-primera-aplicación-en-flask",
@@ -1503,5 +1503,54 @@
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD XI: ¿Cómo me amplío con Python?",
     "text": "UNIDAD XI: ¿Cómo me amplío con Python?\nEjercicio 51: ¿Qué es la ciencia de datos y cómo se relaciona con Python?\n\n\nRespuesta:\n\nLa ciencia de datos es el proceso de extracción, transformación y análisis de datos para obtener conocimientos y tomar decisiones informadas. Python es ampliamente utilizado en la ciencia de datos debido a su amplio ecosistema de bibliotecas y herramientas.\n\nEjercicio 52: ¿Qué es Django Framework y para qué se utiliza?\n\n\nRespuesta:\n\nDjango es un framework web de alto nivel en Python que facilita la creación de aplicaciones web robustas y escalables. Se utiliza para construir sitios web y aplicaciones con características como autenticación, seguridad y manejo de bases de datos.\n\nEjercicio 53: ¿Qué es FastAPI y cómo se diferencia de otros frameworks?\n\n\nRespuesta:\n\nFastAPI es un framework web moderno y de alto rendimiento para construir APIs en Python. Se destaca por su velocidad, facilidad de uso y generación automática de documentación interactiva. Utiliza anotaciones de tipo para validar datos y reducir errores.\n\nEjercicio 54: ¿Cuál es el propósito de las APIs en el desarrollo web?\n\n\nRespuesta:\n\nLas APIs (Interfaces de Programación de Aplicaciones) se utilizan para permitir la comunicación y la integración entre diferentes aplicaciones y sistemas. Facilitan el intercambio de datos y funcionalidades entre aplicaciones.\n\nEjercicio 55: ¿Por qué es importante ampliarse en Python más allá de los conceptos básicos?\n\n\nRespuesta:\n\nAmpliarse en Python permite abordar proyectos más complejos y desafiantes, como desarrollo web, análisis de datos, automatización, inteligencia artificial y más. Además, mejora las habilidades y la versatilidad como programador."
+  },
+  {
+    "objectID": "about.html#nuestro-objetivo",
+    "href": "about.html#nuestro-objetivo",
+    "title": "Acerca de Nosotros",
+    "section": "Nuestro Objetivo",
+    "text": "Nuestro Objetivo\nNuestro objetivo es proporcionarte los conocimientos y las habilidades necesarias para comenzar a programar utilizando Python. Queremos que te sientas cómodo con los conceptos básicos y que estés preparado para abordar proyectos más desafiantes en el futuro."
+  },
+  {
+    "objectID": "about.html#nuestro-equipo",
+    "href": "about.html#nuestro-equipo",
+    "title": "Acerca de Nosotros",
+    "section": "Nuestro Equipo",
+    "text": "Nuestro Equipo\nNuestro equipo está formado por apasionados desarrolladores y educadores que tienen una amplia experiencia en el mundo de la programación. Estamos aquí para ayudarte en cada paso del camino y responder a tus preguntas."
+  },
+  {
+    "objectID": "about.html#contacto",
+    "href": "about.html#contacto",
+    "title": "Acerca de Nosotros",
+    "section": "Contacto",
+    "text": "Contacto\nSi tienes preguntas, comentarios o sugerencias, no dudes en ponerte en contacto con nosotros a través de nuestro correo electrónico o redes sociales.\n¡Esperamos que disfrutes aprendiendo con nosotros!"
+  },
+  {
+    "objectID": "license.html#uso-permitido",
+    "href": "license.html#uso-permitido",
+    "title": "Licencia",
+    "section": "Uso Permitido",
+    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   }
 ]

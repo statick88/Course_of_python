@@ -42,7 +42,7 @@ En Python, los comentarios comienzan con el símbolo `#`. No afectan la ejecuci�
 
 La línea `print("Hola, bienvenido al mundo de la programación.")` es una instrucción de impresión. La función `print()` muestra el texto entre paréntesis en la consola.
 
-:::{.callout-tip}
+::: callout-tip
 **Actividad Práctica**
 
 Escribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida personalizado.

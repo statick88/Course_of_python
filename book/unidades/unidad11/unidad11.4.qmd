@@ -43,7 +43,7 @@ Un entorno virtual es un espacio aislado donde puedes instalar las dependencias 
 Para crear un entorno virtual, sigue estos pasos:
 
 1. Abre una terminal y navega hasta la carpeta de tu proyecto.
-2. Ejecuta el siguiente comando para crear un entorno virtual:
+2. Ejecuta el siguiente comando para crear un entorno virtual.
 
 ```bash
 python3 -m venv venv
