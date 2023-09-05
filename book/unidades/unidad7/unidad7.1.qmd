@@ -1,30 +1,20 @@
-## Introducción
+## Programación Orientada a Objetos (POO)
 
-En esta lección, exploraremos el concepto de programación orientada a objetos (POO). Aprenderemos sobre objetos, clases y cómo la POO nos permite organizar y estructurar nuestro código de manera más eficiente.
+La Programación Orientada a Objetos (POO) es un paradigma de programación que se basa en el uso de objetos y clases.
 
-## Conceptos Clave:
+En POO, tratamos los elementos del mundo real como objetos, y estos objetos interactúan entre sí para realizar tareas específicas. 
 
-### Programación Orientada a Objetos (POO)
+Este enfoque nos permite organizar nuestro código de manera más eficiente y estructurada.
 
-Paradigma de programación que se basa en el uso de objetos y clases.
+## Conceptos Clave en POO
 
 ### Objetos
 
-Instancias de clases que representan entidades en el mundo real.
+Los objetos son instancias de clases y representan entidades del mundo real. 
 
-### Clases
+Pueden tener atributos que describen sus características y métodos que definen su comportamiento.
 
-Plantillas o moldes que definen la estructura y el comportamiento de los objetos.
-
-### Atributos
-
-Características o propiedades de un objeto.
-
-### Métodos
-
-Funciones que definen el comportamiento de un objeto.
-
-## Ejemplo:
+**Ejemplo**:
 
 ```python
 class Persona:
@@ -39,20 +29,79 @@ persona1 = Persona("Juan", 25)
 persona1.saludar()
 ```
 
-## Explicación:
+En este ejemplo, hemos creado una clase llamada **"Persona"**. La clase tiene un constructor (init) que inicializa los atributos **"nombre"** y **"edad"** de la persona. 
 
-En este ejemplo, se define una clase llamada Persona con un constructor (__init__) que inicializa atributos.
+También tiene un método llamado **"saludar"** que muestra un mensaje con el nombre y la edad de la persona.
 
-La clase tiene un método llamado saludar que muestra un mensaje con el nombre y edad del objeto.
+### Clases
 
-::: {.callout-important}
+Las clases son plantillas o moldes que definen la estructura y el comportamiento de los objetos. 
+
+En una clase, puedes especificar qué atributos y métodos tendrán sus objetos.
+
+**Ejemplo**:
+
+```python
+class Coche:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+    def mostrar_info(self):
+        print(f"Marca: {self.marca}, Modelo: {self.modelo}")
+
+coche1 = Coche("Toyota", "Camry")
+coche1.mostrar_info()
+```
+
+En este ejemplo, hemos creado una clase llamada **"Coche"** que tiene atributos **"marca"** y **"modelo"**. 
+
+También tiene un método **"mostrar_info"** que imprime la información del coche.
+
+### Atributos
+
+Los atributos son características o propiedades de un objeto que almacenan datos.
+
+**Ejemplo**:
+
+```python
+class Producto:
+    def __init__(self, nombre, precio):
+        self.nombre = nombre
+        self.precio = precio
+
+producto1 = Producto("Teléfono", 500)
+print(f"Producto: {producto1.nombre}, Precio: {producto1.precio}")
+```
+
+En este ejemplo, hemos creado una clase **"Producto"** con atributos **"nombre"** y **"precio"**.
+
+### Métodos
+
+Los métodos son funciones definidas en una clase que representan el comportamiento de los objetos de esa clase.
+
+**Ejemplo**:
+
+```python
+class Perro:
+    def __init__(self, nombre, raza):
+        self.nombre = nombre
+        self.raza = raza
+
+    def ladrar(self):
+        print(f"{self.nombre} está ladrando.")
+
+perro1 = Perro("Max", "Labrador")
+perro1.ladrar()
+```
+En este ejemplo, hemos creado una clase "Perro" con el método "ladrar" que muestra un mensaje cuando un perro ladra.
+
+:::{.callout-tip}
 ### Actividad Práctica:
 
-Crea una clase llamada Libro con atributos titulo y autor, y un método mostrar_info que imprima los atributos.
-
-Crea una instancia de la clase Libro y llama al método mostrar_info.
+Crea una clase Libro que represente libros con atributos como "título" y "autor". Luego, implementa un método llamado "mostrar_info" que imprima los atributos del libro. A continuación, crea una instancia de la clase "Libro" y llama al método "mostrar_info" para mostrar la información del libro.
 :::
 
-## Explicación de la Actividad:
-Esta actividad permite a los participantes practicar la definición de clases y la creación de objetos. Les ayuda a comprender cómo la POO nos permite modelar entidades y organizar el código de manera más estructurada y eficiente.
+### Explicación
 
+Esta actividad te permitirá practicar la creación de clases y objetos, así como comprender cómo la Programación Orientada a Objetos nos ayuda a modelar y organizar nuestros programas de manera más efectiva.

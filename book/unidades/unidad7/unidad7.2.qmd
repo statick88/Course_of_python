@@ -1,56 +1,118 @@
 ## Objetos y Clases
 
 En esta lección, continuaremos explorando los conceptos de objetos y clases en la programación orientada a objetos. Aprenderemos cómo crear múltiples objetos a partir de una misma clase y cómo trabajar con sus atributos y métodos.
+Instancias de Clase
 
-## Conceptos Clave:
+Cuando se crea un objeto a partir de una clase, se crea una instancia de esa clase. Cada instancia es independiente y puede tener sus propios valores de atributos.
 
-### Instancias de Clase
+**Ejemplo**:
 
-Cuando se crea un objeto a partir de una clase, se crea una instancia de esa clase.
+```python
+class Coche:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
 
-### Atributos de Instancia: 
+coche1 = Coche("Toyota", "Camry")
+coche2 = Coche("Honda", "Civic")
 
-Características específicas de un objeto que se almacenan como variables en la instancia.
+En este ejemplo, hemos creado dos instancias de la clase "Coche" (coche1 y coche2) con diferentes valores de atributos "marca" y "modelo".
+```
+
+### Atributos de Instancia
+
+Los atributos de instancia son características específicas de un objeto que se almacenan como variables en la instancia. Cada objeto puede tener sus propios valores de atributos.
+
+**Ejemplo**:
+
+```python
+class Estudiante:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+estudiante1 = Estudiante("Ana", 20)
+estudiante2 = Estudiante("Juan", 22)
+```
+
+En este ejemplo, hemos creado dos instancias de la clase "Estudiante" con atributos "nombre" y "edad" que son específicos para cada estudiante.
 
 ### Métodos de Instancia
 
-Funciones definidas en la clase que operan en los atributos de la instancia.
+Los métodos de instancia son funciones definidas en la clase que operan en los atributos de la instancia. Cada objeto puede llamar a los métodos de instancia para realizar acciones específicas.
 
-## Ejemplo:
+**Ejemplo**:
 
 ```python
-class Perro:
-    def __init__(self, nombre, raza):
+class Gato:
+    def __init__(self, nombre):
         self.nombre = nombre
-        self.raza = raza
 
-    def ladrar(self):
-        print(f"{self.nombre} está ladrando.")
+    def maullar(self):
+        print(f"{self.nombre} está maullando.")
 
-perro1 = Perro("Max", "Labrador")
-perro2 = Perro("Buddy", "Chihuahua")
+gato1 = Gato("Mittens")
+gato2 = Gato("Whiskers")
 
-perro1.ladrar()
-perro2.ladrar()
+gato1.maullar()
+gato2.maullar()
 ```
 
-## Explicación:
+En este ejemplo, hemos creado dos instancias de la clase **"Gato"** y llamado al método **"maullar"** en cada gato para que realicen la acción específica.
 
-En este ejemplo, se define una clase Perro con un constructor y un método ladrar.
-
-Se crean dos objetos (perro1 y perro2) a partir de la misma clase y se les asignan diferentes valores para sus atributos.
-
-Los métodos de instancia son llamados en cada objeto para realizar acciones específicas.
-
-::: {.callout-important}
+:::{.callout-tip}
 ### Actividad Práctica:
 
-Crea una clase Rectangulo con atributos ancho y alto, y un método calcular_area que calcule y retorne el área del rectángulo.
+Crea una clase Rectángulo con atributos "ancho" y "alto". Luego, implementa un método llamado "calcular_area" que calcule y retorne el área del rectángulo (ancho * alto).
 
-Crea dos instancias de la clase Rectangulo con diferentes valores de ancho y alto, y llama al método calcular_area en cada una.
 :::
 
-## Explicación de la Actividad:
+<details>
+<summary>Ejemplo de Clase Rectángulo</summary>
 
-Esta actividad permite a los participantes practicar la creación de instancias de clase y trabajar con sus atributos y métodos. Les ayuda a comprender cómo cada objeto puede tener valores diferentes para sus atributos y cómo ejecutar acciones específicas en cada objeto.
+**Resumen**:
 
+En este ejemplo, crearemos una clase llamada "Rectángulo" con atributos "ancho" y "alto". Implementaremos un método llamado "calcular_area" que calculará y retornará el área del rectángulo (ancho * alto). Luego, crearemos dos instancias de la clase "Rectángulo" con diferentes dimensiones y mostraremos el área de cada rectángulo.
+
+**Resolución**:
+
+```python
+class Rectangulo:
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+
+    def calcular_area(self):
+        return self.ancho * self.alto
+
+# Crear dos instancias de Rectangulo
+rectangulo1 = Rectangulo(5, 10)
+rectangulo2 = Rectangulo(3, 7)
+
+# Calcular el área de cada rectángulo
+area1 = rectangulo1.calcular_area()
+area2 = rectangulo2.calcular_area()
+
+# Mostrar el área de cada rectángulo
+print(f"Área del Rectángulo 1: {area1}")
+print(f"Área del Rectángulo 2: {area2}")
+```
+**Explicación**:
+
+- Definimos la clase "Rectangulo" con un constructor __init__ que toma dos argumentos: "ancho" y "alto". Estos argumentos se utilizan para inicializar los atributos de instancia "ancho" y "alto".
+
+- Implementamos un método de instancia llamado "calcular_area" que calcula el área del rectángulo multiplicando el ancho por el alto y lo retorna.
+
+- Creamos dos instancias de la clase "Rectangulo" con diferentes dimensiones (5x10 y 3x7).
+
+- Calculamos el área de cada rectángulo llamando al método "calcular_area" en cada instancia.
+
+- Mostramos el área de cada rectángulo en la consola.
+</details>
+
+### Explicación
+
+Este ejemplo ilustra cómo trabajar con atributos y métodos de instancia en una clase, permitiendo que cada objeto tenga sus propios valores y pueda realizar acciones específicas.
+
+
+Esta actividad te permite practicar la creación de instancias de clase, trabajar con atributos y métodos de instancia, y entender cómo cada objeto puede tener sus propios valores y realizar acciones específicas.

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Este curso completo de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Django y Flask. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con bases de datos, APIs y más.">
+<meta name="description" content="Este libro de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Frameworsk como Django, Flask, Fast Api, PyScript y Regex. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con Bases de datos, APIs y más.">
 
-<title>Curso de Python 2023 - Objetos y Clases</title>
+<title>Python 2023 - Objetos y Clases</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,7 +136,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <img src="../../python-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Curso de Python 2023</a> 
+      <a href="../../">Python 2023</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/statick88/Course_of_python/tree/main/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -682,15 +682,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#conceptos-clave" id="toc-conceptos-clave" class="nav-link active" data-scroll-target="#conceptos-clave">Conceptos Clave:</a>
-  <ul class="collapse">
-  <li><a href="#instancias-de-clase" id="toc-instancias-de-clase" class="nav-link" data-scroll-target="#instancias-de-clase">Instancias de Clase</a></li>
-  <li><a href="#atributos-de-instancia" id="toc-atributos-de-instancia" class="nav-link" data-scroll-target="#atributos-de-instancia">Atributos de Instancia:</a></li>
+  <li><a href="#atributos-de-instancia" id="toc-atributos-de-instancia" class="nav-link active" data-scroll-target="#atributos-de-instancia">Atributos de Instancia</a></li>
   <li><a href="#métodos-de-instancia" id="toc-métodos-de-instancia" class="nav-link" data-scroll-target="#métodos-de-instancia">Métodos de Instancia</a></li>
-  </ul></li>
-  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo:</a></li>
-  <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación:</a></li>
-  <li><a href="#explicación-de-la-actividad" id="toc-explicación-de-la-actividad" class="nav-link" data-scroll-target="#explicación-de-la-actividad">Explicación de la Actividad:</a></li>
+  <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad7/unidad7.2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad7/unidad7.2.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -715,44 +709,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>En esta lección, continuaremos explorando los conceptos de objetos y clases en la programación orientada a objetos. Aprenderemos cómo crear múltiples objetos a partir de una misma clase y cómo trabajar con sus atributos y métodos.</p>
-<section id="conceptos-clave" class="level2">
-<h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave:</h2>
-<section id="instancias-de-clase" class="level3">
-<h3 class="anchored" data-anchor-id="instancias-de-clase">Instancias de Clase</h3>
-<p>Cuando se crea un objeto a partir de una clase, se crea una instancia de esa clase.</p>
-</section>
+<p>En esta lección, continuaremos explorando los conceptos de objetos y clases en la programación orientada a objetos. Aprenderemos cómo crear múltiples objetos a partir de una misma clase y cómo trabajar con sus atributos y métodos. Instancias de Clase</p>
+<p>Cuando se crea un objeto a partir de una clase, se crea una instancia de esa clase. Cada instancia es independiente y puede tener sus propios valores de atributos.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Coche:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, marca, modelo):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.marca <span class="op">=</span> marca</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.modelo <span class="op">=</span> modelo</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>coche1 <span class="op">=</span> Coche(<span class="st">"Toyota"</span>, <span class="st">"Camry"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>coche2 <span class="op">=</span> Coche(<span class="st">"Honda"</span>, <span class="st">"Civic"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>En este ejemplo, hemos creado dos instancias de la clase <span class="st">"Coche"</span> (coche1 y coche2) con diferentes valores de atributos <span class="st">"marca"</span> y <span class="st">"modelo"</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="atributos-de-instancia" class="level3">
-<h3 class="anchored" data-anchor-id="atributos-de-instancia">Atributos de Instancia:</h3>
-<p>Características específicas de un objeto que se almacenan como variables en la instancia.</p>
+<h3 class="anchored" data-anchor-id="atributos-de-instancia">Atributos de Instancia</h3>
+<p>Los atributos de instancia son características específicas de un objeto que se almacenan como variables en la instancia. Cada objeto puede tener sus propios valores de atributos.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Estudiante:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, edad):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.edad <span class="op">=</span> edad</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>estudiante1 <span class="op">=</span> Estudiante(<span class="st">"Ana"</span>, <span class="dv">20</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>estudiante2 <span class="op">=</span> Estudiante(<span class="st">"Juan"</span>, <span class="dv">22</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, hemos creado dos instancias de la clase “Estudiante” con atributos “nombre” y “edad” que son específicos para cada estudiante.</p>
 </section>
 <section id="métodos-de-instancia" class="level3">
 <h3 class="anchored" data-anchor-id="métodos-de-instancia">Métodos de Instancia</h3>
-<p>Funciones definidas en la clase que operan en los atributos de la instancia.</p>
-</section>
-</section>
-<section id="ejemplo" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplo">Ejemplo:</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Perro:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, raza):</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.raza <span class="op">=</span> raza</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ladrar(<span class="va">self</span>):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> está ladrando."</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>perro1 <span class="op">=</span> Perro(<span class="st">"Max"</span>, <span class="st">"Labrador"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>perro2 <span class="op">=</span> Perro(<span class="st">"Buddy"</span>, <span class="st">"Chihuahua"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>perro1.ladrar()</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>perro2.ladrar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="explicación" class="level2">
-<h2 class="anchored" data-anchor-id="explicación">Explicación:</h2>
-<p>En este ejemplo, se define una clase Perro con un constructor y un método ladrar.</p>
-<p>Se crean dos objetos (perro1 y perro2) a partir de la misma clase y se les asignan diferentes valores para sus atributos.</p>
-<p>Los métodos de instancia son llamados en cada objeto para realizar acciones específicas.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>Los métodos de instancia son funciones definidas en la clase que operan en los atributos de la instancia. Cada objeto puede llamar a los métodos de instancia para realizar acciones específicas.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Gato:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> maullar(<span class="va">self</span>):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> está maullando."</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>gato1 <span class="op">=</span> Gato(<span class="st">"Mittens"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>gato2 <span class="op">=</span> Gato(<span class="st">"Whiskers"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>gato1.maullar()</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>gato2.maullar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, hemos creado dos instancias de la clase <strong>“Gato”</strong> y llamado al método <strong>“maullar”</strong> en cada gato para que realicen la acción específica.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -762,14 +761,49 @@ Actividad Práctica:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Crea una clase Rectangulo con atributos ancho y alto, y un método calcular_area que calcule y retorne el área del rectángulo.</p>
-<p>Crea dos instancias de la clase Rectangulo con diferentes valores de ancho y alto, y llama al método calcular_area en cada una.</p>
+<p>Crea una clase Rectángulo con atributos “ancho” y “alto”. Luego, implementa un método llamado “calcular_area” que calcule y retorne el área del rectángulo (ancho * alto).</p>
 </div>
 </div>
+<details>
+<summary>
+Ejemplo de Clase Rectángulo
+</summary>
+<p><strong>Resumen</strong>:</p>
+<p>En este ejemplo, crearemos una clase llamada “Rectángulo” con atributos “ancho” y “alto”. Implementaremos un método llamado “calcular_area” que calculará y retornará el área del rectángulo (ancho * alto). Luego, crearemos dos instancias de la clase “Rectángulo” con diferentes dimensiones y mostraremos el área de cada rectángulo.</p>
+<p><strong>Resolución</strong>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangulo:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, ancho, alto):</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.ancho <span class="op">=</span> ancho</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.alto <span class="op">=</span> alto</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calcular_area(<span class="va">self</span>):</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.ancho <span class="op">*</span> <span class="va">self</span>.alto</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear dos instancias de Rectangulo</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>rectangulo1 <span class="op">=</span> Rectangulo(<span class="dv">5</span>, <span class="dv">10</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>rectangulo2 <span class="op">=</span> Rectangulo(<span class="dv">3</span>, <span class="dv">7</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular el área de cada rectángulo</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>area1 <span class="op">=</span> rectangulo1.calcular_area()</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>area2 <span class="op">=</span> rectangulo2.calcular_area()</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el área de cada rectángulo</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Área del Rectángulo 1: </span><span class="sc">{</span>area1<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Área del Rectángulo 2: </span><span class="sc">{</span>area2<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li><p>Definimos la clase “Rectangulo” con un constructor <strong>init</strong> que toma dos argumentos: “ancho” y “alto”. Estos argumentos se utilizan para inicializar los atributos de instancia “ancho” y “alto”.</p></li>
+<li><p>Implementamos un método de instancia llamado “calcular_area” que calcula el área del rectángulo multiplicando el ancho por el alto y lo retorna.</p></li>
+<li><p>Creamos dos instancias de la clase “Rectangulo” con diferentes dimensiones (5x10 y 3x7).</p></li>
+<li><p>Calculamos el área de cada rectángulo llamando al método “calcular_area” en cada instancia.</p></li>
+<li><p>Mostramos el área de cada rectángulo en la consola.</p></li>
+</ul>
+</details>
 </section>
-<section id="explicación-de-la-actividad" class="level2">
-<h2 class="anchored" data-anchor-id="explicación-de-la-actividad">Explicación de la Actividad:</h2>
-<p>Esta actividad permite a los participantes practicar la creación de instancias de clase y trabajar con sus atributos y métodos. Les ayuda a comprender cómo cada objeto puede tener valores diferentes para sus atributos y cómo ejecutar acciones específicas en cada objeto.</p>
+<section id="explicación" class="level3">
+<h3 class="anchored" data-anchor-id="explicación">Explicación</h3>
+<p>Este ejemplo ilustra cómo trabajar con atributos y métodos de instancia en una clase, permitiendo que cada objeto tenga sus propios valores y pueda realizar acciones específicas.</p>
+<p>Esta actividad te permite practicar la creación de instancias de clase, trabajar con atributos y métodos de instancia, y entender cómo cada objeto puede tener sus propios valores y realizar acciones específicas.</p>
 
 
 </section>

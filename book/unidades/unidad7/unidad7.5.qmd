@@ -2,21 +2,11 @@
 
 En esta lección, exploraremos el concepto de herencia en la programación orientada a objetos. Aprenderemos cómo crear clases que heredan atributos y métodos de una clase base.
 
-## Conceptos Clave:
-
 ### Herencia
 
-Mecanismo que permite que una clase herede atributos y métodos de otra clase base.
+La herencia es un mecanismo que permite que una clase herede atributos y métodos de otra clase base. Esto facilita la creación de jerarquías de clases y la reutilización de código.
 
-### Clase Padre (o Base)
-
-La clase de la que se heredan atributos y métodos.
-
-### Clase Hija (o Derivada)
-
-La clase que hereda de la clase base.
-
-## Ejemplo:
+**Ejemplo**:
 
 ```python
 class Animal:
@@ -30,28 +20,72 @@ class Perro(Animal):
     def ladrar(self):
         print(f"{self.nombre} está ladrando")
 
+# Crear una instancia de la clase Perro
 perro1 = Perro("Buddy")
+
+# Llamar a métodos de la clase base y derivada
 perro1.saludar()
 perro1.ladrar()
 ```
-### Explicación:
+En este ejemplo, tenemos una clase base **"Animal"** con un constructor y un método **"saludar"**. Luego, creamos una clase derivada **"Perro"** que hereda de **"Animal"** y agrega su propio método **"ladrar"**. Las instancias de **"Perro"** heredan los atributos y métodos de **"Animal"**.
 
-En este ejemplo, se define una clase base Animal con un constructor y un método saludar.
-
-Se define una clase derivada Perro que hereda de Animal y agrega un método adicional ladrar.
-
-Se crea una instancia perro1 de la clase Perro y se llama a sus métodos.
-
-::: {.callout-important}
+:::{.callout-tip}
 ### Actividad Práctica:
 
-Crea una clase Figura con un atributo color y un método mostrar_color para mostrar el color.
+Crea una clase Figura con un atributo "color" y un método "mostrar_color" para mostrar el color de la figura.
 
-Crea una clase derivada Circulo que herede de Figura y agrega un atributo radio y un método calcular_area para calcular el área del círculo.
+Crea una clase derivada Circulo que herede de "Figura" y agregue un atributo "radio" y un método "calcular_area" para calcular el área del círculo.
 
-Crea una instancia de la clase Circulo, establece su color y calcula el área.
 :::
 
-## Explicación de la Actividad:
+<details>
 
-Esta actividad permite a los participantes practicar la creación de clases derivadas y la herencia de atributos y métodos. Les ayuda a comprender cómo utilizar la herencia para reutilizar código y extender funcionalidades en las clases derivadas.
+<summary>Posible solución</summary>
+
+**Resumen**:
+
+En este código, se crea una clase base llamada "Figura" que tiene un atributo "color" y un método "mostrar_color". 
+Luego, se define una clase derivada "Circulo" que hereda de "Figura" y agrega un atributo "radio" y un método "calcular_area". 
+Se crea una instancia de "Circulo", se muestra su color y se calcula su área.
+
+```python
+# Definición de la clase base "Figura" con un constructor que toma el atributo "color".
+class Figura:
+    def __init__(self, color):
+        self.color = color
+
+    # Método en la clase base para mostrar el color de la figura.
+    def mostrar_color(self):
+        print(f"Color: {self.color}")
+
+# Definición de la clase derivada "Circulo" que hereda de "Figura" y agrega un atributo "radio".
+class Circulo(Figura):
+    def __init__(self, color, radio):
+        # Llamamos al constructor de la clase base "Figura" utilizando "super()".
+        super().__init__(color)
+        self.radio = radio
+
+    # Método en la clase derivada para calcular el área del círculo.
+    def calcular_area(self):
+        area = 3.14 * self.radio ** 2
+        return area
+
+# Creación de una instancia de la clase "Circulo" llamada "circulo1" con color "Rojo" y radio 5.
+circulo1 = Circulo("Rojo", 5)
+
+# Llamada al método "mostrar_color" de la clase base para mostrar el color del círculo.
+circulo1.mostrar_color()
+
+# Llamada al método "calcular_area" de la clase derivada para calcular el área del círculo.
+area = circulo1.calcular_area()
+
+# Imprimir el resultado del cálculo del área.
+print(f"Área del círculo: {area}")
+```
+**Explicación**:
+
+En esta actividad, creamos una clase base **"Figura"** con un atributo **"color"** y un método **"mostrar_color"**. Luego, creamos una clase derivada **"Circulo"** que hereda de **"Figura"** y agrega un atributo **"radio"** y un método **"calcular_area"**. Las instancias de **"Circulo"** heredan los atributos y métodos de **"Figura"** y extienden su funcionalidad.
+
+</details>
+
+Esta práctica te ayudará a comprender cómo usar la herencia para crear clases derivadas y reutilizar código de clases base.

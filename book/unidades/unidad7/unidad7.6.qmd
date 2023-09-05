@@ -1,0 +1,101 @@
+## Polimorfismo
+
+En esta lección, exploraremos el concepto de polimorfismo en la programación orientada a objetos. Aprenderemos cómo el polimorfismo nos permite tratar objetos de diferentes clases de manera uniforme y cómo se implementa a través de métodos y herencia.
+
+## Conceptos Clave:
+
+### Polimorfismo
+
+El polimorfismo es un principio de la programación orientada a objetos que permite que objetos de diferentes clases sean tratados como objetos de una clase base común.
+Métodos Polimórficos
+
+Son métodos que pueden ser implementados de manera diferente en las clases derivadas, pero tienen el mismo nombre y firma en la clase base.
+Sobreescritura de Métodos
+
+La sobreescritura de métodos es la capacidad de una clase derivada para proporcionar una implementación específica de un método heredado de la clase base.
+
+**Ejemplo**:
+
+```python
+class Animal:
+    def sonido(self):
+        pass
+
+class Perro(Animal):
+    def sonido(self):
+        return "Guau"
+
+class Gato(Animal):
+    def sonido(self):
+        return "Miau"
+
+def hacer_sonar(animal):
+    print(animal.sonido())
+
+# Crear instancias de las clases
+perro = Perro()
+gato = Gato()
+
+# Llamar a la función con objetos de diferentes clases
+hacer_sonar(perro)  # Salida: Guau
+hacer_sonar(gato)   # Salida: Miau
+```
+
+En este ejemplo, tenemos una clase base **"Animal"** con un método **"sonido**". Luego, creamos dos clases derivadas **"Perro"** y **"Gato"** que heredan de **"Animal"** y sobrescriben el método **"sonido"** para proporcionar su propio sonido característico.
+
+La función "hacer_sonar" toma un objeto de la clase **"Animal"** como argumento y llama a su método **"sonido"**. A pesar de que se pasan objetos de diferentes clases ("Perro" y "Gato"), el polimorfismo permite que el método **"sonido"** adecuado se ejecute para cada objeto.
+
+:::{.callout-tip}
+
+### Actividad Práctica:
+
+Crea una clase **"Vehiculo"** con un método **"arrancar"** que imprima **"El vehículo arranca"**. Luego, crea clases derivadas **"Coche"** y **"Motocicleta"** que sobrescriban el método **"arrancar"** para proporcionar un mensaje específico para cada tipo de vehículo.
+
+:::
+
+<details>
+    <summary>Posible Solución</summary>
+
+```python
+class Vehiculo:
+    def arrancar(self):
+        print("El vehículo arranca")
+
+class Coche(Vehiculo):
+    def arrancar(self):
+        print("El coche arranca")
+
+class Motocicleta(Vehiculo):
+    def arrancar(self):
+        print("La motocicleta arranca")
+
+# Crear instancias de las clases
+coche = Coche()
+moto = Motocicleta()
+
+# Llamar al método "arrancar" para diferentes vehículos
+coche.arrancar()  # Salida: El coche arranca
+moto.arrancar()   # Salida: La motocicleta arranca
+```
+
+**Explicación**:
+
+- Definimos la clase base "Animal" que tiene un método "sonido" vacío utilizando la declaración pass. Esta clase base servirá como base para las clases derivadas "Perro" y "Gato".
+
+- Definimos la clase derivada "Perro" que hereda de "Animal" mediante (Animal). Esta clase sobrescribe el método "sonido" para que devuelva "Guau" cuando se llama.
+
+- Similar a la clase "Perro", definimos la clase derivada "Gato" que hereda de "Animal" y sobrescribe el método "sonido" para que devuelva "Miau".
+
+- Creamos una función llamada "hacer_sonar" que toma un objeto de la clase "Animal" como argumento y llama a su método "sonido". Esto permite tratar objetos de diferentes clases como si fueran de la misma clase base.
+
+- Creamos instancias "perro" y "gato" de las clases "Perro" y "Gato", respectivamente.
+
+- Llamamos a la función "hacer_sonar" con objetos de diferentes clases ("perro" y "gato"). A pesar de que son objetos de clases diferentes, el polimorfismo permite que el método "sonido" adecuado se ejecute para cada objeto. En el caso de "perro", imprime "Guau", y en el caso de "gato", imprime "Miau".
+
+El polimorfismo nos permite tratar objetos de clases derivadas de manera uniforme cuando comparten una clase base común, lo que facilita el diseño y la flexibilidad de nuestros programas.
+
+</details>
+
+### Explicación:
+
+Esta actividad te permitirá practicar cómo implementar el polimorfismo mediante la sobrescritura de métodos en clases derivadas y cómo tratar objetos de diferentes clases de manera uniforme.
