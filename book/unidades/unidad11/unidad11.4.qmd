@@ -1,0 +1,227 @@
+## Introducción a Flask Framework
+
+## ¿Qué es Flask?
+
+Flask es un microframework web de Python que permite crear aplicaciones web de manera rápida y sencilla. A diferencia de los frameworks más grandes, como **Django**, **Flask** se centra en proporcionar solo lo esencial para crear aplicaciones web, dejando a los desarrolladores la **libertad** de elegir las **herramientas** y **bibliotecas** adicionales que deseen.
+
+### Ventajas de Usar Flask
+
+- **Simplicidad:** Flask se destaca por su simplicidad y facilidad de uso. Su estructura minimalista hace que sea fácil de aprender y comprender.
+
+- **Flexibilidad:** Aunque es minimalista, Flask es altamente personalizable. Los desarrolladores pueden elegir las extensiones y bibliotecas que mejor se adapten a sus necesidades.
+
+- **Comunidad Activa:** Flask cuenta con una comunidad activa de desarrolladores y una amplia documentación en línea.
+
+-   **Ideal para Proyectos Pequeños y Medianos:** Flask es perfecto para proyectos pequeños y medianos, prototipado rápido y aplicaciones que no requieren una gran cantidad de funcionalidades incorporadas.
+
+## Ecosistema de Extensiones de Flask
+
+Flask tiene un ecosistema de extensiones que permiten agregar funcionalidades específicas a las aplicaciones web. Estas extensiones abarcan áreas como a**utenticación de usuarios**, **bases de datos**, **manejo de formularios** y más. Algunas extensiones populares son **Flask-SQLAlchemy** para trabajar con bases de datos y **Flask-WTF** para manejar formularios.
+
+## Instalación de Flask
+
+### Cómo Instalar Flask Usando pip
+
+Para comenzar a trabajar con Flask, primero debes instalarlo en tu **entorno de desarrollo** (virtualenv o docker). Puedes hacerlo utilizando la herramienta **pip**, que es el administrador de paquetes de Python. 
+
+Ejecuta el siguiente comando en tu terminal:
+
+```bash
+pip install flask
+```
+
+### Creación de un Entorno Virtual para Proyectos Flask.
+
+:::{.callout-tip}
+Se recomienda crear un entorno virtual para cada proyecto Flask. 
+:::
+
+:::{.callout-note}
+Un entorno virtual es un espacio aislado donde puedes instalar las dependencias específicas de tu proyecto sin interferir con otras aplicaciones. 
+:::
+
+Para crear un entorno virtual, sigue estos pasos:
+
+1. Abre una terminal y navega hasta la carpeta de tu proyecto.
+2. Ejecuta el siguiente comando para crear un entorno virtual:
+
+```bash
+python3 -m venv venv
+```
+Activa el entorno virtual:
+
+En Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+En Linux o macOS:
+
+```bash
+source venv/bin/activate
+```
+
+Ahora estás listo para trabajar en tu proyecto Flask en un entorno aislado.
+
+## Tu Primera Aplicación en Flask
+
+### Creación de una Aplicación Web Simple
+
+En Flask, una aplicación web se crea mediante una instancia de la clase Flask. Aquí hay un ejemplo simple de cómo crear una aplicación web:
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return '¡Hola, mundo!'
+
+if __name__ == '__main__':
+    app.run()
+```
+
+-   Importamos la clase Flask de la biblioteca Flask.
+-   Creamos una instancia de Flask y la asignamos a la variable app.
+-   Usamos el decorador **@app.route('/')** para definir una ruta en nuestra aplicación. En este caso, la ruta raíz **'/'** se maneja con la función **hello_world()**.
+-   Cuando se ejecuta la aplicación **(if __name__ == '__main__':)**, llamamos a **app.run()** para iniciar el servidor web.
+
+## Definición de Rutas y Vistas en Flask
+
+En Flask, las rutas se definen utilizando decoradores como **@app.route('/')**. Cada ruta está asociada a una **función** (vista) que se ejecuta cuando se accede a esa **ruta en el navegador**. **Las vistas** pueden devolver **contenido HTML** o cualquier otro tipo de respuesta web.
+
+## Plantillas HTML en Flask
+
+Flask permite renderizar plantillas HTML para generar páginas web dinámicas. Para esto, generalmente se usa una biblioteca llamada **Jinja2**. Las plantillas pueden incluir variables y lógica de presentación.
+
+## Manejo de Formularios
+
+### Creación y Procesamiento de Formularios en Flask
+
+Las aplicaciones web suelen requerir la entrada de datos de los usuarios a través de formularios. Flask facilita la creación y el procesamiento de formularios.
+
+Para crear un formulario en Flask, generalmente se define una clase que hereda de **flask_wtf.FlaskForm**. 
+
+A través de esta clase, puedes definir los campos del formulario y las validaciones necesarias.
+
+El siguiente es un ejemplo simple de cómo definir un formulario de inicio de sesión:
+
+```python
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField
+from wtforms.validators import DataRequired
+
+class LoginForm(FlaskForm):
+    username = StringField('Nombre de Usuario', validators=[DataRequired()])
+    password = PasswordField('Contraseña', validators=[DataRequired()])
+```
+En este ejemplo, hemos creado un formulario **LoginForm** con dos campos: **username** y **password**. También hemos especificado que ambos campos son obligatorios.
+
+### Validación de Datos del Formulario.
+
+Flask-WTF, una extensión de Flask, facilita la validación de los datos del formulario. En el ejemplo anterior, usamos el validador **DataRequired()** para asegurarnos de que los campos no estén vacíos.
+
+## Ejercicios Prácticos
+
+**Ejercicio 1: Creación de una Aplicación Web Básica en Flask**
+
+Crea una aplicación web simple en Flask que muestre un mensaje de bienvenida en la ruta raíz ("/"). Puedes personalizar el mensaje de bienvenida.
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def welcome():
+    return '¡Bienvenido a mi aplicación web en Flask!'
+
+if __name__ == '__main__':
+    app.run()
+```
+Este código crea una aplicación web en Flask que muestra un mensaje de bienvenida en la ruta raíz ("/").
+
+**Ejercicio 2: Implementación de un Formulario en Flask**
+
+Extiende la aplicación web anterior para incluir un formulario de contacto. Crea un formulario que solicite el nombre y el correo electrónico del usuario. Cuando el usuario envíe el formulario, muestra un mensaje de agradecimiento junto con los datos ingresados.
+
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        return f'Thank you, {name}! Your email ({email}) has been received.'
+
+if __name__ == '__main__':
+    app.run()
+```
+
+En este ejercicio, hemos creado un formulario de contacto que solicita el nombre y el correo electrónico del usuario. Cuando el usuario envía el formulario, se muestra un mensaje de agradecimiento junto con los datos ingresados.
+
+**Ejercicio 3: Uso de una Plantilla HTML en una Aplicación Flask**
+
+Crea una plantilla HTML que contenga un diseño básico para tu sitio web. Luego, utiliza Flask para renderizar esta plantilla y mostrarla en una ruta específica de tu aplicación.
+
+Primero, crea una plantilla HTML llamada **template.html** en una carpeta llamada templates en el directorio de tu proyecto. El contenido de template.html podría ser el siguiente:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Sitio Web</title>
+</head>
+<body>
+    <h1>Bienvenido a mi sitio web</h1>
+    <p>Este es un sitio web de ejemplo creado con Flask.</p>
+</body>
+</html>
+```
+Luego, modifica tu aplicación Flask para renderizar esta plantilla:
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('template.html')
+
+if __name__ == '__main__':
+    app.run()
+```
+Este código renderizará la plantilla HTML en la ruta raíz ("/") de tu aplicación.
+
+Puedes personalizar estas soluciones según tus necesidades y preferencias de diseño. Además, asegúrate de tener la estructura de carpetas adecuada con la carpeta templates para almacenar tus plantillas HTML.
+
+:::{.callout-tip}
+
+**Actividad Práctica:** Construcción de un Blog Simple en Flask.
+
+En esta actividad práctica, construirás un blog básico utilizando Flask. El blog deberá permitir a los usuarios ver publicaciones, agregar nuevas publicaciones y editar publicaciones existentes. Aplicarás los conceptos aprendidos en esta unidad para desarrollar la aplicación.
+:::
+
+## Conclusiones
+
+Hemos explorado Flask, un microframework web de Python que destaca por su simplicidad y flexibilidad. Flask proporciona una base sólida para desarrollar aplicaciones web desde cero y permite a los desarrolladores tomar decisiones sobre las herramientas y extensiones que desean utilizar. Algunas ventajas clave de Flask son su facilidad de aprendizaje, su comunidad activa y su capacidad para adaptarse a una variedad de proyectos.
+
+## Recomendaciones para Trabajar con Flask
+
+**Aprender Jinja2:** Flask se combina frecuentemente con Jinja2, un motor de plantillas. Dominar Jinja2 te permitirá crear páginas web dinámicas y flexibles.
+
+**Explorar Extensiones:** Flask tiene una amplia gama de extensiones disponibles. Investiga las extensiones que pueden simplificar tareas comunes, como el manejo de bases de datos, la autenticación de usuarios y la validación de formularios.
+
+**Estructura del Proyecto:** A medida que tus proyectos con Flask crezcan, considera organizar tu código siguiendo una estructura de proyecto adecuada. Puedes separar las rutas, las vistas y las plantillas en directorios diferentes para mantener tu código limpio y organizado.
+
+**Documentación y Comunidad:** Flask cuenta con una documentación detallada y una comunidad activa. Aprovecha estos recursos para aprender más y obtener ayuda cuando la necesites.

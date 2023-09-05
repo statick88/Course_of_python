@@ -32,7 +32,7 @@ Para instalar Python en sistemas Windows, macOS y Linux, se pueden seguir las in
 
 La instalación de Python generalmente incluye el intérprete de Python y una serie de herramientas y bibliotecas estándar que hacen que sea fácil comenzar a programar.
 
-::: callout-important
+:::{.callout-tip}
 ### Actividad Práctica
 
 Instala Python en tu sistema operativo siguiendo las instrucciones del sitio web oficial de Python. Luego, verifica que Python esté correctamente instalado ejecutando el intérprete y escribiendo el siguiente código:

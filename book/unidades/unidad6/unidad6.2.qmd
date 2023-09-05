@@ -1,22 +1,25 @@
 ## Recursividad
 
-En esta lección, exploraremos el concepto de recursividad, que es cuando una función se llama a sí misma para resolver un problema. Aprenderemos cómo implementar funciones recursivas y cuándo es apropiado usarlas.
+En esta lección, nos adentraremos en el intrigante concepto de la recursividad. 
 
-## Conceptos Clave:
+La recursión es una técnica en la que una función se llama a sí misma para resolver un problema. 
 
-### Recursividad
+Aprenderemos cómo implementar **funciones recursivas** y cuándo es apropiado usarlas.
 
-Técnica en la que una función se llama a sí misma para resolver un problema.
+### Conceptos Clave
 
-### Caso Base
+**Recursividad**:
 
-Condición que indica cuándo la recursión debe detenerse.
+Es una técnica en la que una función se llama a sí misma para resolver un problema. Puede parecer un enfoque un tanto sorprendente al principio, pero es especialmente útil en situaciones en las que un problema se puede dividir en subproblemas más pequeños.
 
-### Caso Recursivo
+**Caso Base**:
 
-Cómo se divide el problema en partes más pequeñas en cada llamada recursiva.
+La recursión debe tener una forma de detenerse. Un caso base es una condición que indica cuándo la recursión debe finalizar. Si no se establece un caso base adecuado, la recursión puede continuar indefinidamente.
 
-## Ejemplo:
+**Caso Recursivo**:
+
+En cada llamada recursiva, el problema original se divide en partes más pequeñas. Estas partes más pequeñas se resuelven mediante llamadas recursivas hasta que se alcanza el caso base.
+Ejemplo
 
 ```python
 def factorial(n):
@@ -28,20 +31,29 @@ def factorial(n):
 resultado = factorial(5)
 print(resultado)
 ```
-## Explicación:
+### Explicación
 
-En este ejemplo, se define una función recursiva llamada factorial para calcular el factorial de un número.
+En este ejemplo, hemos definido una función recursiva llamada **factorial** para calcular el factorial de un número. 
 
-La función utiliza un caso base (cuando n es 0) y un caso recursivo (llamando a la función con n - 1).
+El factorial de un número entero no negativo n se define como el producto de todos los enteros positivos menores o iguales a n. 
 
-:::{.callout-important}
-### Actividad Práctica:
+Por ejemplo, 5! (pronunciado "cinco factorial") es igual a 5 × 4 × 3 × 2 × 1.
 
-Crea una función recursiva llamada potencia que calcule la potencia de un número base elevado a un exponente.
+La función **factorial** utiliza dos componentes clave de la recursión:
 
-Utiliza la función para calcular 2^3 y muestra el resultado en la consola.
+**Caso Base**: Cuando **n** es igual a 0, retornamos 1. Este es el caso base que detiene la recursión. Si no lo tuviéramos, la función se llamaría a sí misma infinitamente.
+
+**Caso Recursivo**: En todas las demás situaciones (cuando **n** no es igual a 0), la función se llama a sí misma con **n - 1** y multiplica el resultado por **n**. Esto es lo que hace que la función sea recursiva.
+
+La llamada **factorial(5)** resultará en **5 * 4!**, que a su vez se descompone en **5 * 4 * 3!**, y así sucesivamente hasta que alcance el caso base.
+
+:::{.callout-tip}
+
+**Actividad Práctica**
+
+Tu tarea es crear una función recursiva llamada potencia que calcule la potencia de un número base elevado a un exponente. Utiliza la función para calcular 2^3 y muestra el resultado en la consola.
 :::
 
-## Explicación de la Actividad:
+### Explicación de la Actividad
 
-Esta actividad permite a los participantes practicar la implementación de funciones recursivas y comprender cómo se dividen los problemas en partes más pequeñas para resolverlos. Les ayuda a comprender cómo aplicar la recursividad de manera efectiva en la solución de problemas.
+Esta actividad te permitirá aplicar la recursividad de manera práctica. Aprenderás a definir una función recursiva que resuelve un problema matemático y a comprender cómo se dividen los problemas en subproblemas más pequeños en cada llamada recursiva. La recursión es una técnica poderosa que se utiliza en muchos campos de la informática, como algoritmos, estructuras de datos y más.

@@ -103,6 +103,7 @@ book:
         - unidades/unidad11/unidad11.1.qmd
         - unidades/unidad11/unidad11.2.qmd
         - unidades/unidad11/unidad11.3.qmd
+        - unidades/unidad11/unidad11.4.qmd
     - part: "Unidad 12: Proyecto: API de Tareas con Django Rest Framework"
       chapters: 
         - unidades/unidad12/unidad12.qmd

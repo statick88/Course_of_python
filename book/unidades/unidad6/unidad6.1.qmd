@@ -1,53 +1,51 @@
 ## Introducción a Funciones
 
-En esta lección, exploraremos el concepto de funciones en Python. Aprenderemos cómo definir funciones, pasar argumentos y cómo retornar valores.
+En esta lección, nos adentraremos en el mundo de las funciones en Python, una de las características más poderosas del lenguaje. Aprenderemos cómo **definir funciones**, **pasar argumentos** y **retornar valores**.
 
-## Conceptos Clave:
+### Conceptos Clave
 
-### Funciones.
+#### Funciones:
 
-Bloques de código reutilizables que realizan una tarea específica.
+Son bloques de código reutilizables que realizan tareas específicas. Las funciones permiten dividir el código en partes más pequeñas y manejables, lo que facilita la lectura, la depuración y la reutilización del código.
 
 ### Definición de Funciones
 
-Se utiliza la palabra clave def para definir una función.
-
-### Argumentos
-
-Valores que se pasan a una función para que trabaje con ellos.
-
-## Retorno de Valores
-
-Una función puede retornar un valor utilizando la palabra clave return.
-
-## Ejemplo:
+Para crear una función en Python, utilizamos la palabra clave def, seguida del nombre de la función y paréntesis. Veamos un ejemplo:
 
 ```python
 def saludar(nombre):
     return "Hola, " + nombre
+```
+En este caso, hemos definido una función llamada saludar que toma un argumento llamado nombre.
 
+### Argumentos
+
+Los argumentos son valores que se pasan a una función para que trabaje con ellos. En el ejemplo anterior, nombre es un argumento que se utiliza para personalizar el saludo.
+
+### Retorno de Valores
+
+Una función puede devolver un valor utilizando la palabra clave return. En nuestro ejemplo, la función saludar retorna un saludo personalizado. Veamos cómo se utiliza:
+
+```python
 mensaje = saludar("Juan")
 print(mensaje)
 ```
+En este fragmento de código, hemos llamado a la función saludar pasando el argumento "Juan". La función devuelve "Hola, Juan", que se almacena en la variable mensaje y se muestra en la consola.
 
-## Explicación:
+:::{.callout-tip}
+**Actividad Práctica**
 
-En este ejemplo, se define una función llamada saludar que toma un argumento nombre.
+Ahora, pondremos en práctica lo que hemos aprendido. Tu tarea es crear una función llamada calcular_cuadrado que reciba un número como argumento y retorne el cuadrado de ese número.
 
-La función retorna un saludo personalizado utilizando el argumento.
+```python
+def calcular_cuadrado(numero):
+    return numero ** 2
 
-El resultado se asigna a la variable mensaje y se muestra en la consola.
-
-:::{.callout-important}
-
-### Actividad Práctica:
-
-Crea una función llamada calcular_cuadrado que reciba un número como argumento y retorne el cuadrado de ese número.
-
-Utiliza la función para calcular el cuadrado de un número y mostrarlo en la consola.
+resultado = calcular_cuadrado(5)
+print("El cuadrado es:", resultado)
+```
+En este ejemplo, hemos definido la función calcular_cuadrado que toma un número como argumento, lo eleva al cuadrado y lo retorna. Luego, llamamos a esta función con el número 5 y mostramos el resultado en la consola.
 :::
+### Explicación de la Actividad
 
-## Explicación de la Actividad:
-
-Esta actividad permite a los participantes practicar la creación y uso de funciones en Python. Les ayuda a comprender cómo definir funciones, pasar argumentos y cómo trabajar con valores retornados por las funciones.
-
+Esta actividad te permitirá practicar la creación y uso de funciones en Python. Aprenderás cómo definir una función que realice un cálculo específico y cómo utilizarla para obtener resultados. Las funciones son una parte fundamental de la programación en Python y te ayudarán a escribir código más organizado y eficiente.

@@ -108,8 +108,24 @@ Algunos de los principios más destacados del Zen de Python incluyen:
 
 -   Escribe un breve párrafo sobre cómo un principio específico del Zen de Python puede aplicarse al desarrollo de software.
 
-## Actividad Práctica
+:::{.callout-tip}
+**Actividad Práctica**
 
 -   Desarrolla un pequeño programa Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. Asegúrate de que el código sea legible y cumpla con las convenciones de nombres y formato de PEP 8.
 
 -   Esta subunidad proporciona a los estudiantes una comprensión más profunda de las herramientas y las convenciones de estilo que se utilizan en la programación en Python. Además, les ayuda a reflexionar sobre la filosofía de diseño de Python y cómo aplicarla en la práctica.
+:::
+
+### Explicación
+
+Esta actividad te invita a desarrollar un pequeño programa en Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. La importancia de esta tarea radica en aprender a escribir código que sea limpio, legible y siga las convenciones de la comunidad de Python.
+
+- **Cumplir con PEP 8**: PEP 8 es el estándar de estilo de código para Python, y seguirlo es una práctica recomendada en la comunidad de programadores. Tu programa debe seguir las convenciones de formato, nombres de variables, estructura de código, entre otros aspectos que se describen en PEP 8.
+
+- **Reflejar el Zen de Python**: El Zen de Python es una colección de principios filosóficos que guían el diseño del lenguaje Python. Algunos de estos principios incluyen la legibilidad del código, la simplicidad y la importancia de los casos especiales. Tu programa debe reflejar estos principios en su diseño y estilo de codificación.
+
+- **Legibilidad y Comentarios**: Asegúrate de que tu código sea legible para otras personas. Usa nombres de variables descriptivos, agrega comentarios explicativos cuando sea necesario y sigue las mejores prácticas para hacer que tu código sea fácil de entender.
+
+- **Aplicación Práctica**: Esta actividad te brinda la oportunidad de aplicar los conceptos de estilo de código y filosofía de diseño de Python en un proyecto real. Esto es importante ya que en la programación colaborativa, otros desarrolladores deben poder entender y trabajar con tu código de manera eficiente.
+
+Al completar esta actividad, habrás mejorado tus habilidades en la escritura de código Python de alta calidad y te habrás familiarizado con las convenciones y filosofía de diseño de Python. Recuerda que escribir código limpio es una habilidad esencial para cualquier programador.
