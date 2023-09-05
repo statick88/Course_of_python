@@ -46,7 +46,7 @@
     "href": "unidades/unidad1/unidad1.html#explicación",
     "title": "Introducción general a la Programación",
     "section": "Explicación",
-    "text": "Explicación\nEn Python, los comentarios comienzan con el símbolo #. No afectan la ejecución del programa, pero son útiles para documentar el código.\nLa línea print(\"Hola, bienvenido al mundo de la programación.\") es una instrucción de impresión. La función print() muestra el texto entre paréntesis en la consola.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nEscribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida personalizado."
+    "text": "Explicación\nEn Python, los comentarios comienzan con el símbolo #. No afectan la ejecución del programa, pero son útiles para documentar el código.\nLa línea print(\"Hola, bienvenido al mundo de la programación.\") es una instrucción de impresión. La función print() muestra el texto entre paréntesis en la consola.\n\n\n\n\n\n\nTip\n\n\n\nActividad Práctica\nEscribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida personalizado."
   },
   {
     "objectID": "unidades/unidad1/unidad1.html#explicación-de-la-actividad",
@@ -84,11 +84,11 @@
     "text": "Explicación de la Actividad\nEsta actividad permite a los participantes aplicar lo aprendido instalando Python en su propio sistema y ejecutando un programa sencillo para confirmar que la instalación fue exitosa."
   },
   {
-    "objectID": "unidades/unidad2/unidad2.2.html#actividad-práctica",
-    "href": "unidades/unidad2/unidad2.2.html#actividad-práctica",
+    "objectID": "unidades/unidad2/unidad2.2.html",
+    "href": "unidades/unidad2/unidad2.2.html",
     "title": "Uso del REPL, PEP 8 y el Zen de Python",
-    "section": "Actividad Práctica",
-    "text": "Actividad Práctica\n\nDesarrolla un pequeño programa Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. Asegúrate de que el código sea legible y cumpla con las convenciones de nombres y formato de PEP 8.\nEsta subunidad proporciona a los estudiantes una comprensión más profunda de las herramientas y las convenciones de estilo que se utilizan en la programación en Python. Además, les ayuda a reflexionar sobre la filosofía de diseño de Python y cómo aplicarla en la práctica."
+    "section": "",
+    "text": "El REPL (Read-Eval-Print Loop).\nDefinición y Propósito del REPL.\n\nEl REPL (Read-Eval-Print Loop) es una herramienta interactiva que permite ejecutar código Python de forma inmediata y ver los resultados de las operaciones en tiempo real. Es una excelente manera de probar pequeños fragmentos de código, experimentar y depurar sin necesidad de escribir un programa completo.\n\nUso Básico del REPL\nPara iniciar el REPL, simplemente abre una terminal o línea de comandos y escribe python o python3 (dependiendo de tu instalación) seguido de Enter. Esto te llevará al entorno interactivo de Python.\n\n\nEjemplos de Interacción con el REPL\n# Ejemplo 1: Realizar cálculos simples\n&gt;&gt;&gt; 5 + 3\n8\n\n# Ejemplo 2: Definir variables y realizar operaciones\n&gt;&gt;&gt; x = 10\n&gt;&gt;&gt; y = 5\n&gt;&gt;&gt; x * y\n50\n\n# Ejemplo 3: Trabajar con cadenas de texto\n&gt;&gt;&gt; mensaje = \"Hola, mundo!\"\n&gt;&gt;&gt; mensaje.upper()\n'HOLA, MUNDO!'\n\n# Ejemplo 4: Importar módulos y usar funciones\n&gt;&gt;&gt; import math\n&gt;&gt;&gt; math.sqrt(16)\n4.0\n\n\nPEP 8: Guía de Estilo de Python.\n\n\n\n\n\n¿Qué es PEP 8 y Por Qué es Importante?\nPEP 8 (Python Enhancement Proposal 8) es una guía de estilo que establece convenciones para escribir código Python legible y consistente. La adopción de PEP 8 es importante porque facilita la colaboración en proyectos, mejora la legibilidad del código y ayuda a mantener una base de código ordenada y coherente.\nConvenciones de Nombres\nPEP 8 establece reglas para nombrar variables, funciones, clases y módulos en Python. Algunas convenciones clave incluyen:\n\nLas variables y funciones deben usar minúsculas y palabras separadas por guiones bajos (snake_case).\nLas clases deben usar CamelCase (con la primera letra en mayúscula). Los módulos deben tener nombres cortos y en minúsculas.\n\nReglas de Formato y Estilo\nPEP 8 también define reglas de formato, como el uso de espacios en lugar de tabulaciones, la longitud máxima de línea y la organización de importaciones.\nHerramientas para Verificar el Cumplimiento de PEP 8\nExisten herramientas como flake8 y complementos para editores de código que pueden analizar el código en busca de posibles violaciones de PEP 8 y proporcionar sugerencias de corrección. 2.4.3. El Zen de Python\n\n\nIntroducción al Zen de Python (PEP 20).\n\n\n\n\n\nEl Zen de Python es un conjunto de principios y filosofía de diseño que guían el desarrollo de Python. Estos principios se pueden acceder desde el intérprete de Python utilizando el siguiente comando:\nimport this\nLos principios del Zen de Python proporcionan orientación sobre cómo escribir código Python de manera clara y elegante.\nPrincipios y Filosofía de Diseño de Python\nAlgunos de los principios más destacados del Zen de Python incluyen:\n\nLa legibilidad cuenta: El código debe ser legible para los humanos, ya que se lee con más frecuencia de lo que se escribe.\nExplícito es mejor que implícito: El código debe ser claro y no dejar lugar a ambigüedades.\nLa simplicidad vence a la complejidad: Debe preferirse la simplicidad en el diseño y la implementación.\nLos errores nunca deben pasar en silencio: Los errores deben manejarse adecuadamente y, si es posible, informar de manera explícita.\n\n\n\nEjercicios Prácticos\n\nEjercicio 1: Uso del REPL para Realizar Cálculos Simples\n\n\nAbre el REPL de Python.\nRealiza los siguientes cálculos:\n\nSuma: 10 + 5\nResta: 20 - 7\nMultiplicación: 8 * 4\nDivisión: 15 / 3\n\n\n\nEjercicio 2: Verificación de Cumplimiento de PEP 8 en Código Python\nEscribe un pequeño programa en Python que incluya variables, funciones y comentarios.\nUtiliza la herramienta flake8 o un complemento de tu editor de código para verificar si tu código cumple con las reglas de PEP 8.\nCorrige cualquier violación de PEP 8 y vuelve a verificar el código.\nEjercicio 3: Exploración y Reflexión sobre los Principios del Zen de Python\nEjecuta el comando import this en el REPL para acceder a los principios del Zen de Python.\nLee y reflexiona sobre cada uno de los principios.\nEscribe un breve párrafo sobre cómo un principio específico del Zen de Python puede aplicarse al desarrollo de software.\n\n\n\n\n\n\n\nTip\n\n\n\nActividad Práctica\n\nDesarrolla un pequeño programa Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. Asegúrate de que el código sea legible y cumpla con las convenciones de nombres y formato de PEP 8.\nEsta subunidad proporciona a los estudiantes una comprensión más profunda de las herramientas y las convenciones de estilo que se utilizan en la programación en Python. Además, les ayuda a reflexionar sobre la filosofía de diseño de Python y cómo aplicarla en la práctica.\n\n\n\n\n\nExplicación\nEsta actividad te invita a desarrollar un pequeño programa en Python que siga las pautas de PEP 8 y refleje los principios del Zen de Python en su diseño y estilo de codificación. La importancia de esta tarea radica en aprender a escribir código que sea limpio, legible y siga las convenciones de la comunidad de Python.\n\nCumplir con PEP 8: PEP 8 es el estándar de estilo de código para Python, y seguirlo es una práctica recomendada en la comunidad de programadores. Tu programa debe seguir las convenciones de formato, nombres de variables, estructura de código, entre otros aspectos que se describen en PEP 8.\nReflejar el Zen de Python: El Zen de Python es una colección de principios filosóficos que guían el diseño del lenguaje Python. Algunos de estos principios incluyen la legibilidad del código, la simplicidad y la importancia de los casos especiales. Tu programa debe reflejar estos principios en su diseño y estilo de codificación.\nLegibilidad y Comentarios: Asegúrate de que tu código sea legible para otras personas. Usa nombres de variables descriptivos, agrega comentarios explicativos cuando sea necesario y sigue las mejores prácticas para hacer que tu código sea fácil de entender.\nAplicación Práctica: Esta actividad te brinda la oportunidad de aplicar los conceptos de estilo de código y filosofía de diseño de Python en un proyecto real. Esto es importante ya que en la programación colaborativa, otros desarrolladores deben poder entender y trabajar con tu código de manera eficiente.\n\nAl completar esta actividad, habrás mejorado tus habilidades en la escritura de código Python de alta calidad y te habrás familiarizado con las convenciones y filosofía de diseño de Python. Recuerda que escribir código limpio es una habilidad esencial para cualquier programador."
   },
   {
     "objectID": "unidades/unidad3/unidad3.1.html#conceptos-clave",
@@ -658,67 +658,18 @@
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar el uso del bucle for para iterar sobre elementos en una secuencia. Les ayuda a comprender cómo trabajar con bucles para recorrer listas y otros tipos de secuencias en sus programas."
   },
   {
-    "objectID": "unidades/unidad6/unidad6.1.html#conceptos-clave",
-    "href": "unidades/unidad6/unidad6.1.html#conceptos-clave",
+    "objectID": "unidades/unidad6/unidad6.1.html",
+    "href": "unidades/unidad6/unidad6.1.html",
     "title": "Introducción a Funciones",
-    "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nFunciones.\nBloques de código reutilizables que realizan una tarea específica.\n\n\nDefinición de Funciones\nSe utiliza la palabra clave def para definir una función.\n\n\nArgumentos\nValores que se pasan a una función para que trabaje con ellos."
+    "section": "",
+    "text": "En esta lección, nos adentraremos en el mundo de las funciones en Python, una de las características más poderosas del lenguaje. Aprenderemos cómo definir funciones, pasar argumentos y retornar valores.\n\nConceptos Clave\n\nFunciones:\nSon bloques de código reutilizables que realizan tareas específicas. Las funciones permiten dividir el código en partes más pequeñas y manejables, lo que facilita la lectura, la depuración y la reutilización del código.\n\n\n\nDefinición de Funciones\nPara crear una función en Python, utilizamos la palabra clave def, seguida del nombre de la función y paréntesis. Veamos un ejemplo:\ndef saludar(nombre):\n    return \"Hola, \" + nombre\nEn este caso, hemos definido una función llamada saludar que toma un argumento llamado nombre.\n\n\nArgumentos\nLos argumentos son valores que se pasan a una función para que trabaje con ellos. En el ejemplo anterior, nombre es un argumento que se utiliza para personalizar el saludo.\n\n\nRetorno de Valores\nUna función puede devolver un valor utilizando la palabra clave return. En nuestro ejemplo, la función saludar retorna un saludo personalizado. Veamos cómo se utiliza:\nmensaje = saludar(\"Juan\")\nprint(mensaje)\nEn este fragmento de código, hemos llamado a la función saludar pasando el argumento “Juan”. La función devuelve “Hola, Juan”, que se almacena en la variable mensaje y se muestra en la consola.\n\n\n\n\n\n\nTip\n\n\n\nActividad Práctica\nAhora, pondremos en práctica lo que hemos aprendido. Tu tarea es crear una función llamada calcular_cuadrado que reciba un número como argumento y retorne el cuadrado de ese número.\ndef calcular_cuadrado(numero):\n    return numero ** 2\n\nresultado = calcular_cuadrado(5)\nprint(\"El cuadrado es:\", resultado)\nEn este ejemplo, hemos definido la función calcular_cuadrado que toma un número como argumento, lo eleva al cuadrado y lo retorna. Luego, llamamos a esta función con el número 5 y mostramos el resultado en la consola.\n\n\n\n\nExplicación de la Actividad\nEsta actividad te permitirá practicar la creación y uso de funciones en Python. Aprenderás cómo definir una función que realice un cálculo específico y cómo utilizarla para obtener resultados. Las funciones son una parte fundamental de la programación en Python y te ayudarán a escribir código más organizado y eficiente."
   },
   {
-    "objectID": "unidades/unidad6/unidad6.1.html#retorno-de-valores",
-    "href": "unidades/unidad6/unidad6.1.html#retorno-de-valores",
-    "title": "Introducción a Funciones",
-    "section": "Retorno de Valores",
-    "text": "Retorno de Valores\nUna función puede retornar un valor utilizando la palabra clave return."
-  },
-  {
-    "objectID": "unidades/unidad6/unidad6.1.html#ejemplo",
-    "href": "unidades/unidad6/unidad6.1.html#ejemplo",
-    "title": "Introducción a Funciones",
-    "section": "Ejemplo:",
-    "text": "Ejemplo:\ndef saludar(nombre):\n    return \"Hola, \" + nombre\n\nmensaje = saludar(\"Juan\")\nprint(mensaje)"
-  },
-  {
-    "objectID": "unidades/unidad6/unidad6.1.html#explicación",
-    "href": "unidades/unidad6/unidad6.1.html#explicación",
-    "title": "Introducción a Funciones",
-    "section": "Explicación:",
-    "text": "Explicación:\nEn este ejemplo, se define una función llamada saludar que toma un argumento nombre.\nLa función retorna un saludo personalizado utilizando el argumento.\nEl resultado se asigna a la variable mensaje y se muestra en la consola.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una función llamada calcular_cuadrado que reciba un número como argumento y retorne el cuadrado de ese número.\nUtiliza la función para calcular el cuadrado de un número y mostrarlo en la consola."
-  },
-  {
-    "objectID": "unidades/unidad6/unidad6.1.html#explicación-de-la-actividad",
-    "href": "unidades/unidad6/unidad6.1.html#explicación-de-la-actividad",
-    "title": "Introducción a Funciones",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la creación y uso de funciones en Python. Les ayuda a comprender cómo definir funciones, pasar argumentos y cómo trabajar con valores retornados por las funciones."
-  },
-  {
-    "objectID": "unidades/unidad6/unidad6.2.html#conceptos-clave",
-    "href": "unidades/unidad6/unidad6.2.html#conceptos-clave",
+    "objectID": "unidades/unidad6/unidad6.2.html",
+    "href": "unidades/unidad6/unidad6.2.html",
     "title": "Recursividad",
-    "section": "Conceptos Clave:",
-    "text": "Conceptos Clave:\n\nRecursividad\nTécnica en la que una función se llama a sí misma para resolver un problema.\n\n\nCaso Base\nCondición que indica cuándo la recursión debe detenerse.\n\n\nCaso Recursivo\nCómo se divide el problema en partes más pequeñas en cada llamada recursiva."
-  },
-  {
-    "objectID": "unidades/unidad6/unidad6.2.html#ejemplo",
-    "href": "unidades/unidad6/unidad6.2.html#ejemplo",
-    "title": "Recursividad",
-    "section": "Ejemplo:",
-    "text": "Ejemplo:\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\nresultado = factorial(5)\nprint(resultado)"
-  },
-  {
-    "objectID": "unidades/unidad6/unidad6.2.html#explicación",
-    "href": "unidades/unidad6/unidad6.2.html#explicación",
-    "title": "Recursividad",
-    "section": "Explicación:",
-    "text": "Explicación:\nEn este ejemplo, se define una función recursiva llamada factorial para calcular el factorial de un número.\nLa función utiliza un caso base (cuando n es 0) y un caso recursivo (llamando a la función con n - 1).\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nCrea una función recursiva llamada potencia que calcule la potencia de un número base elevado a un exponente.\nUtiliza la función para calcular 2^3 y muestra el resultado en la consola."
-  },
-  {
-    "objectID": "unidades/unidad6/unidad6.2.html#explicación-de-la-actividad",
-    "href": "unidades/unidad6/unidad6.2.html#explicación-de-la-actividad",
-    "title": "Recursividad",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes practicar la implementación de funciones recursivas y comprender cómo se dividen los problemas en partes más pequeñas para resolverlos. Les ayuda a comprender cómo aplicar la recursividad de manera efectiva en la solución de problemas."
+    "section": "",
+    "text": "En esta lección, nos adentraremos en el intrigante concepto de la recursividad.\nLa recursión es una técnica en la que una función se llama a sí misma para resolver un problema.\nAprenderemos cómo implementar funciones recursivas y cuándo es apropiado usarlas.\n\nConceptos Clave\nRecursividad:\nEs una técnica en la que una función se llama a sí misma para resolver un problema. Puede parecer un enfoque un tanto sorprendente al principio, pero es especialmente útil en situaciones en las que un problema se puede dividir en subproblemas más pequeños.\nCaso Base:\nLa recursión debe tener una forma de detenerse. Un caso base es una condición que indica cuándo la recursión debe finalizar. Si no se establece un caso base adecuado, la recursión puede continuar indefinidamente.\nCaso Recursivo:\nEn cada llamada recursiva, el problema original se divide en partes más pequeñas. Estas partes más pequeñas se resuelven mediante llamadas recursivas hasta que se alcanza el caso base. Ejemplo\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\nresultado = factorial(5)\nprint(resultado)\n\n\nExplicación\nEn este ejemplo, hemos definido una función recursiva llamada factorial para calcular el factorial de un número.\nEl factorial de un número entero no negativo n se define como el producto de todos los enteros positivos menores o iguales a n. \nPor ejemplo, 5! (pronunciado “cinco factorial”) es igual a 5 × 4 × 3 × 2 × 1.\nLa función factorial utiliza dos componentes clave de la recursión:\nCaso Base: Cuando n es igual a 0, retornamos 1. Este es el caso base que detiene la recursión. Si no lo tuviéramos, la función se llamaría a sí misma infinitamente.\nCaso Recursivo: En todas las demás situaciones (cuando n no es igual a 0), la función se llama a sí misma con n - 1 y multiplica el resultado por n. Esto es lo que hace que la función sea recursiva.\nLa llamada factorial(5) resultará en 5 * 4!, que a su vez se descompone en 5 * 4 * 3!, y así sucesivamente hasta que alcance el caso base.\n\n\n\n\n\n\nTip\n\n\n\nActividad Práctica\nTu tarea es crear una función recursiva llamada potencia que calcule la potencia de un número base elevado a un exponente. Utiliza la función para calcular 2^3 y muestra el resultado en la consola.\n\n\n\n\nExplicación de la Actividad\nEsta actividad te permitirá aplicar la recursividad de manera práctica. Aprenderás a definir una función recursiva que resuelve un problema matemático y a comprender cómo se dividen los problemas en subproblemas más pequeños en cada llamada recursiva. La recursión es una técnica poderosa que se utiliza en muchos campos de la informática, como algoritmos, estructuras de datos y más."
   },
   {
     "objectID": "unidades/unidad7/unidad7.1.html#conceptos-clave",
@@ -1211,46 +1162,116 @@
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes experimentar con la creación de proyectos y aplicaciones utilizando Django. Les ayuda a comprender cómo estructurar una aplicación web utilizando este framework y cómo definir rutas y vistas para mostrar contenido en el navegador."
   },
   {
-    "objectID": "unidades/unidad11/unidad11.3.html#qué-es-fastapi",
-    "href": "unidades/unidad11/unidad11.3.html#qué-es-fastapi",
-    "title": "Introducción a FastAPI y PyScript",
-    "section": "Qué es FastAPI:",
-    "text": "Qué es FastAPI:\nFastAPI es un framework de desarrollo web rápido (high-performance) basado en Python.\nPermite construir APIs rápidas y seguras de manera sencilla."
+    "objectID": "unidades/unidad11/unidad11.3.html#administración-y-base-de-datos-en-django",
+    "href": "unidades/unidad11/unidad11.3.html#administración-y-base-de-datos-en-django",
+    "title": "Introducción a Django Framework y Django Rest Framework",
+    "section": "Administración y Base de Datos en Django",
+    "text": "Administración y Base de Datos en Django\n\nInterfaz de Administración de Django\nDjango proporciona una potente interfaz de administración que facilita la gestión de datos y contenido. Esta interfaz se genera automáticamente a partir de los modelos definidos en la aplicación.\n\n\n\n\n\n\nTip\n\n\n\nPara poder utilizar nustros modelos en la administración debemos registrarlos en el archivo admin.py de la aplicación.\nfrom django.contrib import admin\nfrom .models import Producto\n\nadmin.site.register(Producto)\n\n\nLos administradores del sitio pueden utilizar la interfaz para:\n\nAgregar, editar y eliminar registros de la base de datos.\nGestionar usuarios y permisos.\nRealizar otras tareas administrativas.\n\n\n\nORM de Django\nEl ORM (Mapeo Objeto-Relacional) de Django permite interactuar con la base de datos utilizando objetos Python en lugar de escribir consultas SQL directamente. Esto simplifica la gestión de datos y hace que el código sea más legible.\nPor ejemplo, para recuperar todos los productos de la base de datos, puedes hacer lo siguiente:\nproductos = Producto.objects.all()\nEsto devuelve una lista de objetos Producto que representan los registros de la tabla de productos en la base de datos."
   },
   {
-    "objectID": "unidades/unidad11/unidad11.3.html#instalación-de-fastapi",
-    "href": "unidades/unidad11/unidad11.3.html#instalación-de-fastapi",
-    "title": "Introducción a FastAPI y PyScript",
-    "section": "Instalación de FastAPI:",
-    "text": "Instalación de FastAPI:\n\nInstalar FastAPI utilizando pip:\npip install fastapi\n\n\nInstalar el servidor ASGI (por ejemplo, Uvicorn):\npip install uvicorn"
+    "objectID": "unidades/unidad11/unidad11.3.html#ejercicios-prácticos",
+    "href": "unidades/unidad11/unidad11.3.html#ejercicios-prácticos",
+    "title": "Introducción a Django Framework y Django Rest Framework",
+    "section": "Ejercicios Prácticos",
+    "text": "Ejercicios Prácticos\n\nEjercicio 1: Creación de un Modelo en Django\n\nCrear un modelo en Django para representar una entidad de su elección (por ejemplo, libros, películas, tareas, etc.).\nDefinir al menos tres campos para el modelo.\nEjecutar las migraciones para aplicar el modelo a la base de datos.\n\n# models.py\n\nfrom django.db import models\n\nclass Libro(models.Model):\n    titulo = models.CharField(max_length=100)\n    autor = models.CharField(max_length=50)\n    año_publicacion = models.IntegerField()\n    \n    def __str__(self):\n        return self.titulo\nDespués de definir el modelo, debes crear y aplicar las migraciones utilizando los siguientes comandos:\npython manage.py makemigrations\npython manage.py migrate\n\n\nEjercicio 2: Creación de una Vista y Plantilla en Django\n\nCrear una vista en Django que recupere datos de su modelo y los pase a una plantilla.\nCrear una plantilla HTML que muestre los datos en una página web.\nConfigurar una URL para acceder a la vista.\n\n# views.py\n\nfrom django.shortcuts import render\nfrom .models import Libro\n\ndef lista_libros(request):\n    libros = Libro.objects.all()\n    return render(request, 'myapp/lista_libros.html', {'libros': libros})\n&lt;!-- lista_libros.html --&gt;\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Lista de Libros&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Lista de Libros&lt;/h1&gt;\n    &lt;ul&gt;\n        {% for libro in libros %}\n        &lt;li&gt;{{ libro.titulo }} - {{ libro.autor }} ({{ libro.año_publicacion }})&lt;/li&gt;\n        {% empty %}\n        &lt;li&gt;No hay libros disponibles.&lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n# urls.py\n\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('libros/', views.lista_libros, name='lista_libros'),\n]\n\n\nEjercicio 3: Uso de la Interfaz de Administración de Django\n\nRegistrar el modelo creado en el Ejercicio 1 en la interfaz de administración de Django.\nUtilizar la interfaz de administración para agregar al menos dos registros de ejemplo.\n\nPrimero, asegúrate de haber registrado el modelo Libro en el archivo admin.py de tu aplicación:\n# admin.py\n\nfrom django.contrib import admin\nfrom .models import Libro\n\nadmin.site.register(Libro)\nLuego, puedes acceder a la interfaz de administración de Django en http://tu-sitio/admin/ para agregar registros de ejemplo.\n\n\nEjercicio 4: Uso del ORM de Django\n\nEscribir código Python para recuperar datos de su modelo utilizando el ORM de Django.\nMostrar los datos recuperados en la consola o en una página web.\n\nPuedes utilizar el siguiente código para recuperar y mostrar datos de libros utilizando el ORM de Django en una vista:\n# views.py\n\nfrom django.shortcuts import render\nfrom .models import Libro\n\ndef lista_libros(request):\n    libros = Libro.objects.all()\n    return render(request, 'lista_libros.html', {'libros': libros})\nEste código recupera todos los registros de la base de datos y los pasa a la plantilla para su representación.\nEstos ejercicios prácticos ayudarán a los estudiantes a aplicar los conceptos de modelos, vistas y plantillas en Django, así como a familiarizarse con la interfaz de administración y el ORM."
   },
   {
-    "objectID": "unidades/unidad11/unidad11.3.html#creación-de-una-api-básica-con-fastapi",
-    "href": "unidades/unidad11/unidad11.3.html#creación-de-una-api-básica-con-fastapi",
-    "title": "Introducción a FastAPI y PyScript",
-    "section": "Creación de una API Básica con FastAPI:",
-    "text": "Creación de una API Básica con FastAPI:\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\ndef leer_raiz():\n    return {\"mensaje\": \"¡Hola desde FastAPI!\"}"
+    "objectID": "unidades/unidad11/unidad11.3.html#api-de-libros-utilizando-django-rest-framework-drf.",
+    "href": "unidades/unidad11/unidad11.3.html#api-de-libros-utilizando-django-rest-framework-drf.",
+    "title": "Introducción a Django Framework y Django Rest Framework",
+    "section": "API de libros utilizando Django Rest Framework (DRF).",
+    "text": "API de libros utilizando Django Rest Framework (DRF).\nPara configurar y desarrollar este proyecto es necesario que realicemos los siguientes pasos:\n\nPaso 1: Configuración Inicial\nAsegúrate de tener Django Rest Framework instalado en tu entorno virtual. Puedes instalarlo usando pip:\npip install djangorestframework\nCrea un nuevo proyecto de Django si aún no lo has hecho:\ndjango-admin startproject proyecto_api\nLuego, crea una nueva aplicación dentro del proyecto:\ncd proyecto_api\npython manage.py startapp api\nAgrega rest_framework y api a la lista de aplicaciones en settings.py:\nINSTALLED_APPS = [\n        # ...\n        'rest_framework',\n        'api',\n    ]"
   },
   {
-    "objectID": "unidades/unidad11/unidad11.3.html#uso-de-pyscript",
-    "href": "unidades/unidad11/unidad11.3.html#uso-de-pyscript",
-    "title": "Introducción a FastAPI y PyScript",
-    "section": "Uso de PyScript:",
-    "text": "Uso de PyScript:\n\nInstalar PyScript utilizando pip:\npip install pyscript\n\n\nEjecutar PyScript en un entorno interactivo:\npyscript"
+    "objectID": "unidades/unidad11/unidad11.3.html#paso-2-modelado-de-datos",
+    "href": "unidades/unidad11/unidad11.3.html#paso-2-modelado-de-datos",
+    "title": "Introducción a Django Framework y Django Rest Framework",
+    "section": "Paso 2: Modelado de Datos",
+    "text": "Paso 2: Modelado de Datos\nDefine el modelo de datos para los libros en el archivo api/models.py. Aquí tienes un ejemplo simple:\nfrom django.db import models\n\nclass Libro(models.Model):\n    titulo = models.CharField(max_length=100)\n    autor = models.CharField(max_length=100)\n    año_publicacion = models.PositiveIntegerField()\n\n    def __str__(self):\n        return self.titulo\nLuego, crea y aplica las migraciones para este modelo:\npython manage.py makemigrations\npython manage.py migrate\n\nPaso 3: Serialización\nCrea un serializador en el archivo api/serializers.py para convertir los objetos de modelo en datos JSON:\nfrom rest_framework import serializers\nfrom .models import Libro\n\nclass LibroSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Libro\n        fields = ['id', 'titulo', 'autor', 'año_publicacion']\n\n\nPaso 4: Vistas y Rutas\nEn api/views.py, define las vistas basadas en clases utilizando Django Rest Framework:\nfrom rest_framework import generics\nfrom .models import Libro\nfrom .serializers import LibroSerializer\n\nclass ListaLibros(generics.ListCreateAPIView):\n    queryset = Libro.objects.all()\n    serializer_class = LibroSerializer\n\nclass DetalleLibro(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Libro.objects.all()\n    serializer_class = LibroSerializer\nLuego, configura las rutas en api/urls.py:\nfrom django.urls import path\nfrom .views import ListaLibros, DetalleLibro\n\nurlpatterns = [\n    path('libros/', ListaLibros.as_view(), name='lista_libros'),\n    path('libros/&lt;int:pk&gt;/', DetalleLibro.as_view(), name='detalle_libro'),\n]\n\n\nPaso 5: Configuración de URLs Principales\nEn el archivo proyecto_api/urls.py, incluye las rutas de la aplicación de API:\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('api.urls')),\n]\n\n\nPaso 6: Ejecutar el Servidor\nInicia el servidor de desarrollo:\npython manage.py runserver\n\n\nPaso 7: Prueba de la API\nAhora, puedes acceder a la API en las siguientes URL:\n\nLista de libros: http://localhost:8000/api/libros/\nDetalle de libro: http://localhost:8000/api/libros/id/\n\n\n\n\n\n\n\nTip\n\n\n\nEn el Detalle del Libro, es necesario cambiar el id por el número de identificación del libro que se desea consultar.\n\n\nPuedes utilizar herramientas como Postman, Thunder Cliente o Rappid API Client o simplemente un navegador web para probar las rutas y realizar operaciones CRUD en la API de libros.\nEste proyecto proporciona una base sólida para desarrollar una API de libros con Django Rest Framework. Puedes personalizarlo según tus necesidades y agregar autenticación u otras características según sea necesario."
   },
   {
-    "objectID": "unidades/unidad11/unidad11.3.html#ejemplo---ejecución-de-pyscript",
-    "href": "unidades/unidad11/unidad11.3.html#ejemplo---ejecución-de-pyscript",
-    "title": "Introducción a FastAPI y PyScript",
-    "section": "Ejemplo - Ejecución de PyScript:",
-    "text": "Ejemplo - Ejecución de PyScript:\na = 5\nb = 10\na + b\n15\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInstala FastAPI en tu entorno.\nCrea una API con FastAPI que tenga al menos un endpoint para obtener información.\nInstala PyScript en tu entorno y realiza algunos cálculos y experimentos interactivos."
+    "objectID": "unidades/unidad11/unidad11.3.html#conclusiones",
+    "href": "unidades/unidad11/unidad11.3.html#conclusiones",
+    "title": "Introducción a Django Framework y Django Rest Framework",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn esta unidad, hemos explorado Django y Django Rest Framework (DRF), dos poderosas herramientas para el desarrollo web con Python. Aquí están algunas conclusiones clave:\n\nDjango es un framework web de alto nivel que sigue el principio “baterías incluidas”. Proporciona una estructura sólida y conveniente para desarrollar aplicaciones web, incluyendo la administración de bases de datos, la autenticación de usuarios y un sistema de rutas robusto.\nDjango Rest Framework (DRF) es una extensión de Django que simplifica la creación de API REST. Proporciona clases y herramientas que permiten definir fácilmente puntos finales de API y serializar datos de manera eficiente.\nAlgunas ventajas de utilizar Django incluyen su gran comunidad, documentación extensa y la capacidad de construir aplicaciones web rápidamente.\nDRF es ideal para crear API RESTful de manera rápida y eficiente. Proporciona una capa de serialización que facilita la conversión de objetos de modelo en datos JSON."
   },
   {
-    "objectID": "unidades/unidad11/unidad11.3.html#explicación-de-la-actividad",
-    "href": "unidades/unidad11/unidad11.3.html#explicación-de-la-actividad",
-    "title": "Introducción a FastAPI y PyScript",
-    "section": "Explicación de la Actividad:",
-    "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes experimentar con FastAPI y PyScript para crear una API básica y ejecutar scripts interactivos. Les ayuda a comprender cómo utilizar FastAPI para construir APIs de manera rápida y cómo utilizar PyScript para escribir y ejecutar código Python de manera interactiva en la consola."
+    "objectID": "unidades/unidad11/unidad11.3.html#recomendaciones",
+    "href": "unidades/unidad11/unidad11.3.html#recomendaciones",
+    "title": "Introducción a Django Framework y Django Rest Framework",
+    "section": "Recomendaciones",
+    "text": "Recomendaciones\n\nAprender la Documentación: Tanto Django como DRF tienen documentación detallada. Aprovecha estos recursos para comprender las funcionalidades y las mejores prácticas.\nPracticar: La práctica es clave para dominar estas herramientas. Crea proyectos pequeños para aplicar lo que has aprendido.\nComunidad: La comunidad de Django es activa y solidaria. Únete a foros y grupos de discusión para obtener ayuda cuando la necesites.\nSeguridad: Django tiene características de seguridad incorporadas, pero debes estar atento a las mejores prácticas de seguridad web al desarrollar aplicaciones."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.4.html#qué-es-flask",
+    "href": "unidades/unidad11/unidad11.4.html#qué-es-flask",
+    "title": "Introducción a Flask Framework",
+    "section": "¿Qué es Flask?",
+    "text": "¿Qué es Flask?\nFlask es un microframework web de Python que permite crear aplicaciones web de manera rápida y sencilla. A diferencia de los frameworks más grandes, como Django, Flask se centra en proporcionar solo lo esencial para crear aplicaciones web, dejando a los desarrolladores la libertad de elegir las herramientas y bibliotecas adicionales que deseen.\n\nVentajas de Usar Flask\n\nSimplicidad: Flask se destaca por su simplicidad y facilidad de uso. Su estructura minimalista hace que sea fácil de aprender y comprender.\nFlexibilidad: Aunque es minimalista, Flask es altamente personalizable. Los desarrolladores pueden elegir las extensiones y bibliotecas que mejor se adapten a sus necesidades.\nComunidad Activa: Flask cuenta con una comunidad activa de desarrolladores y una amplia documentación en línea.\nIdeal para Proyectos Pequeños y Medianos: Flask es perfecto para proyectos pequeños y medianos, prototipado rápido y aplicaciones que no requieren una gran cantidad de funcionalidades incorporadas."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.4.html#ecosistema-de-extensiones-de-flask",
+    "href": "unidades/unidad11/unidad11.4.html#ecosistema-de-extensiones-de-flask",
+    "title": "Introducción a Flask Framework",
+    "section": "Ecosistema de Extensiones de Flask",
+    "text": "Ecosistema de Extensiones de Flask\nFlask tiene un ecosistema de extensiones que permiten agregar funcionalidades específicas a las aplicaciones web. Estas extensiones abarcan áreas como autenticación de usuarios, bases de datos, manejo de formularios y más. Algunas extensiones populares son Flask-SQLAlchemy para trabajar con bases de datos y Flask-WTF para manejar formularios."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.4.html#instalación-de-flask",
+    "href": "unidades/unidad11/unidad11.4.html#instalación-de-flask",
+    "title": "Introducción a Flask Framework",
+    "section": "Instalación de Flask",
+    "text": "Instalación de Flask\n\nCómo Instalar Flask Usando pip\nPara comenzar a trabajar con Flask, primero debes instalarlo en tu entorno de desarrollo (virtualenv o docker). Puedes hacerlo utilizando la herramienta pip, que es el administrador de paquetes de Python.\nEjecuta el siguiente comando en tu terminal:\npip install flask\n\n\nCreación de un Entorno Virtual para Proyectos Flask.\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda crear un entorno virtual para cada proyecto Flask.\n\n\n\n\n\n\n\n\nNote\n\n\n\nUn entorno virtual es un espacio aislado donde puedes instalar las dependencias específicas de tu proyecto sin interferir con otras aplicaciones.\n\n\nPara crear un entorno virtual, sigue estos pasos:\n\nAbre una terminal y navega hasta la carpeta de tu proyecto.\nEjecuta el siguiente comando para crear un entorno virtual:\n\npython3 -m venv venv\nActiva el entorno virtual:\nEn Windows:\nvenv\\Scripts\\activate\nEn Linux o macOS:\nsource venv/bin/activate\nAhora estás listo para trabajar en tu proyecto Flask en un entorno aislado."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.4.html#tu-primera-aplicación-en-flask",
+    "href": "unidades/unidad11/unidad11.4.html#tu-primera-aplicación-en-flask",
+    "title": "Introducción a Flask Framework",
+    "section": "Tu Primera Aplicación en Flask",
+    "text": "Tu Primera Aplicación en Flask\n\nCreación de una Aplicación Web Simple\nEn Flask, una aplicación web se crea mediante una instancia de la clase Flask. Aquí hay un ejemplo simple de cómo crear una aplicación web:\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\ndef hello_world():\n    return '¡Hola, mundo!'\n\nif __name__ == '__main__':\n    app.run()\n\nImportamos la clase Flask de la biblioteca Flask.\nCreamos una instancia de Flask y la asignamos a la variable app.\nUsamos el decorador (app.route?)(‘/’) para definir una ruta en nuestra aplicación. En este caso, la ruta raíz ‘/’ se maneja con la función hello_world().\nCuando se ejecuta la aplicación (if name == ‘main’:), llamamos a app.run() para iniciar el servidor web."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.4.html#definición-de-rutas-y-vistas-en-flask",
+    "href": "unidades/unidad11/unidad11.4.html#definición-de-rutas-y-vistas-en-flask",
+    "title": "Introducción a Flask Framework",
+    "section": "Definición de Rutas y Vistas en Flask",
+    "text": "Definición de Rutas y Vistas en Flask\nEn Flask, las rutas se definen utilizando decoradores como (app.route?)(‘/’). Cada ruta está asociada a una función (vista) que se ejecuta cuando se accede a esa ruta en el navegador. Las vistas pueden devolver contenido HTML o cualquier otro tipo de respuesta web."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.4.html#plantillas-html-en-flask",
+    "href": "unidades/unidad11/unidad11.4.html#plantillas-html-en-flask",
+    "title": "Introducción a Flask Framework",
+    "section": "Plantillas HTML en Flask",
+    "text": "Plantillas HTML en Flask\nFlask permite renderizar plantillas HTML para generar páginas web dinámicas. Para esto, generalmente se usa una biblioteca llamada Jinja2. Las plantillas pueden incluir variables y lógica de presentación."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.4.html#manejo-de-formularios",
+    "href": "unidades/unidad11/unidad11.4.html#manejo-de-formularios",
+    "title": "Introducción a Flask Framework",
+    "section": "Manejo de Formularios",
+    "text": "Manejo de Formularios\n\nCreación y Procesamiento de Formularios en Flask\nLas aplicaciones web suelen requerir la entrada de datos de los usuarios a través de formularios. Flask facilita la creación y el procesamiento de formularios.\nPara crear un formulario en Flask, generalmente se define una clase que hereda de flask_wtf.FlaskForm.\nA través de esta clase, puedes definir los campos del formulario y las validaciones necesarias.\nEl siguiente es un ejemplo simple de cómo definir un formulario de inicio de sesión:\nfrom flask_wtf import FlaskForm\nfrom wtforms import StringField, PasswordField\nfrom wtforms.validators import DataRequired\n\nclass LoginForm(FlaskForm):\n    username = StringField('Nombre de Usuario', validators=[DataRequired()])\n    password = PasswordField('Contraseña', validators=[DataRequired()])\nEn este ejemplo, hemos creado un formulario LoginForm con dos campos: username y password. También hemos especificado que ambos campos son obligatorios.\n\n\nValidación de Datos del Formulario.\nFlask-WTF, una extensión de Flask, facilita la validación de los datos del formulario. En el ejemplo anterior, usamos el validador DataRequired() para asegurarnos de que los campos no estén vacíos."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.4.html#ejercicios-prácticos",
+    "href": "unidades/unidad11/unidad11.4.html#ejercicios-prácticos",
+    "title": "Introducción a Flask Framework",
+    "section": "Ejercicios Prácticos",
+    "text": "Ejercicios Prácticos\nEjercicio 1: Creación de una Aplicación Web Básica en Flask\nCrea una aplicación web simple en Flask que muestre un mensaje de bienvenida en la ruta raíz (“/”). Puedes personalizar el mensaje de bienvenida.\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\ndef welcome():\n    return '¡Bienvenido a mi aplicación web en Flask!'\n\nif __name__ == '__main__':\n    app.run()\nEste código crea una aplicación web en Flask que muestra un mensaje de bienvenida en la ruta raíz (“/”).\nEjercicio 2: Implementación de un Formulario en Flask\nExtiende la aplicación web anterior para incluir un formulario de contacto. Crea un formulario que solicite el nombre y el correo electrónico del usuario. Cuando el usuario envíe el formulario, muestra un mensaje de agradecimiento junto con los datos ingresados.\nfrom flask import Flask, render_template, request\n\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n    return render_template('index.html')\n\n@app.route('/submit', methods=['POST'])\ndef submit():\n    if request.method == 'POST':\n        name = request.form['name']\n        email = request.form['email']\n        return f'Thank you, {name}! Your email ({email}) has been received.'\n\nif __name__ == '__main__':\n    app.run()\nEn este ejercicio, hemos creado un formulario de contacto que solicita el nombre y el correo electrónico del usuario. Cuando el usuario envía el formulario, se muestra un mensaje de agradecimiento junto con los datos ingresados.\nEjercicio 3: Uso de una Plantilla HTML en una Aplicación Flask\nCrea una plantilla HTML que contenga un diseño básico para tu sitio web. Luego, utiliza Flask para renderizar esta plantilla y mostrarla en una ruta específica de tu aplicación.\nPrimero, crea una plantilla HTML llamada template.html en una carpeta llamada templates en el directorio de tu proyecto. El contenido de template.html podría ser el siguiente:\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Mi Sitio Web&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Bienvenido a mi sitio web&lt;/h1&gt;\n    &lt;p&gt;Este es un sitio web de ejemplo creado con Flask.&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nLuego, modifica tu aplicación Flask para renderizar esta plantilla:\nfrom flask import Flask, render_template\n\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n    return render_template('template.html')\n\nif __name__ == '__main__':\n    app.run()\nEste código renderizará la plantilla HTML en la ruta raíz (“/”) de tu aplicación.\nPuedes personalizar estas soluciones según tus necesidades y preferencias de diseño. Además, asegúrate de tener la estructura de carpetas adecuada con la carpeta templates para almacenar tus plantillas HTML.\n\n\n\n\n\n\nTip\n\n\n\nActividad Práctica: Construcción de un Blog Simple en Flask.\nEn esta actividad práctica, construirás un blog básico utilizando Flask. El blog deberá permitir a los usuarios ver publicaciones, agregar nuevas publicaciones y editar publicaciones existentes. Aplicarás los conceptos aprendidos en esta unidad para desarrollar la aplicación."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.4.html#conclusiones",
+    "href": "unidades/unidad11/unidad11.4.html#conclusiones",
+    "title": "Introducción a Flask Framework",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nHemos explorado Flask, un microframework web de Python que destaca por su simplicidad y flexibilidad. Flask proporciona una base sólida para desarrollar aplicaciones web desde cero y permite a los desarrolladores tomar decisiones sobre las herramientas y extensiones que desean utilizar. Algunas ventajas clave de Flask son su facilidad de aprendizaje, su comunidad activa y su capacidad para adaptarse a una variedad de proyectos."
+  },
+  {
+    "objectID": "unidades/unidad11/unidad11.4.html#recomendaciones-para-trabajar-con-flask",
+    "href": "unidades/unidad11/unidad11.4.html#recomendaciones-para-trabajar-con-flask",
+    "title": "Introducción a Flask Framework",
+    "section": "Recomendaciones para Trabajar con Flask",
+    "text": "Recomendaciones para Trabajar con Flask\nAprender Jinja2: Flask se combina frecuentemente con Jinja2, un motor de plantillas. Dominar Jinja2 te permitirá crear páginas web dinámicas y flexibles.\nExplorar Extensiones: Flask tiene una amplia gama de extensiones disponibles. Investiga las extensiones que pueden simplificar tareas comunes, como el manejo de bases de datos, la autenticación de usuarios y la validación de formularios.\nEstructura del Proyecto: A medida que tus proyectos con Flask crezcan, considera organizar tu código siguiendo una estructura de proyecto adecuada. Puedes separar las rutas, las vistas y las plantillas en directorios diferentes para mantener tu código limpio y organizado.\nDocumentación y Comunidad: Flask cuenta con una documentación detallada y una comunidad activa. Aprovecha estos recursos para aprender más y obtener ayuda cuando la necesites."
   },
   {
     "objectID": "unidades/unidad12/unidad12.html#qué-se-necesita-conocer",
@@ -1482,54 +1503,5 @@
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD XI: ¿Cómo me amplío con Python?",
     "text": "UNIDAD XI: ¿Cómo me amplío con Python?\nEjercicio 51: ¿Qué es la ciencia de datos y cómo se relaciona con Python?\n\n\nRespuesta:\n\nLa ciencia de datos es el proceso de extracción, transformación y análisis de datos para obtener conocimientos y tomar decisiones informadas. Python es ampliamente utilizado en la ciencia de datos debido a su amplio ecosistema de bibliotecas y herramientas.\n\nEjercicio 52: ¿Qué es Django Framework y para qué se utiliza?\n\n\nRespuesta:\n\nDjango es un framework web de alto nivel en Python que facilita la creación de aplicaciones web robustas y escalables. Se utiliza para construir sitios web y aplicaciones con características como autenticación, seguridad y manejo de bases de datos.\n\nEjercicio 53: ¿Qué es FastAPI y cómo se diferencia de otros frameworks?\n\n\nRespuesta:\n\nFastAPI es un framework web moderno y de alto rendimiento para construir APIs en Python. Se destaca por su velocidad, facilidad de uso y generación automática de documentación interactiva. Utiliza anotaciones de tipo para validar datos y reducir errores.\n\nEjercicio 54: ¿Cuál es el propósito de las APIs en el desarrollo web?\n\n\nRespuesta:\n\nLas APIs (Interfaces de Programación de Aplicaciones) se utilizan para permitir la comunicación y la integración entre diferentes aplicaciones y sistemas. Facilitan el intercambio de datos y funcionalidades entre aplicaciones.\n\nEjercicio 55: ¿Por qué es importante ampliarse en Python más allá de los conceptos básicos?\n\n\nRespuesta:\n\nAmpliarse en Python permite abordar proyectos más complejos y desafiantes, como desarrollo web, análisis de datos, automatización, inteligencia artificial y más. Además, mejora las habilidades y la versatilidad como programador."
-  },
-  {
-    "objectID": "about.html#nuestro-objetivo",
-    "href": "about.html#nuestro-objetivo",
-    "title": "Acerca de Nosotros",
-    "section": "Nuestro Objetivo",
-    "text": "Nuestro Objetivo\nNuestro objetivo es proporcionarte los conocimientos y las habilidades necesarias para comenzar a programar utilizando Python. Queremos que te sientas cómodo con los conceptos básicos y que estés preparado para abordar proyectos más desafiantes en el futuro."
-  },
-  {
-    "objectID": "about.html#nuestro-equipo",
-    "href": "about.html#nuestro-equipo",
-    "title": "Acerca de Nosotros",
-    "section": "Nuestro Equipo",
-    "text": "Nuestro Equipo\nNuestro equipo está formado por apasionados desarrolladores y educadores que tienen una amplia experiencia en el mundo de la programación. Estamos aquí para ayudarte en cada paso del camino y responder a tus preguntas."
-  },
-  {
-    "objectID": "about.html#contacto",
-    "href": "about.html#contacto",
-    "title": "Acerca de Nosotros",
-    "section": "Contacto",
-    "text": "Contacto\nSi tienes preguntas, comentarios o sugerencias, no dudes en ponerte en contacto con nosotros a través de nuestro correo electrónico o redes sociales.\n¡Esperamos que disfrutes aprendiendo con nosotros!"
-  },
-  {
-    "objectID": "license.html#uso-permitido",
-    "href": "license.html#uso-permitido",
-    "title": "Licencia",
-    "section": "Uso Permitido",
-    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
-  },
-  {
-    "objectID": "license.html#restricciones",
-    "href": "license.html#restricciones",
-    "title": "Licencia",
-    "section": "Restricciones",
-    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
-  },
-  {
-    "objectID": "license.html#atribución",
-    "href": "license.html#atribución",
-    "title": "Licencia",
-    "section": "Atribución",
-    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
-  },
-  {
-    "objectID": "license.html#cambios-en-la-licencia",
-    "href": "license.html#cambios-en-la-licencia",
-    "title": "Licencia",
-    "section": "Cambios en la Licencia",
-    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   }
 ]
