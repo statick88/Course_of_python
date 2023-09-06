@@ -1,0 +1,124 @@
+## Encapsulación
+
+En esta lección, exploraremos el concepto de encapsulación en la programación orientada a objetos. Aprenderemos cómo se utiliza para ocultar los detalles internos de una clase y cómo se implementa en Python utilizando convenciones de nombres.
+
+
+## Conceptos Clave:
+
+### Encapsulación
+
+La encapsulación es uno de los principios de la POO que consiste en ocultar los detalles internos de una clase y proporcionar una interfaz pública para interactuar con ella.
+
+### Atributos Privados
+
+En Python, se utiliza una convención de nombres para marcar atributos como privados agregando un guion bajo al principio del nombre (por ejemplo, _nombre).
+
+### Métodos Privados
+
+De manera similar, los métodos privados se marcan agregando un guion bajo al principio del nombre del método (por ejemplo, _calcular()).
+
+### Métodos de Acceso (Getters y Setters)
+
+Los métodos de acceso permiten controlar el acceso a los atributos privados de una clase. Los métodos "get" obtienen el valor de un atributo y los métodos "set" lo modifican.
+
+**Ejemplo**:
+
+```python
+class CuentaBancaria:
+    def __init__(self, saldo):
+        # Atributo privado con un guion bajo al principio
+        self._saldo = saldo
+
+    # Método de acceso (Getter)
+    def obtener_saldo(self):
+        return self._saldo
+
+    # Método de acceso (Setter)
+    def depositar(self, cantidad):
+        if cantidad > 0:
+            self._saldo += cantidad
+
+    # Método de acceso (Setter)
+    def retirar(self, cantidad):
+        if cantidad > 0 and cantidad <= self._saldo:
+            self._saldo -= cantidad
+
+# Crear una instancia de la clase CuentaBancaria
+cuenta = CuentaBancaria(1000)
+
+# Acceder al saldo utilizando el método de acceso
+print("Saldo inicial:", cuenta.obtener_saldo())
+
+# Realizar un depósito
+cuenta.depositar(500)
+print("Saldo después del depósito:", cuenta.obtener_saldo())
+
+# Realizar un retiro
+cuenta.retirar(200)
+print("Saldo después del retiro:", cuenta.obtener_saldo())
+
+cuenta = CuentaBancaria(1000)
+print("Saldo inicial:", cuenta.obtener_saldo())
+cuenta.depositar(500)
+print("Saldo después del depósito:", cuenta.obtener_saldo())
+cuenta.retirar(200)
+print("Saldo después del retiro:", cuenta.obtener_saldo())
+```
+### Explicación:
+
+En este ejemplo, la clase CuentaBancaria utiliza la convención de nombres con un guion bajo para marcar el atributo _saldo como privado. Los métodos obtener_saldo, depositar y retirar proporcionan una interfaz pública para interactuar con la cuenta bancaria mientras ocultan los detalles internos.
+
+:::{.callout-tip}
+
+### Actividad Práctica:
+
+Crea una clase Estudiante con un atributo privado _nombre. Implementa métodos de acceso get_nombre y set_nombre para obtener y establecer el nombre del estudiante.
+
+:::
+
+<details>
+    <summary>Solución</summary>
+**Resumen**: 
+
+En este código, se define una clase **Estudiante** con un atributo privado de **nombre** y métodos de acceso (**get_nombre** y **set_nombre**) para obtener y cambiar el nombre del estudiante.
+
+```python
+class Estudiante:
+    def __init__(self, nombre):
+        # Atributo privado con un guion bajo al principio
+        self._nombre = nombre
+
+    # Método de acceso (Getter)
+    def get_nombre(self):
+        return self._nombre
+
+    # Método de acceso (Setter)
+    def set_nombre(self, nuevo_nombre):
+        if len(nuevo_nombre) > 0:
+            self._nombre = nuevo_nombre
+
+# Crea una instancia de la clase Estudiante con nombre "Juan"
+estudiante = Estudiante("Juan")
+
+# Acceder al nombre utilizando el método de acceso get_nombre
+print("Nombre del estudiante:", estudiante.get_nombre())
+
+# Cambiar el nombre utilizando el método de acceso set_nombre
+estudiante.set_nombre("María")
+# Imprimir el nombre después del cambio
+print("Nombre del estudiante después del cambio:", estudiante.get_nombre())
+```
+
+Explicación:
+
+1. En este código, se crea una clase Estudiante con un atributo privado _nombre y dos métodos de acceso (get_nombre y set_nombre). 
+
+2. El método get_nombre permite obtener el nombre del estudiante, y el método set_nombre permite cambiar el nombre si la nueva cadena de nombre tiene una longitud mayor que 0. 
+
+3. Se crea una instancia de la clase Estudiante con el nombre "Juan", se imprime el nombre inicial utilizando get_nombre, se cambia el nombre a "María" utilizando set_nombre, y se imprime el nombre nuevamente después del cambio.
+
+</details>
+
+## ¿Qué apendimos en esta actividad?
+
+Esta actividad te ayudará a practicar la encapsulación en Python utilizando métodos de acceso y atributos privados.

@@ -81,6 +81,7 @@ book:
         - unidades/unidad7/unidad7.4.qmd
         - unidades/unidad7/unidad7.5.qmd
         - unidades/unidad7/unidad7.6.qmd
+        - unidades/unidad7/unidad7.7.qmd
 
     - part: "Unidad 8: Módulos"
       chapters: 
