@@ -18,7 +18,7 @@ Son sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reg
 
 ### Algoritmos
 
-![](images/algoritmo.png){fig-align="center" width="417"}
+<!-- ![](images/algoritmo.png){fig-align="center" width="417"} -->
 
 Son conjuntos ordenados de instrucciones diseñados para resolver un problema específico. Los algoritmos son la base de la programación y se utilizan para desarrollar software eficiente.
 
