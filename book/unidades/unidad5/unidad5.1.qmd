@@ -2,7 +2,7 @@
 
 En esta lección, exploraremos el concepto de funciones en Python. Las funciones son bloques de código reutilizables que realizan tareas específicas. Aprenderemos cómo definir y utilizar funciones en nuestros programas.
 
-![Imagen de una función](images/function.png){fig-align="center" width="400"}
+<!-- ![Imagen de una función](images/function.png){fig-align="center" width="400"} -->
 
 ## Conceptos Clave
 
