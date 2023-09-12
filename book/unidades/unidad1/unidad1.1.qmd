@@ -12,7 +12,7 @@ Son comandos específicos que le indican a la computadora qué hacer. Pueden ser
 
 ### Lenguajes de Programación.
 
-![](images/lenguajes.png){fig-align="center"}
+<!-- ![](images/lenguajes.png){fig-align="center"} -->
 
 Son sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reglas sintácticas y semánticas que determinan cómo se escriben y ejecutan las instrucciones.
 
