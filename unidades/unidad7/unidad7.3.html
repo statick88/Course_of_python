@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.346">
+<meta name="generator" content="quarto-1.4.358">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Este libro de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Frameworsk como Django, Flask, Fast Api, PyScript y Regex. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con Bases de datos, APIs y más.">
 
-<title>Python 2023 - Métodos</title>
+<title>Python 2023 - Renombrando Módulos y Seleccionando Elementos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -91,6 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -118,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Objetos, Clases y Herencia</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.3.html"><span class="chapter-title">Métodos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Módulos y Bases de Datos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.3.html"><span class="chapter-title">Renombrando Módulos y Seleccionando Elementos</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -192,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
- <span class="menu-text">Unidad 1: Introducción a la Programación</span></a>
+ <span class="menu-text">Unidad 1: Introducción a Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -200,7 +201,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad1/unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción general a la Programación</span></a>
+  <a href="../../unidades/unidad1/unidad1.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción general a la Programación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/unidad1.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instalación de Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/unidad1.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Uso del REPL, PEP 8 y el Zen de Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/unidad1.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Entornos de Desarrollo</span></a>
   </div>
 </li>
       </ul>
@@ -208,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">Unidad 2: Instalación de Python y más herramientas</span></a>
+ <span class="menu-text">Unidad 2: Introducción a la Programación con Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -216,12 +232,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad2/unidad2.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instalación de Python</span></a>
+  <a href="../../unidades/unidad2/unidad2.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Identación y Comentarios</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad2/unidad2.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Uso del REPL, PEP 8 y el Zen de Python</span></a>
+  <a href="../../unidades/unidad2/unidad2.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables y Variables Múltiples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad2/unidad2.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concatenación</span></a>
   </div>
 </li>
       </ul>
@@ -229,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text">Unidad 3: Introducción a Python</span></a>
+ <span class="menu-text">Unidad 3: Tipos de Datos</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -237,37 +258,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Distintas formas de trabajar con Python.</span></a>
+  <a href="../../unidades/unidad3/unidad3.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">String y Números</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Las bases de Python.</span></a>
+  <a href="../../unidades/unidad3/unidad3.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Listas y Tuplas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Identación.</span></a>
+  <a href="../../unidades/unidad3/unidad3.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Diccionarios y Booleanos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Comentarios</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Múltiples Variables</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concatenación</span></a>
+  <a href="../../unidades/unidad3/unidad3.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Range</span></a>
   </div>
 </li>
       </ul>
@@ -275,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Unidad 4: Tipos de Datos</span></a>
+ <span class="menu-text">Unidad 4: Control de Flujo</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -283,32 +289,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">String y Números</span></a>
+  <a href="../../unidades/unidad4/unidad4.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a If</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Listas</span></a>
+  <a href="../../unidades/unidad4/unidad4.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If y Condicionales</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tuplas.</span></a>
+  <a href="../../unidades/unidad4/unidad4.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If, elif y else</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Range</span></a>
+  <a href="../../unidades/unidad4/unidad4.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">And y Or</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Diccionarios</span></a>
+  <a href="../../unidades/unidad4/unidad4.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a While.</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Booleanos.</span></a>
+  <a href="../../unidades/unidad4/unidad4.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">While loop.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad4/unidad4.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">While, break y continue.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad4/unidad4.8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">For Loop</span></a>
   </div>
 </li>
       </ul>
@@ -316,7 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Unidad 5: Control de Flujo</span></a>
+ <span class="menu-text">Unidad 5: Funciones y Recursividad</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -324,42 +340,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a If</span></a>
+  <a href="../../unidades/unidad5/unidad5.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Funciones</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If y Condicionales</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If, elif y else</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">And y Or</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a While</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">While loop</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">While, break y continue</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">For Loop</span></a>
+  <a href="../../unidades/unidad5/unidad5.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursividad</span></a>
   </div>
 </li>
       </ul>
@@ -367,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Unidad 6: Funciones</span></a>
+ <span class="menu-text">Unidad 6: Programación Orientada a Objetos</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -375,12 +361,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/unidad6.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Funciones</span></a>
+  <a href="../../unidades/unidad6/unidad6.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Orientada a Objetos (POO)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/unidad6.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursividad</span></a>
+  <a href="../../unidades/unidad6/unidad6.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Objetos y Clases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/unidad6.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Métodos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/unidad6.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Self, Eliminar Propiedades y Objetos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/unidad6.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Herencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/unidad6.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Polimorfismo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/unidad6.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Encapsulación</span></a>
   </div>
 </li>
       </ul>
@@ -388,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
- <span class="menu-text">Unidad 7: Objetos, Clases y Herencia</span></a>
+ <span class="menu-text">Unidad 7: Módulos y Bases de Datos</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -396,37 +407,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Orientada a Objetos (POO)</span></a>
+  <a href="../../unidades/unidad7/unidad7.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Módulos en Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Objetos y Clases</span></a>
+  <a href="../../unidades/unidad7/unidad7.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creando Nuestro Primer Módulo</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Métodos</span></a>
+  <a href="../../unidades/unidad7/unidad7.3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Renombrando Módulos y Seleccionando Elementos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Self, Eliminar Propiedades y Objetos.</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Herencia</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Polimorfismo</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Encapsulación</span></a>
+  <a href="../../unidades/unidad7/unidad7.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Seleccionando lo Importado y Pip</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
- <span class="menu-text">Unidad 8: Módulos</span></a>
+ <span class="menu-text">Unidad 8: Frameworks</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -442,22 +438,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  <a href="../../unidades/unidad8/unidad8.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creando Nuestro Primer Módulo</span></a>
+  <a href="../../unidades/unidad8/unidad8.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Template View en Django</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Renombrando Módulos</span></a>
+  <a href="../../unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Herencia de Plantillas y Bootstrap en Django</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Seleccionando lo Importado y Pip</span></a>
+  <a href="../../unidades/unidad8/unidad8.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creación de un CRUD de Tareas en Django</span></a>
   </div>
 </li>
       </ul>
@@ -473,17 +469,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad9/unidad9.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Bases de Datos</span></a>
+  <a href="../../unidades/unidad9/unidad9.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción e Instalación</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad9/unidad9.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a PostgreSQL</span></a>
+  <a href="../../unidades/unidad9/unidad9.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bases de Datos en MySQL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad9/unidad9.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a MongoDB</span></a>
+  <a href="../../unidades/unidad9/unidad9.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Crear y Eliminar Tablas en PostgreSQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad9/unidad9.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Operaciones Básicas en MongoDB</span></a>
   </div>
 </li>
       </ul>
@@ -499,22 +500,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad10/unidad10.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción e Instalación</span></a>
+  <a href="../../unidades/unidad10/unidad10.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Data Science</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad10/unidad10.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bases de Datos en MySQL</span></a>
+  <a href="../../unidades/unidad10/unidad10.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django Framework</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad10/unidad10.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Crear y Eliminar Tablas en PostgreSQL</span></a>
+  <a href="../../unidades/unidad10/unidad10.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django Framework y Django Rest Framework</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad10/unidad10.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Operaciones Básicas en MongoDB</span></a>
+  <a href="../../unidades/unidad10/unidad10.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Flask Framework</span></a>
   </div>
 </li>
       </ul>
@@ -530,22 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad11/unidad11.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Data Science</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad11/unidad11.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django Framework</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad11/unidad11.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django Framework y Django Rest Framework</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad11/unidad11.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Flask Framework</span></a>
+  <a href="../../unidades/unidad11/unidad11.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Explicación del Proyecto</span></a>
   </div>
 </li>
       </ul>
@@ -553,28 +539,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
- <span class="menu-text">Unidad 12: Proyecto: API de Tareas con Django Rest Framework</span></a>
+ <span class="menu-text">Ejercicios</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad12/unidad12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Explicación del Proyecto</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
- <span class="menu-text">Ejercicios</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/ejercicios/ejercicio1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 1:</span></a>
@@ -692,17 +662,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#acceso-a-atributos" id="toc-acceso-a-atributos" class="nav-link active" data-scroll-target="#acceso-a-atributos">Acceso a Atributos</a></li>
-  <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
+  <li><a href="#renombrando-módulos-al-importar" id="toc-renombrando-módulos-al-importar" class="nav-link active" data-scroll-target="#renombrando-módulos-al-importar">Renombrando Módulos al Importar</a></li>
+  <li><a href="#seleccionando-elementos-específicos-para-importar" id="toc-seleccionando-elementos-específicos-para-importar" class="nav-link" data-scroll-target="#seleccionando-elementos-específicos-para-importar">Seleccionando Elementos Específicos para Importar</a></li>
+  <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación:</a></li>
+  <li><a href="#qué-aprendimos" id="toc-qué-aprendimos" class="nav-link" data-scroll-target="#qué-aprendimos">¿Qué Aprendimos?</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad7/unidad7.3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad7/unidad7.3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Objetos, Clases y Herencia</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.3.html"><span class="chapter-title">Métodos</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Módulos y Bases de Datos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.3.html"><span class="chapter-title">Renombrando Módulos y Seleccionando Elementos</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Métodos</span></h1>
+<h1 class="title"><span class="chapter-title">Renombrando Módulos y Seleccionando Elementos</span></h1>
 </div>
 
 
@@ -718,42 +690,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>En esta lección, profundizaremos en el concepto de métodos en la programación orientada a objetos. Aprenderemos cómo definir y utilizar métodos en una clase, y cómo acceder a los atributos de instancia dentro de los métodos. Métodos de Clase</p>
-<p>Los métodos de clase son funciones definidas dentro de una clase que operan en los atributos de instancia. Cada instancia de la clase puede llamar a estos métodos para realizar acciones específicas.</p>
+<p>En esta lección, exploraremos cómo renombrar módulos al importarlos y cómo seleccionar elementos específicos para importar.</p>
+<p>Estas técnicas nos brindan un mayor control sobre los nombres y las funcionalidades que utilizamos en nuestro código.</p>
+<section id="renombrando-módulos-al-importar" class="level3">
+<h3 class="anchored" data-anchor-id="renombrando-módulos-al-importar">Renombrando Módulos al Importar</h3>
+<p>A veces, los nombres de los módulos pueden ser largos o difíciles de recordar.</p>
+<p>Podemos solucionar esto renombrando el módulo cuando lo importamos. Veamos cómo:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_largo <span class="im">as</span> ml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="seleccionando-elementos-específicos-para-importar" class="level3">
+<h3 class="anchored" data-anchor-id="seleccionando-elementos-específicos-para-importar">Seleccionando Elementos Específicos para Importar</h3>
+<p>En lugar de importar todo un módulo, a veces solo necesitamos algunas funciones o clases específicas de ese módulo. Podemos hacer esto de la siguiente manera:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> modulo <span class="im">import</span> funcion1, funcion2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Ejemplo</strong>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Cuadrado:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, lado):</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.lado <span class="op">=</span> lado</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calcular_area(<span class="va">self</span>):</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        area <span class="op">=</span> <span class="va">self</span>.lado <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> area</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una instancia de Cuadrado</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>cuadrado1 <span class="op">=</span> Cuadrado(<span class="dv">4</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular y mostrar el área del cuadrado</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>area_cuadrado <span class="op">=</span> cuadrado1.calcular_area()</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Área del Cuadrado: </span><span class="sc">{</span>area_cuadrado<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este ejemplo, hemos definido una clase “Cuadrado” con un método <strong>“calcular_area”</strong>. El método accede al atributo de instancia <strong>“lado”</strong> utilizando “self.lado” y calcula el área del cuadrado.</p>
-<section id="acceso-a-atributos" class="level3">
-<h3 class="anchored" data-anchor-id="acceso-a-atributos">Acceso a Atributos</h3>
-<p>Dentro de un método, se puede acceder a los atributos de instancia utilizando <strong>“self.atributo”</strong>. Esto permite manipular y utilizar los valores de los atributos dentro de los métodos.</p>
-<p><strong>Ejemplo</strong>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Persona:</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, edad):</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.edad <span class="op">=</span> edad</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> saludar(<span class="va">self</span>):</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Hola, soy </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> y tengo </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>edad<span class="sc">}</span><span class="ss"> años."</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una instancia de Persona</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>persona1 <span class="op">=</span> Persona(<span class="st">"Ana"</span>, <span class="dv">30</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar al método saludar para mostrar un saludo personalizado</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>persona1.saludar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este ejemplo, el método <strong>“saludar”</strong> accede a los atributos de instancia <strong>“nombre”</strong> y “edad” utilizando “self.nombre” y <strong>“self.edad”</strong> para mostrar un saludo personalizado.</p>
+<p>Supongamos que tenemos un módulo llamado calculadora y queremos abreviar su nombre al importarlo:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> calculadora <span class="im">as</span> calc</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> calc.suma(<span class="dv">3</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ejemplo</strong></p>
+<p>Si solo necesitamos unas pocas funciones o clases de un módulo grande, podemos importarlas directamente:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> operaciones <span class="im">import</span> resta, Calculadora</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> resta(<span class="dv">10</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -764,43 +722,46 @@ Actividad Práctica:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Crea una clase Triángulo con atributos “base” y “altura”, y un método “calcular_area” que calcule y retorne el área del triángulo (base * altura / 2).</p>
+<ol type="1">
+<li>Renombra el módulo geometria como geo al importarlo en otro archivo.</li>
+<li>Luego, importa solo la función para calcular el área de un círculo y calcula el área de un círculo con radio 5.</li>
+</ol>
 </div>
 </div>
 <details>
-<p><sumary>Ejemplo de Clase Triángulo</sumary></p>
+<summary>
+Solución
+</summary>
 <p><strong>Resumen</strong>:</p>
-<p>En esta actividad, crearemos una clase llamada <strong>“Triángulo”</strong> con atributos <strong>“base”</strong> y <strong>“altura”</strong>. Implementaremos un método llamado “calcular_area” que calculará y retornará el área del triángulo (base * altura / 2). Luego, crearemos una instancia de la clase <strong>“Triángulo”</strong> con dimensiones específicas y mostraremos el área del triángulo.</p>
-<p><strong>Resolución</strong>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Triangulo:</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, base, altura):</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.base <span class="op">=</span> base</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.altura <span class="op">=</span> altura</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calcular_area(<span class="va">self</span>):</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="va">self</span>.base <span class="op">*</span> <span class="va">self</span>.altura) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una instancia de Triángulo</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>triangulo1 <span class="op">=</span> Triangulo(<span class="dv">6</span>, <span class="dv">8</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular el área del triángulo</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>area_triangulo <span class="op">=</span> triangulo1.calcular_area()</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el área del triángulo</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Área del Triángulo: </span><span class="sc">{</span>area_triangulo<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para resolver esta actividad, renombraremos el módulo geometria como geo al importarlo en otro archivo. Luego, importaremos solo la función para calcular el área de un círculo y calcularemos el área de un círculo con radio 5.</p>
+<p><strong>Código</strong>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Renombrar el módulo geometria como geo al importarlo</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geometria <span class="im">as</span> geo</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Importar solo la función para calcular el área de un círculo</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> geometria <span class="im">import</span> calcular_area_circulo</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular el área de un círculo con radio 5</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>radio <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> calcular_area_circulo(radio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Explicación</strong>:</p>
-<ul>
-<li><p>Definimos la clase “Triángulo” con un constructor <strong>init</strong> que toma dos argumentos: “base” y “altura”. Estos argumentos se utilizan para inicializar los atributos de instancia “base” y “altura”.</p></li>
-<li><p>Implementamos un método de instancia llamado “calcular_area” que calcula el área del triángulo utilizando la fórmula (base * altura) / 2 y lo retorna.</p></li>
-<li><p>Creamos una instancia de la clase “Triángulo” con dimensiones específicas (base 6 y altura 8).</p></li>
-<li><p>Calculamos el área del triángulo llamando al método “calcular_area” en la instancia.</p></li>
-<li><p>Mostramos el área del triángulo en la consola.</p></li>
-</ul>
+<ol type="1">
+<li>En primer lugar, renombramos el módulo geometria como geo al importarlo. Esto significa que podemos usar geo como un alias para el módulo geometria en nuestro código.</li>
+<li>Luego, importamos solo la función calcular_area_circulo del módulo geometria. Esto significa que solo esta función estará disponible en nuestro programa, en lugar de importar todas las funciones y clases del módulo.</li>
+<li>Finalmente, calculamos el área de un círculo con radio 5 utilizando la función calcular_area_circulo(radio). El resultado se almacena en la variable area. Esto nos permite realizar cálculos geométricos específicos utilizando el módulo geometria de manera eficiente y legible.</li>
+</ol>
 </details>
 </section>
 <section id="explicación" class="level3">
-<h3 class="anchored" data-anchor-id="explicación">Explicación</h3>
-<p>Esta actividad te permite practicar la definición y uso de métodos en una clase y cómo acceder a los atributos de instancia dentro de los métodos.</p>
+<h3 class="anchored" data-anchor-id="explicación">Explicación:</h3>
+<p>Esta actividad te permitirá practicar cómo renombrar módulos al importarlos y cómo seleccionar funciones específicas para importar. Aprenderás a personalizar los nombres de los módulos y a importar solo las funcionalidades necesarias en tu código.</p>
+</section>
+<section id="qué-aprendimos" class="level2">
+<h2 class="anchored" data-anchor-id="qué-aprendimos">¿Qué Aprendimos?</h2>
+<p>En esta lección, aprendimos dos técnicas útiles al trabajar con módulos en Python:</p>
+<p><strong>Renombrar Módulos al Importar</strong>: Pudimos asignar un nombre más corto o legible a un módulo al importarlo. Esto hace que nuestro código sea más claro y fácil de entender.</p>
+<p><strong>Seleccionar Elementos Específicos para Importar</strong>: Aprendimos cómo importar solo las funciones o clases necesarias de un módulo en lugar de importar todo el módulo. Esto puede ayudar a reducir la cantidad de código innecesario en nuestro programa.</p>
+<p>Estas técnicas nos proporcionan un mayor control sobre cómo interactuamos con los módulos, lo que puede hacer que nuestro código sea más eficiente y legible.</p>
 
 
 </section>
@@ -1313,12 +1274,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../unidades/unidad7/unidad7.2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Objetos y Clases</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Creando Nuestro Primer Módulo</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../unidades/unidad7/unidad7.4.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Self, Eliminar Propiedades y Objetos.</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Seleccionando lo Importado y Pip</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

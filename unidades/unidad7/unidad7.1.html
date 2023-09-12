@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.346">
+<meta name="generator" content="quarto-1.4.358">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Este libro de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Frameworsk como Django, Flask, Fast Api, PyScript y Regex. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con Bases de datos, APIs y más.">
 
-<title>Python 2023 - Programación Orientada a Objetos (POO)</title>
+<title>Python 2023 - Introducción a Módulos en Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../unidades/unidad7/unidad7.2.html" rel="next">
-<link href="../../unidades/unidad6/unidad6.2.html" rel="prev">
+<link href="../../unidades/unidad6/unidad6.7.html" rel="prev">
 <link href="../../python-logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -91,6 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -118,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Objetos, Clases y Herencia</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html"><span class="chapter-title">Programación Orientada a Objetos (POO)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Módulos y Bases de Datos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html"><span class="chapter-title">Introducción a Módulos en Python</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -192,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
- <span class="menu-text">Unidad 1: Introducción a la Programación</span></a>
+ <span class="menu-text">Unidad 1: Introducción a Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -200,7 +201,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad1/unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción general a la Programación</span></a>
+  <a href="../../unidades/unidad1/unidad1.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción general a la Programación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/unidad1.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instalación de Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/unidad1.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Uso del REPL, PEP 8 y el Zen de Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/unidad1.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Entornos de Desarrollo</span></a>
   </div>
 </li>
       </ul>
@@ -208,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">Unidad 2: Instalación de Python y más herramientas</span></a>
+ <span class="menu-text">Unidad 2: Introducción a la Programación con Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -216,12 +232,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad2/unidad2.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instalación de Python</span></a>
+  <a href="../../unidades/unidad2/unidad2.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Identación y Comentarios</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad2/unidad2.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Uso del REPL, PEP 8 y el Zen de Python</span></a>
+  <a href="../../unidades/unidad2/unidad2.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables y Variables Múltiples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad2/unidad2.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concatenación</span></a>
   </div>
 </li>
       </ul>
@@ -229,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text">Unidad 3: Introducción a Python</span></a>
+ <span class="menu-text">Unidad 3: Tipos de Datos</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -237,37 +258,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Distintas formas de trabajar con Python.</span></a>
+  <a href="../../unidades/unidad3/unidad3.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">String y Números</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Las bases de Python.</span></a>
+  <a href="../../unidades/unidad3/unidad3.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Listas y Tuplas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Identación.</span></a>
+  <a href="../../unidades/unidad3/unidad3.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Diccionarios y Booleanos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Comentarios</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Múltiples Variables</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/unidad3.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concatenación</span></a>
+  <a href="../../unidades/unidad3/unidad3.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Range</span></a>
   </div>
 </li>
       </ul>
@@ -275,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Unidad 4: Tipos de Datos</span></a>
+ <span class="menu-text">Unidad 4: Control de Flujo</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -283,32 +289,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">String y Números</span></a>
+  <a href="../../unidades/unidad4/unidad4.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a If</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Listas</span></a>
+  <a href="../../unidades/unidad4/unidad4.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If y Condicionales</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tuplas.</span></a>
+  <a href="../../unidades/unidad4/unidad4.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If, elif y else</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Range</span></a>
+  <a href="../../unidades/unidad4/unidad4.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">And y Or</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Diccionarios</span></a>
+  <a href="../../unidades/unidad4/unidad4.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a While.</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/unidad4.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Booleanos.</span></a>
+  <a href="../../unidades/unidad4/unidad4.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">While loop.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad4/unidad4.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">While, break y continue.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad4/unidad4.8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">For Loop</span></a>
   </div>
 </li>
       </ul>
@@ -316,7 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Unidad 5: Control de Flujo</span></a>
+ <span class="menu-text">Unidad 5: Funciones y Recursividad</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -324,42 +340,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a If</span></a>
+  <a href="../../unidades/unidad5/unidad5.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Funciones</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If y Condicionales</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If, elif y else</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">And y Or</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a While</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">While loop</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">While, break y continue</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/unidad5.8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">For Loop</span></a>
+  <a href="../../unidades/unidad5/unidad5.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursividad</span></a>
   </div>
 </li>
       </ul>
@@ -367,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Unidad 6: Funciones</span></a>
+ <span class="menu-text">Unidad 6: Programación Orientada a Objetos</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -375,12 +361,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/unidad6.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Funciones</span></a>
+  <a href="../../unidades/unidad6/unidad6.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Orientada a Objetos (POO)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/unidad6.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursividad</span></a>
+  <a href="../../unidades/unidad6/unidad6.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Objetos y Clases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/unidad6.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Métodos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/unidad6.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Self, Eliminar Propiedades y Objetos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/unidad6.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Herencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/unidad6.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Polimorfismo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/unidad6.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Encapsulación</span></a>
   </div>
 </li>
       </ul>
@@ -388,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
- <span class="menu-text">Unidad 7: Objetos, Clases y Herencia</span></a>
+ <span class="menu-text">Unidad 7: Módulos y Bases de Datos</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -396,37 +407,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Programación Orientada a Objetos (POO)</span></a>
+  <a href="../../unidades/unidad7/unidad7.1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introducción a Módulos en Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Objetos y Clases</span></a>
+  <a href="../../unidades/unidad7/unidad7.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creando Nuestro Primer Módulo</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Métodos</span></a>
+  <a href="../../unidades/unidad7/unidad7.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Renombrando Módulos y Seleccionando Elementos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Self, Eliminar Propiedades y Objetos.</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Herencia</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Polimorfismo</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/unidad7.7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Encapsulación</span></a>
+  <a href="../../unidades/unidad7/unidad7.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Seleccionando lo Importado y Pip</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
- <span class="menu-text">Unidad 8: Módulos</span></a>
+ <span class="menu-text">Unidad 8: Frameworks</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -442,22 +438,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  <a href="../../unidades/unidad8/unidad8.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creando Nuestro Primer Módulo</span></a>
+  <a href="../../unidades/unidad8/unidad8.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Template View en Django</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Renombrando Módulos</span></a>
+  <a href="../../unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Herencia de Plantillas y Bootstrap en Django</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Seleccionando lo Importado y Pip</span></a>
+  <a href="../../unidades/unidad8/unidad8.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creación de un CRUD de Tareas en Django</span></a>
   </div>
 </li>
       </ul>
@@ -473,17 +469,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad9/unidad9.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Bases de Datos</span></a>
+  <a href="../../unidades/unidad9/unidad9.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción e Instalación</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad9/unidad9.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a PostgreSQL</span></a>
+  <a href="../../unidades/unidad9/unidad9.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bases de Datos en MySQL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad9/unidad9.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a MongoDB</span></a>
+  <a href="../../unidades/unidad9/unidad9.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Crear y Eliminar Tablas en PostgreSQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad9/unidad9.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Operaciones Básicas en MongoDB</span></a>
   </div>
 </li>
       </ul>
@@ -499,22 +500,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad10/unidad10.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción e Instalación</span></a>
+  <a href="../../unidades/unidad10/unidad10.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Data Science</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad10/unidad10.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bases de Datos en MySQL</span></a>
+  <a href="../../unidades/unidad10/unidad10.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django Framework</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad10/unidad10.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Crear y Eliminar Tablas en PostgreSQL</span></a>
+  <a href="../../unidades/unidad10/unidad10.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django Framework y Django Rest Framework</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad10/unidad10.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Operaciones Básicas en MongoDB</span></a>
+  <a href="../../unidades/unidad10/unidad10.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Flask Framework</span></a>
   </div>
 </li>
       </ul>
@@ -530,22 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad11/unidad11.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Data Science</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad11/unidad11.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django Framework</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad11/unidad11.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django Framework y Django Rest Framework</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad11/unidad11.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Flask Framework</span></a>
+  <a href="../../unidades/unidad11/unidad11.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Explicación del Proyecto</span></a>
   </div>
 </li>
       </ul>
@@ -553,28 +539,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
- <span class="menu-text">Unidad 12: Proyecto: API de Tareas con Django Rest Framework</span></a>
+ <span class="menu-text">Ejercicios</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad12/unidad12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Explicación del Proyecto</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
- <span class="menu-text">Ejercicios</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/ejercicios/ejercicio1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 1:</span></a>
@@ -692,23 +662,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#conceptos-clave-en-poo" id="toc-conceptos-clave-en-poo" class="nav-link active" data-scroll-target="#conceptos-clave-en-poo">Conceptos Clave en POO</a>
-  <ul class="collapse">
-  <li><a href="#objetos" id="toc-objetos" class="nav-link" data-scroll-target="#objetos">Objetos</a></li>
-  <li><a href="#clases" id="toc-clases" class="nav-link" data-scroll-target="#clases">Clases</a></li>
-  <li><a href="#atributos" id="toc-atributos" class="nav-link" data-scroll-target="#atributos">Atributos</a></li>
-  <li><a href="#métodos" id="toc-métodos" class="nav-link" data-scroll-target="#métodos">Métodos</a></li>
+  <li><a href="#importar-módulos" id="toc-importar-módulos" class="nav-link active" data-scroll-target="#importar-módulos">Importar Módulos</a></li>
   <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
-  </ul></li>
+  <li><a href="#qué-aprendimos" id="toc-qué-aprendimos" class="nav-link" data-scroll-target="#qué-aprendimos">¿Qué Aprendimos?</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad7/unidad7.1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad7/unidad7.1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Objetos, Clases y Herencia</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html"><span class="chapter-title">Programación Orientada a Objetos (POO)</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html">Unidad 7: Módulos y Bases de Datos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/unidad7.1.html"><span class="chapter-title">Introducción a Módulos en Python</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Programación Orientada a Objetos (POO)</span></h1>
+<h1 class="title"><span class="chapter-title">Introducción a Módulos en Python</span></h1>
 </div>
 
 
@@ -724,95 +689,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>La Programación Orientada a Objetos (POO) es un paradigma de programación que se basa en el uso de objetos y clases.</p>
-<p>En POO, tratamos los elementos del mundo real como objetos, y estos objetos interactúan entre sí para realizar tareas específicas.</p>
-<p>Este enfoque nos permite organizar nuestro código de manera más eficiente y estructurada.</p>
-<section id="conceptos-clave-en-poo" class="level2">
-<h2 class="anchored" data-anchor-id="conceptos-clave-en-poo">Conceptos Clave en POO</h2>
-<section id="objetos" class="level3">
-<h3 class="anchored" data-anchor-id="objetos">Objetos</h3>
-<p>Los objetos son instancias de clases y representan entidades del mundo real.</p>
-<p>Pueden tener atributos que describen sus características y métodos que definen su comportamiento.</p>
-<p><strong>Ejemplo</strong>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Persona:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, edad):</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.edad <span class="op">=</span> edad</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> saludar(<span class="va">self</span>):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Hola, mi nombre es </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> y tengo </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>edad<span class="sc">}</span><span class="ss"> años."</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>persona1 <span class="op">=</span> Persona(<span class="st">"Juan"</span>, <span class="dv">25</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>persona1.saludar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este ejemplo, hemos creado una clase llamada <strong>“Persona”</strong>. La clase tiene un constructor (init) que inicializa los atributos <strong>“nombre”</strong> y <strong>“edad”</strong> de la persona.</p>
-<p>También tiene un método llamado <strong>“saludar”</strong> que muestra un mensaje con el nombre y la edad de la persona.</p>
+<p>Los módulos son archivos que contienen código Python y se utilizan para organizar y reutilizar funciones, clases y variables en programas más grandes. Los módulos permiten una mejor estructuración del código y la creación de bibliotecas de funciones reutilizables.</p>
+<section id="importar-módulos" class="level3">
+<h3 class="anchored" data-anchor-id="importar-módulos">Importar Módulos</h3>
+<p>Para utilizar un módulo en Python, se utiliza la palabra clave import seguida del nombre del módulo. Esto carga el módulo en el programa y permite acceder a sus funciones y clases.</p>
+<p><strong>Ejemplo:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de código en Python</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Módulo calculadora.py</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> suma(a, b):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># En otro archivo</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> calculadora</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> calculadora.suma(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Resultado:"</span>, resultado)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="clases" class="level3">
-<h3 class="anchored" data-anchor-id="clases">Clases</h3>
-<p>Las clases son plantillas o moldes que definen la estructura y el comportamiento de los objetos.</p>
-<p>En una clase, puedes especificar qué atributos y métodos tendrán sus objetos.</p>
-<p><strong>Ejemplo</strong>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Coche:</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, marca, modelo):</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.marca <span class="op">=</span> marca</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.modelo <span class="op">=</span> modelo</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mostrar_info(<span class="va">self</span>):</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Marca: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>marca<span class="sc">}</span><span class="ss">, Modelo: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>modelo<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>coche1 <span class="op">=</span> Coche(<span class="st">"Toyota"</span>, <span class="st">"Camry"</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>coche1.mostrar_info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este ejemplo, hemos creado una clase llamada <strong>“Coche”</strong> que tiene atributos <strong>“marca”</strong> y <strong>“modelo”</strong>.</p>
-<p>También tiene un método <strong>“mostrar_info”</strong> que imprime la información del coche.</p>
-</section>
-<section id="atributos" class="level3">
-<h3 class="anchored" data-anchor-id="atributos">Atributos</h3>
-<p>Los atributos son características o propiedades de un objeto que almacenan datos.</p>
-<p><strong>Ejemplo</strong>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Producto:</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, precio):</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.precio <span class="op">=</span> precio</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>producto1 <span class="op">=</span> Producto(<span class="st">"Teléfono"</span>, <span class="dv">500</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Producto: </span><span class="sc">{</span>producto1<span class="sc">.</span>nombre<span class="sc">}</span><span class="ss">, Precio: </span><span class="sc">{</span>producto1<span class="sc">.</span>precio<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este ejemplo, hemos creado una clase <strong>“Producto”</strong> con atributos <strong>“nombre”</strong> y <strong>“precio”</strong>.</p>
-</section>
-<section id="métodos" class="level3">
-<h3 class="anchored" data-anchor-id="métodos">Métodos</h3>
-<p>Los métodos son funciones definidas en una clase que representan el comportamiento de los objetos de esa clase.</p>
-<p><strong>Ejemplo</strong>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Perro:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, raza):</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.raza <span class="op">=</span> raza</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ladrar(<span class="va">self</span>):</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> está ladrando."</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>perro1 <span class="op">=</span> Perro(<span class="st">"Max"</span>, <span class="st">"Labrador"</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>perro1.ladrar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este ejemplo, hemos creado una clase “Perro” con el método “ladrar” que muestra un mensaje cuando un perro ladra.</p>
+<section id="explicación" class="level3">
+<h3 class="anchored" data-anchor-id="explicación">Explicación</h3>
+<p>En este ejemplo, se crea un módulo llamado calculadora.py que contiene una función suma. Luego, en otro archivo, se importa el módulo calculadora y se utiliza la función suma del módulo para sumar dos números. Esto demuestra cómo organizar el código en módulos reutilizables y cómo importarlos en otros programas.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Actividad Práctica:
+Actividad Práctica
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Crea una clase Libro que represente libros con atributos como “título” y “autor”. Luego, implementa un método llamado “mostrar_info” que imprima los atributos del libro. A continuación, crea una instancia de la clase “Libro” y llama al método “mostrar_info” para mostrar la información del libro.</p>
+<ol type="1">
+<li><p>Crea un módulo llamado matematicas con una función multiplicacion que multiplique dos números.</p></li>
+<li><p>Explicación de la Actividad</p></li>
+<li><p>En esta actividad, crearás un módulo llamado matematicas que contiene una función multiplicacion. Luego, importarás este módulo en otro archivo y utilizarás la función multiplicacion para calcular el producto de dos números. Esta práctica te ayudará a comprender cómo trabajar con módulos en Python.</p></li>
+</ol>
 </div>
 </div>
+<details>
+<summary>
+Solución
+</summary>
+<p><strong>Resumen:</strong></p>
+<p>La solución a la actividad práctica consiste en crear el módulo matematicas con la función multiplicacion, importarlo en otro archivo y utilizar la función para multiplicar dos números.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En el módulo matematicas.py</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiplicacion(a, b):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># En otro archivo</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matematicas</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> matematicas.multiplicacion(<span class="dv">4</span>, <span class="dv">7</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Resultado de la multiplicación:"</span>, resultado)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explicación</strong></p>
+<ol type="1">
+<li><p>Se crea un módulo llamado matematicas.py que contiene la función multiplicacion.</p></li>
+<li><p>En otro archivo, se importa el módulo matematicas.</p></li>
+<li><p>Se utiliza la función multiplicacion del módulo matematicas para multiplicar los números 4 y 7.</p></li>
+<li><p>Se imprime el resultado de la multiplicación.</p></li>
+</ol>
+</details>
 </section>
-<section id="explicación" class="level3">
-<h3 class="anchored" data-anchor-id="explicación">Explicación</h3>
-<p>Esta actividad te permitirá practicar la creación de clases y objetos, así como comprender cómo la Programación Orientada a Objetos nos ayuda a modelar y organizar nuestros programas de manera más efectiva.</p>
+<section id="qué-aprendimos" class="level2">
+<h2 class="anchored" data-anchor-id="qué-aprendimos">¿Qué Aprendimos?</h2>
+<p>En esta lección, aprendimos a trabajar con módulos en Python, cómo importarlos en nuestros programas y cómo crear funciones reutilizables en módulos separados. También practicamos la importación y uso de módulos mediante una actividad práctica. La encapsulación es un concepto clave en la programación orientada a objetos (POO) que se refiere a la ocultación de los detalles internos de una clase y a la provisión de una interfaz pública para interactuar con ella. La encapsulación se implementa en Python utilizando convenciones de nombres para marcar atributos y métodos como privados, y mediante el uso de métodos de acceso (getters y setters) para controlar el acceso a los atributos privados.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1322,13 +1264,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../unidades/unidad6/unidad6.2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Recursividad</span></span>
+      <a href="../../unidades/unidad6/unidad6.7.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Encapsulación</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../unidades/unidad7/unidad7.2.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Objetos y Clases</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Creando Nuestro Primer Módulo</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
