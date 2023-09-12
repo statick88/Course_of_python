@@ -2,7 +2,7 @@
 
 El control de flujo es fundamental en la programación para tomar decisiones basadas en condiciones. Aprenderemos cómo utilizar la estructura if para ejecutar diferentes bloques de código según una condición.
 
-![](images/if-statement.png){fig-align="center" width="400"}
+<!-- ![](images/if-statement.png){fig-align="center" width="400"} -->
 
 ## Conceptos Clave
 
