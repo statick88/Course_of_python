@@ -1,54 +1,51 @@
-## Diccionarios
+# Introducción a While.
 
-![](images/diccionary.png){fig-align="center" width="400"}
+## Introducción a While
 
-Los diccionarios son estructuras de datos que permiten almacenar pares clave-valor. Aprenderemos cómo crear y trabajar con diccionarios en Python.
+En esta lección, comenzaremos a explorar la estructura de control de flujo while, que nos permite crear bucles que se ejecutan repetidamente mientras se cumple una condición.
 
-## Conceptos Clave:
+<!-- ![](images/intro-to-while.png){fig-align="center" width="400"} -->
 
-### Diccionarios
+## Conceptos Clave
 
-![](images/diccionary001.png){width="400"}
+### Bucle While
 
-Estructuras de datos que almacenan pares clave-valor.
+Un bucle que se ejecuta mientras una condición sea verdadera.
 
-### Claves
+### Condición
 
-Son los nombres o etiquetas utilizados para acceder a los valores en el diccionario.
+La expresión que se evalúa para determinar si el bucle debe continuar ejecutándose.
 
-### Valores
+### Bloque de Código
 
-Son los datos asociados a cada clave en el diccionario.
+El conjunto de instrucciones que se ejecutan dentro del bucle while.
 
 ## Ejemplo
 
-``` python
-# Creación de un diccionario
-persona = {
-    "nombre": "Juan",
-    "edad": 30,
-    "ciudad": "México"
-}
+```python
+contador = 0
 
-# Acceso a valores utilizando claves
-nombre = persona["nombre"]
-edad = persona["edad"]
+while contador < 5:
+    print("Contador:", contador)
+    contador += 1
 ```
+### Explicación:
 
-## Explicación
+En este ejemplo, se utiliza un bucle while para imprimir el valor del contador mientras sea menor que 5.
 
-En este ejemplo, se crea un diccionario que almacena información de una persona, como nombre, edad y ciudad.
+:::{.callout-tip}
 
-Se accede a los valores del diccionario utilizando las claves correspondientes.
-
-::: callout-important
 ### Actividad Práctica
 
-Crea un diccionario que almacene información de tus libros favoritos, incluyendo título y autor.
+Crea un bucle while que pida al usuario ingresar un número positivo menor que 10.
 
-Accede a los valores del diccionario utilizando las claves y muestra la información en la consola.
+Utiliza la sentencia break para salir del bucle una vez que el usuario ingrese un número válido.
 :::
 
-## Explicación de la Actividad:
+### Explicación:
 
-Esta actividad permite a los participantes practicar la creación de diccionarios y acceder a los valores utilizando las claves. Les ayuda a comprender cómo organizar datos en pares clave-valor y cómo acceder a la información de manera eficiente.
+Esta actividad permite a los participantes practicar el uso de la sentencia break para controlar la ejecución de un bucle while y evitar bucles infinitos. Les ayuda a comprender cómo manejar situaciones en las que es necesario salir de un bucle antes de que la condición sea falsa.
+
+## ¿Qué aprendimos?
+
+En esta lección, aprendimos los conceptos clave de la estructura de control de flujo while. Descubrimos cómo crear bucles que se ejecutan mientras se cumple una condición y cómo utilizarlos en situaciones prácticas en la programación.

@@ -1,107 +1,70 @@
-## Programación Orientada a Objetos (POO)
+## Introducción a Módulos en Python
 
-La Programación Orientada a Objetos (POO) es un paradigma de programación que se basa en el uso de objetos y clases.
+Los módulos son archivos que contienen código Python y se utilizan para organizar y reutilizar funciones, clases y variables en programas más grandes. Los módulos permiten una mejor estructuración del código y la creación de bibliotecas de funciones reutilizables.
 
-En POO, tratamos los elementos del mundo real como objetos, y estos objetos interactúan entre sí para realizar tareas específicas. 
+### Importar Módulos
 
-Este enfoque nos permite organizar nuestro código de manera más eficiente y estructurada.
+Para utilizar un módulo en Python, se utiliza la palabra clave import seguida del nombre del módulo. Esto carga el módulo en el programa y permite acceder a sus funciones y clases.
 
-## Conceptos Clave en POO
-
-### Objetos
-
-Los objetos son instancias de clases y representan entidades del mundo real. 
-
-Pueden tener atributos que describen sus características y métodos que definen su comportamiento.
-
-**Ejemplo**:
+**Ejemplo:**
 
 ```python
-class Persona:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
+# Ejemplo de código en Python
 
-    def saludar(self):
-        print(f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años.")
+# Módulo calculadora.py
+def suma(a, b):
+    return a + b
 
-persona1 = Persona("Juan", 25)
-persona1.saludar()
+# En otro archivo
+import calculadora
+
+resultado = calculadora.suma(3, 5)
+print("Resultado:", resultado)
 ```
-
-En este ejemplo, hemos creado una clase llamada **"Persona"**. La clase tiene un constructor (init) que inicializa los atributos **"nombre"** y **"edad"** de la persona. 
-
-También tiene un método llamado **"saludar"** que muestra un mensaje con el nombre y la edad de la persona.
-
-### Clases
-
-Las clases son plantillas o moldes que definen la estructura y el comportamiento de los objetos. 
-
-En una clase, puedes especificar qué atributos y métodos tendrán sus objetos.
-
-**Ejemplo**:
-
-```python
-class Coche:
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
-
-    def mostrar_info(self):
-        print(f"Marca: {self.marca}, Modelo: {self.modelo}")
-
-coche1 = Coche("Toyota", "Camry")
-coche1.mostrar_info()
-```
-
-En este ejemplo, hemos creado una clase llamada **"Coche"** que tiene atributos **"marca"** y **"modelo"**. 
-
-También tiene un método **"mostrar_info"** que imprime la información del coche.
-
-### Atributos
-
-Los atributos son características o propiedades de un objeto que almacenan datos.
-
-**Ejemplo**:
-
-```python
-class Producto:
-    def __init__(self, nombre, precio):
-        self.nombre = nombre
-        self.precio = precio
-
-producto1 = Producto("Teléfono", 500)
-print(f"Producto: {producto1.nombre}, Precio: {producto1.precio}")
-```
-
-En este ejemplo, hemos creado una clase **"Producto"** con atributos **"nombre"** y **"precio"**.
-
-### Métodos
-
-Los métodos son funciones definidas en una clase que representan el comportamiento de los objetos de esa clase.
-
-**Ejemplo**:
-
-```python
-class Perro:
-    def __init__(self, nombre, raza):
-        self.nombre = nombre
-        self.raza = raza
-
-    def ladrar(self):
-        print(f"{self.nombre} está ladrando.")
-
-perro1 = Perro("Max", "Labrador")
-perro1.ladrar()
-```
-En este ejemplo, hemos creado una clase "Perro" con el método "ladrar" que muestra un mensaje cuando un perro ladra.
-
-:::{.callout-tip}
-### Actividad Práctica:
-
-Crea una clase Libro que represente libros con atributos como "título" y "autor". Luego, implementa un método llamado "mostrar_info" que imprima los atributos del libro. A continuación, crea una instancia de la clase "Libro" y llama al método "mostrar_info" para mostrar la información del libro.
-:::
 
 ### Explicación
 
-Esta actividad te permitirá practicar la creación de clases y objetos, así como comprender cómo la Programación Orientada a Objetos nos ayuda a modelar y organizar nuestros programas de manera más efectiva.
+En este ejemplo, se crea un módulo llamado calculadora.py que contiene una función suma. Luego, en otro archivo, se importa el módulo calculadora y se utiliza la función suma del módulo para sumar dos números. Esto demuestra cómo organizar el código en módulos reutilizables y cómo importarlos en otros programas.
+
+:::{.callout-tip}
+
+### Actividad Práctica
+
+1. Crea un módulo llamado matematicas con una función multiplicacion que multiplique dos números.
+
+2. Explicación de la Actividad
+
+3. En esta actividad, crearás un módulo llamado matematicas que contiene una función multiplicacion. Luego, importarás este módulo en otro archivo y utilizarás la función multiplicacion para calcular el producto de dos números. Esta práctica te ayudará a comprender cómo trabajar con módulos en Python.
+:::
+<details>
+    <summary>Solución</summary>
+
+**Resumen:**
+
+La solución a la actividad práctica consiste en crear el módulo matematicas con la función multiplicacion, importarlo en otro archivo y utilizar la función para multiplicar dos números.
+
+```python
+# En el módulo matematicas.py
+def multiplicacion(a, b):
+    return a * b
+
+# En otro archivo
+import matematicas
+
+resultado = matematicas.multiplicacion(4, 7)
+print("Resultado de la multiplicación:", resultado)
+```
+**Explicación**
+
+1. Se crea un módulo llamado matematicas.py que contiene la función multiplicacion.
+
+2. En otro archivo, se importa el módulo matematicas.
+
+3. Se utiliza la función multiplicacion del módulo matematicas para multiplicar los números 4 y 7.
+
+4. Se imprime el resultado de la multiplicación.
+</details>
+
+## ¿Qué Aprendimos?
+
+En esta lección, aprendimos a trabajar con módulos en Python, cómo importarlos en nuestros programas y cómo crear funciones reutilizables en módulos separados. También practicamos la importación y uso de módulos mediante una actividad práctica. La encapsulación es un concepto clave en la programación orientada a objetos (POO) que se refiere a la ocultación de los detalles internos de una clase y a la provisión de una interfaz pública para interactuar con ella. La encapsulación se implementa en Python utilizando convenciones de nombres para marcar atributos y métodos como privados, y mediante el uso de métodos de acceso (getters y setters) para controlar el acceso a los atributos privados.

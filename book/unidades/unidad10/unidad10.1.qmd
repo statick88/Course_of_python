@@ -1,66 +1,50 @@
-## Introducción e Instalación
+## Introducción a Data Science
 
-En esta lección, nos centraremos en realizar operaciones básicas en bases de datos utilizando diferentes sistemas de gestión: MySQL, PostgreSQL y MongoDB. Aprenderemos cómo realizar la instalación de estos sistemas y cómo conectarnos a las bases de datos.
+En esta lección, exploraremos el emocionante campo de la Ciencia de Datos y cómo Python se ha convertido en una herramienta esencial en este ámbito. Aprenderemos qué es la Ciencia de Datos, su importancia y cómo Python se utiliza para analizar y visualizar datos.
 
-## Instalación de MySQL:
+## Conceptos Clave:
 
-Descargar e instalar MySQL desde el sitio oficial.
+### Ciencia de Datos: 
 
-Configurar contraseña para el usuario 'root'.
+Proceso de extracción de conocimiento y perspectivas a partir de datos.
 
-## Instalación de PostgreSQL:
+### Uso de Python en Data Science: 
 
-Descargar e instalar PostgreSQL desde el sitio oficial.
+Bibliotecas como NumPy, Pandas y Matplotlib.
 
-Configurar contraseña para el usuario 'postgres'.
+### Ejemplos de Aplicación: 
 
-## Instalación de MongoDB:
+Análisis de datos, 
 
-Descargar e instalar MongoDB desde el sitio oficial.
+Visualización, 
 
-Configurar directorio de datos y logs.
+Aprendizaje Automático, 
 
-## Conexión a la Base de Datos:
+etc.
 
-### MySQL y PostgreSQL: 
-
-Usar bibliotecas como mysql-connector-python o psycopg2 para conectarse y realizar operaciones.
-
-### MongoDB: 
-
-Usar la biblioteca pymongo para conectarse y realizar operaciones.
-
-## Ejemplo - Conexión a MySQL:
+## Ejemplo - Uso de Pandas para Análisis de Datos:
 
 ```python
-import mysql.connector
+import pandas as pd
 
-# Conexión a la base de datos
-conn = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="contraseña",
-    database="basededatos"
-)
-```
+data = {
+    'nombre': ['Juan', 'María', 'Pedro'],
+    'edad': [25, 30, 28]
+}
 
-## Ejemplo - Conexión a MongoDB:
-
-```python
-import pymongo
-
-# Conexión al servidor MongoDB
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+df = pd.DataFrame(data)
+print(df)
 ```
 :::{.callout-important}
 ### Actividad Práctica:
 
-Instala MySQL, PostgreSQL y MongoDB en tu entorno.
-Crea una base de datos en cada uno de los sistemas.
-Conéctate a cada una de las bases de datos utilizando las bibliotecas adecuadas.
-Realiza una consulta de prueba en cada sistema para verificar la conexión.
+Investiga y elige un conjunto de datos disponible en línea.
+
+Utiliza la biblioteca Pandas para cargar y analizar los datos.
+
+Realiza un análisis simple, como calcular estadísticas descriptivas, en el conjunto de datos.
 :::
 
 ## Explicación de la Actividad:
 
-Esta actividad permite a los participantes adquirir experiencia práctica en la instalación de diferentes sistemas de bases de datos y en la conexión a estas bases de datos utilizando las bibliotecas correspondientes. Les ayuda a comprender cómo establecer una conexión exitosa y cómo preparar el entorno para las operaciones futuras en bases de datos.
+Esta actividad permite a los participantes explorar la aplicación de Python en el campo de la Ciencia de Datos. Les ayuda a comprender cómo utilizar bibliotecas como Pandas para analizar datos y extraer información útil.

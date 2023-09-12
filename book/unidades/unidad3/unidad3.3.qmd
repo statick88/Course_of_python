@@ -1,42 +1,94 @@
-## Identación.
+# Diccionarios y Booleanos
 
-![](images/identación.png)
+## Diccionarios
 
-En Python, la identación (sangría) juega un papel crucial en la estructura y organización del código. Aprenderemos cómo se utiliza la identación para delimitar bloques de código y mejorar la legibilidad.
+![](images/diccionary.png){fig-align="center" width="400"}
 
-## Conceptos Clave
+### Conceptos Clave
 
-### Identación
+#### Diccionarios
 
--   Espacios o tabulaciones al comienzo de una línea que indican la estructura del código.
--   Bloques de Código: Conjuntos de instrucciones que se agrupan juntas y se ejecutan en conjunto.
--   PEP 8: Guía de estilo para la escritura de código en Python que recomienda el uso de cuatro espacios para la identación.
+![](images/diccionary001.png){width="400"}
+
+Los diccionarios son estructuras de datos que almacenan pares clave-valor.
+
+#### Claves
+
+Son los nombres o etiquetas utilizados para acceder a los valores en el diccionario.
+
+#### Valores
+
+Son los datos asociados a cada clave en el diccionario.
 
 ### Ejemplo
 
-``` python
-# Uso de la identación en un condicional
-numero = 10
+```python
+# Creación de un diccionario
+persona = {
+    "nombre": "Juan",
+    "edad": 30,
+    "ciudad": "México"
+}
 
-if numero > 5:
-    print("El número es mayor que 5")
-else:
-    print("El número no es mayor que 5")
+# Acceso a valores utilizando claves
+nombre = persona["nombre"]
+edad = persona["edad"]
 ```
 
-## Explicación
+### Explicación:
 
--   En este ejemplo, la identación se utiliza para delimitar los bloques de código dentro de las instrucciones "if" y "else".
--   La identación es crucial para que Python sepa qué instrucciones están dentro de un bloque y cuáles están fuera.
+En este ejemplo, se crea un diccionario que almacena información de una persona, como nombre, edad y ciudad.
 
-::: callout-important
-### Actividad Práctica:
+Se accede a los valores del diccionario utilizando las claves correspondientes.
 
-Escribe un programa que solicite al usuario su edad y muestre un mensaje según si es mayor de 18 años o no.
+:::{.callout-tip}
 
-Intenta cambiar la identación incorrectamente y observa cómo afecta al funcionamiento del programa.
+### Actividad Práctica
+
+1. Crea un diccionario que almacene información de tus libros favoritos, incluyendo título y autor.
+2. Accede a los valores del diccionario utilizando las claves y muestra la información en la consola.
 :::
 
-## Explicación de la Actividad.
+### Explicación:
 
-Esta actividad permite a los participantes comprender la importancia de la identación en Python al trabajar con bloques de código como los condicionales. Les ayuda a desarrollar el hábito de utilizar la identación adecuada para mantener el código organizado y legible.
+Esta actividad permite a los participantes practicar la creación de diccionarios y acceder a los valores utilizando las claves. Les ayuda a comprender cómo organizar datos en pares clave-valor y cómo acceder a la información de manera eficiente.
+
+## Booleanos
+
+<!-- {fig-align="center" width="400"} -->
+
+## Conceptos Clave
+
+**Booleanos**
+
+- Tipo de dato que representa valores de verdad (True o False).
+
+**Expresiones Lógicas**: Combinaciones de valores booleanos utilizando operadores lógicos como and, or y not.
+Ejemplo
+
+```python
+# Variables booleanas
+es_mayor_de_edad = True
+tiene_tarjeta = False
+
+# Expresiones lógicas
+puede_ingresar = es_mayor_de_edad and tiene_tarjeta
+```
+
+### Explicación:
+
+En este ejemplo, se utilizan variables booleanas para representar si alguien es mayor de edad y si tiene una tarjeta.
+
+Se utiliza una expresión lógica para evaluar si alguien puede ingresar basado en ambas condiciones.
+
+:::{.callout-tip}
+
+### Actividad Práctica
+
+1. Crea variables booleanas que representen si tienes una mascota y si te gusta el deporte.
+2. Utiliza expresiones lógicas para determinar si puedes llevar a tu mascota a un lugar que requiere tu atención durante un partido de tu deporte favorito.
+:::
+
+### Explicación:
+
+Esta actividad permite a los participantes practicar el uso de variables booleanas y expresiones lógicas para tomar decisiones basadas en condiciones booleanas. Les ayuda a comprender cómo trabajar con valores de verdad y cómo utilizarlos para evaluar situaciones en el código.

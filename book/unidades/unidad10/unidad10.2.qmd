@@ -1,56 +1,68 @@
-## Bases de Datos en MySQL
+## Introducción a Django Framework
 
-En esta lección, aprenderemos a realizar operaciones básicas en una base de datos MySQL, como crear y eliminar tablas, insertar registros y realizar consultas.
+En esta lección, nos adentraremos en el mundo de Django, un popular framework de desarrollo web en Python. Aprenderemos qué es Django, cómo instalarlo y cómo crear una aplicación web básica utilizando este framework.
 
-## Operaciones en MySQL:
+## Qué es Django:
 
-### Crear una tabla: 
-```sql
-CREATE TABLE nombre (columna1 tipo, columna2 tipo);
+Django es un framework de desarrollo web de alto nivel y de código abierto.
+
+Proporciona una estructura organizada para crear aplicaciones web de manera eficiente.
+
+## Instalación de Django:
+
+### Instalar Django utilizando pip: 
+```bash
+pip install django
 ```
-### Insertar registros: 
-```sql
-INSERT INTO nombre (columna1, columna2) VALUES (valor1, valor2);
+### Verificar la instalación: 
+```bash
+django-admin --version
 ```
-### Consultar registros: 
-```sql
-SELECT * FROM nombre;
+## Creación de una Aplicación Web Básica:
+
+### Crear un nuevo proyecto: 
+
+```bash
+django-admin startproject proyecto .
 ```
-### Actualizar registros: 
-```sql
-UPDATE nombre SET columna = valor WHERE condicion;
-```
-### Eliminar registros: 
-```sql
-DELETE FROM nombre WHERE condicion;
-```
-### Eliminar tabla: 
-```sql
-DROP TABLE nombre;
+### Crear una nueva aplicación dentro del proyecto: 
+```bash	
+python manage.py startapp app
 ```
 
-## Ejemplo - Creación de una Tabla en MySQL:
+## Ejemplo - Creación de una Página Web con Django:
 
-```sql
-CREATE TABLE empleados (
-    id INT PRIMARY KEY,
-    nombre VARCHAR(100),
-    salario DECIMAL(10, 2)
-);
+```python
+# views.py
+from django.http import HttpResponse
+
+def hola_mundo(request):
+    return HttpResponse("¡Hola, mundo!")
 ```
+    
+```python
+# urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('hola/', views.hola_mundo, name='hola_mundo'),
+]
+```
+
 :::{.callout-important}
 ### Actividad Práctica:
 
-Conéctate a la base de datos MySQL.
+Instala Django en tu entorno.
 
-Crea una tabla 'productos' con las columnas 'id', 'nombre' y 'precio'.
+Crea un proyecto llamado 'blog' y una aplicación llamada 'articulos'.
 
-Inserta al menos dos registros en la tabla 'productos'.
+Crea una vista que muestre un mensaje de bienvenida en la página principal.
 
-Realiza una consulta para obtener todos los registros de la tabla 'productos'.
+Configura una URL para acceder a la vista creada.
 :::
 
 ## Explicación de la Actividad:
 
-Esta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos MySQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en MySQL.
+Esta actividad permite a los participantes experimentar con la creación de proyectos y aplicaciones utilizando Django. Les ayuda a comprender cómo estructurar una aplicación web utilizando este framework y cómo definir rutas y vistas para mostrar contenido en el navegador.
 

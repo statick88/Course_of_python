@@ -1,51 +1,103 @@
-## Introducción a Funciones
+# Programación Orientada a Objetos (POO)
 
-En esta lección, nos adentraremos en el mundo de las funciones en Python, una de las características más poderosas del lenguaje. Aprenderemos cómo **definir funciones**, **pasar argumentos** y **retornar valores**.
+En esta lección, exploraremos la Programación Orientada a Objetos (POO), un paradigma de programación que se basa en el uso de objetos y clases.
 
-### Conceptos Clave
+<!-- ![POO](images/oop.png){fig-align="center" width="400"} -->
 
-#### Funciones:
+## Conceptos Clave en POO
 
-Son bloques de código reutilizables que realizan tareas específicas. Las funciones permiten dividir el código en partes más pequeñas y manejables, lo que facilita la lectura, la depuración y la reutilización del código.
+### Objetos
 
-### Definición de Funciones
+Los objetos son instancias de clases y representan entidades del mundo real. Pueden tener atributos que describen sus características y métodos que definen su comportamiento.
 
-Para crear una función en Python, utilizamos la palabra clave def, seguida del nombre de la función y paréntesis. Veamos un ejemplo:
-
-```python
-def saludar(nombre):
-    return "Hola, " + nombre
-```
-En este caso, hemos definido una función llamada saludar que toma un argumento llamado nombre.
-
-### Argumentos
-
-Los argumentos son valores que se pasan a una función para que trabaje con ellos. En el ejemplo anterior, nombre es un argumento que se utiliza para personalizar el saludo.
-
-### Retorno de Valores
-
-Una función puede devolver un valor utilizando la palabra clave return. En nuestro ejemplo, la función saludar retorna un saludo personalizado. Veamos cómo se utiliza:
+**Ejemplo**:
 
 ```python
-mensaje = saludar("Juan")
-print(mensaje)
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def saludar(self):
+        print(f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años.")
+
+persona1 = Persona("Juan", 25)
+persona1.saludar()
 ```
-En este fragmento de código, hemos llamado a la función saludar pasando el argumento "Juan". La función devuelve "Hola, Juan", que se almacena en la variable mensaje y se muestra en la consola.
+
+En este ejemplo, hemos creado una clase llamada "Persona". La clase tiene un constructor (init) que inicializa los atributos "nombre" y "edad" de la persona. También tiene un método llamado "saludar" que muestra un mensaje con el nombre y la edad de la persona.
+
+### Clases
+
+Las clases son plantillas o moldes que definen la estructura y el comportamiento de los objetos. En una clase, puedes especificar qué atributos y métodos tendrán sus objetos.
+
+**Ejemplo**:
+
+```python
+class Coche:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+    def mostrar_info(self):
+        print(f"Marca: {self.marca}, Modelo: {self.modelo}")
+
+coche1 = Coche("Toyota", "Camry")
+coche1.mostrar_info()
+```
+En este ejemplo, hemos creado una clase llamada "Coche" que tiene atributos "marca" y "modelo". También tiene un método "mostrar_info" que imprime la información del coche.
+
+### Atributos
+
+Los atributos son características o propiedades de un objeto que almacenan datos.
+
+**Ejemplo**:
+
+```python
+class Producto:
+    def __init__(self, nombre, precio):
+        self.nombre = nombre
+        self.precio = precio
+
+producto1 = Producto("Teléfono", 500)
+print(f"Producto: {producto1.nombre}, Precio: {producto1.precio}")
+```
+En este ejemplo, hemos creado una clase "Producto" con atributos "nombre" y "precio".
+
+### Métodos
+
+Los métodos son funciones definidas en una clase que representan el comportamiento de los objetos de esa clase.
+
+**Ejemplo**:
+
+```python
+class Perro:
+    def __init__(self, nombre, raza):
+        self.nombre = nombre
+        self.raza = raza
+
+    def ladrar(self):
+        print(f"{self.nombre} está ladrando.")
+
+perro1 = Perro("Max", "Labrador")
+perro1.ladrar()
+```
+En este ejemplo, hemos creado una clase "Perro" con el método "ladrar" que muestra un mensaje cuando un perro ladra.
 
 :::{.callout-tip}
-**Actividad Práctica**
 
-Ahora, pondremos en práctica lo que hemos aprendido. Tu tarea es crear una función llamada calcular_cuadrado que reciba un número como argumento y retorne el cuadrado de ese número.
+### Actividad Práctica
 
-```python
-def calcular_cuadrado(numero):
-    return numero ** 2
-
-resultado = calcular_cuadrado(5)
-print("El cuadrado es:", resultado)
-```
-En este ejemplo, hemos definido la función calcular_cuadrado que toma un número como argumento, lo eleva al cuadrado y lo retorna. Luego, llamamos a esta función con el número 5 y mostramos el resultado en la consola.
+Crea una clase "Libro" que represente libros con atributos como "título" y "autor". Luego, implementa un método llamado "mostrar_info" que imprima los atributos del libro. A continuación, crea una instancia de la clase "Libro" y llama al método "mostrar_info" para mostrar la información del libro.
 :::
-### Explicación de la Actividad
 
-Esta actividad te permitirá practicar la creación y uso de funciones en Python. Aprenderás cómo definir una función que realice un cálculo específico y cómo utilizarla para obtener resultados. Las funciones son una parte fundamental de la programación en Python y te ayudarán a escribir código más organizado y eficiente.
+### Explicación:
+
+Esta actividad te permitirá practicar la creación de clases y objetos, así como comprender cómo la Programación Orientada a Objetos nos ayuda a modelar y organizar nuestros programas de manera más efectiva.
+
+## ¿Qué aprendimos?
+
+- Aprendimos los conceptos fundamentales de la Programación Orientada a Objetos (POO).
+- Comprendimos cómo definir clases y objetos en Python.
+- Practicamos la creación de atributos y métodos en una clase.
+- Realizamos una actividad práctica para aplicar los conocimientos adquiridos en la creación de una clase y su uso.

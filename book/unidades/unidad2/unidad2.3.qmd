@@ -1,0 +1,36 @@
+# Concatenación
+
+## Conceptos Clave
+
+**Concatenación**:
+La concatenación es la unión de cadenas de texto. Aprenderemos cómo combinar cadenas de texto en Python para crear mensajes más complejos.
+
+**Operador +**:
+Se utiliza para concatenar cadenas de texto.
+
+**Conversión a Cadena**:
+Es necesario convertir valores no string a cadenas antes de concatenarlos.
+
+## Ejemplo
+
+```python
+nombre = "Luisa"
+mensaje = "Hola, " + nombre + ". ¿Cómo estás?"
+edad = 25
+mensaje_edad = "Tienes " + str(edad) + " años."
+```
+### Explicación:
+
+En este ejemplo, se utilizó el operador "+" para concatenar cadenas de texto. La variable "edad" se convirtió a una cadena utilizando la función "str()" antes de concatenarla.
+
+:::{.callout-tip}
+
+### Actividad Práctica
+
+- Crea una variable con tu comida favorita.
+- Utiliza la concatenación para crear un mensaje que incluya tu comida favorita.
+:::
+
+### Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la concatenación de cadenas de texto y comprender cómo construir mensajes más complejos utilizando variables y texto. Les ayuda a mejorar su capacidad para crear mensajes personalizados en sus programas.

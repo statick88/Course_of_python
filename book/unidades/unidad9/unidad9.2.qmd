@@ -1,71 +1,56 @@
-## Introducción a PostgreSQL
+## Bases de Datos en MySQL
 
-En esta lección, nos centraremos en PostgreSQL, un Sistema de Gestión de Bases de Datos Relacionales (RDBMS) de código abierto. Aprenderemos cómo instalar PostgreSQL y cómo realizar operaciones básicas en una base de datos.
+En esta lección, aprenderemos a realizar operaciones básicas en una base de datos MySQL, como crear y eliminar tablas, insertar registros y realizar consultas.
 
-### Instalación de PostgreSQL:
+## Operaciones en MySQL:
 
-Descargar e instalar PostgreSQL desde el sitio oficial.
-
-Configurar contraseña para el usuario 'postgres'.
-
-### Operaciones Básicas en PostgreSQL:
-
-### Crear una base de datos: 
-```sql
-CREATE DATABASE nombre;
-```
-### Conectar a una base de datos: 
-```sql	
-\c nombre;
-```
 ### Crear una tabla: 
 ```sql
-CREATE TABLE tabla (columna1 tipo, columna2 tipo);
+CREATE TABLE nombre (columna1 tipo, columna2 tipo);
 ```
-
 ### Insertar registros: 
-```sql	
-INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2);
+```sql
+INSERT INTO nombre (columna1, columna2) VALUES (valor1, valor2);
 ```
-
 ### Consultar registros: 
-```sql	
-SELECT * FROM tabla;
-```	
-
-### Actualizar registros: 
-```sql	
-UPDATE tabla SET columna1 = valor WHERE condicion;**
+```sql
+SELECT * FROM nombre;
 ```
-
+### Actualizar registros: 
+```sql
+UPDATE nombre SET columna = valor WHERE condicion;
+```
 ### Eliminar registros: 
 ```sql
-DELETE FROM tabla WHERE condicion;
+DELETE FROM nombre WHERE condicion;
+```
+### Eliminar tabla: 
+```sql
+DROP TABLE nombre;
 ```
 
-## Ejemplo - Creación de una Tabla en PostgreSQL:
+## Ejemplo - Creación de una Tabla en MySQL:
 
 ```sql
-CREATE TABLE estudiantes (
-    id SERIAL PRIMARY KEY,
+CREATE TABLE empleados (
+    id INT PRIMARY KEY,
     nombre VARCHAR(100),
-    edad INTEGER
+    salario DECIMAL(10, 2)
 );
 ```
-:::{.callout-info}
+:::{.callout-important}
 ### Actividad Práctica:
 
-Instala PostgreSQL en tu entorno.
+Conéctate a la base de datos MySQL.
 
-Crea una base de datos llamada 'universidad'.
+Crea una tabla 'productos' con las columnas 'id', 'nombre' y 'precio'.
 
-Crea una tabla 'alumnos' con las columnas 'id', 'nombre' y 'edad'.
+Inserta al menos dos registros en la tabla 'productos'.
 
-Inserta al menos dos registros en la tabla.
-
-Realiza una consulta para obtener todos los registros de la tabla 'alumnos'.
+Realiza una consulta para obtener todos los registros de la tabla 'productos'.
 :::
 
 ## Explicación de la Actividad:
 
-Esta actividad permite a los participantes familiarizarse con la instalación de PostgreSQL y realizar operaciones básicas de creación de base de datos, creación de tablas, inserción y consulta de registros. Les ayuda a adquirir experiencia práctica en la gestión de bases de datos utilizando PostgreSQL.
+Esta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos MySQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en MySQL.
+

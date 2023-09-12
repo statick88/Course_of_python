@@ -1,0 +1,46 @@
+# For Loop
+
+En esta lección, aprenderemos sobre la estructura de control de flujo for loop en Python. El bucle for nos permite recorrer elementos de una secuencia, como una lista o una cadena de texto.
+
+<!-- ![Imagen de un bucle for](images/for-loop.png){fig-align="center" width="400"} -->
+
+## Conceptos Clave
+
+### Bucle For
+
+Un bucle que itera a través de una secuencia de elementos y ejecuta un bloque de código para cada elemento.
+
+### Iteración
+
+Cada ejecución del bloque de código en un bucle for se llama iteración.
+
+### Elemento de la Secuencia
+
+Los elementos individuales en la secuencia que se está recorriendo.
+
+## Ejemplo
+
+```python
+frutas = ["manzana", "banana", "cereza"]
+
+for fruta in frutas:
+    print(fruta)
+```
+### Explicación:
+
+En este ejemplo, utilizamos un bucle for para iterar a través de la lista frutas e imprimimos cada fruta en la consola.
+
+:::{.callout-tip}
+
+### Actividad Práctica
+
+Crea una lista de números del 1 al 5 y utiliza un bucle for para imprimir el cuadrado de cada número.
+:::
+
+### Explicación:
+
+Esta actividad te permite practicar cómo usar un bucle for para recorrer una secuencia de números y realizar operaciones en cada elemento. Los bucles for son muy útiles para procesar datos en una variedad de situaciones de programación.
+
+## ¿Qué aprendimos?
+
+En esta lección, aprendimos cómo usar un bucle for para iterar a través de una secuencia de elementos en Python. Comprendimos los conceptos clave relacionados con los bucles for y cómo aplicarlos en la escritura de código.

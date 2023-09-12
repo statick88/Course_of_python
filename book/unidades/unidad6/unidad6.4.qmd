@@ -1,0 +1,93 @@
+# Self, Eliminar Propiedades y Objetos
+
+En esta lección, aprenderemos más sobre el uso de "self" en los métodos de clase. También exploraremos cómo eliminar atributos de instancia y objetos en Python.
+
+<!-- ![](images/self_delete.png){fig-align="center" width="400"} -->
+
+## Conceptos Clave
+
+### Self
+
+La palabra clave "self" se refiere al objeto actual en un método de clase. Permite acceder y manipular los atributos de instancia dentro de ese método.
+
+### Eliminar Atributos
+
+Se puede eliminar un atributo de instancia utilizando la palabra clave "del".
+
+### Eliminar Objetos
+
+Para eliminar un objeto y liberar memoria, se utiliza la función "del" seguida del nombre del objeto.
+
+**Ejemplo**
+
+```python
+# Ejemplo de código en Python
+# Puede incluir múltiples bloques de código si es necesario.
+
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def presentarse(self):
+        print(f"Me llamo {self.nombre} y tengo {self.edad} años.")
+
+# Crear una instancia de Persona
+persona1 = Persona("Carlos", 28)
+
+# Llamar al método para presentarse
+persona1.presentarse()
+```
+### Explicación
+
+En este ejemplo, "self" se utiliza para acceder a los atributos "nombre" y "edad" dentro del método "presentarse".
+
+:::{.callout-tip}
+
+### Actividad Práctica
+
+Crea una clase Estudiante con atributos "nombre" y "edad", y un método "mostrar_info" para mostrar la información del estudiante.
+:::
+
+<details>
+<summary>Ejemplo de Clase Estudiante</summary>
+
+**Resumen**:
+
+Este ejemplo demuestra cómo crear una clase Estudiante con atributos, un método para mostrar información y cómo eliminar atributos de instancia.
+
+```python
+# Clase Estudiante
+class Estudiante:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def mostrar_info(self):
+        print(f"Estudiante: {self.nombre}, Edad: {self.edad}")
+
+# Crear una instancia de Estudiante
+estudiante1 = Estudiante("María", 22)
+
+# Llamar al método para mostrar la información
+estudiante1.mostrar_info()
+
+# Eliminar el atributo 'nombre' de la instancia
+del estudiante1.nombre
+
+# Intentar acceder al atributo eliminado generará un error
+# estudiante1.mostrar_info()
+```
+**Explicación**:
+
+1. Hemos definido una clase llamada Estudiante con un constructor (init) que toma dos atributos: nombre y edad. 2. Estos atributos representan el nombre y la edad del estudiante.
+3. La clase Estudiante también tiene un método llamado mostrar_info que imprime la información del estudiante en un formato específico.
+3. Luego, hemos creado una instancia estudiante1 de la clase Estudiante con el nombre "María" y la edad 22.
+4. Hemos llamado al método mostrar_info en la instancia estudiante1, lo que muestra la información del estudiante en la consola.
+5. Finalmente, hemos utilizado la palabra clave del para eliminar el atributo nombre de la instancia estudiante1.
+6. Esto se hace para mostrar cómo eliminar un atributo de instancia.
+</details>
+
+## ¿Qué aprendimos?:
+
+En esta lección, hemos profundizado en el uso de "self" en los métodos de clase, cómo eliminar atributos de instancia y objetos en Python, y cómo gestionar la memoria.

@@ -1,47 +1,108 @@
-## Instalación de Python
+# Identación y Comentarios
 
-La instalación de Python es el primer paso para comenzar a programar en este lenguaje. Python es un lenguaje de programación versátil y ampliamente utilizado, conocido por su sintaxis clara y legible. Aquí aprenderemos cómo instalar Python en diferentes sistemas operativos.
+## Identación
 
 ## Conceptos Clave
 
-### Python
+### Identación
 
-![](images/python.png){fig-align="center" width="150"}
+- Espacios o tabulaciones al comienzo de una línea que indican la estructura del código.
+- **Bloques de Código:** Conjuntos de instrucciones que se agrupan juntas y se ejecutan en conjunto.
+- **PEP 8:** Guía de estilo para la escritura de código en Python que recomienda el uso de cuatro espacios para la identación.
 
-Lenguaje de programación de alto nivel que se utiliza para desarrollar aplicaciones web, científicas, de automatización y más.
+**Ejemplo**:
 
-### Interprete
+```python
+# Uso de la identación en un condicional
+numero = 10
 
-![](images/interprete.png){fig-align="center"}
-
-Python es un lenguaje interpretado, lo que significa que se ejecuta línea por línea en tiempo real.
-
-### IDE
-
-![](images/vscode.png){fig-align="center" width="150"}
-
-Los entornos de desarrollo integrados (IDE) como Visual Studio Code (VS Code) o PyCharm brindan herramientas para escribir, depurar y ejecutar código de manera más eficiente.
-
-## Ejemplo
-
-No se necesita código para esta lección, ya que se trata de instrucciones para la instalación de Python en diferentes sistemas operativos.
-
-## Explicación
-
-Para instalar Python en sistemas Windows, macOS y Linux, se pueden seguir las instrucciones detalladas proporcionadas en el sitio web oficial de Python [www.python.org/downloads/](https://www.python.org/downloads/).
-
-La instalación de Python generalmente incluye el intérprete de Python y una serie de herramientas y bibliotecas estándar que hacen que sea fácil comenzar a programar.
-
+if numero > 5:
+    print("El número es mayor que 5")
+else:
+    print("El número no es mayor que 5")
+```
 :::{.callout-tip}
+
 ### Actividad Práctica
 
-Instala Python en tu sistema operativo siguiendo las instrucciones del sitio web oficial de Python. Luego, verifica que Python esté correctamente instalado ejecutando el intérprete y escribiendo el siguiente código:
-
-``` python
-print("Python se ha instalado correctamente.")
-```
+1. Escribe un programa que solicite al usuario su edad y muestre un mensaje según si es mayor de 18 años o no.
 :::
 
-## Explicación de la Actividad
+<details><summary>Posible solución</summary>
 
-Esta actividad permite a los participantes aplicar lo aprendido instalando Python en su propio sistema y ejecutando un programa sencillo para confirmar que la instalación fue exitosa.
+**Resumen**:
+
+Esta actividad permite a los participantes comprender la importancia de la identación en Python al trabajar con bloques de código como los condicionales. Les ayuda a desarrollar el hábito de utilizar la identación adecuada para mantener el código organizado y legible.
+
+```python
+# Programa que solicita la edad y muestra un mensaje
+edad = int(input("Ingrese su edad: "))
+
+if edad > 18:
+    print("Eres mayor de edad.")
+else:
+    print("Eres menor de edad.")
+```
+**¿Qué hicimos?**
+
+1. Se solicita la edad al usuario y se almacena en la variable edad.
+2. Se utiliza un condicional if para verificar si la edad es mayor que 18.
+3. Si la edad es mayor que 18, se muestra "Eres mayor de edad".
+4. Si la edad es menor o igual a 18, se muestra "Eres menor de edad".
+
+## Comentarios
+
+## Conceptos Clave
+
+### Comentarios
+
+- Son notas en el código que no se ejecutan y se utilizan para explicar el propósito y funcionamiento de partes del programa.
+- Comentarios de una línea: Se crean con el símbolo "#" y abarcan una sola línea.
+- Comentarios de múltiples líneas: Se crean entre triple comillas (""" o ''') y pueden abarcar múltiples líneas.
+
+**Ejemplo**:
+
+```python
+# Este es un comentario de una línea
+
+"""
+Este es un comentario
+de múltiples líneas.
+Puede abarcar varias líneas.
+"""
+
+numero = 42  # Este comentario está después de una instrucción
+```
+:::{.callout-tip}
+
+### Actividad Práctica
+
+Escribe un programa que realice una tarea sencilla y agrega comentarios para explicar lo que hace cada parte. Escribe un comentario de múltiples líneas que explique el propósito general de tu programa.
+:::
+
+<details>
+    <summary>Posible solución</summary>
+
+```python
+# Este programa calcula el área de un triángulo
+# solicitando la base y la altura al usuario.
+
+# Solicitar la base y almacenarla en la variable 'base'
+base = float(input("Ingrese la base del triángulo: "))
+
+# Solicitar la altura y almacenarla en la variable 'altura'
+altura = float(input("Ingrese la altura del triángulo: "))
+
+# Calcular el área del triángulo
+area = 0.5 * base * altura
+
+# Mostrar el resultado
+print(f"El área del triángulo es: {area}")
+```
+</details>
+
+## ¿Qué aprendimos?
+
+En este tema, aprendimos la importancia de la identación en Python para estructurar nuestro código correctamente. La identación nos permite definir bloques de código, como en los condicionales, de manera clara y legible.
+
+También aprendimos cómo agregar comentarios en Python para documentar nuestro código. Los comentarios son esenciales para explicar el propósito y el funcionamiento de las partes del programa y facilitan la colaboración entre programadores.

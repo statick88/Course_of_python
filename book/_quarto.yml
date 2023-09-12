@@ -35,23 +35,24 @@ book:
         
   chapters:
     - index.qmd
-    - part: "Unidad 1: Introducción a la Programación"
+    - part: "Unidad 1: Introducción a Python"
       chapters: 
-        - unidades/unidad1/unidad1.qmd
-    - part: "Unidad 2: Instalación de Python y más herramientas"
+        - unidades/unidad1/unidad1.1.qmd
+        - unidades/unidad1/unidad1.2.qmd
+        - unidades/unidad1/unidad1.3.qmd
+        - unidades/unidad1/unidad1.4.qmd
+    - part: "Unidad 2: Introducción a la Programación con Python"
       chapters: 
         - unidades/unidad2/unidad2.1.qmd
         - unidades/unidad2/unidad2.2.qmd
-    - part: "Unidad 3: Introducción a Python"
+        - unidades/unidad2/unidad2.3.qmd
+    - part: "Unidad 3: Tipos de Datos"
       chapters: 
         - unidades/unidad3/unidad3.1.qmd
         - unidades/unidad3/unidad3.2.qmd
         - unidades/unidad3/unidad3.3.qmd
         - unidades/unidad3/unidad3.4.qmd
-        - unidades/unidad3/unidad3.5.qmd
-        - unidades/unidad3/unidad3.6.qmd
-        - unidades/unidad3/unidad3.7.qmd
-    - part: "Unidad 4: Tipos de Datos"
+    - part: "Unidad 4: Control de Flujo"
       chapters: 
         - unidades/unidad4/unidad4.1.qmd
         - unidades/unidad4/unidad4.2.qmd
@@ -59,31 +60,31 @@ book:
         - unidades/unidad4/unidad4.4.qmd
         - unidades/unidad4/unidad4.5.qmd
         - unidades/unidad4/unidad4.6.qmd
-    - part: "Unidad 5: Control de Flujo"
+        - unidades/unidad4/unidad4.7.qmd
+        - unidades/unidad4/unidad4.8.qmd
+    - part: "Unidad 5: Funciones y Recursividad"
       chapters: 
         - unidades/unidad5/unidad5.1.qmd
         - unidades/unidad5/unidad5.2.qmd
-        - unidades/unidad5/unidad5.3.qmd
-        - unidades/unidad5/unidad5.4.qmd
-        - unidades/unidad5/unidad5.5.qmd
-        - unidades/unidad5/unidad5.6.qmd
-        - unidades/unidad5/unidad5.7.qmd
-        - unidades/unidad5/unidad5.8.qmd
-    - part: "Unidad 6: Funciones"
+    - part: "Unidad 6: Programación Orientada a Objetos"
       chapters: 
         - unidades/unidad6/unidad6.1.qmd
         - unidades/unidad6/unidad6.2.qmd
-    - part: "Unidad 7: Objetos, Clases y Herencia"
+        - unidades/unidad6/unidad6.3.qmd
+        - unidades/unidad6/unidad6.4.qmd
+        - unidades/unidad6/unidad6.5.qmd
+        - unidades/unidad6/unidad6.6.qmd
+        - unidades/unidad6/unidad6.7.qmd
+    - part: "Unidad 7: Módulos y Bases de Datos"
       chapters: 
         - unidades/unidad7/unidad7.1.qmd
         - unidades/unidad7/unidad7.2.qmd
         - unidades/unidad7/unidad7.3.qmd
         - unidades/unidad7/unidad7.4.qmd
-        - unidades/unidad7/unidad7.5.qmd
-        - unidades/unidad7/unidad7.6.qmd
-        - unidades/unidad7/unidad7.7.qmd
+        # - unidades/unidad7/unidad7.5.qmd
+        # - unidades/unidad7/unidad7.6.qmd
 
-    - part: "Unidad 8: Módulos"
+    - part: "Unidad 8: Frameworks"
       chapters: 
         - unidades/unidad8/unidad8.1.qmd
         - unidades/unidad8/unidad8.2.qmd
@@ -94,6 +95,7 @@ book:
         - unidades/unidad9/unidad9.1.qmd
         - unidades/unidad9/unidad9.2.qmd
         - unidades/unidad9/unidad9.3.qmd
+        - unidades/unidad9/unidad9.4.qmd
     - part: "Unidad 10: Operaciones Básicas en Bases de Datos"
       chapters: 
         - unidades/unidad10/unidad10.1.qmd
@@ -103,12 +105,6 @@ book:
     - part: "Unidad 11: ¿Cómo me amplío con Python?"
       chapters: 
         - unidades/unidad11/unidad11.1.qmd
-        - unidades/unidad11/unidad11.2.qmd
-        - unidades/unidad11/unidad11.3.qmd
-        - unidades/unidad11/unidad11.4.qmd
-    - part: "Unidad 12: Proyecto: API de Tareas con Django Rest Framework"
-      chapters: 
-        - unidades/unidad12/unidad12.qmd
     - part: "Ejercicios"
       chapters: 
         - unidades/ejercicios/ejercicio1.qmd

@@ -1,76 +1,70 @@
-## Las bases de Python.
+# Listas y Tuplas
 
-![](images/las%20bases%20de%20python.png){fig-align="center"}
-
-En esta lección, exploraremos las bases fundamentales de Python. Aprenderemos sobre las variables, tipos de datos y operadores básicos que forman la base de cualquier programa en Python.
+![](images/list.png){fig-align="center" width="400"}
 
 ## Conceptos Clave
 
-### Variables
+### Listas
 
-![](images/variables-2.png){fig-align="center"}
+![](images/vocales.png){fig-align="center" width="400"}
 
-Son nombres que se utilizan para almacenar valores en la memoria de la computadora.
+Las listas son secuencias ordenadas de elementos que pueden ser de diferentes tipos. Permiten almacenar varios elementos en una sola variable.
 
-### Tipos de Datos
+### Tuplas
 
-![](images/operadores-3.png){fig-align="center" width="585"}
+![](images/tuple.png){fig-align="center" width="400"}
 
-Incluyen enteros, flotantes, cadenas, booleanos y más. Cada tipo de dato tiene sus propias características y operaciones.
+Las tuplas son similares a las listas, pero son inmutables, lo que significa que no se pueden modificar después de ser creadas.
 
-### Operadores
+## Ejemplo
 
-![](images/operadores-2.png){fig-align="center" width="585"}
+```python
+# Listas
+frutas = ["manzana", "banana", "naranja", "uva"]
+primer_fruta = frutas[0]
+segunda_fruta = frutas[1]
 
-Incluyen operadores aritméticos, de comparación y lógicos que se utilizan para realizar diferentes tipos de cálculos y comparaciones.
-
-### Ejemplo
-
-``` python
-
-# Variables y tipos de datos
-nombre = "Juan"
-edad = 25
-altura = 1.75
-es_mayor_de_edad = True
-
-# Operadores aritméticos
-suma = 5 + 3
-resta = 10 - 2
-multiplicacion = 4 * 6
-division = 15 / 3
-
-# Operadores de comparación
-igual = 5 == 5
-mayor_que = 10 > 5
-menor_que = 7 < 12
-
-# Operadores lógicos
-and_logico = True and False
-or_logico = True or False
-not_logico = not True
+# Tuplas
+coordenadas = (3, 5)
+x = coordenadas[0]
+y = coordenadas[1]
 ```
+### Explicación:
 
-## Explicación:
+En este ejemplo, se crea una lista de frutas y una tupla de coordenadas. Se accede a elementos individuales de la lista y la tupla utilizando índices.
 
-Las variables se utilizan para almacenar información, como el nombre, la edad, la altura y si una persona es mayor de edad.
+Los índices comienzan desde 0, por lo que la primera fruta tiene el índice 0.
 
-Los operadores aritméticos se utilizan para realizar cálculos matemáticos básicos.
+:::{.callout-tip}
 
-Los operadores de comparación se utilizan para comparar valores y devuelven un valor booleano (verdadero o falso).
+### Actividad Práctica (Listas):
 
-Los operadores lógicos se utilizan para combinar expresiones booleanas y realizar operaciones lógicas.
-
-::: callout-important
-### Actividad Práctica:
-
-Crea variables que almacenen información sobre ti, como tu nombre, edad y altura.
-
-Realiza operaciones aritméticas y utiliza operadores de comparación para comparar valores.
-
-Combina expresiones booleanas utilizando operadores lógicos y observa los resultados.
+1. Crea una lista con los nombres de tus tres películas favoritas.
+2. Accede al segundo elemento de la lista e imprímelo en la consola.
 :::
 
-## Explicación de la Actividad
+### Explicación:
 
-Esta actividad permite a los participantes aplicar los conceptos de variables, tipos de datos y operadores en ejemplos prácticos. Les ayuda a comprender cómo trabajar con diferentes tipos de datos y cómo realizar operaciones básicas en Python.
+Esta actividad permite a los participantes practicar la creación de listas y el acceso a elementos utilizando índices. Les ayuda a comprender cómo organizar y acceder a múltiples elementos en una sola variable.
+
+:::{.callout-tip}
+
+### Actividad Práctica (Tuplas):
+
+1. Crea una tupla con las estaciones del año.
+2. Intenta modificar un elemento de la tupla y observa el error que se produce.
+:::
+
+### Explicación:
+
+Esta actividad permite a los participantes practicar la creación de tuplas y comprender la diferencia entre listas y tuplas en términos de inmutabilidad. Les ayuda a comprender cómo utilizar tuplas cuando necesitan almacenar datos que no deben cambiar.
+
+## ¿Qué Aprendimos?
+
+En esta lección, aprendimos sobre dos tipos de estructuras de datos en Python: listas y tuplas.
+
+**Listas**: Son secuencias ordenadas de elementos que pueden modificarse. Se accede a los elementos utilizando índices.
+
+**Tuplas**: Son similares a las listas, pero son inmutables, lo que significa que no pueden modificarse después de su creación. También se accede a los elementos utilizando índices.
+
+Estas estructuras nos permiten almacenar y organizar datos de manera eficiente en Python, y la elección entre listas y tuplas depende de si necesitamos datos modificables o inmutables en nuestros programas.

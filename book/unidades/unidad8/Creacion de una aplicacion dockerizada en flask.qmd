@@ -1,0 +1,198 @@
+# Creación de una Aplicación Dockerizada con Flask y MySQL
+
+En este tutorial, aprenderás cómo crear una aplicación web utilizando Flask, un framework de Python, y MySQL como base de datos.
+
+Además, dockerizaremos la aplicación para que pueda ejecutarse en un contenedor Docker.
+
+Seguiremos un enfoque paso a paso y explicaremos los conceptos clave a lo largo del camino.
+
+## Conceptos Clave
+
+### Flask
+
+Flask es un framework web minimalista de Python que permite crear aplicaciones web de forma rápida y sencilla. Proporciona un conjunto de herramientas y extensiones que facilitan la creación de aplicaciones web.
+
+### MySQL
+
+MySQL es un sistema de gestión de bases de datos relacional ampliamente utilizado. Lo utilizaremos como base de datos para nuestra aplicación.
+
+### Docker
+
+Docker es una plataforma de contenedorización que permite empaquetar aplicaciones y sus dependencias en contenedores. Esto facilita la distribución y ejecución de aplicaciones de manera consistente en diferentes entornos.
+
+**Paso 1**: Estructura de Directorios y Archivos
+
+Antes de comenzar, asegúrate de tener la siguiente estructura de directorios y archivos:
+
+``` markdown
+.
+├── app.py
+├── docker-compose.yml
+├── Dockerfile
+├── requirements.txt
+└── estructura.txt
+```
+
+A continuación, vamos a explicar cada uno de estos archivos.
+
+``` python
+#app.py
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return '¡Hola, mundo! Esta es mi primera aplicación Flask.'
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
+```
+
+Este archivo contiene el código de la aplicación Flask.
+
+Define una ruta principal ('/') que muestra un mensaje "¡Hola, mundo!" cuando se accede a la raíz de la aplicación.
+
+``` yaml
+# docker-compose.yml
+
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: tasks_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: your_password
+      MYSQL_ROOT_PASSWORD: your_root_password
+    ports:
+      - "3306:3306"
+```
+
+Este archivo define los servicios que se ejecutarán en el entorno Docker.
+
+**Tenemos dos servicios**:
+
+-   **web** para nuestra aplicación **Flask**
+-   **mysql** para la base de datos **MySQL**.
+
+El servicio web se basa en el **Dockerfile** actual (build: .) y se expone en el puerto **5000**.
+
+El servicio **mysql** utiliza la imagen oficial de **MySQL** y se expone en el puerto **3306**.
+
+También se definen variables de entorno para la configuración de **MySQL**.
+
+``` dockerfile
+#Dockerfile
+
+# Use the official Python image as the base image
+FROM python:3.8-slim-buster
+
+# Set environment variables for Flask
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=5000
+
+# Install system dependencies for building mysqlclient
+RUN apt-get update && apt-get install -y default-libmysqlclient-dev libmariadbclient-dev gcc pkg-config
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt requirements.txt
+
+# Install dependencies
+RUN pip install -r requirements.txt
+
+# Copy the rest of the application code into the container
+COPY . .
+
+# Expose port 5000 for the Flask app
+EXPOSE 5000
+
+# Start the Flask app
+CMD ["flask", "run"]
+```
+
+Este archivo define las instrucciones para construir la imagen **Docker** de nuestra aplicación.
+
+Utiliza la imagen oficial de **Python 3.8** como imagen base y configura las variables de entorno para Flask.
+
+Luego, instala las dependencias del sistema necesarias para construir **mysqlclient**, que es una dependencia de MySQL.
+
+``` bash
+#requirements.txt
+
+Flask==2.0.1
+Flask-MySQLdb==0.2.0
+```
+
+Este archivo contiene las dependencias de Python necesarias para nuestra aplicación Flask.
+
+Incluye **Flask** y **Flask-MySQLdb**, que se utilizarán para **crear la aplicación web** y **conectarse** a la base de datos **MySQL**.
+
+**Paso 2**: Crear la Aplicación Flask
+
+Ahora que tenemos la estructura de directorios y archivos en su lugar, podemos crear la aplicación Flask.
+
+Ya hemos definido un ejemplo simple en app.py, pero puedes personalizar la aplicación según tus necesidades.
+
+Puedes agregar rutas, vistas y lógica de la aplicación en este archivo.
+
+**Paso 3**: Ejecutar la Aplicación en un Contenedor Docker
+
+Una vez que la aplicación Flask esté lista, podemos ejecutarla en un contenedor Docker junto con una base de datos MySQL.
+
+Sigue estos pasos:
+
+1.  Abre una terminal en la carpeta donde se encuentran los archivos y ejecuta el siguiente comando para construir las imágenes Docker:
+
+``` bash
+docker-compose build
+```
+
+Esto creará las imágenes de contenedor para la aplicación y MySQL basadas en los archivos Dockerfile y la configuración en docker-compose.yml.
+
+2.  Una vez que se hayan creado las imágenes, ejecuta el siguiente comando para iniciar los contenedores:
+
+``` bash
+docker-compose up -d
+```
+
+Esto iniciará los contenedores en segundo plano.
+
+::: callout-tip
+Puedes verificar que los contenedores estén en ejecución ejecutando el siguiente comando:
+
+``` bash
+docker-compose ps
+```
+
+Deberías ver dos contenedores: - Uno para la aplicación web (web) y - Otro para la base de datos MySQL (mysql).
+:::
+
+Accede a tu aplicación Flask en un navegador web visitando <http://localhost:5000/>. Deberías ver el mensaje **"¡Hola, mundo!"** que definimos en la aplicación.
+
+![](images/paste-1.png){fig-align="center" width="800"}
+
+¡Felicidades! Has creado una aplicación web Flask y la has ejecutado en un contenedor Docker junto con una base de datos MySQL.
+
+::: callout-important
+**Paso 4:** Detener y Limpiar
+
+Cuando hayas terminado de trabajar con la aplicación y desees detener los contenedores, ejecuta el siguiente comando:
+
+``` bash
+docker-compose down
+```
+
+Esto detendrá y eliminará los contenedores Docker, pero conservará las imágenes para que puedas
+:::

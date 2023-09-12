@@ -1,0 +1,77 @@
+# Bases de Datos en MySQL
+
+En esta lección, exploraremos los fundamentos de las bases de datos en MySQL. MySQL es un Sistema de Gestión de Bases de Datos Relacionales (RDBMS) ampliamente utilizado en aplicaciones web y empresariales. Aprenderemos cómo trabajar con bases de datos, tablas y realizar consultas SQL.
+
+<!-- {fig-align="center" width="400"} -->
+
+## Conceptos Clave
+
+### Sistema de Gestión de Bases de Datos Relacionales (RDBMS)
+
+Un software que permite el almacenamiento, gestión y recuperación de datos estructurados en tablas relacionales.
+
+### Tabla
+
+Una estructura en una base de datos que organiza los datos en filas y columnas.
+
+### Consulta SQL
+
+Instrucciones escritas en SQL (Structured Query Language) para recuperar, insertar, actualizar o eliminar datos de una base de datos.
+
+**Ejemplo**
+
+```python
+# Ejemplo de código en Python
+# Puede incluir múltiples bloques de código si es necesario.
+
+# Conexión a la base de datos MySQL
+import mysql.connector
+
+# Establecer una conexión
+conexion = mysql.connector.connect(
+    host="localhost",
+    user="usuario",
+    password="contraseña",
+    database="basededatos"
+)
+
+# Crear un cursor para ejecutar consultas SQL
+cursor = conexion.cursor()
+
+# Ejecutar una consulta SELECT
+cursor.execute("SELECT * FROM usuarios")
+
+# Obtener los resultados
+resultados = cursor.fetchall()
+
+# Mostrar los resultados
+for fila in resultados:
+    print(fila)
+
+# Cerrar cursor y conexión
+cursor.close()
+conexion.close()
+```
+### Explicación
+
+En este ejemplo, se muestra cómo trabajar con MySQL en Python:
+
+1. Conexión a la base de datos: Se importa el módulo mysql.connector y se establece una conexión a la base de datos MySQL especificando el host, usuario, contraseña y nombre de la base de datos.
+2. Creación de un cursor: Se crea un objeto de cursor que se utiliza para ejecutar consultas SQL en la base de datos.
+3. Ejecución de una consulta SELECT: Se ejecuta una consulta SQL que selecciona todos los registros de la tabla "usuarios".
+4. Obtención y muestra de resultados: Se obtienen los resultados de la consulta y se muestran en la consola.
+5. Cierre de cursor y conexión: Se cierra el cursor y se cierra la conexión a la base de datos de manera adecuada.
+
+:::{.callout-tip}
+
+### Actividad Práctica
+
+1. Explicación detallada de la actividad práctica y cómo llevarla a cabo.
+2. Solución de la Actividad Práctica
+3. Solución de la actividad práctica.
+4. Explicación paso a paso de la solución y cómo se llegó a ella.
+:::
+
+## ¿Qué Aprendimos?
+
+En esta lección, aprendimos los conceptos clave de las bases de datos en MySQL, incluyendo qué es un Sistema de Gestión de Bases de Datos Relacionales (RDBMS), cómo funcionan las tablas y cómo ejecutar consultas SQL para interactuar con los datos. También exploramos cómo conectar una base de datos MySQL desde Python y realizar consultas utilizando el módulo mysql.connector.

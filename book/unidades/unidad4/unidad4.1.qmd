@@ -1,61 +1,49 @@
-## String y Números
+# Introducción a If
 
-Los strings y los números son dos tipos de datos fundamentales en Python. Aprenderemos cómo trabajar con strings (cadenas de texto) y los diferentes tipos de números en Python.
+El control de flujo es fundamental en la programación para tomar decisiones basadas en condiciones. Aprenderemos cómo utilizar la estructura if para ejecutar diferentes bloques de código según una condición.
 
-![](images/stringAndNumber.png){fig-align="center" width="400"}
+![](images/if-statement.png){fig-align="center" width="400"}
 
-## Conceptos Clave:
+## Conceptos Clave
 
-### String
+### Control de Flujo
 
-![](images/string-4.png){fig-align="center" width="400"}
+Manejo de la ejecución del código basado en condiciones.
 
-Secuencia de caracteres alfanuméricos. Se pueden definir utilizando comillas simples o dobles.
+### Estructura if
 
-### Números Enteros (int)
+Permite ejecutar un bloque de código si una condición es verdadera.
 
-![](images/number.png){fig-align="center" width="400"}
+### Bloque de Código
 
-Representan números enteros positivos o negativos.
-
-### Números de Punto Flotante (float)
-
-![](images/float.png){fig-align="center" width="400"}
-
-Representan números con decimales.
+Conjunto de instrucciones que se ejecutan si la condición es verdadera.
 
 ## Ejemplo
 
-``` python
-# Strings
-massage = "Hola, bienvenido al curso de Python."
-name = 'María'
+```python
+edad = 18
 
-# Números
-age = 25
-balance = 1500.75
+if edad >= 18:
+    print("Eres mayor de edad.")
 ```
+### Explicación:
 
-## Explicación
+En este ejemplo, se utiliza la estructura if para verificar si la variable "edad" es mayor o igual a 18.
 
-En este ejemplo, se crean variables que almacenan strings y números.
+Si la condición es verdadera, se ejecuta el bloque de código que muestra un mensaje.
 
-Los strings se definen utilizando comillas simples o dobles.
+:::{.callout-tip}
 
-Los números enteros y de punto flotante se asignan directamente a variables.
+### Actividad Práctica
 
-::: callout-important
-### Actividad Práctica:
-
-1.  Crea una variable con tu canción favorita.
-
-2.  Asigna tu edad a una variable y tu altura a otra variable.
-
-3.  Combina las variables para crear un mensaje personalizado.
+1. Crea una variable que represente tu puntuación en un juego.
+2. Utiliza una estructura if para mostrar un mensaje diferente según si tu puntuación es mayor o igual a 100.
 :::
 
-## Explicación de la Actividad:
+### Explicación:
 
-Esta actividad permite a los participantes practicar la creación de strings y trabajar con números enteros y de punto flotante.
+Esta actividad permite a los participantes practicar la utilización de la estructura if para tomar decisiones basadas en condiciones. Les ayuda a comprender cómo ejecutar diferentes bloques de código según la situación y cómo utilizar el control de flujo en sus programas.
 
-Les ayuda a comprender cómo almacenar y manipular diferentes tipos de datos en Python.
+## ¿Qué aprendimos?
+
+En este tema, aprendimos los conceptos fundamentales del control de flujo en programación y cómo utilizar la estructura if para ejecutar código condicionalmente. Ahora somos capaces de tomar decisiones en nuestros programas basadas en condiciones específicas.

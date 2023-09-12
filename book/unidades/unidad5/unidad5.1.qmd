@@ -1,45 +1,48 @@
-## Introducción a If
+# Introducción a Funciones
 
-El control de flujo es fundamental en la programación para tomar decisiones basadas en condiciones. Aprenderemos cómo utilizar la estructura if para ejecutar diferentes bloques de código según una condición.
+En esta lección, exploraremos el concepto de funciones en Python. Las funciones son bloques de código reutilizables que realizan tareas específicas. Aprenderemos cómo definir y utilizar funciones en nuestros programas.
 
-## Conceptos Clave:
+![Imagen de una función](images/function.png){fig-align="center" width="400"}
 
-### Control de Flujo
+## Conceptos Clave
 
-Manejo de la ejecución del código basado en condiciones.
+### Función
 
-### Estructura if
+Un bloque de código reutilizable que realiza una tarea específica cuando se llama.
 
-Permite ejecutar un bloque de código si una condición es verdadera.
+### Definición de Función
 
-### Bloque de Código
+Crear una función especificando su nombre, parámetros y cuerpo.
 
-Conjunto de instrucciones que se ejecutan si la condición es verdadera.
+### Llamada de Función
 
-## Ejemplo:
+Ejecutar una función para que realice su tarea específica.
 
-``` python
-edad = 18
+## Ejemplo
 
-if edad >= 18:
-    print("Eres mayor de edad.")
+```python
+# Definición de una función
+def saludar(nombre):
+    print("¡Hola, " + nombre + "!")
+
+# Llamada de función
+saludar("Juan")
 ```
+### Explicación:
 
-## Explicación:
+En este ejemplo, definimos una función llamada saludar que toma un parámetro nombre e imprime un saludo personalizado. Luego, llamamos a esta función con el nombre "Juan".
 
-En este ejemplo, se utiliza la estructura if para verificar si la variable "edad" es mayor o igual a 18.
+:::{.callout-tip}
 
-Si la condición es verdadera, se ejecuta el bloque de código que muestra un mensaje.
+Actividad Práctica
 
-::: {.callout-important}
-
-### Actividad Práctica:
-
-Crea una variable que represente tu puntuación en un juego.
-
-Utiliza una estructura if para mostrar un mensaje diferente según si tu puntuación es mayor o igual a 100.
+Crea una función llamada calcular_area_rectangulo que tome dos parámetros: largo y ancho. La función debe calcular y devolver el área de un rectángulo. Luego, llama a la función con valores diferentes para largo y ancho y muestra el resultado.
 :::
 
-## Explicación de la Actividad:
+### Explicación:
 
-Esta actividad permite a los participantes practicar la utilización de la estructura if para tomar decisiones basadas en condiciones. Les ayuda a comprender cómo ejecutar diferentes bloques de código según la situación y cómo utilizar el control de flujo en sus programas.
+Esta actividad te permite practicar cómo definir funciones con parámetros y cómo utilizarlas para realizar cálculos específicos. Las funciones son una parte fundamental de la programación, ya que permiten organizar y reutilizar el código de manera efectiva.
+
+## ¿Qué aprendimos?
+
+En esta lección, aprendimos qué son las funciones en Python y cómo definirlas y usarlas en nuestros programas. Comprendimos los conceptos clave relacionados con las funciones y cómo aplicarlos en la escritura de código.

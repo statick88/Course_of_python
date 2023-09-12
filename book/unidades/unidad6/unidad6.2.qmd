@@ -1,59 +1,110 @@
-## Recursividad
+# Objetos y Clases
 
-En esta lección, nos adentraremos en el intrigante concepto de la recursividad. 
+En esta lección, continuaremos explorando los conceptos de objetos y clases en la programación orientada a objetos. Aprenderemos cómo crear múltiples objetos a partir de una misma clase y cómo trabajar con sus atributos y métodos.
 
-La recursión es una técnica en la que una función se llama a sí misma para resolver un problema. 
+## Instancias de Clase
 
-Aprenderemos cómo implementar **funciones recursivas** y cuándo es apropiado usarlas.
+Cuando se crea un objeto a partir de una clase, se crea una instancia de esa clase. Cada instancia es independiente y puede tener sus propios valores de atributos.
 
-### Conceptos Clave
-
-**Recursividad**:
-
-Es una técnica en la que una función se llama a sí misma para resolver un problema. Puede parecer un enfoque un tanto sorprendente al principio, pero es especialmente útil en situaciones en las que un problema se puede dividir en subproblemas más pequeños.
-
-**Caso Base**:
-
-La recursión debe tener una forma de detenerse. Un caso base es una condición que indica cuándo la recursión debe finalizar. Si no se establece un caso base adecuado, la recursión puede continuar indefinidamente.
-
-**Caso Recursivo**:
-
-En cada llamada recursiva, el problema original se divide en partes más pequeñas. Estas partes más pequeñas se resuelven mediante llamadas recursivas hasta que se alcanza el caso base.
-Ejemplo
+**Ejemplo**:
 
 ```python
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
+class Coche:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
 
-resultado = factorial(5)
-print(resultado)
+coche1 = Coche("Toyota", "Camry")
+coche2 = Coche("Honda", "Civic")
 ```
-### Explicación
+En este ejemplo, hemos creado dos instancias de la clase "Coche" (coche1 y coche2) con diferentes valores de atributos "marca" y "modelo".
+Atributos de Instancia
 
-En este ejemplo, hemos definido una función recursiva llamada **factorial** para calcular el factorial de un número. 
+Los atributos de instancia son características específicas de un objeto que se almacenan como variables en la instancia. Cada objeto puede tener sus propios valores de atributos.
 
-El factorial de un número entero no negativo n se define como el producto de todos los enteros positivos menores o iguales a n. 
+**Ejemplo**:
 
-Por ejemplo, 5! (pronunciado "cinco factorial") es igual a 5 × 4 × 3 × 2 × 1.
+```python
+class Estudiante:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
 
-La función **factorial** utiliza dos componentes clave de la recursión:
+estudiante1 = Estudiante("Ana", 20)
+estudiante2 = Estudiante("Juan", 22)
+```
+En este ejemplo, hemos creado dos instancias de la clase "Estudiante" con atributos "nombre" y "edad" que son específicos para cada estudiante.
 
-**Caso Base**: Cuando **n** es igual a 0, retornamos 1. Este es el caso base que detiene la recursión. Si no lo tuviéramos, la función se llamaría a sí misma infinitamente.
+### Métodos de Instancia
 
-**Caso Recursivo**: En todas las demás situaciones (cuando **n** no es igual a 0), la función se llama a sí misma con **n - 1** y multiplica el resultado por **n**. Esto es lo que hace que la función sea recursiva.
+Los métodos de instancia son funciones definidas en la clase que operan en los atributos de la instancia. Cada objeto puede llamar a los métodos de instancia para realizar acciones específicas.
 
-La llamada **factorial(5)** resultará en **5 * 4!**, que a su vez se descompone en **5 * 4 * 3!**, y así sucesivamente hasta que alcance el caso base.
+**Ejemplo**:
+
+```python
+class Gato:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def maullar(self):
+        print(f"{self.nombre} está maullando.")
+
+gato1 = Gato("Mittens")
+gato2 = Gato("Whiskers")
+
+gato1.maullar()
+gato2.maullar()
+```
+En este ejemplo, hemos creado dos instancias de la clase "Gato" y llamado al método "maullar" en cada gato para que realicen la acción específica.
 
 :::{.callout-tip}
 
-**Actividad Práctica**
+### Actividad Práctica
 
-Tu tarea es crear una función recursiva llamada potencia que calcule la potencia de un número base elevado a un exponente. Utiliza la función para calcular 2^3 y muestra el resultado en la consola.
+Crea una clase Rectángulo con atributos "ancho" y "alto". Luego, implementa un método llamado "calcular_area" que calcule y retorne el área del rectángulo (ancho * alto).
 :::
+<details>
+<summary>Ejemplo de Clase Rectángulo</summary>
 
-### Explicación de la Actividad
+**Resumen**:
 
-Esta actividad te permitirá aplicar la recursividad de manera práctica. Aprenderás a definir una función recursiva que resuelve un problema matemático y a comprender cómo se dividen los problemas en subproblemas más pequeños en cada llamada recursiva. La recursión es una técnica poderosa que se utiliza en muchos campos de la informática, como algoritmos, estructuras de datos y más.
+En este ejemplo, crearemos una clase llamada "Rectángulo" con atributos "ancho" y "alto". Implementaremos un método llamado "calcular_area" que calculará y retornará el área del rectángulo (ancho * alto). Luego, crearemos dos instancias de la clase "Rectángulo" con diferentes dimensiones y mostraremos el área de cada rectángulo.
+
+**Resolución**:
+
+```python
+class Rectangulo:
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+
+    def calcular_area(self):
+        return self.ancho * self.alto
+
+# Crear dos instancias de Rectangulo
+rectangulo1 = Rectangulo(5, 10)
+rectangulo2 = Rectangulo(3, 7)
+
+# Calcular el área de cada rectángulo
+area1 = rectangulo1.calcular_area()
+area2 = rectangulo2.calcular_area()
+
+# Mostrar el área de cada rectángulo
+print(f"Área del Rectángulo 1: {area1}")
+print(f"Área del Rectángulo 2: {area2}")
+```
+**Explicación**:
+
+1. Definimos la clase "Rectangulo" con un constructor init que toma dos argumentos: "ancho" y "alto". Estos argumentos se utilizan para inicializar los atributos de instancia "ancho" y "alto".
+2. Implementamos un método de instancia llamado "calcular_area" que calcula el área del rectángulo multiplicando el ancho por el alto y lo retorna.
+3. Creamos dos instancias de la clase "Rectangulo" con diferentes dimensiones (5x10 y 3x7).
+4. Calculamos el área de cada rectángulo llamando al método "calcular_area" en cada instancia.
+5. Mostramos el área de cada rectángulo en la consola.
+</details>
+
+## ¿Qué aprendimos?
+
+- Aprendimos los conceptos fundamentales de la Programación Orientada a Objetos (POO).
+- Comprendimos cómo definir clases y objetos en Python.
+- Practicamos la creación de atributos y métodos de instancia en una clase.
+- Realizamos una actividad práctica para aplicar los conocimientos adquiridos en la creación de una clase y su uso.

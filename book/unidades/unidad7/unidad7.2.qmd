@@ -1,118 +1,123 @@
-## Objetos y Clases
+# Creando Nuestro Primer Módulo
 
-En esta lección, continuaremos explorando los conceptos de objetos y clases en la programación orientada a objetos. Aprenderemos cómo crear múltiples objetos a partir de una misma clase y cómo trabajar con sus atributos y métodos.
-Instancias de Clase
+En esta lección, aprenderemos a crear nuestro propio módulo en Python, lo que nos permitirá organizar y reutilizar código de manera efectiva. Crearemos un módulo que contendrá funciones y clases para realizar operaciones matemáticas básicas.
 
-Cuando se crea un objeto a partir de una clase, se crea una instancia de esa clase. Cada instancia es independiente y puede tener sus propios valores de atributos.
+## Pasos para Crear un Módulo:
 
-**Ejemplo**:
-
-```python
-class Coche:
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
-
-coche1 = Coche("Toyota", "Camry")
-coche2 = Coche("Honda", "Civic")
-
-En este ejemplo, hemos creado dos instancias de la clase "Coche" (coche1 y coche2) con diferentes valores de atributos "marca" y "modelo".
-```
-
-### Atributos de Instancia
-
-Los atributos de instancia son características específicas de un objeto que se almacenan como variables en la instancia. Cada objeto puede tener sus propios valores de atributos.
+- Crea un archivo de Python con la extensión .py.
+- Define funciones y/o clases en el archivo.
+- Guarda el archivo en una ubicación accesible.
 
 **Ejemplo**:
 
 ```python
-class Estudiante:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
+# operaciones.py
 
-estudiante1 = Estudiante("Ana", 20)
-estudiante2 = Estudiante("Juan", 22)
+def suma(a, b):
+    return a + b
+
+def resta(a, b):
+    return a - b
+
+class Calculadora:
+    def multiplicacion(self, a, b):
+        return a * b
+## Creando Nuestro Primer Módulo
 ```
+En esta lección, aprenderemos a crear nuestro propio módulo en Python. Crearemos un módulo que contenga funciones y clases para realizar operaciones matemáticas básicas.
 
-En este ejemplo, hemos creado dos instancias de la clase "Estudiante" con atributos "nombre" y "edad" que son específicos para cada estudiante.
+## Pasos para Crear un Módulo:
 
-### Métodos de Instancia
+1. Crea un archivo de Python con la extensión .py.
 
-Los métodos de instancia son funciones definidas en la clase que operan en los atributos de la instancia. Cada objeto puede llamar a los métodos de instancia para realizar acciones específicas.
+2. Define funciones y clases en el archivo.
 
-**Ejemplo**:
+3. Guarda el archivo en una ubicación accesible.
+
+## Ejemplo:
 
 ```python
-class Gato:
-    def __init__(self, nombre):
-        self.nombre = nombre
+# En el archivo operaciones.py
+def suma(a, b):
+    return a + b
 
-    def maullar(self):
-        print(f"{self.nombre} está maullando.")
+def resta(a, b):
+    return a - b
 
-gato1 = Gato("Mittens")
-gato2 = Gato("Whiskers")
-
-gato1.maullar()
-gato2.maullar()
+class Calculadora:
+    def multiplicacion(self, a, b):
+        return a * b
 ```
+## Explicación:
 
-En este ejemplo, hemos creado dos instancias de la clase **"Gato"** y llamado al método **"maullar"** en cada gato para que realicen la acción específica.
+En este ejemplo, se crea un módulo llamado operaciones.py.
+
+Se define una función suma y una función resta, junto con una clase Calculadora que tiene un método multiplicacion.
 
 :::{.callout-tip}
+
 ### Actividad Práctica:
 
-Crea una clase Rectángulo con atributos "ancho" y "alto". Luego, implementa un método llamado "calcular_area" que calcule y retorne el área del rectángulo (ancho * alto).
+1. Crea un módulo llamado geometria con funciones para calcular el área de un círculo y el perímetro de un cuadrado.
+2. En otro archivo, importa el módulo geometria y utiliza las funciones para realizar cálculos geométricos.
+:::
+
+## Explicación de la Actividad:
+
+Esta actividad permite a los participantes practicar la creación de módulos con funciones y clases. Les ayuda a comprender cómo organizar diferentes funcionalidades en módulos separados y cómo importar esas funcionalidades en otros archivos.
+
+En este ejemplo, creamos un módulo llamado operaciones.py. Dentro de este módulo, definimos dos funciones, suma y resta, que realizan operaciones matemáticas básicas. También creamos una clase Calculadora con un método multiplicacion para llevar a cabo multiplicaciones.
+
+:::{.callout-tip}
+
+## Actividad Práctica:
+
+Crea un módulo llamado geometria con funciones para calcular el área de un círculo y el perímetro de un cuadrado.
 
 :::
 
+### Explicación:
+
+Esta actividad te permitirá practicar la creación de módulos con funciones. Debes crear un módulo llamado geometria.py que contenga dos funciones: una para calcular el área de un círculo y otra para calcular el perímetro de un cuadrado. Luego, importa este módulo en otro archivo y utiliza las funciones para realizar cálculos geométricos.
+
 <details>
-<summary>Ejemplo de Clase Rectángulo</summary>
+    <summary>Solución</summary>
 
-**Resumen**:
-
-En este ejemplo, crearemos una clase llamada "Rectángulo" con atributos "ancho" y "alto". Implementaremos un método llamado "calcular_area" que calculará y retornará el área del rectángulo (ancho * alto). Luego, crearemos dos instancias de la clase "Rectángulo" con diferentes dimensiones y mostraremos el área de cada rectángulo.
-
-**Resolución**:
+La solución a la actividad práctica implica crear el módulo geometria.py con las funciones calcular_area_circulo y calcular_perimetro_cuadrado. Luego, importa este módulo en otro archivo y utiliza las funciones para realizar cálculos geométricos.
 
 ```python
-class Rectangulo:
-    def __init__(self, ancho, alto):
-        self.ancho = ancho
-        self.alto = alto
+# geometria.py
 
-    def calcular_area(self):
-        return self.ancho * self.alto
+import math
 
-# Crear dos instancias de Rectangulo
-rectangulo1 = Rectangulo(5, 10)
-rectangulo2 = Rectangulo(3, 7)
+def calcular_area_circulo(radio):
+    return math.pi * radio**2
 
-# Calcular el área de cada rectángulo
-area1 = rectangulo1.calcular_area()
-area2 = rectangulo2.calcular_area()
-
-# Mostrar el área de cada rectángulo
-print(f"Área del Rectángulo 1: {area1}")
-print(f"Área del Rectángulo 2: {area2}")
+def calcular_perimetro_cuadrado(lado):
+    return 4 * lado
 ```
-**Explicación**:
+```python
+# archivo_principal.py
 
-- Definimos la clase "Rectangulo" con un constructor __init__ que toma dos argumentos: "ancho" y "alto". Estos argumentos se utilizan para inicializar los atributos de instancia "ancho" y "alto".
+import geometria
 
-- Implementamos un método de instancia llamado "calcular_area" que calcula el área del rectángulo multiplicando el ancho por el alto y lo retorna.
+radio_circulo = 5
+lado_cuadrado = 4
 
-- Creamos dos instancias de la clase "Rectangulo" con diferentes dimensiones (5x10 y 3x7).
+area = geometria.calcular_area_circulo(radio_circulo)
+perimetro = geometria.calcular_perimetro_cuadrado(lado_cuadrado)
 
-- Calculamos el área de cada rectángulo llamando al método "calcular_area" en cada instancia.
+print(f"Área del círculo: {area}")
+print(f"Perímetro del cuadrado: {perimetro}")
+```
+Explicación paso a paso de la Solución:
 
-- Mostramos el área de cada rectángulo en la consola.
-</details>
+1. Creamos el módulo geometria.py que contiene dos funciones, calcular_area_circulo y calcular_perimetro_cuadrado, para calcular el área de un círculo y el perímetro de un cuadrado, respectivamente.
+2. En el archivo principal (archivo_principal.py), importamos el módulo geometria.
+3. Definimos valores para el radio de un círculo (radio_circulo) y el lado de un cuadrado (lado_cuadrado).
+4. Utilizamos las funciones del módulo geometria para calcular el área del círculo y el perímetro del cuadrado.
+5. Imprimimos los resultados de los cálculos.
 
-### Explicación
+## ¿Qué Aprendimos?
 
-Este ejemplo ilustra cómo trabajar con atributos y métodos de instancia en una clase, permitiendo que cada objeto tenga sus propios valores y pueda realizar acciones específicas.
-
-
-Esta actividad te permite practicar la creación de instancias de clase, trabajar con atributos y métodos de instancia, y entender cómo cada objeto puede tener sus propios valores y realizar acciones específicas.
+En esta lección, aprendimos a crear nuestro propio módulo en Python y cómo organizar funciones y clases en él. También practicamos la importación de módulos en otros archivos y cómo utilizar las funcionalidades proporcionadas por esos módulos. La creación de módulos es una técnica fundamental para mantener nuestro código organizado y promover la reutilización de código.

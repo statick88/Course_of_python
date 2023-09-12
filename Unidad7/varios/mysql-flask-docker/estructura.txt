@@ -1,0 +1,8 @@
+.
+├── app.py
+├── docker-compose.yml
+├── Dockerfile
+├── estructura.txt
+└── requirements.txt
+
+1 directory, 5 files

@@ -1,0 +1,49 @@
+# While, break y continue.
+
+En esta lección, continuaremos explorando cómo trabajar con la estructura while y aprenderemos a utilizar la sentencia continue para saltar a la siguiente iteración del bucle.
+
+<!-- ![](images/while-break-continue.png){fig-align="center" width="400"} -->
+
+## Conceptos Clave:
+
+### Sentencia continue
+
+Se utiliza para saltar a la siguiente iteración del bucle sin ejecutar el resto del código en esa iteración.
+
+### Saltar Iteraciones
+
+La sentencia continue permite omitir ciertas iteraciones basadas en una condición.
+
+## Ejemplo
+
+``` python
+contador = 0
+
+while contador < 5:
+    contador += 1
+    if contador == 3:
+        continue
+    print("Contador:", contador)
+```
+### Explicación:
+
+En este ejemplo, se utiliza un bucle while para imprimir el valor del contador.
+
+Se utiliza la sentencia continue para omitir la iteración cuando el contador es igual a 3.
+
+:::{.callout-tip}
+
+### Actividad Práctica:
+
+Crea un bucle while que imprima los números del 1 al 10, pero omite la impresión del número 5.
+
+Utiliza la sentencia continue para lograr esto.
+:::
+
+### Explicación:
+
+Esta actividad permite a los participantes practicar el uso de la sentencia continue para omitir iteraciones específicas en un bucle while. Les ayuda a comprender cómo controlar la ejecución de un bucle y realizar acciones selectivas en cada iteración.
+
+## ¿Qué aprendimos?
+
+En esta lección, aprendimos cómo utilizar la sentencia continue en un bucle while para saltar a la siguiente iteración sin ejecutar el resto del código en esa iteración. Esto es útil cuando queremos omitir ciertas iteraciones basadas en una condición específica. El control preciso de las iteraciones en un bucle puede ser esencial para realizar tareas específicas en un programa.

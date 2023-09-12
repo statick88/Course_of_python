@@ -1,47 +1,53 @@
-## If y Condicionales
+# Recursividad
 
-En esta lección, aprenderemos cómo trabajar con múltiples condiciones utilizando la estructura if, elif y else. Esto permite ejecutar diferentes bloques de código según diferentes condiciones.
+En esta lección, exploraremos el concepto de recursividad en la programación. La recursividad es una técnica en la que una función se llama a sí misma para resolver un problema. Aprenderemos cómo funciona y cuándo es apropiado utilizarla.
+
+![Imagen de recursividad](images/recursion.png){fig-align="center" width="400"}
 
 ## Conceptos Clave
 
-### Estructura elif 
+### Recursividad
 
-Permite verificar una condición adicional si la condición anterior es falsa.
+Una técnica en la que una función se llama a sí misma para resolver un problema más grande.
 
-### Estructura else 
+### Caso Base
 
-Define un bloque de código que se ejecuta si todas las condiciones anteriores son falsas.
+Un caso en el que la función recursiva se detiene y no se llama a sí misma nuevamente.
 
-### Anidación de Estructuras if
+### Llamada Recursiva
 
-Es posible anidar múltiples estructuras if para manejar situaciones más complejas.
+La acción de una función llamándose a sí misma.
 
-## Ejemplo:
+## Ejemplo
 
 ```python
-puntaje = 85
+# Función recursiva para calcular el factorial
+def factorial(n):
+    # Caso base
+    if n == 1:
+        return 1
+    # Llamada recursiva
+    else:
+        return n * factorial(n - 1)
 
-if puntaje >= 90:
-    print("¡Excelente trabajo!")
-elif puntaje >= 70:
-    print("Buen trabajo.")
-else:
-    print("Necesitas mejorar.")
+resultado = factorial(5)
+print("El factorial de 5 es:", resultado)
 ```
+### Explicación:
 
-## Explicación:
+En este ejemplo, definimos una función llamada factorial que calcula el factorial de un número n. Utilizamos la recursividad para dividir el problema en partes más pequeñas hasta llegar al caso base (cuando n es igual a 1). Luego, multiplicamos los resultados de las llamadas recursivas para obtener el factorial.
 
-En este ejemplo, se utiliza la estructura if, elif y else para evaluar diferentes rangos de puntajes y mostrar mensajes correspondientes.
+:::{.callout-tip}
 
-::: {.callout-important}
-### Actividad Práctica:
+### Actividad Práctica
 
-Crea una variable que represente tu calificación en un examen.
-
-Utiliza una estructura if, elif y else para mostrar mensajes diferentes según la calificación obtenida.
+Crea una función recursiva llamada sumatoria que calcule la suma de los números del 1 al n. Utiliza la recursividad para resolver este problema y luego llama a la función con diferentes valores de n para calcular sumatorias diferentes.
 :::
 
-## Explicación de la Actividad:
+### Explicación:
 
-Esta actividad permite a los participantes practicar el uso de la estructura if, elif y else para manejar múltiples condiciones y decisiones en sus programas. Les ayuda a comprender cómo ejecutar diferentes bloques de código en función de los resultados de las pruebas.
+Esta actividad te permite practicar el concepto de recursividad al resolver un problema diferente. La recursividad es especialmente útil cuando un problema se puede descomponer en subproblemas similares.
 
+## ¿Qué aprendimos?
+
+En esta lección, aprendimos qué es la recursividad y cómo funciona. Comprendimos los conceptos clave de la recursividad, incluyendo el caso base y las llamadas recursivas. La recursividad es una técnica poderosa que se utiliza en muchos algoritmos y problemas de programación.

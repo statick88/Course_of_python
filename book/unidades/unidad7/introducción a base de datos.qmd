@@ -1,0 +1,116 @@
+# Introducción a Bases de Datos
+
+En esta lección, exploraremos el concepto de bases de datos y su importancia en el desarrollo de aplicaciones. 
+
+Aprenderemos cómo las bases de datos nos permiten almacenar y recuperar información de manera eficiente.
+
+<!-- ![](images/database.png){fig-align="center" width="400"} -->
+
+## Conceptos Clave
+
+### Base de Datos
+
+Una base de datos es una colección organizada de datos almacenados en formato estructurado. Esto permite un acceso eficiente y seguro a la información.
+
+### Sistemas de Gestión de Bases de Datos (DBMS)
+
+Los DBMS son software especializados que administran y gestionan las bases de datos. Proporcionan funciones para crear, consultar y mantener bases de datos de manera efectiva.
+
+### Beneficios de las Bases de Datos
+
+Las bases de datos ofrecen numerosos beneficios, como almacenamiento eficiente, acceso rápido a los datos y seguridad de la información almacenada.
+
+## Ejemplo:
+
+- Ejemplo de una tabla 'usuarios' en una base de datos
+
+```markdown
+| id | nombre   | edad | email           |
+|----|----------|------|-----------------|
+| 1  | Juan     | 25   | juan@email.com  |
+| 2  | María    | 30   | maria@email.com |
+```
+### Explicación:
+
+En este ejemplo, se muestra una tabla ficticia de una base de datos llamada 'usuarios'. La tabla contiene filas que representan registros de usuarios con diferentes atributos como id, nombre, edad y email.
+
+A continuación conoceremos las principales bases de datos que se encuentran en el medio, tanto ejemplos de bases de datos relacionales como bases de datos no relacionales.
+
+**SQLite3**:
+
+- SQLite es una base de datos incorporada en Python.
+- Adecuada para aplicaciones móviles y pequeños proyectos.
+- No requiere configuración de servidor.
+
+**MySQL**:
+
+- Un sistema de gestión de bases de datos relacional ampliamente utilizado.
+- Escalable y adecuado para aplicaciones empresariales.
+
+**PostgreSQL**:
+
+- Base de datos relacional de código abierto con características avanzadas.
+- Ideal para aplicaciones que requieren características de alta seguridad y rendimiento.
+
+**MongoDB**:
+
+- Una base de datos NoSQL que almacena datos en documentos JSON.
+- Adecuada para aplicaciones web y proyectos donde la estructura de datos es flexible.
+
+:::{.callout-tip}
+
+### Actividad Práctica:
+
+1. Investiga y elige un Sistema de Gestión de Bases de Datos (DBMS) para utilizar en el curso.
+
+2. Explica por qué es importante utilizar bases de datos en el desarrollo de aplicaciones y cómo los DBMS como SQLite3, MySQL, PostgreSQL y MongoDB pueden ser relevantes para diferentes escenarios de desarrollo.
+:::
+
+<details>
+    <summary>Información Adicional sobre DBMS</summary>
+
+**Resumen:** En esta actividad práctica, se espera que investigues y elijas un Sistema de Gestión de Bases de Datos (DBMS) para utilizar en el curso. Además, se te pide que expliques por qué es importante utilizar bases de datos en el desarrollo de aplicaciones y cómo los DBMS como SQLite3, MySQL, PostgreSQL y MongoDB pueden ser relevantes en diferentes escenarios de desarrollo.
+
+1. **Elección de un DBMS:**
+
+   - Investiga los DBMS disponibles, como SQLite3, MySQL, PostgreSQL y MongoDB.
+   - Considera factores como el tipo de proyecto, escalabilidad, seguridad y flexibilidad.
+   - Elige un DBMS adecuado para el curso, teniendo en cuenta tus necesidades y los requisitos del proyecto.
+
+2. **Importancia de las Bases de Datos:**
+
+   - Las bases de datos son esenciales en el desarrollo de aplicaciones por varias razones:
+     - **Almacenamiento eficiente:** Las bases de datos permiten almacenar grandes cantidades de datos de manera organizada y eficiente.
+     - **Acceso rápido:** Los DBMS proporcionan métodos eficientes para buscar y recuperar datos rápidamente, lo que mejora el rendimiento de la aplicación.
+     - **Seguridad de datos:** Las bases de datos ofrecen mecanismos de seguridad para proteger la información almacenada.
+     - **Escalabilidad:** Algunos DBMS son escalables y pueden manejar crecimientos futuros de datos.
+   - Dependiendo del tipo de aplicación, diferentes DBMS pueden ser más adecuados:
+     - **SQLite3:** Ideal para aplicaciones móviles y proyectos pequeños. No requiere configuración de servidor.
+     - **MySQL:** Ampliamente utilizado en aplicaciones empresariales. Escalable y con una comunidad sólida.
+     - **PostgreSQL:** Adecuado para aplicaciones con necesidades avanzadas de seguridad y rendimiento.
+     - **MongoDB:** Útil en proyectos donde la estructura de datos es flexible, como aplicaciones web.
+
+3. **Elección Final:**
+
+   - Elige el DBMS que mejor se adapte a tus necesidades y objetivos en el curso.
+   - Considera las características específicas de tu proyecto y el tipo de aplicación que estás desarrollando.
+
+4. **Conclusión:**
+
+   - Resalta la importancia de seleccionar el DBMS adecuado para aprovechar al máximo su potencial en el desarrollo de aplicaciones.
+   - Destaca que los DBMS mencionados (SQLite3, MySQL, PostgreSQL y MongoDB) son herramientas valiosas, cada una con sus propias fortalezas y aplicaciones.
+
+
+</details>
+
+### Explicación:
+
+Esta actividad permite a los participantes comprender la importancia de las bases de datos en el desarrollo de aplicaciones. 
+
+También les brinda la oportunidad de investigar y seleccionar un Sistema de Gestión de Bases de Datos (DBMS) adecuado para el curso. 
+
+Además, se proporciona información adicional sobre distintos DBMS como SQLite3, MySQL, PostgreSQL y MongoDB para que puedan comprender sus diferencias y aplicaciones en diversos escenarios de desarrollo.
+
+## ¿Qué Aprendimos?
+
+En esta actividad, aprendimos la importancia de las bases de datos en el desarrollo de aplicaciones y cómo elegir el Sistema de Gestión de Bases de Datos (DBMS) adecuado puede influir en el éxito de un proyecto. También exploramos diferentes DBMS, como SQLite3, MySQL, PostgreSQL y MongoDB, y cómo pueden ser relevantes en varios escenarios de desarrollo. La elección del DBMS debe basarse en las necesidades específicas del proyecto y sus requisitos.

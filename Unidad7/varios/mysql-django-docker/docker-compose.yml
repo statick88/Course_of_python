@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"  
+    volumes:
+      - ./app:/app
+    depends_on:
+      - db
+    networks:
+      - mynetwork  # Nombre de la red personalizada
+
+  db:
+    image: mysql:5.7  # Usando la imagen de MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: mydb
+    networks:
+      - mynetwork  # Nombre de la red personalizada
+
+networks:
+  mynetwork:

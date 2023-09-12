@@ -1,101 +1,89 @@
-## Métodos
+# Renombrando Módulos y Seleccionando Elementos
 
-En esta lección, profundizaremos en el concepto de métodos en la programación orientada a objetos. Aprenderemos cómo definir y utilizar métodos en una clase, y cómo acceder a los atributos de instancia dentro de los métodos.
-Métodos de Clase
+En esta lección, exploraremos cómo renombrar módulos al importarlos y cómo seleccionar elementos específicos para importar. 
 
-Los métodos de clase son funciones definidas dentro de una clase que operan en los atributos de instancia. Cada instancia de la clase puede llamar a estos métodos para realizar acciones específicas.
+Estas técnicas nos brindan un mayor control sobre los nombres y las funcionalidades que utilizamos en nuestro código.
 
-**Ejemplo**:
+### Renombrando Módulos al Importar
 
-```python
-class Cuadrado:
-    def __init__(self, lado):
-        self.lado = lado
+A veces, los nombres de los módulos pueden ser largos o difíciles de recordar. 
 
-    def calcular_area(self):
-        area = self.lado ** 2
-        return area
-
-# Crear una instancia de Cuadrado
-cuadrado1 = Cuadrado(4)
-
-# Calcular y mostrar el área del cuadrado
-area_cuadrado = cuadrado1.calcular_area()
-print(f"Área del Cuadrado: {area_cuadrado}")
-```
-
-En este ejemplo, hemos definido una clase "Cuadrado" con un método **"calcular_area"**. El método accede al atributo de instancia **"lado"** utilizando "self.lado" y calcula el área del cuadrado.
-
-### Acceso a Atributos
-
-Dentro de un método, se puede acceder a los atributos de instancia utilizando **"self.atributo"**. Esto permite manipular y utilizar los valores de los atributos dentro de los métodos.
-
-**Ejemplo**:
+Podemos solucionar esto renombrando el módulo cuando lo importamos. Veamos cómo:
 
 ```python
-class Persona:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
-
-    def saludar(self):
-        print(f"Hola, soy {self.nombre} y tengo {self.edad} años.")
-
-# Crear una instancia de Persona
-persona1 = Persona("Ana", 30)
-
-# Llamar al método saludar para mostrar un saludo personalizado
-persona1.saludar()
+import modulo_largo as ml
 ```
+### Seleccionando Elementos Específicos para Importar
 
-En este ejemplo, el método **"saludar"** accede a los atributos de instancia **"nombre"** y "edad" utilizando "self.nombre" y **"self.edad"** para mostrar un saludo personalizado.
+En lugar de importar todo un módulo, a veces solo necesitamos algunas funciones o clases específicas de ese módulo. Podemos hacer esto de la siguiente manera:
 
+```python
+from modulo import funcion1, funcion2
+```
+**Ejemplo**:
+
+Supongamos que tenemos un módulo llamado calculadora y queremos abreviar su nombre al importarlo:
+
+```python
+import calculadora as calc
+
+resultado = calc.suma(3, 4)
+```
+**Ejemplo**
+
+Si solo necesitamos unas pocas funciones o clases de un módulo grande, podemos importarlas directamente:
+
+```python
+from operaciones import resta, Calculadora
+
+resultado = resta(10, 5)
+```
 :::{.callout-tip}
+
 ### Actividad Práctica:
 
-Crea una clase Triángulo con atributos "base" y "altura", y un método "calcular_area" que calcule y retorne el área del triángulo (base * altura / 2).
+1. Renombra el módulo geometria como geo al importarlo en otro archivo.
+2. Luego, importa solo la función para calcular el área de un círculo y calcula el área de un círculo con radio 5.
 :::
 
 <details>
-<sumary>Ejemplo de Clase Triángulo</sumary>
+    <summary>Solución</summary>
 
 **Resumen**:
 
-En esta actividad, crearemos una clase llamada **"Triángulo"** con atributos **"base"** y **"altura"**. Implementaremos un método llamado "calcular_area" que calculará y retornará el área del triángulo (base * altura / 2). Luego, crearemos una instancia de la clase **"Triángulo"** con dimensiones específicas y mostraremos el área del triángulo.
+Para resolver esta actividad, renombraremos el módulo geometria como geo al importarlo en otro archivo. Luego, importaremos solo la función para calcular el área de un círculo y calcularemos el área de un círculo con radio 5.
 
-**Resolución**:
+**Código**:
 
 ```python
-class Triangulo:
-    def __init__(self, base, altura):
-        self.base = base
-        self.altura = altura
+# Renombrar el módulo geometria como geo al importarlo
+import geometria as geo
 
-    def calcular_area(self):
-        return (self.base * self.altura) / 2
+# Importar solo la función para calcular el área de un círculo
+from geometria import calcular_area_circulo
 
-# Crear una instancia de Triángulo
-triangulo1 = Triangulo(6, 8)
-
-# Calcular el área del triángulo
-area_triangulo = triangulo1.calcular_area()
-
-# Mostrar el área del triángulo
-print(f"Área del Triángulo: {area_triangulo}")
+# Calcular el área de un círculo con radio 5
+radio = 5
+area = calcular_area_circulo(radio)
 ```
 **Explicación**:
 
-- Definimos la clase "Triángulo" con un constructor __init__ que toma dos argumentos: "base" y "altura". Estos argumentos se utilizan para inicializar los atributos de instancia "base" y "altura".
+1. En primer lugar, renombramos el módulo geometria como geo al importarlo. Esto significa que podemos usar geo como un alias para el módulo geometria en nuestro código.
+2. Luego, importamos solo la función calcular_area_circulo del módulo geometria. Esto significa que solo esta función estará disponible en nuestro programa, en lugar de importar todas las funciones y clases del módulo.
+3. Finalmente, calculamos el área de un círculo con radio 5 utilizando la función calcular_area_circulo(radio). El resultado se almacena en la variable area. Esto nos permite realizar cálculos geométricos específicos utilizando el módulo geometria de manera eficiente y legible.
 
-- Implementamos un método de instancia llamado "calcular_area" que calcula el área del triángulo utilizando la fórmula (base * altura) / 2 y lo retorna.
-
-- Creamos una instancia de la clase "Triángulo" con dimensiones específicas (base 6 y altura 8).
-
-- Calculamos el área del triángulo llamando al método "calcular_area" en la instancia.
-
-- Mostramos el área del triángulo en la consola.
 </details>
 
-### Explicación
+### Explicación:
 
-Esta actividad te permite practicar la definición y uso de métodos en una clase y cómo acceder a los atributos de instancia dentro de los métodos.
+Esta actividad te permitirá practicar cómo renombrar módulos al importarlos y cómo seleccionar funciones específicas para importar. Aprenderás a personalizar los nombres de los módulos y a importar solo las funcionalidades necesarias en tu código.
+
+## ¿Qué Aprendimos?
+
+En esta lección, aprendimos dos técnicas útiles al trabajar con módulos en Python:
+
+**Renombrar Módulos al Importar**: Pudimos asignar un nombre más corto o legible a un módulo al importarlo. Esto hace que nuestro código sea más claro y fácil de entender.
+
+**Seleccionar Elementos Específicos para Importar**: Aprendimos cómo importar solo las funciones o clases necesarias de un módulo en lugar de importar todo el módulo. Esto puede ayudar a reducir la cantidad de código innecesario en nuestro programa.
+
+Estas técnicas nos proporcionan un mayor control sobre cómo interactuamos con los módulos, lo que puede hacer que nuestro código sea más eficiente y legible.

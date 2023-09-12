@@ -1,143 +1,51 @@
-## Self, Eliminar Propiedades y Objetos.
+# Seleccionando lo Importado y Pip
 
-En esta lección, aprenderemos más sobre el uso de **"self"** en los métodos de clase. También exploraremos cómo eliminar atributos de instancia y objetos en Python.
-Self
+En esta lección, continuaremos explorando cómo seleccionar elementos específicos para importar y aprenderemos sobre pip, la herramienta de gestión de paquetes de Python. pip nos permite instalar y gestionar paquetes externos que contienen funcionalidades adicionales para nuestros programas.
 
-La palabra clave **"self"** se refiere al objeto actual en un método de clase. Permite acceder y manipular los atributos de instancia dentro de ese método.
+<!-- ![](images/pip.png){fig-align="center" width="400"} -->
 
-**Ejemplo**:
+## Conceptos Clave
 
-```python
-class Persona:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
+### Seleccionar Elementos para Importar
 
-    def presentarse(self):
-        print(f"Me llamo {self.nombre} y tengo {self.edad} años.")
+Cuando importamos módulos en Python, podemos seleccionar elementos específicos, como funciones o clases, en lugar de importar todo el módulo.
 
-# Crear una instancia de Persona
-persona1 = Persona("Carlos", 28)
+### pip (Python Package Installer)
 
-# Llamar al método para presentarse
-persona1.presentarse()
+pip es una herramienta de línea de comandos que se utiliza para instalar, actualizar y desinstalar paquetes de Python. Los paquetes son conjuntos de módulos y recursos que se utilizan para ampliar la funcionalidad de Python.
+
+## Ejemplo - Instalando un Paquete con Pip
+
+```bash
+pip install requests
 ```
-En este ejemplo, **"self"** se utiliza para acceder a los atributos **"nombre"** y **"edad"** dentro del método "presentarse".
-
-### Eliminar Atributos
-
-Se puede eliminar un atributo de instancia utilizando la palabra clave **"del"**.
-
-**Ejemplo**:
-
-```python
-class Coche:
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
-
-    def mostrar_info(self):
-        print(f"Coche {self.marca} {self.modelo}")
-
-# Crear una instancia de Coche
-coche1 = Coche("Toyota", "Corolla")
-
-# Eliminar el atributo 'modelo'
-del coche1.modelo
-
-# Intentar acceder al atributo eliminado generará un error
-# print(coche1.modelo)
-```
-Aquí, hemos creado una instancia de "Coche" y luego eliminado el atributo "modelo" utilizando "del".
-
-### Eliminar Objetos
-
-Para eliminar un objeto y liberar memoria, se utiliza la función "del" seguida del nombre del objeto.
-
-**Ejemplo**:
-
-```python
-class Punto:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def mostrar(self):
-        print(f"Punto ({self.x}, {self.y})")
-
-# Crear una instancia de Punto
-punto1 = Punto(2, 3)
-
-# Llamar al método para mostrar el punto
-punto1.mostrar()
-
-# Eliminar el objeto punto1
-del punto1
-
-# Intentar acceder al objeto eliminado generará un error
-# punto1.mostrar()
-```
-En este ejemplo, creamos una instancia **"punto1"** de la clase **"Punto"** y luego la eliminamos utilizando "del".
+En este ejemplo, utilizamos pip para instalar el paquete requests, que es comúnmente utilizado para hacer solicitudes HTTP en Python.
 
 :::{.callout-tip}
-### Actividad Práctica:
 
-Crea una clase Estudiante con atributos "nombre" y "edad", y un método "mostrar_info" para mostrar la información del estudiante.
+### Actividad Práctica
 
+Utiliza pip para instalar el paquete matplotlib, que se utiliza para trazar gráficos en Python.
+
+En tu archivo de código, importa la función plot de matplotlib.pyplot y crea un gráfico simple.
 :::
-
 <details>
-<sumary>Ejemplo de Clase Triángulo</sumary>
+    <summary>Ejemplo de Instalación de Paquete con Pip</summary>
 
-**Resumen**:
+**Resumen:**
 
-Este ejemplo demuestra cómo crear una clase Estudiante con atributos, un método para mostrar información, y cómo eliminar atributos de instancia.
+En este ejemplo, instalaremos el paquete requests utilizando la herramienta pip.
 
-```python
-# Clase Estudiante
-class Estudiante:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
-
-    def mostrar_info(self):
-        print(f"Estudiante: {self.nombre}, Edad: {self.edad}")
-
-# Crear una instancia de Estudiante
-estudiante1 = Estudiante("María", 22)
-
-# Llamar al método para mostrar la información
-estudiante1.mostrar_info()
-
-# Eliminar el atributo 'nombre' de la instancia
-del estudiante1.nombre
-
-# Intentar acceder al atributo eliminado generará un error
-# estudiante1.mostrar_info()
-
+```bash
+pip install requests
 ```
-**Resolución**.
+**Explicación**:
 
-- Hemos definido una clase llamada Estudiante con un constructor (__init__) que toma dos atributos: nombre y edad. Estos atributos representan el nombre y la edad del estudiante.
-
-- La clase Estudiante también tiene un método llamado mostrar_info que imprime la información del estudiante en un formato específico.
-
-- Luego, hemos creado una instancia estudiante1 de la clase Estudiante con el nombre "María" y la edad 22.
-
-- Hemos llamado al método mostrar_info en la instancia estudiante1, lo que muestra la información del estudiante en la consola.
-
-- Finalmente, hemos utilizado la palabra clave del para eliminar el atributo nombre de la instancia estudiante1.
-
-Esto se hace para mostrar cómo eliminar un atributo de instancia.
-
-**Explicación**: 
-
-Este código muestra cómo definir una clase en Python, crear una instancia de esa clase y llamar a sus métodos. 
-
-También ilustra cómo se pueden eliminar atributos de instancia utilizando del. La eliminación de atributos es útil en situaciones específicas donde se necesita gestionar dinámicamente los atributos de un objeto.
+1. Utilizamos la línea de comando y el comando pip install seguido del nombre del paquete (requests) para instalarlo.
+2. Una vez instalado, podemos importar y utilizar el paquete en nuestros programas Python para realizar solicitudes HTTP de manera sencilla.
 
 </details>
 
-### Explicación
+## ¿Qué aprendimos?
 
-Esta actividad te permite practicar el uso de "self" en los métodos de clase, cómo eliminar atributos de instancia y objetos en Python, y cómo gestionar la memoria.
+En esta lección, aprendimos a seleccionar elementos específicos para importar de un módulo en Python, lo que nos permite utilizar solo las funcionalidades que necesitamos en nuestro código. También aprendimos sobre pip, una herramienta esencial para instalar paquetes externos que amplían las capacidades de Python.

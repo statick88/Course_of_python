@@ -1,46 +1,66 @@
-## Introducción a Bases de Datos
+## Introducción e Instalación
 
-En esta lección, exploraremos el concepto de bases de datos y su importancia en el desarrollo de aplicaciones. Aprenderemos cómo las bases de datos nos permiten almacenar y recuperar información de manera eficiente.
+En esta lección, nos centraremos en realizar operaciones básicas en bases de datos utilizando diferentes sistemas de gestión: MySQL, PostgreSQL y MongoDB. Aprenderemos cómo realizar la instalación de estos sistemas y cómo conectarnos a las bases de datos.
 
-## Conceptos Clave:
+## Instalación de MySQL:
 
-### Base de Datos
+Descargar e instalar MySQL desde el sitio oficial.
 
-Colección organizada de datos almacenados en formato estructurado.
+Configurar contraseña para el usuario 'root'.
 
-### Sistemas de Gestión de Bases de Datos (DBMS)
+## Instalación de PostgreSQL:
 
-Software que administra y gestiona una base de datos.
+Descargar e instalar PostgreSQL desde el sitio oficial.
 
-### Beneficios de las Bases de Datos
+Configurar contraseña para el usuario 'postgres'.
 
-Almacenamiento eficiente, acceso rápido y seguridad de datos.
+## Instalación de MongoDB:
 
-## Ejemplo:
+Descargar e instalar MongoDB desde el sitio oficial.
+
+Configurar directorio de datos y logs.
+
+## Conexión a la Base de Datos:
+
+### MySQL y PostgreSQL: 
+
+Usar bibliotecas como mysql-connector-python o psycopg2 para conectarse y realizar operaciones.
+
+### MongoDB: 
+
+Usar la biblioteca pymongo para conectarse y realizar operaciones.
+
+## Ejemplo - Conexión a MySQL:
 
 ```python
-# Ejemplo de una tabla 'usuarios' en una base de datos
-| id | nombre   | edad | email           |
-|----|----------|------|-----------------|
-| 1  | Juan     | 25   | juan@email.com |
-| 2  | María    | 30   | maria@email.com|
+import mysql.connector
+
+# Conexión a la base de datos
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="contraseña",
+    database="basededatos"
+)
 ```
 
-## Explicación:
+## Ejemplo - Conexión a MongoDB:
 
-En este ejemplo, se muestra una tabla ficticia de una base de datos llamada 'usuarios'.
+```python
+import pymongo
 
-La tabla contiene filas que representan registros de usuarios con diferentes atributos.
-
+# Conexión al servidor MongoDB
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+```
 :::{.callout-important}
 ### Actividad Práctica:
 
-Investiga y elige un Sistema de Gestión de Bases de Datos (DBMS) para utilizar en el curso.
-
-Explica por qué es importante utilizar bases de datos en el desarrollo de aplicaciones.
+Instala MySQL, PostgreSQL y MongoDB en tu entorno.
+Crea una base de datos en cada uno de los sistemas.
+Conéctate a cada una de las bases de datos utilizando las bibliotecas adecuadas.
+Realiza una consulta de prueba en cada sistema para verificar la conexión.
 :::
 
 ## Explicación de la Actividad:
 
-Esta actividad permite a los participantes comprender la importancia de las bases de datos en el desarrollo de aplicaciones y seleccionar una opción adecuada de DBMS para usar en el curso. Les ayuda a familiarizarse con el concepto de bases de datos y sus beneficios.
-
+Esta actividad permite a los participantes adquirir experiencia práctica en la instalación de diferentes sistemas de bases de datos y en la conexión a estas bases de datos utilizando las bibliotecas correspondientes. Les ayuda a comprender cómo establecer una conexión exitosa y cómo preparar el entorno para las operaciones futuras en bases de datos.

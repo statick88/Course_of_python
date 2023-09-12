@@ -1,51 +1,50 @@
-## Listas
+# If y Condicionales
 
-![](images/list.png){fig-align="center" width="400"}
+En esta lección, aprenderemos cómo trabajar con múltiples condiciones utilizando la estructura if, elif y else. Esto permite ejecutar diferentes bloques de código según diferentes condiciones.
 
-Las listas son estructuras de datos que permiten almacenar **varios elementos en una sola variable**. Aprenderemos cómo **crear** y **manipular listas** en Python.
+<!-- ![](images/if-else.png){fig-align="center" width="400"} -->
 
-## Conceptos Clave:
+## Conceptos Clave
 
-### Listas
+### Estructura elif 
 
-![](images/vocales.png){fig-align="center" width="400"}
+Permite verificar una condición adicional si la condición anterior es falsa.
 
-Secuencias ordenadas de elementos que pueden ser de diferentes tipos.
+### Estructura else 
 
-### Índices
+Define un bloque de código que se ejecuta si todas las condiciones anteriores son falsas.
 
-![](images/indice.png){fig-align="center" width="400"}
+### Anidación de Estructuras if
 
-Números que indican la posición de un elemento en la lista.
-
-### Acceso a Elementos.
-
-![](images/posición.png){fig-align="center" width="400"}
-
-Se utiliza el índice para acceder a un elemento específico de la lista.
+Es posible anidar múltiples estructuras if para manejar situaciones más complejas.
 
 ## Ejemplo
 
-``` python
-frutas = ["manzana", "banana", "naranja", "uva"]
-primer_fruta = frutas[0]
-segunda_fruta = frutas[1]
+```python
+puntaje = 85
+
+if puntaje >= 90:
+    print("¡Excelente trabajo!")
+elif puntaje >= 70:
+    print("Buen trabajo.")
+else:
+    print("Necesitas mejorar.")
 ```
+### Explicación:
 
-## Explicación
+En este ejemplo, se utiliza la estructura if, elif y else para evaluar diferentes rangos de puntajes y mostrar mensajes correspondientes.
 
-En este ejemplo, se crea una lista de frutas y se accede a elementos individuales utilizando índices.
+:::{.callout-tip}
+### Actividad Práctica
 
-Los índices comienzan desde 0, por lo que la primera fruta tiene el índice 0.
-
-::: callout-important
-### Actividad Práctica:
-
-Crea una lista con los nombres de tus tres películas favoritas.
-
-Accede al segundo elemento de la lista e imprímelo en la consola.
+1. Crea una variable que represente tu calificación en un examen.
+2. Utiliza una estructura if, elif y else para mostrar mensajes diferentes según la calificación obtenida.
 :::
 
-## Explicación de la Actividad:
+### Explicación:
 
-Esta actividad permite a los participantes practicar la creación de listas y el acceso a elementos utilizando índices. Les ayuda a comprender cómo organizar y acceder a múltiples elementos en una sola variable.
+Esta actividad permite a los participantes practicar el uso de la estructura if, elif y else para manejar múltiples condiciones y decisiones en sus programas. Les ayuda a comprender cómo ejecutar diferentes bloques de código en función de los resultados de las pruebas.
+
+## ¿Qué aprendimos?
+
+En este tema, aprendimos a utilizar la estructura if, elif y else para manejar múltiples condiciones y ejecutar código basado en resultados específicos. También comprendimos cómo anidar estructuras if para manejar situaciones más complejas en la programación.

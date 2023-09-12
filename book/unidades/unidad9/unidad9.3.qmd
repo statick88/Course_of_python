@@ -1,60 +1,55 @@
-## Introducción a MongoDB
+## Crear y Eliminar Tablas en PostgreSQL
 
-En esta lección, nos centraremos en MongoDB, una base de datos NoSQL de código abierto. Aprenderemos cómo instalar MongoDB y cómo realizar operaciones básicas en una base de datos NoSQL.
+En esta lección, aprenderemos a realizar operaciones básicas en una base de datos PostgreSQL, como crear y eliminar tablas, insertar registros y realizar consultas.
 
-## Instalación de MongoDB:
+## Operaciones en PostgreSQL:
 
-Descargar e instalar MongoDB desde el sitio oficial.
-
-Configurar directorio de datos y logs.
-
-## Operaciones Básicas en MongoDB:
-
-### Crear una base de datos: 
-```nosql
-use nombre;
+### Crear una tabla: 
+```sql
+CREATE TABLE nombre (columna1 tipo, columna2 tipo);
 ```
-### Crear una colección (tabla): 
-```nosql
-db.createCollection("coleccion");
+### Insertar registros: 
+```sql
+INSERT INTO nombre (columna1, columna2) VALUES (valor1, valor2);
 ```
-### Insertar documentos (registros): 
-```nosql
-db.coleccion.insert({ campo1: valor1, campo2: valor2 });
-```    
-### Consultar documentos: 
-```nosql
-db.coleccion.find();
+### Consultar registros: 
+```sql
+SELECT * FROM nombre;
 ```
-### Actualizar documentos: 
-```nosql
-db.coleccion.update({ campo: valor }, { $set: { campo_actualizado: nuevo_valor } });
+### Actualizar registros: 
+```sql
+UPDATE nombre SET columna = valor WHERE condicion;
 ```
-### Eliminar documentos: 
-```nosql	
-db.coleccion.remove({ campo: valor });
+### Eliminar registros: 
+```sql
+DELETE FROM nombre WHERE condicion;
+```
+### Eliminar tabla: 
+```sql
+DROP TABLE nombre;
 ```
 
-## Ejemplo - Creación de una Colección en MongoDB:
+## Ejemplo - Creación de una Tabla en PostgreSQL:
 
-```nosql	
-use tienda;
-db.createCollection("productos");
+```sql
+CREATE TABLE empleados (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    salario DECIMAL(10, 2)
+);
 ```
 :::{.callout-important}
-### Actividad Práctica:
+### Actividad Práctica
 
-Instala MongoDB en tu entorno.
+## Conéctate a la base de datos PostgreSQL.
 
-Crea una base de datos llamada 'blog'.
+Crea una tabla 'clientes' con las columnas 'id', 'nombre' y 'email'.
 
-Crea una colección 'articulos'.
+Inserta al menos dos registros en la tabla 'clientes'.
 
-Inserta al menos dos documentos (artículos) en la colección.
-
-Realiza una consulta para obtener todos los documentos de la colección 'articulos'.
+Realiza una consulta para obtener todos los registros de la tabla 'clientes'.
 :::
 
 ## Explicación de la Actividad:
 
-Esta actividad permite a los participantes familiarizarse con la instalación de MongoDB y realizar operaciones básicas en una base de datos NoSQL. Les ayuda a adquirir experiencia práctica en la gestión de datos en MongoDB y a comprender las diferencias entre bases de datos SQL y NoSQL.
+Esta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos PostgreSQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en PostgreSQL.

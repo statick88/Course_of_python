@@ -1,47 +1,52 @@
-## Tuplas.
+# If, elif y else
 
-![](images/tuple.png){fig-align="center" width="400"}
+En esta lección, exploraremos cómo trabajar con múltiples condiciones utilizando la estructura if, elif y else. Esto permite ejecutar diferentes bloques de código según diferentes condiciones.
 
-Las tuplas son estructuras de datos similares a las listas, pero son inmutables, lo que significa que no se pueden modificar después de ser creadas. Aprenderemos cómo trabajar con tuplas en Python.
+<!-- ![](images/if-elif-else.png){fig-align="center" width="400"} -->
 
-## Conceptos Clave:
+## Conceptos Clave
 
-### Tuplas
+### Estructura elif 
 
-![](images/tuple-2.png){fig-align="center" width="400"}
+Permite verificar una condición adicional si la condición anterior es falsa.
 
-Secuencias ordenadas de elementos que, a diferencia de las listas, no se pueden modificar.
+### Estructura else 
 
-### Inmutabilidad
+Define un bloque de código que se ejecuta si todas las condiciones anteriores son falsas.
 
-![](images/tuple1.png){fig-align="center" width="400"}
+### Anidación de Estructuras if
 
-Una vez creada una tupla, no se pueden agregar, modificar o eliminar elementos.
-
-### Acceso a Elementos
-
-Se utiliza el índice para acceder a un elemento específico de la tupla.
+Es posible anidar múltiples estructuras if para manejar situaciones más complejas.
 
 ## Ejemplo
 
-``` python
-coordenadas = (3, 5)
-x = coordenadas[0]
-y = coordenadas[1]
+```python
+puntaje = 85
+
+if puntaje >= 90:
+    print("¡Excelente trabajo!")
+elif puntaje >= 70:
+    print("Buen trabajo.")
+else:
+    print("Necesitas mejorar.")
 ```
+### Explicación:
 
-## Explicación
+En este ejemplo, se utiliza la estructura if, elif y else para evaluar diferentes rangos de puntajes y mostrar mensajes correspondientes.
 
-En este ejemplo, se crea una tupla que almacena coordenadas (x, y) y se accede a los valores individuales utilizando índices.
+:::{.callout-tip}
 
-::: callout-important
 ### Actividad Práctica:
 
-Crea una tupla con las estaciones del año.
+Crea una variable que represente tu calificación en un examen.
 
-Intenta modificar un elemento de la tupla y observa el error que se produce.
+Utiliza una estructura if, elif y else para mostrar mensajes diferentes según la calificación obtenida.
 :::
 
-## Explicación de la Actividad:
+### Explicación:
 
-Esta actividad permite a los participantes practicar la creación de tuplas y comprender la diferencia entre listas y tuplas en términos de inmutabilidad. Les ayuda a comprender cómo utilizar tuplas cuando necesitan almacenar datos que no deben cambiar.
+Esta actividad permite a los participantes practicar el uso de la estructura if, elif y else para manejar múltiples condiciones y decisiones en sus programas. Les ayuda a comprender cómo ejecutar diferentes bloques de código en función de los resultados de las pruebas.
+
+## ¿Qué aprendimos?
+
+En esta lección, aprendimos cómo utilizar la estructura if, elif y else para tomar decisiones basadas en múltiples condiciones. Esto nos permite ejecutar diferentes bloques de código según diferentes situaciones. También exploramos la anidación de estructuras if, lo que nos permite manejar situaciones aún más complejas en la programación.
