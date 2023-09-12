@@ -1489,56 +1489,88 @@
     "href": "unidades/unidad1/unidad1.1.html#conceptos-clave",
     "title": "Introducción general a la Programación",
     "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nInstrucciones\nSon comandos específicos que le indican a la computadora qué hacer. Pueden ser simples, como imprimir un mensaje en pantalla, o complejas, como realizar cálculos matemáticos.\n\n\nLenguajes de Programación.\n\n\n\n\n\nSon sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reglas sintácticas y semánticas que determinan cómo se escriben y ejecutan las instrucciones.\n\n\nAlgoritmos\n\n\n\n\n\nSon conjuntos ordenados de instrucciones diseñados para resolver un problema específico. Los algoritmos son la base de la programación y se utilizan para desarrollar software eficiente.\n\n\nDepuración\n\n\n\n\n\nEs el proceso de identificar y corregir errores en el código. Los programadores pasan tiempo depurando para asegurarse de que sus programas funcionen correctamente."
+    "text": "Conceptos Clave\n\nInstrucciones\nSon comandos específicos que le indican a la computadora qué hacer. Pueden ser simples, como imprimir un mensaje en pantalla, o complejas, como realizar cálculos matemáticos.\n\n\nLenguajes de Programación.\n\nSon sistemas de comunicación entre humanos y máquinas. Cada lenguaje tiene reglas sintácticas y semánticas que determinan cómo se escriben y ejecutan las instrucciones.\n\n\nAlgoritmos\n\nSon conjuntos ordenados de instrucciones diseñados para resolver un problema específico. Los algoritmos son la base de la programación y se utilizan para desarrollar software eficiente.\n\n\nDepuración\n\nEs el proceso de identificar y corregir errores en el código. Los programadores pasan tiempo depurando para asegurarse de que sus programas funcionen correctamente.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción general a la Programación</span>"
+    ]
   },
   {
     "objectID": "unidades/unidad1/unidad1.1.html#ejemplo",
     "href": "unidades/unidad1/unidad1.1.html#ejemplo",
     "title": "Introducción general a la Programación",
     "section": "Ejemplo:",
-    "text": "Ejemplo:\n1print(\"Hola, bienvenido al mundo de la programación.\")\n\n1\n\nEste es un ejemplo sencillo de un programa en Python que imprime un mensaje en pantalla."
+    "text": "Ejemplo:\n1print(\"Hola, bienvenido al mundo de la programación.\")\n\n1\n\nEste es un ejemplo sencillo de un programa en Python que imprime un mensaje en pantalla.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción general a la Programación</span>"
+    ]
   },
   {
     "objectID": "unidades/unidad1/unidad1.1.html#explicación",
     "href": "unidades/unidad1/unidad1.1.html#explicación",
     "title": "Introducción general a la Programación",
     "section": "Explicación",
-    "text": "Explicación\nEn Python, los comentarios comienzan con el símbolo #. No afectan la ejecución del programa, pero son útiles para documentar el código.\nLa línea print(\"Hola, bienvenido al mundo de la programación.\") es una instrucción de impresión. La función print() muestra el texto entre paréntesis en la consola.\n\n\n\n\n\n\nTip\n\n\n\nActividad Práctica\nEscribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida personalizado."
+    "text": "Explicación\nEn Python, los comentarios comienzan con el símbolo #. No afectan la ejecución del programa, pero son útiles para documentar el código.\nLa línea print(\"Hola, bienvenido al mundo de la programación.\") es una instrucción de impresión. La función print() muestra el texto entre paréntesis en la consola.\n\n\n\n\n\n\nTip\n\n\n\nActividad Práctica\nEscribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida personalizado.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción general a la Programación</span>"
+    ]
   },
   {
     "objectID": "unidades/unidad1/unidad1.1.html#explicación-de-la-actividad",
     "href": "unidades/unidad1/unidad1.1.html#explicación-de-la-actividad",
     "title": "Introducción general a la Programación",
     "section": "Explicación de la Actividad",
-    "text": "Explicación de la Actividad\nEl programa utilizará la función input() para recibir la entrada del usuario. Luego, utilizará la entrada proporcionada para imprimir un mensaje de bienvenida personalizado."
+    "text": "Explicación de la Actividad\nEl programa utilizará la función input() para recibir la entrada del usuario. Luego, utilizará la entrada proporcionada para imprimir un mensaje de bienvenida personalizado.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción general a la Programación</span>"
+    ]
   },
   {
     "objectID": "unidades/unidad1/unidad1.2.html#conceptos-clave",
     "href": "unidades/unidad1/unidad1.2.html#conceptos-clave",
     "title": "Instalación de Python",
     "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nPython\n\n\n\n\n\nLenguaje de programación de alto nivel que se utiliza para desarrollar aplicaciones web, científicas, de automatización y más.\n\n\nInterprete\n\n\n\n\n\nPython es un lenguaje interpretado, lo que significa que se ejecuta línea por línea en tiempo real.\n\n\nIDE\n\n\n\n\n\nLos entornos de desarrollo integrados (IDE) como Visual Studio Code (VS Code) o PyCharm brindan herramientas para escribir, depurar y ejecutar código de manera más eficiente."
+    "text": "Conceptos Clave\n\nPython\n\n\n\n\n\nLenguaje de programación de alto nivel que se utiliza para desarrollar aplicaciones web, científicas, de automatización y más.\n\n\nInterprete\n\n\n\n\n\nPython es un lenguaje interpretado, lo que significa que se ejecuta línea por línea en tiempo real.\n\n\nIDE\n\n\n\n\n\nLos entornos de desarrollo integrados (IDE) como Visual Studio Code (VS Code) o PyCharm brindan herramientas para escribir, depurar y ejecutar código de manera más eficiente.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Instalación de Python</span>"
+    ]
   },
   {
     "objectID": "unidades/unidad1/unidad1.2.html#ejemplo",
     "href": "unidades/unidad1/unidad1.2.html#ejemplo",
     "title": "Instalación de Python",
     "section": "Ejemplo",
-    "text": "Ejemplo\nNo se necesita código para esta lección, ya que se trata de instrucciones para la instalación de Python en diferentes sistemas operativos."
+    "text": "Ejemplo\nNo se necesita código para esta lección, ya que se trata de instrucciones para la instalación de Python en diferentes sistemas operativos.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Instalación de Python</span>"
+    ]
   },
   {
     "objectID": "unidades/unidad1/unidad1.2.html#explicación",
     "href": "unidades/unidad1/unidad1.2.html#explicación",
     "title": "Instalación de Python",
     "section": "Explicación",
-    "text": "Explicación\nPara instalar Python en sistemas Windows, macOS y Linux, se pueden seguir las instrucciones detalladas proporcionadas en el sitio web oficial de Python www.python.org/downloads/.\nLa instalación de Python generalmente incluye el intérprete de Python y una serie de herramientas y bibliotecas estándar que hacen que sea fácil comenzar a programar.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nInstala Python en tu sistema operativo siguiendo las instrucciones del sitio web oficial de Python. Luego, verifica que Python esté correctamente instalado ejecutando el intérprete y escribiendo el siguiente código:\nprint(\"Python se ha instalado correctamente.\")"
+    "text": "Explicación\nPara instalar Python en sistemas Windows, macOS y Linux, se pueden seguir las instrucciones detalladas proporcionadas en el sitio web oficial de Python www.python.org/downloads/.\nLa instalación de Python generalmente incluye el intérprete de Python y una serie de herramientas y bibliotecas estándar que hacen que sea fácil comenzar a programar.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nInstala Python en tu sistema operativo siguiendo las instrucciones del sitio web oficial de Python. Luego, verifica que Python esté correctamente instalado ejecutando el intérprete y escribiendo el siguiente código:\nprint(\"Python se ha instalado correctamente.\")",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Instalación de Python</span>"
+    ]
   },
   {
     "objectID": "unidades/unidad1/unidad1.2.html#explicación-de-la-actividad",
     "href": "unidades/unidad1/unidad1.2.html#explicación-de-la-actividad",
     "title": "Instalación de Python",
     "section": "Explicación de la Actividad",
-    "text": "Explicación de la Actividad\nEsta actividad permite a los participantes aplicar lo aprendido instalando Python en su propio sistema y ejecutando un programa sencillo para confirmar que la instalación fue exitosa."
+    "text": "Explicación de la Actividad\nEsta actividad permite a los participantes aplicar lo aprendido instalando Python en su propio sistema y ejecutando un programa sencillo para confirmar que la instalación fue exitosa.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Instalación de Python</span>"
+    ]
   },
   {
     "objectID": "unidades/unidad1/unidad1.3.html",

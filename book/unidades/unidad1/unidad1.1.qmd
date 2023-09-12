@@ -24,7 +24,7 @@ Son conjuntos ordenados de instrucciones diseñados para resolver un problema es
 
 ### Depuración
 
-![](images/debug.png){fig-align="center"}
+<!-- ![](images/debug.png){fig-align="center"} -->
 
 Es el proceso de identificar y corregir errores en el código. Los programadores pasan tiempo depurando para asegurarse de que sus programas funcionen correctamente.
 
@@ -42,7 +42,7 @@ En Python, los comentarios comienzan con el símbolo `#`. No afectan la ejecuci�
 
 La línea `print("Hola, bienvenido al mundo de la programación.")` es una instrucción de impresión. La función `print()` muestra el texto entre paréntesis en la consola.
 
-::: callout-tip
+:::{.callout-tip}
 **Actividad Práctica**
 
 Escribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida personalizado.
