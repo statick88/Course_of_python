@@ -2,7 +2,7 @@
 
 En esta lección, exploraremos los operadores lógicos and y or, que permiten combinar condiciones para crear expresiones más complejas en las estructuras if, elif y else.
 
-![](images/and-or.png){fig-align="center" width="400"}
+<!-- ![](images/and-or.png){fig-align="center" width="400"} -->
 
 ## Conceptos Clave:
 
