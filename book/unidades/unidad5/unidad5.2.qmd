@@ -2,7 +2,7 @@
 
 En esta lección, exploraremos el concepto de recursividad en la programación. La recursividad es una técnica en la que una función se llama a sí misma para resolver un problema. Aprenderemos cómo funciona y cuándo es apropiado utilizarla.
 
-![Imagen de recursividad](images/recursion.png){fig-align="center" width="400"}
+<!-- ![Imagen de recursividad](images/recursion.png){fig-align="center" width="400"} -->
 
 ## Conceptos Clave
 
