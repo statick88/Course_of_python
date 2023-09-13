@@ -90,6 +90,7 @@ book:
         - unidades/unidad8/unidad8.2.qmd
         - unidades/unidad8/unidad8.3.qmd
         - unidades/unidad8/unidad8.4.qmd
+        - unidades/unidad8/unidad8.5.qmd
     - part: "Unidad 9: Introducción a Bases de Datos"
       chapters: 
         - unidades/unidad9/unidad9.1.qmd

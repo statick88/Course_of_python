@@ -1,143 +1,84 @@
-# Model Template View en Django
+# Creación de una Vista Hola Mundo en Django
 
-En esta lección, profundizaremos en el patrón Modelo-Vista-Controlador (MVC) de Django y cómo se aplica al crear un CRUD (Crear, Leer, Actualizar, Eliminar) de tareas.
+En esta lección, crearemos una vista en Django que mostrará un mensaje "Hola Mundo" en la página web.
+
+<!-- ![](images/hola_mundo_django.png){fig-align="center" width="400"} -->
 
 ## Conceptos Clave
 
-### Modelo (Model)
+### Vista
 
-El Modelo en Django define la estructura de la base de datos y cómo se almacenan los datos. Cada modelo corresponde a una tabla en la base de datos.
+En Django, una vista es una función que toma una solicitud web y devuelve una respuesta. Se utiliza para definir qué contenido se muestra en una página web.
 
-### Plantilla (Template)
+### Plantillas
 
-Las Plantillas en Django son archivos HTML que definen la estructura visual de las páginas web. Permiten la presentación de datos a los usuarios.
+Las plantillas en Django son archivos HTML que permiten la presentación de datos dinámicos. Se utilizan para generar la interfaz de usuario de una aplicación web.
 
-### Vista (View)
-
-Las Vistas en Django controlan qué datos se muestran en una página web y cómo se presentan. Se encargan de la lógica de negocio y trabajan con los modelos y plantillas.
-
-**Ejemplo**
+## Ejemplo
 
 ```python
-# Definición de un modelo para una tarea en Django
-from django.db import models
+# En el archivo views.py de la aplicación Django
+from django.http import HttpResponse
 
-class Tarea(models.Model):
-    titulo = models.CharField(max_length=200)
-    descripcion = models.TextField()
-    fecha_creacion = models.DateTimeField('fecha de creación')
+def hola_mundo(request):
+    return HttpResponse("¡Hola Mundo!")
 ```
-```html
-# Creación de una plantilla HTML para mostrar la lista de tareas
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de Tareas</title>
-</head>
-<body>
-    <h1>Tareas Pendientes</h1>
-    <ul>
-        {% for tarea in lista_tareas %}
-            <li>{{ tarea.titulo }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
-```
-```python
 
-# Creación de una vista en Django para mostrar la lista de tareas
-from django.shortcuts import render
-from .models import Tarea
-
-def lista_tareas(request):
-    tareas = Tarea.objects.all()
-    return render(request, 'lista_tareas.html', {'lista_tareas': tareas})
-```
 ### Explicación
 
-En este ejemplo, hemos definido un modelo Tarea que representa una tarea en nuestra base de datos. Luego, creamos una plantilla HTML lista_tareas.html que muestra una lista de tareas. Finalmente, creamos una vista lista_tareas que recupera todas las tareas y las muestra utilizando la plantilla.
+En este ejemplo, hemos creado una vista llamada hola_mundo en Django. Esta vista toma una solicitud web y devuelve una respuesta que consiste en el mensaje "¡Hola Mundo!".
+
+Luego, podemos configurar una URL para que apunte a esta vista, de modo que cuando un usuario acceda a esa URL, verá el mensaje "¡Hola Mundo!" en la página.
 
 :::{.callout-tip}
-### Actividad Práctica
+Actividad Práctica
 
-1. Crea un modelo Django llamado Nota que tenga un campo para el título y otro para el contenido de la nota.
-2. Crea una plantilla HTML llamada lista_notas.html que muestre una lista de notas.
-3. Crea una vista en Django llamada lista_notas que recupere todas las notas y las muestre utilizando la plantilla.
-
+1. Crea una aplicación Django llamada "hola_mundo_app" en tu proyecto.
+2. Crea una vista similar a la vista hola_mundo en esta lección en el archivo views.py de la aplicación "hola_mundo_app".
+3. Configura una URL para que apunte a esta vista en el archivo urls.py de la aplicación "hola_mundo_app".
+4. Ejecuta tu servidor Django y accede a la URL correspondiente para ver el mensaje "¡Hola Mundo!" en tu navegador.
 :::
+
 <details>
-<summary>Solucion</summary>
+<summary>Solución</summary>
 
-**Resumen**:
+**Resumen:**
 
-En esta actividad práctica, se creará un modelo Django llamado "Nota" con campos para el título y el contenido de la nota. Luego, se creará una plantilla HTML llamada "lista_notas.html" para mostrar una lista de notas. Finalmente, se creará una vista Django llamada "lista_notas" que recuperará todas las notas y las mostrará utilizando la plantilla.
+Hemos creado una vista en Django que muestra el mensaje "¡Hola Mundo!" en la página web.
 
-**Código**:
+**Resolución:**
 
-1. Crear el Modelo Django **Nota**:
-
-En el archivo models.py de la aplicación correspondiente (generalmente llamada "articulos"), define el modelo "Nota" con campos para el título y el contenido de la nota:
+1. Creamos una vista llamada hola_mundo en views.py.
 
 ```python
-from django.db import models
+# En el archivo views.py de la aplicación "hola_mundo_app"
+from django.http import HttpResponse
 
-class Nota(models.Model):
-    titulo = models.CharField(max_length=200)
-    contenido = models.TextField()
-
-    def __str__(self):
-        return self.titulo
-
-    Crear la Plantilla HTML "lista_notas.html":
+def hola_mundo_personalizado(request):
+    return HttpResponse("¡Hola Mundo Personalizado!")
 ```
-Dentro de la carpeta de la aplicación (**articulos** en este ejemplo), crea una carpeta llamada **templates** si aún no existe. Luego, crea un archivo HTML llamado **lista_notas.html** en la carpeta "templates" con el siguiente contenido:
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Notas</title>
-</head>
-<body>
-    <h1>Lista de Notas</h1>
-    <ul>
-        {% for nota in notas %}
-            <li>{{ nota.titulo }}</li>
-            <p>{{ nota.contenido }}</p>
-        {% endfor %}
-    </ul>
-</body>
-</html>
-```
-2. Crear la Vista Django **lista_notas**:
-
-En el archivo views.py de la aplicación (**articulos** en este ejemplo), crea una vista llamada **lista_notas** que recupere todas las notas y las pase a la plantilla **lista_notas.html**:
-
+2. Configuramos una URL para esta vista en urls.py.
 ```python
-from django.shortcuts import render
-from .models import Nota
+from django.urls import path
+from . import views
 
-def lista_notas(request):
-    notas = Nota.objects.all()
-    return render(request, 'lista_notas.html', {'notas': notas})
+urlpatterns = [
+    path('hola-mundo/', views.hola_mundo_personalizado, name='hola_mundo_personalizado'),
+]
 ```
-**Explicación**:
+3. Accedimos a la URL en un navegador para ver el mensaje.
+```bash
+python manage.py runserver
+```
 
-1. Hemos creado un modelo Django llamado **Nota** que contiene dos campos: **titulo** y **contenido**." 
-    El campo **titulo** es un CharField con una longitud máxima de 200 caracteres, y el campo **contenido** es un TextField para almacenar el contenido más extenso de la nota.
-2. Creamos una plantilla HTML llamada **lista_notas.html** que se utilizará para mostrar la lista de notas. 
-    En esta plantilla, utilizamos etiquetas de plantilla de Django **({% for ... %})** para iterar sobre todas las notas y mostrar tanto el título como el contenido de cada nota.
-3. Creamos una vista Django llamada **lista_notas** en el archivo **views.py**. 
-    En esta vista, recuperamos todas las notas utilizando **Nota.objects.all()** y luego pasamos las notas a la plantilla **lista_notas.html** como un contexto para que puedan mostrarse en la página.
+4. Utiliza el navegador para consultar la siguiente url [http://localhost:8000/hola-mundo/](http://localhost:8000/hola-mundo/)
 
-Con estos pasos, hemos configurado un modelo, una plantilla y una vista para mostrar una lista de notas en una aplicación Django. 
 
-Ahora puedes acceder a la vista **lista_notas** en tu aplicación para ver la lista de notas en la plantilla correspondiente.
+**Explicación:**
 
+La vista hola_mundo es una función que toma una solicitud web y devuelve una respuesta que contiene el mensaje "¡Hola Mundo!". Configuramos una URL para que los usuarios puedan acceder a esta vista y ver el mensaje en la página.
 </details>
 
 ## ¿Qué aprendimos?
 
-En esta lección, aprendimos cómo se aplican los conceptos Modelo, Plantilla y Vista en Django para crear una lista de tareas. Entendemos cómo Django maneja la lógica de negocio y la presentación de datos de manera separada.
+En esta lección, aprendimos cómo crear una vista en Django y cómo configurar una URL para mostrar contenido en una página web. También vimos cómo se utiliza la plantilla de la vista para generar la respuesta que se muestra al usuario.
