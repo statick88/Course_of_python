@@ -1,18 +1,26 @@
 # Introducción a Django
 
+Antes de iniciar con Django, es necesario conocer el patron de arquitectura que utiliza este Framework.
+
+![](images/Model_template_view.png){fig-align="center" width="800"}
+
+A diferencia de otro patrón muy conocido llamado Model View Controller.
+
+![](images/Model_view_controller.png){fig-align="center" width="800"}
+
 Django es un marco de desarrollo web de alto nivel y de código abierto que facilita la creación de aplicaciones web rápidamente. En esta lección, introduciremos los conceptos básicos de Django y su arquitectura.
 
 ## Conceptos Clave
 
-Django es un marco de desarrollo web basado en Python que sigue el patrón de diseño Modelo-Vista-Controlador (MVC).
+Django es un marco de desarrollo web basado en Python que sigue el patrón de diseño Model Template View (MTV).
 
-La arquitectura de Django se basa en proyectos y aplicaciones. 
+La arquitectura de Django se basa en proyectos y aplicaciones.
 
 Un proyecto Django puede contener varias aplicaciones que se pueden reutilizar en diferentes proyectos.
 
 **Ejemplo**
 
-```python
+``` python
 # Creación de un proyecto Django llamado "mi_proyecto"
 django-admin startproject mi_proyecto
 
@@ -20,23 +28,25 @@ django-admin startproject mi_proyecto
 cd mi_proyecto
 python manage.py startapp mi_aplicacion
 ```
+
 ### Explicación
 
-En este ejemplo, hemos creado un proyecto Django llamado **mi_proyecto** utilizando el comando **django-admin startproject**. 
+En este ejemplo, hemos creado un proyecto Django llamado **mi_proyecto** utilizando el comando **django-admin startproject**.
 
-Luego, dentro del proyecto, creamos una aplicación llamada **mi_aplicacion** utilizando **python manage.py startapp**. 
+Luego, dentro del proyecto, creamos una aplicación llamada **mi_aplicacion** utilizando **python manage.py startapp**.
 
 Django organiza el código en proyectos y aplicaciones para mantenerlo modular y reutilizable.
 
-:::{.callout-tip}
+::: callout-tip
 ### Actividad Práctica
 
-1. Crea un proyecto Django llamado "blog".
-2. Dentro del proyecto, crea una aplicación llamada "articulos".
-3. Verifica la estructura de carpetas generada por Django y explora los archivos creados.
-
+1.  Crea un proyecto Django llamado "blog".
+2.  Dentro del proyecto, crea una aplicación llamada "articulos".
+3.  Verifica la estructura de carpetas generada por Django y explora los archivos creados.
 :::
+
 <details>
+
 <summary>Solución</summary>
 
 Resumen:
@@ -47,11 +57,11 @@ Código:
 
 Para crear el proyecto Django y la aplicación, sigue estos pasos:
 
-1. Abre una terminal o línea de comandos.
-2. Navega hasta la ubicación donde desees crear el proyecto "blog".
-3. Ejecuta los siguientes comandos:
+1.  Abre una terminal o línea de comandos.
+2.  Navega hasta la ubicación donde desees crear el proyecto "blog".
+3.  Ejecuta los siguientes comandos:
 
-```bash
+``` bash
 # Crear un proyecto Django llamado "blog"
 django-admin startproject blog
 
@@ -61,11 +71,12 @@ cd blog
 # Crear una aplicación llamada "articulos"
 python manage.py startapp articulos
 ```
+
 **Explicación**:
 
-1. Utilizamos el comando django-admin startproject para crear un nuevo proyecto Django llamado **blog**. Esto generará la estructura de carpetas y los archivos iniciales del proyecto.
-2. Luego, cambiamos al directorio del proyecto utilizando cd blog.
-3. Finalmente, utilizamos el comando python manage.py startapp para crear una aplicación llamada **articulos** dentro del proyecto **blog**. Esto generará la estructura de carpetas y archivos iniciales para la aplicación.
+1.  Utilizamos el comando django-admin startproject para crear un nuevo proyecto Django llamado **blog**. Esto generará la estructura de carpetas y los archivos iniciales del proyecto.
+2.  Luego, cambiamos al directorio del proyecto utilizando cd blog.
+3.  Finalmente, utilizamos el comando python manage.py startapp para crear una aplicación llamada **articulos** dentro del proyecto **blog**. Esto generará la estructura de carpetas y archivos iniciales para la aplicación.
 
 Una vez completados estos pasos, tendrás un proyecto **blog** con una aplicación **articulos** lista para desarrollar.
 
