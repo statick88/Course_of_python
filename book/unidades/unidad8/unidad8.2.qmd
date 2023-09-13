@@ -30,6 +30,37 @@ En este ejemplo, hemos creado una vista llamada hola_mundo en Django. Esta vista
 
 Luego, podemos configurar una URL para que apunte a esta vista, de modo que cuando un usuario acceda a esa URL, verá el mensaje "¡Hola Mundo!" en la página.
 
+```python
+# En el archivo urls.py de la aplicación Django
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('hola-mundo/', views.hola_mundo, name='hola_mundo'),
+]
+```
+
+Configuración del archivo settings.py
+
+```python
+INSTALLED_APPS = [
+    # ...
+    'hola_mundo_app',
+    # ...
+]
+```
+Archivo urls.py del proyecto principal
+
+```python
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('hola-mundo/', include('hola_mundo_app.urls')),
+]
+```
+
 :::{.callout-tip}
 Actividad Práctica
 

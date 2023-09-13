@@ -8,7 +8,7 @@
 
 <meta name="description" content="Este libro de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Frameworsk como Django, Flask, Fast Api, PyScript y Regex. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con Bases de datos, APIs y más.">
 
-<title>Python 2023 - Creación de un CRUD de Tareas en Django</title>
+<title>Python 2023 - Herencia de Plantillas y Bootstrap en Django</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/unidad9/unidad9.1.html" rel="next">
+<link href="../../unidades/unidad8/unidad8.5.html" rel="next">
 <link href="../../unidades/unidad8/unidad8.3.html" rel="prev">
 <link href="../../python-logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -119,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.1.html">Unidad 8: Frameworks</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.4.html"><span class="chapter-title">Creación de un CRUD de Tareas en Django</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.1.html">Unidad 8: Frameworks</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.4.html"><span class="chapter-title">Herencia de Plantillas y Bootstrap en Django</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -443,17 +443,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Template View en Django</span></a>
+  <a href="../../unidades/unidad8/unidad8.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creación de una Vista Hola Mundo en Django</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Herencia de Plantillas y Bootstrap en Django</span></a>
+  <a href="../../unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Template View en Django</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Creación de un CRUD de Tareas en Django</span></a>
+  <a href="../../unidades/unidad8/unidad8.4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Herencia de Plantillas y Bootstrap en Django</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad8/unidad8.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creación de un CRUD de Tareas en Django</span></a>
   </div>
 </li>
       </ul>
@@ -664,20 +669,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#conceptos-clave" id="toc-conceptos-clave" class="nav-link active" data-scroll-target="#conceptos-clave">Conceptos Clave</a>
   <ul class="collapse">
-  <li><a href="#crud" id="toc-crud" class="nav-link" data-scroll-target="#crud">CRUD</a></li>
-  <li><a href="#formularios-en-django" id="toc-formularios-en-django" class="nav-link" data-scroll-target="#formularios-en-django">Formularios en Django</a></li>
+  <li><a href="#herencia-de-plantillas" id="toc-herencia-de-plantillas" class="nav-link" data-scroll-target="#herencia-de-plantillas">Herencia de Plantillas</a></li>
+  <li><a href="#bootstrap" id="toc-bootstrap" class="nav-link" data-scroll-target="#bootstrap">Bootstrap</a></li>
   <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
-  <li><a href="#qué-aprendimos" id="toc-qué-aprendimos" class="nav-link" data-scroll-target="#qué-aprendimos">¿Qué aprendimos?</a></li>
   </ul></li>
+  <li><a href="#qué-aprendimos" id="toc-qué-aprendimos" class="nav-link" data-scroll-target="#qué-aprendimos">¿Qué aprendimos?</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad8/unidad8.4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad8/unidad8.4.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.1.html">Unidad 8: Frameworks</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.4.html"><span class="chapter-title">Creación de un CRUD de Tareas en Django</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.1.html">Unidad 8: Frameworks</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.4.html"><span class="chapter-title">Herencia de Plantillas y Bootstrap en Django</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Creación de un CRUD de Tareas en Django</span></h1>
+<h1 class="title"><span class="chapter-title">Herencia de Plantillas y Bootstrap en Django</span></h1>
 </div>
 
 
@@ -693,59 +698,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>En esta lección, aprenderemos cómo crear un CRUD (Crear, Leer, Actualizar, Eliminar) de tareas en Django, utilizando modelos, vistas y formularios.</p>
+<p>En esta lección, aprenderemos cómo utilizar la herencia de plantillas en Django para crear un diseño consistente en nuestras páginas web y cómo integrar Bootstrap para mejorar la apariencia de la interfaz de usuario.</p>
 <section id="conceptos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave</h2>
-<section id="crud" class="level3">
-<h3 class="anchored" data-anchor-id="crud">CRUD</h3>
-<p>CRUD es un acrónimo de “Crear, Leer, Actualizar, Eliminar” y se refiere a las operaciones básicas de manipulación de datos en una aplicación.</p>
+<section id="herencia-de-plantillas" class="level3">
+<h3 class="anchored" data-anchor-id="herencia-de-plantillas">Herencia de Plantillas</h3>
+<p>La herencia de plantillas en Django permite definir una plantilla base con elementos comunes y extenderla para crear plantillas específicas para cada página.</p>
 </section>
-<section id="formularios-en-django" class="level3">
-<h3 class="anchored" data-anchor-id="formularios-en-django">Formularios en Django</h3>
-<p>Los formularios en Django nos permiten crear y manejar formularios HTML de manera sencilla y eficiente.</p>
+<section id="bootstrap" class="level3">
+<h3 class="anchored" data-anchor-id="bootstrap">Bootstrap</h3>
+<p>Bootstrap es un marco de diseño de código abierto que proporciona estilos y componentes predefinidos para mejorar la apariencia y la usabilidad de un sitio web.</p>
 <p><strong>Ejemplo</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación de un modelo Django llamado "Tarea"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.db <span class="im">import</span> models</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Tarea(models.Model):</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    titulo <span class="op">=</span> models.CharField(max_length<span class="op">=</span><span class="dv">200</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    descripcion <span class="op">=</span> models.TextField()</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    fecha_creacion <span class="op">=</span> models.DateTimeField(<span class="st">'fecha de creación'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación de un formulario en Django para crear una tarea</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django <span class="im">import</span> forms</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plantilla base llamada "base.html"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!</span>DOCTYPE html<span class="op">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>html<span class="op">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>head<span class="op">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>title<span class="op">&gt;</span>{<span class="op">%</span> block title <span class="op">%</span>}Mi Sitio Web{<span class="op">%</span> endblock <span class="op">%</span>}<span class="op">&lt;/</span>title<span class="op">&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>link rel<span class="op">=</span><span class="st">"stylesheet"</span> href<span class="op">=</span><span class="st">"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"</span><span class="op">&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>head<span class="op">&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>body<span class="op">&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div <span class="kw">class</span><span class="op">=</span><span class="st">"container"</span><span class="op">&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>header<span class="op">&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="op">&lt;</span>h1<span class="op">&gt;</span>Mi Sitio Web<span class="op">&lt;/</span>h1<span class="op">&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;/</span>header<span class="op">&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>nav<span class="op">&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="op">&lt;</span>ul <span class="kw">class</span><span class="op">=</span><span class="st">"nav"</span><span class="op">&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                <span class="op">&lt;</span>li <span class="kw">class</span><span class="op">=</span><span class="st">"nav-item"</span><span class="op">&gt;&lt;</span>a <span class="kw">class</span><span class="op">=</span><span class="st">"nav-link"</span> href<span class="op">=</span><span class="st">"/"</span><span class="op">&gt;</span>Inicio<span class="op">&lt;/</span>a<span class="op">&gt;&lt;/</span>li<span class="op">&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                <span class="op">&lt;</span>li <span class="kw">class</span><span class="op">=</span><span class="st">"nav-item"</span><span class="op">&gt;&lt;</span>a <span class="kw">class</span><span class="op">=</span><span class="st">"nav-link"</span> href<span class="op">=</span><span class="st">"/tareas/"</span><span class="op">&gt;</span>Tareas<span class="op">&lt;/</span>a<span class="op">&gt;&lt;/</span>li<span class="op">&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">&lt;/</span>ul<span class="op">&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;/</span>nav<span class="op">&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>main<span class="op">&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>            {<span class="op">%</span> block content <span class="op">%</span>}{<span class="op">%</span> endblock <span class="op">%</span>}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;/</span>main<span class="op">&gt;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>body<span class="op">&gt;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>html<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a># Plantilla para la página de inicio que hereda de "base.html"</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>{% extends "base.html" %}</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TareaForm(forms.ModelForm):</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Meta:</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        model <span class="op">=</span> Tarea</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        fields <span class="op">=</span> [<span class="st">'titulo'</span>, <span class="st">'descripcion'</span>, <span class="st">'fecha_creacion'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación de una vista para listar, crear y actualizar tareas</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.shortcuts <span class="im">import</span> render, get_object_or_404, redirect</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Tarea</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .forms <span class="im">import</span> TareaForm</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lista_tareas(request):</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    tareas <span class="op">=</span> Tarea.objects.<span class="bu">all</span>()</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'lista_tareas.html'</span>, {<span class="st">'lista_tareas'</span>: tareas})</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> crear_tarea(request):</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">"POST"</span>:</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> TareaForm(request.POST)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> form.is_valid():</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>            tarea <span class="op">=</span> form.save()</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> redirect(<span class="st">'detalle_tarea'</span>, pk<span class="op">=</span>tarea.pk)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> TareaForm()</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'crear_tarea.html'</span>, {<span class="st">'form'</span>: form})</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> detalle_tarea(request, pk):</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    tarea <span class="op">=</span> get_object_or_404(Tarea, pk<span class="op">=</span>pk)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'detalle_tarea.html'</span>, {<span class="st">'tarea'</span>: tarea})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a># Creación de plantillas HTML para las vistas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>{% block title %}Inicio - Mi Sitio Web{% endblock %}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>Bienvenido a la página de inicio<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Esta es la página de inicio de mi sitio web.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="explicación" class="level3">
 <h3 class="anchored" data-anchor-id="explicación">Explicación</h3>
-<p>En este ejemplo, hemos creado un modelo Tarea para representar las tareas en nuestra base de datos. Luego, creamos un formulario TareaForm utilizando formularios en Django. Además, creamos vistas para listar, crear y ver detalles de tareas. Las plantillas HTML correspondientes se utilizarán para renderizar las páginas web.</p>
+<p>En este ejemplo, hemos creado una plantilla base llamada “base.html” que define la estructura común de todas las páginas. Luego, creamos una plantilla específica para la página de inicio que hereda de “base.html”. Utilizamos Bootstrap para mejorar el aspecto de la página.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -757,9 +757,8 @@ Actividad Práctica
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Crea una vista y un formulario para actualizar tareas existentes.</li>
-<li>Agrega una función para eliminar tareas.</li>
-<li>Utiliza las plantillas HTML para mostrar la lista de tareas, el formulario de creación y los detalles de la tarea.</li>
+<li>Crea una plantilla base llamada “base_notas.html” que incluya un menú de navegación y un pie de página.</li>
+<li>Crea una plantilla específica llamada “lista_notas.html” que herede de “base_notas.html” y muestre una lista de notas utilizando Bootstrap.</li>
 </ol>
 </div>
 </div>
@@ -774,76 +773,77 @@ Solucion
 <li>Crear la Plantilla Base “base_notas.html”:</li>
 </ol>
 <p>En la carpeta de plantillas de tu aplicación (“articulos” en este ejemplo), crea un archivo llamado “base_notas.html” con el siguiente contenido:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"es"</span><span class="dt">&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"UTF-8"</span><span class="dt">&gt;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>{% block title %}Título por Defecto{% endblock %}<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Agregar enlaces a Bootstrap y otros recursos aquí --&gt;</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">nav</span><span class="ot"> class</span><span class="op">=</span><span class="st">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="dt">&gt;</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> class</span><span class="op">=</span><span class="st">"navbar-brand"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"#"</span><span class="dt">&gt;</span>Mi Aplicación de Notas<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> class</span><span class="op">=</span><span class="st">"navbar-toggler"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"button"</span><span class="ot"> data-toggle</span><span class="op">=</span><span class="st">"collapse"</span><span class="ot"> data-target</span><span class="op">=</span><span class="st">"#navbarNav"</span><span class="ot"> aria-controls</span><span class="op">=</span><span class="st">"navbarNav"</span><span class="ot"> aria-expanded</span><span class="op">=</span><span class="st">"false"</span><span class="ot"> aria-label</span><span class="op">=</span><span class="st">"Toggle navigation"</span><span class="dt">&gt;</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"navbar-toggler-icon"</span><span class="dt">&gt;&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"collapse navbar-collapse"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"navbarNav"</span><span class="dt">&gt;</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">ul</span><span class="ot"> class</span><span class="op">=</span><span class="st">"navbar-nav"</span><span class="dt">&gt;</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"nav-item active"</span><span class="dt">&gt;</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> class</span><span class="op">=</span><span class="st">"nav-link"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"#"</span><span class="dt">&gt;</span>Inicio <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"sr-only"</span><span class="dt">&gt;</span>(current)<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"nav-item"</span><span class="dt">&gt;</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> class</span><span class="op">=</span><span class="st">"nav-link"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"#"</span><span class="dt">&gt;</span>Notas<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                <span class="co">&lt;!-- Agregar más elementos de menú si es necesario --&gt;</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">nav</span><span class="dt">&gt;</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"container"</span><span class="dt">&gt;</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        {% block content %}{% endblock %}</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">footer</span><span class="ot"> class</span><span class="op">=</span><span class="st">"footer mt-auto py-3"</span><span class="dt">&gt;</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"container"</span><span class="dt">&gt;</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"text-muted"</span><span class="dt">&gt;</span>© 2023 Mi Aplicación de Notas<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">footer</span><span class="dt">&gt;</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Agregar enlaces a Bootstrap y otros recursos aquí --&gt;</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"es"</span><span class="dt">&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"UTF-8"</span><span class="dt">&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>{% block title %}Título por Defecto{% endblock %}<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Agregar enlaces a Bootstrap y otros recursos aquí --&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">nav</span><span class="ot"> class</span><span class="op">=</span><span class="st">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="dt">&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> class</span><span class="op">=</span><span class="st">"navbar-brand"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"#"</span><span class="dt">&gt;</span>Mi Aplicación de Notas<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> class</span><span class="op">=</span><span class="st">"navbar-toggler"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"button"</span><span class="ot"> data-toggle</span><span class="op">=</span><span class="st">"collapse"</span><span class="ot"> data-target</span><span class="op">=</span><span class="st">"#navbarNav"</span><span class="ot"> aria-controls</span><span class="op">=</span><span class="st">"navbarNav"</span><span class="ot"> aria-expanded</span><span class="op">=</span><span class="st">"false"</span><span class="ot"> aria-label</span><span class="op">=</span><span class="st">"Toggle navigation"</span><span class="dt">&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"navbar-toggler-icon"</span><span class="dt">&gt;&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"collapse navbar-collapse"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"navbarNav"</span><span class="dt">&gt;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">ul</span><span class="ot"> class</span><span class="op">=</span><span class="st">"navbar-nav"</span><span class="dt">&gt;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"nav-item active"</span><span class="dt">&gt;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> class</span><span class="op">=</span><span class="st">"nav-link"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"#"</span><span class="dt">&gt;</span>Inicio <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"sr-only"</span><span class="dt">&gt;</span>(current)<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"nav-item"</span><span class="dt">&gt;</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> class</span><span class="op">=</span><span class="st">"nav-link"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"#"</span><span class="dt">&gt;</span>Notas<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>                <span class="co">&lt;!-- Agregar más elementos de menú si es necesario --&gt;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">nav</span><span class="dt">&gt;</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"container"</span><span class="dt">&gt;</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        {% block content %}{% endblock %}</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">footer</span><span class="ot"> class</span><span class="op">=</span><span class="st">"footer mt-auto py-3"</span><span class="dt">&gt;</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"container"</span><span class="dt">&gt;</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"text-muted"</span><span class="dt">&gt;</span>© 2023 Mi Aplicación de Notas<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">footer</span><span class="dt">&gt;</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Agregar enlaces a Bootstrap y otros recursos aquí --&gt;</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Crear la Plantilla Específica “lista_notas.html”:</li>
 </ol>
 <p>Crea un archivo llamado “lista_notas.html” en la misma carpeta de plantillas de tu aplicación (“articulos” en este ejemplo). Esta plantilla heredará de “base_notas.html” y mostrará una lista de notas utilizando Bootstrap:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>{% extends "base_notas.html" %}</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>{% block title %}Lista de Notas{% endblock %}</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Lista de Notas<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">ul</span><span class="ot"> class</span><span class="op">=</span><span class="st">"list-group"</span><span class="dt">&gt;</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        {% for nota in notas %}</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"list-group-item"</span><span class="dt">&gt;</span>{{ nota.titulo }}<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"list-group-item"</span><span class="dt">&gt;</span>{{ nota.contenido }}<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        {% endfor %}</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>{% extends "base_notas.html" %}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>{% block title %}Lista de Notas{% endblock %}</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Lista de Notas<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">ul</span><span class="ot"> class</span><span class="op">=</span><span class="st">"list-group"</span><span class="dt">&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        {% for nota in notas %}</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"list-group-item"</span><span class="dt">&gt;</span>{{ nota.titulo }}<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"list-group-item"</span><span class="dt">&gt;</span>{{ nota.contenido }}<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        {% endfor %}</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Explicación</strong>:</p>
 <ol type="1">
-<li>Hemos creado una plantilla base llamada “base_notas.html” que incluye un menú de navegación en la parte superior y un pie de página en la parte inferior. Esta plantilla utiliza Bootstrap para el estilo del menú y el pie de página.</li>
-<li>Luego, hemos creado una plantilla específica llamada “lista_notas.html” que hereda de “base_notas.html” utilizando {% extends “base_notas.html” %}. Esto significa que “lista_notas.html” incluirá todo el contenido de “base_notas.html.”</li>
-<li>En “lista_notas.html,” hemos definido bloques {% block … %} para personalizar el título de la página (“Lista de Notas”) y el contenido de la lista de notas. Dentro del bloque de contenido, iteramos sobre las notas y las mostramos utilizando clases de Bootstrap para dar formato a la lista.</li>
+<li><p>Hemos creado una plantilla base llamada “base_notas.html” que incluye un menú de navegación en la parte superior y un pie de página en la parte inferior. Esta plantilla utiliza Bootstrap para el estilo del menú y el pie de página.</p></li>
+<li><p>Luego, hemos creado una plantilla específica llamada “lista_notas.html” que hereda de “base_notas.html” utilizando {% extends “base_notas.html” %}. Esto significa que “lista_notas.html” incluirá todo el contenido de “base_notas.html.”</p></li>
+<li><p>En “lista_notas.html,” hemos definido bloques {% block … %} para personalizar el título de la página (“Lista de Notas”) y el contenido de la lista de notas. Dentro del bloque de contenido, iteramos sobre las notas y las mostramos utilizando clases de Bootstrap para dar formato a la lista.</p></li>
 </ol>
 Con estos pasos, hemos creado una plantilla base reutilizable (“base_notas.html”) y una plantilla específica (“lista_notas.html”) que hereda de la base y muestra una lista de notas con estilo Bootstrap. Esto facilitará la creación de páginas similares en tu aplicación Django.
 </details>
 </section>
-<section id="qué-aprendimos" class="level3">
-<h3 class="anchored" data-anchor-id="qué-aprendimos">¿Qué aprendimos?</h3>
-<p>Aprendimos cómo crear un CRUD de tareas en Django utilizando modelos, formularios y vistas. Entendemos cómo Django simplifica la creación de aplicaciones web interactivas.</p>
-
-
 </section>
+<section id="qué-aprendimos" class="level2">
+<h2 class="anchored" data-anchor-id="qué-aprendimos">¿Qué aprendimos?</h2>
+<p>Aprendimos cómo utilizar la herencia de plantillas en Django para crear un diseño consistente en nuestras páginas web y cómo integrar Bootstrap para mejorar la apariencia de la interfaz de usuario.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1354,12 +1354,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../unidades/unidad8/unidad8.3.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Herencia de Plantillas y Bootstrap en Django</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Model Template View en Django</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/unidad9/unidad9.1.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Introducción e Instalación</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/unidad8/unidad8.5.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Creación de un CRUD de Tareas en Django</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
