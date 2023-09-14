@@ -448,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Template View en Django</span></a>
+  <a href="../../unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Template View en Django.</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -675,6 +675,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo</a>
   <ul class="collapse">
   <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
+  <li><a href="#urls.py" id="toc-urls.py" class="nav-link" data-scroll-target="#urls.py">Urls.py</a></li>
   </ul></li>
   <li><a href="#qué-aprendimos" id="toc-qué-aprendimos" class="nav-link" data-scroll-target="#qué-aprendimos">¿Qué aprendimos?</a></li>
   </ul>
@@ -702,11 +703,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>En esta lección, crearemos una vista en Django que mostrará un mensaje “Hola Mundo” en la página web.</p>
-<!-- ![](images/hola_mundo_django.png){fig-align="center" width="400"} -->
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Model Template View Django.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <section id="conceptos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave</h2>
 <section id="vista" class="level3">
 <h3 class="anchored" data-anchor-id="vista">Vista</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/views.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <p>En Django, una vista es una función que toma una solicitud web y devuelve una respuesta. Se utiliza para definir qué contenido se muestra en una página web.</p>
 </section>
 <section id="plantillas" class="level3">
@@ -724,7 +734,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="explicación" class="level3">
 <h3 class="anchored" data-anchor-id="explicación">Explicación</h3>
 <p>En este ejemplo, hemos creado una vista llamada hola_mundo en Django. Esta vista toma una solicitud web y devuelve una respuesta que consiste en el mensaje “¡Hola Mundo!”.</p>
-<p>Luego, podemos configurar una URL para que apunte a esta vista, de modo que cuando un usuario acceda a esa URL, verá el mensaje “¡Hola Mundo!” en la página.</p>
+</section>
+<section id="urls.py" class="level3">
+<h3 class="anchored" data-anchor-id="urls.py">Urls.py</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/urls.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Ahora podemos configurar una URL para que apunte a esta vista, de modo que cuando un usuario acceda a esa <strong>URL</strong>, verá el mensaje “<strong>¡Hola Mundo!</strong>” en la página.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En el archivo urls.py de la aplicación Django</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
@@ -739,6 +757,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Archivo urls.py del proyecto principal</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/urls2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.contrib <span class="im">import</span> admin</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> include, path</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -794,10 +817,10 @@ Solución
 </ol>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
-<li>Utiliza el navegador para consultar la siguiente url <a href="http://localhost:8000/hola-mundo/">http://localhost:8000/hola-mundo/</a></li>
+<li>Utiliza el navegador para consultar la siguiente url <a href="http://localhost:8000/hola-mundo/" class="uri">http://localhost:8000/hola-mundo/</a></li>
 </ol>
 <p><strong>Explicación:</strong></p>
-La vista hola_mundo es una función que toma una solicitud web y devuelve una respuesta que contiene el mensaje “¡Hola Mundo!”. Configuramos una URL para que los usuarios puedan acceder a esta vista y ver el mensaje en la página.
+<p>La vista hola_mundo es una función que toma una solicitud web y devuelve una respuesta que contiene el mensaje “¡Hola Mundo!”. Configuramos una URL para que los usuarios puedan acceder a esta vista y ver el mensaje en la página.</p>
 </details>
 </section>
 </section>
@@ -1321,7 +1344,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../unidades/unidad8/unidad8.3.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Model Template View en Django</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Model Template View en Django.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

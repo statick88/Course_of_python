@@ -1,14 +1,20 @@
-# Model Template View en Django
+# Model Template View en Django.
 
-En esta lección, profundizaremos en el patrón Modelo-Vista-Controlador (MVC) de Django y cómo se aplica al crear un CRUD (Crear, Leer, Actualizar, Eliminar) de tareas.
+![](images/Modelo Template View.png){fig-align="center"}
+
+En esta lección, profundizaremos en el patrón Modelo-Template-View (MTV) de Django y cómo se aplica al crear un **CRUD** (Crear, Leer, Actualizar, Eliminar) de tareas.
 
 ## Conceptos Clave
 
-### Modelo (Model)
+### Modelo (Model).
+
+![](images/models.png){fig-align="center" width="300"}
 
 El Modelo en Django define la estructura de la base de datos y cómo se almacenan los datos. Cada modelo corresponde a una tabla en la base de datos.
 
-### Plantilla (Template)
+### Plantilla (Template).
+
+![](images/templates.png){fig-align="center" width="300"}
 
 Las Plantillas en Django son archivos HTML que definen la estructura visual de las páginas web. Permiten la presentación de datos a los usuarios.
 
@@ -18,7 +24,7 @@ Las Vistas en Django controlan qué datos se muestran en una página web y cómo
 
 **Ejemplo**
 
-```python
+``` python
 # Definición de un modelo para una tarea en Django
 from django.db import models
 
@@ -27,7 +33,8 @@ class Tarea(models.Model):
     descripcion = models.TextField()
     fecha_creacion = models.DateTimeField('fecha de creación')
 ```
-```html
+
+``` html
 # Creación de una plantilla HTML para mostrar la lista de tareas
 <!DOCTYPE html>
 <html>
@@ -44,7 +51,8 @@ class Tarea(models.Model):
 </body>
 </html>
 ```
-```python
+
+``` python
 
 # Creación de una vista en Django para mostrar la lista de tareas
 from django.shortcuts import render
@@ -54,19 +62,21 @@ def lista_tareas(request):
     tareas = Tarea.objects.all()
     return render(request, 'lista_tareas.html', {'lista_tareas': tareas})
 ```
+
 ### Explicación
 
 En este ejemplo, hemos definido un modelo Tarea que representa una tarea en nuestra base de datos. Luego, creamos una plantilla HTML lista_tareas.html que muestra una lista de tareas. Finalmente, creamos una vista lista_tareas que recupera todas las tareas y las muestra utilizando la plantilla.
 
-:::{.callout-tip}
+::: callout-tip
 ### Actividad Práctica
 
-1. Crea un modelo Django llamado Nota que tenga un campo para el título y otro para el contenido de la nota.
-2. Crea una plantilla HTML llamada lista_notas.html que muestre una lista de notas.
-3. Crea una vista en Django llamada lista_notas que recupere todas las notas y las muestre utilizando la plantilla.
-
+1.  Crea un modelo Django llamado Nota que tenga un campo para el título y otro para el contenido de la nota.
+2.  Crea una plantilla HTML llamada lista_notas.html que muestre una lista de notas.
+3.  Crea una vista en Django llamada lista_notas que recupere todas las notas y las muestre utilizando la plantilla.
 :::
+
 <details>
+
 <summary>Solucion</summary>
 
 **Resumen**:
@@ -75,11 +85,11 @@ En esta actividad práctica, se creará un modelo Django llamado "Nota" con camp
 
 **Código**:
 
-1. Crear el Modelo Django **Nota**:
+1.  Crear el Modelo Django **Nota**:
 
 En el archivo models.py de la aplicación correspondiente (generalmente llamada "articulos"), define el modelo "Nota" con campos para el título y el contenido de la nota:
 
-```python
+``` python
 from django.db import models
 
 class Nota(models.Model):
@@ -91,9 +101,10 @@ class Nota(models.Model):
 
     Crear la Plantilla HTML "lista_notas.html":
 ```
+
 Dentro de la carpeta de la aplicación (**articulos** en este ejemplo), crea una carpeta llamada **templates** si aún no existe. Luego, crea un archivo HTML llamado **lista_notas.html** en la carpeta "templates" con el siguiente contenido:
 
-```html
+``` html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -111,11 +122,12 @@ Dentro de la carpeta de la aplicación (**articulos** en este ejemplo), crea una
 </body>
 </html>
 ```
-2. Crear la Vista Django **lista_notas**:
+
+2.  Crear la Vista Django **lista_notas**:
 
 En el archivo views.py de la aplicación (**articulos** en este ejemplo), crea una vista llamada **lista_notas** que recupere todas las notas y las pase a la plantilla **lista_notas.html**:
 
-```python
+``` python
 from django.shortcuts import render
 from .models import Nota
 
@@ -123,16 +135,14 @@ def lista_notas(request):
     notas = Nota.objects.all()
     return render(request, 'lista_notas.html', {'notas': notas})
 ```
+
 **Explicación**:
 
-1. Hemos creado un modelo Django llamado **Nota** que contiene dos campos: **titulo** y **contenido**." 
-    El campo **titulo** es un CharField con una longitud máxima de 200 caracteres, y el campo **contenido** es un TextField para almacenar el contenido más extenso de la nota.
-2. Creamos una plantilla HTML llamada **lista_notas.html** que se utilizará para mostrar la lista de notas. 
-    En esta plantilla, utilizamos etiquetas de plantilla de Django **({% for ... %})** para iterar sobre todas las notas y mostrar tanto el título como el contenido de cada nota.
-3. Creamos una vista Django llamada **lista_notas** en el archivo **views.py**. 
-    En esta vista, recuperamos todas las notas utilizando **Nota.objects.all()** y luego pasamos las notas a la plantilla **lista_notas.html** como un contexto para que puedan mostrarse en la página.
+1.  Hemos creado un modelo Django llamado **Nota** que contiene dos campos: **titulo** y **contenido**." El campo **titulo** es un CharField con una longitud máxima de 200 caracteres, y el campo **contenido** es un TextField para almacenar el contenido más extenso de la nota.
+2.  Creamos una plantilla HTML llamada **lista_notas.html** que se utilizará para mostrar la lista de notas. En esta plantilla, utilizamos etiquetas de plantilla de Django **({% for ... %})** para iterar sobre todas las notas y mostrar tanto el título como el contenido de cada nota.
+3.  Creamos una vista Django llamada **lista_notas** en el archivo **views.py**. En esta vista, recuperamos todas las notas utilizando **Nota.objects.all()** y luego pasamos las notas a la plantilla **lista_notas.html** como un contexto para que puedan mostrarse en la página.
 
-Con estos pasos, hemos configurado un modelo, una plantilla y una vista para mostrar una lista de notas en una aplicación Django. 
+Con estos pasos, hemos configurado un modelo, una plantilla y una vista para mostrar una lista de notas en una aplicación Django.
 
 Ahora puedes acceder a la vista **lista_notas** en tu aplicación para ver la lista de notas en la plantilla correspondiente.
 

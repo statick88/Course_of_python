@@ -2,11 +2,11 @@
 
 Antes de iniciar con Django, es necesario conocer el patron de arquitectura que utiliza este Framework.
 
-![](images/Model_template_view.png){fig-align="center" width="800"}
+![](images/Modelo Template View-2.png){fig-align="center" width="800"}
 
 A diferencia de otro patrón muy conocido llamado Model View Controller.
 
-![](images/Model_view_controller.png){fig-align="center" width="800"}
+![](images/Modelo Vista Controlador.png){fig-align="center" width="800"}
 
 Django es un marco de desarrollo web de alto nivel y de código abierto que facilita la creación de aplicaciones web rápidamente. En esta lección, introduciremos los conceptos básicos de Django y su arquitectura.
 

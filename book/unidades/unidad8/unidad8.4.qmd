@@ -8,13 +8,15 @@ En esta lección, aprenderemos cómo utilizar la herencia de plantillas en Djang
 
 La herencia de plantillas en Django permite definir una plantilla base con elementos comunes y extenderla para crear plantillas específicas para cada página.
 
-### Bootstrap
+### Bootstrap.
+
+![](images/bootstrap.png){fig-align="center" width="300"}
 
 Bootstrap es un marco de diseño de código abierto que proporciona estilos y componentes predefinidos para mejorar la apariencia y la usabilidad de un sitio web.
 
 **Ejemplo**
 
-```python
+```html
 # Plantilla base llamada "base.html"
 <!DOCTYPE html>
 <html>
@@ -53,16 +55,17 @@ Bootstrap es un marco de diseño de código abierto que proporciona estilos y co
 ```
 ### Explicación
 
-En este ejemplo, hemos creado una plantilla base llamada "base.html" que define la estructura común de todas las páginas. Luego, creamos una plantilla específica para la página de inicio que hereda de "base.html". Utilizamos Bootstrap para mejorar el aspecto de la página.
+En este ejemplo, hemos creado una plantilla base llamada **base.html** que define la estructura común de todas las páginas. Luego, creamos una plantilla específica para la página de inicio que hereda de **base.html**. Utilizamos Bootstrap para mejorar el aspecto de la página.
 
 :::{.callout-tip}
 ### Actividad Práctica
 
-1. Crea una plantilla base llamada "base_notas.html" que incluya un menú de navegación y un pie de página.
-2. Crea una plantilla específica llamada "lista_notas.html" que herede de "base_notas.html" y muestre una lista de notas utilizando Bootstrap.
-
+1.  Crea una plantilla base llamada **base_notas.html** que incluya un menú de navegación y un pie de página.
+2.  Crea una plantilla específica llamada **lista_notas.html** que herede de **base_notas.html** y muestre una lista de notas utilizando Bootstrap.
 :::
+
 <details>
+
 <summary>Solucion</summary>
 
 **Resumen**:
@@ -71,11 +74,11 @@ En esta actividad práctica, se creará una plantilla base llamada "base_notas.h
 
 **Código**:
 
-1. Crear la Plantilla Base "base_notas.html":
+1.  Crear la Plantilla Base "base_notas.html":
 
 En la carpeta de plantillas de tu aplicación ("articulos" en este ejemplo), crea un archivo llamado "base_notas.html" con el siguiente contenido:
 
-```html
+``` html
 
 <!DOCTYPE html>
 <html lang="es">
@@ -116,11 +119,12 @@ En la carpeta de plantillas de tu aplicación ("articulos" en este ejemplo), cre
 </body>
 </html>
 ```
-2. Crear la Plantilla Específica "lista_notas.html":
+
+2.  Crear la Plantilla Específica "lista_notas.html":
 
 Crea un archivo llamado "lista_notas.html" en la misma carpeta de plantillas de tu aplicación ("articulos" en este ejemplo). Esta plantilla heredará de "base_notas.html" y mostrará una lista de notas utilizando Bootstrap:
 
-```html
+``` html
 {% extends "base_notas.html" %}
 
 {% block title %}Lista de Notas{% endblock %}
@@ -135,15 +139,17 @@ Crea un archivo llamado "lista_notas.html" en la misma carpeta de plantillas de 
     </ul>
 {% endblock %}
 ```
+
 **Explicación**:
 
-1. Hemos creado una plantilla base llamada "base_notas.html" que incluye un menú de navegación en la parte superior y un pie de página en la parte inferior. Esta plantilla utiliza Bootstrap para el estilo del menú y el pie de página.
+1.  Hemos creado una plantilla base llamada "base_notas.html" que incluye un menú de navegación en la parte superior y un pie de página en la parte inferior. Esta plantilla utiliza Bootstrap para el estilo del menú y el pie de página.
 
-2. Luego, hemos creado una plantilla específica llamada "lista_notas.html" que hereda de "base_notas.html" utilizando {% extends "base_notas.html" %}. Esto significa que "lista_notas.html" incluirá todo el contenido de "base_notas.html."
+2.  Luego, hemos creado una plantilla específica llamada "lista_notas.html" que hereda de "base_notas.html" utilizando {% extends "base_notas.html" %}. Esto significa que "lista_notas.html" incluirá todo el contenido de "base_notas.html."
 
-3. En "lista_notas.html," hemos definido bloques {% block ... %} para personalizar el título de la página ("Lista de Notas") y el contenido de la lista de notas. Dentro del bloque de contenido, iteramos sobre las notas y las mostramos utilizando clases de Bootstrap para dar formato a la lista.
+3.  En "lista_notas.html," hemos definido bloques {% block ... %} para personalizar el título de la página ("Lista de Notas") y el contenido de la lista de notas. Dentro del bloque de contenido, iteramos sobre las notas y las mostramos utilizando clases de Bootstrap para dar formato a la lista.
 
 Con estos pasos, hemos creado una plantilla base reutilizable ("base_notas.html") y una plantilla específica ("lista_notas.html") que hereda de la base y muestra una lista de notas con estilo Bootstrap. Esto facilitará la creación de páginas similares en tu aplicación Django.
+
 </details>
 
 ## ¿Qué aprendimos?
