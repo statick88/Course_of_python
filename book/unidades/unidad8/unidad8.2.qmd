@@ -2,7 +2,7 @@
 
 En esta lección, crearemos una vista en Django que mostrará un mensaje "Hola Mundo" en la página web.
 
-![](images/Model%20Template%20View%20Django.png){fig-align="center"}
+![](images/Modelo Template View-3.png){fig-align="center"}
 
 ## Conceptos Clave
 
@@ -126,4 +126,4 @@ La vista hola_mundo es una función que toma una solicitud web y devuelve una re
 
 ## ¿Qué aprendimos?
 
-En esta lección, aprendimos cómo crear una vista en Django y cómo configurar una URL para mostrar contenido en una página web. También vimos cómo se utiliza la plantilla de la vista para generar la respuesta que se muestra al usuario.
+En esta lección, aprendimos cómo crear una vista en Django y cóm/unidades/unidad8/unidad8.2.htmlo configurar una URL para mostrar contenido en una página web. También vimos cómo se utiliza la plantilla de la vista para generar la respuesta que se muestra al usuario.
