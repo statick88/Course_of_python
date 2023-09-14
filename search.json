@@ -1067,7 +1067,7 @@
     "href": "unidades/unidad8/unidad8.2.html#qué-aprendimos",
     "title": "Creación de una Vista Hola Mundo en Django",
     "section": "¿Qué aprendimos?",
-    "text": "¿Qué aprendimos?\nEn esta lección, aprendimos cómo crear una vista en Django y cómo configurar una URL para mostrar contenido en una página web. También vimos cómo se utiliza la plantilla de la vista para generar la respuesta que se muestra al usuario.",
+    "text": "¿Qué aprendimos?\nEn esta lección, aprendimos cómo crear una vista en Django y cóm/unidades/unidad8/unidad8.2.htmlo configurar una URL para mostrar contenido en una página web. También vimos cómo se utiliza la plantilla de la vista para generar la respuesta que se muestra al usuario.",
     "crumbs": [
       "Unidad 8: Frameworks",
       "<span class='chapter-number'>35</span>  <span class='chapter-title'>Creación de una Vista Hola Mundo en Django</span>"
