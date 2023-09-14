@@ -55,7 +55,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -74,11 +93,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -443,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creación de una Vista Hola Mundo en Django</span></a>
+  <a href="../../unidades/unidad8/unidad8.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Creación de una Vista Hola Mundo en el Framework Django.</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -669,9 +688,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#conceptos-clave" id="toc-conceptos-clave" class="nav-link active" data-scroll-target="#conceptos-clave">Conceptos Clave</a>
   <ul class="collapse">
+  <li><a href="#crud." id="toc-crud." class="nav-link" data-scroll-target="#crud.">CRUD.</a></li>
+  <li><a href="#peticiones-http." id="toc-peticiones-http." class="nav-link" data-scroll-target="#peticiones-http.">Peticiones Http.</a></li>
   <li><a href="#modelo-model." id="toc-modelo-model." class="nav-link" data-scroll-target="#modelo-model.">Modelo (Model).</a></li>
   <li><a href="#plantilla-template." id="toc-plantilla-template." class="nav-link" data-scroll-target="#plantilla-template.">Plantilla (Template).</a></li>
-  <li><a href="#vista-view" id="toc-vista-view" class="nav-link" data-scroll-target="#vista-view">Vista (View)</a></li>
+  <li><a href="#vista-view." id="toc-vista-view." class="nav-link" data-scroll-target="#vista-view.">Vista (View).</a></li>
   <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
   </ul></li>
   <li><a href="#qué-aprendimos" id="toc-qué-aprendimos" class="nav-link" data-scroll-target="#qué-aprendimos">¿Qué aprendimos?</a></li>
@@ -704,14 +725,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="images/Modelo Template View.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<p>En esta lección, profundizaremos en el patrón Modelo-Template-View (MTV) de Django y cómo se aplica al crear un <strong>CRUD</strong> (Crear, Leer, Actualizar, Eliminar) de tareas.</p>
+<p>En esta lección, profundizaremos en el patrón de arquitectura que utiliza el Framework Django Modelo-Template-View (MTV), adicional a ello vamos a aprender cómo se aplica al crear un <strong>CRUD</strong> <strong>de tareas</strong>.</p>
 <section id="conceptos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave</h2>
+<section id="crud." class="level3">
+<h3 class="anchored" data-anchor-id="crud.">CRUD.</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/crud.png" class="img-fluid figure-img" width="400"></p>
+</figure>
+</div>
+<p>Crud es un acrónimo conformado por las iniciales de estas 4 palabras en ingles:</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>C</strong>reate</td>
+<td style="text-align: center;">Crear</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>R</strong>ead</td>
+<td style="text-align: center;">Leer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>U</strong>pdate</td>
+<td style="text-align: center;">Actualizar</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>D</strong>elete</td>
+<td style="text-align: center;">Eliminar</td>
+</tr>
+</tbody>
+</table>
+<p>Esto hace referencia al desarrollo de una aplicación que permita Crear registros, Leer registros, Actualizar registros y Eliminar registros, en esta clase tabajaremos un <strong>CRUD</strong> de <strong>Tareas</strong> para aprender del proceso.</p>
+<p>Un punto importante es conocer acerca de las peticiones http, ya que es la forma en como nos comunicamos con un servidor creado por un framework web en la actualidad.</p>
+</section>
+<section id="peticiones-http." class="level3">
+<h3 class="anchored" data-anchor-id="peticiones-http.">Peticiones Http.</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/peticiones http-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Gracias a este artículo <span class="citation" data-cites="mozilla_metodos_2023">Mozilla (<a href="#ref-mozilla_metodos_2023" role="doc-biblioref">2023</a>)</span> de Mozilla Developers podemos conocer los métodos básicos crear peticiones http.</p>
+<table class="table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Concepto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GET</strong></td>
+<td>El método <strong>GET</strong> solicita una representación de un recurso específico. Las peticiones que usan el método <strong>GET</strong> sólo deben recuperar datos.</td>
+</tr>
+<tr class="even">
+<td><strong>POST</strong></td>
+<td>El método <strong>POST</strong> se utiliza para enviar una entidad a un recurso en específico, causando a menudo un cambio en el estado o efectos secundarios en el servidor.</td>
+</tr>
+<tr class="odd">
+<td><strong>PUT</strong></td>
+<td>El modo <strong>PUT</strong> reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.</td>
+</tr>
+<tr class="even">
+<td>DELETE</td>
+<td>El método <strong>DELETE</strong> borra un recurso en específico.</td>
+</tr>
+<tr class="odd">
+<td>PATCH</td>
+<td>El método <strong>PATCH</strong> es utilizado para aplicar modificaciones parciales a un recurso.</td>
+</tr>
+</tbody>
+</table>
+<p>Esta información es de suma importancia cuando creemos un <strong>API Rest</strong> con <strong>Django Rest Framework</strong></p>
+</section>
 <section id="modelo-model." class="level3">
 <h3 class="anchored" data-anchor-id="modelo-model.">Modelo (Model).</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/models.png" class="img-fluid figure-img" width="300"></p>
+<p><img src="images/models-2.png" class="img-fluid figure-img" width="150"></p>
 </figure>
 </div>
 <p>El Modelo en Django define la estructura de la base de datos y cómo se almacenan los datos. Cada modelo corresponde a una tabla en la base de datos.</p>
@@ -720,23 +816,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="plantilla-template.">Plantilla (Template).</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/templates.png" class="img-fluid figure-img" width="300"></p>
+<p><img src="images/templates-2.png" class="img-fluid figure-img" width="150"></p>
 </figure>
 </div>
-<p>Las Plantillas en Django son archivos HTML que definen la estructura visual de las páginas web. Permiten la presentación de datos a los usuarios.</p>
+<p>Las Plantillas en Django son archivos <strong>HTML</strong> que definen la estructura visual de las páginas web. Permiten la presentación de datos a los usuarios.</p>
 </section>
-<section id="vista-view" class="level3">
-<h3 class="anchored" data-anchor-id="vista-view">Vista (View)</h3>
-<p>Las Vistas en Django controlan qué datos se muestran en una página web y cómo se presentan. Se encargan de la lógica de negocio y trabajan con los modelos y plantillas.</p>
-<p><strong>Ejemplo</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definición de un modelo para una tarea en Django</span></span>
+<section id="vista-view." class="level3">
+<h3 class="anchored" data-anchor-id="vista-view.">Vista (View).</h3>
+<p>Las Vistas en el Framework Django controlan <strong>qué datos</strong> se muestran en una <strong>página web</strong> y <strong>cómo se presentan</strong>. Se encargan de la <strong>lógica de negocio</strong> y trabajan con los <strong>modelos</strong> y <strong>plantillas</strong>.</p>
+<p><strong>Ejemplo de Modelo</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definición de un modelo para crear Tareas en Django</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.db <span class="im">import</span> models</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Tarea(models.Model):</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    titulo <span class="op">=</span> models.CharField(max_length<span class="op">=</span><span class="dv">200</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    descripcion <span class="op">=</span> models.TextField()</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    fecha_creacion <span class="op">=</span> models.DateTimeField(<span class="st">'fecha de creación'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a># Creación de una plantilla HTML para mostrar la lista de tareas</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    fecha_creacion <span class="op">=</span> models.DateTimeField(<span class="st">'fecha de creación'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.titulo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ejemplo de Plantilla</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a># Plantilla HTML para mostrar la lista de tareas</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
@@ -751,8 +851,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ejemplo de Vista</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación de una vista en Django para mostrar la lista de tareas</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista en Django para mostrar la lista de tareas</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.shortcuts <span class="im">import</span> render</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Tarea</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
@@ -762,7 +863,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="explicación" class="level3">
 <h3 class="anchored" data-anchor-id="explicación">Explicación</h3>
-<p>En este ejemplo, hemos definido un modelo Tarea que representa una tarea en nuestra base de datos. Luego, creamos una plantilla HTML lista_tareas.html que muestra una lista de tareas. Finalmente, creamos una vista lista_tareas que recupera todas las tareas y las muestra utilizando la plantilla.</p>
+<p>En este ejemplo, hemos definido un modelo <strong>Tarea</strong> que representa una tarea en nuestra base de datos. Luego, creamos una plantilla HTML <strong>lista_tareas.html</strong> que muestra una lista de tareas. Finalmente, creamos una vista <strong>lista_tareas</strong> que recupera todas las tareas y las muestra utilizando la plantilla.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -774,9 +875,9 @@ Actividad Práctica
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Crea un modelo Django llamado Nota que tenga un campo para el título y otro para el contenido de la nota.</li>
-<li>Crea una plantilla HTML llamada lista_notas.html que muestre una lista de notas.</li>
-<li>Crea una vista en Django llamada lista_notas que recupere todas las notas y las muestre utilizando la plantilla.</li>
+<li>Crea un <strong>modelo</strong> Django llamado <strong>Nota</strong> que tenga un campo para el <strong>título</strong> y otro para el <strong>contenido</strong> de la nota.</li>
+<li>Crea una <strong>plantilla</strong> HTML llamada <strong>lista_notas.html</strong> que muestre una <strong>lista de notas.</strong></li>
+<li>Crea una <strong>vista</strong> en Django llamada <strong>lista_notas</strong> que recupere todas las <strong>notas</strong> y las muestre utilizando la plantilla.</li>
 </ol>
 </div>
 </div>
@@ -790,7 +891,7 @@ Solucion
 <ol type="1">
 <li>Crear el Modelo Django <strong>Nota</strong>:</li>
 </ol>
-<p>En el archivo models.py de la aplicación correspondiente (generalmente llamada “articulos”), define el modelo “Nota” con campos para el título y el contenido de la nota:</p>
+<p>En el archivo <strong>models.py</strong> de la aplicación correspondiente (generalmente llamada <strong>articulos</strong>), define el modelo <strong>Nota</strong> con campos para el <strong>título</strong> y el <strong>contenido</strong> de la <strong>nota</strong>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.db <span class="im">import</span> models</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Nota(models.Model):</span>
@@ -841,9 +942,14 @@ Solucion
 </section>
 <section id="qué-aprendimos" class="level2">
 <h2 class="anchored" data-anchor-id="qué-aprendimos">¿Qué aprendimos?</h2>
-<p>En esta lección, aprendimos cómo se aplican los conceptos Modelo, Plantilla y Vista en Django para crear una lista de tareas. Entendemos cómo Django maneja la lógica de negocio y la presentación de datos de manera separada.</p>
+<p>En esta lección, aprendimos cómo se aplican los conceptos <strong>Modelo</strong>, <strong>Plantilla</strong> y <strong>Vista</strong> en el Framework Django para crear una <strong>lista de tareas</strong>. Entendemos cómo este framework maneja la <strong>lógica de negocio</strong> y la <strong>presentación de datos</strong> de manera separada.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-mozilla_metodos_2023" class="csl-entry" role="listitem">
+Mozilla, Developers. 2023. <span>“Métodos de petición <span>HTTP</span> - <span>HTTP</span> <span></span> <span>MDN</span>.”</span> July 24, 2023. <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Methods">https://developer.mozilla.org/es/docs/Web/HTTP/Methods</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1354,7 +1460,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../unidades/unidad8/unidad8.2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Creación de una Vista Hola Mundo en Django</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Creación de una Vista Hola Mundo en el Framework Django.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

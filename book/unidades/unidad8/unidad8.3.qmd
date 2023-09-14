@@ -1,41 +1,79 @@
 # Model Template View en Django.
 
-![](images/Modelo Template View.png){fig-align="center"}
+![](images/Modelo%20Template%20View.png){fig-align="center"}
 
-En esta lección, profundizaremos en el patrón Modelo-Template-View (MTV) de Django y cómo se aplica al crear un **CRUD** (Crear, Leer, Actualizar, Eliminar) de tareas.
+En esta lección, profundizaremos en el patrón de arquitectura que utiliza el Framework Django Modelo-Template-View (MTV), adicional a ello vamos a aprender cómo se aplica al crear un **CRUD** **de tareas**.
 
 ## Conceptos Clave
 
+### CRUD.
+
+![](images/crud.png){fig-align="center" width="400"}
+
+Crud es un acrónimo conformado por las iniciales de estas 4 palabras en ingles:
+
+|            |            |
+|:----------:|:----------:|
+| **C**reate |   Crear    |
+| **R**ead  |    Leer     |
+| **U**pdate | Actualizar |
+| **D**elete |  Eliminar  |
+
+Esto hace referencia al desarrollo de una aplicación que permita Crear registros, Leer registros, Actualizar registros y Eliminar registros, en esta clase trabajaremos un **CRUD** de **Tareas** para aprender del proceso.
+
+Un punto importante es conocer acerca de las peticiones http, ya que es la forma en como nos comunicamos con un servidor creado por un framework web en la actualidad.
+
+### Peticiones Http.
+
+![](images/peticiones%20http-3.png){fig-align="center"}
+
+Gracias a este artículo @mozilla_metodos_2023 de Mozilla Developers podemos conocer los métodos básicos crear peticiones http.
+
+| Método   | Concepto                                                                                                                                                         |
+|---------------------|---------------------------------------------------|
+| **GET**  | El método **GET** solicita una representación de un recurso específico. Las peticiones que usan el método **GET** sólo deben recuperar datos.                    |
+| **POST** | El método **POST** se utiliza para enviar una entidad a un recurso en específico, causando a menudo un cambio en el estado o efectos secundarios en el servidor. |
+| **PUT**  | El modo **PUT** reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.                                           |
+| DELETE   | El método **DELETE** borra un recurso en específico.                                                                                                             |
+| PATCH    | El método **PATCH** es utilizado para aplicar modificaciones parciales a un recurso.                                                                             |
+
+Esta información es de suma importancia cuando creemos un **API Rest** con **Django Rest Framework**
+
 ### Modelo (Model).
 
-![](images/models.png){fig-align="center" width="300"}
+![](images/models-2.png){fig-align="center" width="150"}
 
 El Modelo en Django define la estructura de la base de datos y cómo se almacenan los datos. Cada modelo corresponde a una tabla en la base de datos.
 
 ### Plantilla (Template).
 
-![](images/templates.png){fig-align="center" width="300"}
+![](images/templates-2.png){fig-align="center" width="150"}
 
-Las Plantillas en Django son archivos HTML que definen la estructura visual de las páginas web. Permiten la presentación de datos a los usuarios.
+Las Plantillas en Django son archivos **HTML** que definen la estructura visual de las páginas web. Permiten la presentación de datos a los usuarios.
 
-### Vista (View)
+### Vista (View).
 
-Las Vistas en Django controlan qué datos se muestran en una página web y cómo se presentan. Se encargan de la lógica de negocio y trabajan con los modelos y plantillas.
+Las Vistas en el Framework Django controlan **qué datos** se muestran en una **página web** y **cómo se presentan**. Se encargan de la **lógica de negocio** y trabajan con los **modelos** y **plantillas**.
 
-**Ejemplo**
+**Ejemplo de Modelo**
 
 ``` python
-# Definición de un modelo para una tarea en Django
+# Definición de un modelo para crear Tareas en Django
 from django.db import models
 
 class Tarea(models.Model):
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField()
     fecha_creacion = models.DateTimeField('fecha de creación')
+
+    def __str__(self):
+        return self.titulo
 ```
 
+**Ejemplo de Plantilla**
+
 ``` html
-# Creación de una plantilla HTML para mostrar la lista de tareas
+# Plantilla HTML para mostrar la lista de tareas
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,9 +90,11 @@ class Tarea(models.Model):
 </html>
 ```
 
+**Ejemplo de Vista**
+
 ``` python
 
-# Creación de una vista en Django para mostrar la lista de tareas
+# Vista en Django para mostrar la lista de tareas
 from django.shortcuts import render
 from .models import Tarea
 
@@ -65,14 +105,14 @@ def lista_tareas(request):
 
 ### Explicación
 
-En este ejemplo, hemos definido un modelo Tarea que representa una tarea en nuestra base de datos. Luego, creamos una plantilla HTML lista_tareas.html que muestra una lista de tareas. Finalmente, creamos una vista lista_tareas que recupera todas las tareas y las muestra utilizando la plantilla.
+En este ejemplo, hemos definido un modelo **Tarea** que representa una tarea en nuestra base de datos. Luego, creamos una plantilla HTML **lista_tareas.html** que muestra una lista de tareas. Finalmente, creamos una vista **lista_tareas** que recupera todas las tareas y las muestra utilizando la plantilla.
 
 ::: callout-tip
 ### Actividad Práctica
 
-1.  Crea un modelo Django llamado Nota que tenga un campo para el título y otro para el contenido de la nota.
-2.  Crea una plantilla HTML llamada lista_notas.html que muestre una lista de notas.
-3.  Crea una vista en Django llamada lista_notas que recupere todas las notas y las muestre utilizando la plantilla.
+1.  Crea un **modelo** Django llamado **Nota** que tenga un campo para el **título** y otro para el **contenido** de la nota.
+2.  Crea una **plantilla** HTML llamada **lista_notas.html** que muestre una **lista de notas.**
+3.  Crea una **vista** en Django llamada **lista_notas** que recupere todas las **notas** y las muestre utilizando la plantilla.
 :::
 
 <details>
@@ -87,19 +127,19 @@ En esta actividad práctica, se creará un modelo Django llamado "Nota" con camp
 
 1.  Crear el Modelo Django **Nota**:
 
-En el archivo models.py de la aplicación correspondiente (generalmente llamada "articulos"), define el modelo "Nota" con campos para el título y el contenido de la nota:
+En el archivo **models.py** de la aplicación correspondiente (generalmente llamada **articulos**), define el modelo **Nota** con campos para el **título** y el **contenido** de la **nota**:
 
 ``` python
+# Importar el módulo 'models' de Django
 from django.db import models
 
 class Nota(models.Model):
+    # Definir los campos del modelo Nota
     titulo = models.CharField(max_length=200)
     contenido = models.TextField()
 
     def __str__(self):
         return self.titulo
-
-    Crear la Plantilla HTML "lista_notas.html":
 ```
 
 Dentro de la carpeta de la aplicación (**articulos** en este ejemplo), crea una carpeta llamada **templates** si aún no existe. Luego, crea un archivo HTML llamado **lista_notas.html** en la carpeta "templates" con el siguiente contenido:
@@ -125,14 +165,17 @@ Dentro de la carpeta de la aplicación (**articulos** en este ejemplo), crea una
 
 2.  Crear la Vista Django **lista_notas**:
 
-En el archivo views.py de la aplicación (**articulos** en este ejemplo), crea una vista llamada **lista_notas** que recupere todas las notas y las pase a la plantilla **lista_notas.html**:
+En el archivo **views.py** de la aplicación (**articulos** en este ejemplo), crea una vista llamada **lista_notas** que recupere todas las notas y las pase a la plantilla **lista_notas.html**:
 
 ``` python
+# Importar el módulo 'render' de Django y el modelo 'Nota'
 from django.shortcuts import render
 from .models import Nota
 
 def lista_notas(request):
+    # Recuperar todas las notas de la base de datos
     notas = Nota.objects.all()
+    # Renderizar la plantilla 'lista_notas.html' con las notas como contexto
     return render(request, 'lista_notas.html', {'notas': notas})
 ```
 
@@ -150,4 +193,4 @@ Ahora puedes acceder a la vista **lista_notas** en tu aplicación para ver la li
 
 ## ¿Qué aprendimos?
 
-En esta lección, aprendimos cómo se aplican los conceptos Modelo, Plantilla y Vista en Django para crear una lista de tareas. Entendemos cómo Django maneja la lógica de negocio y la presentación de datos de manera separada.
+En esta lección, aprendimos cómo se aplican los conceptos **Modelo**, **Plantilla** y **Vista** en el Framework Django para crear una **lista de tareas**. Entendemos cómo este framework maneja la **lógica de negocio** y la **presentación de datos** de manera separada.

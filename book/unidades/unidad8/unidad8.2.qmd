@@ -1,14 +1,14 @@
-# Creación de una Vista Hola Mundo en Django
+# Creación de una Vista Hola Mundo en el Framework Django.
 
 En esta lección, crearemos una vista en Django que mostrará un mensaje "Hola Mundo" en la página web.
 
-![](images/Modelo Template View-3.png){fig-align="center"}
+![](images/Modelo%20Template%20View-3.png){fig-align="center"}
 
 ## Conceptos Clave
 
 ### Vista
 
-![](images/views.png){fig-align="center"}
+![](images/views.py.png){fig-align="center"}
 
 En Django, una vista es una función que toma una solicitud web y devuelve una respuesta. Se utiliza para definir qué contenido se muestra en una página web.
 
@@ -32,7 +32,7 @@ En este ejemplo, hemos creado una vista llamada hola_mundo en Django. Esta vista
 
 ### Urls.py
 
-![](images/urls.png){fig-align="center"}
+![](images/urls.py.png){fig-align="center"}
 
 Ahora podemos configurar una URL para que apunte a esta vista, de modo que cuando un usuario acceda a esa **URL**, verá el mensaje "**¡Hola Mundo!**" en la página.
 
@@ -58,7 +58,7 @@ INSTALLED_APPS = [
 
 Archivo urls.py del proyecto principal
 
-![](images/urls2.png){fig-align="center"}
+![](images/urls.py-2.png){fig-align="center"}
 
 ``` python
 from django.contrib import admin
@@ -71,7 +71,7 @@ urlpatterns = [
 ```
 
 ::: callout-tip
-Actividad Práctica
+**Actividad Práctica**
 
 1.  Crea una aplicación Django llamada "hola_mundo_app" en tu proyecto.
 2.  Crea una vista similar a la vista hola_mundo en esta lección en el archivo views.py de la aplicación "hola_mundo_app".
@@ -106,7 +106,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('hola-mundo/', views.hola_mundo_personalizado, name='hola_mundo_personalizado'),
+    path('', views.hola_mundo_personalizado, name='hola_mundo_personalizado'),
 ]
 ```
 

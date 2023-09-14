@@ -9,7 +9,7 @@ book:
   date: today
   date-format: medium
   favicon: python-logo.png
-  description: Este libro de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Frameworsk como Django, Flask, Fast Api, PyScript y Regex. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con Bases de datos, APIs y más.
+  description: Este libro de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Frameworks como Django, Flask, Fast Api, PyScript y Regex. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con Bases de datos, APIs y más.
   keyword: Python, Programación, Fundamentos, Aplicaciones Prácticas, Instalación, Herramientas, API, Django Rest Framework, Bases de Datos, PostgreSQL, MongoDB, Control de Flujo, Funciones, Clases, Herencia, Módulos, Aprendizaje, Principiantes, Proyectos, Desarrollo Web, Django, Flask, Data Science, FastAPI, Práctica, Enseñanza, Gratis, Internet, Contribuir
   url: https://github.com/statick88/Course_of_python
   page-navigation: true
@@ -138,7 +138,7 @@ format:
     number-sections: false
     theme: 
       dark:  solar #slate, darkly, solar, superhero, vapor
-      light: cosmo
+      # light: cosmo
     number-depth: 4
     link-external-icon: true
     link-external-newwindow: true
