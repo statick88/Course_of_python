@@ -6,6 +6,8 @@ En esta lección, aprenderemos cómo utilizar la herencia de plantillas en Djang
 
 ### Herencia de Plantillas
 
+![](images/jinga2.png){fig-align="center" width="400"}
+
 La herencia de plantillas en Django permite definir una plantilla base con elementos comunes y extenderla para crear plantillas específicas para cada página.
 
 ### Bootstrap.
