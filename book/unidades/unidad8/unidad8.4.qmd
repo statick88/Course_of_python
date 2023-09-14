@@ -16,13 +16,13 @@ Bootstrap es un marco de diseño de código abierto que proporciona estilos y co
 
 **Ejemplo**
 
-```html
+``` html
 # Plantilla base llamada "base.html"
 <!DOCTYPE html>
 <html>
 <head>
     <title>{% block title %}Mi Sitio Web{% endblock %}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
@@ -42,7 +42,8 @@ Bootstrap es un marco de diseño de código abierto que proporciona estilos y co
 </body>
 </html>
 ```
-```html
+
+``` html
 # Plantilla para la página de inicio que hereda de "base.html"
 {% extends "base.html" %}
 
@@ -53,11 +54,12 @@ Bootstrap es un marco de diseño de código abierto que proporciona estilos y co
     <p>Esta es la página de inicio de mi sitio web.</p>
 {% endblock %}
 ```
+
 ### Explicación
 
 En este ejemplo, hemos creado una plantilla base llamada **base.html** que define la estructura común de todas las páginas. Luego, creamos una plantilla específica para la página de inicio que hereda de **base.html**. Utilizamos Bootstrap para mejorar el aspecto de la página.
 
-:::{.callout-tip}
+::: callout-tip
 ### Actividad Práctica
 
 1.  Crea una plantilla base llamada **base_notas.html** que incluya un menú de navegación y un pie de página.
@@ -70,11 +72,11 @@ En este ejemplo, hemos creado una plantilla base llamada **base.html** que defin
 
 **Resumen**:
 
-En esta actividad práctica, se creará una plantilla base llamada "base_notas.html" que contendrá un menú de navegación y un pie de página. Luego, se creará una plantilla específica llamada "lista_notas.html" que heredará de "base_notas.html" y mostrará una lista de notas utilizando Bootstrap.
+En esta actividad práctica, se creará una plantilla base llamada **base_notas.html** que contendrá un menú de navegación y un pie de página. Luego, se creará una plantilla específica llamada "lista_notas.html" que heredará de "base_notas.html" y mostrará una lista de notas utilizando Bootstrap.
 
 **Código**:
 
-1.  Crear la Plantilla Base "base_notas.html":
+1.  Crear la Plantilla Base **base_notas.html**:
 
 En la carpeta de plantillas de tu aplicación ("articulos" en este ejemplo), crea un archivo llamado "base_notas.html" con el siguiente contenido:
 
@@ -120,9 +122,9 @@ En la carpeta de plantillas de tu aplicación ("articulos" en este ejemplo), cre
 </html>
 ```
 
-2.  Crear la Plantilla Específica "lista_notas.html":
+2.  Crear la Plantilla Específica **lista_notas.html**:
 
-Crea un archivo llamado "lista_notas.html" en la misma carpeta de plantillas de tu aplicación ("articulos" en este ejemplo). Esta plantilla heredará de "base_notas.html" y mostrará una lista de notas utilizando Bootstrap:
+Crea un archivo llamado **lista_notas.html** en la misma carpeta de plantillas de tu aplicación ("articulos" en este ejemplo). Esta plantilla heredará de "base_notas.html" y mostrará una lista de notas utilizando Bootstrap:
 
 ``` html
 {% extends "base_notas.html" %}
