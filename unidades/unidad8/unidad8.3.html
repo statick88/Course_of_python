@@ -8,7 +8,7 @@
 
 <meta name="description" content="Este libro de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Frameworsk como Django, Flask, Fast Api, PyScript y Regex. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con Bases de datos, APIs y más.">
 
-<title>Python 2023 - Model Template View en Django</title>
+<title>Python 2023 - Model Template View en Django.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.1.html">Unidad 8: Frameworks</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.3.html"><span class="chapter-title">Model Template View en Django</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.1.html">Unidad 8: Frameworks</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.3.html"><span class="chapter-title">Model Template View en Django.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -448,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Model Template View en Django</span></a>
+  <a href="../../unidades/unidad8/unidad8.3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Model Template View en Django.</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -669,8 +669,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#conceptos-clave" id="toc-conceptos-clave" class="nav-link active" data-scroll-target="#conceptos-clave">Conceptos Clave</a>
   <ul class="collapse">
-  <li><a href="#modelo-model" id="toc-modelo-model" class="nav-link" data-scroll-target="#modelo-model">Modelo (Model)</a></li>
-  <li><a href="#plantilla-template" id="toc-plantilla-template" class="nav-link" data-scroll-target="#plantilla-template">Plantilla (Template)</a></li>
+  <li><a href="#modelo-model." id="toc-modelo-model." class="nav-link" data-scroll-target="#modelo-model.">Modelo (Model).</a></li>
+  <li><a href="#plantilla-template." id="toc-plantilla-template." class="nav-link" data-scroll-target="#plantilla-template.">Plantilla (Template).</a></li>
   <li><a href="#vista-view" id="toc-vista-view" class="nav-link" data-scroll-target="#vista-view">Vista (View)</a></li>
   <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
   </ul></li>
@@ -681,9 +681,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.1.html">Unidad 8: Frameworks</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.3.html"><span class="chapter-title">Model Template View en Django</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.1.html">Unidad 8: Frameworks</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.3.html"><span class="chapter-title">Model Template View en Django.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Model Template View en Django</span></h1>
+<h1 class="title"><span class="chapter-title">Model Template View en Django.</span></h1>
 </div>
 
 
@@ -699,15 +699,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>En esta lección, profundizaremos en el patrón Modelo-Vista-Controlador (MVC) de Django y cómo se aplica al crear un CRUD (Crear, Leer, Actualizar, Eliminar) de tareas.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Modelo Template View.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>En esta lección, profundizaremos en el patrón Modelo-Template-View (MTV) de Django y cómo se aplica al crear un <strong>CRUD</strong> (Crear, Leer, Actualizar, Eliminar) de tareas.</p>
 <section id="conceptos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave</h2>
-<section id="modelo-model" class="level3">
-<h3 class="anchored" data-anchor-id="modelo-model">Modelo (Model)</h3>
+<section id="modelo-model." class="level3">
+<h3 class="anchored" data-anchor-id="modelo-model.">Modelo (Model).</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/models.png" class="img-fluid figure-img" width="300"></p>
+</figure>
+</div>
 <p>El Modelo en Django define la estructura de la base de datos y cómo se almacenan los datos. Cada modelo corresponde a una tabla en la base de datos.</p>
 </section>
-<section id="plantilla-template" class="level3">
-<h3 class="anchored" data-anchor-id="plantilla-template">Plantilla (Template)</h3>
+<section id="plantilla-template." class="level3">
+<h3 class="anchored" data-anchor-id="plantilla-template.">Plantilla (Template).</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/templates.png" class="img-fluid figure-img" width="300"></p>
+</figure>
+</div>
 <p>Las Plantillas en Django son archivos HTML que definen la estructura visual de las páginas web. Permiten la presentación de datos a los usuarios.</p>
 </section>
 <section id="vista-view" class="level3">
