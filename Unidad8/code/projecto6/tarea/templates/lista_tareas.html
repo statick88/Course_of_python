@@ -1,0 +1,15 @@
+{% comment %} Plantilla HTML para mostrar la lista de tareas {% endcomment %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Tareas Pendientes***</h1>
+    <ul>
+        {% for tarea in lista_tareas %}
+            <li>{{ tarea.titulo }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
