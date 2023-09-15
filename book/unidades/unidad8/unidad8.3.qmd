@@ -102,7 +102,54 @@ def lista_tareas(request):
     tareas = Tarea.objects.all()
     return render(request, 'lista_tareas.html', {'lista_tareas': tareas})
 ```
+**Ejemplo del archivo url de la aplicación**
 
+```python
+# En el archivo urls.py de la aplicación Django
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('tareas/', views.lista_tareas, name='lista_tareas'),
+]
+```
+**Ejemplo del archivo url del proyecto**
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('tarea.urls')),
+]
+
+```
+
+**Ejemplo de la modificación del archivo settings.py**
+
+```python
+# Application definition
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'tarea',
+]
+```
+
+**Ejemplo de la modificación del archivo admin.py de la aplicación**
+
+```python
+from django.contrib import admin
+from .models import Tarea
+
+admin.site.register(Tarea)
+```
 ### Explicación
 
 En este ejemplo, hemos definido un modelo **Tarea** que representa una tarea en nuestra base de datos. Luego, creamos una plantilla HTML **lista_tareas.html** que muestra una lista de tareas. Finalmente, creamos una vista **lista_tareas** que recupera todas las tareas y las muestra utilizando la plantilla.

@@ -16,7 +16,7 @@ Flask es un microframework web de Python que permite crear aplicaciones web de m
 
 ## Ecosistema de Extensiones de Flask
 
-Flask tiene un ecosistema de extensiones que permiten agregar funcionalidades específicas a las aplicaciones web. Estas extensiones abarcan áreas como a**utenticación de usuarios**, **bases de datos**, **manejo de formularios** y más. Algunas extensiones populares son **Flask-SQLAlchemy** para trabajar con bases de datos y **Flask-WTF** para manejar formularios.
+Flask tiene un ecosistema de extensiones que permiten agregar funcionalidades específicas a las aplicaciones web. Estas extensiones abarcan áreas como **autenticación de usuarios**, **bases de datos**, **manejo de formularios** y más. Algunas extensiones populares son **Flask-SQLAlchemy** para trabajar con bases de datos y **Flask-WTF** para manejar formularios.
 
 ## Instalación de Flask
 
