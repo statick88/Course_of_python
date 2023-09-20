@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Tareas{% endblock %}
+
+{% block content %}
+    <h1>Lista de Tareas</h1>
+    <ul class="list-group">
+        {% for tarea in tareas %}
+            <li class="list-group-item">{{ tarea.titulo }}</li>
+            <p class="list-group-item">{{ tarea.descripcion }}</p>
+        {% endfor %}
+    </ul>
+    <a class="btn btn-primary" href="{% url 'crear_tarea' %}">Crear Tarea</a>
+{% endblock %}

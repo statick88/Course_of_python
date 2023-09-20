@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle de Tarea{% endblock %}
+
+{% block content %}
+    <h1>Detalle de Tarea</h1>
+    <h3>{{ tarea.titulo }}</h3>
+    <p>{{ tarea.descripcion }}</p>
+    {% comment %} <a class="btn btn-primary" href="{% url 'editar_tarea' tarea.id %}">Editar Tarea</a> {% endcomment %}
+    {% comment %} <a class="btn btn-danger" href="{% url 'eliminar_tarea' tarea.id %}">Eliminar Tarea</a> {% endcomment %}
+    <a class="btn btn-secondary" href="{% url 'lista_tareas' %}">Volver a la Lista de Tareas</a>
+{% endblock %}
