@@ -1,0 +1,142 @@
+# Integración de Django Rest Framework en Proyecto de Tareas
+
+En esta sección, aprenderemos cómo integrar Django Rest Framework (DRF) en nuestro proyecto de lista de tareas. DRF es una poderosa herramienta para construir APIs web en Django de una manera sencilla y eficiente.
+
+Django Rest Framework es una biblioteca que se utiliza para construir APIs web en aplicaciones Django. Proporciona una amplia variedad de características y herramientas para facilitar la creación y el consumo de APIs RESTful. Configuración de Django Rest Framework
+
+Para integrar Django Rest Framework en nuestro proyecto, sigamos estos pasos: Paso 1: Instalar Django Rest Framework
+
+Primero, debemos instalar DRF utilizando pip:
+
+``` bash
+pip install djangorestframework
+```
+
+Paso 2: Agregar DRF a la Configuración del Proyecto
+
+En el archivo settings.py de nuestro proyecto, agreguemos 'rest_framework' a la lista de aplicaciones instaladas:
+
+``` python
+# settings.py
+
+INSTALLED_APPS = [
+    # ...
+    'rest_framework',
+    # ...
+]
+
+```
+
+Paso 3: Configurar las Vistas de DRF
+
+A continuación, crearemos vistas basadas en clases utilizando DRF para exponer nuestra lista de tareas a través de una API.
+
+``` python
+# tarea/views.py
+
+from rest_framework import generics
+from .models import Tarea
+from .serializers import TareaSerializer
+
+class ListaTareasAPI(generics.ListCreateAPIView):
+    queryset = Tarea.objects.all()
+    serializer_class = TareaSerializer
+
+class DetalleTareaAPI(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Tarea.objects.all()
+    serializer_class = TareaSerializer
+```
+
+Paso 4: Configurar las Rutas de la API
+
+En el archivo urls.py de nuestra aplicación, definiremos las rutas para las vistas de DRF que hemos creado.
+
+``` python
+# tarea/urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    # ...
+    path('api/tareas/', views.ListaTareasAPI.as_view(), name='lista_tareas_api'),
+    path('api/tareas/<int:pk>/', views.DetalleTareaAPI.as_view(), name='detalle_tarea_api'),
+    # ...
+]
+
+
+Paso 5: Crear Serializadores
+
+Para convertir nuestros objetos de modelo en datos JSON, crearemos un serializador en la aplicación.
+
+```python
+# tarea/serializers.py
+
+from rest_framework import serializers
+from .models import Tarea
+
+class TareaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tarea
+        fields = ['id', 'titulo', 'descripcion', 'fecha_creacion']
+```
+
+Ejemplo
+
+``` python
+# Ejemplo de acceso a la API utilizando la biblioteca `requests` en Python
+
+import requests
+
+# Listar todas las tareas
+response = requests.get('http://localhost:8000/api/tareas/')
+tareas = response.json()
+print(tareas)
+
+# Crear una nueva tarea
+nueva_tarea = {'titulo': 'Nueva Tarea', 'descripcion': 'Descripción de la nueva tarea'}
+response = requests.post('http://localhost:8000/api/tareas/', data=nueva_tarea)
+print(response.status_code)
+
+# Obtener detalles de una tarea específica (reemplace 1 con el ID de la tarea)
+response = requests.get('http://localhost:8000/api/tareas/1/')
+tarea = response.json()
+print(tarea)
+
+# Actualizar una tarea (reemplace 1 con el ID de la tarea)
+datos_actualizados = {'titulo': 'Tarea Actualizada', 'descripcion': 'Descripción actualizada'}
+response = requests.put('http://localhost:8000/api/tareas/1/', data=datos_actualizados)
+print(response.status_code)
+
+# Eliminar una tarea (reemplace 1 con el ID de la tarea)
+response = requests.delete('http://localhost:8000/api/tareas/1/')
+print(response.status_code)
+```
+
+:::{.callout-tip} Actividad Práctica
+
+1.  Siga los pasos de configuración para integrar Django Rest Framework en su proyecto de lista de tareas.
+2.  Asegúrese de que las rutas de la API estén correctamente configuradas en urls.py.
+3.  Cree un nuevo serializador para el modelo Tarea. 4, Realice pruebas utilizando un cliente HTTP (como requests en Python) para acceder a la API de su proyecto y realizar operaciones CRUD en las tareas. :::
+
+<details>
+
+<summary>Ejemplo de Clase/Método/Actividad</summary>
+
+Resumen:
+
+Resumen del ejemplo o actividad.
+
+Resolución:
+
+Código o pasos para resolver el ejemplo o actividad.
+
+Explicación:
+
+Explicación de cómo funciona la resolución o el ejemplo.
+
+</details>
+
+¿Qué aprendimos?
+
+Aprendimos cómo integrar Django Rest Framework en nuestro proyecto Django para crear una API que expone las operaciones CRUD en nuestras tareas. Configuramos vistas, rutas y serializadores para habilitar la API y utilizamos una biblioteca como requests para interactuar con la API y realizar operaciones CRUD en nuestras tareas. Con esta integración, nuestra aplicación de lista de tareas ahora puede ser consumida por aplicaciones cliente, como aplicaciones móviles o SPA (aplicaciones de una sola página), que necesitan acceder a datos a través de una API RESTful.

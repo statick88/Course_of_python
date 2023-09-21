@@ -12,79 +12,185 @@ CRUD es un acrónimo de "Crear, Leer, Actualizar, Eliminar" y se refiere a las o
 
 Los formularios en Django nos permiten **crear** y **manejar** formularios HTML de manera sencilla y eficiente.
 
-**Ejemplo de creación de un Modelo en Django**
+Ahora vamos a conocer el desarrollo de este proyecto paso a paso, empezamos a conocer cada uno de los archivos, su ubicación, el código necesario y una breve explicación de que se hace en cada archivo.
 
-```python
+**models.py**: en la carpeta de la aplicación tarea en el proyecto Tareas.
 
-# Creación de un modelo Django llamado "Tarea"
+**Código:**
+
+``` python
 from django.db import models
 
 class Tarea(models.Model):
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField()
-    fecha_creacion = models.DateTimeField('fecha de creación')
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+    # Campo para registrar la fecha de actualización
+    fecha_actualizacion = models.DateTimeField(auto_now=True)
 ```
-**Ejemplo de creación de un Formulario en Django**
-```python
-# Creación de un formulario en Django para crear una tarea
+
+**Explicación:**
+
+1.  Este archivo, models.py, define el modelo de datos para la aplicación tarea.
+2.  El modelo Tarea tiene cuatro campos: titulo, descripcion, fecha_creacion, y fecha_actualizacion.
+3.  titulo es un campo de caracteres con un límite de 200 caracteres y se utiliza para almacenar el título de la tarea.
+4.  descripcion es un campo de texto largo que almacena la descripción detallada de la tarea.
+5.  fecha_creacion es un campo de fecha y hora que se establece automáticamente cuando se crea una tarea.
+6.  fecha_actualizacion es un campo de fecha y hora que se actualiza automáticamente cada vez que se modifica una tarea. Este campo se utiliza para registrar la fecha de la última actualización de la tarea.
+
+**forms.py** en la carpeta de la aplicación tarea en el proyecto Tareas.
+
+**Código:**
+
+``` python
 from django import forms
+from .models import Tarea
 
 class TareaForm(forms.ModelForm):
     class Meta:
         model = Tarea
-        fields = ['titulo', 'descripcion', 'fecha_creacion']
+        fields = ['titulo', 'descripcion']
 ```
-Ejemplo de creación de vistas para listar, crear y actualizar tareas
-```python
-# Creación de una vista para listar, crear y actualizar tareas
+
+Explicación:
+
+1.  Este archivo, forms.py, define un formulario en Django para crear una tarea.
+2.  Importamos forms de Django y el modelo Tarea de la misma aplicación.
+3.  TareaForm es una clase de formulario que hereda de forms.ModelForm.
+4.  La clase Meta especifica el modelo al que está asociado el formulario (Tarea) y los campos que se deben incluir en el formulario (titulo y descripcion).
+
+**urls.py** en la carpeta de la aplicación tarea en el proyecto Tareas.
+
+**Código:**
+
+``` python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.lista_tareas, name='lista_tareas'),
+    path('crear_tarea/', views.crear_tarea, name='crear_tarea'),
+    path('detalle_tarea/<int:pk>/', views.detalle_tarea, name='detalle_tarea'),
+    path('editar_tarea/<int:pk>/', views.editar_tarea, name='editar_tarea'),
+    path('eliminar_tarea/<int:pk>/', views.eliminar_tarea, name='eliminar_tarea'),
+]
+```
+
+**Explicación:**
+
+1.  Este archivo, urls.py, define las URL y las vistas asociadas para la aplicación tarea en el proyecto Tareas.
+2.  Importamos path de django.urls y las vistas definidas en views.py.
+3.  Configuramos varias rutas (path) que estarán disponibles en nuestra aplicación: 3.1. La ruta raíz '/' se mapea a la vista lista_tareas con el nombre lista_tareas. 3.2. La ruta 'crear_tarea/' se mapea a la vista crear_tarea con el nombre crear_tarea. 3.3. La ruta 'detalle_tarea/<int:pk>/' toma un parámetro <int:pk> que corresponde al ID de la tarea y se mapea a la vista detalle_tarea con el nombre detalle_tarea. 3.4. La ruta 'editar_tarea/<int:pk>/' toma un parámetro <int:pk> que corresponde al ID de la tarea y se mapea a la vista editar_tarea con el nombre editar_tarea. 3.5. La ruta 'eliminar_tarea/<int:pk>/' toma un parámetro <int:pk> que corresponde al ID de la tarea y se mapea a la vista eliminar_tarea con el nombre eliminar_tarea.
+
+**admin.py** en la carpeta de la aplicación tarea en el proyecto Tareas.
+
+**Código:**
+
+``` python
+from django.contrib import admin
+from .models import Tarea
+
+# Registra el modelo Tarea en el panel de administración
+admin.site.register(Tarea)
+```
+
+**Explicación:**
+
+1.  En este archivo, admin.py, importamos admin de django.contrib y el modelo Tarea desde .models.
+2.  Luego, utilizamos admin.site.register(Tarea) para registrar el modelo Tarea en el panel de administración de Django. Esto permite que podamos gestionar las tareas directamente desde el panel de administración, lo que facilita la creación, lectura, actualización y eliminación de tareas (CRUD) utilizando la interfaz de administración de Django.
+
+**views.py** en la carpeta de la aplicación tarea en el proyecto Tareas.
+
+**Código:**
+
+``` python
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Tarea
 from .forms import TareaForm
 
 def lista_tareas(request):
+    # Obtiene todas las tareas
     tareas = Tarea.objects.all()
-    return render(request, 'lista_tareas.html', {'lista_tareas': tareas})
+    return render(request, 'tarea/lista_tareas.html', {'tareas': tareas})
 
 def crear_tarea(request):
     if request.method == "POST":
+        # Si se envía el formulario, procesa los datos
         form = TareaForm(request.POST)
         if form.is_valid():
             tarea = form.save()
             return redirect('detalle_tarea', pk=tarea.pk)
     else:
+        # Si no se envía el formulario, muestra un formulario vacío
         form = TareaForm()
-    return render(request, 'crear_tarea.html', {'form': form})
+    return render(request, 'tarea/crear_tarea.html', {'form': form})
 
 def detalle_tarea(request, pk):
+    # Obtiene la tarea específica por su clave primaria (ID)
     tarea = get_object_or_404(Tarea, pk=pk)
-    return render(request, 'detalle_tarea.html', {'tarea': tarea})
-```
-Ejemplo de Plantilla Base en Django (base_notas.html)
+    return render(request, 'tarea/detalle_tarea.html', {'tarea': tarea})
 
-```html
+def editar_tarea(request, pk):
+    # Obtiene la tarea específica por su clave primaria (ID)
+    tarea = get_object_or_404(Tarea, pk=pk)
+    if request.method == "POST":
+        # Si se envía el formulario, procesa los datos
+        form = TareaForm(request.POST, instance=tarea)
+        if form.is_valid():
+            tarea = form.save()
+            return redirect('detalle_tarea', pk=tarea.pk)
+    else:
+        # Si no se envía el formulario, muestra el formulario con los datos de la tarea
+        form = TareaForm(instance=tarea)
+    return render(request, 'tarea/editar_tarea.html', {'form': form})
+
+def eliminar_tarea(request, pk):
+    # Obtiene la tarea específica por su clave primaria (ID)
+    tarea = get_object_or_404(Tarea, pk=pk)
+    if request.method == "POST":
+        # Si se confirma la eliminación, elimina la tarea
+        tarea.delete()
+        return redirect('lista_tareas')
+    return render(request, 'tarea/confirmar_eliminar.html', {'tarea': tarea})
+```
+
+**Explicación:**
+
+1.  En este archivo, views.py, definimos las vistas que se encargan de manejar las acciones relacionadas con las tareas en nuestro proyecto.
+2.  La vista lista_tareas obtiene todas las tareas y las muestra en una lista.
+3.  La vista crear_tarea permite crear una nueva tarea. Si se envía el formulario, procesa los datos; de lo contrario, muestra un formulario vacío.
+4.  La vista detalle_tarea muestra los detalles de una tarea específica.
+5.  La vista editar_tarea permite editar una tarea existente. Si se envía el formulario, procesa los datos; de lo contrario, muestra el formulario con los datos de la tarea.
+6.  La vista eliminar_tarea permite confirmar y eliminar una tarea existente.
+
+Estas vistas forman parte de la funcionalidad CRUD (Crear, Leer, Actualizar, Eliminar) de nuestro sistema de tareas en Django.
+
+**base.html** en la carpeta templates de la aplicación tarea en el proyecto Tareas.
+
+**Código:**
+
+``` html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Título por Defecto{% endblock %}</title>
-    <!-- Agregar enlaces a Bootstrap y otros recursos aquí -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Mi Aplicación de Notas</a>
+        <a class="navbar-brand" href="#">Mi Aplicación de Tareas</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'lista_tareas' %}">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tareas/">Tareas</a>
+                    <a class="nav-link" href="{% url 'crear_tarea' %}">Crear Tarea</a>
                 </li>
-                <!-- Agregar más elementos de menú si es necesario -->
             </ul>
         </div>
     </nav>
@@ -95,7 +201,7 @@ Ejemplo de Plantilla Base en Django (base_notas.html)
 
     <footer class="footer mt-auto py-3">
         <div class="container">
-            <span class="text-muted">© 2023 Mi Aplicación de Notas</span>
+            <span class="text-muted">© {% now "Y" %} Mi Aplicación de Tareas</span>
         </div>
     </footer>
     <!-- Agregar enlaces a Bootstrap y otros recursos aquí -->
@@ -103,10 +209,153 @@ Ejemplo de Plantilla Base en Django (base_notas.html)
 </body>
 </html>
 ```
-Ejemplo de Plantilla de Página de Inicio (inicio.html).
 
-```html
-{% extends "base_notas.html" %}
+**Explicación:**
+
+1.  En este archivo HTML, hemos definido la estructura base de nuestras páginas web. Sirve como plantilla para todas las páginas y define la estructura común, incluyendo el encabezado de navegación, el contenido y el pie de página.
+2.  Utilizamos la directiva {% block %} para definir áreas que serán reemplazadas por bloques específicos en las páginas que hereden de esta plantilla. Por ejemplo, {% block content %} define el área donde se insertará el contenido específico de cada página.
+3.  Hemos configurado un menú de navegación en la barra superior que incluye enlaces a la página de inicio (lista_tareas) y la página para crear tareas (crear_tarea).
+4.  En el pie de página, mostramos el año actual utilizando {% now "Y" %} y el nombre de la aplicación.
+5.  Se incluyen los enlaces a Bootstrap para el estilo y funcionalidad de la interfaz de usuario.
+
+**crear_tarea.html** en la carpeta templates de la aplicación tarea en el proyecto Tareas.
+
+**Código:**
+
+``` html
+{% extends "base.html" %}
+
+{% block title %}Crear Tarea{% endblock %}
+
+{% block content %}
+    <h1>Crear Tarea</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
+    <a class="btn btn-secondary" href="{% url 'lista_tareas' %}">Volver a la Lista de Tareas</a>
+{% endblock %}
+```
+
+**Explicación:**
+
+1.  Este archivo HTML hereda de la plantilla base "base.html" utilizando la directiva {% extends %}. Esto significa que incluirá todo el contenido de la plantilla base y permitirá personalizar bloques específicos.
+2.  El bloque {% block title %} personaliza el título de la página, estableciéndolo como "Crear Tarea".
+3.  El bloque {% block content %} contiene el contenido específico de la página. Aquí se encuentra el formulario para crear una nueva tarea.
+4.  Utilizamos un formulario HTML con el método POST para enviar datos al servidor. {% csrf_token %} agrega un token de seguridad para proteger el formulario contra ataques CSRF (Cross-Site Request Forgery).
+5.  {% url 'lista_tareas' %} genera automáticamente la URL para la vista lista_tareas y crea un enlace para volver a la lista de tareas.
+6.  Se incluye un botón "Guardar" para enviar el formulario y crear una nueva tarea.
+
+En resumen, esta plantilla se utiliza para mostrar el formulario de creación de tareas y aprovecha la plantilla base para mantener una estructura y estilo consistentes en el sitio web.
+
+**detalle_tarea.html** en la carpeta templates de la aplicación tarea en el proyecto Tareas.
+
+**Código:**
+
+``` html
+{% extends "base.html" %}
+
+{% block title %}Detalle de Tarea{% endblock %}
+
+{% block content %}
+    <h1>Detalle de Tarea</h1>
+    <h3>{{ tarea.titulo }}</h3>
+    <p>{{ tarea.descripcion }}</p>
+    <a class="btn btn-primary" href="{% url 'editar_tarea' tarea.id %}">Editar Tarea</a>
+    <a class="btn btn-danger" href="{% url 'eliminar_tarea' tarea.id %}">Eliminar Tarea</a>
+    <a class="btn btn-secondary" href="{% url 'lista_tareas' %}">Volver a la Lista de Tareas</a>
+{% endblock %}
+```
+
+**Explicación:**
+
+1.  Este archivo HTML también hereda de la plantilla base "base.html" utilizando la directiva {% extends %}. Esto permite que comparta la estructura común y el estilo con otras páginas del sitio.
+2.  El bloque {% block title %} personaliza el título de la página, estableciéndolo como "Detalle de Tarea".
+3.  El bloque {% block content %} contiene el contenido específico de la página, que es la información detallada de una tarea.
+4.  Se muestra el título y la descripción de la tarea utilizando {{ tarea.titulo }} y {{ tarea.descripcion }}, que son variables pasadas desde la vista.
+5.  Se incluyen enlaces para editar, eliminar y volver a la lista de tareas. Estos enlaces utilizan las URLs generadas automáticamente mediante {% url %} y pasan el ID de la tarea correspondiente.
+
+En resumen, esta plantilla se utiliza para mostrar los detalles de una tarea específica y proporciona enlaces para realizar acciones relacionadas con esa tarea.
+
+**editar_tarea.html** en la carpeta templates de la aplicación tarea en el proyecto Tareas.
+
+**Código:**
+
+``` html
+{% extends "base.html" %}
+
+{% block title %}Editar Tarea{% endblock %}
+
+{% block content %}
+    <h1>Editar Tarea</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Guardar Cambios</button>
+    </form>
+    <a class="btn btn-secondary" href="{% url 'detalle_tarea' tarea.id %}">Volver al Detalle de Tarea</a>
+{% endblock %}
+```
+
+**Explicación:**
+
+1.  Al igual que otras plantillas, esta también hereda de la plantilla base "base.html" utilizando {% extends %}.
+2.  El bloque {% block title %} establece el título de la página como "Editar Tarea".
+3.  El bloque {% block content %} contiene el contenido específico de la página, que es un formulario para editar una tarea.
+4.  Se utiliza un formulario HTML que se envía mediante el método POST. El {% csrf_token %} agrega un token de seguridad CSRF al formulario para protegerlo contra ataques.
+5.  {{ form.as_p }} muestra el formulario con campos de entrada para editar los datos de la tarea. Los campos se generan automáticamente a partir del modelo Tarea.
+6.  Se incluye un botón "Guardar Cambios" que permite al usuario guardar las modificaciones en la tarea.
+7.  También se proporciona un enlace para volver al detalle de la tarea original.
+
+Esta plantilla se utiliza para la edición de tareas y muestra un formulario que permite al usuario modificar los datos de una tarea existente.
+
+**templates/eliminar_tarea.html** contiene la plantilla para la confirmación de eliminación de una tarea. Aquí está el código con comentarios:
+
+``` html
+{% extends "base.html" %}
+
+{% block title %}Eliminar Tarea{% endblock %}
+
+{% block content %}
+    <h1>Eliminar Tarea</h1>
+    <p>¿Estás seguro de que deseas eliminar esta tarea?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+    </form>
+    <a class="btn btn-secondary" href="{% url 'lista_tareas' %}">Cancelar y Volver a la Lista de Tareas</a>
+{% endblock %}
+```
+
+**Explicación:**
+
+1.  La plantilla hereda de "base.html" utilizando {% extends %} y establece el título de la página como "Eliminar Tarea" en el bloque {% block title %}.
+
+2.  El bloque {% block content %} contiene el contenido específico de la página.
+
+3.  Se muestra un encabezado
+
+    <h1>
+
+    que indica "Eliminar Tarea" y un mensaje de confirmación
+
+    <p>
+
+    que pregunta si el usuario está seguro de que desea eliminar la tarea.
+
+4.  A continuación, se presenta un formulario HTML que se envía mediante el método POST. El formulario incluye un token de seguridad CSRF {% csrf_token %}.
+
+5.  Dentro del formulario, hay un botón "Eliminar" que permite al usuario confirmar la eliminación de la tarea.
+
+6.  También se proporciona un enlace "Cancelar y Volver a la Lista de Tareas" que redirige al usuario a la lista de tareas en caso de que decida cancelar la eliminación.
+
+Esta plantilla se utiliza para solicitar la confirmación de eliminación de una tarea antes de realizar la acción de eliminación.
+
+**templates/inicio.html** contiene la plantilla para la página de inicio del proyecto. A continuación, se muestra el código con comentarios:
+
+``` html
+{% extends "base.html" %}
 
 {% block title %}Inicio - Mi Sitio Web{% endblock %}
 
@@ -115,10 +364,29 @@ Ejemplo de Plantilla de Página de Inicio (inicio.html).
     <p>Esta es la página de inicio de mi sitio web.</p>
 {% endblock %}
 ```
-Ejemplo de Plantilla de Lista de Tareas (lista_tareas.html).
 
-```html
-{% extends "base_notas.html" %}
+**Explicación:**
+
+1.  La plantilla hereda de "base.html" utilizando {% extends %} y establece el título de la página como "Inicio - Mi Sitio Web" en el bloque {% block title %}.
+
+2.  El bloque {% block content %} contiene el contenido específico de la página de inicio.
+
+3.  En esta página de inicio, se muestra un encabezado
+
+    <h2>
+
+    que dice "Bienvenido a la página de inicio" y un párrafo
+
+    <p>
+
+    que proporciona una breve descripción de la página.
+
+Esta plantilla se utiliza para representar la página de inicio del sitio web, que es una página simple con un mensaje de bienvenida.
+
+**templates/lista_tareas.html** contiene la plantilla para la lista de tareas en el proyecto. A continuación, se muestra el código con comentarios:
+
+``` html
+{% extends "base.html" %}
 
 {% block title %}Lista de Tareas{% endblock %}
 
@@ -133,56 +401,67 @@ Ejemplo de Plantilla de Lista de Tareas (lista_tareas.html).
     <a class="btn btn-primary" href="{% url 'crear_tarea' %}">Crear Tarea</a>
 {% endblock %}
 ```
-Ejemplo de Plantilla de Creación de Tareas (crear_tareas.html).
 
-```html
-{% extends "base_notas.html" %}
+**Explicación:**
 
-{% block title %}Crear Tarea{% endblock %}
+1.  La plantilla hereda de "base.html" utilizando {% extends %} y establece el título de la página como "Lista de Tareas" en el bloque {% block title %}.
 
-{% block content %}
-    <h1>Crear Tarea</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Guardar</button>
-    </form>
-    <a class="btn btn-secondary" href="{% url 'lista_tareas' %}">Volver a la Lista de Tareas</a>
-{% endblock %}
+2.  El bloque {% block content %} contiene el contenido específico de la página de lista de tareas.
 
+3.  Se muestra un encabezado
+
+    <h1>
+
+    que dice "Lista de Tareas".
+
+4.  Utiliza un bucle {% for tarea in tareas %} para recorrer todas las tareas y muestra cada tarea con su título y descripción en elementos de lista
+
+    <li>
+
+    y párrafos
+
+    <p>
+
+    .
+
+5.  Se agrega un botón "Crear Tarea" que redirige al usuario a la página de creación de tareas utilizando {% url 'crear_tarea' %}.
+
+Esta plantilla se utiliza para mostrar la lista de tareas en el sitio web, donde cada tarea se muestra en forma de lista junto con un botón para crear una nueva tarea.
+
+Para agregar la aplicación "tarea" al archivo settings.py del proyecto Django, simplemente debes incluir 'tarea' en la lista INSTALLED_APPS. A continuación, te muestro la sección actualizada de INSTALLED_APPS en settings.py:
+
+``` python
+
+# Application definition
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'tarea',  # Agrega 'tarea' aquí para incluir la aplicación en tu proyecto
+]
 ```
-Ejemplo de Plantilla de Detalle de Tarea (detalle_tarea.html):.
-```html
-{% extends "base_notas.html" %}
 
-{% block title %}Detalle de Tarea{% endblock %}
+Con este cambio, la aplicación "tarea" se incorporará al proyecto y estará disponible para su uso en el mismo. Asegúrate de guardar el archivo después de hacer esta modificación en settings.py.
 
-{% block content %}
-    <h1>Detalle de Tarea</h1>
-    <h3>{{ tarea.titulo }}</h3>
-    <p>{{ tarea.descripcion }}</p>
-    <a class="btn btn-primary" href="{% url 'editar_tarea' tarea.id %}">Editar Tarea</a>
-    <a class="btn btn-danger" href="{% url 'eliminar_tarea' tarea.id %}">Eliminar Tarea</a>
-    <a class="btn btn-secondary" href="{% url 'lista_tareas' %}">Volver a la Lista de Tareas</a>
-{% endblock %}
+Para configurar las URL del proyecto Django y vincularlas con las URL de la aplicación "tarea", debes modificar el archivo urls.py del proyecto. A continuación, te muestro cómo podría verse el archivo urls.py del proyecto:
 
+``` python
+from django.contrib import admin
+from django.urls import path, include  # Importa include desde django.urls
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('tarea.urls')),  # Incluye las URL de la aplicación 'tarea'
+]
 ```
-Ejemplo de Plantilla de Edición de Tarea (editar_tarea.html).
-```html
-{% extends "base_notas.html" %}
 
-{% block title %}Editar Tarea{% endblock %}
+En este código, hemos importado include desde django.urls y luego hemos utilizado include('tarea.urls') para incluir las URL de la aplicación "tarea" en las URL del proyecto. Esto asegura que todas las URL definidas en el archivo urls.py de la aplicación "tarea" estén disponibles bajo la raíz del proyecto.
 
-{% block content %}
-    <h1>Editar Tarea</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Guardar Cambios</button>
-    </form>
-    <a class="btn btn-secondary" href="{% url 'detalle_tarea' tarea.id %}">Volver al Detalle de Tarea</a>
-{% endblock %}
-```
+Asegúrate de guardar los cambios en el archivo urls.py del proyecto después de realizar esta configuración.
 
 ### Explicación
 
@@ -283,4 +562,22 @@ Con estos pasos, hemos creado una plantilla base reutilizable ("base_notas.html"
 
 ### ¿Qué aprendimos?
 
-Aprendimos cómo crear un CRUD de tareas en Django utilizando modelos, formularios y vistas. Entendemos cómo Django simplifica la creación de aplicaciones web interactivas.
+En este proyecto, aprendimos a crear una aplicación web completa utilizando Django para gestionar una lista de tareas (to-do list) con operaciones CRUD (Crear, Leer, Actualizar y Eliminar). Aquí está un resumen de lo que aprendimos:
+
+-   **Modelos de Django:** Creamos un modelo llamado Tarea en Django para representar las tareas en nuestra aplicación. Utilizamos campos como CharField y DateTimeField para definir los atributos de las tareas.
+
+-   **Formularios en Django:** Utilizamos formularios en Django para crear y manejar formularios HTML de manera sencilla y eficiente. Creamos un formulario llamado TareaForm que se basa en el modelo Tarea.
+
+-   **Vistas en Django:** Creamos vistas en Django para manejar diferentes acciones, como listar tareas, crear tareas, ver detalles de tareas, editar tareas y eliminar tareas. Utilizamos funciones de vista basadas en clases y funciones de vista basadas en funciones para lograr estas funcionalidades.
+
+-   **Plantillas HTML:** Creamos plantillas HTML utilizando el sistema de herencia de plantillas de Django. Creamos una plantilla base que contiene elementos comunes, como el encabezado y el pie de página, y luego creamos plantillas específicas que heredan de la plantilla base y agregan contenido específico para cada página.
+
+-   **Enrutamiento de URL:** Configuramos las URL de la aplicación para que las vistas se llamen correctamente cuando los usuarios acceden a diferentes URL. Usamos el enrutador path para mapear las URL a las vistas correspondientes.
+
+-   **Integración de Bootstrap:** Mejoramos la apariencia de nuestra aplicación web utilizando Bootstrap, un marco de diseño de código abierto. Aplicamos estilos predefinidos y componentes de Bootstrap a nuestras plantillas HTML.
+
+-   **Administrador de Django:** Utilizamos el administrador de Django para gestionar fácilmente los datos de las tareas a través de una interfaz de administración generada automáticamente.
+
+-   **Configuración de Proyecto:** Aprendimos cómo configurar las aplicaciones en el archivo settings.py del proyecto y cómo conectar las URL de la aplicación con las URL del proyecto.
+
+En general, este proyecto nos permitió comprender cómo construir una aplicación web completa con Django, desde la definición de modelos y formularios hasta la creación de vistas y plantillas HTML. También aprendimos a mejorar la interfaz de usuario utilizando Bootstrap y a gestionar los datos de la aplicación a través del administrador de Django. Estas habilidades son fundamentales para el desarrollo de aplicaciones web con Django.
