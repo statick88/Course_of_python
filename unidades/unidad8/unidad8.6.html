@@ -8,7 +8,7 @@
 
 <meta name="description" content="Este libro de Python te llevará desde los conceptos iniciales hasta la creación de aplicaciones prácticas con Frameworks como Django, Flask, Fast Api, PyScript y Regex. Apto para principiantes, aprenderás a programar y desarrollar proyectos reales con Bases de datos, APIs y más.">
 
-<title>Python 2023 - Métodos</title>
+<title>Python 2023 - Integración de Django Rest Framework en Proyecto de Tareas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/unidad6/unidad6.4.html" rel="next">
-<link href="../../unidades/unidad6/unidad6.2.html" rel="prev">
+<link href="../../unidades/unidad9/unidad9.1.html" rel="next">
+<link href="../../unidades/unidad8/unidad8.5.html" rel="prev">
 <link href="../../python-logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -119,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/unidad6.1.html">Unidad 6: Programación Orientada a Objetos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/unidad6.3.html"><span class="chapter-title">Métodos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.1.html">Unidad 8: Frameworks</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.6.html"><span class="chapter-title">Integración de Django Rest Framework en Proyecto de Tareas</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -352,13 +352,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">Unidad 6: Programación Orientada a Objetos</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad6/unidad6.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Orientada a Objetos (POO)</span></a>
@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/unidad6.3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Métodos</span></a>
+  <a href="../../unidades/unidad6/unidad6.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Métodos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -429,13 +429,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Unidad 8: Frameworks</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad8/unidad8.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django</span></a>
@@ -463,7 +463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad8/unidad8.6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Integración de Django Rest Framework en Proyecto de Tareas</span></a>
+  <a href="../../unidades/unidad8/unidad8.6.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Integración de Django Rest Framework en Proyecto de Tareas</span></a>
   </div>
 </li>
       </ul>
@@ -672,23 +672,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#conceptos-clave" id="toc-conceptos-clave" class="nav-link active" data-scroll-target="#conceptos-clave">Conceptos Clave</a>
-  <ul class="collapse">
-  <li><a href="#métodos-de-clase" id="toc-métodos-de-clase" class="nav-link" data-scroll-target="#métodos-de-clase">Métodos de Clase</a></li>
-  <li><a href="#acceso-a-atributos" id="toc-acceso-a-atributos" class="nav-link" data-scroll-target="#acceso-a-atributos">Acceso a Atributos</a></li>
-  <li><a href="#explicación" id="toc-explicación" class="nav-link" data-scroll-target="#explicación">Explicación</a></li>
-  <li><a href="#explicación-1" id="toc-explicación-1" class="nav-link" data-scroll-target="#explicación-1">Explicación:</a></li>
-  </ul></li>
-  <li><a href="#qué-aprendimos" id="toc-qué-aprendimos" class="nav-link" data-scroll-target="#qué-aprendimos">¿Qué aprendimos?</a></li>
+  <li><a href="#qué-aprendimos" id="toc-qué-aprendimos" class="nav-link active" data-scroll-target="#qué-aprendimos">¿Qué aprendimos?</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad6/unidad6.3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad6/unidad6.3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/statick88/Course_of_python/edit/main/book/unidades/unidad8/unidad8.6.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/Course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/statick88/Course_of_python/blob/main/book/unidades/unidad8/unidad8.6.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/unidad6.1.html">Unidad 6: Programación Orientada a Objetos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/unidad6.3.html"><span class="chapter-title">Métodos</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.1.html">Unidad 8: Frameworks</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad8/unidad8.6.html"><span class="chapter-title">Integración de Django Rest Framework en Proyecto de Tareas</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Métodos</span></h1>
+<h1 class="title"><span class="chapter-title">Integración de Django Rest Framework en Proyecto de Tareas</span></h1>
 </div>
 
 
@@ -704,92 +697,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>En esta lección, profundizaremos en el concepto de métodos en la programación orientada a objetos. Aprenderemos cómo definir y utilizar métodos en una clase, y cómo acceder a los atributos de instancia dentro de los métodos.</p>
-<!-- ![](images/methods.png){fig-align="center" width="400"} -->
-<section id="conceptos-clave" class="level2">
-<h2 class="anchored" data-anchor-id="conceptos-clave">Conceptos Clave</h2>
-<section id="métodos-de-clase" class="level3">
-<h3 class="anchored" data-anchor-id="métodos-de-clase">Métodos de Clase</h3>
-<p>Los métodos de clase son funciones definidas dentro de una clase que operan en los atributos de instancia. Cada instancia de la clase puede llamar a estos métodos para realizar acciones específicas.</p>
-</section>
-<section id="acceso-a-atributos" class="level3">
-<h3 class="anchored" data-anchor-id="acceso-a-atributos">Acceso a Atributos</h3>
-<p>Dentro de un método, se puede acceder a los atributos de instancia utilizando “self.atributo”. Esto permite manipular y utilizar los valores de los atributos dentro de los métodos.</p>
-<p><strong>Ejemplo</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de código en Python</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Puede incluir múltiples bloques de código si es necesario.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Cuadrado:</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, lado):</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.lado <span class="op">=</span> lado</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calcular_area(<span class="va">self</span>):</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        area <span class="op">=</span> <span class="va">self</span>.lado <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> area</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una instancia de Cuadrado</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>cuadrado1 <span class="op">=</span> Cuadrado(<span class="dv">4</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular y mostrar el área del cuadrado</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>area_cuadrado <span class="op">=</span> cuadrado1.calcular_area()</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Área del Cuadrado: </span><span class="sc">{</span>area_cuadrado<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="explicación" class="level3">
-<h3 class="anchored" data-anchor-id="explicación">Explicación</h3>
-<p>En este ejemplo, hemos definido una clase “Cuadrado” con un método “calcular_area”. El método accede al atributo de instancia “lado” utilizando “self.lado” y calcula el área del cuadrado.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Actividad Práctica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Crea una clase Triángulo con atributos “base” y “altura”, y un método “calcular_area” que calcule y retorne el área del triángulo (base * altura / 2).</p>
-</div>
-</div>
-<details>
-<summary>
-Ejemplo de Clase Triángulo
-</summary>
-<p><strong>Resumen</strong>:</p>
-<p>En esta actividad, crearemos una clase llamada “Triángulo” con atributos “base” y “altura”. Implementaremos un método llamado “calcular_area” que calculará y retornará el área del triángulo (base * altura / 2). Luego, crearemos una instancia de la clase “Triángulo” con dimensiones específicas y mostraremos el área del triángulo.</p>
-<p><strong>Resolución</strong>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Triangulo:</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, base, altura):</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.base <span class="op">=</span> base</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.altura <span class="op">=</span> altura</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calcular_area(<span class="va">self</span>):</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="va">self</span>.base <span class="op">*</span> <span class="va">self</span>.altura) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una instancia de Triángulo</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>triangulo1 <span class="op">=</span> Triangulo(<span class="dv">6</span>, <span class="dv">8</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular el área del triángulo</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>area_triangulo <span class="op">=</span> triangulo1.calcular_area()</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el área del triángulo</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Área del Triángulo: </span><span class="sc">{</span>area_triangulo<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details></section>
-<section id="explicación-1" class="level3">
-<h3 class="anchored" data-anchor-id="explicación-1">Explicación:</h3>
+<p>En esta sección, aprenderemos cómo integrar Django Rest Framework (DRF) en nuestro proyecto de lista de tareas. DRF es una poderosa herramienta para construir APIs web en Django de una manera sencilla y eficiente.</p>
+<p>Django Rest Framework es una biblioteca que se utiliza para construir APIs web en aplicaciones Django. Proporciona una amplia variedad de características y herramientas para facilitar la creación y el consumo de APIs RESTful. Configuración de Django Rest Framework</p>
+<p>Para integrar Django Rest Framework en nuestro proyecto, sigamos estos pasos: Paso 1: Instalar Django Rest Framework</p>
+<p>Primero, debemos instalar DRF utilizando pip:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install djangorestframework</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Paso 2: Agregar DRF a la Configuración del Proyecto</p>
+<p>En el archivo settings.py de nuestro proyecto, agreguemos ‘rest_framework’ a la lista de aplicaciones instaladas:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># settings.py</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>INSTALLED_APPS <span class="op">=</span> [</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'rest_framework'</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Paso 3: Configurar las Vistas de DRF</p>
+<p>A continuación, crearemos vistas basadas en clases utilizando DRF para exponer nuestra lista de tareas a través de una API.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tarea/views.py</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> generics</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Tarea</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .serializers <span class="im">import</span> TareaSerializer</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ListaTareasAPI(generics.ListCreateAPIView):</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    queryset <span class="op">=</span> Tarea.objects.<span class="bu">all</span>()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    serializer_class <span class="op">=</span> TareaSerializer</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> DetalleTareaAPI(generics.RetrieveUpdateDestroyAPIView):</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    queryset <span class="op">=</span> Tarea.objects.<span class="bu">all</span>()</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    serializer_class <span class="op">=</span> TareaSerializer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Paso 4: Configurar las Rutas de la API</p>
+<p>En el archivo urls.py de nuestra aplicación, definiremos las rutas para las vistas de DRF que hemos creado.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tarea/urls.py</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/tareas/'</span>, views.ListaTareasAPI.as_view(), name<span class="op">=</span><span class="st">'lista_tareas_api'</span>),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/tareas/&lt;int:pk&gt;/'</span>, views.DetalleTareaAPI.as_view(), name<span class="op">=</span><span class="st">'detalle_tarea_api'</span>),</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Paso 5: Crear Serializadores</p>
+<p>Para convertir nuestros objetos de modelo en datos JSON, crearemos un serializador en la aplicación.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tarea/serializers.py</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> serializers</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Tarea</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TareaSerializer(serializers.ModelSerializer):</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Meta:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        model <span class="op">=</span> Tarea</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        fields <span class="op">=</span> [<span class="st">'id'</span>, <span class="st">'titulo'</span>, <span class="st">'descripcion'</span>, <span class="st">'fecha_creacion'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ejemplo</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de acceso a la API utilizando la biblioteca `requests` en Python</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Listar todas las tareas</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(<span class="st">'http://localhost:8000/api/tareas/'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>tareas <span class="op">=</span> response.json()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tareas)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una nueva tarea</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>nueva_tarea <span class="op">=</span> {<span class="st">'titulo'</span>: <span class="st">'Nueva Tarea'</span>, <span class="st">'descripcion'</span>: <span class="st">'Descripción de la nueva tarea'</span>}</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.post(<span class="st">'http://localhost:8000/api/tareas/'</span>, data<span class="op">=</span>nueva_tarea)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status_code)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtener detalles de una tarea específica (reemplace 1 con el ID de la tarea)</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(<span class="st">'http://localhost:8000/api/tareas/1/'</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>tarea <span class="op">=</span> response.json()</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tarea)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Actualizar una tarea (reemplace 1 con el ID de la tarea)</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>datos_actualizados <span class="op">=</span> {<span class="st">'titulo'</span>: <span class="st">'Tarea Actualizada'</span>, <span class="st">'descripcion'</span>: <span class="st">'Descripción actualizada'</span>}</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.put(<span class="st">'http://localhost:8000/api/tareas/1/'</span>, data<span class="op">=</span>datos_actualizados)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status_code)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Eliminar una tarea (reemplace 1 con el ID de la tarea)</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.delete(<span class="st">'http://localhost:8000/api/tareas/1/'</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status_code)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::{.callout-tip} Actividad Práctica</p>
 <ol type="1">
-<li>Definimos la clase “Triángulo” con un constructor init que toma dos argumentos: “base” y “altura”. Estos argumentos se utilizan para inicializar los atributos de instancia “base” y “altura”.</li>
-<li>Implementamos un método de instancia llamado “calcular_area” que calcula el área del triángulo utilizando la fórmula (base * altura) / 2 y lo retorna.</li>
-<li>Creamos una instancia de la clase “Triángulo” con dimensiones específicas (base 6 y altura 8).</li>
-<li>Calculamos el área del triángulo llamando al método “calcular_area” en la instancia.</li>
-<li>Mostramos el área del triángulo en la consola.</li>
+<li>Siga los pasos de configuración para integrar Django Rest Framework en su proyecto de lista de tareas.</li>
+<li>Asegúrese de que las rutas de la API estén correctamente configuradas en urls.py.</li>
+<li>Cree un nuevo serializador para el modelo Tarea. 4, Realice pruebas utilizando un cliente HTTP (como requests en Python) para acceder a la API de su proyecto y realizar operaciones CRUD en las tareas.</li>
 </ol>
-
-</section>
-</section>
-<section id="qué-aprendimos" class="level2">
-<h2 class="anchored" data-anchor-id="qué-aprendimos">¿Qué aprendimos?</h2>
-<p>En esta lección, hemos profundizado en el concepto de métodos en la programación orientada a objetos. Aprendimos cómo definir y utilizar métodos en una clase, y cómo acceder a los atributos de instancia dentro de los métodos.</p>
-<p>Ahora tenemos una comprensión más sólida de cómo las clases pueden tener no solo atributos, sino también comportamientos definidos por métodos.</p>
+<p>:::</p>
+<section id="qué-aprendimos" class="level1">
+<h1>¿Qué aprendimos?</h1>
+<p>Aprendimos cómo integrar Django Rest Framework en nuestro proyecto Django para crear una API que expone las operaciones CRUD en nuestras tareas. Configuramos vistas, rutas y serializadores para habilitar la API y utilizamos una biblioteca como requests para interactuar con la API y realizar operaciones CRUD en nuestras tareas. Con esta integración, nuestra aplicación de lista de tareas ahora puede ser consumida por aplicaciones cliente, como aplicaciones móviles o SPA (aplicaciones de una sola página), que necesitan acceder a datos a través de una API RESTful.</p>
 
 
 </section>
@@ -1301,13 +1299,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../unidades/unidad6/unidad6.2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Objetos y Clases</span></span>
+      <a href="../../unidades/unidad8/unidad8.5.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Creación de un CRUD de Tareas en Django</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/unidad6/unidad6.4.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Self, Eliminar Propiedades y Objetos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/unidad9/unidad9.1.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Introducción e Instalación</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
