@@ -1,0 +1,70 @@
+# Documentación de la API con DRF-YASG
+
+Ahora aprenderemos a crear documentación para nuestra API utilizando la biblioteca DRF-YASG (Yet Another Swagger Generator).
+
+## Instalación de DRF-YASG
+
+El método preferido de instalación de DRF-YASG es directamente desde PyPI. Asegúrate de que tu entorno virtual esté activo antes de ejecutar los comandos de instalación:
+
+```bash
+pip install -U drf-yasg
+```
+
+## Configuración de DRF-YASG
+
+**Paso 1:** Agregar DRF-YASG a la Configuración
+
+En el archivo settings.py de tu proyecto, agrega 'drf_yasg' a la lista de aplicaciones instaladas:
+
+```python
+# settings.py
+
+INSTALLED_APPS = [
+    # ...
+    'drf_yasg',
+    # ...
+]
+```
+**Paso 2:** Configurar las URL de Documentación
+
+En el archivo urls.py de tu proyecto, configura las URLs de documentación de DRF-YASG:
+
+```python
+# urls.py
+
+from django.urls import path, re_path
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Tareas API",
+        default_version='v1',
+        description="API para gestionar tareas",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="contact@tareas.local"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
+
+urlpatterns = [
+    # ...
+    path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    # ...
+]
+```
+## Uso de DRF-YASG
+
+Una vez que hayas configurado las URLs de documentación, podrás acceder a la documentación de tu API a través de las siguientes rutas:
+
+- **/swagger/:** Interfaz Swagger UI para interactuar y probar la API.
+- **/redoc/:** Interfaz ReDoc para una experiencia de usuario mejorada.
+
+## ¿Qué aprendimos?
+
+Aprendimos a configurar y utilizar la biblioteca DRF-YASG para generar documentación para nuestra API Django Rest Framework. Esta documentación proporciona una forma fácil de explorar y probar las API de nuestro proyecto, lo que facilita su uso y comprensión tanto para nosotros como para otros desarrolladores que trabajan en el proyecto. Con DRF-YASG, nuestra API se vuelve más accesible y autodocumentada.

@@ -110,6 +110,7 @@ print(response.status_code)
 response = requests.delete('http://localhost:8000/api/tareas/1/')
 print(response.status_code)
 ```
+
 :::{.callout-tip} Actividad Práctica
 
 1.  Siga los pasos de configuración para integrar Django Rest Framework en su proyecto de lista de tareas.
