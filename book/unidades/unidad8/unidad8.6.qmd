@@ -63,8 +63,7 @@ urlpatterns = [
     path('api/tareas/<int:pk>/', views.DetalleTareaAPI.as_view(), name='detalle_tarea_api'),
     # ...
 ]
-
-
+```
 Paso 5: Crear Serializadores
 
 Para convertir nuestros objetos de modelo en datos JSON, crearemos un serializador en la aplicación.
@@ -80,7 +79,6 @@ class TareaSerializer(serializers.ModelSerializer):
         model = Tarea
         fields = ['id', 'titulo', 'descripcion', 'fecha_creacion']
 ```
-
 Ejemplo
 
 ``` python
@@ -112,31 +110,14 @@ print(response.status_code)
 response = requests.delete('http://localhost:8000/api/tareas/1/')
 print(response.status_code)
 ```
-
 :::{.callout-tip} Actividad Práctica
 
 1.  Siga los pasos de configuración para integrar Django Rest Framework en su proyecto de lista de tareas.
 2.  Asegúrese de que las rutas de la API estén correctamente configuradas en urls.py.
-3.  Cree un nuevo serializador para el modelo Tarea. 4, Realice pruebas utilizando un cliente HTTP (como requests en Python) para acceder a la API de su proyecto y realizar operaciones CRUD en las tareas. :::
+3.  Cree un nuevo serializador para el modelo Tarea. 4, Realice pruebas utilizando un cliente HTTP (como requests en Python) para acceder a la API de su proyecto y realizar operaciones CRUD en las tareas. 
 
-<details>
+:::
 
-<summary>Ejemplo de Clase/Método/Actividad</summary>
-
-Resumen:
-
-Resumen del ejemplo o actividad.
-
-Resolución:
-
-Código o pasos para resolver el ejemplo o actividad.
-
-Explicación:
-
-Explicación de cómo funciona la resolución o el ejemplo.
-
-</details>
-
-¿Qué aprendimos?
+# ¿Qué aprendimos?
 
 Aprendimos cómo integrar Django Rest Framework en nuestro proyecto Django para crear una API que expone las operaciones CRUD en nuestras tareas. Configuramos vistas, rutas y serializadores para habilitar la API y utilizamos una biblioteca como requests para interactuar con la API y realizar operaciones CRUD en nuestras tareas. Con esta integración, nuestra aplicación de lista de tareas ahora puede ser consumida por aplicaciones cliente, como aplicaciones móviles o SPA (aplicaciones de una sola página), que necesitan acceder a datos a través de una API RESTful.
