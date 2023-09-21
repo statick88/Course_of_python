@@ -1140,6 +1140,50 @@
     ]
   },
   {
+    "objectID": "unidades/unidad8/unidad8.7.html#instalación-de-drf-yasg",
+    "href": "unidades/unidad8/unidad8.7.html#instalación-de-drf-yasg",
+    "title": "Documentación de la API con DRF-YASG",
+    "section": "Instalación de DRF-YASG",
+    "text": "Instalación de DRF-YASG\nEl método preferido de instalación de DRF-YASG es directamente desde PyPI. Asegúrate de que tu entorno virtual esté activo antes de ejecutar los comandos de instalación:\npip install -U drf-yasg",
+    "crumbs": [
+      "Unidad 8: Frameworks",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Documentación de la API con DRF-YASG</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad8/unidad8.7.html#configuración-de-drf-yasg",
+    "href": "unidades/unidad8/unidad8.7.html#configuración-de-drf-yasg",
+    "title": "Documentación de la API con DRF-YASG",
+    "section": "Configuración de DRF-YASG",
+    "text": "Configuración de DRF-YASG\nPaso 1: Agregar DRF-YASG a la Configuración\nEn el archivo settings.py de tu proyecto, agrega ‘drf_yasg’ a la lista de aplicaciones instaladas:\n# settings.py\n\nINSTALLED_APPS = [\n    # ...\n    'drf_yasg',\n    # ...\n]\nPaso 2: Configurar las URL de Documentación\nEn el archivo urls.py de tu proyecto, configura las URLs de documentación de DRF-YASG:\n# urls.py\n\nfrom django.urls import path, re_path\nfrom rest_framework import permissions\nfrom drf_yasg.views import get_schema_view\nfrom drf_yasg import openapi\n\nschema_view = get_schema_view(\n    openapi.Info(\n        title=\"Tareas API\",\n        default_version='v1',\n        description=\"API para gestionar tareas\",\n        terms_of_service=\"https://www.google.com/policies/terms/\",\n        contact=openapi.Contact(email=\"contact@tareas.local\"),\n        license=openapi.License(name=\"BSD License\"),\n    ),\n    public=True,\n    permission_classes=(permissions.AllowAny,),\n)\n\nurlpatterns = [\n    # ...\n    path('swagger&lt;format&gt;/', schema_view.without_ui(cache_timeout=0), name='schema-json'),\n    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),\n    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),\n    # ...\n]",
+    "crumbs": [
+      "Unidad 8: Frameworks",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Documentación de la API con DRF-YASG</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad8/unidad8.7.html#uso-de-drf-yasg",
+    "href": "unidades/unidad8/unidad8.7.html#uso-de-drf-yasg",
+    "title": "Documentación de la API con DRF-YASG",
+    "section": "Uso de DRF-YASG",
+    "text": "Uso de DRF-YASG\nUna vez que hayas configurado las URLs de documentación, podrás acceder a la documentación de tu API a través de las siguientes rutas:\n\n/swagger/: Interfaz Swagger UI para interactuar y probar la API.\n/redoc/: Interfaz ReDoc para una experiencia de usuario mejorada.",
+    "crumbs": [
+      "Unidad 8: Frameworks",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Documentación de la API con DRF-YASG</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad8/unidad8.7.html#qué-aprendimos",
+    "href": "unidades/unidad8/unidad8.7.html#qué-aprendimos",
+    "title": "Documentación de la API con DRF-YASG",
+    "section": "¿Qué aprendimos?",
+    "text": "¿Qué aprendimos?\nAprendimos a configurar y utilizar la biblioteca DRF-YASG para generar documentación para nuestra API Django Rest Framework. Esta documentación proporciona una forma fácil de explorar y probar las API de nuestro proyecto, lo que facilita su uso y comprensión tanto para nosotros como para otros desarrolladores que trabajan en el proyecto. Con DRF-YASG, nuestra API se vuelve más accesible y autodocumentada.",
+    "crumbs": [
+      "Unidad 8: Frameworks",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Documentación de la API con DRF-YASG</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad9/unidad9.1.html#instalación-de-mysql",
     "href": "unidades/unidad9/unidad9.1.html#instalación-de-mysql",
     "title": "Introducción e Instalación",
@@ -1147,7 +1191,7 @@
     "text": "Instalación de MySQL:\nDescargar e instalar MySQL desde el sitio oficial.\nConfigurar contraseña para el usuario ‘root’.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Introducción e Instalación</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Introducción e Instalación</span>"
     ]
   },
   {
@@ -1158,7 +1202,7 @@
     "text": "Instalación de PostgreSQL:\nDescargar e instalar PostgreSQL desde el sitio oficial.\nConfigurar contraseña para el usuario ‘postgres’.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Introducción e Instalación</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Introducción e Instalación</span>"
     ]
   },
   {
@@ -1169,7 +1213,7 @@
     "text": "Instalación de MongoDB:\nDescargar e instalar MongoDB desde el sitio oficial.\nConfigurar directorio de datos y logs.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Introducción e Instalación</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Introducción e Instalación</span>"
     ]
   },
   {
@@ -1180,7 +1224,7 @@
     "text": "Conexión a la Base de Datos:\n\nMySQL y PostgreSQL:\nUsar bibliotecas como mysql-connector-python o psycopg2 para conectarse y realizar operaciones.\n\n\nMongoDB:\nUsar la biblioteca pymongo para conectarse y realizar operaciones.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Introducción e Instalación</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Introducción e Instalación</span>"
     ]
   },
   {
@@ -1191,7 +1235,7 @@
     "text": "Ejemplo - Conexión a MySQL:\nimport mysql.connector\n\n# Conexión a la base de datos\nconn = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"contraseña\",\n    database=\"basededatos\"\n)",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Introducción e Instalación</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Introducción e Instalación</span>"
     ]
   },
   {
@@ -1202,7 +1246,7 @@
     "text": "Ejemplo - Conexión a MongoDB:\nimport pymongo\n\n# Conexión al servidor MongoDB\nclient = pymongo.MongoClient(\"mongodb://localhost:27017/\")\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInstala MySQL, PostgreSQL y MongoDB en tu entorno. Crea una base de datos en cada uno de los sistemas. Conéctate a cada una de las bases de datos utilizando las bibliotecas adecuadas. Realiza una consulta de prueba en cada sistema para verificar la conexión.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Introducción e Instalación</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Introducción e Instalación</span>"
     ]
   },
   {
@@ -1213,7 +1257,7 @@
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes adquirir experiencia práctica en la instalación de diferentes sistemas de bases de datos y en la conexión a estas bases de datos utilizando las bibliotecas correspondientes. Les ayuda a comprender cómo establecer una conexión exitosa y cómo preparar el entorno para las operaciones futuras en bases de datos.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Introducción e Instalación</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Introducción e Instalación</span>"
     ]
   },
   {
@@ -1224,7 +1268,7 @@
     "text": "Operaciones en MySQL:\n\nCrear una tabla:\nCREATE TABLE nombre (columna1 tipo, columna2 tipo);\n\n\nInsertar registros:\nINSERT INTO nombre (columna1, columna2) VALUES (valor1, valor2);\n\n\nConsultar registros:\nSELECT * FROM nombre;\n\n\nActualizar registros:\nUPDATE nombre SET columna = valor WHERE condicion;\n\n\nEliminar registros:\nDELETE FROM nombre WHERE condicion;\n\n\nEliminar tabla:\nDROP TABLE nombre;",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Bases de Datos en MySQL</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Bases de Datos en MySQL</span>"
     ]
   },
   {
@@ -1235,7 +1279,7 @@
     "text": "Ejemplo - Creación de una Tabla en MySQL:\nCREATE TABLE empleados (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(100),\n    salario DECIMAL(10, 2)\n);\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nConéctate a la base de datos MySQL.\nCrea una tabla ‘productos’ con las columnas ‘id’, ‘nombre’ y ‘precio’.\nInserta al menos dos registros en la tabla ‘productos’.\nRealiza una consulta para obtener todos los registros de la tabla ‘productos’.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Bases de Datos en MySQL</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Bases de Datos en MySQL</span>"
     ]
   },
   {
@@ -1246,7 +1290,7 @@
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos MySQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en MySQL.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Bases de Datos en MySQL</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Bases de Datos en MySQL</span>"
     ]
   },
   {
@@ -1257,7 +1301,7 @@
     "text": "Operaciones en PostgreSQL:\n\nCrear una tabla:\nCREATE TABLE nombre (columna1 tipo, columna2 tipo);\n\n\nInsertar registros:\nINSERT INTO nombre (columna1, columna2) VALUES (valor1, valor2);\n\n\nConsultar registros:\nSELECT * FROM nombre;\n\n\nActualizar registros:\nUPDATE nombre SET columna = valor WHERE condicion;\n\n\nEliminar registros:\nDELETE FROM nombre WHERE condicion;\n\n\nEliminar tabla:\nDROP TABLE nombre;",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Crear y Eliminar Tablas en PostgreSQL</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Crear y Eliminar Tablas en PostgreSQL</span>"
     ]
   },
   {
@@ -1268,7 +1312,7 @@
     "text": "Ejemplo - Creación de una Tabla en PostgreSQL:\nCREATE TABLE empleados (\n    id SERIAL PRIMARY KEY,\n    nombre VARCHAR(100),\n    salario DECIMAL(10, 2)\n);\n\n\n\n\n\n\nActividad Práctica\n\n\n\nConéctate a la base de datos PostgreSQL.\nCrea una tabla ‘clientes’ con las columnas ‘id’, ‘nombre’ y ‘email’.\nInserta al menos dos registros en la tabla ‘clientes’.\nRealiza una consulta para obtener todos los registros de la tabla ‘clientes’.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Crear y Eliminar Tablas en PostgreSQL</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Crear y Eliminar Tablas en PostgreSQL</span>"
     ]
   },
   {
@@ -1279,7 +1323,7 @@
     "text": "Conéctate a la base de datos PostgreSQL.\nCrea una tabla ‘clientes’ con las columnas ‘id’, ‘nombre’ y ‘email’.\nInserta al menos dos registros en la tabla ‘clientes’.\nRealiza una consulta para obtener todos los registros de la tabla ‘clientes’.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Crear y Eliminar Tablas en PostgreSQL</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Crear y Eliminar Tablas en PostgreSQL</span>"
     ]
   },
   {
@@ -1290,7 +1334,7 @@
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes aplicar los conocimientos adquiridos en la creación de tablas, inserción de registros y consultas en una base de datos PostgreSQL. Les ayuda a ganar experiencia práctica en la manipulación de datos utilizando SQL en PostgreSQL.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Crear y Eliminar Tablas en PostgreSQL</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Crear y Eliminar Tablas en PostgreSQL</span>"
     ]
   },
   {
@@ -1301,7 +1345,7 @@
     "text": "Operaciones en MongoDB:\n\nInsertar documentos:\ndb.coleccion.insert({ campo1: valor1, campo2: valor2 });\n\n\nConsultar documentos:\ndb.coleccion.find();\n\n\nActualizar documentos:\ndb.coleccion.update({ campo: valor }, { $set: { campo_actualizado: nuevo_valor } });\n\n\nEliminar documentos:\ndb.coleccion.remove({ campo: valor });",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Operaciones Básicas en MongoDB</span>"
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Operaciones Básicas en MongoDB</span>"
     ]
   },
   {
@@ -1312,7 +1356,7 @@
     "text": "Ejemplo - Inserción de un Documento en MongoDB:\n// Insertar un documento en la colección 'productos'\ndb.productos.insert({ nombre: \"Camiseta\", precio: 20 });\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nConéctate a la base de datos MongoDB.\nInserta al menos dos documentos en la colección ‘productos’.\nRealiza una consulta para obtener todos los documentos de la colección ‘productos’.\nActualiza el precio de uno de los documentos en la colección.\nElimina un documento de la colección.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Operaciones Básicas en MongoDB</span>"
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Operaciones Básicas en MongoDB</span>"
     ]
   },
   {
@@ -1323,7 +1367,7 @@
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes aplicar los conocimientos adquiridos en la inserción, consulta, actualización y eliminación de documentos en una base de datos MongoDB. Les ayuda a ganar experiencia práctica en la manipulación de datos en una base de datos NoSQL.",
     "crumbs": [
       "Unidad 9: Introducción a Bases de Datos",
-      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Operaciones Básicas en MongoDB</span>"
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Operaciones Básicas en MongoDB</span>"
     ]
   },
   {
@@ -1334,7 +1378,7 @@
     "text": "Conceptos Clave:\n\nCiencia de Datos:\nProceso de extracción de conocimiento y perspectivas a partir de datos.\n\n\nUso de Python en Data Science:\nBibliotecas como NumPy, Pandas y Matplotlib.\n\n\nEjemplos de Aplicación:\nAnálisis de datos,\nVisualización,\nAprendizaje Automático,\netc.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Introducción a Data Science</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Introducción a Data Science</span>"
     ]
   },
   {
@@ -1345,7 +1389,7 @@
     "text": "Ejemplo - Uso de Pandas para Análisis de Datos:\nimport pandas as pd\n\ndata = {\n    'nombre': ['Juan', 'María', 'Pedro'],\n    'edad': [25, 30, 28]\n}\n\ndf = pd.DataFrame(data)\nprint(df)\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInvestiga y elige un conjunto de datos disponible en línea.\nUtiliza la biblioteca Pandas para cargar y analizar los datos.\nRealiza un análisis simple, como calcular estadísticas descriptivas, en el conjunto de datos.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Introducción a Data Science</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Introducción a Data Science</span>"
     ]
   },
   {
@@ -1356,7 +1400,7 @@
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes explorar la aplicación de Python en el campo de la Ciencia de Datos. Les ayuda a comprender cómo utilizar bibliotecas como Pandas para analizar datos y extraer información útil.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Introducción a Data Science</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Introducción a Data Science</span>"
     ]
   },
   {
@@ -1367,7 +1411,7 @@
     "text": "Qué es Django:\nDjango es un framework de desarrollo web de alto nivel y de código abierto.\nProporciona una estructura organizada para crear aplicaciones web de manera eficiente.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Introducción a Django Framework</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework</span>"
     ]
   },
   {
@@ -1378,7 +1422,7 @@
     "text": "Instalación de Django:\n\nInstalar Django utilizando pip:\npip install django\n\n\nVerificar la instalación:\ndjango-admin --version",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Introducción a Django Framework</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework</span>"
     ]
   },
   {
@@ -1389,7 +1433,7 @@
     "text": "Creación de una Aplicación Web Básica:\n\nCrear un nuevo proyecto:\ndjango-admin startproject proyecto .\n\n\nCrear una nueva aplicación dentro del proyecto:\npython manage.py startapp app",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Introducción a Django Framework</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework</span>"
     ]
   },
   {
@@ -1400,7 +1444,7 @@
     "text": "Ejemplo - Creación de una Página Web con Django:\n# views.py\nfrom django.http import HttpResponse\n\ndef hola_mundo(request):\n    return HttpResponse(\"¡Hola, mundo!\")\n# urls.py\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('hola/', views.hola_mundo, name='hola_mundo'),\n]\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nInstala Django en tu entorno.\nCrea un proyecto llamado ‘blog’ y una aplicación llamada ‘articulos’.\nCrea una vista que muestre un mensaje de bienvenida en la página principal.\nConfigura una URL para acceder a la vista creada.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Introducción a Django Framework</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework</span>"
     ]
   },
   {
@@ -1411,7 +1455,7 @@
     "text": "Explicación de la Actividad:\nEsta actividad permite a los participantes experimentar con la creación de proyectos y aplicaciones utilizando Django. Les ayuda a comprender cómo estructurar una aplicación web utilizando este framework y cómo definir rutas y vistas para mostrar contenido en el navegador.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Introducción a Django Framework</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework</span>"
     ]
   },
   {
@@ -1422,7 +1466,7 @@
     "text": "Administración y Base de Datos en Django\n\nInterfaz de Administración de Django\nDjango proporciona una potente interfaz de administración que facilita la gestión de datos y contenido. Esta interfaz se genera automáticamente a partir de los modelos definidos en la aplicación.\n\n\n\n\n\n\nTip\n\n\n\nPara poder utilizar nustros modelos en la administración debemos registrarlos en el archivo admin.py de la aplicación.\nfrom django.contrib import admin\nfrom .models import Producto\n\nadmin.site.register(Producto)\n\n\nLos administradores del sitio pueden utilizar la interfaz para:\n\nAgregar, editar y eliminar registros de la base de datos.\nGestionar usuarios y permisos.\nRealizar otras tareas administrativas.\n\n\n\nORM de Django\nEl ORM (Mapeo Objeto-Relacional) de Django permite interactuar con la base de datos utilizando objetos Python en lugar de escribir consultas SQL directamente. Esto simplifica la gestión de datos y hace que el código sea más legible.\nPor ejemplo, para recuperar todos los productos de la base de datos, puedes hacer lo siguiente:\nproductos = Producto.objects.all()\nEsto devuelve una lista de objetos Producto que representan los registros de la tabla de productos en la base de datos.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
     ]
   },
   {
@@ -1433,7 +1477,7 @@
     "text": "Ejercicios Prácticos\n\nEjercicio 1: Creación de un Modelo en Django\n\nCrear un modelo en Django para representar una entidad de su elección (por ejemplo, libros, películas, tareas, etc.).\nDefinir al menos tres campos para el modelo.\nEjecutar las migraciones para aplicar el modelo a la base de datos.\n\n# models.py\n\nfrom django.db import models\n\nclass Libro(models.Model):\n    titulo = models.CharField(max_length=100)\n    autor = models.CharField(max_length=50)\n    año_publicacion = models.IntegerField()\n    \n    def __str__(self):\n        return self.titulo\nDespués de definir el modelo, debes crear y aplicar las migraciones utilizando los siguientes comandos:\npython manage.py makemigrations\npython manage.py migrate\n\n\nEjercicio 2: Creación de una Vista y Plantilla en Django\n\nCrear una vista en Django que recupere datos de su modelo y los pase a una plantilla.\nCrear una plantilla HTML que muestre los datos en una página web.\nConfigurar una URL para acceder a la vista.\n\n# views.py\n\nfrom django.shortcuts import render\nfrom .models import Libro\n\ndef lista_libros(request):\n    libros = Libro.objects.all()\n    return render(request, 'myapp/lista_libros.html', {'libros': libros})\n&lt;!-- lista_libros.html --&gt;\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Lista de Libros&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Lista de Libros&lt;/h1&gt;\n    &lt;ul&gt;\n        {% for libro in libros %}\n        &lt;li&gt;{{ libro.titulo }} - {{ libro.autor }} ({{ libro.año_publicacion }})&lt;/li&gt;\n        {% empty %}\n        &lt;li&gt;No hay libros disponibles.&lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n# urls.py\n\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('libros/', views.lista_libros, name='lista_libros'),\n]\n\n\nEjercicio 3: Uso de la Interfaz de Administración de Django\n\nRegistrar el modelo creado en el Ejercicio 1 en la interfaz de administración de Django.\nUtilizar la interfaz de administración para agregar al menos dos registros de ejemplo.\n\nPrimero, asegúrate de haber registrado el modelo Libro en el archivo admin.py de tu aplicación:\n# admin.py\n\nfrom django.contrib import admin\nfrom .models import Libro\n\nadmin.site.register(Libro)\nLuego, puedes acceder a la interfaz de administración de Django en http://tu-sitio/admin/ para agregar registros de ejemplo.\n\n\nEjercicio 4: Uso del ORM de Django\n\nEscribir código Python para recuperar datos de su modelo utilizando el ORM de Django.\nMostrar los datos recuperados en la consola o en una página web.\n\nPuedes utilizar el siguiente código para recuperar y mostrar datos de libros utilizando el ORM de Django en una vista:\n# views.py\n\nfrom django.shortcuts import render\nfrom .models import Libro\n\ndef lista_libros(request):\n    libros = Libro.objects.all()\n    return render(request, 'lista_libros.html', {'libros': libros})\nEste código recupera todos los registros de la base de datos y los pasa a la plantilla para su representación.\nEstos ejercicios prácticos ayudarán a los estudiantes a aplicar los conceptos de modelos, vistas y plantillas en Django, así como a familiarizarse con la interfaz de administración y el ORM.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
     ]
   },
   {
@@ -1444,7 +1488,7 @@
     "text": "API de libros utilizando Django Rest Framework (DRF).\nPara configurar y desarrollar este proyecto es necesario que realicemos los siguientes pasos:\n\nPaso 1: Configuración Inicial\nAsegúrate de tener Django Rest Framework instalado en tu entorno virtual. Puedes instalarlo usando pip:\npip install djangorestframework\nCrea un nuevo proyecto de Django si aún no lo has hecho:\ndjango-admin startproject proyecto_api\nLuego, crea una nueva aplicación dentro del proyecto:\ncd proyecto_api\npython manage.py startapp api\nAgrega rest_framework y api a la lista de aplicaciones en settings.py:\nINSTALLED_APPS = [\n        # ...\n        'rest_framework',\n        'api',\n    ]",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
     ]
   },
   {
@@ -1455,7 +1499,7 @@
     "text": "Paso 2: Modelado de Datos\nDefine el modelo de datos para los libros en el archivo api/models.py. Aquí tienes un ejemplo simple:\nfrom django.db import models\n\nclass Libro(models.Model):\n    titulo = models.CharField(max_length=100)\n    autor = models.CharField(max_length=100)\n    año_publicacion = models.PositiveIntegerField()\n\n    def __str__(self):\n        return self.titulo\nLuego, crea y aplica las migraciones para este modelo:\npython manage.py makemigrations\npython manage.py migrate\n\nPaso 3: Serialización\nCrea un serializador en el archivo api/serializers.py para convertir los objetos de modelo en datos JSON:\nfrom rest_framework import serializers\nfrom .models import Libro\n\nclass LibroSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Libro\n        fields = ['id', 'titulo', 'autor', 'año_publicacion']\n\n\nPaso 4: Vistas y Rutas\nEn api/views.py, define las vistas basadas en clases utilizando Django Rest Framework:\nfrom rest_framework import generics\nfrom .models import Libro\nfrom .serializers import LibroSerializer\n\nclass ListaLibros(generics.ListCreateAPIView):\n    queryset = Libro.objects.all()\n    serializer_class = LibroSerializer\n\nclass DetalleLibro(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Libro.objects.all()\n    serializer_class = LibroSerializer\nLuego, configura las rutas en api/urls.py:\nfrom django.urls import path\nfrom .views import ListaLibros, DetalleLibro\n\nurlpatterns = [\n    path('libros/', ListaLibros.as_view(), name='lista_libros'),\n    path('libros/&lt;int:pk&gt;/', DetalleLibro.as_view(), name='detalle_libro'),\n]\n\n\nPaso 5: Configuración de URLs Principales\nEn el archivo proyecto_api/urls.py, incluye las rutas de la aplicación de API:\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('api.urls')),\n]\n\n\nPaso 6: Ejecutar el Servidor\nInicia el servidor de desarrollo:\npython manage.py runserver\n\n\nPaso 7: Prueba de la API\nAhora, puedes acceder a la API en las siguientes URL:\n\nLista de libros: http://localhost:8000/api/libros/\nDetalle de libro: http://localhost:8000/api/libros/id/\n\n\n\n\n\n\n\nTip\n\n\n\nEn el Detalle del Libro, es necesario cambiar el id por el número de identificación del libro que se desea consultar.\n\n\nPuedes utilizar herramientas como Postman, Thunder Cliente o Rappid API Client o simplemente un navegador web para probar las rutas y realizar operaciones CRUD en la API de libros.\nEste proyecto proporciona una base sólida para desarrollar una API de libros con Django Rest Framework. Puedes personalizarlo según tus necesidades y agregar autenticación u otras características según sea necesario.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
     ]
   },
   {
@@ -1466,7 +1510,7 @@
     "text": "Conclusiones\nEn esta unidad, hemos explorado Django y Django Rest Framework (DRF), dos poderosas herramientas para el desarrollo web con Python. Aquí están algunas conclusiones clave:\n\nDjango es un framework web de alto nivel que sigue el principio “baterías incluidas”. Proporciona una estructura sólida y conveniente para desarrollar aplicaciones web, incluyendo la administración de bases de datos, la autenticación de usuarios y un sistema de rutas robusto.\nDjango Rest Framework (DRF) es una extensión de Django que simplifica la creación de API REST. Proporciona clases y herramientas que permiten definir fácilmente puntos finales de API y serializar datos de manera eficiente.\nAlgunas ventajas de utilizar Django incluyen su gran comunidad, documentación extensa y la capacidad de construir aplicaciones web rápidamente.\nDRF es ideal para crear API RESTful de manera rápida y eficiente. Proporciona una capa de serialización que facilita la conversión de objetos de modelo en datos JSON.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
     ]
   },
   {
@@ -1477,7 +1521,7 @@
     "text": "Recomendaciones\n\nAprender la Documentación: Tanto Django como DRF tienen documentación detallada. Aprovecha estos recursos para comprender las funcionalidades y las mejores prácticas.\nPracticar: La práctica es clave para dominar estas herramientas. Crea proyectos pequeños para aplicar lo que has aprendido.\nComunidad: La comunidad de Django es activa y solidaria. Únete a foros y grupos de discusión para obtener ayuda cuando la necesites.\nSeguridad: Django tiene características de seguridad incorporadas, pero debes estar atento a las mejores prácticas de seguridad web al desarrollar aplicaciones.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Django Framework y Django Rest Framework</span>"
     ]
   },
   {
@@ -1488,7 +1532,7 @@
     "text": "¿Qué es Flask?\nFlask es un microframework web de Python que permite crear aplicaciones web de manera rápida y sencilla. A diferencia de los frameworks más grandes, como Django, Flask se centra en proporcionar solo lo esencial para crear aplicaciones web, dejando a los desarrolladores la libertad de elegir las herramientas y bibliotecas adicionales que deseen.\n\nVentajas de Usar Flask\n\nSimplicidad: Flask se destaca por su simplicidad y facilidad de uso. Su estructura minimalista hace que sea fácil de aprender y comprender.\nFlexibilidad: Aunque es minimalista, Flask es altamente personalizable. Los desarrolladores pueden elegir las extensiones y bibliotecas que mejor se adapten a sus necesidades.\nComunidad Activa: Flask cuenta con una comunidad activa de desarrolladores y una amplia documentación en línea.\nIdeal para Proyectos Pequeños y Medianos: Flask es perfecto para proyectos pequeños y medianos, prototipado rápido y aplicaciones que no requieren una gran cantidad de funcionalidades incorporadas.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
     ]
   },
   {
@@ -1499,7 +1543,7 @@
     "text": "Ecosistema de Extensiones de Flask\nFlask tiene un ecosistema de extensiones que permiten agregar funcionalidades específicas a las aplicaciones web. Estas extensiones abarcan áreas como autenticación de usuarios, bases de datos, manejo de formularios y más. Algunas extensiones populares son Flask-SQLAlchemy para trabajar con bases de datos y Flask-WTF para manejar formularios.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
     ]
   },
   {
@@ -1510,7 +1554,7 @@
     "text": "Instalación de Flask\n\nCómo Instalar Flask Usando pip\nPara comenzar a trabajar con Flask, primero debes instalarlo en tu entorno de desarrollo (virtualenv o docker). Puedes hacerlo utilizando la herramienta pip, que es el administrador de paquetes de Python.\nEjecuta el siguiente comando en tu terminal:\npip install flask\n\n\nCreación de un Entorno Virtual para Proyectos Flask.\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda crear un entorno virtual para cada proyecto Flask.\n\n\n\n\n\n\n\n\nNote\n\n\n\nUn entorno virtual es un espacio aislado donde puedes instalar las dependencias específicas de tu proyecto sin interferir con otras aplicaciones.\n\n\nPara crear un entorno virtual, sigue estos pasos:\n\nAbre una terminal y navega hasta la carpeta de tu proyecto.\nEjecuta el siguiente comando para crear un entorno virtual.\n\npython3 -m venv venv\nActiva el entorno virtual:\nEn Windows:\nvenv\\Scripts\\activate\nEn Linux o macOS:\nsource venv/bin/activate\nAhora estás listo para trabajar en tu proyecto Flask en un entorno aislado.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
     ]
   },
   {
@@ -1521,7 +1565,7 @@
     "text": "Tu Primera Aplicación en Flask\n\nCreación de una Aplicación Web Simple\nEn Flask, una aplicación web se crea mediante una instancia de la clase Flask. Aquí hay un ejemplo simple de cómo crear una aplicación web:\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\ndef hello_world():\n    return '¡Hola, mundo!'\n\nif __name__ == '__main__':\n    app.run()\n\nImportamos la clase Flask de la biblioteca Flask.\nCreamos una instancia de Flask y la asignamos a la variable app.\nUsamos el decorador (app.route?)(‘/’) para definir una ruta en nuestra aplicación. En este caso, la ruta raíz ‘/’ se maneja con la función hello_world().\nCuando se ejecuta la aplicación (if name == ‘main’:), llamamos a app.run() para iniciar el servidor web.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
     ]
   },
   {
@@ -1532,7 +1576,7 @@
     "text": "Definición de Rutas y Vistas en Flask\nEn Flask, las rutas se definen utilizando decoradores como (app.route?)(‘/’). Cada ruta está asociada a una función (vista) que se ejecuta cuando se accede a esa ruta en el navegador. Las vistas pueden devolver contenido HTML o cualquier otro tipo de respuesta web.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
     ]
   },
   {
@@ -1543,7 +1587,7 @@
     "text": "Plantillas HTML en Flask\nFlask permite renderizar plantillas HTML para generar páginas web dinámicas. Para esto, generalmente se usa una biblioteca llamada Jinja2. Las plantillas pueden incluir variables y lógica de presentación.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
     ]
   },
   {
@@ -1554,7 +1598,7 @@
     "text": "Manejo de Formularios\n\nCreación y Procesamiento de Formularios en Flask\nLas aplicaciones web suelen requerir la entrada de datos de los usuarios a través de formularios. Flask facilita la creación y el procesamiento de formularios.\nPara crear un formulario en Flask, generalmente se define una clase que hereda de flask_wtf.FlaskForm.\nA través de esta clase, puedes definir los campos del formulario y las validaciones necesarias.\nEl siguiente es un ejemplo simple de cómo definir un formulario de inicio de sesión:\nfrom flask_wtf import FlaskForm\nfrom wtforms import StringField, PasswordField\nfrom wtforms.validators import DataRequired\n\nclass LoginForm(FlaskForm):\n    username = StringField('Nombre de Usuario', validators=[DataRequired()])\n    password = PasswordField('Contraseña', validators=[DataRequired()])\nEn este ejemplo, hemos creado un formulario LoginForm con dos campos: username y password. También hemos especificado que ambos campos son obligatorios.\n\n\nValidación de Datos del Formulario.\nFlask-WTF, una extensión de Flask, facilita la validación de los datos del formulario. En el ejemplo anterior, usamos el validador DataRequired() para asegurarnos de que los campos no estén vacíos.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
     ]
   },
   {
@@ -1565,7 +1609,7 @@
     "text": "Ejercicios Prácticos\nEjercicio 1: Creación de una Aplicación Web Básica en Flask\nCrea una aplicación web simple en Flask que muestre un mensaje de bienvenida en la ruta raíz (“/”). Puedes personalizar el mensaje de bienvenida.\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\ndef welcome():\n    return '¡Bienvenido a mi aplicación web en Flask!'\n\nif __name__ == '__main__':\n    app.run()\nEste código crea una aplicación web en Flask que muestra un mensaje de bienvenida en la ruta raíz (“/”).\nEjercicio 2: Implementación de un Formulario en Flask\nExtiende la aplicación web anterior para incluir un formulario de contacto. Crea un formulario que solicite el nombre y el correo electrónico del usuario. Cuando el usuario envíe el formulario, muestra un mensaje de agradecimiento junto con los datos ingresados.\nfrom flask import Flask, render_template, request\n\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n    return render_template('index.html')\n\n@app.route('/submit', methods=['POST'])\ndef submit():\n    if request.method == 'POST':\n        name = request.form['name']\n        email = request.form['email']\n        return f'Thank you, {name}! Your email ({email}) has been received.'\n\nif __name__ == '__main__':\n    app.run()\nEn este ejercicio, hemos creado un formulario de contacto que solicita el nombre y el correo electrónico del usuario. Cuando el usuario envía el formulario, se muestra un mensaje de agradecimiento junto con los datos ingresados.\nEjercicio 3: Uso de una Plantilla HTML en una Aplicación Flask\nCrea una plantilla HTML que contenga un diseño básico para tu sitio web. Luego, utiliza Flask para renderizar esta plantilla y mostrarla en una ruta específica de tu aplicación.\nPrimero, crea una plantilla HTML llamada template.html en una carpeta llamada templates en el directorio de tu proyecto. El contenido de template.html podría ser el siguiente:\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Mi Sitio Web&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Bienvenido a mi sitio web&lt;/h1&gt;\n    &lt;p&gt;Este es un sitio web de ejemplo creado con Flask.&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nLuego, modifica tu aplicación Flask para renderizar esta plantilla:\nfrom flask import Flask, render_template\n\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n    return render_template('template.html')\n\nif __name__ == '__main__':\n    app.run()\nEste código renderizará la plantilla HTML en la ruta raíz (“/”) de tu aplicación.\nPuedes personalizar estas soluciones según tus necesidades y preferencias de diseño. Además, asegúrate de tener la estructura de carpetas adecuada con la carpeta templates para almacenar tus plantillas HTML.\n\n\n\n\n\n\nTip\n\n\n\nActividad Práctica: Construcción de un Blog Simple en Flask.\nEn esta actividad práctica, construirás un blog básico utilizando Flask. El blog deberá permitir a los usuarios ver publicaciones, agregar nuevas publicaciones y editar publicaciones existentes. Aplicarás los conceptos aprendidos en esta unidad para desarrollar la aplicación.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
     ]
   },
   {
@@ -1576,7 +1620,7 @@
     "text": "Conclusiones\nHemos explorado Flask, un microframework web de Python que destaca por su simplicidad y flexibilidad. Flask proporciona una base sólida para desarrollar aplicaciones web desde cero y permite a los desarrolladores tomar decisiones sobre las herramientas y extensiones que desean utilizar. Algunas ventajas clave de Flask son su facilidad de aprendizaje, su comunidad activa y su capacidad para adaptarse a una variedad de proyectos.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
     ]
   },
   {
@@ -1587,7 +1631,7 @@
     "text": "Recomendaciones para Trabajar con Flask\nAprender Jinja2: Flask se combina frecuentemente con Jinja2, un motor de plantillas. Dominar Jinja2 te permitirá crear páginas web dinámicas y flexibles.\nExplorar Extensiones: Flask tiene una amplia gama de extensiones disponibles. Investiga las extensiones que pueden simplificar tareas comunes, como el manejo de bases de datos, la autenticación de usuarios y la validación de formularios.\nEstructura del Proyecto: A medida que tus proyectos con Flask crezcan, considera organizar tu código siguiendo una estructura de proyecto adecuada. Puedes separar las rutas, las vistas y las plantillas en directorios diferentes para mantener tu código limpio y organizado.\nDocumentación y Comunidad: Flask cuenta con una documentación detallada y una comunidad activa. Aprovecha estos recursos para aprender más y obtener ayuda cuando la necesites.",
     "crumbs": [
       "Unidad 10: Operaciones Básicas en Bases de Datos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Introducción a Flask Framework</span>"
     ]
   },
   {
@@ -1598,7 +1642,7 @@
     "text": "Qué se necesita conocer:\n\nConocimientos básicos de Python.\nFamiliaridad con Django y Django Rest Framework.\nEntorno de desarrollo configurado con Django y Django Rest Framework.",
     "crumbs": [
       "Unidad 11: ¿Cómo me amplío con Python?",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Explicación del Proyecto</span>"
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Explicación del Proyecto</span>"
     ]
   },
   {
@@ -1609,7 +1653,7 @@
     "text": "Estructura del Proyecto:\nproyecto_api_tareas/\n├── api_tareas/\n│   ├── migrations/\n│   ├── templates/\n│   ├── __init__.py\n│   ├── admin.py\n│   ├── apps.py\n│   ├── models.py\n│   ├── serializers.py\n│   ├── tests.py\n│   └── views.py\n├── proyecto_api_tareas/\n│   ├── __init__.py\n│   ├── asgi.py\n│   ├── settings.py\n│   ├── urls.py\n│   └── wsgi.py\n├── db.sqlite3\n└── manage.py",
     "crumbs": [
       "Unidad 11: ¿Cómo me amplío con Python?",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Explicación del Proyecto</span>"
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Explicación del Proyecto</span>"
     ]
   },
   {
@@ -1620,7 +1664,7 @@
     "text": "Código:\n#models.py:\nfrom django.db import models\n\nclass Tarea(models.Model):\n    titulo = models.CharField(max_length=100)\n    descripcion = models.TextField()\n    fecha_creacion = models.DateTimeField(auto_now_add=True)\n    completada = models.BooleanField(default=False)\n\n    def __str__(self):\n        return self.titulo\n#serializers.py:\n\nfrom rest_framework import serializers\nfrom .models import Tarea\n\nclass TareaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Tarea\n        fields = '__all__'\n#views.py:\nfrom rest_framework import viewsets\nfrom .models import Tarea\nfrom .serializers import TareaSerializer\n\nclass TareaViewSet(viewsets.ModelViewSet):\n    queryset = Tarea.objects.all()\n    serializer_class = TareaSerializer\n\n    urls.py (api_tareas):\nfrom rest_framework.routers import DefaultRouter\nfrom .views import TareaViewSet\n\nrouter = DefaultRouter()\nrouter.register(r'tareas', TareaViewSet)\n\nurlpatterns = router.urls\nA continuación en el archivo settings.py agregar ‘rest_framework’ y ‘api_tareas’ en INSTALLED_APPS.\n\n\n\n\n\n\nActividad Práctica:\n\n\n\nConfigura un proyecto Django y una aplicación llamada ‘api_tareas’.\nDefine el modelo Tarea en models.py con los campos necesarios.\nCrea un serializador en serializers.py para el modelo Tarea.\nImplementa las vistas en views.py utilizando Django Rest Framework.\nConfigura las URLs en urls.py para las vistas de la API.\nMigrar y ejecutar el servidor para probar la API utilizando el navegador o herramientas como Postman.",
     "crumbs": [
       "Unidad 11: ¿Cómo me amplío con Python?",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Explicación del Proyecto</span>"
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Explicación del Proyecto</span>"
     ]
   },
   {
@@ -1631,7 +1675,7 @@
     "text": "Explicación de la Actividad:\nEste proyecto permite a los participantes aplicar los conocimientos adquiridos en Django y Django Rest Framework para crear una API de gestión de tareas. Aprenden cómo definir modelos, serializadores, vistas y URLs en Django Rest Framework para construir una API completa. Les ayuda a comprender cómo desarrollar aplicaciones web con APIs utilizando tecnologías modernas.",
     "crumbs": [
       "Unidad 11: ¿Cómo me amplío con Python?",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Explicación del Proyecto</span>"
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Explicación del Proyecto</span>"
     ]
   },
   {
@@ -1642,7 +1686,7 @@
     "text": "¿Cómo se define una variable en Python?\n\n\nRespuesta:\n\nSe define una variable en Python asignándole un nombre y un valor. Por ejemplo:\nnombre = \"Juan\"",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Ejercicio 1:</span>"
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Ejercicio 1:</span>"
     ]
   },
   {
@@ -1653,7 +1697,7 @@
     "text": "¿Cuál es el resultado de la siguiente expresión?\nx = 10\ny = 5\nresultado = x + y\nprint(resultado)\n\n\nRespuesta:\n\nEl resultado de la expresión es 15, ya que se suman los valores de las variables x (10) y y (5).",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Ejercicio 2:</span>"
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Ejercicio 2:</span>"
     ]
   },
   {
@@ -1664,7 +1708,7 @@
     "text": "¿Qué hace el siguiente fragmento de código?\nfrutas = [\"manzana\", \"banana\", \"naranja\"]\nfor fruta in frutas:\n    print(fruta)\n\n\nRespuesta:\n\nEl código recorre la lista frutas e imprime cada elemento en una línea separada:\nmanzana\nbanana\nnaranja",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Ejercicio 3:</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Ejercicio 3:</span>"
     ]
   },
   {
@@ -1675,7 +1719,7 @@
     "text": "¿Cuál es el valor de la variable resultado después de ejecutar el siguiente código?\nnumero = 7\nresultado = numero * 2\nresultado = resultado + 3\n\n\nRespuesta:\n\nEl valor de la variable resultado es 17, ya que se multiplica numero por 2 (14) y luego se le suma 3.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Ejercicio 4:</span>"
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Ejercicio 4:</span>"
     ]
   },
   {
@@ -1686,7 +1730,7 @@
     "text": "¿Qué tipo de dato es el resultado de la siguiente expresión?\nresultado = 10 / 2\n\n\nRespuesta:\n\nEl resultado es de tipo float (número de punto flotante), ya que la división produce un valor decimal.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Ejercicio 5:</span>"
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Ejercicio 5:</span>"
     ]
   },
   {
@@ -1697,7 +1741,7 @@
     "text": "¿Cómo se define una función en Python?\n\n\nRespuesta:\n\nUna función en Python se define utilizando la palabra clave def, seguida del nombre de la función y los parámetros entre paréntesis. Por ejemplo:\ndef saludar(nombre):\n    print(\"Hola,\", nombre)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Ejercicio 6:</span>"
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Ejercicio 6:</span>"
     ]
   },
   {
@@ -1708,7 +1752,7 @@
     "text": "¿Cuál es la salida de este código?\nnumero = 5\nif numero &gt; 0:\n    print(\"El número es positivo\")\nelse:\n    print(\"El número no es positivo\")\n\n\nRespuesta:\n\nLa salida es:\nEl número es positivo\nya que el valor de numero (5) es mayor que 0.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Ejercicio 7:</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Ejercicio 7:</span>"
     ]
   },
   {
@@ -1719,7 +1763,7 @@
     "text": "¿Qué hace el siguiente código?\nfor i in range(3):\n    print(i)\n\n\nRespuesta:\n\nEl código imprime los números del 0 al 2 en líneas separadas:\n0\n1\n2",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Ejercicio 8:</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Ejercicio 8:</span>"
     ]
   },
   {
@@ -1730,7 +1774,7 @@
     "text": "¿Cuál es el valor de la variable longitud después de ejecutar este código?\nfrase = \"Hola, mundo\"\nlongitud = len(frase)\n\n\nRespuesta:\n\nEl valor de la variable longitud será 11, ya que la función len() retorna la cantidad de caracteres en la cadena.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Ejercicio 9:</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Ejercicio 9:</span>"
     ]
   },
   {
@@ -1741,7 +1785,7 @@
     "text": "¿Cuál es la sintaxis correcta para importar la biblioteca math en Python?\n\n\nRespuesta:\n\nLa sintaxis correcta es:\nimport math",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Ejercicio 10:</span>"
+      "<span class='chapter-number'>59</span>  <span class='chapter-title'>Ejercicio 10:</span>"
     ]
   },
   {
@@ -1752,7 +1796,7 @@
     "text": "¿Qué método se utiliza para agregar un elemento al final de una lista?\n\n\nRespuesta:\n\nEl método utilizado para agregar un elemento al final de una lista es append(). Por ejemplo:\nmi_lista = [1, 2, 3]\nmi_lista.append(4)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>59</span>  <span class='chapter-title'>Ejercicio 11:</span>"
+      "<span class='chapter-number'>60</span>  <span class='chapter-title'>Ejercicio 11:</span>"
     ]
   },
   {
@@ -1763,7 +1807,7 @@
     "text": "¿Cuál es el resultado de la siguiente expresión?\nresultado = 2 ** 3\n\n\nRespuesta:\n\nEl resultado de la expresión es 8, ya que 2 ** 3 representa la potencia de 2 elevado a la 3, que es 8.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>60</span>  <span class='chapter-title'>Ejercicio 12:</span>"
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Ejercicio 12:</span>"
     ]
   },
   {
@@ -1774,7 +1818,7 @@
     "text": "¿Qué función se utiliza para convertir un valor a tipo int en Python?\n\n\nRespuesta:\n\nLa función utilizada para convertir un valor a tipo int es int(). Por ejemplo:\nnumero = int(\"10\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Ejercicio 13:</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Ejercicio 13:</span>"
     ]
   },
   {
@@ -1785,7 +1829,7 @@
     "text": "¿Qué método se utiliza para unir elementos de una lista en una cadena?\n\n\nRespuesta:\n\nEl método utilizado para unir elementos de una lista en una cadena es join(). Por ejemplo:\nelementos = [\"a\", \"b\", \"c\"]\ncadena = \"-\".join(elementos)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Ejercicio 14:</span>"
+      "<span class='chapter-number'>63</span>  <span class='chapter-title'>Ejercicio 14:</span>"
     ]
   },
   {
@@ -1796,7 +1840,7 @@
     "text": "¿Cuál es la salida de este código?\nfor i in range(1, 6):\n    if i == 3:\n        continue\n    print(i)\n\n\nRespuesta:\n\nLa salida es:\n1\n2\n4\n5\nya que el valor 3 es omitido debido al uso de continue.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>63</span>  <span class='chapter-title'>Ejercicio 15:</span>"
+      "<span class='chapter-number'>64</span>  <span class='chapter-title'>Ejercicio 15:</span>"
     ]
   },
   {
@@ -1807,7 +1851,7 @@
     "text": "¿Qué método se utiliza para eliminar un elemento específico de una lista?\n\n\nRespuesta:\n\nEl método utilizado para eliminar un elemento específico de una lista es remove(). Por ejemplo:\nmi_lista = [1, 2, 3]\nmi_lista.remove(2)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>64</span>  <span class='chapter-title'>Ejercicio 16:</span>"
+      "<span class='chapter-number'>65</span>  <span class='chapter-title'>Ejercicio 16:</span>"
     ]
   },
   {
@@ -1818,7 +1862,7 @@
     "text": "¿Cómo se define una clase en Python?\n\n\nRespuesta:\n\nUna clase en Python se define utilizando la palabra clave class, seguida del nombre de la clase y los métodos y atributos definidos dentro de la clase. Por ejemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>65</span>  <span class='chapter-title'>Ejercicio 17:</span>"
+      "<span class='chapter-number'>66</span>  <span class='chapter-title'>Ejercicio 17:</span>"
     ]
   },
   {
@@ -1829,7 +1873,7 @@
     "text": "¿Cuál es el resultado de la siguiente expresión?\nx = \"Hola\"\ny = \"Mundo\"\nresultado = x + \" \" + y\n\n\nRespuesta:\n\nEl resultado de la expresión es la cadena “Hola Mundo”, ya que se concatenan las cadenas x y y junto con un espacio.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>66</span>  <span class='chapter-title'>Ejercicio 18:</span>"
+      "<span class='chapter-number'>67</span>  <span class='chapter-title'>Ejercicio 18:</span>"
     ]
   },
   {
@@ -1840,7 +1884,7 @@
     "text": "¿Cómo se crea una nueva base de datos en PostgreSQL utilizando SQL?\n\n\nRespuesta:\n\nPara crear una nueva base de datos en PostgreSQL utilizando SQL, se utiliza la siguiente consulta:\nCREATE DATABASE nombre_basededatos;",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>67</span>  <span class='chapter-title'>Ejercicio 19:</span>"
+      "<span class='chapter-number'>68</span>  <span class='chapter-title'>Ejercicio 19:</span>"
     ]
   },
   {
@@ -1851,7 +1895,7 @@
     "text": "¿Cuál es la forma correcta de realizar una consulta a una colección en MongoDB?\n\n\nRespuesta:\n\nLa forma correcta de realizar una consulta a una colección en MongoDB es utilizando el método find(). Por ejemplo:\nresultados = db.coleccion.find({\"campo\": valor})",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>68</span>  <span class='chapter-title'>Ejercicio 20:</span>"
+      "<span class='chapter-number'>69</span>  <span class='chapter-title'>Ejercicio 20:</span>"
     ]
   },
   {
@@ -1862,7 +1906,7 @@
     "text": "UNIDAD II: Instalación de Python y más herramientas\nEjercicio 6: ¿Cuál es la forma de verificar la versión de Python instalada en tu sistema?\n\n\nRespuesta:\n\nEjecutando el comando python --version en la línea de comandos.\n\nEjercicio 7: ¿Cuál es el propósito de Git en el desarrollo de software?\n\n\nRespuesta:\n\nGit es un sistema de control de versiones que permite rastrear cambios en el código, colaborar con otros desarrolladores y mantener un historial completo de modificaciones en un proyecto.\n\nEjercicio 8: ¿Cómo se instala una extensión (extensión) en Visual Studio Code?\n\n\nRespuesta:\n\nEn Visual Studio Code, puedes instalar extensiones desde la barra lateral izquierda, haciendo clic en el ícono de extensiones (cuatro cuadros) y buscando la extensión que deseas instalar.\n\nEjercicio 9: ¿Cuál es el resultado del siguiente código?\nprint(\"Hola, \" + \"mundo\")\n\n\nRespuesta:\n\nEl resultado es la cadena “Hola, mundo” al concatenar las dos cadenas.\n\nEjercicio 10: ¿Cuál es el propósito de un entorno virtual en Python?\n\n\nRespuesta:\n\nUn entorno virtual en Python permite aislar y gestionar las dependencias y paquetes utilizados en un proyecto específico, evitando conflictos con otros proyectos y asegurando un entorno limpio y controlado.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>69</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
+      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
     ]
   },
   {
@@ -1873,7 +1917,7 @@
     "text": "UNIDAD III: Introducción a Python\nEjercicio 11: ¿Cuál es la diferencia entre una variable y una constante en programación?\n\n\nRespuesta:\n\nUna variable puede cambiar su valor a lo largo del programa, mientras que una constante mantiene su valor constante durante la ejecución.\n\nEjercicio 12: Escribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida con el nombre ingresado.\n\n\nRespuesta:\n\nnombre = input(\"Ingresa tu nombre: \")\nprint(\"¡Bienvenido,\", nombre, \"!\")\n\nEjercicio 13: ¿Cuál es el valor de la variable resultado después de ejecutar el siguiente código?\nx = 5\ny = 2\nresultado = x // y\n\n\nRespuesta:\n\nEl valor de la variable resultado será 2, ya que // realiza la división entera de 5 entre 2.\n\nEjercicio 14: Escribe un programa en Python que determine si un número ingresado por el usuario es par o impar.\n\n\nRespuesta:\n\nnumero = int(input(\"Ingresa un número: \"))\nif numero % 2 == 0:\n    print(\"El número es par.\")\nelse:\n    print(\"El número es impar.\")\n\nEjercicio 15: ¿Cuál es la función del operador not en Python?\n\n\nRespuesta:\n\nEl operador not se utiliza para negar una expresión booleana. Si la expresión es verdadera, not la convierte en falsa, y viceversa.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>69</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
+      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
     ]
   },
   {
@@ -1884,7 +1928,7 @@
     "text": "UNIDAD IV: Tipos de Datos\nEjercicio 16: ¿Cuál es la diferencia entre una lista y una tupla en Python?\n\n\nRespuesta:\n\nLa principal diferencia es que las listas son mutables (pueden cambiar) y las tuplas son inmutables (no pueden cambiar). En otras palabras, puedes agregar, eliminar y modificar elementos en una lista, pero no en una tupla.\n\nEjercicio 17: Escribe un programa que ordene una lista de números en orden ascendente.\n\n\nRespuesta:\n\nnumeros = [4, 1, 6, 3, 2]\nnumeros.sort()\nprint(numeros)\n\nEjercicio 18: ¿Cómo se accede al tercer elemento de una lista en Python?\n\n\nRespuesta:\n\nUtilizando el índice 2. Por ejemplo, si la lista se llama mi_lista, puedes acceder al tercer elemento con mi_lista[2].\n\nEjercicio 19: ¿Qué método se utiliza para agregar un elemento al final de una lista?\n\n\nRespuesta:\n\nEl método utilizado es append(). Por ejemplo, mi_lista.append(7) agrega el número 7 al final de la lista.\n\nEjercicio 20: Escribe un programa que cuente cuántas veces aparece un elemento específico en una lista.\n\n\nRespuesta:\n\nmi_lista = [2, 4, 6, 4, 8, 4, 10]\nelemento = 4\ncontador = mi_lista.count(elemento)\nprint(\"El elemento\", elemento, \"aparece\", contador, \"veces.\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>69</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
+      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
     ]
   },
   {
@@ -1895,7 +1939,7 @@
     "text": "UNIDAD V: Control de Flujo\nEjercicio 21: Escribe un programa que determine si un número ingresado por el usuario es positivo, negativo o cero.\n\n\nRespuesta:\n\nnumero = int(input(\"Ingresa un número: \"))\nif numero &gt; 0:\n    print(\"El número es positivo.\")\nelif numero &lt; 0:\n    print(\"El número es negativo.\")\nelse:\n    print(\"El número es cero.\")\n\nEjercicio 22: ¿Qué hace el siguiente código?\ncontador = 0\nwhile contador &lt; 5:\n    print(contador)\n    contador += 1\n\n\nRespuesta:\n\nEl código imprime los números del 0 al 4 en líneas separadas utilizando un bucle while.\n\nEjercicio 23: ¿Cuál es el resultado de la siguiente expresión?\nresultado = 0\nfor i in range(1, 6):\n    resultado += i\nprint(resultado)\n\n\nRespuesta:\n\nEl resultado es 15, ya que se suma los números del 1 al 5 en el bucle for.\n\nEjercicio 24: Escribe un programa que calcule la suma de todos los números pares entre 1 y 100.\n\n\nRespuesta:\n\nsuma = 0\nfor i in range(2, 101, 2):\n    suma += i\nprint(\"La suma de los números pares entre 1 y 100 es:\", suma)\n\nEjercicio 25: ¿Cuál es el propósito de la instrucción break en un bucle?\n\n\nRespuesta:\n\nLa instrucción break se utiliza para salir inmediatamente de un bucle, interrumpiendo su ejecución antes de que termine naturalmente.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>69</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
+      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
     ]
   },
   {
@@ -1906,7 +1950,7 @@
     "text": "UNIDAD VI: Funciones\nEjercicio 26: ¿Qué es una función en programación?\n\n\nRespuesta:\n\nUna función es un bloque de código reutilizable que realiza una tarea específica. Puede recibir argumentos, ejecutar instrucciones y devolver un valor.\n\nEjercicio 27: Escribe una función en Python que calcule el área de un círculo.\n\n\nRespuesta:\n\nimport math\n\ndef area_circulo(radio):\nreturn math.pi * radio ** 2\n\nEjercicio 28: ¿Qué es la recursividad en programación?\n\n\nRespuesta:\n\nLa recursividad es una técnica donde una función se llama a sí misma para resolver un problema. Es útil para resolver problemas que se pueden descomponer en subproblemas similares.\n\nEjercicio 29: Escribe una función recursiva en Python para calcular el factorial de un número.\n\n\nRespuesta:\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\nEjercicio 30: ¿Por qué es importante utilizar funciones en la programación?\n\n\nRespuesta:\n\nLas funciones permiten dividir el código en bloques más pequeños y manejables, lo que facilita la reutilización, la depuración y la comprensión del código. Además, promueven la modularidad y el diseño limpio.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>69</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
+      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
     ]
   },
   {
@@ -1917,7 +1961,7 @@
     "text": "UNIDAD VII: Objetos, clases y herencia\nEjercicio 31: ¿Qué es una clase en programación orientada a objetos?\n\n\nRespuesta:\n\nUna clase es un plano o plantilla para crear objetos en programación orientada a objetos. Define las propiedades (atributos) y comportamientos (métodos) que tendrán los objetos creados a partir de ella.\n\nEjercicio 32: Escribe una clase en Python llamada Persona con los atributos nombre y edad, y un método saludar() que imprima un saludo con el nombre de la persona.\n\n\nRespuesta:\n\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\ndef saludar(self):\n    print(\"¡Hola, soy\", self.nombre, \"y tengo\", self.edad, \"años!\")\n\nEjercicio 33: ¿Qué es la herencia en programación orientada a objetos?\n\n\nRespuesta:\n\nLa herencia es un concepto en el que una clase (subclase) puede heredar atributos y métodos de otra clase (superclase). Permite reutilizar y extender el código de una clase existente para crear una nueva clase.\n\nEjercicio 34: Escribe una clase en Python llamada Estudiante que herede de la clase Persona y tenga un atributo adicional curso.\n\n\nRespuesta:\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, curso):\n        super().__init__(nombre, edad)\n        self.curso = curso\n\nEjercicio 35: ¿Por qué es beneficioso utilizar la herencia en programación?\n\n\nRespuesta:\n\nLa herencia permite reutilizar código, promover la coherencia y facilitar la actualización y mantenimiento. También permite crear jerarquías de clases para modelar relaciones entre objetos del mundo real.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>69</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
+      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
     ]
   },
   {
@@ -1928,7 +1972,7 @@
     "text": "UNIDAD VIII: Módulos\nEjercicio 36: ¿Qué es un módulo en Python?\n\n\nRespuesta:\n\nUn módulo en Python es un archivo que contiene definiciones y declaraciones de variables, funciones y clases. Permite organizar y reutilizar el código en diferentes programas.\n\nEjercicio 37: Escribe un módulo en Python llamado operaciones que contenga una función suma para sumar dos números.\n\n\nRespuesta:\n\nArchivo operaciones.py:\ndef suma(a, b):\n    return a + b\n\nEjercicio 38: ¿Cómo se importa un módulo en Python?\n\n\nRespuesta:\n\nSe importa utilizando la palabra clave import, seguida del nombre del módulo. Por ejemplo, import operaciones importaría el módulo operaciones.\n\nEjercicio 39: Escribe un programa que utilice la función suma del módulo operaciones para sumar dos números ingresados por el usuario.\n\n\nRespuesta:\n\nimport operaciones\n\nnum1 = float(input(\"Ingresa el primer número: \"))\nnum2 = float(input(\"Ingresa el segundo número: \"))\nresultado = operaciones.suma(num1, num2)\nprint(\"La suma es:\", resultado)\n\nEjercicio 40: ¿Cuál es la ventaja de utilizar módulos en Python?\n\n\nRespuesta:\n\nLos módulos permiten la modularidad, la reutilización de código y la organización efectiva del código en componentes separados. También facilitan la colaboración y la mantenibilidad.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>69</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
+      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
     ]
   },
   {
@@ -1939,7 +1983,7 @@
     "text": "UNIDAD IX: Introducción a Bases de Datos\nEjercicio 41: ¿Qué es una base de datos en el contexto de la programación?\n\n\nRespuesta:\n\nUna base de datos es un sistema organizado para almacenar, administrar y recuperar información de manera eficiente. Se utiliza para almacenar datos estructurados de manera persistente.\n\nEjercicio 42: ¿Qué es PostgreSQL?\n\n\nRespuesta:\n\nPostgreSQL es un sistema de gestión de bases de datos relacional de código abierto y potente. Es conocido por su capacidad de manejar cargas de trabajo complejas y por sus características avanzadas.\n\nEjercicio 43: ¿Qué es MongoDB?\n\n\nRespuesta:\n\nMongoDB es una base de datos NoSQL orientada a documentos. Almacena los datos en documentos JSON flexibles en lugar de en tablas tradicionales, lo que permite una gran flexibilidad y escalabilidad.\n\nEjercicio 44: ¿Cuál es la ventaja de utilizar bases de datos en programas?\n\n\nRespuesta:\n\nLas bases de datos permiten almacenar y administrar grandes cantidades de datos de manera estructurada y eficiente. Esto facilita el acceso y la manipulación de datos en aplicaciones.\n\nEjercicio 45: ¿Cuál es el propósito de una clave primaria en una base de datos?\n\n\nRespuesta:\n\nUna clave primaria es un campo único en una tabla que se utiliza para identificar de manera única cada registro en la tabla. Se utiliza como referencia para relacionar tablas y mantener la integridad de los datos.\n\nUNIDAD X: MySQL, PostgreSQL y MongoDB: Operaciones básicas en bases de datos\nEjercicio 46: ¿Cómo se realiza una consulta básica a una tabla en SQL?\n\n\nRespuesta:\n\nUtilizando la sentencia SELECT. Por ejemplo, SELECT * FROM tabla recuperará todos los registros de la tabla.\n\nEjercicio 47: ¿Qué comando se utiliza para insertar un nuevo registro en una tabla en SQL?\n\n\nRespuesta:\n\nEl comando utilizado es INSERT INTO. Por ejemplo, INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2) insertará un nuevo registro en la tabla.\n\nEjercicio 48: ¿Cómo se actualiza un registro en una tabla en SQL?\n\n\nRespuesta:\n\nUtilizando el comando UPDATE. Por ejemplo, UPDATE tabla SET columna = valor WHERE condicion actualizará los registros que cumplan con la condición.\n\nEjercicio 49: ¿Cuál es el propósito de la sentencia DELETE en SQL?\n\n\nRespuesta:\n\nLa sentencia DELETE se utiliza para eliminar uno o varios registros de una tabla. Por ejemplo, DELETE FROM tabla WHERE condicion eliminará los registros que cumplan con la condición.\n\nEjercicio 50: ¿Cuál es la ventaja de utilizar bases de datos NoSQL como MongoDB?\n\n\nRespuesta:\n\nLas bases de datos NoSQL, como MongoDB, son flexibles y escalables, lo que las hace ideales para manejar grandes cantidades de datos no estructurados o semiestructurados. Son adecuadas para aplicaciones web y móviles modernas.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>69</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
+      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
     ]
   },
   {
@@ -1950,7 +1994,7 @@
     "text": "UNIDAD XI: ¿Cómo me amplío con Python?\nEjercicio 51: ¿Qué es la ciencia de datos y cómo se relaciona con Python?\n\n\nRespuesta:\n\nLa ciencia de datos es el proceso de extracción, transformación y análisis de datos para obtener conocimientos y tomar decisiones informadas. Python es ampliamente utilizado en la ciencia de datos debido a su amplio ecosistema de bibliotecas y herramientas.\n\nEjercicio 52: ¿Qué es Django Framework y para qué se utiliza?\n\n\nRespuesta:\n\nDjango es un framework web de alto nivel en Python que facilita la creación de aplicaciones web robustas y escalables. Se utiliza para construir sitios web y aplicaciones con características como autenticación, seguridad y manejo de bases de datos.\n\nEjercicio 53: ¿Qué es FastAPI y cómo se diferencia de otros frameworks?\n\n\nRespuesta:\n\nFastAPI es un framework web moderno y de alto rendimiento para construir APIs en Python. Se destaca por su velocidad, facilidad de uso y generación automática de documentación interactiva. Utiliza anotaciones de tipo para validar datos y reducir errores.\n\nEjercicio 54: ¿Cuál es el propósito de las APIs en el desarrollo web?\n\n\nRespuesta:\n\nLas APIs (Interfaces de Programación de Aplicaciones) se utilizan para permitir la comunicación y la integración entre diferentes aplicaciones y sistemas. Facilitan el intercambio de datos y funcionalidades entre aplicaciones.\n\nEjercicio 55: ¿Por qué es importante ampliarse en Python más allá de los conceptos básicos?\n\n\nRespuesta:\n\nAmpliarse en Python permite abordar proyectos más complejos y desafiantes, como desarrollo web, análisis de datos, automatización, inteligencia artificial y más. Además, mejora las habilidades y la versatilidad como programador.",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>69</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
+      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
     ]
   },
   {
