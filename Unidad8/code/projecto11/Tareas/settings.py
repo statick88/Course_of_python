@@ -36,8 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',# required for serving swagger ui's css/js files
-    'drf_yasg',
+    'django.contrib.staticfiles',
+    'drf_yasg', # Django REST Swagger
     'rest_framework', # Django REST Framework
     'tarea',
 ]
