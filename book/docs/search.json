@@ -636,24 +636,16 @@
   {
     "objectID": "unidades/unidad5/unidad5.1.html#conceptos-clave",
     "href": "unidades/unidad5/unidad5.1.html#conceptos-clave",
-    "title": "Introducción a Funciones",
-    "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nFunción\nUn bloque de código reutilizable que realiza una tarea específica cuando se llama.\n\n\nDefinición de Función\nCrear una función especificando su nombre, parámetros y cuerpo.\n\n\nLlamada de Función\nEjecutar una función para que realice su tarea específica.",
-    "crumbs": [
-      "Unidad 5: Funciones y Recursividad",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Introducción a Funciones</span>"
-    ]
+    "title": "Introducción a Funciones.",
+    "section": "Conceptos Clave:",
+    "text": "Conceptos Clave:\n\nFunción: Un bloque de código reutilizable que ejecuta una tarea específica cuando se llama.\nDefinición de Función: Crear una función especificando su nombre, parámetros y cuerpo.\nLlamada de Función: Ejecutar una función para que realice su tarea específica.\n\nEjemplo:\nEjemplo de una función simple en Python:\n# Definición de una función\ndef saludar():\n    print(\"¡Hola, Mundo!\")\n\n# Llamada de función\nsaludar()\nExplicación:\nEn este caso, definimos una función llamada saludar que imprime el mensaje “¡Hola, Mundo!”. Luego, llamamos a esta función utilizando el nombre de la función seguido de paréntesis."
   },
   {
     "objectID": "unidades/unidad5/unidad5.1.html#ejemplo",
     "href": "unidades/unidad5/unidad5.1.html#ejemplo",
-    "title": "Introducción a Funciones",
-    "section": "Ejemplo",
-    "text": "Ejemplo\n# Definición de una función\ndef saludar(nombre):\n    print(\"¡Hola, \" + nombre + \"!\")\n\n# Llamada de función\nsaludar(\"Juan\")\n\nExplicación:\nEn este ejemplo, definimos una función llamada saludar que toma un parámetro nombre e imprime un saludo personalizado. Luego, llamamos a esta función con el nombre “Juan”.\n\n\n\n\n\n\nTip\n\n\n\nActividad Práctica\nCrea una función llamada calcular_area_rectangulo que tome dos parámetros: largo y ancho. La función debe calcular y devolver el área de un rectángulo. Luego, llama a la función con valores diferentes para largo y ancho y muestra el resultado.\n\n\n\n\nExplicación:\nEsta actividad te permite practicar cómo definir funciones con parámetros y cómo utilizarlas para realizar cálculos específicos. Las funciones son una parte fundamental de la programación, ya que permiten organizar y reutilizar el código de manera efectiva.",
-    "crumbs": [
-      "Unidad 5: Funciones y Recursividad",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Introducción a Funciones</span>"
-    ]
+    "title": "Introducción a Funciones.",
+    "section": "Ejemplo:",
+    "text": "Ejemplo:\n# Definición de una función\ndef saludar(nombre):\n    print(\"¡Hola, \" + nombre + \"!\")\n\n# Llamada de función\nsaludar(\"Juan\")"
   },
   {
     "objectID": "unidades/unidad5/unidad5.1.html#qué-aprendimos",
@@ -671,33 +663,21 @@
     "href": "unidades/unidad5/unidad5.2.html#conceptos-clave",
     "title": "Recursividad",
     "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nRecursividad\nUna técnica en la que una función se llama a sí misma para resolver un problema más grande.\n\n\nCaso Base\nUn caso en el que la función recursiva se detiene y no se llama a sí misma nuevamente.\n\n\nLlamada Recursiva\nLa acción de una función llamándose a sí misma.",
-    "crumbs": [
-      "Unidad 5: Funciones y Recursividad",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Recursividad</span>"
-    ]
+    "text": "Conceptos Clave\n\nRecursividad\nUna técnica en la que una función se llama a sí misma para resolver un problema más grande.\n\n\nCaso Base\nUn caso en el que la función recursiva se detiene y no se llama a sí misma nuevamente.\n\n\nLlamada Recursiva\nLa acción de una función llamándose a sí misma."
   },
   {
     "objectID": "unidades/unidad5/unidad5.2.html#ejemplo",
     "href": "unidades/unidad5/unidad5.2.html#ejemplo",
     "title": "Recursividad",
     "section": "Ejemplo",
-    "text": "Ejemplo\n# Función recursiva para calcular el factorial\ndef factorial(n):\n    # Caso base\n    if n == 1:\n        return 1\n    # Llamada recursiva\n    else:\n        return n * factorial(n - 1)\n\nresultado = factorial(5)\nprint(\"El factorial de 5 es:\", resultado)\n\nExplicación:\nEn este ejemplo, definimos una función llamada factorial que calcula el factorial de un número n. Utilizamos la recursividad para dividir el problema en partes más pequeñas hasta llegar al caso base (cuando n es igual a 1). Luego, multiplicamos los resultados de las llamadas recursivas para obtener el factorial.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nCrea una función recursiva llamada sumatoria que calcule la suma de los números del 1 al n. Utiliza la recursividad para resolver este problema y luego llama a la función con diferentes valores de n para calcular sumatorias diferentes.\n\n\n\n\nExplicación:\nEsta actividad te permite practicar el concepto de recursividad al resolver un problema diferente. La recursividad es especialmente útil cuando un problema se puede descomponer en subproblemas similares.",
-    "crumbs": [
-      "Unidad 5: Funciones y Recursividad",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Recursividad</span>"
-    ]
+    "text": "Ejemplo\n# Función recursiva para calcular el factorial\ndef factorial(n):\n    # Caso base\n    if n == 1:\n        return 1\n    # Llamada recursiva\n    else:\n        return n * factorial(n - 1)\n\nresultado = factorial(5)\nprint(\"El factorial de 5 es:\", resultado)\n\nExplicación:\nEn este ejemplo, definimos una función llamada factorial que calcula el factorial de un número n. Utilizamos la recursividad para dividir el problema en partes más pequeñas hasta llegar al caso base (cuando n es igual a 1). Luego, multiplicamos los resultados de las llamadas recursivas para obtener el factorial.\n\n\n\n\n\n\nActividad Práctica\n\n\n\nCrea una función recursiva llamada sumatoria que calcule la suma de los números del 1 al n. Utiliza la recursividad para resolver este problema y luego llama a la función con diferentes valores de n para calcular sumatorias diferentes.\n\n\n\n\nExplicación:\nEsta actividad te permite practicar el concepto de recursividad al resolver un problema diferente. La recursividad es especialmente útil cuando un problema se puede descomponer en subproblemas similares."
   },
   {
     "objectID": "unidades/unidad5/unidad5.2.html#qué-aprendimos",
     "href": "unidades/unidad5/unidad5.2.html#qué-aprendimos",
     "title": "Recursividad",
     "section": "¿Qué aprendimos?",
-    "text": "¿Qué aprendimos?\nEn esta lección, aprendimos qué es la recursividad y cómo funciona. Comprendimos los conceptos clave de la recursividad, incluyendo el caso base y las llamadas recursivas. La recursividad es una técnica poderosa que se utiliza en muchos algoritmos y problemas de programación.",
-    "crumbs": [
-      "Unidad 5: Funciones y Recursividad",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Recursividad</span>"
-    ]
+    "text": "¿Qué aprendimos?\nEn esta lección, aprendimos qué es la recursividad y cómo funciona. Comprendimos los conceptos clave de la recursividad, incluyendo el caso base y las llamadas recursivas. La recursividad es una técnica poderosa que se utiliza en muchos algoritmos y problemas de programación."
   },
   {
     "objectID": "unidades/unidad6/unidad6.1.html#conceptos-clave-en-poo",
@@ -1859,143 +1839,91 @@
     "href": "unidades/ejercicios/ejercicio17.html",
     "title": "Ejercicio 17:",
     "section": "",
-    "text": "¿Cómo se define una clase en Python?\n\n\nRespuesta:\n\nUna clase en Python se define utilizando la palabra clave class, seguida del nombre de la clase y los métodos y atributos definidos dentro de la clase. Por ejemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>66</span>  <span class='chapter-title'>Ejercicio 17:</span>"
-    ]
+    "text": "¿Cómo se define una clase en Python?\n\n\nRespuesta:\n\nUna clase en Python se define utilizando la palabra clave class, seguida del nombre de la clase y los métodos y atributos definidos dentro de la clase. Por ejemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad"
   },
   {
     "objectID": "unidades/ejercicios/ejercicio18.html",
     "href": "unidades/ejercicios/ejercicio18.html",
     "title": "Ejercicio 18:",
     "section": "",
-    "text": "¿Cuál es el resultado de la siguiente expresión?\nx = \"Hola\"\ny = \"Mundo\"\nresultado = x + \" \" + y\n\n\nRespuesta:\n\nEl resultado de la expresión es la cadena “Hola Mundo”, ya que se concatenan las cadenas x y y junto con un espacio.",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>67</span>  <span class='chapter-title'>Ejercicio 18:</span>"
-    ]
+    "text": "¿Cuál es el resultado de la siguiente expresión?\nx = \"Hola\"\ny = \"Mundo\"\nresultado = x + \" \" + y\n\n\nRespuesta:\n\nEl resultado de la expresión es la cadena “Hola Mundo”, ya que se concatenan las cadenas x y y junto con un espacio."
   },
   {
     "objectID": "unidades/ejercicios/ejercicio19.html",
     "href": "unidades/ejercicios/ejercicio19.html",
     "title": "Ejercicio 19:",
     "section": "",
-    "text": "¿Cómo se crea una nueva base de datos en PostgreSQL utilizando SQL?\n\n\nRespuesta:\n\nPara crear una nueva base de datos en PostgreSQL utilizando SQL, se utiliza la siguiente consulta:\nCREATE DATABASE nombre_basededatos;",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>68</span>  <span class='chapter-title'>Ejercicio 19:</span>"
-    ]
+    "text": "¿Cómo se crea una nueva base de datos en PostgreSQL utilizando SQL?\n\n\nRespuesta:\n\nPara crear una nueva base de datos en PostgreSQL utilizando SQL, se utiliza la siguiente consulta:\nCREATE DATABASE nombre_basededatos;"
   },
   {
     "objectID": "unidades/ejercicios/ejercicio20.html",
     "href": "unidades/ejercicios/ejercicio20.html",
     "title": "Ejercicio 20:",
     "section": "",
-    "text": "¿Cuál es la forma correcta de realizar una consulta a una colección en MongoDB?\n\n\nRespuesta:\n\nLa forma correcta de realizar una consulta a una colección en MongoDB es utilizando el método find(). Por ejemplo:\nresultados = db.coleccion.find({\"campo\": valor})",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>69</span>  <span class='chapter-title'>Ejercicio 20:</span>"
-    ]
+    "text": "¿Cuál es la forma correcta de realizar una consulta a una colección en MongoDB?\n\n\nRespuesta:\n\nLa forma correcta de realizar una consulta a una colección en MongoDB es utilizando el método find(). Por ejemplo:\nresultados = db.coleccion.find({\"campo\": valor})"
   },
   {
     "objectID": "unidades/ejercicios/ejerciciosUnidades.html#unidad-ii-instalación-de-python-y-más-herramientas",
     "href": "unidades/ejercicios/ejerciciosUnidades.html#unidad-ii-instalación-de-python-y-más-herramientas",
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD II: Instalación de Python y más herramientas",
-    "text": "UNIDAD II: Instalación de Python y más herramientas\nEjercicio 6: ¿Cuál es la forma de verificar la versión de Python instalada en tu sistema?\n\n\nRespuesta:\n\nEjecutando el comando python --version en la línea de comandos.\n\nEjercicio 7: ¿Cuál es el propósito de Git en el desarrollo de software?\n\n\nRespuesta:\n\nGit es un sistema de control de versiones que permite rastrear cambios en el código, colaborar con otros desarrolladores y mantener un historial completo de modificaciones en un proyecto.\n\nEjercicio 8: ¿Cómo se instala una extensión (extensión) en Visual Studio Code?\n\n\nRespuesta:\n\nEn Visual Studio Code, puedes instalar extensiones desde la barra lateral izquierda, haciendo clic en el ícono de extensiones (cuatro cuadros) y buscando la extensión que deseas instalar.\n\nEjercicio 9: ¿Cuál es el resultado del siguiente código?\nprint(\"Hola, \" + \"mundo\")\n\n\nRespuesta:\n\nEl resultado es la cadena “Hola, mundo” al concatenar las dos cadenas.\n\nEjercicio 10: ¿Cuál es el propósito de un entorno virtual en Python?\n\n\nRespuesta:\n\nUn entorno virtual en Python permite aislar y gestionar las dependencias y paquetes utilizados en un proyecto específico, evitando conflictos con otros proyectos y asegurando un entorno limpio y controlado.",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
-    ]
+    "text": "UNIDAD II: Instalación de Python y más herramientas\nEjercicio 6: ¿Cuál es la forma de verificar la versión de Python instalada en tu sistema?\n\n\nRespuesta:\n\nEjecutando el comando python --version en la línea de comandos.\n\nEjercicio 7: ¿Cuál es el propósito de Git en el desarrollo de software?\n\n\nRespuesta:\n\nGit es un sistema de control de versiones que permite rastrear cambios en el código, colaborar con otros desarrolladores y mantener un historial completo de modificaciones en un proyecto.\n\nEjercicio 8: ¿Cómo se instala una extensión (extensión) en Visual Studio Code?\n\n\nRespuesta:\n\nEn Visual Studio Code, puedes instalar extensiones desde la barra lateral izquierda, haciendo clic en el ícono de extensiones (cuatro cuadros) y buscando la extensión que deseas instalar.\n\nEjercicio 9: ¿Cuál es el resultado del siguiente código?\nprint(\"Hola, \" + \"mundo\")\n\n\nRespuesta:\n\nEl resultado es la cadena “Hola, mundo” al concatenar las dos cadenas.\n\nEjercicio 10: ¿Cuál es el propósito de un entorno virtual en Python?\n\n\nRespuesta:\n\nUn entorno virtual en Python permite aislar y gestionar las dependencias y paquetes utilizados en un proyecto específico, evitando conflictos con otros proyectos y asegurando un entorno limpio y controlado."
   },
   {
     "objectID": "unidades/ejercicios/ejerciciosUnidades.html#unidad-iii-introducción-a-python",
     "href": "unidades/ejercicios/ejerciciosUnidades.html#unidad-iii-introducción-a-python",
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD III: Introducción a Python",
-    "text": "UNIDAD III: Introducción a Python\nEjercicio 11: ¿Cuál es la diferencia entre una variable y una constante en programación?\n\n\nRespuesta:\n\nUna variable puede cambiar su valor a lo largo del programa, mientras que una constante mantiene su valor constante durante la ejecución.\n\nEjercicio 12: Escribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida con el nombre ingresado.\n\n\nRespuesta:\n\nnombre = input(\"Ingresa tu nombre: \")\nprint(\"¡Bienvenido,\", nombre, \"!\")\n\nEjercicio 13: ¿Cuál es el valor de la variable resultado después de ejecutar el siguiente código?\nx = 5\ny = 2\nresultado = x // y\n\n\nRespuesta:\n\nEl valor de la variable resultado será 2, ya que // realiza la división entera de 5 entre 2.\n\nEjercicio 14: Escribe un programa en Python que determine si un número ingresado por el usuario es par o impar.\n\n\nRespuesta:\n\nnumero = int(input(\"Ingresa un número: \"))\nif numero % 2 == 0:\n    print(\"El número es par.\")\nelse:\n    print(\"El número es impar.\")\n\nEjercicio 15: ¿Cuál es la función del operador not en Python?\n\n\nRespuesta:\n\nEl operador not se utiliza para negar una expresión booleana. Si la expresión es verdadera, not la convierte en falsa, y viceversa.",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
-    ]
+    "text": "UNIDAD III: Introducción a Python\nEjercicio 11: ¿Cuál es la diferencia entre una variable y una constante en programación?\n\n\nRespuesta:\n\nUna variable puede cambiar su valor a lo largo del programa, mientras que una constante mantiene su valor constante durante la ejecución.\n\nEjercicio 12: Escribe un programa que solicite al usuario su nombre y luego imprima un mensaje de bienvenida con el nombre ingresado.\n\n\nRespuesta:\n\nnombre = input(\"Ingresa tu nombre: \")\nprint(\"¡Bienvenido,\", nombre, \"!\")\n\nEjercicio 13: ¿Cuál es el valor de la variable resultado después de ejecutar el siguiente código?\nx = 5\ny = 2\nresultado = x // y\n\n\nRespuesta:\n\nEl valor de la variable resultado será 2, ya que // realiza la división entera de 5 entre 2.\n\nEjercicio 14: Escribe un programa en Python que determine si un número ingresado por el usuario es par o impar.\n\n\nRespuesta:\n\nnumero = int(input(\"Ingresa un número: \"))\nif numero % 2 == 0:\n    print(\"El número es par.\")\nelse:\n    print(\"El número es impar.\")\n\nEjercicio 15: ¿Cuál es la función del operador not en Python?\n\n\nRespuesta:\n\nEl operador not se utiliza para negar una expresión booleana. Si la expresión es verdadera, not la convierte en falsa, y viceversa."
   },
   {
     "objectID": "unidades/ejercicios/ejerciciosUnidades.html#unidad-iv-tipos-de-datos",
     "href": "unidades/ejercicios/ejerciciosUnidades.html#unidad-iv-tipos-de-datos",
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD IV: Tipos de Datos",
-    "text": "UNIDAD IV: Tipos de Datos\nEjercicio 16: ¿Cuál es la diferencia entre una lista y una tupla en Python?\n\n\nRespuesta:\n\nLa principal diferencia es que las listas son mutables (pueden cambiar) y las tuplas son inmutables (no pueden cambiar). En otras palabras, puedes agregar, eliminar y modificar elementos en una lista, pero no en una tupla.\n\nEjercicio 17: Escribe un programa que ordene una lista de números en orden ascendente.\n\n\nRespuesta:\n\nnumeros = [4, 1, 6, 3, 2]\nnumeros.sort()\nprint(numeros)\n\nEjercicio 18: ¿Cómo se accede al tercer elemento de una lista en Python?\n\n\nRespuesta:\n\nUtilizando el índice 2. Por ejemplo, si la lista se llama mi_lista, puedes acceder al tercer elemento con mi_lista[2].\n\nEjercicio 19: ¿Qué método se utiliza para agregar un elemento al final de una lista?\n\n\nRespuesta:\n\nEl método utilizado es append(). Por ejemplo, mi_lista.append(7) agrega el número 7 al final de la lista.\n\nEjercicio 20: Escribe un programa que cuente cuántas veces aparece un elemento específico en una lista.\n\n\nRespuesta:\n\nmi_lista = [2, 4, 6, 4, 8, 4, 10]\nelemento = 4\ncontador = mi_lista.count(elemento)\nprint(\"El elemento\", elemento, \"aparece\", contador, \"veces.\")",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
-    ]
+    "text": "UNIDAD IV: Tipos de Datos\nEjercicio 16: ¿Cuál es la diferencia entre una lista y una tupla en Python?\n\n\nRespuesta:\n\nLa principal diferencia es que las listas son mutables (pueden cambiar) y las tuplas son inmutables (no pueden cambiar). En otras palabras, puedes agregar, eliminar y modificar elementos en una lista, pero no en una tupla.\n\nEjercicio 17: Escribe un programa que ordene una lista de números en orden ascendente.\n\n\nRespuesta:\n\nnumeros = [4, 1, 6, 3, 2]\nnumeros.sort()\nprint(numeros)\n\nEjercicio 18: ¿Cómo se accede al tercer elemento de una lista en Python?\n\n\nRespuesta:\n\nUtilizando el índice 2. Por ejemplo, si la lista se llama mi_lista, puedes acceder al tercer elemento con mi_lista[2].\n\nEjercicio 19: ¿Qué método se utiliza para agregar un elemento al final de una lista?\n\n\nRespuesta:\n\nEl método utilizado es append(). Por ejemplo, mi_lista.append(7) agrega el número 7 al final de la lista.\n\nEjercicio 20: Escribe un programa que cuente cuántas veces aparece un elemento específico en una lista.\n\n\nRespuesta:\n\nmi_lista = [2, 4, 6, 4, 8, 4, 10]\nelemento = 4\ncontador = mi_lista.count(elemento)\nprint(\"El elemento\", elemento, \"aparece\", contador, \"veces.\")"
   },
   {
     "objectID": "unidades/ejercicios/ejerciciosUnidades.html#unidad-v-control-de-flujo",
     "href": "unidades/ejercicios/ejerciciosUnidades.html#unidad-v-control-de-flujo",
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD V: Control de Flujo",
-    "text": "UNIDAD V: Control de Flujo\nEjercicio 21: Escribe un programa que determine si un número ingresado por el usuario es positivo, negativo o cero.\n\n\nRespuesta:\n\nnumero = int(input(\"Ingresa un número: \"))\nif numero &gt; 0:\n    print(\"El número es positivo.\")\nelif numero &lt; 0:\n    print(\"El número es negativo.\")\nelse:\n    print(\"El número es cero.\")\n\nEjercicio 22: ¿Qué hace el siguiente código?\ncontador = 0\nwhile contador &lt; 5:\n    print(contador)\n    contador += 1\n\n\nRespuesta:\n\nEl código imprime los números del 0 al 4 en líneas separadas utilizando un bucle while.\n\nEjercicio 23: ¿Cuál es el resultado de la siguiente expresión?\nresultado = 0\nfor i in range(1, 6):\n    resultado += i\nprint(resultado)\n\n\nRespuesta:\n\nEl resultado es 15, ya que se suma los números del 1 al 5 en el bucle for.\n\nEjercicio 24: Escribe un programa que calcule la suma de todos los números pares entre 1 y 100.\n\n\nRespuesta:\n\nsuma = 0\nfor i in range(2, 101, 2):\n    suma += i\nprint(\"La suma de los números pares entre 1 y 100 es:\", suma)\n\nEjercicio 25: ¿Cuál es el propósito de la instrucción break en un bucle?\n\n\nRespuesta:\n\nLa instrucción break se utiliza para salir inmediatamente de un bucle, interrumpiendo su ejecución antes de que termine naturalmente.",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
-    ]
+    "text": "UNIDAD V: Control de Flujo\nEjercicio 21: Escribe un programa que determine si un número ingresado por el usuario es positivo, negativo o cero.\n\n\nRespuesta:\n\nnumero = int(input(\"Ingresa un número: \"))\nif numero &gt; 0:\n    print(\"El número es positivo.\")\nelif numero &lt; 0:\n    print(\"El número es negativo.\")\nelse:\n    print(\"El número es cero.\")\n\nEjercicio 22: ¿Qué hace el siguiente código?\ncontador = 0\nwhile contador &lt; 5:\n    print(contador)\n    contador += 1\n\n\nRespuesta:\n\nEl código imprime los números del 0 al 4 en líneas separadas utilizando un bucle while.\n\nEjercicio 23: ¿Cuál es el resultado de la siguiente expresión?\nresultado = 0\nfor i in range(1, 6):\n    resultado += i\nprint(resultado)\n\n\nRespuesta:\n\nEl resultado es 15, ya que se suma los números del 1 al 5 en el bucle for.\n\nEjercicio 24: Escribe un programa que calcule la suma de todos los números pares entre 1 y 100.\n\n\nRespuesta:\n\nsuma = 0\nfor i in range(2, 101, 2):\n    suma += i\nprint(\"La suma de los números pares entre 1 y 100 es:\", suma)\n\nEjercicio 25: ¿Cuál es el propósito de la instrucción break en un bucle?\n\n\nRespuesta:\n\nLa instrucción break se utiliza para salir inmediatamente de un bucle, interrumpiendo su ejecución antes de que termine naturalmente."
   },
   {
     "objectID": "unidades/ejercicios/ejerciciosUnidades.html#unidad-vi-funciones",
     "href": "unidades/ejercicios/ejerciciosUnidades.html#unidad-vi-funciones",
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD VI: Funciones",
-    "text": "UNIDAD VI: Funciones\nEjercicio 26: ¿Qué es una función en programación?\n\n\nRespuesta:\n\nUna función es un bloque de código reutilizable que realiza una tarea específica. Puede recibir argumentos, ejecutar instrucciones y devolver un valor.\n\nEjercicio 27: Escribe una función en Python que calcule el área de un círculo.\n\n\nRespuesta:\n\nimport math\n\ndef area_circulo(radio):\nreturn math.pi * radio ** 2\n\nEjercicio 28: ¿Qué es la recursividad en programación?\n\n\nRespuesta:\n\nLa recursividad es una técnica donde una función se llama a sí misma para resolver un problema. Es útil para resolver problemas que se pueden descomponer en subproblemas similares.\n\nEjercicio 29: Escribe una función recursiva en Python para calcular el factorial de un número.\n\n\nRespuesta:\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\nEjercicio 30: ¿Por qué es importante utilizar funciones en la programación?\n\n\nRespuesta:\n\nLas funciones permiten dividir el código en bloques más pequeños y manejables, lo que facilita la reutilización, la depuración y la comprensión del código. Además, promueven la modularidad y el diseño limpio.",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
-    ]
+    "text": "UNIDAD VI: Funciones\nEjercicio 26: ¿Qué es una función en programación?\n\n\nRespuesta:\n\nUna función es un bloque de código reutilizable que realiza una tarea específica. Puede recibir argumentos, ejecutar instrucciones y devolver un valor.\n\nEjercicio 27: Escribe una función en Python que calcule el área de un círculo.\n\n\nRespuesta:\n\nimport math\n\ndef area_circulo(radio):\nreturn math.pi * radio ** 2\n\nEjercicio 28: ¿Qué es la recursividad en programación?\n\n\nRespuesta:\n\nLa recursividad es una técnica donde una función se llama a sí misma para resolver un problema. Es útil para resolver problemas que se pueden descomponer en subproblemas similares.\n\nEjercicio 29: Escribe una función recursiva en Python para calcular el factorial de un número.\n\n\nRespuesta:\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\nEjercicio 30: ¿Por qué es importante utilizar funciones en la programación?\n\n\nRespuesta:\n\nLas funciones permiten dividir el código en bloques más pequeños y manejables, lo que facilita la reutilización, la depuración y la comprensión del código. Además, promueven la modularidad y el diseño limpio."
   },
   {
     "objectID": "unidades/ejercicios/ejerciciosUnidades.html#unidad-vii-objetos-clases-y-herencia",
     "href": "unidades/ejercicios/ejerciciosUnidades.html#unidad-vii-objetos-clases-y-herencia",
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD VII: Objetos, clases y herencia",
-    "text": "UNIDAD VII: Objetos, clases y herencia\nEjercicio 31: ¿Qué es una clase en programación orientada a objetos?\n\n\nRespuesta:\n\nUna clase es un plano o plantilla para crear objetos en programación orientada a objetos. Define las propiedades (atributos) y comportamientos (métodos) que tendrán los objetos creados a partir de ella.\n\nEjercicio 32: Escribe una clase en Python llamada Persona con los atributos nombre y edad, y un método saludar() que imprima un saludo con el nombre de la persona.\n\n\nRespuesta:\n\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\ndef saludar(self):\n    print(\"¡Hola, soy\", self.nombre, \"y tengo\", self.edad, \"años!\")\n\nEjercicio 33: ¿Qué es la herencia en programación orientada a objetos?\n\n\nRespuesta:\n\nLa herencia es un concepto en el que una clase (subclase) puede heredar atributos y métodos de otra clase (superclase). Permite reutilizar y extender el código de una clase existente para crear una nueva clase.\n\nEjercicio 34: Escribe una clase en Python llamada Estudiante que herede de la clase Persona y tenga un atributo adicional curso.\n\n\nRespuesta:\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, curso):\n        super().__init__(nombre, edad)\n        self.curso = curso\n\nEjercicio 35: ¿Por qué es beneficioso utilizar la herencia en programación?\n\n\nRespuesta:\n\nLa herencia permite reutilizar código, promover la coherencia y facilitar la actualización y mantenimiento. También permite crear jerarquías de clases para modelar relaciones entre objetos del mundo real.",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
-    ]
+    "text": "UNIDAD VII: Objetos, clases y herencia\nEjercicio 31: ¿Qué es una clase en programación orientada a objetos?\n\n\nRespuesta:\n\nUna clase es un plano o plantilla para crear objetos en programación orientada a objetos. Define las propiedades (atributos) y comportamientos (métodos) que tendrán los objetos creados a partir de ella.\n\nEjercicio 32: Escribe una clase en Python llamada Persona con los atributos nombre y edad, y un método saludar() que imprima un saludo con el nombre de la persona.\n\n\nRespuesta:\n\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\ndef saludar(self):\n    print(\"¡Hola, soy\", self.nombre, \"y tengo\", self.edad, \"años!\")\n\nEjercicio 33: ¿Qué es la herencia en programación orientada a objetos?\n\n\nRespuesta:\n\nLa herencia es un concepto en el que una clase (subclase) puede heredar atributos y métodos de otra clase (superclase). Permite reutilizar y extender el código de una clase existente para crear una nueva clase.\n\nEjercicio 34: Escribe una clase en Python llamada Estudiante que herede de la clase Persona y tenga un atributo adicional curso.\n\n\nRespuesta:\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, curso):\n        super().__init__(nombre, edad)\n        self.curso = curso\n\nEjercicio 35: ¿Por qué es beneficioso utilizar la herencia en programación?\n\n\nRespuesta:\n\nLa herencia permite reutilizar código, promover la coherencia y facilitar la actualización y mantenimiento. También permite crear jerarquías de clases para modelar relaciones entre objetos del mundo real."
   },
   {
     "objectID": "unidades/ejercicios/ejerciciosUnidades.html#unidad-viii-módulos",
     "href": "unidades/ejercicios/ejerciciosUnidades.html#unidad-viii-módulos",
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD VIII: Módulos",
-    "text": "UNIDAD VIII: Módulos\nEjercicio 36: ¿Qué es un módulo en Python?\n\n\nRespuesta:\n\nUn módulo en Python es un archivo que contiene definiciones y declaraciones de variables, funciones y clases. Permite organizar y reutilizar el código en diferentes programas.\n\nEjercicio 37: Escribe un módulo en Python llamado operaciones que contenga una función suma para sumar dos números.\n\n\nRespuesta:\n\nArchivo operaciones.py:\ndef suma(a, b):\n    return a + b\n\nEjercicio 38: ¿Cómo se importa un módulo en Python?\n\n\nRespuesta:\n\nSe importa utilizando la palabra clave import, seguida del nombre del módulo. Por ejemplo, import operaciones importaría el módulo operaciones.\n\nEjercicio 39: Escribe un programa que utilice la función suma del módulo operaciones para sumar dos números ingresados por el usuario.\n\n\nRespuesta:\n\nimport operaciones\n\nnum1 = float(input(\"Ingresa el primer número: \"))\nnum2 = float(input(\"Ingresa el segundo número: \"))\nresultado = operaciones.suma(num1, num2)\nprint(\"La suma es:\", resultado)\n\nEjercicio 40: ¿Cuál es la ventaja de utilizar módulos en Python?\n\n\nRespuesta:\n\nLos módulos permiten la modularidad, la reutilización de código y la organización efectiva del código en componentes separados. También facilitan la colaboración y la mantenibilidad.",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
-    ]
+    "text": "UNIDAD VIII: Módulos\nEjercicio 36: ¿Qué es un módulo en Python?\n\n\nRespuesta:\n\nUn módulo en Python es un archivo que contiene definiciones y declaraciones de variables, funciones y clases. Permite organizar y reutilizar el código en diferentes programas.\n\nEjercicio 37: Escribe un módulo en Python llamado operaciones que contenga una función suma para sumar dos números.\n\n\nRespuesta:\n\nArchivo operaciones.py:\ndef suma(a, b):\n    return a + b\n\nEjercicio 38: ¿Cómo se importa un módulo en Python?\n\n\nRespuesta:\n\nSe importa utilizando la palabra clave import, seguida del nombre del módulo. Por ejemplo, import operaciones importaría el módulo operaciones.\n\nEjercicio 39: Escribe un programa que utilice la función suma del módulo operaciones para sumar dos números ingresados por el usuario.\n\n\nRespuesta:\n\nimport operaciones\n\nnum1 = float(input(\"Ingresa el primer número: \"))\nnum2 = float(input(\"Ingresa el segundo número: \"))\nresultado = operaciones.suma(num1, num2)\nprint(\"La suma es:\", resultado)\n\nEjercicio 40: ¿Cuál es la ventaja de utilizar módulos en Python?\n\n\nRespuesta:\n\nLos módulos permiten la modularidad, la reutilización de código y la organización efectiva del código en componentes separados. También facilitan la colaboración y la mantenibilidad."
   },
   {
     "objectID": "unidades/ejercicios/ejerciciosUnidades.html#unidad-ix-introducción-a-bases-de-datos",
     "href": "unidades/ejercicios/ejerciciosUnidades.html#unidad-ix-introducción-a-bases-de-datos",
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD IX: Introducción a Bases de Datos",
-    "text": "UNIDAD IX: Introducción a Bases de Datos\nEjercicio 41: ¿Qué es una base de datos en el contexto de la programación?\n\n\nRespuesta:\n\nUna base de datos es un sistema organizado para almacenar, administrar y recuperar información de manera eficiente. Se utiliza para almacenar datos estructurados de manera persistente.\n\nEjercicio 42: ¿Qué es PostgreSQL?\n\n\nRespuesta:\n\nPostgreSQL es un sistema de gestión de bases de datos relacional de código abierto y potente. Es conocido por su capacidad de manejar cargas de trabajo complejas y por sus características avanzadas.\n\nEjercicio 43: ¿Qué es MongoDB?\n\n\nRespuesta:\n\nMongoDB es una base de datos NoSQL orientada a documentos. Almacena los datos en documentos JSON flexibles en lugar de en tablas tradicionales, lo que permite una gran flexibilidad y escalabilidad.\n\nEjercicio 44: ¿Cuál es la ventaja de utilizar bases de datos en programas?\n\n\nRespuesta:\n\nLas bases de datos permiten almacenar y administrar grandes cantidades de datos de manera estructurada y eficiente. Esto facilita el acceso y la manipulación de datos en aplicaciones.\n\nEjercicio 45: ¿Cuál es el propósito de una clave primaria en una base de datos?\n\n\nRespuesta:\n\nUna clave primaria es un campo único en una tabla que se utiliza para identificar de manera única cada registro en la tabla. Se utiliza como referencia para relacionar tablas y mantener la integridad de los datos.\n\nUNIDAD X: MySQL, PostgreSQL y MongoDB: Operaciones básicas en bases de datos\nEjercicio 46: ¿Cómo se realiza una consulta básica a una tabla en SQL?\n\n\nRespuesta:\n\nUtilizando la sentencia SELECT. Por ejemplo, SELECT * FROM tabla recuperará todos los registros de la tabla.\n\nEjercicio 47: ¿Qué comando se utiliza para insertar un nuevo registro en una tabla en SQL?\n\n\nRespuesta:\n\nEl comando utilizado es INSERT INTO. Por ejemplo, INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2) insertará un nuevo registro en la tabla.\n\nEjercicio 48: ¿Cómo se actualiza un registro en una tabla en SQL?\n\n\nRespuesta:\n\nUtilizando el comando UPDATE. Por ejemplo, UPDATE tabla SET columna = valor WHERE condicion actualizará los registros que cumplan con la condición.\n\nEjercicio 49: ¿Cuál es el propósito de la sentencia DELETE en SQL?\n\n\nRespuesta:\n\nLa sentencia DELETE se utiliza para eliminar uno o varios registros de una tabla. Por ejemplo, DELETE FROM tabla WHERE condicion eliminará los registros que cumplan con la condición.\n\nEjercicio 50: ¿Cuál es la ventaja de utilizar bases de datos NoSQL como MongoDB?\n\n\nRespuesta:\n\nLas bases de datos NoSQL, como MongoDB, son flexibles y escalables, lo que las hace ideales para manejar grandes cantidades de datos no estructurados o semiestructurados. Son adecuadas para aplicaciones web y móviles modernas.",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
-    ]
+    "text": "UNIDAD IX: Introducción a Bases de Datos\nEjercicio 41: ¿Qué es una base de datos en el contexto de la programación?\n\n\nRespuesta:\n\nUna base de datos es un sistema organizado para almacenar, administrar y recuperar información de manera eficiente. Se utiliza para almacenar datos estructurados de manera persistente.\n\nEjercicio 42: ¿Qué es PostgreSQL?\n\n\nRespuesta:\n\nPostgreSQL es un sistema de gestión de bases de datos relacional de código abierto y potente. Es conocido por su capacidad de manejar cargas de trabajo complejas y por sus características avanzadas.\n\nEjercicio 43: ¿Qué es MongoDB?\n\n\nRespuesta:\n\nMongoDB es una base de datos NoSQL orientada a documentos. Almacena los datos en documentos JSON flexibles en lugar de en tablas tradicionales, lo que permite una gran flexibilidad y escalabilidad.\n\nEjercicio 44: ¿Cuál es la ventaja de utilizar bases de datos en programas?\n\n\nRespuesta:\n\nLas bases de datos permiten almacenar y administrar grandes cantidades de datos de manera estructurada y eficiente. Esto facilita el acceso y la manipulación de datos en aplicaciones.\n\nEjercicio 45: ¿Cuál es el propósito de una clave primaria en una base de datos?\n\n\nRespuesta:\n\nUna clave primaria es un campo único en una tabla que se utiliza para identificar de manera única cada registro en la tabla. Se utiliza como referencia para relacionar tablas y mantener la integridad de los datos.\n\nUNIDAD X: MySQL, PostgreSQL y MongoDB: Operaciones básicas en bases de datos\nEjercicio 46: ¿Cómo se realiza una consulta básica a una tabla en SQL?\n\n\nRespuesta:\n\nUtilizando la sentencia SELECT. Por ejemplo, SELECT * FROM tabla recuperará todos los registros de la tabla.\n\nEjercicio 47: ¿Qué comando se utiliza para insertar un nuevo registro en una tabla en SQL?\n\n\nRespuesta:\n\nEl comando utilizado es INSERT INTO. Por ejemplo, INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2) insertará un nuevo registro en la tabla.\n\nEjercicio 48: ¿Cómo se actualiza un registro en una tabla en SQL?\n\n\nRespuesta:\n\nUtilizando el comando UPDATE. Por ejemplo, UPDATE tabla SET columna = valor WHERE condicion actualizará los registros que cumplan con la condición.\n\nEjercicio 49: ¿Cuál es el propósito de la sentencia DELETE en SQL?\n\n\nRespuesta:\n\nLa sentencia DELETE se utiliza para eliminar uno o varios registros de una tabla. Por ejemplo, DELETE FROM tabla WHERE condicion eliminará los registros que cumplan con la condición.\n\nEjercicio 50: ¿Cuál es la ventaja de utilizar bases de datos NoSQL como MongoDB?\n\n\nRespuesta:\n\nLas bases de datos NoSQL, como MongoDB, son flexibles y escalables, lo que las hace ideales para manejar grandes cantidades de datos no estructurados o semiestructurados. Son adecuadas para aplicaciones web y móviles modernas."
   },
   {
     "objectID": "unidades/ejercicios/ejerciciosUnidades.html#unidad-xi-cómo-me-amplío-con-python",
     "href": "unidades/ejercicios/ejerciciosUnidades.html#unidad-xi-cómo-me-amplío-con-python",
     "title": "UNIDAD I: Introducción a la programación",
     "section": "UNIDAD XI: ¿Cómo me amplío con Python?",
-    "text": "UNIDAD XI: ¿Cómo me amplío con Python?\nEjercicio 51: ¿Qué es la ciencia de datos y cómo se relaciona con Python?\n\n\nRespuesta:\n\nLa ciencia de datos es el proceso de extracción, transformación y análisis de datos para obtener conocimientos y tomar decisiones informadas. Python es ampliamente utilizado en la ciencia de datos debido a su amplio ecosistema de bibliotecas y herramientas.\n\nEjercicio 52: ¿Qué es Django Framework y para qué se utiliza?\n\n\nRespuesta:\n\nDjango es un framework web de alto nivel en Python que facilita la creación de aplicaciones web robustas y escalables. Se utiliza para construir sitios web y aplicaciones con características como autenticación, seguridad y manejo de bases de datos.\n\nEjercicio 53: ¿Qué es FastAPI y cómo se diferencia de otros frameworks?\n\n\nRespuesta:\n\nFastAPI es un framework web moderno y de alto rendimiento para construir APIs en Python. Se destaca por su velocidad, facilidad de uso y generación automática de documentación interactiva. Utiliza anotaciones de tipo para validar datos y reducir errores.\n\nEjercicio 54: ¿Cuál es el propósito de las APIs en el desarrollo web?\n\n\nRespuesta:\n\nLas APIs (Interfaces de Programación de Aplicaciones) se utilizan para permitir la comunicación y la integración entre diferentes aplicaciones y sistemas. Facilitan el intercambio de datos y funcionalidades entre aplicaciones.\n\nEjercicio 55: ¿Por qué es importante ampliarse en Python más allá de los conceptos básicos?\n\n\nRespuesta:\n\nAmpliarse en Python permite abordar proyectos más complejos y desafiantes, como desarrollo web, análisis de datos, automatización, inteligencia artificial y más. Además, mejora las habilidades y la versatilidad como programador.",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>70</span>  <span class='chapter-title'>UNIDAD I: Introducción a la programación</span>"
-    ]
+    "text": "UNIDAD XI: ¿Cómo me amplío con Python?\nEjercicio 51: ¿Qué es la ciencia de datos y cómo se relaciona con Python?\n\n\nRespuesta:\n\nLa ciencia de datos es el proceso de extracción, transformación y análisis de datos para obtener conocimientos y tomar decisiones informadas. Python es ampliamente utilizado en la ciencia de datos debido a su amplio ecosistema de bibliotecas y herramientas.\n\nEjercicio 52: ¿Qué es Django Framework y para qué se utiliza?\n\n\nRespuesta:\n\nDjango es un framework web de alto nivel en Python que facilita la creación de aplicaciones web robustas y escalables. Se utiliza para construir sitios web y aplicaciones con características como autenticación, seguridad y manejo de bases de datos.\n\nEjercicio 53: ¿Qué es FastAPI y cómo se diferencia de otros frameworks?\n\n\nRespuesta:\n\nFastAPI es un framework web moderno y de alto rendimiento para construir APIs en Python. Se destaca por su velocidad, facilidad de uso y generación automática de documentación interactiva. Utiliza anotaciones de tipo para validar datos y reducir errores.\n\nEjercicio 54: ¿Cuál es el propósito de las APIs en el desarrollo web?\n\n\nRespuesta:\n\nLas APIs (Interfaces de Programación de Aplicaciones) se utilizan para permitir la comunicación y la integración entre diferentes aplicaciones y sistemas. Facilitan el intercambio de datos y funcionalidades entre aplicaciones.\n\nEjercicio 55: ¿Por qué es importante ampliarse en Python más allá de los conceptos básicos?\n\n\nRespuesta:\n\nAmpliarse en Python permite abordar proyectos más complejos y desafiantes, como desarrollo web, análisis de datos, automatización, inteligencia artificial y más. Además, mejora las habilidades y la versatilidad como programador."
   },
   {
     "objectID": "about.html#nuestro-objetivo",
@@ -2045,5 +1973,54 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad5/unidad5.1.html#actividad-práctica",
+    "href": "unidades/unidad5/unidad5.1.html#actividad-práctica",
+    "title": "Introducción a Funciones.",
+    "section": "Actividad Práctica:",
+    "text": "Actividad Práctica:\n\nCrear una función llamada calcular_area_rectangulo que acepte dos parámetros: largo y ancho. La función debe calcular y devolver el área de un rectángulo. Luego, llamar a la función con diferentes valores para largo y ancho y mostrar los resultados.\n\nPor favor crear este código en python\n\n\n\n\n\n\nTip\n\n\n\nTip: Esta tarea permite practicar la definición de funciones con parámetros y su uso para realizar cálculos específicos. Las funciones son esenciales en programación para organizar y reutilizar el código de manera efectiva.\n\n\n\n\nRespuesta:\n\nCrear una función llamada calcular_area_rectangulo que acepte dos parámetros: largo y ancho. La función debe calcular y devolver el área de un rectángulo. Luego, llamar a la función con diferentes valores para largo y ancho y mostrar los resultados.\n\n# Definición de la función\ndef calcular_area_rectangulo(largo, ancho):\n    area = largo * ancho\n    return area\n\n# Llamada de la función\narea1 = calcular_area_rectangulo(5, 10)\narea2 = calcular_area_rectangulo(3, 7)"
+  },
+  {
+    "objectID": "unidades/unidad5/unidad5.1.html#explicación-de-la-actividad",
+    "href": "unidades/unidad5/unidad5.1.html#explicación-de-la-actividad",
+    "title": "Introducción a Funciones.",
+    "section": "Explicación de la Actividad:",
+    "text": "Explicación de la Actividad:\nEsta tarea permite practicar la definición de funciones con parámetros y su uso para realizar cálculos específicos. Las funciones son esenciales en programación para organizar y reutilizar el código de manera efectiva."
+  },
+  {
+    "objectID": "unidades/unidad5/unidad5.1.html#resumen",
+    "href": "unidades/unidad5/unidad5.1.html#resumen",
+    "title": "Introducción a Funciones.",
+    "section": "Resumen:",
+    "text": "Resumen:\nEn esta lección, hemos aprendido sobre las funciones en Python, cómo definirlas y utilizarlas en nuestros programas. Comprendimos los conceptos fundamentales relacionados con las funciones y su aplicación en la escritura de código."
+  },
+  {
+    "objectID": "unidades/unidad5/unidad5.1.html#explicación",
+    "href": "unidades/unidad5/unidad5.1.html#explicación",
+    "title": "Introducción a Funciones.",
+    "section": "Explicación:",
+    "text": "Explicación:\nEn este caso, definimos una función llamada saludar que toma un parámetro nombre e imprime un saludo personalizado. Luego, llamamos a esta función con el nombre “Juan”."
+  },
+  {
+    "objectID": "unidades/unidad5/unidad5.1.html#definición-de-funciones",
+    "href": "unidades/unidad5/unidad5.1.html#definición-de-funciones",
+    "title": "Introducción a Funciones.",
+    "section": "Definición de Funciones:",
+    "text": "Definición de Funciones:\nPara definir una función en Python, utilizamos la palabra clave def seguida del nombre de la función y los paréntesis que pueden contener los parámetros de la función. Luego, el cuerpo de la función se define con sangría.\nSintaxis:\ndef nombre_funcion(parametro1, parametro2, ...):\n    # Cuerpo de la función\n    # Código a ejecutar\nEjemplo:\nEjemplo de una función con parámetros en Python:\n# Definición de una función\ndef saludar(nombre):\n    print(\"¡Hola, \" + nombre + \"!\")\n\n# Llamada de función\nsaludar(\"Juan\")\nExplicación:\nEn este caso, definimos una función llamada saludar que toma un parámetro nombre e imprime un saludo personalizado. Luego, llamamos a esta función con el nombre “Juan”."
+  },
+  {
+    "objectID": "unidades/unidad5/unidad5.1.html#llamada-de-funciones",
+    "href": "unidades/unidad5/unidad5.1.html#llamada-de-funciones",
+    "title": "Introducción a Funciones.",
+    "section": "Llamada de Funciones:",
+    "text": "Llamada de Funciones:\nPara llamar a una función en Python, simplemente usamos el nombre de la función seguido de paréntesis que pueden contener los argumentos necesarios para la función.\nSintaxis:\nnombre_funcion(argumento1, argumento2, ...)\nExplicación:\nEn este caso, llamamos a la función nombre_funcion con los argumentos argumento1, argumento2, etc. que se pasan a la función para realizar una tarea específica."
+  },
+  {
+    "objectID": "unidades/unidad5/unidad5.1.html#retorno-de-funciones",
+    "href": "unidades/unidad5/unidad5.1.html#retorno-de-funciones",
+    "title": "Introducción a Funciones.",
+    "section": "Retorno de Funciones:",
+    "text": "Retorno de Funciones:\nLas funciones en Python pueden devolver un valor utilizando la palabra clave return seguida del valor que se debe devolver. Esto permite que la función genere un resultado que puede ser utilizado en otras partes del programa.\nSintaxis:\n\ndef nombre_funcion(parametro1, parametro2, ...):\n    # Cuerpo de la función\n    # Código a ejecutar\n    return valor_a_devolver\nEjemplo:\nEjemplo de una función que devuelve un valor en Python:\n# Definición de una función\n\ndef sumar(a, b):\n    resultado = a + b\n    return resultado\n\n# Llamada de función\nresultado = sumar(5, 3)\nprint(resultado)\nExplicación:\nEn este caso, definimos una función llamada sumar que toma dos parámetros a y b, calcula la suma de los dos números y devuelve el resultado. Luego, llamamos a esta función con los valores 5 y 3 y almacenamos el resultado en la variable resultado que se imprime en la consola."
   }
 ]

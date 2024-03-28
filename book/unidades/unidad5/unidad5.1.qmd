@@ -1,26 +1,47 @@
-# Introducción a Funciones
+# Introducción a Funciones.
 
-En esta lección, exploraremos el concepto de funciones en Python. Las funciones son bloques de código reutilizables que realizan tareas específicas. Aprenderemos cómo definir y utilizar funciones en nuestros programas.
+En esta lección, nos adentraremos en el concepto de funciones en Python, que son bloques de código reutilizables diseñados para realizar tareas específicas. Aprenderemos cómo definir y utilizar funciones en nuestros programas para mejorar la eficiencia y la organización del código.
 
-<!-- ![Imagen de una función](images/function.png){fig-align="center" width="400"} -->
+## Conceptos Clave:
 
-## Conceptos Clave
+-   **Función:** Un bloque de código reutilizable que ejecuta una tarea específica cuando se llama.
+-   **Definición de Función:** Crear una función especificando su nombre, parámetros y cuerpo.
+-   **Llamada de Función:** Ejecutar una función para que realice su tarea específica.
 
-### Función
+**Ejemplo:**
 
-Un bloque de código reutilizable que realiza una tarea específica cuando se llama.
+Ejemplo de una función simple en Python:
 
-### Definición de Función
+``` python	
+# Definición de una función
+def saludar():
+    print("¡Hola, Mundo!")
 
-Crear una función especificando su nombre, parámetros y cuerpo.
+# Llamada de función
+saludar()
+```
 
-### Llamada de Función
+**Explicación:**
 
-Ejecutar una función para que realice su tarea específica.
+En este caso, definimos una función llamada saludar que imprime el mensaje "¡Hola, Mundo!". Luego, llamamos a esta función utilizando el nombre de la función seguido de paréntesis.
 
-## Ejemplo
+## Definición de Funciones:
 
-```python
+Para definir una función en Python, utilizamos la palabra clave **def** seguida del nombre de la función y los paréntesis que pueden contener los parámetros de la función. Luego, el cuerpo de la función se define con sangría.
+
+**Sintaxis:**
+
+``` python
+def nombre_funcion(parametro1, parametro2, ...):
+    # Cuerpo de la función
+    # Código a ejecutar
+```
+
+**Ejemplo:**
+
+Ejemplo de una función con parámetros en Python:
+
+``` python
 # Definición de una función
 def saludar(nombre):
     print("¡Hola, " + nombre + "!")
@@ -28,21 +49,85 @@ def saludar(nombre):
 # Llamada de función
 saludar("Juan")
 ```
-### Explicación:
+**Explicación:**
 
-En este ejemplo, definimos una función llamada saludar que toma un parámetro nombre e imprime un saludo personalizado. Luego, llamamos a esta función con el nombre "Juan".
+En este caso, definimos una función llamada saludar que toma un parámetro nombre e imprime un saludo personalizado. Luego, llamamos a esta función con el nombre "Juan".
 
-:::{.callout-tip}
+## Llamada de Funciones:
 
-Actividad Práctica
+Para llamar a una función en Python, simplemente usamos el nombre de la función seguido de paréntesis que pueden contener los argumentos necesarios para la función.
 
-Crea una función llamada calcular_area_rectangulo que tome dos parámetros: largo y ancho. La función debe calcular y devolver el área de un rectángulo. Luego, llama a la función con valores diferentes para largo y ancho y muestra el resultado.
+**Sintaxis:**
+
+``` python
+nombre_funcion(argumento1, argumento2, ...)
+```
+
+**Explicación:**
+
+En este caso, llamamos a la función nombre_funcion con los argumentos argumento1, argumento2, etc. que se pasan a la función para realizar una tarea específica.
+
+## Retorno de Funciones:
+
+Las funciones en Python pueden devolver un valor utilizando la palabra clave **return** seguida del valor que se debe devolver. Esto permite que la función genere un resultado que puede ser utilizado en otras partes del programa.
+
+**Sintaxis:**
+
+``` python
+
+def nombre_funcion(parametro1, parametro2, ...):
+    # Cuerpo de la función
+    # Código a ejecutar
+    return valor_a_devolver
+
+```
+
+**Ejemplo:**
+
+Ejemplo de una función que devuelve un valor en Python:
+
+``` python
+# Definición de una función
+
+def sumar(a, b):
+    resultado = a + b
+    return resultado
+
+# Llamada de función
+resultado = sumar(5, 3)
+print(resultado)
+```
+
+**Explicación:**
+
+En este caso, definimos una función llamada sumar que toma dos parámetros a y b, calcula la suma de los dos números y devuelve el resultado. Luego, llamamos a esta función con los valores 5 y 3 y almacenamos el resultado en la variable resultado que se imprime en la consola.
+
+## Actividad Práctica:
+
+- Crear una función llamada **calcular_area_rectangulo** que acepte dos parámetros: **largo** y **ancho**. La función debe **calcular** y **devolver** el **área de un rectángulo**. Luego, **llamar** a la **función** con **diferentes valores** para largo y ancho y mostrar los resultados.
+
+Por favor crear este código en python
+
+::: {.callout-tip}
+**Tip:** Esta tarea permite practicar la definición de funciones con parámetros y su uso para realizar cálculos específicos. Las funciones son esenciales en programación para organizar y reutilizar el código de manera efectiva.
 :::
 
-### Explicación:
+<details>
+<summary>Respuesta:</summary>
+Crear una función llamada **calcular_area_rectangulo** que acepte dos parámetros: **largo** y **ancho**. La función debe **calcular** y **devolver** el **área de un rectángulo**. Luego, **llamar** a la **función** con **diferentes valores** para largo y ancho y mostrar los resultados.
+```python
 
-Esta actividad te permite practicar cómo definir funciones con parámetros y cómo utilizarlas para realizar cálculos específicos. Las funciones son una parte fundamental de la programación, ya que permiten organizar y reutilizar el código de manera efectiva.
+# Definición de la función
+def calcular_area_rectangulo(largo, ancho):
+    area = largo * ancho
+    return area
 
-## ¿Qué aprendimos?
+# Llamada de la función
+area1 = calcular_area_rectangulo(5, 10)
+area2 = calcular_area_rectangulo(3, 7)
+```
+</details>
 
-En esta lección, aprendimos qué son las funciones en Python y cómo definirlas y usarlas en nuestros programas. Comprendimos los conceptos clave relacionados con las funciones y cómo aplicarlos en la escritura de código.
+## Resumen:
+
+En esta lección, hemos aprendido sobre las funciones en Python, cómo definirlas y utilizarlas en nuestros programas. Comprendimos los conceptos fundamentales relacionados con las funciones y su aplicación en la escritura de código.
