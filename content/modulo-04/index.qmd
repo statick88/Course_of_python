@@ -1,0 +1,47 @@
+---
+title: "Módulo 4: Funciones"
+---
+
+## 🎯 Objetivos del Módulo
+
+Al completar este módulo, serás capaz de:
+
+- ✅ Definir funciones con `def` y entender por qué son la base del código reutilizable
+- ✅ Usar parámetros y argumentos para hacer funciones flexibles
+- ✅ Devolver valores con `return` y entender la diferencia con `print()`
+- ✅ Dominar el scope de variables: local, global y nonlocal
+- ✅ Crear funciones lambda para operaciones simples y elegantes
+- ✅ Implementar funciones recursivas y entender cuándo usarlas
+- ✅ Aplicar los principios del Zen de Python al diseñar funciones
+
+## 📚 Contenido
+
+| Lección | Tema | Tipo |
+|---------|------|------|
+| [4.1](01-definir-funciones.qmd) | Definir funciones: tu primera multiherramienta | 📖 Teoría |
+| [4.2](02-parametros-argumentos.qmd) | Parámetros y argumentos: la receta flexible | 📖 Teoría |
+| [4.3](03-return.qmd) | Return: el resultado que vuelve | 📖 Teoría |
+| [4.4](04-scope-variables.qmd) | Scope de variables: quién ve qué | 📖 Teoría |
+| [4.5](05-funciones-lambda.qmd) | Funciones lambda: el atajo elegante | 📖 Teoría |
+| [4.6](06-funciones-recursivas.qmd) | Funciones recursivas: la función que se llama a sí misma | 📖 Teoría |
+| [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
+
+## 🏆 Desafíos del Módulo
+
+| # | Desafío | Dificultad |
+|---|---------|------------|
+| [1](desafio-01-saludo-funcion.qmd) | Saludo con función | ⭐ Fácil |
+| [2](desafio-02-area-circulo.qmd) | Área del círculo | ⭐ Fácil |
+| [3](desafio-03-fahrenheit-celsius.qmd) | Conversor Fahrenheit ↔ Celsius | ⭐⭐ Media |
+| [4](desafio-04-contador-vocales.qmd) | Contador de vocales | ⭐⭐ Media |
+| [5](desafio-05-numero-primo.qmd) | Verificar número primo | ⭐⭐ Media |
+| [6](desafio-06-fibonacci.qmd) | Secuencia de Fibonacci | ⭐⭐⭐ Difícil |
+| [7](desafio-07-calculadora-funciones.qmd) | Calculadora con funciones | ⭐⭐⭐ Difícil |
+
+## 🛠️ Recursos
+
+- [Cheat Sheet del Módulo 4](recursos/cheat-sheet-modulo-4.md) — Referencia rápida de funciones
+
+---
+
+**Anterior:** [Módulo 3](../modulo-03/index.qmd) | **Siguiente:** [4.1 Definir funciones](01-definir-funciones.qmd)

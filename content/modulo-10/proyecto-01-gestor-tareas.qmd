@@ -1,0 +1,117 @@
+---
+title: "Proyecto 1: Gestor de Tareas Personal"
+subtitle: "⭐⭐ Dificultad Media — Variables, funciones, listas, archivos"
+execute:
+  eval: false
+---
+
+## 📋 Descripción del Proyecto
+
+Construye una aplicación de consola que permita gestionar tareas personales. El programa debe permitir crear, listar, completar y eliminar tareas, guardando todo en un archivo JSON para que no se pierdan al cerrar el programa.
+
+> **La analogía:** Tu programa es como una libreta de tareas inteligente. A diferencia de una libreta real, esta puede buscar, filtrar y darte estadísticas de tu productividad.
+
+## 🎯 Requisitos mínimos
+
+### Funcionalidades obligatorias
+
+| # | Funcionalidad | Descripción |
+|---|---------------|-------------|
+| 1 | Agregar tarea | Pedir título y descripción al usuario |
+| 2 | Listar tareas | Mostrar todas con estado (pendiente/completada) |
+| 3 | Completar tarea | Cambiar estado de pendiente a completada |
+| 4 | Eliminar tarea | Borrar una tarea por su ID |
+| 5 | Persistencia | Guardar y cargar desde archivo JSON |
+| 6 | Menú interactivo | Ciclo que se repite hasta que el usuario sale |
+
+### Funcionalidades opcionales (puntos extra)
+
+| # | Funcionalidad | Puntos |
+|---|---------------|--------|
+| +1 | Estadísticas (total, pendientes, completadas, %) | ⭐ |
+| +2 | Filtrar solo pendientes | ⭐ |
+| +3 | Buscar tarea por texto | ⭐ |
+| +4 | Fecha de creación automática | ⭐ |
+| +5 | Validación completa de entrada | ⭐ |
+
+## 📐 Estructura de datos
+
+```python
+# Cada tarea es un diccionario:
+tarea = {
+    "id": 1,                    # Número único
+    "titulo": "Estudiar Python", # Texto obligatorio
+    "descripcion": "Módulo 10", # Texto opcional
+    "completada": False,         # Booleano
+    "fecha": "2026-04-04",       # Fecha de creación
+}
+```
+
+## 🏗️ Estructura del proyecto esperada
+
+```
+gestor_tareas/
+├── main.py              # Punto de entrada
+├── datos/
+│   └── tareas.json      # Archivo de datos
+└── modulos/
+    ├── __init__.py
+    ├── gestor.py        # Clase GestorTareas
+    └── utilidades.py    # Funciones auxiliares
+```
+
+## 📊 Criterios de evaluación
+
+| Criterio | Peso | Excelente (100%) | Aceptable (70%) | Insuficiente (0%) |
+|----------|------|-------------------|-----------------|-------------------|
+| Funcionalidad | 30% | Todas las funciones obligatorias funcionan | Faltan 1-2 funciones | No funciona |
+| Estructura | 20% | Módulos bien separados, código limpio | Algo de código en main.py | Todo en un archivo |
+| Persistencia | 15% | Guarda y carga correctamente | Guarda pero no carga bien | No persiste datos |
+| Validación | 15% | Maneja todos los errores de entrada | Maneja algunos errores | No valida nada |
+| Documentación | 10% | README completo + docstrings | README básico | Sin documentación |
+| Creatividad | 10% | Funcionalidades extra implementadas | 1-2 extras | Solo lo mínimo |
+
+## 💡 Tips para empezar
+
+1. **Empieza por los datos.** Define cómo se ve una tarea antes de escribir funciones.
+2. **Primero en memoria.** Haz que funcione sin archivos JSON, luego agrega persistencia.
+3. **Una función a la vez.** No intentes hacer todo el menú de una vez.
+4. **Prueba constantemente.** Ejecuta después de cada función nueva.
+
+## 🚀 Ejemplo de ejecución
+
+```
+========================================
+  📋 GESTOR DE TAREAS
+========================================
+  1. Ver todas las tareas
+  2. Ver solo pendientes
+  3. Agregar nueva tarea
+  4. Completar tarea
+  5. Eliminar tarea
+  6. Estadísticas
+  7. Salir
+========================================
+Elige una opción: 3
+
+Título de la tarea: Estudiar Python
+Descripción (opcional): Completar módulo 10
+✅ Tarea 'Estudiar Python' agregada con ID 1
+
+Presiona Enter para continuar...
+```
+
+## ⚠️ Errores comunes a evitar
+
+| Error | Por qué es problema | Solución |
+|-------|---------------------|----------|
+| IDs duplicados | Dos tareas con mismo ID | Usar `max(id) + 1` |
+| No crear carpeta datos | Error al guardar | `os.makedirs(..., exist_ok=True)` |
+| Crash con entrada inválida | `int("abc")` lanza error | `try/except ValueError` |
+| No guardar después de modificar | Cambios se pierden | Llamar `_guardar()` tras cada cambio |
+
+---
+
+**Anterior:** [Módulo 10: Inicio](index.qmd)
+
+**Siguiente:** [Proyecto 2: Tienda de Productos](proyecto-02-tienda-productos.qmd)

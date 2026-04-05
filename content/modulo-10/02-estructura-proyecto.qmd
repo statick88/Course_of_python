@@ -1,0 +1,253 @@
+---
+title: "10.2 Estructura profesional de un proyecto Python"
+subtitle: "Organiza tu código como un profesional"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Crear la estructura de carpetas de un proyecto Python profesional
+- Entender el propósito de cada archivo y directorio
+- Separar lógica, datos y presentación
+- Configurar un proyecto que sea fácil de mantener
+
+## La analogía de la biblioteca
+
+Imagina una biblioteca donde todos los libros están amontonados en el piso. ¿Podrías encontrar algo? Probablemente no.
+
+Ahora imagina una biblioteca organizada:
+
+- **Estantes** por categoría (ciencia, historia, ficción)
+- **Índice** que te dice dónde está cada libro
+- **Mostrador** donde pides y devuelves libros
+
+**Tu proyecto Python es esa biblioteca.** Si tiras todo en un solo archivo, nadie (incluyéndote en 2 semanas) va a encontrar nada.
+
+> **Beautiful is better than ugly.** Un proyecto bien organizado es hermoso de navegar.
+
+## Estructura estándar de un proyecto Python
+
+```
+mi_proyecto/
+├── README.md              # <1>
+├── main.py                # <2>
+├── datos/                 # <3>
+│   └── tareas.json
+├── modulos/               # <4>
+│   ├── __init__.py
+│   ├── gestor.py
+│   └── utilidades.py
+└── requisitos.txt         # <5>
+```
+
+1. `README.md`: La portada de tu proyecto. Explica qué es, cómo se usa y cómo se instala.
+2. `main.py`: El punto de entrada. Es el archivo que ejecutas con `python main.py`.
+3. `datos/`: Donde se guardan los archivos de datos (JSON, CSV, etc.).
+4. `modulos/`: Tu código organizado en módulos. Cada archivo tiene una responsabilidad.
+5. `requisitos.txt`: Lista de dependencias externas (si las hay).
+
+> **Readability counts.** Cualquier programador que vea esta estructura sabe exactamente dónde buscar.
+
+## El archivo README.md: tu carta de presentación
+
+```markdown
+# Gestor de Tareas Personal
+
+Una aplicación de consola para gestionar tus tareas diarias.
+
+## ¿Qué hace?
+
+- Crear tareas con título y descripción
+- Marcar tareas como completadas
+- Eliminar tareas que ya no necesitas
+- Guardar todo automáticamente en un archivo
+
+## ¿Cómo usarlo?
+
+1. Ejecuta: `python main.py`
+2. Sigue el menú en pantalla
+3. Tus tareas se guardan automáticamente
+
+## Autor
+
+Tu Nombre - 2026
+```
+
+> **Explicit is better than implicit.** Un buen README le dice al usuario exactamente qué esperar.
+
+## El punto de entrada: main.py
+
+```python
+"""
+Gestor de Tareas Personal
+Aplicación de consola para gestionar tareas diarias.
+"""
+
+from modulos.gestor import GestorTareas  # <1>
+from modulos.utilidades import limpiar_pantalla  # <2>
+
+
+def main():  # <3>
+    """Función principal del programa."""
+    limpiar_pantalla()
+    print("=" * 50)
+    print("  GESTOR DE TAREAS PERSONAL")
+    print("=" * 50)
+
+    gestor = GestorTareas("datos/tareas.json")  # <4>
+    gestor.ejecutar()  # <5>
+
+
+if __name__ == "__main__":  # <6>
+    main()
+```
+
+1. Importamos el módulo principal que contiene la lógica del gestor.
+2. Importamos utilidades como limpiar pantalla, formatear texto, etc.
+3. `main()` es el punto de entrada. Solo orquesta, no implementa lógica.
+4. Creamos el gestor pasándole la ruta del archivo de datos.
+5. `ejecutar()` inicia el ciclo principal del programa.
+6. `if __name__ == "__main__"` asegura que `main()` solo se ejecute al correr el archivo directamente.
+
+> **Simple is better than complex.** `main.py` no hace magia. Solo conecta las piezas.
+
+## El módulo principal: gestor.py
+
+```python
+"""
+Módulo gestor de tareas.
+Contiene toda la lógica de negocio de la aplicación.
+"""
+
+import json
+import os
+
+
+class GestorTareas:  # <1>
+    """Gestiona las operaciones CRUD de las tareas."""
+
+    def __init__(self, archivo_datos):  # <2>
+        self.archivo = archivo_datos
+        self.tareas = self._cargar()
+
+    def _cargar(self):  # <3>
+        """Carga las tareas desde el archivo JSON."""
+        if os.path.exists(self.archivo):
+            with open(self.archivo, "r", encoding="utf-8") as f:
+                return json.load(f)
+        return []
+
+    def _guardar(self):  # <4>
+        """Guarda las tareas en el archivo JSON."""
+        with open(self.archivo, "w", encoding="utf-8") as f:
+            json.dump(self.tareas, f, indent=4, ensure_ascii=False)
+
+    def agregar(self, titulo, descripcion=""):  # <5>
+        """Agrega una nueva tarea a la lista."""
+        nueva = {
+            "id": len(self.tareas) + 1,
+            "titulo": titulo,
+            "descripcion": descripcion,
+            "completada": False,
+        }
+        self.tareas.append(nueva)
+        self._guardar()
+        return nueva
+
+    def listar(self):  # <6>
+        """Muestra todas las tareas."""
+        if not self.tareas:
+            print("No hay tareas pendientes.")
+            return
+
+        for tarea in self.tareas:
+            estado = "✅" if tarea["completada"] else "⬜"
+            print(f"  {estado} [{tarea['id']}] {tarea['titulo']}")
+
+    def ejecutar(self):  # <7>
+        """Ciclo principal del programa."""
+        while True:
+            print("\n1. Ver tareas")
+            print("2. Agregar tarea")
+            print("3. Salir")
+            opcion = input("Elige: ")
+
+            if opcion == "1":
+                self.listar()
+            elif opcion == "2":
+                titulo = input("Título: ")
+                self.agregar(titulo)
+            elif opcion == "3":
+                print("¡Hasta luego!")
+                break
+```
+
+1. La clase `GestorTareas` encapsula toda la lógica. Es el "cerebro" del programa.
+2. `__init__` recibe la ruta del archivo y carga los datos existentes.
+3. `_cargar` (con guión bajo = método privado) lee el archivo JSON si existe.
+4. `_guardar` escribe las tareas actuales al archivo JSON.
+5. `agregar` crea una nueva tarea, la añade a la lista y guarda.
+6. `listar` muestra todas las tareas con su estado visual.
+7. `ejecutar` es el bucle principal que muestra el menú y procesa opciones.
+
+## El módulo de utilidades: utilidades.py
+
+```python
+"""
+Utilidades comunes del proyecto.
+Funciones auxiliares que se reutilizan en varios módulos.
+"""
+
+import os
+
+
+def limpiar_pantalla():  # <1>
+    """Limpia la consola según el sistema operativo."""
+    os.system("cls" if os.name == "nt" else "clear")
+
+
+def pedir_entero(mensaje, minimo=1, maximo=999):  # <2>
+    """Pide un número entero válido al usuario."""
+    while True:
+        try:
+            valor = int(input(mensaje))
+            if minimo <= valor <= maximo:
+                return valor
+            print(f"El número debe estar entre {minimo} y {maximo}.")
+        except ValueError:
+            print("Por favor, ingresa un número válido.")
+
+
+def confirmar(mensaje):  # <3>
+    """Pide confirmación sí/no al usuario."""
+    while True:
+            respuesta = input(f"{mensaje} (s/n): ").lower()
+            if respuesta in ("s", "si", "sí"):
+                return True
+            if respuesta in ("n", "no"):
+                return False
+            print("Responde 's' o 'n'.")
+```
+
+1. `limpiar_pantalla` detecta si es Windows (`cls`) o Linux/Mac (`clear`).
+2. `pedir_entero` valida que la entrada sea un número dentro del rango.
+3. `confirmar` asegura una respuesta clara de sí o no.
+
+> **There should be one obvious way to do it.** Centraliza la validación en utilidades para no repetirla.
+
+## Resumen
+
+| Archivo | Propósito | Principio del Zen |
+|---------|-----------|-------------------|
+| `README.md` | Documentación del proyecto | Explicit is better than implicit |
+| `main.py` | Punto de entrada, orquesta | Simple is better than complex |
+| `modulos/gestor.py` | Lógica de negocio | Beautiful is better than ugly |
+| `modulos/utilidades.py` | Funciones reutilizables | Readability counts |
+| `datos/` | Archivos de datos | Separation of concerns |
+
+---
+
+**Anterior:** [10.1 Planificar tu proyecto](01-planificar-proyecto.qmd)
+
+**Siguiente:** [10.3 Proyecto guiado: Gestor de Tareas](03-proyecto-gestor-tareas.qmd)

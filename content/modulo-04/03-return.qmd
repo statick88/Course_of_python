@@ -1,0 +1,279 @@
+---
+title: "4.3 Return: el resultado que vuelve"
+subtitle: "La diferencia entre mostrar y devolver"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué hace `return` y por qué es diferente de `print()`
+- Devolver uno o múltiples valores desde una función
+- Usar `return` temprano para simplificar lógica
+- Comprender que toda función devuelve algo (incluso sin `return`)
+
+## `print()` vs `return`: la confusión más común
+
+Esta es la confusión #1 de quienes empiezan con funciones. Mira la diferencia:
+
+```python
+# ❌ print() solo muestra en pantalla — no puedes usar el resultado
+def mostrar_doble(numero):
+    print(numero * 2)
+
+resultado = mostrar_doble(5)  # Muestra: 10
+print(resultado)              # Muestra: None — ¡no hay valor!
+
+# ✅ return devuelve un valor — puedes usarlo después
+def calcular_doble(numero):
+    return numero * 2
+
+resultado = calcular_doble(5)  # No muestra nada
+print(resultado)               # Muestra: 10 — ¡ahora sí tienes el valor!
+```
+
+> **Explicit is better than implicit.** `print()` es para humanos que leen la pantalla. `return` es para el programa que necesita el dato.
+
+## La analogía de la cafetería
+
+Piensa en una cafetería:
+
+- **`print()`** es como el barista que grita tu pedido en voz alta. Lo escuchas, pero no puedes llevártelo.
+- **`return`** es como el barista que te entrega el café en una taza. Puedes llevártelo, usarlo, compartirlo.
+
+```python
+# print() — el barista grita
+def gritar_pedido():
+    print("¡Café latte para Ana!")
+
+gritar_pedido()  # Lo escuchas, pero no tienes café
+
+# return() — el barista te entrega
+def entregar_pedido():
+    return "Café latte para Ana"
+
+mi_cafe = entregar_pedido()  # Ahora tienes el café en tu variable
+print(mi_cafe)               # "Café latte para Ana"
+```
+
+## Return simple: un valor
+
+La forma más básica de devolver un resultado:
+
+```python
+def calcular_iva(precio):  # <1>
+    return precio * 0.15  # <2>
+
+iva = calcular_iva(100)  # <3>
+print(f"El IVA es: ${iva}")  # $15.0
+```
+
+1. La función recibe un precio.
+2. `return` calcula y devuelve el resultado inmediatamente.
+3. El valor devuelto se guarda en la variable `iva`.
+
+## Return temprano: salir antes de tiempo
+
+Puedes usar `return` en cualquier punto de la función. Cuando Python encuentra un `return`, **sale inmediatamente** de la función:
+
+```python
+def verificar_acceso(edad):  # <1>
+    if edad < 0:
+        return "Error: edad inválida"  # <2>
+    if edad < 18:
+        return "Acceso denegado: menor de edad"  # <3>
+    if edad >= 65:
+        return "Acceso preferencial: adulto mayor"  # <4>
+    return "Acceso permitido"  # <5>
+
+print(verificar_acceso(-5))   # Error: edad inválida
+print(verificar_acceso(15))   # Acceso denegado: menor de edad
+print(verificar_acceso(70))   # Acceso preferencial: adulto mayor
+print(verificar_acceso(30))   # Acceso permitido
+```
+
+1. La función verifica diferentes condiciones de edad.
+2. Si la edad es negativa, retorna inmediatamente con un error. No sigue ejecutando el resto.
+3. Si es menor de 18, retorna "denegado" y sale.
+4. Si es 65 o más, retorna "preferencial" y sale.
+5. Si ninguna condición anterior se cumplió, retorna "permitido".
+
+> **Simple is better than complex.** Los returns tempranos eliminan la necesidad de `else` anidados y hacen el código más plano y legible.
+
+## Devolver múltiples valores
+
+Python permite devolver varios valores a la vez. En realidad, devuelve una **tupla**:
+
+```python
+def dividir(dividendo, divisor):  # <1>
+    if divisor == 0:
+        return None, None  # <2>
+    cociente = dividendo // divisor
+    residuo = dividendo % divisor
+    return cociente, residuo  # <3>
+
+q, r = dividir(17, 5)  # <4>
+print(f"Cociente: {q}, Residuo: {r}")  # Cociente: 3, Residuo: 2
+```
+
+1. La función necesita devolver dos resultados: cociente y residuo.
+2. Puedes devolver `None, None` para indicar error en múltiples valores.
+3. `return cociente, residuo` en realidad devuelve la tupla `(3, 2)`.
+4. Python desempaqueta automáticamente: `q = 3`, `r = 2`.
+
+```python
+# Otro ejemplo: estadísticas básicas
+def estadisticas(numeros):  # <1>
+    if not numeros:
+        return 0, 0, 0
+    return min(numeros), max(numeros), sum(numeros) / len(numeros)  # <2>
+
+minimo, maximo, promedio = estadisticas([4, 8, 15, 16, 23, 42])  # <3>
+print(f"Mín: {minimo}, Máx: {maximo}, Prom: {promedio:.1f}")
+```
+
+1. Calcula tres estadísticas de una lista de números.
+2. Devuelve tres valores en una tupla: mínimo, máximo y promedio.
+3. Desempaque múltiple: cada variable recibe su valor correspondiente.
+
+## Return sin valor: devuelve `None`
+
+Si una función no tiene `return`, o tiene `return` sin valor, devuelve `None`:
+
+```python
+def solo_imprimir(mensaje):  # <1>
+    print(mensaje)
+    # No hay return — devuelve None automáticamente
+
+resultado = solo_imprimir("Hola")
+print(resultado)  # None
+
+def limpiar_pantalla():  # <2>
+    return  # Return sin valor — también devuelve None
+
+resultado2 = limpiar_pantalla()
+print(resultado2)  # None
+```
+
+1. Sin `return`, Python agrega `return None` al final automáticamente.
+2. `return` sin valor es equivalente a `return None`.
+
+## Return en condicionales: patrones comunes
+
+### Patrón: función booleana
+
+```python
+# ✅ Retorna directamente el resultado de la comparación
+def es_par(numero):
+    return numero % 2 == 0  # <1>
+
+# ❌ Innecesariamente largo
+def es_par_largo(numero):
+    if numero % 2 == 0:
+        return True
+    else:
+        return False
+```
+
+1. `numero % 2 == 0` ya es un booleano. No necesitas `if/else` para devolverlo.
+
+### Patrón: validación con return temprano
+
+```python
+def validar_contraseña(contraseña):  # <1>
+    if len(contraseña) < 8:
+        return False, "Mínimo 8 caracteres"
+    if not any(c.isupper() for c in contraseña):
+        return False, "Necesita al menos una mayúscula"
+    if not any(c.isdigit() for c in contraseña):
+        return False, "Necesita al menos un número"
+    return True, "Contraseña válida"  # <2>
+
+valida, mensaje = validar_contraseña("hola123")
+print(f"¿Válida? {valida} — {mensaje}")
+```
+
+1. Cada validación retorna temprano si falla. Solo una línea por validación.
+2. Si pasa todas las validaciones, retorna éxito.
+
+## El flujo de ejecución con return
+
+```python
+def procesar_pedido(producto, cantidad):
+    print("1. Iniciando procesamiento...")  # <1>
+
+    if cantidad <= 0:
+        return "Error: cantidad inválida"  # <2>
+
+    print("2. Verificando inventario...")
+    precio = 10 * cantidad
+    print(f"3. Calculando: ${precio}")
+
+    return precio  # <3>
+
+# Esta línea NUNCA se ejecuta si hay un return antes
+# print("4. Finalizando")  # <4>
+```
+
+1. Esta línea siempre se ejecuta al inicio.
+2. Si `cantidad <= 0`, retorna aquí y **todo lo demás se salta**.
+3. Si no hubo return temprano, llega aquí y devuelve el precio.
+4. Código después del `return` nunca se ejecuta. Python lo marca como inalcanzable.
+
+## Errores comunes
+
+### ❌ Usar `print()` cuando necesitas `return`
+
+```python
+# ❌ No puedes usar el resultado en otro cálculo
+def sumar_print(a, b):
+    print(a + b)
+
+resultado = sumar_print(5, 3)  # Muestra 8
+print(resultado * 2)  # TypeError: NoneType * int
+
+# ✅ Con return sí puedes
+def sumar_return(a, b):
+    return a + b
+
+resultado = sumar_return(5, 3)  # Devuelve 8
+print(resultado * 2)  # 16 — funciona
+```
+
+### ❌ Código después del return
+
+```python
+def calcular_precio(base):
+    return base * 1.15
+    print("Calculando...")  # ⚠️ Nunca se ejecuta — código muerto
+```
+
+### ❌ Olvidar el return en una rama
+
+```python
+# ❌ Si numero es negativo, devuelve None
+def valor_absoluto(numero):
+    if numero >= 0:
+        return numero
+    # Falta: return -numero
+
+# ✅ Todas las ramas devuelven algo
+def valor_absoluto_correcto(numero):
+    if numero >= 0:
+        return numero
+    return -numero
+```
+
+## Resumen
+
+| Concepto | Ejemplo | Principio del Zen |
+|----------|---------|-------------------|
+| `return` vs `print()` | `return x` devuelve, `print(x)` muestra | Explicit is better than implicit |
+| Return temprano | `if error: return "error"` | Simple is better than complex |
+| Múltiples valores | `return a, b, c` | Readability counts |
+| Función booleana | `return x > 0` | Beautiful is better than ugly |
+| Return implícito | Sin return → devuelve `None` | Errors should never pass silently |
+
+---
+
+**Anterior:** [4.2 Parámetros y argumentos](02-parametros-argumentos.qmd) | **Siguiente:** [4.4 Scope de variables](04-scope-variables.qmd)

@@ -1,0 +1,97 @@
+---
+title: "Desafío 4: Generador de DNI"
+difficulty: "⭐⭐ Media"
+estimated_time: "15 minutos"
+---
+
+## Situación
+
+En varios países, el Documento Nacional de Identidad (DNI) tiene un dígito verificador que se calcula a partir del número. Este dígito ayuda a detectar errores de escritura.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Pida un número de DNI (8 dígitos)
+2. Valide que sea un número de exactamente 8 dígitos
+3. Calcule el dígito verificador usando el algoritmo del módulo 23:
+   - El DNI se divide entre 23
+   - El residuo determina la letra según esta tabla:
+
+| Residuo | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+|---------|---|---|---|---|---|---|---|---|---|---|----|----|
+| Letra   | T | R | W | A | G | M | Y | F | P | D | X  | B  |
+
+| Residuo | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 |
+|---------|----|----|----|----|----|----|----|----|----|----|----|
+| Letra   | N  | J  | Z  | S  | Q  | V  | H  | L  | C  | K  | E  |
+
+4. Muestre el DNI completo con su letra verificadora
+
+## Ejemplo de ejecución
+
+```
+=== GENERADOR DE DNI ===
+
+Ingresa tu número de DNI (8 dígitos): 12345678
+
+--- Resultado ---
+DNI: 12345678
+Residuo (12345678 % 23): 14
+Letra verificadora: Z
+DNI completo: 12345678-Z
+```
+
+## Pista
+
+- Usa una string como tabla de letras: `"TRWAGMYFPDXBNJZSQVHLCKE"`
+- El residuo es el índice: `letra = tabla[dni % 23]`
+- Valida con `.isdigit()` y `len() == 8`
+- Usa f-strings para formatear la salida
+
+## Criterios de éxito
+
+- [ ] Valida que el DNI tenga exactamente 8 dígitos
+- [ ] Calcula el residuo correctamente
+- [ ] Obtiene la letra correcta de la tabla
+- [ ] Muestra el DNI completo formateado
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 4: Generador de DNI
+# Solución de referencia
+
+print("=== GENERADOR DE DNI ===")
+print()
+
+# <1> Pedir y validar el DNI
+dni_input = input("Ingresa tu número de DNI (8 dígitos): ").strip()
+
+if not dni_input.isdigit() or len(dni_input) != 8:
+    print("✗ Error: el DNI debe tener exactamente 8 dígitos numéricos.")
+else:
+    # <2> Convertir a número
+    dni_numero = int(dni_input)
+    
+    # <3> Tabla de letras verificadoras (índice = residuo % 23)
+    letras = "TRWAGMYFPDXBNJZSQVHLCKE"
+    
+    # <4> Calcular residuo y obtener letra
+    residuo = dni_numero % 23
+    letra = letras[residuo]
+    
+    # <5> Mostrar resultado
+    print()
+    print("--- Resultado ---")
+    print(f"DNI: {dni_input}")
+    print(f"Residuo ({dni_numero} % 23): {residuo}")
+    print(f"Letra verificadora: {letra}")
+    print(f"DNI completo: {dni_input}-{letra}")
+```
+</details>
+
+---
+
+[← Desafío 3](desafio-03-validador-edad.qmd) | [Desafío 5 →](desafio-05-cifrado-cesar.qmd)

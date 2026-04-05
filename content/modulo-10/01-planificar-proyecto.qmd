@@ -1,0 +1,175 @@
+---
+title: "10.1 Planificar tu proyecto: del problema a la solución"
+subtitle: "Antes de escribir código, entiende qué estás construyendo"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender por qué la planificación es más importante que el código
+- Aprender a descomponer un problema grande en partes manejables
+- Crear un plan de implementación paso a paso
+- Identificar los datos, funciones y archivos que necesitarás
+
+## La analogía del arquitecto
+
+Imagina que quieres construir una casa. ¿Qué harías primero?
+
+- **¿Opción A?** Comprar ladrillos y empezar a ponerlos donde te parezca
+- **¿Opción B?** Dibujar planos, calcular materiales, y luego construir
+
+La Opción A produce un desastre. La Opción B produce un hogar.
+
+**Programar es exactamente igual.** Los programadores novatos empiezan a escribir código sin planificar. Los programadores profesionales dibujan el plano primero.
+
+> **Simple is better than complex.** Un buen plan simple vale más que mil líneas de código sin dirección.
+
+## El proceso de planificación en 4 pasos
+
+### Paso 1: Define el problema con tus propias palabras
+
+Antes de tocar el teclado, responde:
+
+| Pregunta | Ejemplo: Gestor de Tareas |
+|----------|---------------------------|
+| ¿Qué problema resuelvo? | Olvido mis tareas y no sé qué es urgente |
+| ¿Quién lo usa? | Yo mismo, o cualquier persona organizada |
+| ¿Qué debe HACER el programa? | Crear, listar, completar y borrar tareas |
+| ¿Qué datos necesito? | Título, descripción, estado, fecha |
+| ¿Dónde se guardan los datos? | En un archivo de texto (JSON) |
+
+### Paso 2: Dibuja el flujo del programa
+
+No necesitas herramientas fancy. Un papel y lápiz bastan:
+
+```
+┌─────────────────────────────────────────────┐
+│           MENÚ PRINCIPAL                     │
+│  1. Ver todas las tareas                     │
+│  2. Agregar nueva tarea                      │
+│  3. Marcar tarea como completada             │
+│  4. Eliminar tarea                           │
+│  5. Guardar y salir                          │
+└─────────────────────────────────────────────┘
+         │
+         ▼
+┌─────────────────────┐    ┌─────────────────────┐
+│  Leer archivo JSON  │───▶│  Mostrar en pantalla │
+└─────────────────────┘    └─────────────────────┘
+```
+
+### Paso 3: Lista las funciones que necesitas
+
+Cada acción del menú se convierte en una función:
+
+| Función | Qué hace | Datos de entrada | Resultado |
+|---------|----------|-------------------|-----------|
+| `cargar_tareas()` | Lee el archivo JSON | Ruta del archivo | Lista de tareas |
+| `guardar_tareas()` | Escribe al archivo JSON | Lista de tareas | None |
+| `mostrar_menu()` | Imprime las opciones | Ninguna | Opción elegida |
+| `agregar_tarea()` | Crea una nueva tarea | Título, descripción | Tarea creada |
+| `completar_tarea()` | Cambia estado a "hecho" | ID de tarea | None |
+| `eliminar_tarea()` | Borra una tarea | ID de tarea | None |
+| `listar_tareas()` | Muestra todas las tareas | Lista de tareas | None |
+
+### Paso 4: Define la estructura de datos
+
+¿Cómo se ve una "tarea" en tu programa?
+
+```python
+# Una tarea es un diccionario con esta estructura:
+tarea_ejemplo = {
+    "id": 1,                    # <1>
+    "titulo": "Estudiar Python", # <2>
+    "descripcion": "Módulo 10",  # <3>
+    "completada": False,         # <4>
+    "fecha_creacion": "2026-04-04" # <5>
+}
+```
+
+1. `id`: identificador único numérico. Cada tarea tiene uno diferente.
+2. `titulo`: nombre corto de la tarea. Es lo que ves en la lista.
+3. `descripcion`: detalles adicionales. Explica qué hay que hacer.
+4. `completada`: booleano que indica si ya se terminó. `False` = pendiente.
+5. `fecha_creacion`: cuándo se creó la tarea. Formato ISO (YYYY-MM-DD).
+
+> **Readability counts.** Si tu estructura de datos es clara, el código se escribe casi solo.
+
+## El principio: divide y vencerás
+
+Un proyecto grande asusta. Pero si lo divides en piezas pequeñas, cada pieza es fácil.
+
+```python
+# ❌ MAL: Todo en una función gigante
+def programa_principal():
+    # 200 líneas de código mezclado
+    # Leer, escribir, mostrar, calcular, todo junto
+    pass
+
+# ✅ BIEN: Cada función hace UNA cosa
+def main():
+    tareas = cargar_tareas()       # Solo lee
+    while True:
+        opcion = mostrar_menu()    # Solo muestra
+        ejecutar_opcion(opcion, tareas)  # Solo delega
+```
+
+> **There should be one — and preferably only one — obvious way to do it.** Cada función tiene una responsabilidad clara.
+
+## Tu turno: planifica tu proyecto
+
+Antes de escribir una sola línea de código, completa esta plantilla:
+
+```
+PROYECTO: ________________________________
+
+PROBLEMA QUE RESUELVO:
+_________________________________________
+
+USUARIO:
+_________________________________________
+
+DATOS QUE NECESITO:
+- ________________________________
+- ________________________________
+- ________________________________
+
+FUNCIONES QUE VOY A CREAR:
+1. ________________________________
+2. ________________________________
+3. ________________________________
+4. ________________________________
+5. ________________________________
+
+ESTRUCTURA DE DATOS PRINCIPAL:
+_________________________________________
+```
+
+## Errores comunes al planificar
+
+| Error | ❌ Así no | ✅ Así sí |
+|-------|-----------|-----------|
+| Empezar a codear sin plan | Escribir `main()` y ver qué pasa | Dibujar el flujo primero |
+| Querer hacer todo perfecto | "Necesito base de datos, login, API..." | Empieza con lo mínimo funcional |
+| No definir los datos | "Ya veré qué tipo uso" | Define diccionarios/listas antes |
+| Una función gigante | Todo en `main()` | Divide en funciones pequeñas |
+| No pensar en errores | "El usuario siempre hará lo correcto" | ¿Qué pasa si ingresa texto en vez de número? |
+
+> **Errors should never pass silently.** Planifica también los casos de error, no solo el camino feliz.
+
+## Resumen
+
+| Concepto | Idea clave | Principio del Zen |
+|----------|------------|-------------------|
+| Planificar antes de codear | Dibujar el plano antes de construir | Simple is better than complex |
+| Dividir en funciones | Cada función hace UNA cosa | Readability counts |
+| Definir estructura de datos | Diccionarios con campos claros | Explicit is better than implicit |
+| Empezar simple | Mínimo funcional primero | Simple is better than complex |
+| Pensar en errores | Validar entrada del usuario | Errors should never pass silently |
+
+---
+
+**Anterior:** [Módulo 10: Inicio](index.qmd)
+
+**Siguiente:** [10.2 Estructura profesional del proyecto](02-estructura-proyecto.qmd)

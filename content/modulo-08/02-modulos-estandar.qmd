@@ -1,0 +1,254 @@
+---
+title: "8.2 La biblioteca estándar: módulos que ya tienes"
+subtitle: "Python viene con pilas incluidas"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Conocer los módulos más útiles de la biblioteca estándar
+- Usar `math`, `random`, `datetime`, `os` y `pathlib`
+- Saber dónde buscar cuando necesitas una funcionalidad
+- Entender la filosofía "batteries included" de Python
+
+## Python viene con todo
+
+Cuando Guido van Rossum creó Python, decidió que el lenguaje viniera con **"batteries included"** (pilas incluidas). Esto significa que al instalar Python, ya tienes acceso a **más de 200 módulos** listos para usar.
+
+Es como comprar un teléfono que ya viene con todas las apps esenciales instaladas: calculadora, calendario, cámara, mapas. No necesitas descargar nada extra.
+
+```python
+# Todo esto funciona sin instalar nada
+import math       # Matemáticas avanzadas
+import random     # Números aleatorios
+import datetime   # Fechas y horas
+import os         # Sistema operativo
+import pathlib    # Rutas de archivos
+import json       # Datos en formato JSON
+```
+
+> **Simple is better than complex.** Antes de instalar un paquete externo, revisa si la biblioteca estándar ya lo tiene.
+
+## math — La calculadora científica
+
+El módulo `math` contiene funciones matemáticas que van más allá de las operaciones básicas:
+
+```python
+import math  # <1>
+
+# Funciones básicas
+raiz = math.sqrt(144)       # 12.0 — raíz cuadrada <2>
+potencia = math.pow(2, 10)  # 1024.0 — 2 elevado a 10 <3>
+absoluto = math.fabs(-7.5)  # 7.5 — valor absoluto <4>
+
+# Constantes
+print(math.pi)    # 3.141592653589793 <5>
+print(math.e)     # 2.718281828459045 <6>
+print(math.tau)   # 6.283185307179586 — tau = 2*pi <7>
+
+# Redondeo
+print(math.ceil(3.2))   # 4 — redondea hacia arriba <8>
+print(math.floor(3.8))  # 3 — redondea hacia abajo <9>
+print(math.trunc(3.9))  # 3 — trunca (elimina decimales) <10>
+```
+
+1. Importa el módulo `math`. Ya viene con Python, no necesitas instalar nada.
+2. `math.sqrt()` calcula la raíz cuadrada. Equivale a `144 ** 0.5` pero más legible.
+3. `math.pow()` eleva un número a una potencia. Devuelve siempre `float`.
+4. `math.fabs()` devuelve el valor absoluto como `float`. Diferente de `abs()` que mantiene el tipo.
+5. `math.pi` es la constante π con máxima precisión. Úsalo en vez de escribir `3.14159`.
+6. `math.e` es el número de Euler, base del logaritmo natural.
+7. `math.tau` (τ) es 2π. Algunos matemáticos prefieren τ sobre π porque es más natural en fórmulas circulares.
+8. `math.ceil()` redondea siempre hacia arriba (al techo).
+9. `math.floor()` redondea siempre hacia abajo (al piso).
+10. `math.trunc()` elimina los decimales sin redondear, como cortar con tijera.
+
+### Comparación: `math` vs funciones integradas
+
+| Función | `math` | Integrada | Diferencia |
+|---------|--------|-----------|------------|
+| Valor absoluto | `math.fabs(-3)` → `3.0` | `abs(-3)` → `3` | `math` siempre devuelve `float` |
+| Potencia | `math.pow(2, 3)` → `8.0` | `2 ** 3` → `8` | `math` siempre devuelve `float` |
+| Redondeo | `math.ceil(3.2)` → `4` | `round(3.2)` → `3` | `ceil` siempre sube, `round` redondea al más cercano |
+
+## random — El dado de Python
+
+El módulo `random` genera números aleatorios. Es perfecto para juegos, simulaciones y pruebas:
+
+```python
+import random  # <1>
+
+# Número entero aleatorio en un rango
+dado = random.randint(1, 6)  # <2> — entre 1 y 6 (ambos incluidos)
+
+# Número decimal aleatorio entre 0.0 y 1.0
+azar = random.random()  # <3> — ejemplo: 0.374829
+
+# Elegir un elemento al azar de una lista
+colores = ["rojo", "verde", "azul", "amarillo"]
+color = random.choice(colores)  # <4> — uno al azar
+
+# Mezclar una lista (modifica la original)
+cartas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+random.shuffle(cartas)  # <5> — las cartas quedan desordenadas
+
+# Obtener varios elementos sin repetir
+ganadores = random.sample(range(1, 100), 3)  # <6> — 3 números únicos
+```
+
+1. Importa el módulo `random`. Genera pseudoaleatorios (suficientemente buenos para la mayoría de usos).
+2. `randint(1, 6)` simula un dado: devuelve un entero entre 1 y 6, ambos incluidos.
+3. `random()` devuelve un float entre 0.0 (incluido) y 1.0 (excluido). Es la base de todo lo demás.
+4. `choice()` elige un elemento al azar de cualquier secuencia. Perfecto para sorteos.
+5. `shuffle()` desordena la lista **en su lugar** (modifica la original, no crea una nueva).
+6. `sample()` devuelve una lista con N elementos únicos elegidos al azar. No repite elementos.
+
+### Semilla: reproducir la aleatoriedad
+
+```python
+import random
+
+random.seed(42)  # <1> — fija la semilla
+print(random.randint(1, 100))  # Siempre será 82 <2>
+print(random.randint(1, 100))  # Siempre será 15
+
+random.seed(42)  # <3> — reinicia la semilla
+print(random.randint(1, 100))  # Otra vez 82 <4>
+```
+
+1. `seed(42)` inicializa el generador con un valor fijo. El mismo número siempre produce la misma secuencia.
+2. Con semilla 42, el primer `randint(1, 100)` siempre devuelve `82`. Es predecible.
+3. Reiniciar la semilla al mismo valor reinicia toda la secuencia.
+4. Por eso es `82` otra vez. Útil para pruebas y debugging.
+
+> **Errors should never pass silently.** Para seguridad (contraseñas, tokens), **NO** uses `random`. Usa `secrets` en su lugar.
+
+## datetime — El reloj y calendario
+
+El módulo `datetime` maneja fechas y horas. Es esencial para logs, agendas y cualquier sistema que registre cuándo pasan las cosas:
+
+```python
+from datetime import datetime, date, timedelta  # <1>
+
+# Fecha y hora actual
+ahora = datetime.now()  # <2> — ejemplo: 2026-04-04 15:30:00.123456
+hoy = date.today()      # <3> — ejemplo: 2026-04-04
+
+# Crear una fecha específica
+navidad = date(2026, 12, 25)  # <4> — 25 de diciembre de 2026
+
+# Formatear fecha como texto
+texto = ahora.strftime("%d/%m/%Y %H:%M")  # <5> — "04/04/2026 15:30"
+
+# Operaciones con fechas
+una_semana = timedelta(days=7)  # <6> — un período de 7 días
+futuro = hoy + una_semana       # <7> — la fecha de hoy + 7 días
+
+# Calcular diferencia entre fechas
+dias_para_navidad = navidad - hoy  # <8> — timedelta con los días restantes
+print(f"Faltan {dias_para_navidad.days} días para Navidad")
+```
+
+1. Importa las clases más usadas: `datetime` (fecha + hora), `date` (solo fecha), `timedelta` (período de tiempo).
+2. `datetime.now()` devuelve la fecha y hora exacta del momento en que se ejecuta.
+3. `date.today()` devuelve solo la fecha (sin hora). Más limpio si no necesitas la hora.
+4. `date(año, mes, día)` crea una fecha específica. Los argumentos deben ser números válidos.
+5. `strftime()` convierte una fecha a texto con formato. `%d` = día, `%m` = mes, `%Y` = año con 4 dígitos, `%H` = hora, `%M` = minutos.
+6. `timedelta` representa una duración de tiempo. Puedes sumar o restar a fechas.
+7. Sumar un `timedelta` a una `date` produce una nueva `date`. Las fechas son inmutables.
+8. Restar dos fechas devuelve un `timedelta`. `.days` extrae el número de días.
+
+### Códigos de formato más usados
+
+| Código | Significado | Ejemplo |
+|--------|-------------|---------|
+| `%d` | Día del mes | `04` |
+| `%m` | Mes (número) | `04` |
+| `%Y` | Año completo | `2026` |
+| `%y` | Año corto | `26` |
+| `%H` | Hora (24h) | `15` |
+| `%M` | Minutos | `30` |
+| `%S` | Segundos | `45` |
+| `%A` | Día de la semana | `Saturday` |
+| `%B` | Mes completo | `April` |
+
+## os y pathlib — El sistema de archivos
+
+El módulo `os` te permite interactuar con el sistema operativo. `pathlib` es la forma moderna de manejar rutas:
+
+```python
+import os  # <1>
+from pathlib import Path  # <2>
+
+# Con os — la forma clásica
+directorio_actual = os.getcwd()  # <3> — dónde estás ahora
+archivos = os.listdir(".")       # <4> — lista de archivos en el directorio
+
+# Con pathlib — la forma moderna y recomendada
+ruta = Path("documentos/informe.txt")  # <5> — crea un objeto ruta
+print(ruta.name)      # "informe.txt" — solo el nombre <6>
+print(ruta.suffix)    # ".txt" — la extensión <7>
+print(ruta.stem)      # "informe" — el nombre sin extensión <8>
+print(ruta.parent)    # "documentos" — el directorio padre <9>
+
+# Crear rutas de forma segura (funciona en Windows y Mac)
+ruta_segura = Path("carpeta") / "subcarpeta" / "archivo.txt"  # <10>
+```
+
+1. `os` es el módulo clásico para interactuar con el sistema operativo.
+2. `Path` de `pathlib` es la forma **moderna** de manejar rutas. Más legible y segura.
+3. `os.getcwd()` devuelve el directorio de trabajo actual (Get Current Working Directory).
+4. `os.listdir()` lista todos los archivos y carpetas en el directorio indicado. `"."` significa el directorio actual.
+5. `Path()` crea un objeto que representa una ruta. Puedes extraer información de ella fácilmente.
+6. `.name` devuelve el nombre del archivo con extensión.
+7. `.suffix` devuelve solo la extensión del archivo.
+8. `.stem` devuelve el nombre del archivo sin la extensión.
+9. `.parent` devuelve la ruta del directorio que contiene el archivo.
+10. El operador `/` en `Path` une rutas de forma segura. Funciona igual en Windows (`\`) y Mac/Linux (`/`).
+
+## json — El lenguaje universal de datos
+
+JSON es el formato más usado para intercambiar datos entre programas. Python lo maneja nativamente:
+
+```python
+import json  # <1>
+
+# De diccionario Python a texto JSON (serializar)
+datos = {
+    "nombre": "Ana",
+    "edad": 28,
+    "cursos": ["Python", "JavaScript"]
+}
+texto_json = json.dumps(datos, indent=2)  # <2>
+print(texto_json)
+
+# De texto JSON a diccionario Python (deserializar)
+recuperado = json.loads(texto_json)  # <3>
+print(recuperado["nombre"])  # "Ana"
+```
+
+1. `json` viene con Python. No necesitas instalar nada para trabajar con JSON.
+2. `json.dumps()` convierte un diccionario Python a texto JSON. `indent=2` lo formatea bonito con 2 espacios.
+3. `json.loads()` convierte texto JSON de vuelta a un diccionario Python. `loads` = "load string".
+
+## Resumen
+
+| Módulo | Para qué sirve | Función estrella |
+|--------|----------------|------------------|
+| `math` | Matemáticas avanzadas | `math.sqrt()`, `math.pi` |
+| `random` | Números aleatorios | `random.randint()`, `random.choice()` |
+| `datetime` | Fechas y horas | `datetime.now()`, `timedelta()` |
+| `os` | Sistema operativo | `os.getcwd()`, `os.listdir()` |
+| `pathlib` | Rutas de archivos | `Path()`, `.name`, `.suffix` |
+| `json` | Datos en formato JSON | `json.dumps()`, `json.loads()` |
+
+| Principio del Zen | Aplicación |
+|-------------------|------------|
+| Batteries included | Python ya tiene módulos para casi todo |
+| Simple is better than complex | Usa `pathlib` en vez de `os.path` — es más claro |
+| Readability counts | `json.dumps(datos, indent=2)` es más legible que sin formato |
+
+---
+
+**Anterior:** [8.1 Importar módulos](01-importar-modulos.qmd) | **Siguiente:** [8.3 Crear tus propios módulos](03-crear-modulos.qmd)

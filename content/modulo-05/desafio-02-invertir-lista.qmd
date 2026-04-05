@@ -1,0 +1,105 @@
+---
+title: "Desafío 2: Invertir una lista"
+difficulty: "⭐ Fácil"
+estimated_time: "5 minutos"
+---
+
+## Situación
+
+Estás construyendo un reproductor de música y necesitas una función que invierta el orden de reproducción de una playlist. El usuario quiere escuchar las canciones en orden inverso.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Tenga una lista de canciones
+2. Invierta el orden de la lista (de 3 formas diferentes)
+3. Muestre la lista original y la invertida
+
+## Ejemplo de ejecución
+
+```
+🎵 Inversor de Playlist
+
+Playlist original:
+  1. Bohemian Rhapsody
+  2. Hotel California
+  3. Stairway to Heaven
+  4. Imagine
+  5. Yesterday
+
+Playlist invertida (con slicing):
+  1. Yesterday
+  2. Imagine
+  3. Stairway to Heaven
+  4. Hotel California
+  5. Bohemian Rhapsody
+```
+
+## Pista
+
+- Hay al menos 3 formas de invertir una lista en Python
+- `lista[::-1]` crea una copia invertida
+- `lista.reverse()` invierte en su lugar
+- `reversed(lista)` devuelve un iterador invertido
+
+## Criterios de éxito
+
+- [ ] Muestra la lista original sin modificarla
+- [ ] Invierte la lista correctamente
+- [ ] Numera cada canción en la salida
+- [ ] Usa al menos 2 métodos diferentes de inversión
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 2: Invertir una lista
+# Solución de referencia
+
+playlist = [ # <1>
+    "Bohemian Rhapsody",
+    "Hotel California",
+    "Stairway to Heaven",
+    "Imagine",
+    "Yesterday",
+]
+
+print("🎵 Inversor de Playlist")
+print()
+
+# Mostrar original
+print("Playlist original:")
+for i, cancion in enumerate(playlist, 1): # <2>
+    print(f"  {i}. {cancion}")
+
+# Método 1: slicing (crea copia, no modifica original)
+invertida_slicing = playlist[::-1] # <3>
+
+print()
+print("Playlist invertida (con slicing):")
+for i, cancion in enumerate(invertida_slicing, 1): # <4>
+    print(f"  {i}. {cancion}")
+
+# Método 2: reversed() con list()
+invertida_reversed = list(reversed(playlist)) # <5>
+
+# Verificar que ambas formas dan el mismo resultado
+print()
+print(f"¿Ambos métodos dan el mismo resultado? {invertida_slicing == invertida_reversed}")
+
+# Verificar que la original no cambió
+print(f"¿La original sigue intacta? {playlist[0] == 'Bohemian Rhapsody'}")
+```
+
+1. Lista original de 5 canciones.
+2. `enumerate(playlist, 1)` numera desde 1 para mostrar la playlist.
+3. `playlist[::-1]` crea una nueva lista invertida. La original no se modifica.
+4. Muestra la playlist invertida numerada.
+5. `reversed(playlist)` devuelve un iterador. `list()` lo convierte en lista.
+
+</details>
+
+---
+
+[← Desafío 1](desafio-01-promedio-notas.qmd) | [Desafío 3 →](desafio-03-eliminar-duplicados.qmd)

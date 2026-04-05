@@ -1,0 +1,123 @@
+---
+title: "Quiz: Módulo 1 — Introducción a Python"
+---
+
+## Evaluación del Módulo 1
+
+Responde las siguientes preguntas para evaluar tu comprensión de los conceptos fundamentales de Python.
+
+::: {.quizdown}
+
+### ¿Qué función se usa para mostrar texto en pantalla?
+
+- [ ] input()
+- [x] print()
+- [ ] show()
+- [ ] display()
+
+> **Explicación:** `print()` es la función incorporada de Python que envía texto a la salida estándar (pantalla).
+
+---
+
+### ¿Qué tipo de dato es `3.14`?
+
+- [ ] int
+- [ ] str
+- [x] float
+- [ ] bool
+
+> **Explicación:** Los números con decimales son de tipo `float` en Python.
+
+---
+
+### ¿Qué devuelve siempre la función `input()`?
+
+- [ ] Un número entero
+- [x] Un texto (str)
+- [ ] Un booleano
+- [ ] Una lista
+
+> **Explicación:** `input()` siempre devuelve una cadena de texto (str), incluso si el usuario escribe un número.
+
+---
+
+### ¿Cuál es la convención correcta para nombrar variables en Python?
+
+- [ ] camelCase
+- [x] snake_case
+- [ ] PascalCase
+- [ ] kebab-case
+
+> **Explicación:** Python usa snake_case por convención (PEP 8): `nombre_usuario`, `edad_maxima`.
+
+---
+
+### ¿Qué hace `"hola" * 3`?
+
+- [ ] Da un error
+- [x] Produce `"holaholahola"`
+- [ ] Produce `"hola 3"`
+- [ ] Produce `["hola", "hola", "hola"]`
+
+> **Explicación:** El operador `*` con texto repite la cadena el número de veces indicado.
+
+---
+
+### ¿Cuál es el resultado de `10 // 3`?
+
+- [ ] 3.33
+- [x] 3
+- [ ] 1
+- [ ] 10
+
+> **Explicación:** `//` es la división entera, que descarta los decimales y devuelve solo la parte entera.
+
+---
+
+### ¿Qué palabra reservada se usa para definir una función?
+
+- [ ] function
+- [x] def
+- [ ] func
+- [ ] define
+
+> **Explicación:** En Python, las funciones se definen con `def nombre_funcion():`.
+
+---
+
+### ¿Cuál es el resultado de `bool(0)`?
+
+- [ ] True
+- [x] False
+- [ ] Error
+- [ ] None
+
+> **Explicación:** En Python, `0`, `""`, `[]`, `{}`, y `None` se evalúan como `False`. Todo lo demás es `True`.
+
+---
+
+### ¿Qué hace el método `.strip()` en un string?
+
+- [ ] Divide el texto en palabras
+- [x] Elimina espacios al inicio y final
+- [ ] Convierte a mayúsculas
+- [ ] Reemplaza caracteres
+
+> **Explicación:** `"  hola  ".strip()` devuelve `"hola"`.
+
+---
+
+### ¿Qué principio del Zen de Python dice "El código se lee más veces de las que se escribe"?
+
+- [ ] Beautiful is better than ugly
+- [ ] Simple is better than complex
+- [x] Readability counts
+- [ ] Explicit is better than implicit
+
+> **Explicación:** "Readability counts" enfatiza que el código debe ser legible porque se lee mucho más de lo que se escribe.
+
+:::
+
+---
+
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 1](../content/modulo-01/index.qmd)

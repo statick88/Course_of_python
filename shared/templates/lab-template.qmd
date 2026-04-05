@@ -1,0 +1,93 @@
+---
+title: "{{LAB_TITLE}}"
+subtitle: "Laboratorio {{LAB_NUMBER}} - {{MODULE_TITLE}}"
+author: "Diego Saavedra"
+date: "{{DATE}}"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
+    code-copy: true
+    number-sections: true
+execute:
+  echo: true
+  warning: false
+  error: true
+  freeze: auto
+---
+
+## Objetivos del Laboratorio
+
+- {{LAB_OBJECTIVE_1}}
+- {{LAB_OBJECTIVE_2}}
+- {{LAB_OBJECTIVE_3}}
+
+## Requisitos Previos
+
+- {{PREREQUISITE_1}}
+- {{PREREQUISITE_2}}
+
+## Instrucciones Paso a Paso
+
+### Paso 1: {{STEP_1_TITLE}}
+
+{{STEP_1_DESCRIPTION}}
+
+```{bash}
+# {{STEP_1_COMMAND}}
+{{STEP_1_CODE}}
+```
+
+### Paso 2: {{STEP_2_TITLE}}
+
+{{STEP_2_DESCRIPTION}}
+
+```{bash}
+# {{STEP_2_COMMAND}}
+{{STEP_2_CODE}}
+```
+
+### Paso 3: {{STEP_3_TITLE}}
+
+{{STEP_3_DESCRIPTION}}
+
+```{bash}
+# {{STEP_3_COMMAND}}
+{{STEP_3_CODE}}
+```
+
+## Verificación
+
+### Verificación de Resultados
+
+Para verificar que has completado correctamente el laboratorio, ejecuta:
+
+```{bash}
+# Comando de verificación
+{{VERIFICATION_COMMAND}}
+```
+
+El resultado esperado es:
+```
+{{EXPECTED_OUTPUT}}
+```
+
+## Preguntas de Reflexión
+
+1. {{REFLECTION_QUESTION_1}}
+2. {{REFLECTION_QUESTION_2}}
+3. {{REFLECTION_QUESTION_3}}
+
+## Desafío Adicional (Opcional)
+
+{{OPTIONAL_CHALLENGE_DESCRIPTION}}
+
+<details>
+<summary>Mostrar sugerencia</summary>
+
+{{OPTIONAL_CHALLENGE_HINT}}
+</details>
+
+---
+*Laboratorio parte del curso "Programación Python Fundamentos" - Abacom Capacitación y Servicios*

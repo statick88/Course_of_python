@@ -1,0 +1,76 @@
+---
+title: "Desafío 3: Conversor de moneda"
+difficulty: "⭐⭐ Media"
+estimated_time: "10 minutos"
+---
+
+## Situación
+
+Trabajas en una casa de cambio y necesitas un programa que convierta entre dólares estadounidenses (USD) y euros (EUR). El programa debe mostrar el resultado con 2 decimales, como se hace en finanzas.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Pida la cantidad en dólares a convertir
+2. Use una tasa de cambio fija (1 USD = 0.92 EUR)
+3. Convierta de USD a EUR
+4. Muestre el resultado formateado con 2 decimales
+5. También muestre la conversión inversa (EUR a USD)
+
+## Ejemplo de ejecución
+
+```
+=== CONVERSOR DE MONEDA ===
+
+Tasa de cambio: 1 USD = 0.92 EUR
+
+Cantidad en USD: 100
+
+--- Resultado ---
+$100.00 USD = €92.00 EUR
+€92.00 EUR = $100.00 USD
+```
+
+## Pista
+
+- Para formatear con 2 decimales en un f-string: `{valor:.2f}`
+- La conversión inversa es: `euros / tasa`
+- Define la tasa como constante con nombre en MAYÚSCULAS
+
+## Criterios de éxito
+
+- [ ] Usa una constante para la tasa de cambio
+- [ ] Convierte correctamente en ambas direcciones
+- [ ] Muestra los resultados con 2 decimales
+- [ ] Incluye los símbolos de moneda ($ y €)
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 3: Conversor de moneda
+# Solución de referencia
+
+TASA_USD_A_EUR = 0.92
+
+print("=== CONVERSOR DE MONEDA ===")
+print()
+print(f"Tasa de cambio: 1 USD = {TASA_USD_A_EUR} EUR")
+print()
+
+cantidad_usd = float(input("Cantidad en USD: "))
+
+cantidad_eur = cantidad_usd * TASA_USD_A_EUR
+cantidad_usd_inversa = cantidad_eur / TASA_USD_A_EUR
+
+print()
+print("--- Resultado ---")
+print(f"${cantidad_usd:.2f} USD = €{cantidad_eur:.2f} EUR")
+print(f"€{cantidad_eur:.2f} EUR = ${cantidad_usd_inversa:.2f} USD")
+```
+</details>
+
+---
+
+[← Desafío 2](02-calculadora-edad.qmd) | [Desafío 4 →](04-calculadora-imc.qmd)

@@ -1,0 +1,100 @@
+---
+title: "Desafío 4: Calculadora de IMC"
+difficulty: "⭐⭐ Media"
+estimated_time: "12 minutos"
+---
+
+## Situación
+
+Un centro de bienestar necesita una calculadora de Índice de Masa Corporal (IMC). El IMC se calcula dividiendo el peso en kilogramos entre el cuadrado de la estatura en metros. El programa debe además clasificar el resultado.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Pida el nombre de la persona
+2. Pida el peso en kilogramos
+3. Pida la estatura en metros (ejemplo: 1.75)
+4. Calcule el IMC: `peso / (estatura ** 2)`
+5. Clasifique el resultado según la tabla de la OMS
+6. Muestre un reporte completo
+
+### Tabla de clasificación OMS
+
+| IMC | Clasificación |
+|-----|---------------|
+| Menor a 18.5 | Bajo peso |
+| 18.5 a 24.9 | Peso normal |
+| 25.0 a 29.9 | Sobrepeso |
+| 30.0 o más | Obesidad |
+
+## Ejemplo de ejecución
+
+```
+=== CALCULADORA DE IMC ===
+
+Nombre: María
+Peso (kg): 70
+Estatura (m): 1.65
+
+--- Reporte de salud ---
+Paciente: María
+IMC: 25.71
+Clasificación: Sobrepeso
+Recomendación: Consulta con un nutricionista
+```
+
+## Pista
+
+- `estatura ** 2` eleva al cuadrado
+- Puedes encadenar comparaciones: `18.5 <= imc < 25.0`
+- Usa variables descriptivas para cada clasificación
+
+## Criterios de éxito
+
+- [ ] Calcula el IMC correctamente
+- [ ] Clasifica según la tabla OMS
+- [ ] Muestra el IMC con 2 decimales
+- [ ] Incluye una recomendación básica
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 4: Calculadora de IMC
+# Solución de referencia
+
+print("=== CALCULADORA DE IMC ===")
+print()
+
+nombre = input("Nombre: ").strip()
+peso_kg = float(input("Peso (kg): "))
+estatura_m = float(input("Estatura (m): "))
+
+imc = peso_kg / (estatura_m ** 2)
+
+if imc < 18.5:
+    clasificacion = "Bajo peso"
+    recomendacion = "Consulta con un nutricionista para ganar peso saludablemente"
+elif imc < 25.0:
+    clasificacion = "Peso normal"
+    recomendacion = "¡Excelente! Mantén tus hábitos saludables"
+elif imc < 30.0:
+    clasificacion = "Sobrepeso"
+    recomendacion = "Consulta con un nutricionista para ajustar tu dieta"
+else:
+    clasificacion = "Obesidad"
+    recomendacion = "Consulta con un médico para un plan de tratamiento"
+
+print()
+print("--- Reporte de salud ---")
+print(f"Paciente: {nombre}")
+print(f"IMC: {imc:.2f}")
+print(f"Clasificación: {clasificacion}")
+print(f"Recomendación: {recomendacion}")
+```
+</details>
+
+---
+
+[← Desafío 3](03-conversor-moneda.qmd) | [Desafío 5 →](05-historia-interactiva.qmd)

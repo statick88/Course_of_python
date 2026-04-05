@@ -1,0 +1,67 @@
+---
+title: "Resumen del Módulo 8"
+---
+
+## Lo que aprendiste en este módulo
+
+| Concepto | Qué es | Ejemplo |
+|----------|--------|---------|
+| Módulo | Archivo `.py` reutilizable | `import math` |
+| Paquete | Carpeta con `__init__.py` | `from utils import func` |
+| Biblioteca estándar | Módulos incluidos con Python | `import random, datetime, os` |
+| pip | Gestor de paquetes | `pip install requests` |
+| Entorno virtual | Python aislado por proyecto | `python -m venv venv` |
+| requirements.txt | Lista de dependencias | `pip install -r requirements.txt` |
+| `__name__` | Variable especial del módulo | `if __name__ == "__main__"` |
+| `__init__.py` | Marca una carpeta como paquete | `from .modulo import func` |
+
+## Formas de importar
+
+| Forma | Cuándo usarla | Ejemplo |
+|-------|---------------|---------|
+| `import modulo` | Siempre que puedas | `import math` |
+| `from modulo import cosa` | Pocas funciones específicas | `from math import pi, sqrt` |
+| `import modulo as alias` | Convenciones conocidas | `import datetime as dt` |
+| `from modulo import *` | **Nunca** | ❌ Evitar siempre |
+| `from .modulo import func` | Dentro de un paquete | `from .texto import limpiar` |
+| `from paquete.modulo import func` | Importación absoluta | `from utils.texto import limpiar` |
+
+## Módulos de la biblioteca estándar
+
+| Módulo | Para qué sirve | Función estrella |
+|--------|----------------|------------------|
+| `math` | Matemáticas avanzadas | `math.sqrt()`, `math.pi` |
+| `random` | Números aleatorios | `random.randint()`, `random.choice()` |
+| `datetime` | Fechas y horas | `datetime.now()`, `timedelta()` |
+| `os` | Sistema operativo | `os.getcwd()`, `os.listdir()` |
+| `pathlib` | Rutas de archivos | `Path()`, `.name`, `.suffix` |
+| `json` | Datos en formato JSON | `json.dumps()`, `json.loads()` |
+
+## Principios del Zen de Python aplicados
+
+| Principio | Cómo lo aplicaste |
+|-----------|-------------------|
+| There should be one obvious way to do it | Usar `import modulo` como forma preferida |
+| Explicit is better than implicit | `__init__.py` declara qué exporta un paquete |
+| Readability counts | Nombres de módulos claros y descriptivos |
+| Simple is better than complex | Entornos virtuales con 3 comandos |
+| Batteries included | Usar la biblioteca estándar antes de instalar paquetes |
+| Namespaces are one honking great idea | Paquetes y entornos virtuales como namespaces |
+
+## ¿Estás listo para el Módulo 9?
+
+Deberías poder:
+
+- [ ] Importar módulos de la biblioteca estándar y usar sus funciones principales
+- [ ] Crear un módulo propio con funciones reutilizables
+- [ ] Usar `if __name__ == "__main__"` correctamente
+- [ ] Crear un paquete con `__init__.py` y submódulos
+- [ ] Instalar paquetes con pip y gestionar dependencias
+- [ ] Crear y activar entornos virtuales para aislar proyectos
+- [ ] Generar y usar `requirements.txt` para reproducir entornos
+
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 9: Buenas Prácticas**!
+
+---
+
+**Anterior:** [8.6 Entornos virtuales](06-entornos-virtuales.qmd) | **Siguiente:** [Módulo 9: Buenas Prácticas](../modulo-09/index.qmd)

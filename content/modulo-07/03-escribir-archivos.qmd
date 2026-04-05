@@ -1,0 +1,231 @@
+---
+title: "7.3 Escribir archivos"
+subtitle: "Crear, modificar y agregar contenido a archivos"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Crear archivos nuevos con el modo escritura (`"w"`)
+- Agregar contenido sin borrar lo existente con append (`"a"`)
+- Escribir múltiples líneas con `.writelines()`
+- Entender la diferencia crítica entre `"w"` y `"a"`
+
+## La analogía del cuaderno
+
+Escribir en un archivo es como escribir en un cuaderno:
+
+- **Modo `"w"` (write)** — Es como comprar un cuaderno **nuevo**. Si ya tenías uno escrito, lo reemplazas por uno en blanco. Todo lo anterior se pierde.
+- **Modo `"a"` (append)** — Es como agregar páginas **al final** de tu cuaderno actual. Lo que ya escribiste se mantiene intacto.
+- **Modo `"x"` (exclusive)** — Es como comprar un cuaderno nuevo **solo si no tienes uno del mismo tipo**. Si ya existe, te dicen "ya tienes ese cuaderno".
+
+## `.write()`: escribir una cadena
+
+El método `.write()` escribe una cadena de texto en el archivo. **No agrega saltos de línea automáticamente** — debes incluirlos tú.
+
+```python
+# Crear un archivo nuevo (o sobrescribir uno existente)
+with open("mi_diario.txt", "w") as archivo:
+    archivo.write("Hoy aprendí Python\n") # <1>
+    archivo.write("Los archivos son útiles\n") # <2>
+    archivo.write("Mañana seguiré practicando\n") # <3>
+```
+
+1. `.write()` escribe exactamente el texto que le pasas. El `\n` al final crea un salto de línea.
+2. Cada llamada a `.write()` continúa donde terminó la anterior.
+3. Al salir del bloque `with`, el archivo se guarda y cierra automáticamente.
+
+> **Explicit is better than implicit.** Python no agrega `\n` por ti. Si quieres saltos de línea, debes escribirlos explícitamente.
+
+## ⚠️ El peligro del modo `"w"`: borra sin preguntar
+
+Este es el error **más peligroso** al trabajar con archivos:
+
+```python
+# ❌ ¡CUIDADO! Esto BORRA todo el contenido existente
+with open("datos_importantes.txt", "w") as archivo:
+    archivo.write("Nueva línea\n") # <1>
+```
+
+1. Si `datos_importantes.txt` ya existía con 1000 líneas, **todas se pierden**. Solo queda `"Nueva línea\n"`. El modo `"w"` trunca el archivo a cero bytes antes de escribir.
+
+### La forma segura: verificar antes de sobrescribir
+
+```python
+import os
+
+ruta = "datos_importantes.txt"
+
+# ✅ Verificar si existe antes de sobrescribir
+if os.path.exists(ruta):
+    respuesta = input(f"El archivo '{ruta}' ya existe. ¿Sobrescribir? (s/n): ")
+    if respuesta.lower() != "s":
+        print("Operación cancelada")
+    else:
+        with open(ruta, "w") as archivo:
+            archivo.write("Nuevo contenido\n")
+            print("Archivo sobrescrito")
+else:
+    with open(ruta, "w") as archivo:
+        archivo.write("Contenido nuevo\n")
+        print("Archivo creado")
+```
+
+## Modo `"a"`: agregar sin borrar
+
+El modo append (`"a"`) es perfecto para **logs**, **diarios** y cualquier caso donde quieras acumular información:
+
+```python
+# Agregar una entrada al diario sin borrar las anteriores
+with open("mi_diario.txt", "a") as archivo:
+    archivo.write("Día 4: Hoy aprendí a escribir archivos\n") # <1>
+    archivo.write("Fue más fácil de lo que pensé\n")
+```
+
+1. El modo `"a"` siempre escribe **al final** del archivo. Si el archivo no existe, lo crea automáticamente.
+
+### Ejemplo: sistema de logs simple
+
+```python
+from datetime import datetime # <1>
+
+def registrar_log(mensaje, archivo_log="sistema.log"):
+    """Registra un mensaje con fecha y hora en el archivo de logs."""
+    fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S") # <2>
+    with open(archivo_log, "a") as f: # <3>
+        f.write(f"[{fecha}] {mensaje}\n") # <4>
+    print(f"Log registrado: {mensaje}")
+
+# Uso del sistema de logs
+registrar_log("Sistema iniciado") # <5>
+registrar_log("Usuario conectado: ana")
+registrar_log("Error en módulo de pagos")
+```
+
+1. `datetime` del módulo homónimo permite trabajar con fechas y horas.
+2. `.strftime()` formatea la fecha actual como una cadena legible: `"2026-04-04 15:30:00"`.
+3. Modo `"a"` para agregar al final sin borrar logs anteriores.
+4. Cada línea del log tiene el formato `[fecha] mensaje`.
+5. Cada llamada agrega una nueva línea al archivo.
+
+## `.writelines()`: escribir múltiples líneas
+
+El método `.writelines()` escribe una **lista de strings** en el archivo. **No agrega saltos de línea** — debes incluirlos en cada string.
+
+```python
+# Lista de tareas para escribir en un archivo
+tareas = [
+    "Aprender Python\n", # <1>
+    "Practicar con archivos\n",
+    "Crear un proyecto final\n",
+]
+
+with open("tareas.txt", "w") as archivo:
+    archivo.writelines(tareas) # <2>
+```
+
+1. Cada elemento de la lista debe incluir su propio `\n` si quieres saltos de línea.
+2. `.writelines()` escribe cada elemento de la lista en orden, uno tras otro.
+
+### Generar líneas dinámicamente
+
+```python
+# Generar un archivo con números del 1 al 10
+with open("numeros.txt", "w") as archivo:
+    lineas = [f"Número {i}\n" for i in range(1, 11)] # <1>
+    archivo.writelines(lineas) # <2>
+```
+
+1. List comprehension que genera `["Número 1\n", "Número 2\n", ..., "Número 10\n"]`.
+2. `.writelines()` escribe todas las líneas de una vez.
+
+## Modo `"x"`: creación exclusiva
+
+El modo `"x"` crea un archivo **solo si no existe**. Si ya existe, lanza `FileExistsError`.
+
+```python
+try:
+    with open("reporte_final.txt", "x") as archivo: # <1>
+        archivo.write("Reporte generado el 2026-04-04\n")
+        print("Archivo creado exitosamente")
+except FileExistsError: # <2>
+    print("Error: El archivo 'reporte_final.txt' ya existe")
+    print("Usa un nombre diferente o elimina el archivo existente")
+```
+
+1. El modo `"x"` intenta crear el archivo. Si ya existe, no lo sobrescribe — lanza un error.
+2. `FileExistsError` se captura para manejar el caso donde el archivo ya existe.
+
+> **Errors should never pass silently.** El modo `"x"` es perfecto cuando necesitas garantizar que no sobrescribes un archivo importante.
+
+## Comparación de modos de escritura
+
+| Modo | Crea si no existe | Borra si existe | Agrega al final |
+|------|-------------------|-----------------|-----------------|
+| `"w"` | ✅ | ⚠️ **SÍ — borra todo** | ❌ (empieza desde cero) |
+| `"a"` | ✅ | ❌ (mantiene contenido) | ✅ |
+| `"x"` | ✅ | ❌ (lanza error) | ❌ |
+
+## Ejemplo completo: generador de reportes
+
+```python
+from datetime import datetime
+
+def generar_reporte(ventas, archivo="reporte_ventas.txt"):
+    """Genera un reporte de ventas en formato de texto."""
+    
+    total = sum(v["monto"] for v in ventas) # <1>
+    promedio = total / len(ventas) if ventas else 0 # <2>
+    
+    with open(archivo, "w") as f:
+        f.write("=" * 40 + "\n")
+        f.write("   REPORTE DE VENTAS\n")
+        f.write(f"   Fecha: {datetime.now().strftime('%Y-%m-%d')}\n")
+        f.write("=" * 40 + "\n\n")
+        
+        for i, venta in enumerate(ventas, start=1):
+            f.write(f"  {i}. {venta['producto']}: ${venta['monto']:.2f}\n")
+        
+        f.write("\n" + "-" * 40 + "\n")
+        f.write(f"  Total: ${total:.2f}\n")
+        f.write(f"  Promedio: ${promedio:.2f}\n")
+        f.write(f"  Cantidad de ventas: {len(ventas)}\n")
+        f.write("-" * 40 + "\n")
+    
+    print(f"Reporte generado: {archivo}")
+
+# Datos de ejemplo
+ventas_del_dia = [
+    {"producto": "Teclado mecánico", "monto": 89.99},
+    {"producto": "Mouse inalámbrico", "monto": 45.50},
+    {"producto": "Monitor 27 pulgadas", "monto": 299.99},
+]
+
+generar_reporte(ventas_del_dia)
+```
+
+1. `sum()` con generator expression calcula el total de todas las ventas.
+2. El operador ternario evita división por cero si la lista de ventas está vacía.
+
+## Resumen
+
+| Método | Qué hace | Modo recomendado |
+|--------|----------|-----------------|
+| `.write(texto)` | Escribe una cadena | `"w"`, `"a"`, o `"x"` |
+| `.writelines(lista)` | Escribe una lista de strings | `"w"` o `"a"` |
+| `"w"` | Crea o sobrescribe | Cuando quieres empezar de cero |
+| `"a"` | Agrega al final | Para logs, diarios, acumulación |
+| `"x"` | Crea solo si no existe | Cuando necesitas exclusividad |
+
+### Principios del Zen aplicados
+
+| Principio | Cómo se aplica |
+|-----------|----------------|
+| **Explicit is better than implicit** | Siempre incluye `\n` explícitamente |
+| **Errors should never pass silently** | Usa `"x"` o verifica existencia antes de `"w"` |
+| **Simple is better than complex** | `.write()` para una línea, `.writelines()` para varias |
+
+---
+
+**Anterior:** [7.2 Leer archivos](02-leer-archivos.qmd) | **Siguiente:** [7.4 Manejo de CSV](04-manejo-csv.qmd)

@@ -1,0 +1,198 @@
+---
+title: "8.1 Importar módulos: tu caja de herramientas"
+subtitle: "No reinventes la rueda — usa lo que ya existe"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es un módulo y por qué Python los usa
+- Usar las diferentes formas de `import`
+- Elegir la forma correcta de importar según el contexto
+- Comprender el concepto de espacio de nombres
+
+## ¿Qué es un módulo?
+
+Imagina que vas a armar un mueble de IKEA. No fabricas los tornillos, ni las bisagras, ni las patas desde cero. **Usas las piezas que ya vienen hechas.**
+
+En Python, un **módulo** es exactamente eso: un archivo `.py` que contiene código ya escrito — funciones, clases, variables — que puedes usar en tus programas sin tener que escribirlo todo desde cero.
+
+```python
+# Python trae una "caja de herramientas" gigante
+import math  # <1>
+
+resultado = math.sqrt(144)  # <2>
+print(resultado)  # 12.0
+```
+
+1. `import math` abre la caja de herramientas de matemáticas que Python ya incluye. No necesitas crear la función `sqrt` tú mismo.
+2. `math.sqrt()` usa la función raíz cuadrada del módulo `math`. El punto (`.`) significa "dentro de".
+
+> **There should be one obvious way to do it.** Python ya tiene módulos para casi todo. Antes de escribir código, busca si ya existe.
+
+## Las 4 formas de importar
+
+Python te da **4 maneras** de importar módulos. Cada una tiene su momento ideal:
+
+### Forma 1: `import modulo` — La forma segura
+
+Importa todo el módulo bajo su nombre. Es la forma **más recomendada** para principiantes.
+
+```python
+import random  # <1>
+import math    # <2>
+
+numero = random.randint(1, 10)  # <3>
+raiz = math.sqrt(25)            # <4>
+```
+
+1. Importa el módulo completo `random`. Todo su contenido queda disponible bajo el prefijo `random.`
+2. Importa el módulo completo `math`. Todo su contenido queda disponible bajo el prefijo `math.`
+3. `random.randint()` es claro: sabes exactamente de dónde viene la función.
+4. `math.sqrt()` también es explícito. No hay confusión posible.
+
+**Ventaja:** Siempre sabes de dónde viene cada función. El código es **autoexplicativo**.
+
+### Forma 2: `from modulo import cosa` — Cuando quieres ir directo al grano
+
+Importa solo lo que necesitas, sin prefijo.
+
+```python
+from random import randint  # <1>
+from math import pi, sqrt   # <2>
+
+numero = randint(1, 10)  # <3> — sin prefijo
+area = pi * sqrt(16)     # <4> — sin prefijo
+```
+
+1. Importa solo `randint` del módulo `random`. Ahora puedes usarlo directamente.
+2. Importa `pi` y `sqrt` del módulo `math`. Puedes usar varios elementos separados por comas.
+3. `randint()` se usa directamente, sin `random.` delante.
+4. `pi` y `sqrt()` se usan directamente. Más corto, pero pierdes el contexto del módulo.
+
+**Ventaja:** Código más corto. **Riesgo:** si importas muchas cosas, pierdes el rastro de dónde viene cada una.
+
+### Forma 3: `import modulo as alias` — El atajo con nombre
+
+Importa un módulo con un nombre más corto o diferente.
+
+```python
+import datetime as dt  # <1>
+import matplotlib.pyplot as plt  # <2>
+
+hoy = dt.date.today()  # <3>
+```
+
+1. `datetime` se importa como `dt`. Más corto de escribir.
+2. `matplotlib.pyplot` se importa como `plt`. Convención universal en ciencia de datos.
+3. `dt.date.today()` usa el alias. Es más rápido de escribir que `datetime.date.today()`.
+
+**Ventaja:** Ahorra escritura en módulos con nombres largos. **Regla:** solo usa alias que sean **convenciones conocidas** (`np` para numpy, `pd` para pandas, `plt` para matplotlib).
+
+### Forma 4: `from modulo import *` — La forma peligrosa
+
+Importa **todo** el contenido del módulo directamente en tu espacio de nombres.
+
+```python
+# ❌ NO HAGAS ESTO
+from math import *  # <1>
+from random import *  # <2>
+
+x = sqrt(25)  # <3> — ¿de dónde viene sqrt?
+y = randint(1, 10)  # <4> — ¿de dónde viene randint?
+```
+
+1. Importa TODO de `math`. Cientos de funciones aparecen en tu espacio de nombres.
+2. Importa TODO de `random`. Ahora tienes funciones de dos módulos mezcladas.
+3. `sqrt()` funciona, pero no queda claro de qué módulo viene.
+4. `randint()` funciona, pero el código se vuelve un misterio.
+
+**Problema:** Si dos módulos tienen una función con el mismo nombre, **una sobreescribe a la otra** sin avisarte.
+
+> **Explicit is better than implicit.** `import *` es implícito y peligroso. Nunca lo uses en código real.
+
+## ¿Qué pasa cuando importas?
+
+Cuando escribes `import math`, Python hace esto:
+
+1. **Busca** el archivo `math.py` (o el módulo compilado) en sus rutas conocidas
+2. **Ejecuta** todo el código dentro del módulo (una sola vez)
+3. **Crea** un objeto módulo en memoria con todas sus funciones y variables
+4. **Asigna** ese objeto al nombre `math` en tu programa
+
+```python
+import math  # <1>
+
+print(type(math))  # <2> — <class 'module'>
+print(dir(math))   # <3> — lista todo lo que contiene
+```
+
+1. Python busca, ejecuta y carga el módulo `math` en memoria.
+2. `math` es de tipo `module`. Es un objeto como cualquier otro en Python.
+3. `dir(math)` muestra todas las funciones y variables disponibles en el módulo.
+
+## Ver qué hay dentro de un módulo
+
+La función `dir()` es tu **lupa** para explorar módulos:
+
+```python
+import random  # <1>
+
+# Ver todas las funciones disponibles
+print(dir(random))  # <2>
+
+# Las que NO empiezan con _ son las públicas
+# ['betavariate', 'choice', 'choices', 'gauss', 
+#  ' randint', 'random', 'sample', 'seed', ...]
+```
+
+1. Importa el módulo `random`.
+2. `dir(random)` devuelve una lista con todo lo que contiene el módulo. Los nombres que empiezan con `_` son internos (no los uses).
+
+## Conflictos de nombres
+
+Cuando dos módulos tienen funciones con el mismo nombre, el último `import` gana:
+
+```python
+from math import sqrt  # <1>
+# from cmath import sqrt  # <2> — si descomentas, esta reemplaza la anterior
+
+resultado = sqrt(4)  # <3> — ¿cuál sqrt? Depende del último import
+```
+
+1. Importa `sqrt` de `math` (raíz cuadrada de números reales).
+2. Si descomentas esta línea, `sqrt` de `cmath` (números complejos) reemplaza a la anterior.
+3. El resultado depende de qué `import` fue el último. **Confusión garantizada.**
+
+**Solución:** usa `import modulo` o `from modulo import cosa as alias`:
+
+```python
+from math import sqrt as sqrt_real      # <1>
+from cmath import sqrt as sqrt_complex  # <2>
+
+print(sqrt_real(4))     # 2.0 — raíz real
+print(sqrt_complex(-4)) # 2j — raíz compleja
+```
+
+1. `sqrt_real` es la raíz cuadrada de números reales.
+2. `sqrt_complex` es la raíz cuadrada de números complejos. Cada una tiene su nombre claro.
+
+## Resumen
+
+| Forma | Cuándo usarla | Ejemplo |
+|-------|---------------|---------|
+| `import modulo` | Siempre que puedas | `import math` |
+| `from modulo import cosa` | Cuando usas pocas funciones | `from math import pi, sqrt` |
+| `import modulo as alias` | Nombres largos con convención | `import datetime as dt` |
+| `from modulo import *` | **Nunca** | ❌ Evitar siempre |
+
+| Principio del Zen | Aplicación |
+|-------------------|------------|
+| Explicit is better than implicit | Usa `import math` para que sea obvio de dónde viene `sqrt` |
+| Readability counts | `math.sqrt(16)` se lee mejor que `sqrt(16)` sin contexto |
+| Namespaces are one honking great idea | Los módulos crean espacios de nombres separados |
+
+---
+
+**Anterior:** [Índice del Módulo 8](index.qmd) | **Siguiente:** [8.2 La biblioteca estándar](02-modulos-estandar.qmd)

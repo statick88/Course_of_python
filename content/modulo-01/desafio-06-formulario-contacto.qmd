@@ -1,0 +1,125 @@
+---
+title: "Desafío 6: Formulario de contacto"
+difficulty: "⭐⭐⭐ Difícil"
+estimated_time: "20 minutos"
+---
+
+## Situación
+
+Una empresa necesita un programa que recopile datos de contacto de clientes potenciales. El programa debe validar cada dato antes de aceptarlo y mostrar un resumen formateado al final.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Pida el nombre completo (mínimo 3 caracteres, sin espacios vacíos)
+2. Pida el correo electrónico (debe contener "@" y ".")
+3. Pida el número de teléfono (solo dígitos, entre 7 y 15 caracteres)
+4. Pida la edad (número entre 18 y 120)
+5. Valide cada dato — si es inválido, pide que lo ingrese de nuevo
+6. Muestre un resumen profesional con todos los datos
+
+## Ejemplo de ejecución
+
+```
+=== FORMULARIO DE CONTACTO ===
+
+Nombre completo: An
+Error: El nombre debe tener al menos 3 caracteres
+Nombre completo: Ana García
+
+Correo electrónico: ana@correo
+Error: El correo debe contener '@' y '.'
+Correo electrónico: ana@correo.com
+
+Teléfono: abc
+Error: El teléfono solo debe contener números
+Teléfono: 0987654321
+
+Edad: 15
+Error: Debes ser mayor de 18 años
+Edad: 28
+
+--- Datos registrados ---
+Nombre:     Ana García
+Email:      ana@correo.com
+Teléfono:   0987654321
+Edad:       28 años
+
+¡Gracias por registrarte, Ana!
+```
+
+## Pista
+
+- Usa `while True` para repetir hasta que el dato sea válido
+- `.strip()` elimina espacios al inicio y final
+- `"@" in texto` verifica si un carácter está en el texto
+- `.isdigit()` verifica si un string contiene solo números
+
+## Criterios de éxito
+
+- [ ] Valida nombre (mínimo 3 caracteres)
+- [ ] Valida email (contiene @ y .)
+- [ ] Valida teléfono (solo dígitos, 7-15 caracteres)
+- [ ] Valida edad (18-120)
+- [ ] Repite la pregunta si el dato es inválido
+- [ ] Muestra resumen alineado y profesional
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 6: Formulario de contacto
+# Solución de referencia
+
+print("=== FORMULARIO DE CONTACTO ===")
+print()
+
+# Validar nombre
+while True:
+    nombre = input("Nombre completo: ").strip()
+    if len(nombre) >= 3:
+        break
+    print("Error: El nombre debe tener al menos 3 caracteres")
+
+# Validar email
+while True:
+    email = input("Correo electrónico: ").strip()
+    if "@" in email and "." in email:
+        break
+    print("Error: El correo debe contener '@' y '.'")
+
+# Validar teléfono
+while True:
+    telefono = input("Teléfono: ").strip()
+    if telefono.isdigit() and 7 <= len(telefono) <= 15:
+        break
+    print("Error: El teléfono solo debe contener números (7-15 dígitos)")
+
+# Validar edad
+while True:
+    try:
+        edad = int(input("Edad: "))
+        if 18 <= edad <= 120:
+            break
+        print("Error: Debes ser mayor de 18 años")
+    except ValueError:
+        print("Error: Ingresa un número válido")
+
+# Resumen
+print()
+print("--- Datos registrados ---")
+print(f"Nombre:     {nombre}")
+print(f"Email:      {email}")
+print(f"Teléfono:   {telefono}")
+print(f"Edad:       {edad} años")
+print()
+# Extraer el primer nombre para el saludo
+primer_nombre = nombre.split()[0]
+print(f"¡Gracias por registrarte, {primer_nombre}!")
+```
+</details>
+
+---
+
+[← Desafío 5](05-historia-interactiva.qmd) | [Desafío 7 →](07-mini-quiz.qmd)

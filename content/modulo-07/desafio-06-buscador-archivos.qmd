@@ -1,0 +1,156 @@
+---
+title: "Desafío 6: Buscador de archivos"
+difficulty: "⭐⭐⭐ Difícil"
+estimated_time: "30 minutos"
+---
+
+## Situación
+
+Tienes un proyecto con cientos de archivos distribuidos en múltiples carpetas. Necesitas una herramienta que te permita buscar archivos por nombre, extensión o contenido, similar al comando `find` de Linux.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Permita buscar archivos en un directorio (y subdirectorios)
+2. Filtre por extensión (ej: `.py`, `.txt`, `.json`)
+3. Opcionalmente busque texto dentro de los archivos
+4. Muestre resultados con información útil (tamaño, ruta relativa)
+
+## Ejemplo de ejecución
+
+```
+🔎 === BUSCADOR DE ARCHIVOS ===
+
+Directorio a buscar (. para actual): proyecto
+Extensión a buscar (.py, .txt, o * para todos): .py
+Buscar texto dentro de archivos? (s/n): n
+
+📊 Resultados encontrados: 5
+
+  📄 main.py (1.2 KB)
+     proyecto/src/main.py
+  📄 utils.py (3.4 KB)
+     proyecto/src/utils.py
+  📄 config.py (0.5 KB)
+     proyecto/src/config.py
+  📄 test_main.py (2.1 KB)
+     proyecto/tests/test_main.py
+  📄 test_utils.py (1.8 KB)
+     proyecto/tests/test_utils.py
+
+📁 Total: 5 archivos | 9.0 KB
+```
+
+## Pista
+
+- Usa `pathlib.Path` con `.glob("**/*.py")` para búsqueda recursiva
+- `.stat().st_size` te da el tamaño del archivo en bytes
+- Formatea el tamaño en KB o MB para legibilidad
+- Para buscar texto dentro de archivos, usa `.read_text()` con `try/except`
+
+## Criterios de éxito
+
+- [ ] Busca archivos recursivamente en un directorio
+- [ ] Filtra por extensión
+- [ ] Muestra tamaño formateado (KB, MB)
+- [ ] Muestra ruta relativa
+- [ ] Opcionalmente busca texto dentro de archivos
+- [ ] Muestra resumen con total de archivos y tamaño
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 6: Buscador de archivos
+# Solución de referencia
+
+from pathlib import Path
+
+def formatear_tamaño(bytes):
+    """Convierte bytes a formato legible (KB, MB, GB)."""
+    if bytes < 1024:
+        return f"{bytes} B"
+    elif bytes < 1024 * 1024:
+        return f"{bytes / 1024:.1f} KB"
+    elif bytes < 1024 * 1024 * 1024:
+        return f"{bytes / (1024 * 1024):.1f} MB"
+    else:
+        return f"{bytes / (1024 * 1024 * 1024):.1f} GB"
+
+def buscar_archivos(directorio, extension, texto_busqueda=None):
+    """Busca archivos en un directorio con filtros opcionales."""
+    
+    directorio = Path(directorio)
+    
+    if not directorio.is_dir():
+        print(f"❌ '{directorio}' no es un directorio válido")
+        return []
+    
+    # Construir patrón de búsqueda
+    if extension == "*" or extension == "":
+        patron = "**/*"
+    else:
+        if not extension.startswith("."):
+            extension = f".{extension}"
+        patron = f"**/*{extension}"
+    
+    resultados = []
+    
+    for archivo in directorio.glob(patron):
+        if archivo.is_file():
+            # Si hay texto de búsqueda, leer el archivo
+            if texto_busqueda:
+                try:
+                    contenido = archivo.read_text(encoding="utf-8")
+                    if texto_busqueda.lower() in contenido.lower():
+                        resultados.append(archivo)
+                except (UnicodeDecodeError, PermissionError):
+                    continue  # Saltar archivos binarios o sin permiso
+            else:
+                resultados.append(archivo)
+    
+    return resultados
+
+# Programa principal
+print("🔎 === BUSCADOR DE ARCHIVOS ===\n")
+
+directorio = input("Directorio a buscar (. para actual): ").strip() or "."
+extension = input("Extensión a buscar (.py, .txt, o * para todos): ").strip()
+buscar_texto = input("Buscar texto dentro de archivos? (s/n): ").strip().lower() == "s"
+
+texto = None
+if buscar_texto:
+    texto = input("Texto a buscar: ").strip()
+
+print("\n🔍 Buscando...\n")
+
+resultados = buscar_archivos(directorio, extension, texto)
+
+if not resultados:
+    print("❌ No se encontraron archivos")
+else:
+    print(f"📊 Resultados encontrados: {len(resultados)}\n")
+    
+    total_bytes = 0
+    directorio_base = Path(directorio)
+    
+    for archivo in sorted(resultados):
+        tamaño = archivo.stat().st_size
+        total_bytes += tamaño
+        ruta_relativa = archivo.relative_to(directorio_base)
+        
+        print(f"  📄 {archivo.name} ({formatear_tamaño(tamaño)})")
+        print(f"     {ruta_relativa}")
+        
+        if texto and texto.lower() in archivo.read_text().lower():
+            print(f"     🔍 Contiene: '{texto}'")
+        print()
+    
+    print(f"📁 Total: {len(resultados)} archivos | {formatear_tamaño(total_bytes)}")
+```
+</details>
+
+---
+
+[← Desafío 5](desafio-05-configurador-json.qmd) | [Desafío 7 →](desafio-07-gestor-contactos-csv.qmd)

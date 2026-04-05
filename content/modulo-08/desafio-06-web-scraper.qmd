@@ -1,0 +1,219 @@
+---
+title: "Desafío 6: Web scraper"
+difficulty: "⭐⭐⭐ Difícil"
+estimated_time: "30 minutos"
+---
+
+## Situación
+
+Necesitas extraer información de una página web para un análisis de datos. Tu tarea es crear un programa que descargue una página web y extraiga datos específicos de su contenido HTML.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Use `requests` para descargar el HTML de una página web
+2. Use el módulo `re` (expresiones regulares) para extraer:
+   - Todos los enlaces (`<a href="...">`) de la página
+   - Todos los encabezados (`<h1>`, `<h2>`, `<h3>`)
+   - Todos los párrafos (`<p>`)
+3. Muestre un resumen organizado:
+   - Cantidad de enlaces encontrados (mostrar los primeros 10)
+   - Cantidad de encabezados encontrados
+   - Cantidad de párrafos encontrados
+   - Las primeras 3 oraciones del contenido
+4. Maneje errores: página no encontrada, sin conexión, HTML inválido
+5. Guarde los resultados en un archivo `resultados.txt`
+
+> **Nota ética:** Solo haz scraping de páginas que lo permitan. Respeta el archivo `robots.txt` del sitio y no sobrecargues los servidores.
+
+## Ejemplo de ejecución
+
+```
+=== Web Scraper ===
+
+🌐 Descargando: https://example.com
+✅ Página descargada (1256 bytes)
+
+📊 Análisis:
+   Enlaces encontrados: 1
+   Encabezados encontrados: 1
+   Párrafos encontrados: 2
+
+🔗 Primeros enlaces:
+   1. https://www.iana.org/domains/example
+
+📰 Encabezados:
+   1. [H1] Example Domain
+
+📝 Primeros párrafos:
+   1. This domain is for use in illustrative examples...
+   2. You may use this domain in literature without...
+
+💾 Resultados guardados en: resultados.txt
+```
+
+## Pista
+
+- `requests.get(url).text` devuelve el HTML como texto
+- `re.findall(r'<a href="([^"]*)"', html)` extrae todos los href
+- `re.findall(r'<h[1-6]>(.*?)</h[1-6]>', html, re.DOTALL)` extrae encabezados
+- `re.findall(r'<p>(.*?)</p>', html, re.DOTALL)` extrae párrafos
+- `re.sub(r'<[^>]+>', '', texto)` elimina todas las etiquetas HTML de un texto
+- Usa `with open("resultados.txt", "w") as f:` para escribir el archivo
+- El flag `re.DOTALL` hace que `.` también coincida con saltos de línea
+
+## Criterios de éxito
+
+- [ ] Descarga HTML con `requests`
+- [ ] Extrae enlaces con expresiones regulares
+- [ ] Extrae encabezados y párrafos
+- [ ] Muestra resumen organizado
+- [ ] Guarda resultados en archivo de texto
+- [ ] Maneja errores de red y HTML
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 6: Web scraper
+# Solución de referencia
+
+import requests
+import re
+from datetime import datetime
+
+def descargar_pagina(url):
+    """Descarga el HTML de una página web."""
+    respuesta = requests.get(url, timeout=10)
+    respuesta.raise_for_status()  # Lanza error si status != 200
+    return respuesta.text
+
+
+def extraer_enlaces(html):
+    """Extrae todos los enlaces href del HTML."""
+    patron = r'<a\s+[^>]*href="([^"]*)"'
+    return re.findall(patron, html)
+
+
+def extraer_encabezados(html):
+    """Extrae todos los encabezados h1-h6 del HTML."""
+    patron = r'<h([1-6])[^>]*>(.*?)</h\1>'
+    coincidencias = re.findall(patron, html, re.DOTALL | re.IGNORECASE)
+    resultados = []
+    for nivel, contenido in coincidencias:
+        # Eliminar etiquetas HTML internas
+        texto_limpio = re.sub(r'<[^>]+>', '', contenido).strip()
+        if texto_limpio:
+            resultados.append((int(nivel), texto_limpio))
+    return resultados
+
+
+def extraer_parrafos(html):
+    """Extrae todos los párrafos del HTML."""
+    patron = r'<p[^>]*>(.*?)</p>'
+    coincidencias = re.findall(patron, html, re.DOTALL | re.IGNORECASE)
+    resultados = []
+    for contenido in coincidencias:
+        texto_limpio = re.sub(r'<[^>]+>', '', contenido).strip()
+        if texto_limpio:
+            resultados.append(texto_limpio)
+    return resultados
+
+
+def limpiar_html(texto):
+    """Elimina todas las etiquetas HTML de un texto."""
+    return re.sub(r'<[^>]+>', '', texto).strip()
+
+
+def guardar_resultados(url, enlaces, encabezados, parrafos, tamaño):
+    """Guarda los resultados en un archivo de texto."""
+    with open("resultados.txt", "w", encoding="utf-8") as f:
+        f.write(f"Web Scraper - Resultados\n")
+        f.write(f"{'=' * 40}\n")
+        f.write(f"URL: {url}\n")
+        f.write(f"Fecha: {datetime.now().strftime('%d/%m/%Y %H:%M')}\n")
+        f.write(f"Tamaño: {tamaño} bytes\n\n")
+
+        f.write(f"Enlaces encontrados: {len(enlaces)}\n")
+        for i, enlace in enumerate(enlaces[:10], 1):
+            f.write(f"  {i}. {enlace}\n")
+        f.write("\n")
+
+        f.write(f"Encabezados encontrados: {len(encabezados)}\n")
+        for i, (nivel, texto) in enumerate(encabezados, 1):
+            f.write(f"  {i}. [H{nivel}] {texto}\n")
+        f.write("\n")
+
+        f.write(f"Párrafos encontrados: {len(parrafos)}\n")
+        for i, parrafo in enumerate(parrafos[:5], 1):
+            f.write(f"  {i}. {parrafo[:100]}...\n")
+        f.write("\n")
+
+
+# Programa principal
+print("=== Web Scraper ===")
+print()
+
+url = input("🌐 Ingresa la URL a analizar: ").strip()
+
+if not url.startswith("http"):
+    url = "https://" + url
+
+print(f"\n🌐 Descargando: {url}")
+
+try:
+    html = descargar_pagina(url)
+    tamaño = len(html.encode("utf-8"))
+    print(f"✅ Página descargada ({tamaño:,} bytes)")
+    print()
+
+    # Extraer datos
+    enlaces = extraer_enlaces(html)
+    encabezados = extraer_encabezados(html)
+    parrafos = extraer_parrafos(html)
+
+    # Mostrar resumen
+    print("📊 Análisis:")
+    print(f"   Enlaces encontrados: {len(enlaces)}")
+    print(f"   Encabezados encontrados: {len(encabezados)}")
+    print(f"   Párrafos encontrados: {len(parrafos)}")
+    print()
+
+    if enlaces:
+        print("🔗 Primeros enlaces:")
+        for i, enlace in enumerate(enlaces[:10], 1):
+            print(f"   {i}. {enlace}")
+        print()
+
+    if encabezados:
+        print("📰 Encabezados:")
+        for i, (nivel, texto) in enumerate(encabezados, 1):
+            print(f"   {i}. [H{nivel}] {texto}")
+        print()
+
+    if parrafos:
+        print("📝 Primeros párrafos:")
+        for i, parrafo in enumerate(parrafos[:3], 1):
+            preview = parrafo[:100] + "..." if len(parrafo) > 100 else parrafo
+            print(f"   {i}. {preview}")
+        print()
+
+    # Guardar resultados
+    guardar_resultados(url, enlaces, encabezados, parrafos, tamaño)
+    print("💾 Resultados guardados en: resultados.txt")
+
+except requests.exceptions.ConnectionError:
+    print("❌ Error: No se pudo conectar. Verifica tu conexión a internet.")
+except requests.exceptions.Timeout:
+    print("❌ Error: La página tardó demasiado en responder.")
+except requests.exceptions.HTTPError as e:
+    print(f"❌ Error HTTP: {e}")
+except Exception as e:
+    print(f"❌ Error inesperado: {e}")
+```
+</details>
+
+---
+
+[← Desafío 5](desafio-05-api-clima.qmd) | [Desafío 7 →](desafio-07-proyecto-modular.qmd)

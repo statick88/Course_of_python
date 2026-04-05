@@ -1,0 +1,55 @@
+---
+title: "Sobre el Instructor"
+format:
+  html:
+    page-layout: full
+---
+
+## Diego Saavedra
+
+**Instructor Principal — Abacom Capacitación y Servicios**
+
+FullStack Developer, Ethical Hacker, Security Architect y Profesor con más de 10 años de experiencia en la industria tecnológica.
+
+### Experiencia Académica
+
+| Institución | Período | Cursos Dictados |
+|-------------|---------|-----------------|
+| **ESPE** (Dept. Ciencias de la Computación) | 2023-2024 | Desarrollo de Software, Seguridad |
+| **Abacom** (Capacitación y Servicios) | 2022-Actual | Ethical Hacking, Pentesting, Cybersecurity |
+| **Codings Academy** | 2024 | FullStack, DevOps, Web Development |
+| **IST Juan Montalvo** | 2019-2022 | Programación, IT |
+| **Universidad Zulia** | - | Investigación, Educación Superior |
+
+### Certificaciones
+
+- **CKA** — Certified Kubernetes Administrator (KodeKloud)
+- **CKS** — Certified Kubernetes Security Specialist (En progreso)
+- **eWPTXv2** — Web Application Penetration Testing (En progreso)
+
+### Formación Académica
+
+- **Master** en Ciberseguridad, Seguridad Defensiva y Ofensiva — UCM (En proceso)
+- **Master** en Ciencias y Tecnologías de la Computación — UTPL
+- **Pregrado** — Universidad Nacional de Loja (2007-2011)
+
+### Filosofía de Enseñanza
+
+> "No soy aquí para caerles bien. Soy aquí para hacerlos aprender."
+
+Mi metodología se basa en:
+
+1. **Analogías primero** — Uso ejemplos del mundo real antes de mostrar código
+2. **Método socrático** — Hago preguntas antes de dar respuestas
+3. **Aprender haciendo** — 70+ desafíos prácticos, no solo teoría
+4. **Código como comunicación** — Nombres que revelan intención, código legible
+5. **Pensamiento atómico** — Funciones pequeñas, responsabilidad única
+
+### Contacto
+
+- **GitHub**: [statick88](https://github.com/statick88)
+- **Blog**: [statick88.github.io](https://statick88.github.io)
+
+---
+
+*Este curso es parte del catálogo de **Abacom Capacitación y Servicios***

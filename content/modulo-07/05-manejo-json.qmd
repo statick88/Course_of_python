@@ -1,0 +1,246 @@
+---
+title: "7.5 Manejo de archivos JSON"
+subtitle: "El formato universal de intercambio de datos"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es JSON y por qué es el estándar de la web
+- Convertir datos de Python a JSON con `json.dump()` y `json.dumps()`
+- Leer archivos JSON con `json.load()` y `json.loads()`
+- Manejar errores de formato JSON con `json.JSONDecodeError`
+
+## ¿Qué es JSON? — La analogía del idioma universal
+
+Imagina que necesitas enviar un mensaje a alguien que habla otro idioma. Necesitas un **traductor** que ambos entiendan.
+
+JSON (**JavaScript Object Notation**) es ese traductor universal en el mundo de la programación:
+
+- **Python** lo entiende
+- **JavaScript** lo entiende
+- **Java** lo entiende
+- **Cualquier lenguaje** lo entiende
+
+Es como el **inglés de los datos**: no es el idioma nativo de nadie (bueno, sí de JavaScript), pero todos lo usan para comunicarse.
+
+### JSON vs Diccionario de Python
+
+```python
+# Diccionario de Python (usa comillas simples y True/False)
+usuario_python = {
+    "nombre": "Ana",
+    "edad": 28,
+    "activo": True,
+    "hobbies": ["leer", "programar"],
+}
+
+# JSON equivalente (usa solo comillas dobles y true/false)
+usuario_json = '''
+{
+    "nombre": "Ana",
+    "edad": 28,
+    "activo": true,
+    "hobbies": ["leer", "programar"]
+}
+'''
+```
+
+> **There should be one obvious way to do it.** El módulo `json` de Python es la forma estándar de convertir entre diccionarios y JSON.
+
+## De Python a JSON: serializar
+
+**Serializar** significa convertir un objeto de Python (diccionario, lista, etc.) a una cadena JSON.
+
+```python
+import json
+
+# Datos en Python
+configuracion = {
+    "app": "Mi Aplicación",
+    "version": "2.0",
+    "debug": True,
+    "puerto": 8080,
+    "base_datos": {
+        "host": "localhost",
+        "nombre": "mi_db",
+    },
+}
+
+# Convertir diccionario a cadena JSON
+json_texto = json.dumps(configuracion) # <1>
+print(json_texto)
+```
+
+1. `json.dumps()` (dump string) convierte un objeto de Python a una cadena JSON. Nota la **s** al final — significa que devuelve un **string**.
+
+### JSON bonito: `indent`
+
+```python
+# JSON formateado con indentación
+json_bonito = json.dumps(configuracion, indent=4) # <1>
+print(json_bonito)
+```
+
+1. `indent=4` agrega 4 espacios de indentación para hacer el JSON legible para humanos. Sin esto, todo estaría en una sola línea.
+
+### Guardar JSON en un archivo
+
+```python
+import json
+
+configuracion = {
+    "app": "Mi Aplicación",
+    "version": "2.0",
+    "debug": True,
+    "puerto": 8080,
+}
+
+# Guardar directamente en un archivo
+with open("config.json", "w") as archivo:
+    json.dump(configuracion, archivo, indent=4) # <1>
+    print("Configuración guardada en config.json")
+```
+
+1. `json.dump()` (sin la **s**) escribe directamente en un archivo. Nota la diferencia: `dumps` → string, `dump` → archivo.
+
+## De JSON a Python: deserializar
+
+**Deserializar** significa convertir una cadena JSON a un objeto de Python (diccionario, lista, etc.).
+
+```python
+import json
+
+# JSON como cadena de texto
+datos_json = '''
+{
+    "nombre": "Carlos",
+    "edad": 35,
+    "activo": true,
+    "hobbies": ["fútbol", "música"]
+}
+'''
+
+# Convertir JSON a diccionario de Python
+datos = json.loads(datos_json) # <1>
+print(type(datos)) # <2>
+print(datos["nombre"]) # <3>
+print(datos["hobbies"][0]) # <4>
+```
+
+1. `json.loads()` (load string) convierte una cadena JSON a un objeto de Python.
+2. `type(datos)` devuelve `<class 'dict'>` — ahora es un diccionario de Python.
+3. Accedes a los datos como cualquier diccionario: `datos["nombre"]` → `"Carlos"`.
+4. Las listas JSON se convierten en listas de Python: `datos["hobbies"]` → `['fútbol', 'música']`.
+
+### Leer JSON directamente desde un archivo
+
+```python
+import json
+
+with open("config.json", "r") as archivo:
+    configuracion = json.load(archivo) # <1>
+    print(f"App: {configuracion['app']}")
+    print(f"Versión: {configuracion['version']}")
+    print(f"Puerto: {configuracion['puerto']}")
+```
+
+1. `json.load()` (sin la **s**) lee directamente desde un archivo abierto.
+
+## Tabla de conversión: Python ↔ JSON
+
+| Python | JSON |
+|--------|------|
+| `dict` | `object` |
+| `list`, `tuple` | `array` |
+| `str` | `string` |
+| `int`, `float` | `number` |
+| `True` | `true` |
+| `False` | `false` |
+| `None` | `null` |
+
+## Manejo de errores JSON
+
+Si el JSON está mal formado, `json.loads()` lanza `json.JSONDecodeError`.
+
+```python
+import json
+
+json_mal_formado = '{"nombre": "Ana", "edad": }' # <1>
+
+try:
+    datos = json.loads(json_mal_formado)
+except json.JSONDecodeError as e: # <2>
+    print(f"Error de formato JSON: {e}")
+    print("Verifica que el JSON tenga comas y comillas correctas")
+```
+
+1. Este JSON es inválido — falta el valor después de `"edad":`.
+2. `json.JSONDecodeError` captura específicamente errores de formato JSON.
+
+> **Errors should never pass silently.** Siempre envuelve la lectura de JSON en un `try/except` — un archivo corrupto no debería tumbar tu aplicación.
+
+## Ejemplo completo: sistema de configuración
+
+```python
+import json
+import os
+
+CONFIG_FILE = "app_config.json"
+
+# Configuración por defecto
+CONFIG_DEFAULT = {
+    "app_name": "Mi App",
+    "version": "1.0.0",
+    "theme": "dark",
+    "language": "es",
+    "notifications": True,
+}
+
+def cargar_configuracion():
+    """Carga la configuración desde un archivo JSON."""
+    if os.path.exists(CONFIG_FILE):
+        try:
+            with open(CONFIG_FILE, "r") as f:
+                config = json.load(f)
+                print("✅ Configuración cargada desde archivo")
+                return config
+        except json.JSONDecodeError:
+            print("⚠️ Archivo corrupto, usando configuración por defecto")
+    
+    print("📝 Creando configuración por defecto")
+    return CONFIG_DEFAULT.copy()
+
+def guardar_configuracion(config):
+    """Guarda la configuración actual en un archivo JSON."""
+    with open(CONFIG_FILE, "w") as f:
+        json.dump(config, f, indent=4)
+    print("✅ Configuración guardada")
+
+# Uso del sistema
+config = cargar_configuracion()
+config["theme"] = "light"  # Cambiar configuración
+guardar_configuracion(config)
+```
+
+## Resumen
+
+| Función | Dirección | Entrada | Salida |
+|---------|-----------|---------|--------|
+| `json.dumps()` | Python → JSON | Objeto Python | Cadena JSON |
+| `json.dump()` | Python → archivo | Objeto + archivo | Archivo JSON |
+| `json.loads()` | JSON → Python | Cadena JSON | Objeto Python |
+| `json.load()` | archivo → Python | Archivo abierto | Objeto Python |
+
+### Principios del Zen aplicados
+
+| Principio | Cómo se aplica |
+|-----------|----------------|
+| **Simple is better than complex** | 4 funciones cubren todos los casos |
+| **Errors should never pass silently** | `json.JSONDecodeError` para JSON inválido |
+| **Readability counts** | `indent=4` para JSON legible |
+
+---
+
+**Anterior:** [7.4 Manejo de CSV](04-manejo-csv.qmd) | **Siguiente:** [7.6 pathlib](06-pathlib.qmd)

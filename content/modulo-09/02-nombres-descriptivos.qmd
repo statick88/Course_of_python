@@ -1,0 +1,206 @@
+---
+title: "9.2 Nombres descriptivos: código que habla"
+subtitle: "Si necesitas un comentario para explicar qué hace una variable, el nombre está mal"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Elegir nombres que revelen intención sin necesidad de comentarios
+- Diferenciar entre nombres que dicen qué y nombres que dicen por qué
+- Aplicar convenciones de nomenclatura en funciones, clases y variables
+- Identificar nombres engañosos y corregirlos
+
+## El principio del nombre revelador
+
+Imagina que entras a un **almacén donde las cajas no tienen etiquetas**. Una dice "cosa", otra dice "varios", otra simplemente está vacía. ¿Cuánto tiempo tardarías en encontrar lo que necesitas?
+
+El código con malos nombres es exactamente eso: un almacén desordenado donde cada variable es una caja misteriosa.
+
+```python
+# ❌ Nombres que no dicen nada
+d = [15, 22, 8, 30, 19]  # <1>
+r = 0  # <2>
+for x in d:  # <3>
+    r += x  # <4>
+p = r / len(d)  # <5>
+```
+
+1. `d` — ¿Qué es? ¿Datos? ¿Días? ¿Distancia? No hay forma de saberlo.
+2. `r` — ¿Resultado? ¿Resto? ¿Registro? Misterio total.
+3. `x` — El nombre genérico por excelencia. No revela nada sobre el elemento.
+4. `r += x` — Acumula algo, pero ¿qué exactamente?
+5. `p` — ¿Promedio? ¿Porcentaje? ¿Precio?
+
+```python
+# ✅ Nombres que cuentan una historia
+notas_estudiantes = [15, 22, 8, 30, 19]  # <1>
+suma_total = 0  # <2>
+for nota in notas_estudiantes:  # <3>
+    suma_total += nota  # <4>
+promedio = suma_total / len(notas_estudiantes)  # <5>
+```
+
+1. `notas_estudiantes` — Queda claro que son calificaciones de alumnos.
+2. `suma_total` — Indica que acumulará la suma de todos los valores.
+3. `nota` — Cada elemento del ciclo es una nota individual.
+4. `suma_total += nota` — Se entiende: estamos sumando cada nota al total.
+5. `promedio` — El resultado es claramente un promedio.
+
+> **Readability counts.** El segundo bloque no necesita comentarios. Los nombres hacen todo el trabajo explicativo.
+
+## Nombres que dicen el "qué" y el "por qué"
+
+Un buen nombre no solo dice qué contiene, sino **para qué sirve**.
+
+```python
+# ❌ Dice qué, pero no para qué
+datos = obtener_datos()  # <1>
+
+# ✅ Dice qué y para qué
+usuarios_activos = obtener_usuarios_con_sesion_activa()  # <2>
+```
+
+1. `datos` es genérico. `obtener_datos()` no revela qué tipo de datos ni de dónde.
+2. `usuarios_activos` dice exactamente qué contiene y `obtener_usuarios_con_sesion_activa()` explica el criterio.
+
+### Nombres booleanos: preguntas que se responden solas
+
+Las variables booleanas deben leerse como preguntas naturales:
+
+```python
+# ✅ Se leen como preguntas en inglés
+es_mayor_de_edad = True  # <1>
+tiene_permiso = False
+esta_conectado = True
+puede_acceder = es_mayor_de_edad and tiene_permiso  # <2>
+
+# ❌ Nombres que no suenan como preguntas
+estado = True  # <3>
+flag = False  # <4>
+check = True  # <5>
+```
+
+1. `es_mayor_de_edad` se lee como una pregunta: "¿es mayor de edad?" → True.
+2. `puede_acceder` combina condiciones y se lee como oración: "puede acceder si es mayor Y tiene permiso".
+3. `estado` — ¿Qué estado? ¿Activo? ¿Conectado? ¿Verificado?
+4. `flag` — Término técnico que no revela propósito.
+5. `check` — ¿Verificación? ¿Casilla? ¿Revisión?
+
+## Funciones: verbos que describen acción
+
+Los nombres de funciones deben empezar con un **verbo** que describa qué hacen:
+
+| Verbo | Cuándo usarlo | Ejemplo |
+|-------|---------------|---------|
+| `obtener_` / `get_` | Devolver un valor existente | `obtener_usuario(id)` |
+| `calcular_` | Realizar un cálculo | `calcular_promedio(notas)` |
+| `crear_` / `crear_` | Generar algo nuevo | `crear_archivo(ruta)` |
+| `validar_` | Verificar que algo es correcto | `validar_email(email)` |
+| `es_` | Devolver True/False | `es_archivo_valido(ruta)` |
+| `tiene_` | Verificar posesión | `tiene_permisos(usuario)` |
+| `enviar_` | Transmitir datos | `enviar_correo(destinatario)` |
+| `procesar_` | Transformar datos | `procesar_imagen(archivo)` |
+
+```python
+# ✅ Funciones con verbos descriptivos
+def calcular_descuento(precio, porcentaje):  # <1>
+    return precio * (porcentaje / 100)
+
+def es_email_valido(email):  # <2>
+    return "@" in email and "." in email
+
+def enviar_notificacion(usuario, mensaje):  # <3>
+    print(f"Notificación para {usuario}: {mensaje}")
+```
+
+1. `calcular_descuento` — El verbo "calcular" indica que realiza una operación matemática.
+2. `es_email_valido` — El prefijo "es_" indica que devuelve un booleano.
+3. `enviar_notificacion` — El verbo "enviar" indica una acción de transmisión.
+
+## La regla de los 3 niveles
+
+Si un nombre necesita más de 3 palabras, probablemente esa función o variable hace **demasiado**:
+
+```python
+# ❌ Demasiado largo — probablemente hace demasiado
+def obtener_y_validar_y_guardar_y_enviar_confirmacion(usuario):  # <1>
+    pass
+
+# ✅ Dividir en funciones más pequeñas
+def validar_usuario(usuario):  # <2>
+    pass
+
+def guardar_usuario(usuario):  # <3>
+    pass
+
+def enviar_confirmacion(usuario):  # <4>
+    pass
+```
+
+1. El nombre revela que esta función hace 4 cosas diferentes. Viola el principio de responsabilidad única.
+2. Cada función hace una sola cosa y su nombre lo dice claramente.
+3. Función independiente para guardar.
+4. Función independiente para enviar confirmación.
+
+> **Simple is better than complex.** Si no puedes nombrar una función con 2-3 palabras, divídela en funciones más pequeñas.
+
+## Evitar nombres engañosos
+
+Un nombre engañoso es **peor** que ningún nombre, porque te hace creer algo que no es:
+
+```python
+# ❌ Engañoso
+def obtener_lista():  # <1>
+    return {"nombre": "Ana", "edad": 25}
+
+lista_usuarios = "Ana, Pedro, María"  # <2>
+
+# ✅ Honesto
+def obtener_usuario():  # <3>
+    return {"nombre": "Ana", "edad": 25}
+
+nombres_usuarios = "Ana, Pedro, María"  # <4>
+```
+
+1. Dice "lista" pero devuelve un diccionario. Engañoso.
+2. Dice "lista" pero es un string. Muy engañoso.
+3. El nombre refleja exactamente lo que devuelve: un usuario (diccionario).
+4. `nombres_usuarios` describe correctamente que es un string con nombres.
+
+## Abreviaturas: cuándo sí, cuándo no
+
+```python
+# ✅ Abreviaturas universales (todos las entienden)
+url = "https://ejemplo.com"  # <1>
+id_usuario = 42
+api_key = "abc123"
+html_content = "<h1>Hola</h1>"
+
+# ❌ Abreviaturas personales (solo tú las entiendes)
+usr = obtener_usr()  # <2>
+calc_prom = calcular_promedio()  # <3>
+proc_datos = procesar_datos()  # <4>
+```
+
+1. `url`, `id`, `api`, `html` son abreviaturas universales que todo programador conoce.
+2. `usr` — ¿Usuario? ¿Urgente? ¿Uso? Mejor escribir `usuario` completo.
+3. `calc_prom` — Python no es un concurso de quién escribe menos. `calcular_promedio` es claro.
+4. `proc_datos` — `procesar_datos` se lee mejor y no ahorra tanto.
+
+> **Beautiful is better than ugly.** Ahorrar 5 caracteres no vale la pena si el siguiente programador (o tú en 3 meses) no entiende el código.
+
+## Resumen
+
+| Principio | ❌ Evitar | ✅ Usar | Zen de Python |
+|-----------|-----------|---------|---------------|
+| Nombres con intención | `x`, `data`, `tmp` | `edad_usuario`, `notas_finales` | Readability counts |
+| Booleanos como preguntas | `flag`, `check`, `estado` | `es_valido`, `tiene_permiso` | Explicit is better than implicit |
+| Funciones con verbos | `usuario()`, `datos()` | `obtener_usuario()`, `validar_datos()` | Beautiful is better than ugly |
+| Nombres honestos | `lista = "texto"` | `texto_nombres = "texto"` | Explicit is better than implicit |
+| Sin abreviaturas oscuras | `usr`, `calc`, `proc` | `usuario`, `calcular`, `procesar` | Simple is better than complex |
+
+---
+
+**Anterior:** [9.1 PEP 8: el estilo que une a la comunidad](01-pep8-estilo.qmd) | **Siguiente:** [9.3 Funciones puras](03-funciones-puras.qmd)

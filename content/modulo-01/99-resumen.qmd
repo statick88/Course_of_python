@@ -1,0 +1,40 @@
+---
+title: "Resumen del Módulo 1"
+---
+
+## Lo que aprendiste en este módulo
+
+| Concepto | Qué es | Ejemplo |
+|----------|--------|---------|
+| `print()` | Muestra información en pantalla | `print("Hola")` |
+| `input()` | Lee texto del usuario | `nombre = input("Nombre: ")` |
+| Variables | Etiquetas para valores | `edad = 25` |
+| Tipos de datos | int, float, str, bool | `precio = 19.99` |
+| f-strings | Texto con variables | `f"Hola {nombre}"` |
+| Conversión de tipos | Cambiar tipo de dato | `int("42")` |
+
+## Principios del Zen de Python aplicados
+
+| Principio | Cómo lo aplicaste |
+|-----------|-------------------|
+| Beautiful is better than ugly | Nombres descriptivos en variables |
+| Readability counts | Código que se lee como oraciones |
+| Explicit is better than implicit | Conversión explícita de tipos |
+| Simple is better than complex | Soluciones directas, sin sobreingeniería |
+| Errors should never pass silently | Validación de entrada del usuario |
+
+## ¿Estás listo para el Módulo 2?
+
+Deberías poder:
+
+- [ ] Escribir un programa que pida datos al usuario y los muestre formateados
+- [ ] Explicar la diferencia entre `int`, `float`, `str` y `bool`
+- [ ] Usar f-strings para crear mensajes con variables
+- [ ] Validar que la entrada del usuario es del tipo correcto
+- [ ] Nombrar variables siguiendo la convención snake_case
+
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 2: Tipos de Datos y Variables**!
+
+---
+
+**Siguiente:** [Módulo 2: Tipos de Datos y Variables](../modulo-02/index.qmd)

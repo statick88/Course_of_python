@@ -1,0 +1,135 @@
+---
+title: "Desafío 5: Sistema de votaciones"
+difficulty: "⭐⭐ Media"
+estimated_time: "15 minutos"
+---
+
+## Situación
+
+Una asociación de vecinos está realizando una votación para elegir el nombre del nuevo parque del barrio. Necesitas un programa que registre los votos, cuente los resultados y declare al ganador.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Defina las opciones de votación (al menos 4 nombres)
+2. Simule una lista de votos (puedes hardcodearla o pedirla al usuario)
+3. Cuente los votos usando un diccionario
+4. Muestre los resultados ordenados de mayor a menor
+5. Declare al ganador y detecte si hay empate
+
+## Ejemplo de ejecución
+
+```
+=== VOTACIÓN: NUEVO PARQUE DEL BARRIO ===
+
+Opciones:
+  1. Parque del Sol
+  2. Parque de la Luna
+  3. Parque Central
+  4. Parque Esperanza
+
+--- Registrando votos ---
+Votos registrados: ['Parque del Sol', 'Parque Central', 'Parque del Sol',
+  'Parque de la Luna', 'Parque del Sol', 'Parque Central', 'Parque Esperanza',
+  'Parque del Sol', 'Parque de la Luna', 'Parque Central']
+
+--- Resultados ---
+🥇 Parque del Sol: 4 votos (40.0%)
+🥈 Parque Central: 3 votos (30.0%)
+🥉 Parque de la Luna: 2 votos (20.0%)
+   Parque Esperanza: 1 votos (10.0%)
+
+--- Total de votos: 10 ---
+
+🏆 ¡GANADOR: Parque del Sol con 4 votos!
+```
+
+## Pista
+
+- Usa un diccionario para contar votos: `{"nombre_parc": cantidad}`
+- Inicializa todas las opciones en 0 antes de contar
+- Para ordenar: `sorted(dic.items(), key=lambda x: x[1], reverse=True)`
+- Calcula el porcentaje: `(votos / total) * 100`
+
+## Criterios de éxito
+
+- [ ] Define al menos 4 opciones de votación
+- [ ] Cuenta votos correctamente con diccionario
+- [ ] Muestra resultados ordenados de mayor a menor
+- [ ] Calcula porcentajes
+- [ ] Declara al ganador
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 5: Sistema de votaciones
+# Solución de referencia
+
+print("=== VOTACIÓN: NUEVO PARQUE DEL BARRIO ===")
+print()
+
+# Opciones de votación
+opciones = [
+    "Parque del Sol",
+    "Parque de la Luna",
+    "Parque Central",
+    "Parque Esperanza"
+]
+
+print("Opciones:")
+for i, opcion in enumerate(opciones, 1):
+    print(f"  {i}. {opcion}")
+
+# Simular votos (en un caso real, vendrían de input del usuario)
+votos = [
+    "Parque del Sol", "Parque Central", "Parque del Sol",
+    "Parque de la Luna", "Parque del Sol", "Parque Central",
+    "Parque Esperanza", "Parque del Sol", "Parque de la Luna",
+    "Parque Central"
+]
+
+print()
+print("--- Registrando votos ---")
+print(f"Votos registrados: {votos}")
+
+# Contar votos
+conteo = {opcion: 0 for opcion in opciones}  # Inicializar en 0
+for voto in votos:
+    if voto in conteo:
+        conteo[voto] += 1
+
+# Ordenar resultados
+resultados = sorted(conteo.items(), key=lambda x: x[1], reverse=True)
+
+# Mostrar resultados
+print()
+print("--- Resultados ---")
+medallas = ["🥇", "🥈", "🥉", "   ", "   "]
+total_votos = len(votos)
+
+for i, (opcion, cantidad) in enumerate(resultados):
+    porcentaje = (cantidad / total_votos) * 100 if total_votos > 0 else 0
+    medalla = medallas[i] if i < len(medallas) else "   "
+    print(f"{medalla} {opcion}: {cantidad} votos ({porcentaje:.1f}%)")
+
+print()
+print(f"--- Total de votos: {total_votos} ---")
+
+# Declarar ganador
+ganador, votos_ganador = resultados[0]
+segundo = resultados[1]
+
+if votos_ganador == segundo[1]:
+    print()
+    print("🤝 ¡EMPATE! Hay dos opciones con la misma cantidad de votos.")
+else:
+    print()
+    print(f"🏆 ¡GANADOR: {ganador} con {votos_ganador} votos!")
+```
+</details>
+
+---
+
+[← Desafío 4](desafio-04-fusionar-diccionarios.qmd) | [Desafío 6 →](desafio-06-base-datos-estudiantes.qmd)

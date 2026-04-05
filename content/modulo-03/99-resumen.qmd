@@ -1,0 +1,64 @@
+---
+title: "Resumen del Módulo 3"
+subtitle: "Estructuras de Control — lo que dominas ahora"
+---
+
+## Lo que aprendiste en este módulo
+
+| Concepto | Qué es | Ejemplo |
+|----------|--------|---------|
+| `if/elif/else` | Tomar decisiones según condiciones | `if edad >= 18: ...` |
+| Operadores de comparación | Preguntas con respuesta True/False | `edad >= 18`, `nombre != ""` |
+| Operadores lógicos | Combinar condiciones | `and`, `or`, `not` |
+| Guard clauses | Validar temprano, código plano | `if not valido: return` |
+| `for` | Iterar sobre colecciones conocidas | `for item in lista:` |
+| `range()` | Generar secuencias numéricas | `range(1, 11)` |
+| `while` | Repetir mientras se cumpla | `while contador > 0:` |
+| `break` | Salir del bucle inmediatamente | `if encontrado: break` |
+| `continue` | Saltar al siguiente elemento | `if invalido: continue` |
+| `else` del bucle | Se ejecuta si no hubo `break` | `for...else` |
+| Comprensión de listas | Crear listas en una línea | `[x**2 for x in range(10)]` |
+
+## ¿Cuándo usar cada estructura?
+
+| Necesitas... | Usa... | Ejemplo |
+|--------------|--------|---------|
+| Decidir entre dos caminos | `if/else` | Mayor o menor de edad |
+| Múltiples opciones | `if/elif/else` | Menú con varias opciones |
+| Recorrer una lista | `for` | Procesar cada elemento |
+| Repetir N veces | `for` + `range()` | Imprimir 10 veces |
+| Repetir hasta que... | `while` | Esperar entrada válida |
+| Salir antes de tiempo | `break` | Encontraste lo que buscabas |
+| Saltar un elemento | `continue` | Filtrar datos inválidos |
+| Crear lista rápida | Comprensión | `[x*2 for x in datos]` |
+
+## Principios del Zen de Python aplicados
+
+| Principio | Cómo lo aplicaste |
+|-----------|-------------------|
+| **Beautiful is better than ugly** | Comprensiones de listas elegantes |
+| **Readability counts** | Guard clauses en vez de pirámides |
+| **Simple is better than complex** | `for item in lista` en vez de índices |
+| **Flat is better than nested** | Validaciones tempranas con `return` |
+| **Explicit is better than implicit** | Condiciones claras con nombres descriptivos |
+| **Errors should never pass silently** | Validación de entrada con `while` |
+| **There should be one obvious way** | Comprensiones para transformaciones simples |
+
+## ¿Estás listo para los desafíos?
+
+Deberías poder:
+
+- [ ] Escribir un programa que tome decisiones con `if/elif/else`
+- [ ] Usar `for` para recorrer listas, rangos y diccionarios
+- [ ] Usar `while` para validar entrada del usuario
+- [ ] Controlar bucles con `break` y `continue`
+- [ ] Crear listas con comprensiones en una línea
+- [ ] Elegir la estructura correcta para cada problema
+
+## ¿Estás listo para el Módulo 4?
+
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 4: Funciones y Modularización**!
+
+---
+
+**Anterior:** [3.6 Comprensión de listas](06-comprension-listas.qmd) | **Siguiente:** [Módulo 4: Funciones](../modulo-04/index.qmd)

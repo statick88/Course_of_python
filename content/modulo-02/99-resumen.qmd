@@ -1,0 +1,90 @@
+---
+title: "Resumen del Módulo 2"
+subtitle: "Operadores, casting y strings — tus herramientas fundamentales"
+---
+
+## Lo que aprendiste en este módulo
+
+### Operadores aritméticos
+
+| Operador | Qué hace | Ejemplo | Resultado |
+|----------|----------|---------|-----------|
+| `+` | Suma | `10 + 3` | `13` |
+| `-` | Resta | `10 - 3` | `7` |
+| `*` | Multiplicación | `10 * 3` | `30` |
+| `/` | División (float) | `10 / 3` | `3.333...` |
+| `//` | División entera | `10 // 3` | `3` |
+| `%` | Módulo (residuo) | `10 % 3` | `1` |
+| `**` | Potencia | `2 ** 3` | `8` |
+
+### Operadores de comparación
+
+| Operador | Pregunta | Ejemplo | Resultado |
+|----------|----------|---------|-----------|
+| `==` | ¿Son iguales? | `5 == 5` | `True` |
+| `!=` | ¿Son diferentes? | `5 != 3` | `True` |
+| `>` | ¿Es mayor? | `5 > 3` | `True` |
+| `<` | ¿Es menor? | `5 < 3` | `False` |
+| `>=` | ¿Mayor o igual? | `5 >= 5` | `True` |
+| `<=` | ¿Menor o igual? | `5 <= 3` | `False` |
+
+### Operadores lógicos
+
+| Operador | Regla | Ejemplo | Resultado |
+|----------|-------|---------|-----------|
+| `and` | Ambos deben ser `True` | `True and True` | `True` |
+| `or` | Al menos uno debe ser `True` | `True or False` | `True` |
+| `not` | Invierte el valor | `not True` | `False` |
+
+### Casting (conversión de tipos)
+
+| Función | Convierte a | Ejemplo | Resultado |
+|---------|-------------|---------|-----------|
+| `int()` | Entero | `int("42")` | `42` |
+| `float()` | Decimal | `float("3.14")` | `3.14` |
+| `str()` | Texto | `str(42)` | `"42"` |
+| `bool()` | Booleano | `bool("")` | `False` |
+| `round()` | Redondeado | `round(3.7)` | `4` |
+
+### Métodos de strings
+
+| Método | Qué hace | Ejemplo | Resultado |
+|--------|----------|---------|-----------|
+| `.upper()` | Mayúsculas | `"hola".upper()` | `"HOLA"` |
+| `.lower()` | Minúsculas | `"HOLA".lower()` | `"hola"` |
+| `.strip()` | Quita espacios | `" hola ".strip()` | `"hola"` |
+| `.split()` | Divide en lista | `"a,b".split(",")` | `["a", "b"]` |
+| `.join()` | Une lista | `"-".join(["a","b"])` | `"a-b"` |
+| `.replace()` | Reemplaza | `"hola".replace("h","H")` | `"Hola"` |
+| `.find()` | Busca índice | `"hola".find("o")` | `1` |
+| `.count()` | Cuenta | `"hola".count("o")` | `1` |
+
+## Principios del Zen de Python aplicados
+
+| Principio | Cómo lo aplicaste |
+|-----------|-------------------|
+| **Beautiful is better than ugly** | Usaste f-strings con formato para salida limpia y profesional |
+| **Readability counts** | Encadenaste comparaciones: `18 <= edad <= 65` |
+| **Explicit is better than implicit** | Convertiste tipos explícitamente con `int()`, `float()`, `str()` |
+| **Simple is better than complex** | Usaste `nombre or "Invitado"` en vez de `if/else` verboso |
+| **Errors should never pass silently** | Validaste datos antes de convertir con `.isdigit()` y `try/except` |
+| **Practicality beats purity** | Usaste `//` para repartir cosas enteras y `%` para ciclos |
+
+## ¿Estás listo para el Módulo 3?
+
+Deberías poder:
+
+- [ ] Usar los 7 operadores aritméticos sin dudar
+- [ ] Elegir entre `/`, `//` y `%` según la situación
+- [ ] Comparar valores con los 6 operadores de comparación
+- [ ] Combinar condiciones con `and`, `or` y `not`
+- [ ] Convertir entre tipos de datos de forma segura
+- [ ] Manipular strings con al menos 8 métodos diferentes
+- [ ] Formatear salida con f-strings avanzados
+- [ ] Validar entrada de usuario antes de procesarla
+
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 3: Estructuras de Control**!
+
+---
+
+**Anterior:** [2.5 Strings avanzado](05-strings-avanzado.qmd) | **Siguiente:** [Módulo 3: Estructuras de Control](../modulo-03/index.qmd)

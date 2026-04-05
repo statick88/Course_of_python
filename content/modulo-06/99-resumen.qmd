@@ -1,0 +1,61 @@
+---
+title: "Resumen del Módulo 6"
+---
+
+## Lo que aprendiste en este módulo
+
+| Concepto | Qué es | Ejemplo |
+|----------|--------|---------|
+| Diccionario | Colección clave-valor | `{"nombre": "Ana", "edad": 28}` |
+| Acceder seguro | `.get(key, default)` | `dic.get("color", "N/A")` |
+| Modificar | `dic[key] = valor` | `dic["precio"] = 99.99` |
+| Eliminar | `del`, `.pop()`, `.popitem()` | `dic.pop("key", None)` |
+| Iterar claves | `for k in dic` | `for clave in datos:` |
+| Iterar valores | `for v in dic.values()` | `for nota in calificaciones.values():` |
+| Iterar pares | `for k, v in dic.items()` | `for nombre, nota in notas.items():` |
+| Set | Colección sin duplicados | `{"a", "b", "c"}` |
+| Unión de sets | `\|` o `.union()` | `a \| b` |
+| Intersección | `&` o `.intersection()` | `a & b` |
+| Diferencia | `-` o `.difference()` | `a - b` |
+| Dict anidado | Diccionario dentro de diccionario | `datos["user"]["email"]` |
+| JSON | Formato de intercambio | `json.dumps()`, `json.loads()` |
+
+## Principios del Zen de Python aplicados
+
+| Principio | Cómo lo aplicaste |
+|-----------|-------------------|
+| Beautiful is better than ugly | Diccionarios hacen el código autoexplicativo |
+| Readability counts | `.items()` y f-strings para iterar limpiamente |
+| Explicit is better than implicit | `.get()` con valor por defecto en vez de `[]` inseguro |
+| Simple is better than complex | `set(lista)` elimina duplicados en una línea |
+| Errors should never pass silently | `.get()` y `.pop()` con valores por defecto |
+| Practicality beats purity | Sets para búsqueda rápida, listas para orden |
+
+## ¿Lista, Diccionario o Set?
+
+| Necesitas... | Elige... | Porque... |
+|--------------|----------|-----------|
+| Orden y posición | Lista `[]` | Mantiene el orden, acceso por índice |
+| Búsqueda por nombre | Diccionario `{}` | Acceso directo por clave |
+| Datos con atributos | Diccionario `{}` | Cada valor tiene un significado |
+| Sin duplicados | Set `{}` | Elimina duplicados automáticamente |
+| Búsqueda rápida | Set `{}` | O(1) — instantáneo sin importar el tamaño |
+| Operaciones de conjunto | Set `{}` | Unión, intersección, diferencia nativas |
+
+## ¿Estás listo para el Módulo 7?
+
+Deberías poder:
+
+- [ ] Crear un diccionario y agregar/modificar/eliminar elementos
+- [ ] Usar `.get()` para acceso seguro y evitar `KeyError`
+- [ ] Iterar sobre claves, valores y pares clave-valor
+- [ ] Usar sets para eliminar duplicados y encontrar elementos comunes
+- [ ] Trabajar con diccionarios anidados (acceder a niveles profundos)
+- [ ] Convertir entre diccionarios Python y JSON
+- [ ] Elegir la estructura de datos correcta para cada situación
+
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 7: Manejo de Archivos**!
+
+---
+
+**Siguiente:** [Módulo 7: Manejo de Archivos](../modulo-07/index.qmd)

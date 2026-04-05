@@ -1,0 +1,282 @@
+---
+title: "8.6 Entornos virtuales: aislamiento seguro"
+subtitle: "Cada proyecto, su propio mundo"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender por qué necesitas entornos virtuales
+- Crear, activar y desactivar entornos virtuales
+- Gestionar dependencias por proyecto
+- Evitar conflictos entre proyectos
+
+## El problema: caos de versiones
+
+Imagina que tienes **dos proyectos**:
+
+- **Proyecto A** necesita Django 3.2 (un sistema viejo que no puedes actualizar)
+- **Proyecto B** necesita Django 5.0 (un proyecto nuevo con las últimas funciones)
+
+Si instalas todo en el mismo Python, **uno de los dos se rompe**. Es como intentar que dos personas compartan el mismo teléfono con configuraciones diferentes.
+
+```
+# Sin entornos virtuales — CAOS
+pip install django==3.2   # Proyecto A funciona ✅, Proyecto B se rompe ❌
+pip install django==5.0   # Proyecto B funciona ✅, Proyecto A se rompe ❌
+```
+
+## La solución: entornos virtuales
+
+Un **entorno virtual** es una **copia aislada** de Python exclusiva para un proyecto. Cada proyecto tiene su propio Python, su propio pip y sus propios paquetes.
+
+Es como tener **casas separadas** para cada proyecto. Lo que pasa en una casa, no afecta a las demás.
+
+```
+proyecto_a/
+├── venv/              # Entorno virtual de A
+│   ├── bin/python     # Python aislado
+│   └── lib/           # Django 3.2 solo aquí
+└── main.py
+
+proyecto_b/
+├── venv/              # Entorno virtual de B
+│   ├── bin/python     # Python aislado
+│   └── lib/           # Django 5.0 solo aquí
+└── main.py
+```
+
+> **Namespaces are one honking great idea.** Los entornos virtuales son namespaces a nivel de proyecto.
+
+## Crear tu primer entorno virtual
+
+### Paso 1: Crear el entorno
+
+```bash
+# Navega a la carpeta de tu proyecto
+cd mi_proyecto
+
+# Crea el entorno virtual (se llama "venv" por convención)
+python -m venv venv  # <1>
+```
+
+1. `python -m venv venv` significa: "usa el módulo `venv` de Python para crear un entorno virtual en la carpeta `venv`". El primer `venv` es el módulo, el segundo es el nombre de la carpeta.
+
+### Paso 2: Activar el entorno
+
+```bash
+# En Mac/Linux
+source venv/bin/activate  # <1>
+
+# En Windows
+venv\Scripts\activate  # <2>
+```
+
+1. `source` ejecuta el script de activación. Este modifica tu terminal para que use el Python del entorno virtual.
+2. En Windows, el script está en `Scripts\activate`.
+
+### Paso 3: Verificar que funciona
+
+```bash
+# Cuando el entorno está activo, ves (venv) al inicio del prompt
+(venv) $ which python  # <1> — muestra la ruta del Python del entorno
+(venv) $ python --version  # <2> — verifica la versión
+(venv) $ pip list  # <3> — solo muestra paquetes de este entorno
+```
+
+1. `which python` (Mac/Linux) o `where python` (Windows) muestra la ruta. Debe apuntar a `mi_proyecto/venv/bin/python`, no al Python del sistema.
+2. La versión debe ser la misma que tu Python base, pero es una instalación separada.
+3. `pip list` muestra solo los paquetes instalados en este entorno. Inicialmente solo `pip` y `setuptools`.
+
+### Paso 4: Instalar paquetes
+
+```bash
+# Los paquetes se instalan SOLO en este entorno
+(venv) $ pip install requests flask  # <1>
+
+# Verificar
+(venv) $ pip list  # <2> — ahora muestra requests y flask
+```
+
+1. `requests` y `flask` se instalan en `mi_proyecto/venv/lib/`. No afectan a otros proyectos.
+2. Solo ves los paquetes de este entorno. Limpio y aislado.
+
+### Paso 5: Desactivar el entorno
+
+```bash
+# Vuelve al Python del sistema
+deactivate  # <1>
+
+# El prompt ya no muestra (venv)
+$ which python  # <2> — ahora apunta al Python del sistema
+$ pip list  # <3> — muestra los paquetes del sistema
+```
+
+1. `deactivate` restaura tu terminal al estado original. El Python del entorno virtual deja de usarse.
+2. Ahora `python` apunta al Python global del sistema.
+3. `pip list` muestra los paquetes instalados globalmente.
+
+## Flujo de trabajo recomendado
+
+Cada vez que empiezas un proyecto nuevo:
+
+```bash
+# 1. Crear carpeta del proyecto
+mkdir mi_nuevo_proyecto
+cd mi_nuevo_proyecto
+
+# 2. Crear entorno virtual
+python -m venv venv
+
+# 3. Activar
+source venv/bin/activate  # Mac/Linux
+# venv\Scripts\activate   # Windows
+
+# 4. Instalar dependencias
+pip install requests flask pandas
+
+# 5. Guardar la lista de dependencias
+pip freeze > requirements.txt  # <1>
+
+# 6. Trabajar en tu proyecto...
+
+# 7. Cuando termines, desactivar
+deactivate
+```
+
+1. `requirements.txt` permite que cualquier persona reproduzca tu entorno exacto.
+
+## Reproducir un entorno existente
+
+Cuando descargas un proyecto de otra persona:
+
+```bash
+# 1. Clonar o descargar el proyecto
+git clone https://github.com/ejemplo/proyecto.git
+cd proyecto
+
+# 2. Crear entorno virtual
+python -m venv venv
+
+# 3. Activar
+source venv/bin/activate
+
+# 4. Instalar todas las dependencias de golpe
+pip install -r requirements.txt  # <1>
+
+# 5. ¡Listo! El proyecto funciona
+python main.py
+```
+
+1. `-r requirements.txt` lee el archivo e instala exactamente las mismas versiones que usó el autor.
+
+## Dónde NO subir el entorno virtual
+
+El entorno virtual contiene miles de archivos binarios. **Nunca** lo subas a Git:
+
+```
+# .gitignore — Archivos que Git debe ignorar
+venv/              # <1> — entorno virtual estándar
+.env/              # <2> — otro nombre común
+__pycache__/       # <3> — archivos compilados de Python
+*.pyc              # <4> — archivos .pyc individuales
+```
+
+1. `venv/` es la convención más común. Ignóralo siempre en `.gitignore`.
+2. Algunos proyectos usan `.env/` como nombre del entorno virtual.
+3. `__pycache__/` contiene archivos `.pyc` compilados. Se regeneran automáticamente.
+4. Los archivos `.pyc` individuales también deben ignorarse.
+
+## Entornos virtuales y VS Code
+
+Si usas VS Code, puedes seleccionar el intérprete del entorno virtual:
+
+1. Abre la paleta de comandos: `Ctrl+Shift+P` (o `Cmd+Shift+P` en Mac)
+2. Escribe: `Python: Select Interpreter`
+3. Elige el que dice `venv` — VS Code lo detecta automáticamente
+
+Ahora VS Code usará el Python del entorno virtual para ejecutar tu código, hacer autocompletado y verificar errores.
+
+## Errores comunes con entornos virtuales
+
+### ❌ Error: Olvidar activar el entorno
+
+```bash
+# ❌ Sin activar — instala en el Python global
+pip install requests  # Se instala globalmente, no en el venv
+
+# ✅ Primero activa
+source venv/bin/activate
+pip install requests  # Se instala en el entorno virtual
+```
+
+**Solución:** Siempre verifica que ves `(venv)` en tu prompt antes de instalar paquetes.
+
+### ❌ Error: Múltiples entornos en el mismo proyecto
+
+```
+proyecto/
+├── venv/       # Entorno viejo
+├── .venv/      # Entorno nuevo
+└── env/        # Otro entorno más
+```
+
+**Solución:** Elige **un solo nombre** para el entorno virtual y úsalo consistentemente. La convención es `venv/`.
+
+### ❌ Error: El entorno virtual no funciona después de mover el proyecto
+
+```bash
+# ❌ Mover la carpeta del proyecto rompe el entorno virtual
+mv proyecto/ nueva_ubicacion/
+source venv/bin/activate  # Puede fallar
+```
+
+**Solución:** Los entornos virtuales contienen rutas absolutas. Si mueves el proyecto, **recrea** el entorno:
+
+```bash
+# ✅ Borrar y recrear
+rm -rf venv
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### ❌ Error: Crear el venv dentro de un subdirectorio
+
+```
+proyecto/
+├── src/
+│   └── main.py
+└── src/venv/  # ❌ Mal ubicado
+```
+
+**Solución:** El entorno virtual siempre va en la **raíz** del proyecto:
+
+```
+proyecto/
+├── venv/      # ✅ Bien ubicado
+├── src/
+│   └── main.py
+└── requirements.txt
+```
+
+## Resumen
+
+| Comando | Qué hace | Cuándo usarlo |
+|---------|----------|---------------|
+| `python -m venv venv` | Crea entorno virtual | Al iniciar un proyecto nuevo |
+| `source venv/bin/activate` | Activa el entorno | Antes de instalar o ejecutar |
+| `deactivate` | Desactiva el entorno | Cuando terminas de trabajar |
+| `pip freeze > requirements.txt` | Guarda dependencias | Antes de hacer commit |
+| `pip install -r requirements.txt` | Restaura dependencias | Al clonar un proyecto |
+
+| Principio del Zen | Aplicación |
+|-------------------|------------|
+| Namespaces are one honking great idea | Cada proyecto tiene su propio espacio aislado |
+| Explicit is better than implicit | requirements.txt documenta exactamente qué necesitas |
+| Simple is better than complex | 3 comandos: crear, activar, instalar |
+
+---
+
+**Anterior:** [8.5 pip: gestor de paquetes](05-pip-paquetes.qmd) | **Siguiente:** [Resumen del Módulo 8](99-resumen.qmd)

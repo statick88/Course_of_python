@@ -1,0 +1,284 @@
+---
+title: "1.2 Instalación y configuración del entorno"
+subtitle: "Prepara tu computadora para programar en Python"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Instalar Python en tu sistema operativo
+- Verificar que la instalación funciona correctamente
+- Instalar y usar IPython como herramienta de aprendizaje
+- Elegir y configurar un editor de código
+- Entender la diferencia entre terminal, intérprete y editor
+
+## Paso 1: Instalar Python
+
+### En Windows
+
+```python
+# Verificar si Python está instalado en Windows
+python --version # <1>
+```
+
+1. En Windows, el comando puede ser `python` o `py` en lugar de `python3`.
+
+**Proceso de instalación:**
+
+1. Ve a <https://python.org/downloads>
+2. Descarga el instalador para Windows
+3. **IMPORTANTE:** Marca la casilla "Add Python to PATH" antes de instalar <1>
+4. Haz clic en "Install Now"
+
+1. Esta opción agrega Python al PATH del sistema, permitiendo ejecutar `python` desde cualquier terminal.
+
+### En macOS
+
+```bash
+# Verificar si Python está instalado en macOS
+python3 --version # <1>
+```
+
+1. macOS incluye Python 2 por defecto, pero necesitamos Python 3.
+
+**Instalación con Homebrew (recomendado):**
+
+```bash
+# Instalar Homebrew si no lo tienes
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # <1>
+
+# Instalar Python 3
+brew install python3 # <2>
+
+# Verificar la instalación
+python3 --version # <3>
+```
+
+1. Homebrew es el gestor de paquetes más popular para macOS.
+2. Este comando instala la última versión estable de Python 3.
+3. Deberías ver algo como `Python 3.12.x` o superior.
+
+### En Linux (Ubuntu/Debian)
+
+```bash
+# Actualizar la lista de paquetes
+sudo apt update # <1>
+
+# Instalar Python 3 y pip
+sudo apt install python3 python3-pip python3-venv # <2>
+
+# Verificar la instalación
+python3 --version # <3>
+pip3 --version # <4>
+```
+
+1. Actualiza la lista de paquetes disponibles en los repositorios.
+2. Instala Python 3, el gestor de paquetes pip y el módulo de entornos virtuales.
+3. Deberías ver la versión de Python instalada.
+4. pip es el gestor de paquetes de Python, necesario para instalar bibliotecas externas.
+
+### En Linux (Fedora/RHEL)
+
+```bash
+# Instalar Python 3 en Fedora
+sudo dnf install python3 python3-pip python3-devel # <1>
+
+# Verificar la instalación
+python3 --version # <2>
+```
+
+1. `dnf` es el gestor de paquetes de Fedora. `python3-devel` incluye archivos de desarrollo necesarios para algunas bibliotecas.
+2. Verifica que Python 3 se instaló correctamente.
+
+## Paso 2: Verificar la instalación
+
+Abre tu terminal (o PowerShell en Windows) y ejecuta:
+
+```bash
+python3 --version # <1>
+```
+
+1. Este comando muestra la versión de Python instalada. Deberías ver algo como `Python 3.12.1`.
+
+> **Nota:** En Windows, a veces el comando es `python` en lugar de `python3`.
+
+## Paso 3: El intérprete interactivo
+
+Python viene con un **intérprete interactivo** — una consola donde puedes escribir código y ver resultados inmediatamente.
+
+```bash
+# Iniciar el intérprete interactivo de Python
+python3 # <1>
+```
+
+1. Este comando abre el intérprete interactivo de Python. Verás el prompt `>>>` indicando que Python está listo para recibir comandos.
+
+Verás algo así:
+
+```
+Python 3.12.1 (main, Dec 15 2024, 00:00:00)
+[GCC ...] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+El `>>>` es el **prompt** de Python. Significa que está esperando tu código.
+
+```python
+# Esto es un comentario — Python lo ignora
+print("¡Hola desde el intérprete!") # <1>
+
+# Puedes hacer matemáticas directamente
+2 + 2 # <2>
+
+# Variables
+nombre = "Diego" # <3>
+print(f"Hola, {nombre}") # <4>
+```
+
+1. La función `print()` muestra texto en pantalla.
+2. Python evalúa expresiones matemáticas y muestra el resultado automáticamente.
+3. Las variables se crean asignando un valor con el operador `=`.
+4. Los f-strings permiten insertar variables directamente en el texto.
+
+Para salir del intérprete, escribe `exit()` o presiona `Ctrl+D` (Linux/macOS) o `Ctrl+Z` seguido de Enter (Windows).
+
+## Paso 4: IPython — El intérprete mejorado
+
+**IPython** es una versión mejorada del intérprete interactivo de Python. Ofrece:
+
+- Autocompletado con Tab
+- Historial de comandos
+- Ayuda integrada con `?`
+- Magic commands para tareas especiales
+- Mejor formato de salida
+
+### Instalar IPython
+
+```bash
+# Instalar IPython con pip
+pip3 install ipython # <1>
+```
+
+1. IPython se instala como cualquier otro paquete de Python usando pip.
+
+### Usar IPython
+
+```bash
+# Iniciar IPython
+ipython # <1>
+```
+
+1. IPython muestra un prompt diferente: `In [1]:` en lugar de `>>>`.
+
+```python
+# Ayuda integrada con ?
+print? # <1>
+
+# Autocompletado con Tab
+pri<TAB> # <2>
+
+# Historial de comandos
+# Usa las flechas arriba/abajo para navegar el historial
+
+# Magic commands
+%timeit sum(range(1000)) # <3>
+%ls # <4>
+```
+
+1. El signo `?` después de una función muestra su documentación.
+2. Presiona Tab para autocompletar nombres de funciones y variables.
+3. `%timeit` mide el tiempo de ejecución de un comando.
+4. `%ls` lista archivos en el directorio actual (como el comando `ls` de Linux).
+
+### IPython vs Intérprete estándar
+
+| Característica | Intérprete estándar | IPython |
+|----------------|---------------------|---------|
+| Prompt | `>>>` | `In [1]:` |
+| Autocompletado | Básico | Avanzado con Tab |
+| Historial | Limitado | Completo con flechas |
+| Ayuda | `help(función)` | `función?` |
+| Magic commands | No | Sí (`%timeit`, `%ls`, etc.) |
+| Formato de salida | Básico | Mejorado con colores |
+
+## Paso 5: Tu primer archivo de código
+
+El intérprete es genial para probar cosas, pero para programas reales necesitas **archivos**.
+
+### Crear tu primer script
+
+```python
+# mi_primer_programa.py
+print("¡Hola Mundo!") # <1>
+nombre = input("¿Cómo te llamas? ") # <2>
+print(f"Encantado, {nombre}") # <3>
+```
+
+1. `print()` muestra texto en pantalla.
+2. `input()` lee texto ingresado por el usuario y lo almacena en la variable `nombre`.
+3. El f-string `f"..."` inserta el valor de la variable `nombre` en el texto.
+
+Para ejecutar el archivo:
+
+```bash
+# Ejecutar el script de Python
+python3 mi_primer_programa.py # <1>
+```
+
+1. Este comando ejecuta el archivo `mi_primer_programa.py` con el intérprete de Python.
+
+## Paso 6: Elegir un editor de código
+
+Un editor de código es como tu taller de trabajo. Estas son las mejores opciones:
+
+| Editor | Precio | Nivel | Recomendado para |
+|--------|--------|-------|-----------------|
+| **VS Code** | Gratis | Todos | ✅ Recomendación principal |
+| **PyCharm Community** | Gratis | Intermedio | Proyectos grandes |
+| **Sublime Text** | Gratis (trial) | Todos | Ligero y rápido |
+| **Vim/Neovim** | Gratis | Avanzado | Usuarios de terminal |
+
+### Instalar VS Code (recomendado)
+
+1. Descarga desde <https://code.visualstudio.com>
+2. Instala la extensión **Python** de Microsoft
+3. Instala la extensión **Python Extension Pack**
+
+## Paso 7: Estructura de un proyecto Python
+
+Un proyecto organizado se ve así:
+
+```
+mi_proyecto/
+├── main.py          # <1>
+├── utils.py         # <2>
+├── datos/           # <3>
+│   └── ejemplo.csv
+├── tests/           # <4>
+│   └── test_main.py
+└── README.md        # <5>
+```
+
+1. `main.py` es el punto de entrada del programa.
+2. `utils.py` contiene funciones auxiliares reutilizables.
+3. `datos/` almacena archivos de datos que usa el programa.
+4. `tests/` contiene pruebas automatizadas del código.
+5. `README.md` describe el proyecto y cómo usarlo.
+
+## Resumen
+
+| Paso | Qué hicimos |
+|------|-------------|
+| 1 | Instalamos Python en Windows, macOS o Linux |
+| 2 | Verificamos con `python3 --version` |
+| 3 | Probamos el intérprete interactivo |
+| 4 | Instalamos y probamos IPython |
+| 5 | Creamos nuestro primer archivo `.py` |
+| 6 | Elegimos un editor de código |
+| 7 | Aprendimos la estructura de un proyecto |
+
+---
+
+**Siguiente:** [1.3 Tu primer programa: Hola Mundo](03-hola-mundo.qmd)

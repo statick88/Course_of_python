@@ -1,0 +1,19 @@
+---
+title: "Quizzes Interactivos"
+---
+
+## Quizzes Disponibles
+
+| Quiz | Módulo | Preguntas |
+|------|--------|-----------|
+| [Quiz Módulo 1](quiz-modulo-01.qmd) | Introducción a Python | 10 |
+
+## Instrucciones
+
+- Cada quiz tiene preguntas de opción múltiple
+- Puedes intentar cada quiz tantas veces como necesites
+- El resultado se muestra inmediatamente al finalizar
+
+---
+
+**Volver al índice:** [Inicio](../index.qmd)

@@ -1,0 +1,237 @@
+---
+title: "1.6 Entrada y salida de datos"
+subtitle: "Comunicación entre tu programa y el mundo"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Usar `input()` para recibir datos del usuario
+- Formatear salidas claras con `print()` y f-strings
+- Validar que los datos recibidos tienen el tipo correcto
+- Construir programas que interactúen de forma segura con el usuario
+
+## La regla de oro: nunca confíes en la entrada
+
+> **Zero Trust aplicado a Python:** Todo lo que viene del usuario es texto, y todo texto es sospechoso hasta que lo valides.
+
+```python
+# input() SIEMPRE devuelve texto (str), aunque el usuario escriba un número
+edad = input("¿Cuántos años tienes? ") # <1>
+print(type(edad)) # <2>
+
+# Si quieres usarlo como número, debes convertirlo explícitamente
+edad_numero = int(edad) # <3>
+print(f"El próximo año tendrás {edad_numero + 1}")
+```
+
+1. `input()` siempre devuelve una cadena de texto (`str`), incluso si el usuario escribe un número.
+2. `type(edad)` confirma que es `<class 'str'>`. Esto es fundamental entenderlo.
+3. `int(edad)` convierte el texto a número entero. Sin esta conversión, no podrías hacer operaciones matemáticas.
+
+## `input()`: la puerta de entrada
+
+La función `input()` hace dos cosas:
+1. Muestra un mensaje al usuario
+2. Espera a que el usuario escriba algo y presione Enter
+
+```python
+# El mensaje es opcional, pero siempre inclúyelo — sin él, el usuario no sabe qué hacer
+nombre = input("Ingresa tu nombre: ") # <1>
+print(f"Hola, {nombre}") # <2>
+```
+
+1. `input()` muestra el mensaje "Ingresa tu nombre: " y espera a que el usuario escriba algo. Lo que escriba se almacena en la variable `nombre`.
+2. El f-string inserta el valor de `nombre` en el mensaje de saludo.
+
+### El problema del tipo: todo es texto
+
+```python
+# ❌ Esto falla silenciosamente para el usuario
+edad = input("Tu edad: ") # <1>
+# El usuario escribe "veinte" en vez de "20"
+# Y cuando intentas usarlo como número... ¡BOOM!
+# resultado = edad + 5  # <2>
+
+# ✅ Forma segura: validar y convertir
+entrada = input("Tu edad: ") # <3>
+if entrada.isdigit(): # <4>
+    edad = int(entrada)
+    print(f"En 5 años tendrás {edad + 5}")
+else:
+    print("Por favor, ingresa un número válido")
+```
+
+1. `input()` siempre devuelve texto. Si el usuario escribe "veinte", `edad` será `"veinte"`, no `20`.
+2. `"veinte" + 5` genera un `TypeError` porque no se puede sumar texto con números.
+3. Primero almacenamos la entrada en una variable llamada `entrada` para validarla antes de convertirla.
+4. `.isdigit()` verifica si la cadena contiene solo dígitos. `"20".isdigit()` es `True`, pero `"veinte".isdigit()` es `False`.
+
+> **Errors should never pass silently.** Si el usuario ingresa algo inesperado, tu programa debe responder con claridad, no crashear.
+
+## `print()`: la ventana de salida
+
+Ya conoces `print()` básico. Ahora veamos cómo hacer salidas profesionales.
+
+### Separadores y finales personalizados
+
+```python
+# Separador personalizado
+print("Python", "3.14", "Fundamentos", sep=" | ") # <1>
+
+# Sin salto de línea al final
+print("Cargando", end="") # <2>
+print("... ", end="")
+print("listo!")
+```
+
+1. `sep=" | "` cambia el separador predeterminado (espacio) por `" | "`. Resultado: `Python | 3.14 | Fundamentos`.
+2. `end=""` elimina el salto de línea al final, permitiendo que el siguiente `print()` continúe en la misma línea.
+
+### Tablas alineadas
+
+```python
+# Usando f-strings con ancho fijo para alinear columnas
+print(f"{'Producto':<15} {'Precio':>8} {'Stock':>6}") # <1>
+print(f"{'-'*15} {'-'*8} {'-'*6}")
+print(f"{'Teclado':<15} {25.99:>8.2f} {150:>6}") # <2>
+print(f"{'Mouse':<15} {12.50:>8.2f} {89:>6}")
+print(f"{'Monitor':<15} {199.99:>8.2f} {23:>6}")
+```
+
+1. `:<15` alinea el texto a la izquierda con 15 caracteres de ancho. `:>8` alinea a la derecha con 8 caracteres.
+2. `:>8.2f` alinea a la derecha con 8 caracteres de ancho y 2 decimales. El `f` indica que es un número flotante.
+
+**Salida:**
+```
+Producto          Precio  Stock
+--------------- -------- ------
+Teclado            25.99    150
+Mouse              12.50     89
+Monitor           199.99     23
+```
+
+> **Beautiful is better than ugly.** Una salida bien formateada no es vanidad — es usabilidad.
+
+## Patrón: pedir, validar, procesar
+
+Este es el patrón que usarás en **todos** tus programas interactivos:
+
+```python
+# Paso 1: Pedir
+entrada = input("Ingresa tu año de nacimiento: ") # <1>
+
+# Paso 2: Validar
+if entrada.isdigit() and len(entrada) == 4: # <2>
+    anio = int(entrada)
+
+    # Paso 3: Procesar
+    edad = 2026 - anio # <3>
+    print(f"Tienes (o tendrás) {edad} años este año")
+else:
+    print("Error: Ingresa un año válido de 4 dígitos")
+```
+
+1. Primero pedimos el dato al usuario y lo almacenamos como texto.
+2. Validamos que sea un número de 4 dígitos antes de convertirlo.
+3. Solo después de validar, convertimos a entero y procesamos.
+
+### Versión robusta con manejo de errores
+
+```python
+# Este patrón lo usarás constantemente
+while True: # <1>
+    try:
+        entrada = input("Ingresa tu edad: ")
+        edad = int(entrada) # <2>
+
+        if edad < 0 or edad > 150: # <3>
+            print("Error: La edad debe estar entre 0 y 150")
+            continue
+
+        break # <4>
+
+    except ValueError: # <5>
+        print("Error: Eso no parece un número. Intenta de nuevo.")
+
+print(f"Edad registrada: {edad}")
+```
+
+1. `while True` crea un bucle infinito que solo se rompe cuando el dato es válido.
+2. `int(entrada)` puede generar un `ValueError` si el texto no es un número válido.
+3. Validamos que la edad esté en un rango razonable (0-150 años).
+4. `break` sale del bucle cuando el dato es válido.
+5. `except ValueError` captura el error cuando `int()` no puede convertir el texto.
+
+> **There should be one obvious way to do it.** Este patrón `while True + try/except` es la forma estándar en Python de validar entrada numérica.
+
+## Ejemplo completo: registro simple
+
+```python
+# Programa de registro de estudiante
+# Cada parte sigue el patrón: pedir → validar → procesar
+
+print("=" * 40) # <1>
+print("   REGISTRO DE ESTUDIANTE")
+print("=" * 40)
+
+# Nombre: debe tener al menos 2 caracteres
+while True:
+    nombre = input("Nombre completo: ").strip() # <2>
+    if len(nombre) >= 2:
+        break
+    print("Error: El nombre debe tener al menos 2 caracteres")
+
+# Edad: número entre 0 y 150
+while True:
+    try:
+        edad = int(input("Edad: "))
+        if 0 <= edad <= 150:
+            break
+        print("Error: Edad debe estar entre 0 y 150")
+    except ValueError:
+        print("Error: Ingresa un número válido")
+
+# Carrera: texto libre
+carrera = input("Carrera: ").strip()
+
+# Resumen
+print()
+print("-" * 40)
+print("Datos registrados:")
+print(f"  Nombre:  {nombre}") # <3>
+print(f"  Edad:    {edad}")
+print(f"  Carrera: {carrera}")
+print("-" * 40)
+print("¡Registro exitoso!")
+```
+
+1. `"=" * 40` crea una línea de 40 caracteres iguales para separar secciones visualmente.
+2. `.strip()` elimina los espacios al inicio y al final del texto ingresado.
+3. Los f-strings formatean la salida de manera legible y alineada.
+
+## Resumen
+
+| Función | Qué hace | Detalle importante |
+|---------|----------|-------------------|
+| `input("mensaje")` | Lee texto del usuario | Siempre devuelve `str` |
+| `print(valor)` | Muestra en pantalla | Acepta múltiples valores |
+| `int(texto)` | Convierte a entero | Falla si no es número |
+| `float(texto)` | Convierte a decimal | Acepta "3.14", "2e10" |
+| `str(valor)` | Convierte a texto | Funciona con cualquier tipo |
+| `.strip()` | Quita espacios | `" hola ".strip()` → `"hola"` |
+| `.isdigit()` | Verifica si es número | `"123".isdigit()` → `True` |
+
+### Principios aplicados en esta lección
+
+| Principio del Zen | Cómo se aplica |
+|-------------------|----------------|
+| **Readability counts** | Salidas formateadas y alineadas |
+| **Errors should never pass silently** | Validación con try/except |
+| **Explicit is better than implicit** | Conversión explícita de tipos |
+| **Simple is better than complex** | Patrón while + try/except |
+
+---
+
+**Siguiente:** [Desafío 1: Saludo personalizado](desafio-01-saludo-personalizado.qmd)

@@ -1,0 +1,275 @@
+---
+title: "2.3 Operadores lógicos"
+subtitle: "El cerebro de Python — combinar decisiones con and, or y not"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Usar `and`, `or` y `not` para combinar condiciones
+- Entender las tablas de verdad con ejemplos prácticos
+- Aplicar evaluación de corto circuito para código eficiente
+- Construir expresiones lógicas complejas paso a paso
+
+## Los operadores lógicos — tu cerebro de programación
+
+Imagina que estás en la entrada de un **parque de diversiones**. Las reglas dicen:
+
+- Para la montaña rusa: debes ser mayor de 12 años **Y** medir más de 1.40m
+- Para el carrusel: puedes entrar si eres menor de 10 años **O** vienes con un adulto
+- Para la casa del terror: **NO** puedes entrar si tienes problemas cardíacos
+
+Esos **Y**, **O** y **NO** son exactamente los operadores lógicos de Python: `and`, `or` y `not`.
+
+```python
+# Los 3 operadores lógicos de Python
+edad = 15
+estatura = 1.50
+tiene_problema_cardiaco = False
+
+# AND: ambas condiciones deben ser verdaderas
+puede_montana_rusa = edad >= 12 and estatura >= 1.40  # <1>
+print(puede_montana_rusa)  # True
+
+# OR: al menos una condición debe ser verdadera
+edad_nino = 8
+viene_con_adulto = True
+puede_carrusel = edad_nino < 10 or viene_con_adulto  # <2>
+print(puede_carrusel)  # True
+
+# NOT: invierte el valor
+puede_casa_terror = not tiene_problema_cardiaco  # <3>
+print(puede_casa_terror)  # True
+```
+
+1. `and` devuelve `True` solo si **AMBAS** condiciones son verdaderas. `15 >= 12` es `True` y `1.50 >= 1.40` es `True`, así que el resultado es `True`.
+2. `or` devuelve `True` si **AL MENOS UNA** condición es verdadera. `8 < 10` es `True`, así que el resultado es `True` sin importar la segunda condición.
+3. `not` invierte el valor booleano. `not False` = `True`. `not True` = `False`.
+
+## Tablas de verdad — los mapas de la lógica
+
+### AND (Y) — el exigente
+
+```python
+# Tabla de verdad de AND
+# Solo es True si AMBOS son True
+print(True and True)    # True  <1>
+print(True and False)   # False <2>
+print(False and True)   # False <3>
+print(False and False)  # False <4>
+```
+
+1. `True and True` → `True`: ambas condiciones se cumplen.
+2. `True and False` → `False`: la segunda condición falla.
+3. `False and True` → `False`: la primera condición falla.
+4. `False and False` → `False`: ninguna condición se cumple.
+
+> **Analogía:** `and` es como un candado con dos llaves. Necesitas **ambas** llaves para abrirlo.
+
+### OR (O) — el flexible
+
+```python
+# Tabla de verdad de OR
+# Es True si AL MENOS UNO es True
+print(True or True)    # True  <1>
+print(True or False)   # True  <2>
+print(False or True)   # True  <3>
+print(False or False)  # False <4>
+```
+
+1. `True or True` → `True`: ambas se cumplen (suficiente con una).
+2. `True or False` → `True`: la primera se cumple, eso basta.
+3. `False or True` → `True`: la segunda se cumple, eso basta.
+4. `False or False` → `False`: ninguna se cumple.
+
+> **Analogía:** `or` es como una puerta con dos entradas. Puedes entrar por **cualquiera** de las dos.
+
+### NOT (NO) — el rebelde
+
+```python
+# Tabla de verdad de NOT
+# Simplemente invierte el valor
+print(not True)   # False <1>
+print(not False)  # True  <2>
+```
+
+1. `not True` → `False`: invierte verdadero a falso.
+2. `not False` → `True`: invierte falso a verdadero.
+
+> **Analogía:** `not` es como un interruptor de luz. Si está encendido, lo apaga. Si está apagado, lo enciende.
+
+## Combinar operadores lógicos — lógica compleja
+
+```python
+# Sistema de acceso a un edificio
+es_empleado = True
+es_visitante = False
+tiene_cita = True
+es_horario_laboral = True
+
+# Regla 1: Los empleados siempre pueden entrar en horario laboral
+acceso_empleado = es_empleado and es_horario_laboral  # <1>
+
+# Regla 2: Los visitantes necesitan cita Y ser acompañados
+acceso_visitante = es_visitante and tiene_cita  # <2>
+
+# Regla 3: Puede entrar si cumple regla 1 O regla 2
+puede_entrar = acceso_empleado or acceso_visitante  # <3>
+print(puede_entrar)  # True
+```
+
+1. `es_empleado and es_horario_laboral` → `True and True` = `True`. El empleado puede entrar.
+2. `es_visitante and tiene_cita` → `False and True` = `False`. No es visitante, así que esta regla no aplica.
+3. `True or False` → `True`. Basta con que una regla se cumpla.
+
+## Evaluación de corto circuito — Python es eficiente
+
+Python no evalúa todas las condiciones si no necesita hacerlo. Esto se llama **evaluación de corto circuito** y es como un detective inteligente: si ya tiene la respuesta, deja de investigar.
+
+```python
+# AND: si la primera condición es False, Python NO evalúa la segunda
+def verificar():
+    print("  → Función verificada!")  # <1>
+    return True
+
+resultado = False and verificar()  # <2>
+print(resultado)  # False — la función NUNCA se ejecuta
+
+# OR: si la primera condición es True, Python NO evalúa la segunda
+resultado = True or verificar()  # <3>
+print(resultado)  # True — la función NUNCA se ejecuta
+```
+
+1. Esta función imprime un mensaje cuando se ejecuta. Si no ves el mensaje, significa que Python no la llamó.
+2. `False and ...` → Python sabe que el resultado será `False` sin importar la segunda parte. No ejecuta `verificar()`.
+3. `True or ...` → Python sabe que el resultado será `True` sin importar la segunda parte. No ejecuta `verificar()`.
+
+> **Practicality beats purity.** El corto circuito no es solo eficiencia: te permite escribir código seguro como `if usuario and usuario.activo:` sin errores si `usuario` es `None`.
+
+## Patrones prácticos con operadores lógicos
+
+### Validación de datos de entrada
+
+```python
+# Validar que un usuario tenga datos completos
+nombre = "Ana"
+email = "ana@email.com"
+edad = 25
+
+registro_valido = (
+    len(nombre) > 0 and           # <1>
+    "@" in email and              # <2>
+    edad >= 18                    # <3>
+)
+print(registro_valido)  # True
+```
+
+1. `len(nombre) > 0` verifica que el nombre no esté vacío.
+2. `"@" in email` verifica que el email contenga un arroba (validación básica).
+3. `edad >= 18` verifica que sea mayor de edad.
+
+### Valores por defecto con `or`
+
+```python
+# Si el nombre está vacío, usar un valor por defecto
+nombre_usuario = ""  # <1>
+nombre = nombre_usuario or "Invitado"  # <2>
+print(nombre)  # Invitado
+
+# Si el nombre tiene valor, se mantiene
+nombre_usuario = "Carlos"
+nombre = nombre_usuario or "Invitado"  # <3>
+print(nombre)  # Carlos
+```
+
+1. Un string vacío `""` es "falsy" (se evalúa como `False` en contexto booleano).
+2. `"" or "Invitado"` → como `""` es falsy, Python evalúa la segunda parte y devuelve `"Invitado"`.
+3. `"Carlos" or "Invitado"` → como `"Carlos"` es truthy, Python lo devuelve directamente sin evaluar la segunda parte.
+
+### Negar condiciones compuestas con `not`
+
+```python
+# ❌ Difícil de leer
+if not (edad >= 18 and tiene_documento):
+    print("No puede acceder")
+
+# ✅ Más claro: invertir la lógica
+if edad < 18 or not tiene_documento:  # <1>
+    print("No puede acceder")
+```
+
+1. Usar las leyes de De Morgan: `not (A and B)` equivale a `(not A) or (not B)`. El código se lee mejor.
+
+## Errores comunes
+
+### ❌ Usar `and`/`or` con valores no booleanos sin entender el resultado
+
+```python
+# ❌ Confuso: ¿qué devuelve esto?
+resultado = "hola" and 0 and True  # <1>
+print(resultado)  # 0 — ¡no es un booleano!
+
+# ✅ Si necesitas un booleano, convierte explícitamente
+resultado = bool("hola" and 0 and True)  # <2>
+print(resultado)  # False
+```
+
+1. `and` devuelve el **primer valor falsy** o el **último valor**. `"hola"` es truthy, `0` es falsy, así que devuelve `0`.
+2. `bool()` convierte explícitamente el resultado a `True` o `False`.
+
+### ❌ Confundir `and` con `or` en validaciones
+
+```python
+edad = 15
+
+# ❌ Error: esto NUNCA será True (un número no puede ser < 18 Y > 65 al mismo tiempo)
+# if edad < 18 and edad > 65:
+#     print("No puede entrar")
+
+# ✅ Correcto: usar or para rangos excluyentes
+if edad < 18 or edad > 65:  # <1>
+    print("No puede entrar")
+```
+
+1. `or` es correcto aquí: queremos rechazar si es menor de 18 **O** si es mayor de 65.
+
+### ❌ Escribir comparaciones incompletas
+
+```python
+nota = 3
+
+# ❌ Error: esto NO verifica si nota está entre 0 y 10
+# if nota >= 0 and <= 10:  # SyntaxError
+
+# ✅ Correcto: repetir la variable o encadenar
+if nota >= 0 and nota <= 10:  # <1>
+    print("Nota válida")
+
+# ✅ Alternativa Pythonica: encadenar
+if 0 <= nota <= 10:  # <2>
+    print("Nota válida")
+```
+
+1. Cada comparación necesita su variable completa. `nota >= 0 and nota <= 10`.
+2. Python permite encadenar: `0 <= nota <= 10` es más limpio y legible.
+
+## Zen de Python aplicado
+
+| Principio | Cómo se aplica aquí |
+|-----------|---------------------|
+| **Readability counts** | Usa paréntesis para agrupar condiciones complejas |
+| **Simple is better than complex** | `nombre or "Invitado"` es más simple que un `if/else` |
+| **Explicit is better than implicit** | Usa `bool()` cuando necesitas garantizar un valor booleano |
+
+## Resumen
+
+| Operador | Significado | Regla | Ejemplo |
+|----------|-------------|-------|---------|
+| `and` | Y lógico | Ambos deben ser `True` | `edad >= 18 and tiene_id` |
+| `or` | O lógico | Al menos uno debe ser `True` | `es_admin or es_moderador` |
+| `not` | Negación | Invierte el valor | `not bloqueado` |
+
+---
+
+**Anterior:** [2.2 Operadores de comparación](02-operadores-comparacion.qmd) | **Siguiente:** [2.4 Casting avanzado](04-casting-avanzado.qmd)

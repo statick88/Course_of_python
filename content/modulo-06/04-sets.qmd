@@ -1,0 +1,229 @@
+---
+title: "6.4 Sets: colecciones sin duplicados"
+subtitle: "Conjuntos matemáticos en Python — únicos, rápidos y poderosos"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es un set y por qué no permite duplicados
+- Crear sets con `{}` y `set()`
+- Realizar operaciones de conjuntos: unión, intersección, diferencia
+- Usar sets para eliminar duplicados de listas
+- Comprender cuándo usar un set en vez de una lista
+
+## ¿Qué es un set?
+
+Imagina un **club exclusivo** donde cada miembro es único. No puedes registrarte dos veces — el sistema te rechaza si ya estás dentro. Eso es un set: una colección donde **cada elemento aparece una sola vez**.
+
+```python
+# Un set: elementos únicos, sin orden
+colores = {"rojo", "azul", "verde", "rojo"}  # <1>
+print(colores)
+
+# El "rojo" duplicado desaparece automáticamente
+# Resultado: {'rojo', 'azul', 'verde'}
+```
+
+1. Aunque escribimos `"rojo"` dos veces, el set lo guarda **una sola vez**. Los sets eliminan duplicados automáticamente.
+
+> **Simple is better than complex.** Si necesitas eliminar duplicados de una lista, conviértela a set: `list(set(mi_lista))`.
+
+## Dos formas de crear sets
+
+```python
+# Forma 1: Llaves {} (como un diccionario sin dos puntos)
+frutas = {"manzana", "pera", "uva", "manzana"}  # <1>
+print(frutas)
+
+# Forma 2: set() — útil para convertir otras colecciones
+numeros = set([1, 2, 3, 2, 1, 4, 3])  # <2>
+print(numeros)
+
+# Set vacío — OJO: {} crea un diccionario vacío, NO un set
+vacio = set()  # <3>
+print(type(vacio))
+```
+
+1. Las llaves `{}` sin dos puntos crean un set. Los duplicados se eliminan automáticamente.
+2. `set([1, 2, 3, 2, 1, 4, 3])` convierte una lista en set, eliminando duplicados. Resultado: `{1, 2, 3, 4}`.
+3. `set()` es la **única** forma de crear un set vacío. `{}` crea un diccionario vacío, no un set.
+
+## ⚠️ La trampa del set vacío
+
+```python
+# ❌ Esto NO es un set, es un diccionario
+dato = {}
+print(type(dato))  # <class 'dict'>
+
+# ✅ Esta es la forma correcta
+conjunto = set()
+print(type(conjunto))  # <class 'set'>
+```
+
+> **Explicit is better than implicit.** `set()` deja claro que quieres un conjunto. `{}` es ambiguo — Python lo interpreta como diccionario.
+
+## Operaciones básicas con sets
+
+```python
+# Agregar elementos
+numeros = {1, 2, 3}
+numeros.add(4)  # <1>
+print(numeros)
+
+# Agregar un elemento que ya existe (no pasa nada)
+numeros.add(2)  # <2>
+print(numeros)
+
+# Eliminar un elemento
+numeros.remove(3)  # <3>
+print(numeros)
+
+# Eliminar sin error si no existe
+numeros.discard(99)  # <4>
+print(numeros)
+```
+
+1. `.add(4)` agrega el `4` al set. Si ya existe, no hace nada.
+2. `.add(2)` no tiene efecto porque `2` ya está en el set. Los sets no permiten duplicados.
+3. `.remove(3)` elimina el `3`. Si el elemento no existe, genera `KeyError`.
+4. `.discard(99)` intenta eliminar `99`. Si no existe, **no hace nada** — no genera error.
+
+## Operaciones de conjuntos: el poder real
+
+Los sets brillan cuando trabajas con **múltiples colecciones**. Las operaciones de conjuntos son herramientas matemáticas que resuelven problemas comunes.
+
+```python
+# Dos grupos de estudiantes
+grupo_a = {"Ana", "Carlos", "Diego", "Elena"}  # <1>
+grupo_b = {"Carlos", "Elena", "Fernando", "Gabriela"}  # <2>
+
+# Unión: todos los estudiantes de ambos grupos
+todos = grupo_a | grupo_b  # <3>
+print(f"Todos: {todos}")
+
+# Intersección: estudiantes en AMBOS grupos
+en_ambos = grupo_a & grupo_b  # <4>
+print(f"En ambos: {en_ambos}")
+
+# Diferencia: estudiantes en A pero NO en B
+solo_a = grupo_a - grupo_b  # <5>
+print(f"Solo en A: {solo_a}")
+
+# Diferencia simétrica: estudiantes en UNO u OTRO, pero no en ambos
+uno_u_otro = grupo_a ^ grupo_b  # <6>
+print(f"En uno u otro: {uno_u_otro}")
+```
+
+1. `grupo_a` tiene 4 estudiantes.
+2. `grupo_b` tiene 4 estudiantes, con 2 en común con el grupo A.
+3. `|` (unión): combina todos los elementos sin duplicados. `{"Ana", "Carlos", "Diego", "Elena", "Fernando", "Gabriela"}`.
+4. `&` (intersección): solo los elementos que están en **ambos** sets. `{"Carlos", "Elena"}`.
+5. `-` (diferencia): elementos que están en `grupo_a` pero **no** en `grupo_b`. `{"Ana", "Diego"}`.
+6. `^` (diferencia simétrica): elementos que están en **uno solo** de los sets. `{"Ana", "Diego", "Fernando", "Gabriela"}`.
+
+## Tabla de operaciones de conjuntos
+
+| Operador | Método | Qué hace | Ejemplo |
+|----------|--------|----------|---------|
+| `\|` | `.union()` | Une todos los elementos | `{1,2} \| {2,3}` = `{1,2,3}` |
+| `&` | `.intersection()` | Elementos comunes | `{1,2} & {2,3}` = `{2}` |
+| `-` | `.difference()` | Elementos del primero no en el segundo | `{1,2} - {2,3}` = `{1}` |
+| `^` | `.symmetric_difference()` | Elementos en uno u otro, no en ambos | `{1,2} ^ {2,3}` = `{1,3}` |
+| `<=` | `.issubset()` | ¿Es subconjunto? | `{1,2} <= {1,2,3}` = `True` |
+| `>=` | `.issuperset()` | ¿Es superconjunto? | `{1,2,3} >= {1,2}` = `True` |
+
+## Usos prácticos de sets
+
+### Eliminar duplicados de una lista
+
+```python
+# Lista con duplicados
+emails = [
+    "ana@correo.com",
+    "carlos@correo.com",
+    "ana@correo.com",  # duplicado
+    "diego@correo.com",
+    "carlos@correo.com"  # duplicado
+]
+
+# Eliminar duplicados
+emails_unicos = list(set(emails))  # <1>
+print(f"Originales: {len(emails)}")
+print(f"Únicos: {len(emails_unicos)}")
+```
+
+1. `set(emails)` elimina duplicados. `list(...)` convierte de vuelta a lista. Nota: el orden original se pierde.
+
+### Encontrar elementos comunes
+
+```python
+# Tecnologías que sabe cada candidato
+candidato_a = {"Python", "JavaScript", "SQL", "Docker"}
+candidato_b = {"Python", "Java", "SQL", "AWS"}
+
+# ¿Qué tecnologías conocen ambos?
+en_comun = candidato_a & candidato_b  # <1>
+print(f"Tecnologías en común: {en_comun}")
+
+# ¿Qué tecnologías conoce A que B no?
+solo_a = candidato_a - candidato_b  # <2>
+print(f"Solo candidato A: {solo_a}")
+```
+
+1. La intersección `&` encuentra las tecnologías que ambos candidatos comparten: `{"Python", "SQL"}`.
+2. La diferencia `-` encuentra lo que solo sabe el candidato A: `{"JavaScript", "Docker"}`.
+
+## Sets vs Listas: ¿cuándo usar cada uno?
+
+| Criterio | Lista `[]` | Set `{}` |
+|----------|-----------|----------|
+| Permite duplicados | ✅ Sí | ❌ No |
+| Mantiene orden | ✅ Sí | ❌ No |
+| Búsqueda rápida | ❌ O(n) | ✅ O(1) |
+| Operaciones de conjunto | ❌ Manual | ✅ Nativo |
+| Acceso por índice | ✅ Sí | ❌ No |
+
+```python
+# ✅ Usa lista cuando el orden importa
+semana = ["lunes", "martes", "miércoles"]  # <1>
+
+# ✅ Usa set cuando la unicidad importa
+usuarios_activos = {"ana", "carlos", "diego"}  # <2>
+
+# ✅ Usa set para búsqueda rápida
+palabras_prohibidas = {"spam", "virus", "phishing"}  # <3>
+if "spam" in palabras_prohibidas:  # O(1) — instantáneo
+    print("Mensaje bloqueado")
+```
+
+1. La semana tiene un orden natural. Una lista es la elección correcta.
+2. Los usuarios activos no necesitan orden, pero sí unicidad. Un set es perfecto.
+3. Buscar en un set es **instantáneo** (O(1)), sin importar cuántos elementos tenga. En una lista grande, la búsqueda es lenta (O(n)).
+
+> **Practicality beats purity.** Si necesitas búsqueda rápida y no te importa el orden, usa un set. Si necesitas orden, usa una lista.
+
+## Resumen
+
+| Operación | Sintaxis | Ejemplo |
+|-----------|----------|---------|
+| Crear set | `{a, b, c}` o `set(lista)` | `{"a", "b", "c"}` |
+| Set vacío | `set()` | `conjunto = set()` |
+| Agregar | `.add(elemento)` | `s.add(5)` |
+| Eliminar | `.remove(elemento)` | `s.remove(5)` |
+| Eliminar seguro | `.discard(elemento)` | `s.discard(5)` |
+| Unión | `\|` o `.union()` | `a \| b` |
+| Intersección | `&` o `.intersection()` | `a & b` |
+| Diferencia | `-` o `.difference()` | `a - b` |
+| Diferencia simétrica | `^` o `.symmetric_difference()` | `a ^ b` |
+
+| Principio del Zen | Cómo aplica |
+|-------------------|-------------|
+| Simple is better than complex | `set(lista)` elimina duplicados en una línea |
+| Practicality beats purity | Sets para búsqueda rápida, listas para orden |
+| Readability counts | `a & b` es más claro que un bucle manual |
+
+---
+
+**Anterior:** [6.3 Iterar sobre diccionarios](03-iterar-diccionarios.qmd) | **Siguiente:** [6.5 Diccionarios anidados](05-diccionarios-anidados.qmd)

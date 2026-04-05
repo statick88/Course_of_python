@@ -1,0 +1,281 @@
+---
+title: "3.5 break y continue: control total del flujo"
+subtitle: "Frenar en seco o saltar al siguiente — tú decides"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Usar `break` para salir de un bucle antes de tiempo
+- Usar `continue` para saltar una iteración
+- Entender el `else` de los bucles `for` y `while`
+- Combinar `break`, `continue` y `else` de forma efectiva
+
+## El control remoto de tus bucles
+
+Hasta ahora, tus bucles tenían un ritmo fijo: empezaban, iteraban hasta el final, y terminaban. Pero en la vida real a veces necesitas **cambiar el plan**:
+
+- 🛑 **`break`**: "Para todo, sal del bucle AHORA"
+- ⏭️ **`continue`**: "Salta esta vuelta y ve a la siguiente"
+- 📋 **`else`**: "Si terminaste el bucle normalmente (sin break), haz esto"
+
+Piensa en un bucle como una **cinta transportadora** en una fábrica:
+- `break` = apaga la cinta de emergencia
+- `continue` = quita este producto defectuoso y sigue con el siguiente
+- `else` = si la cinta terminó su trabajo sin paradas de emergencia, imprime el reporte
+
+## `break`: la salida de emergencia
+
+`break` **termina el bucle inmediatamente**. Todo lo que queda por iterar se ignora.
+
+```python
+# Buscar un número en una lista
+numeros = [4, 8, 15, 16, 23, 42]
+buscado = 16
+
+for numero in numeros: # <1>
+    if numero == buscado: # <2>
+        print(f"¡Encontrado! El {buscado} está en la lista")
+        break # <3>
+    print(f"Revisando {numero}... no es")
+else: # <4>
+    print(f"El {buscado} no está en la lista")
+```
+
+1. Recorremos cada número de la lista, uno por uno.
+2. Comparamos el número actual con el que buscamos.
+3. `break` sale del bucle inmediatamente. Los números `23` y `42` nunca se revisan — ¡ahorro de tiempo!
+4. El `else` del `for` se ejecuta **solo si el bucle terminó sin `break`**. Si encontró el número y ejecutó `break`, este `else` se salta.
+
+### break con `while`: el patrón más común
+
+```python
+# Menú interactivo que se repite hasta que el usuario quiere salir
+while True: # <1>
+    print("\n=== MENÚ ===")
+    print("1. Ver saldo")
+    print("2. Depositar")
+    print("3. Salir")
+    
+    opcion = input("Elige una opción: ")
+    
+    if opcion == "1":
+        print("Tu saldo es: $1,000")
+    elif opcion == "2":
+        monto = input("¿Cuánto deseas depositar? ")
+        print(f"Depósito de ${monto} recibido")
+    elif opcion == "3":
+        print("¡Hasta luego!")
+        break # <2>
+    else:
+        print("Opción no válida. Intenta de nuevo.")
+```
+
+1. `while True` crea un bucle infinito. Es el patrón estándar para menús interactivos.
+2. `break` es la única salida del bucle. Cuando el usuario elige "3", el programa sale del bucle.
+
+> **Practicality beats purity.** `while True` con `break` es más legible que intentar poner toda la lógica en la condición del `while`.
+
+## `continue`: saltar al siguiente
+
+`continue` **salta el resto de la iteración actual** y pasa directamente a la siguiente.
+
+```python
+# Filtrar números impares de una lista
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for numero in numeros:
+    if numero % 2 != 0: # <1>
+        continue # <2>
+    print(f"Número par: {numero}") # <3>
+```
+
+1. Si el número es impar (`numero % 2 != 0`), entramos al `if`.
+2. `continue` salta directamente al siguiente número de la lista. El `print` de abajo NO se ejecuta.
+3. Esta línea solo se ejecuta para números pares, porque los impares ya fueron "saltados" por `continue`.
+
+### Ejemplo práctico: procesar archivos válidos
+
+```python
+# Procesar solo archivos con extensión .txt
+archivos = ["datos.txt", "imagen.png", "notas.txt", "script.py", "reporte.txt"]
+
+for archivo in archivos:
+    if not archivo.endswith(".txt"): # <1>
+        print(f"⏭️ Saltando {archivo} (no es .txt)")
+        continue # <2>
+    
+    # Solo llegamos aquí si el archivo es .txt
+    print(f"📄 Procesando {archivo}...")
+    # Aquí iría la lógica de procesamiento
+```
+
+1. `.endswith(".txt")` verifica si el nombre del archivo termina con `.txt`. `not` invierte: si NO termina en `.txt`, entramos al `if`.
+2. `continue` salta al siguiente archivo. La lógica de procesamiento (abajo) solo se ejecuta para `.txt`.
+
+## Combinar `break` y `continue`
+
+Puedes usar ambos en el mismo bucle para un control preciso:
+
+```python
+# Sistema de registro: acepta números positivos, rechaza negativos, termina con 0
+print("=== REGISTRO DE VALORES ===")
+print("Números positivos se suman, negativos se ignoran, 0 termina")
+
+total = 0
+contador_validos = 0
+contador_ignorados = 0
+
+while True:
+    entrada = input("Ingresa un número: ")
+    
+    # Validar que sea un número
+    try:
+        numero = float(entrada) # <1>
+    except ValueError: # <2>
+        print("⚠️ Eso no es un número. Intenta de nuevo.")
+        continue # <3>
+    
+    # Verificar señal de parada
+    if numero == 0: # <4>
+        break
+    
+    # Rechazar negativos
+    if numero < 0: # <5>
+        print(f"⏭️ {numero} ignorado (negativo)")
+        contador_ignorados = contador_ignorados + 1
+        continue
+    
+    # Acumular positivos
+    total = total + numero
+    contador_validos = contador_validos + 1
+    print(f"✅ {numero} agregado. Total: {total}")
+
+print(f"\n=== RESUMEN ===")
+print(f"Valores válidos: {contador_validos}")
+print(f"Valores ignorados: {contador_ignorados}")
+print(f"Total acumulado: {total}")
+```
+
+1. `float()` intenta convertir el texto a número decimal. Si el texto no es un número válido, genera un `ValueError`.
+2. `except ValueError` captura el error cuando `float()` falla. Esto evita que el programa se cierre.
+3. `continue` vuelve al inicio del bucle para pedir otro número.
+4. Si el número es 0, salimos del bucle con `break`.
+5. Si el número es negativo, lo ignoramos con `continue` y volvemos al inicio.
+
+## El `else` de los bucles: el secreto de Python
+
+Python tiene una característica única: los bucles `for` y `while` pueden tener un bloque `else`.
+
+```python
+# for con else
+for i in range(5):
+    if i == 10:  # Nunca se cumple
+        print("Encontré el 10")
+        break
+else:
+    print("El bucle terminó sin encontrar el 10") # <1>
+
+# while con else
+intentos = 3
+while intentos > 0:
+    password = input("Contraseña: ")
+    if password == "secreto":
+        print("¡Acceso concedido!")
+        break
+    intentos = intentos - 1
+    print(f"Te quedan {intentos} intentos")
+else:
+    print("🔒 Cuenta bloqueada. Demasiados intentos fallidos.") # <2>
+```
+
+1. El `else` del `for` se ejecuta porque el bucle terminó normalmente (sin `break`).
+2. El `else` del `while` se ejecuta porque la condición se volvió `False` (sin `break`).
+
+### Regla mnemotécnica
+
+> El `else` de un bucle se ejecuta cuando el bucle **agota** sus iteraciones, no cuando se **interrumpe**.
+
+| Escenario | ¿Se ejecuta `else`? |
+|-----------|---------------------|
+| Bucle termina normalmente | ✅ Sí |
+| Bucle termina con `break` | ❌ No |
+| Bucle termina con `return` | ❌ No |
+| Bucle termina con `continue` | ✅ Sí (continue no afecta al else) |
+
+## Errores comunes
+
+### ❌ Usar `break` fuera de un bucle
+
+```python
+# ❌ SyntaxError: break solo funciona dentro de for o while
+if True:
+    break  # Error: no está dentro de un bucle
+
+# ✅ Correcto
+while True:
+    if True:
+        break  # OK: está dentro del while
+```
+
+### ❌ Confundir `continue` con `break`
+
+```python
+# ❌ Quería saltar este caso, pero salió del bucle entero
+numeros = [1, 2, 3, 4, 5]
+for n in numeros:
+    if n == 3:
+        break  # ¡Esto sale del bucle! Solo imprime 1, 2
+    print(n)
+
+# ✅ Quería saltar el 3 y continuar con el resto
+for n in numeros:
+    if n == 3:
+        continue  # Salta el 3, pero sigue con 4 y 5
+    print(n)  # Imprime: 1, 2, 4, 5
+```
+
+### ❌ `continue` en un `while` sin actualizar la variable
+
+```python
+# ❌ Bucle infinito: 'i' nunca llega a 5 si es impar
+i = 0
+while i < 10:
+    if i % 2 != 0:
+        continue  # ¡Salta sin incrementar i!
+    print(i)
+    i = i + 1
+
+# ✅ Actualizar ANTES del continue
+i = 0
+while i < 10:
+    if i % 2 != 0:
+        i = i + 1  # <1>
+        continue
+    print(i)
+    i = i + 1
+```
+
+1. Incrementamos `i` antes del `continue` para evitar el bucle infinito.
+
+## Resumen
+
+| Instrucción | Qué hace | Cuándo usarla |
+|-------------|----------|---------------|
+| `break` | Sale del bucle inmediatamente | Encontraste lo que buscabas |
+| `continue` | Salta al siguiente elemento | Este caso no te interesa |
+| `else` (del bucle) | Se ejecuta si no hubo `break` | Verificar que no se encontró algo |
+| `while True` + `break` | Bucle con salida interna | Menús interactivos |
+
+### Principios del Zen aplicados
+
+| Principio | Cómo se aplica |
+|-----------|----------------|
+| **Practicality beats purity** | `while True` + `break` es más práctico que condiciones complejas |
+| **Readability counts** | `continue` como "guard clause" dentro del bucle |
+| **Simple is better than complex** | Un `break` claro es mejor que una condición complicada |
+
+---
+
+**Anterior:** [3.4 while loop](04-while-loop.qmd) | **Siguiente:** [3.6 Comprensión de listas](06-comprension-listas.qmd)

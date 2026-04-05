@@ -1,0 +1,41 @@
+---
+title: "Módulo 1: Introducción a Python"
+---
+
+## 🎯 Objetivos del Módulo
+
+Al completar este módulo, serás capaz de:
+
+- ✅ Explicar qué es Python y por qué es el lenguaje más popular del mundo
+- ✅ Instalar Python y configurar tu entorno de desarrollo
+- ✅ Escribir y ejecutar tu primer programa
+- ✅ Entender la diferencia entre código fuente, intérprete y terminal
+- ✅ Usar `print()` y `input()` para interactuar con el usuario
+
+## 📚 Contenido
+
+| Lección | Tema | Tipo |
+|---------|------|------|
+| [1.1](01-que-es-python.qmd) | ¿Qué es Python? Historia y filosofía | 📖 Teoría |
+| [1.2](02-instalacion.qmd) | Instalación y configuración del entorno | 💻 Práctica |
+| [1.3](03-hola-mundo.qmd) | Tu primer programa: Hola Mundo | 🚀 Acción |
+| [1.4](04-variables.qmd) | Variables: las cajas de la memoria | 📖 Teoría |
+| [1.5](05-tipos-basicos.qmd) | Tipos de datos básicos | 📖 Teoría |
+| [1.6](06-input-output.qmd) | Entrada y salida de datos | 💻 Práctica |
+| [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
+
+## 🏆 Desafíos del Módulo
+
+| # | Desafío | Dificultad |
+|---|---------|------------|
+| [1](desafio-01-saludo-personalizado.qmd) | Saludo personalizado | ⭐ Fácil |
+| [2](desafio-02-calculadora-edad.qmd) | Calculadora de edad | ⭐ Fácil |
+| [3](desafio-03-conversor-moneda.qmd) | Conversor de moneda | ⭐⭐ Media |
+| [4](desafio-04-calculadora-imc.qmd) | Calculadora de IMC | ⭐⭐ Media |
+| [5](desafio-05-historia-interactiva.qmd) | Historia interactiva | ⭐⭐ Media |
+| [6](desafio-06-formulario-contacto.qmd) | Formulario de contacto | ⭐⭐⭐ Difícil |
+| [7](desafio-07-mini-quiz.qmd) | Mini quiz de conocimientos | ⭐⭐⭐ Difícil |
+
+---
+
+**Siguiente:** [1.1 ¿Qué es Python?](01-que-es-python.qmd)

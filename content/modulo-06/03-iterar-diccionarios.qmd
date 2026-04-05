@@ -1,0 +1,197 @@
+---
+title: "6.3 Iterar sobre diccionarios"
+subtitle: "Recorrer claves, valores y pares — tres formas de explorar"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Iterar sobre claves de un diccionario
+- Iterar sobre valores de un diccionario
+- Iterar sobre pares clave-valor simultáneamente
+- Comprender cuándo usar `.keys()`, `.values()` y `.items()`
+- Filtrar y transformar diccionarios con comprensión de diccionarios
+
+## Tres formas de recorrer un diccionario
+
+Imagina que tienes un **inventario de una tienda**. Puedes mirarlo de tres formas:
+
+1. **Solo los nombres** de los productos (las claves)
+2. **Solo los precios** de los productos (los valores)
+3. **Nombre y precio juntos** (pares clave-valor)
+
+```python
+inventario = {
+    "manzanas": 50,
+    "peras": 30,
+    "uvas": 25,
+    "naranjas": 40
+}
+
+# Forma 1: Solo las claves
+for producto in inventario:  # <1>
+    print(producto)
+
+# Forma 2: Solo los valores
+for cantidad in inventario.values():  # <2>
+    print(cantidad)
+
+# Forma 3: Clave y valor juntos
+for producto, cantidad in inventario.items():  # <3>
+    print(f"{producto}: {cantidad} unidades")
+```
+
+1. Iterar directamente sobre el diccionario (`for producto in inventario`) recorre las **claves**. Es equivalente a `inventario.keys()`.
+2. `.values()` devuelve solo los **valores**. Útil cuando solo te importan los datos, no las claves.
+3. `.items()` devuelve **pares (clave, valor)**. Es la forma más completa y la más usada en la práctica.
+
+> **Readability counts.** `.items()` es la forma más expresiva: ves la clave y el valor juntos, como una etiqueta y su contenido.
+
+## `.keys()`: trabajar con las claves
+
+```python
+configuracion = {
+    "host": "localhost",
+    "puerto": 8080,
+    "debug": True,
+    "nombre_app": "MiApp"
+}
+
+# Iterar sobre claves
+for clave in configuracion.keys():  # <1>
+    print(f"Configuración: {clave}")
+
+# Verificar si una clave específica existe
+if "puerto" in configuracion.keys():  # <2>
+    print("Puerto configurado")
+
+# Obtener todas las claves como lista
+todas_las_claves = list(configuracion.keys())  # <3>
+print(todas_las_claves)
+```
+
+1. `.keys()` devuelve una vista de todas las claves. En la práctica, `for clave in diccionario` hace lo mismo sin llamar al método.
+2. `"puerto" in configuracion.keys()` funciona, pero `"puerto" in configuracion` es más directo y Pythonic.
+3. `list(configuracion.keys())` convierte las claves en una lista. Útil cuando necesitas ordenarlas o indexarlas.
+
+## `.values()`: trabajar con los valores
+
+```python
+notas = {
+    "Ana": 9.5,
+    "Carlos": 7.8,
+    "Diego": 8.2,
+    "Elena": 9.1
+}
+
+# Sumar todos los valores
+total = sum(notas.values())  # <1>
+print(f"Total: {total}")
+
+# Encontrar la nota más alta
+mejor_nota = max(notas.values())  # <2>
+print(f"Mejor nota: {mejor_nota}")
+
+# Contar cuántos aprobaron (nota >= 7)
+aprobados = sum(1 for nota in notas.values() if nota >= 7)  # <3>
+print(f"Aprobados: {aprobados}")
+```
+
+1. `sum(notas.values())` suma todos los valores del diccionario. `9.5 + 7.8 + 8.2 + 9.1 = 34.6`.
+2. `max(notas.values())` encuentra el valor más alto. `9.5` es la mejor nota.
+3. La expresión generadora `sum(1 for nota in notas.values() if nota >= 7)` cuenta cuántas notas son mayores o iguales a 7.
+
+## `.items()`: la forma más poderosa
+
+```python
+ventas = {
+    "enero": 1500,
+    "febrero": 2300,
+    "marzo": 1800,
+    "abril": 2100
+}
+
+# Iterar con clave y valor
+for mes, monto in ventas.items():  # <1>
+    print(f"{mes}: ${monto}")
+
+# Filtrar mientras iteras
+for mes, monto in ventas.items():
+    if monto > 2000:  # <2>
+        print(f"📈 {mes}: ${monto} — ¡Excelente mes!")
+```
+
+1. `.items()` devuelve tuplas `(clave, valor)`. El `for mes, monto` desempaquetamiento automático de cada tupla.
+2. Puedes filtrar, transformar o tomar decisiones mientras iteras. Es la forma más flexible de trabajar con diccionarios.
+
+## Modificar un diccionario mientras iteras
+
+⚠️ **No modifiques un diccionario mientras lo iteras directamente.** Python te dará un error.
+
+```python
+precios = {
+    "producto_a": 100,
+    "producto_b": 200,
+    "producto_c": 50
+}
+
+# ❌ Esto da ERROR — no puedes modificar mientras iteras
+# for producto in precios:
+#     if precios[producto] < 100:
+#         del precios[producto]
+
+# ✅ Forma correcta: iterar sobre una copia de las claves
+for producto in list(precios.keys()):  # <1>
+    if precios[producto] < 100:
+        del precios[producto]
+
+print(precios)
+```
+
+1. `list(precios.keys())` crea una **copia** de las claves. Iteras sobre la copia, pero modificas el diccionario original. Esto evita el error.
+
+## Comprensión de diccionarios: crear diccionarios al vuelo
+
+Así como las listas tienen comprensión, los diccionarios también:
+
+```python
+# Crear un diccionario de cuadrados
+cuadrados = {x: x**2 for x in range(1, 6)}  # <1>
+print(cuadrados)
+
+# Filtrar con comprensión
+pares = {x: x**2 for x in range(1, 11) if x % 2 == 0}  # <2>
+print(pares)
+
+# Transformar un diccionario existente
+precios_usd = {"manzana": 1.5, "pera": 2.0, "uva": 3.0}
+precios_eur = {producto: precio * 0.85 for producto, precio in precios_usd.items()}  # <3>
+print(precios_eur)
+```
+
+1. `{x: x**2 for x in range(1, 6)}` crea `{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}`. La sintaxis es `{clave: valor for elemento in iterable}`.
+2. La comprensión con filtro `{x: x**2 for x in range(1, 11) if x % 2 == 0}` crea `{2: 4, 4: 16, 6: 36, 8: 64, 10: 100}`.
+3. Transformar un diccionario existente es común: aquí convertimos precios de USD a EUR multiplicando por 0.85.
+
+> **Beautiful is better than ugly.** La comprensión de diccionarios es más legible y eficiente que un bucle `for` con asignaciones manuales.
+
+## Resumen
+
+| Método | Qué devuelve | Cuándo usarlo |
+|--------|-------------|---------------|
+| `for k in dic` | Claves | Cuando solo necesitas las claves |
+| `dic.keys()` | Vista de claves | Cuando necesitas una lista de claves |
+| `dic.values()` | Vista de valores | Cuando solo importan los valores |
+| `dic.items()` | Pares (clave, valor) | Cuando necesitas ambos (más común) |
+| `{k: v for ...}` | Nuevo diccionario | Crear diccionarios al vuelo |
+
+| Principio del Zen | Cómo aplica |
+|-------------------|-------------|
+| Readability counts | `.items()` hace el código autoexplicativo |
+| Beautiful is better than ugly | Comprensión de diccionarios en una línea |
+| Simple is better than complex | `for k in dic` es más simple que `for k in dic.keys()` |
+
+---
+
+**Anterior:** [6.2 Acceder y modificar](02-acceder-modificar.qmd) | **Siguiente:** [6.4 Sets](04-sets.qmd)

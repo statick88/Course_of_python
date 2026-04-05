@@ -1,0 +1,284 @@
+---
+title: "4.6 Funciones recursivas: la función que se llama a sí misma"
+subtitle: "Resolver problemas grandes dividiéndolos en problemas pequeños"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es la recursión y cómo funciona
+- Identificar el caso base y el caso recursivo
+- Implementar funciones recursivas clásicas
+- Conocer las limitaciones de la recursión en Python
+
+## ¿Qué es la recursión?
+
+Imagina que estás buscando un libro en una **biblioteca gigante**. En vez de buscar en todos los estantes a la vez, decides: "voy a buscar en este pasillo, y si no está, le pido a otro bibliotecario que busque en el siguiente pasillo". Ese bibliotecario hace lo mismo: busca en su pasillo, y si no está, le pide a otro. Así hasta que alguien encuentra el libro.
+
+Una **función recursiva** es una función que **se llama a sí misma** para resolver un problema más pequeño, hasta llegar a un caso tan simple que puede resolverlo directamente.
+
+```python
+# Contar hacia atrás de forma recursiva
+def cuenta_regresiva(numero):  # <1>
+    if numero <= 0:  # <2> — CASO BASE
+        print("¡Despegue! 🚀")
+        return
+
+    print(numero)  # <3>
+    cuenta_regresiva(numero - 1)  # <4> — CASO RECURSIVO
+
+cuenta_regresiva(5)
+# 5, 4, 3, 2, 1, ¡Despegue! 🚀
+```
+
+1. La función recibe un número y decide qué hacer con él.
+2. **Caso base**: cuando `numero <= 0`, la función NO se llama a sí misma. Es el punto de parada. Sin esto, la recursión sería infinita.
+3. Imprime el número actual.
+4. **Caso recursivo**: la función se llama a sí misma con `numero - 1`. Cada llamada trabaja con un problema más pequeño.
+
+> **Simple is better than complex.** La recursión convierte problemas complejos en versiones más simples de sí mismos.
+
+## Las dos reglas de oro de la recursión
+
+Toda función recursiva **debe** tener exactamente dos partes:
+
+```python
+def funcion_recursiva(parametro):
+    # 1. CASO BASE: ¿cuándo paro?
+    if condicion_simple:
+        return resultado_simple
+
+    # 2. CASO RECURSIVO: ¿cómo reduzco el problema?
+    return funcion_recursiva(parametro_modificado)
+```
+
+| Parte | Pregunta que responde | Ejemplo en cuenta_regresiva |
+|-------|----------------------|----------------------------|
+| Caso base | ¿Cuándo dejo de llamarme? | `numero <= 0` |
+| Caso recursivo | ¿Cómo hago el problema más pequeño? | `cuenta_regresiva(numero - 1)` |
+
+## Factorial: el ejemplo clásico
+
+El factorial de un número `n` (escrito `n!`) es el producto de todos los números desde 1 hasta `n`.
+
+```
+5! = 5 × 4 × 3 × 2 × 1 = 120
+4! = 4 × 3 × 2 × 1 = 24
+1! = 1
+0! = 1  (por definición)
+```
+
+Pero nota algo interesante: `5! = 5 × 4!`. Y `4! = 4 × 3!`. Cada factorial se define en términos del factorial anterior.
+
+```python
+def factorial(n):  # <1>
+    # Caso base: 0! = 1 y 1! = 1
+    if n <= 1:  # <2>
+        return 1
+
+    # Caso recursivo: n! = n × (n-1)!
+    return n * factorial(n - 1)  # <3>
+
+print(factorial(5))   # 120
+print(factorial(0))   # 1
+print(factorial(10))  # 3628800
+```
+
+1. `factorial` calcula el factorial de `n`.
+2. **Caso base**: si `n` es 0 o 1, el resultado es 1. No necesita más cálculos.
+3. **Caso recursivo**: `n! = n × (n-1)!`. La función se llama a sí misma con un número menor.
+
+### Visualización del factorial
+
+```
+factorial(5)
+= 5 × factorial(4)
+= 5 × (4 × factorial(3))
+= 5 × (4 × (3 × factorial(2)))
+= 5 × (4 × (3 × (2 × factorial(1))))
+= 5 × (4 × (3 × (2 × 1)))        ← caso base: retorna 1
+= 5 × (4 × (3 × 2))
+= 5 × (4 × 6)
+= 5 × 24
+= 120                              ← resultado final
+```
+
+## Fibonacci: la secuencia de la naturaleza
+
+La secuencia de Fibonacci aparece en las espirales de las conchas, las ramas de los árboles y los pétalos de las flores. Cada número es la suma de los dos anteriores:
+
+```
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
+```
+
+```python
+def fibonacci(n):  # <1>
+    # Caso base: los dos primeros números
+    if n == 0:  # <2>
+        return 0
+    if n == 1:  # <2>
+        return 1
+
+    # Caso recursivo: fib(n) = fib(n-1) + fib(n-2)
+    return fibonacci(n - 1) + fibonacci(n - 2)  # <3>
+
+# Los primeros 10 números de Fibonacci
+for i in range(10):
+    print(f"fib({i}) = {fibonacci(i)}")
+# fib(0) = 0, fib(1) = 1, fib(2) = 1, fib(3) = 2, fib(4) = 3, ...
+```
+
+1. `fibonacci(n)` devuelve el n-ésimo número de la secuencia.
+2. **Dos casos base**: `fib(0) = 0` y `fib(1) = 1`. Son los cimientos de toda la secuencia.
+3. **Caso recursivo**: cada número es la suma de los dos anteriores.
+
+### ⚠️ El problema de Fibonacci recursivo
+
+```python
+# ❌ fibonacci(40) tarda mucho — calcula lo mismo miles de veces
+# print(fibonacci(40))  # ¡Puede tardar varios segundos!
+
+# ✅ Versión iterativa: mucho más rápida
+def fibonacci_rapido(n):  # <1>
+    if n <= 1:
+        return n
+    anterior, actual = 0, 1
+    for _ in range(2, n + 1):  # <2>
+        anterior, actual = actual, anterior + actual  # <3>
+    return actual
+
+print(fibonacci_rapido(40))  # 102334155 — instantáneo
+```
+
+1. La versión iterativa evita llamadas recursivas innecesarias.
+2. Itera desde 2 hasta `n`, calculando cada Fibonacci una sola vez.
+3. El intercambio simultáneo `anterior, actual = actual, anterior + actual` es elegante y eficiente.
+
+> **Practicality beats purity.** La recursión es elegante, pero la iteración es más práctica para Fibonacci. Usa la herramienta correcta para cada problema.
+
+## Suma de una lista: recursión en acción
+
+```python
+def suma_lista(numeros):  # <1>
+    # Caso base: lista vacía suma 0
+    if len(numeros) == 0:  # <2>
+        return 0
+
+    # Caso recursivo: primer elemento + suma del resto
+    return numeros[0] + suma_lista(numeros[1:])  # <3>
+
+print(suma_lista([1, 2, 3, 4, 5]))  # 15
+```
+
+1. Suma todos los elementos de una lista usando recursión.
+2. **Caso base**: una lista vacía tiene suma 0.
+3. **Caso recursivo**: el primer elemento más la suma del resto de la lista. `numeros[1:]` crea una nueva lista sin el primer elemento.
+
+## Recursión vs Iteración: cuándo usar cada una
+
+| Criterio | Recursión | Iteración |
+|----------|-----------|-----------|
+| Legibilidad | Más elegante para problemas naturales | Más directa |
+| Rendimiento | Más lento (overhead de llamadas) | Más rápido |
+| Memoria | Usa stack (puede desbordar) | Usa memoria constante |
+| Ideal para | Árboles, grafos, divide y vencerás | Procesamiento lineal |
+| Ejemplo natural | Factorial, Fibonacci, directorios | Sumar lista, buscar en array |
+
+```python
+# Recursión: ideal para recorrer directorios
+def listar_archivos(ruta, indent=0):
+    """Lista todos los archivos en un directorio y sus subdirectorios."""
+    espacio = "  " * indent
+    for item in obtener_items(ruta):  # función hipotética
+        print(f"{espacio}{item}")
+        if es_directorio(item):
+            listar_archivos(item, indent + 1)  # <1>
+
+# <1> Se llama a sí misma para cada subdirectorio — natural y elegante
+```
+
+## El límite de recursión en Python
+
+Python tiene un límite de recursión para evitar que el programa colapse:
+
+```python
+import sys
+
+print(sys.getrecursionlimit())  # 1000 (por defecto)  # <1>
+
+# ❌ Esto causa RecursionError
+# def infinito(n):
+#     return infinito(n + 1)
+# infinito(0)  # RecursionError: maximum recursion depth exceeded
+
+# ✅ Puedes cambiar el límite (pero no es recomendado)
+# sys.setrecursionlimit(2000)  # <2>
+```
+
+1. Python limita la profundidad de recursión a 1000 llamadas por defecto.
+2. Puedes cambiarlo, pero si necesitas más de 1000 niveles, probablemente deberías usar iteración.
+
+## Errores comunes
+
+### ❌ Sin caso base: recursión infinita
+
+```python
+# ❌ Nunca para — RecursionError
+def sin_fin(n):
+    print(n)
+    return sin_fin(n - 1)  # No hay condición de parada
+
+# ✅ Siempre incluye un caso base
+def con_fin(n):
+    if n <= 0:
+        return "Listo"
+    print(n)
+    return con_fin(n - 1)
+```
+
+### ❌ Caso base que nunca se alcanza
+
+```python
+# ❌ El caso base nunca se alcanza porque n siempre aumenta
+def mal_contador(n):
+    if n == 0:  # Nunca llega a 0 si empieza en 5
+        return "Listo"
+    return mal_contador(n + 1)  # ¡Se aleja del caso base!
+
+# ✅ El caso recursivo debe ACERCARSE al caso base
+def buen_contador(n):
+    if n <= 0:
+        return "Listo"
+    return buen_contador(n - 1)  # Se acerca a 0
+```
+
+### ❌ No usar el return del caso recursivo
+
+```python
+# ❌ Olvida retornar el resultado de la llamada recursiva
+def factorial_roto(n):
+    if n <= 1:
+        return 1
+    n * factorial_roto(n - 1)  # ❌ Falta 'return' — devuelve None
+
+# ✅ Siempre retorna el resultado
+def factorial_correcto(n):
+    if n <= 1:
+        return 1
+    return n * factorial_correcto(n - 1)
+```
+
+## Resumen
+
+| Concepto | Ejemplo | Principio del Zen |
+|----------|---------|-------------------|
+| Caso base | `if n <= 1: return 1` | Simple is better than complex |
+| Caso recursivo | `return n * factorial(n-1)` | Readability counts |
+| Sin caso base | RecursionError | Errors should never pass silently |
+| Recursión vs iteración | Fibonacci lento vs rápido | Practicality beats purity |
+| Límite de Python | 1000 llamadas máximo | Explicit is better than implicit |
+
+---
+
+**Anterior:** [4.5 Funciones lambda](05-funciones-lambda.qmd) | **Siguiente:** [Resumen del Módulo 4](99-resumen.qmd)

@@ -1,0 +1,87 @@
+---
+title: "Desafío 2: Generador de fechas"
+difficulty: "⭐ Fácil"
+estimated_time: "10 minutos"
+---
+
+## Situación
+
+Un sistema de gestión necesita generar reportes con fechas formateadas de diferentes maneras. Tu tarea es crear un programa que use el módulo `datetime` para mostrar información temporal útil.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Muestre la fecha y hora actual
+2. Calcule y muestre la fecha de hace 30 días
+3. Calcule y muestre la fecha de dentro de 90 días
+4. Muestre cuántos días faltan para el 31 de diciembre de este año
+5. Muestre el día de la semana de tu fecha de nacimiento (elige una fecha)
+
+## Ejemplo de ejecución
+
+```
+=== Generador de Fechas ===
+
+📅 Hoy: 04/04/2026 15:30:00
+📅 Hace 30 días: 05/03/2026
+📅 Dentro de 90 días: 03/07/2026
+🎯 Días hasta fin de año: 271
+🎂 15/06/1990 fue un: Friday
+```
+
+## Pista
+
+- Usa `datetime.now()` para la fecha actual
+- Usa `timedelta(days=N)` para sumar o restar días
+- Usa `strftime()` para formatear fechas como texto
+- Para el día de la semana, usa `%A` en `strftime()`
+- Resta dos fechas para obtener un `timedelta` y usa `.days`
+
+## Criterios de éxito
+
+- [ ] Muestra fecha y hora actual formateada
+- [ ] Calcula correctamente fechas pasadas y futuras
+- [ ] Calcula días restantes hasta fin de año
+- [ ] Muestra el día de la semana de una fecha específica
+- [ ] Usa `datetime` y `timedelta` correctamente
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 2: Generador de fechas
+# Solución de referencia
+
+from datetime import datetime, timedelta
+
+print("=== Generador de Fechas ===")
+print()
+
+# Fecha y hora actual
+ahora = datetime.now()
+print(f"📅 Hoy: {ahora.strftime('%d/%m/%Y %H:%M:%S')}")
+
+# Hace 30 días
+hace_30 = ahora - timedelta(days=30)
+print(f"📅 Hace 30 días: {hace_30.strftime('%d/%m/%Y')}")
+
+# Dentro de 90 días
+dentro_90 = ahora + timedelta(days=90)
+print(f"📅 Dentro de 90 días: {dentro_90.strftime('%d/%m/%Y')}")
+
+# Días hasta fin de año
+fin_de_anio = datetime(ahora.year, 12, 31)
+dias_restantes = (fin_de_anio - ahora).days
+print(f"🎯 Días hasta fin de año: {dias_restantes}")
+
+# Día de la semana de una fecha de nacimiento
+nacimiento = datetime(1990, 6, 15)
+dia_semana = nacimiento.strftime("%A")
+print(f"🎂 15/06/1990 fue un: {dia_semana}")
+```
+</details>
+
+---
+
+[← Desafío 1](desafio-01-mi-primer-modulo.qmd) | [Desafío 3 →](desafio-03-aleatorios-avanzados.qmd)

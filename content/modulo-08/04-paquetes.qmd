@@ -1,0 +1,285 @@
+---
+title: "8.4 Paquetes: organizar código profesionalmente"
+subtitle: "De archivos sueltos a proyectos estructurados"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es un paquete y cómo se diferencia de un módulo
+- Crear paquetes con `__init__.py`
+- Organizar código en subpaquetes
+- Usar importaciones relativas dentro de paquetes
+
+## ¿Qué es un paquete?
+
+Si un **módulo** es un archivo `.py`, un **paquete** es una **carpeta** que contiene módulos y un archivo especial llamado `__init__.py`.
+
+Piensa en la diferencia entre tener **hojas sueltas** en tu escritorio (módulos) y tener un **archivero con cajones etiquetados** (paquetes). El archivero organiza todo y hace que encontrar cosas sea fácil.
+
+```
+mi_proyecto/
+├── main.py              # Programa principal
+└── finanzas/            # Paquete (carpeta)
+    ├── __init__.py      # Marca esta carpeta como paquete <1>
+    ├── facturas.py      # Módulo de facturas
+    ├── pagos.py         # Módulo de pagos
+    └── reportes/        # Subpaquete (subcarpeta)
+        ├── __init__.py  # Marca esta subcarpeta como subpaquete
+        └── mensual.py   # Módulo de reportes mensuales
+```
+
+1. `__init__.py` le dice a Python: "esta carpeta es un paquete, no una carpeta cualquiera". Puede estar vacío o contener código de inicialización.
+
+> **Flat is better than nested, but readability counts.** Organiza en paquetes cuando tengas más de 5 módulos relacionados.
+
+## Crear tu primer paquete
+
+### Paso 1: Estructura de carpetas
+
+```
+biblioteca/
+├── main.py
+└── utils/
+    ├── __init__.py
+    ├── texto.py
+    ├── numeros.py
+    └── archivos.py
+```
+
+### Paso 2: El archivo `__init__.py`
+
+Este archivo es la **puerta de entrada** del paquete. Define qué se exporta cuando alguien importa el paquete:
+
+```python
+# utils/__init__.py
+# Este archivo se ejecuta cuando alguien hace: import utils
+
+from .texto import limpiar_texto, contar_palabras  # <1>
+from .numeros import formatear_moneda, calcular_promedio  # <2>
+from .archivos import leer_archivo, guardar_archivo  # <3>
+
+__all__ = [  # <4>
+    "limpiar_texto",
+    "contar_palabras",
+    "formatear_moneda",
+    "calcular_promedio",
+    "leer_archivo",
+    "guardar_archivo",
+]
+```
+
+1. El punto (`.`) significa "desde este paquete". `from .texto` importa desde `texto.py` que está en la misma carpeta.
+2. Importa las funciones de `numeros.py` y las hace disponibles en el nivel del paquete.
+3. Importa las funciones de `archivos.py` también.
+4. `__all__` define qué nombres se exportan con `from utils import *`. Es una lista blanca explícita.
+
+### Paso 3: Los módulos del paquete
+
+```python
+# utils/texto.py
+def limpiar_texto(texto):
+    """Elimina espacios extra y convierte a minúsculas."""
+    return " ".join(texto.lower().split())
+
+def contar_palabras(texto):
+    """Cuenta cuántas palabras tiene un texto."""
+    return len(texto.split())
+```
+
+```python
+# utils/numeros.py
+def formatear_moneda(cantidad, simbolo="$"):
+    """Formatea un número como moneda."""
+    return f"{simbolo}{cantidad:,.2f}"
+
+def calcular_promedio(numeros):
+    """Calcula el promedio de una lista de números."""
+    if not numeros:
+        return 0
+    return sum(numeros) / len(numeros)
+```
+
+### Paso 4: Usar el paquete
+
+```python
+# main.py — Usar el paquete utils
+
+# Forma 1: Importar funciones específicas del paquete
+from utils import limpiar_texto, formatear_moneda  # <1>
+
+texto = limpiar_texto("  Hola   Mundo  ")
+print(texto)  # "hola mundo"
+
+precio = formatear_moneda(1234.5)
+print(precio)  # "$1,234.50"
+
+# Forma 2: Importar submódulos completos
+from utils import numeros  # <2>
+
+promedio = numeros.calcular_promedio([85, 90, 78, 92])
+print(f"Promedio: {promedio}")  # Promedio: 86.25
+
+# Forma 3: Importar el paquete completo
+import utils  # <3>
+
+texto_limpio = utils.limpiar_texto("  Python  ")
+print(texto_limpio)  # "python"
+```
+
+1. Gracias al `__init__.py`, puedes importar funciones directamente desde `utils`, sin pasar por `utils.texto`.
+2. También puedes importar submódulos individuales si necesitas acceso a todas sus funciones.
+3. `import utils` importa todo el paquete. Accedes a las funciones con `utils.funcion()`.
+
+## Importaciones relativas vs absolutas
+
+Dentro de un paquete, tienes dos formas de importar:
+
+```python
+# Dentro de utils/reportes/mensual.py
+
+# ✅ Relativa (desde el paquete actual)
+from ..texto import limpiar_texto  # <1> — sube un nivel, importa de texto.py
+from ..numeros import calcular_promedio  # <2> — sube un nivel, importa de numeros.py
+
+# ✅ Absoluta (desde la raíz del proyecto)
+from utils.texto import limpiar_texto  # <3> — ruta completa desde la raíz
+from utils.numeros import calcular_promedio  # <4> — ruta completa desde la raíz
+```
+
+1. `..` significa "sube un nivel en la jerarquía de paquetes". Desde `reportes/`, sube a `utils/` y busca `texto.py`.
+2. Otro ejemplo de importación relativa con `..`.
+3. La importación absoluta usa la ruta completa desde la raíz del proyecto. Es más explícita.
+4. Las importaciones absolutas son **preferibles** en código profesional porque son más claras.
+
+### Guía de puntos en importaciones relativas
+
+| Sintaxis | Significado | Ejemplo |
+|----------|-------------|---------|
+| `.` | Este paquete (mismo nivel) | `from .texto import func` |
+| `..` | Un nivel arriba | `from ..texto import func` |
+| `...` | Dos niveles arriba | `from ...texto import func` |
+
+## Paquetes con subpaquetes
+
+Cuando tu proyecto crece, puedes organizar en subpaquetes:
+
+```
+tienda/
+├── main.py
+└── tienda/
+    ├── __init__.py
+    ├── modelos/
+    │   ├── __init__.py
+    │   ├── producto.py
+    │   └── cliente.py
+    ├── servicios/
+    │   ├── __init__.py
+    │   ├── carrito.py
+    │   └── pagos.py
+    └── utils/
+        ├── __init__.py
+        └── validadores.py
+```
+
+```python
+# main.py
+from tienda.modelos import Producto, Cliente  # <1>
+from tienda.servicios import Carrito           # <2>
+from tienda.utils.validadores import validar_email  # <3>
+
+producto = Producto("Laptop", 999.99)  # <4>
+cliente = Cliente("Ana", "ana@email.com")
+carrito = Carrito(cliente)
+carrito.agregar(producto)
+```
+
+1. Importa las clases `Producto` y `Cliente` del subpaquete `modelos`.
+2. Importa `Carrito` del subpaquete `servicios`.
+3. Importa una función específica del subpaquete `utils`.
+4. El código principal se lee como una historia clara y organizada.
+
+## Errores comunes con paquetes
+
+### ❌ Error: Olvidar `__init__.py`
+
+```
+mi_proyecto/
+└── utils/
+    ├── texto.py
+    └── numeros.py
+    # ¡Falta __init__.py!
+```
+
+```python
+from utils import texto  # ❌ ModuleNotFoundError
+```
+
+**Solución:** Crea un archivo `__init__.py` (puede estar vacío) en cada carpeta que quieras que sea un paquete.
+
+### ❌ Error: Importación circular
+
+```python
+# modulo_a.py
+from modulo_b import funcion_b  # <1>
+
+def funcion_a():
+    return funcion_b() + 1
+```
+
+```python
+# modulo_b.py
+from modulo_a import funcion_a  # <2>
+
+def funcion_b():
+    return funcion_a() + 1
+```
+
+1. `modulo_a` necesita `modulo_b` para funcionar.
+2. `modulo_b` necesita `modulo_a` para funcionar.
+3. **Resultado:** `ImportError: cannot import name`. Python no sabe cuál cargar primero.
+
+**Solución:** Rompe el ciclo creando un tercer módulo compartido:
+
+```python
+# compartido.py — Funciones que ambos necesitan
+def funcion_base():
+    return 0
+```
+
+```python
+# modulo_a.py y modulo_b.py ahora importan de compartido
+from compartido import funcion_base
+```
+
+### ❌ Error: Ejecutar un módulo dentro de un paquete
+
+```bash
+# ❌ Esto falla
+python utils/texto.py  # ImportError: attempted relative import
+
+# ✅ Forma correcta
+python -m utils.texto  # Ejecuta como módulo del paquete
+```
+
+## Resumen
+
+| Concepto | Qué es | Ejemplo |
+|----------|--------|---------|
+| Módulo | Un archivo `.py` | `utils.py` |
+| Paquete | Una carpeta con `__init__.py` | `utils/` |
+| Subpaquete | Carpeta dentro de un paquete | `utils/reportes/` |
+| Import relativa | `from .modulo import func` | Dentro del paquete |
+| Import absoluta | `from paquete.modulo import func` | Desde la raíz |
+| `__all__` | Lista blanca de exports | `__all__ = ["func1", "func2"]` |
+
+| Principio del Zen | Aplicación |
+|-------------------|------------|
+| Namespaces are one honking great idea | Los paquetes crean namespaces organizados |
+| Readability counts | `tienda.servicios.Carrito` dice exactamente qué es |
+| Flat is better than nested | No anides más de 3 niveles de paquetes |
+
+---
+
+**Anterior:** [8.3 Crear tus propios módulos](03-crear-modulos.qmd) | **Siguiente:** [8.5 pip: gestor de paquetes](05-pip-paquetes.qmd)

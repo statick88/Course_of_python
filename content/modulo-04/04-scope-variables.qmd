@@ -1,0 +1,291 @@
+---
+title: "4.4 Scope de variables: quién ve qué"
+subtitle: "Las fronteras invisibles de Python"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es el scope (alcance) de una variable
+- Diferenciar entre variables locales y globales
+- Usar `global` y `nonlocal` cuando sea necesario
+- Evitar los errores más comunes con el scope
+
+## ¿Qué es el scope?
+
+Imagina un **edificio de apartamentos**. Cada apartamento tiene sus propias cosas: su cocina, su sofá, su televisor. Si estás en el apartamento 3A, no puedes usar la tele del 5B. Pero todos los apartamentos comparten cosas del edificio: la entrada principal, el ascensor, la lavandería del sótano.
+
+El **scope** es exactamente eso: **qué variables puede ver tu código dependiendo de dónde esté**.
+
+```python
+# Variable global: todos los apartamentos la ven
+edificio = "Torre Python"  # <1>
+
+def apartamento_3a():
+    # Variable local: solo este apartamento la ve
+    mueble = "Sofá rojo"  # <2>
+    print(f"En el {edificio} hay un {mueble}")
+
+def apartamento_5b():
+    mueble = "Sofá azul"  # <3>
+    print(f"En el {edificio} hay un {mueble}")
+
+apartamento_3a()  # En el Torre Python hay un Sofá rojo
+apartamento_5b()  # En el Torre Python hay un Sofá azul
+# print(mueble)  # ❌ NameError: ¿cuál mueble? ¿el rojo o el azul?
+```
+
+1. `edificio` es **global**: se definió fuera de cualquier función. Todas las funciones pueden leerla.
+2. `mueble` es **local** de `apartamento_3a`: solo existe dentro de esa función.
+3. Este `mueble` es **otro** mueble: es local de `apartamento_5b`. No tiene nada que ver con el del 3A.
+
+> **Explicit is better than implicit.** El scope hace explícito dónde vive cada variable. No hay ambigüedad.
+
+## Scope local: la variable que nace y muere dentro de la función
+
+Las variables creadas dentro de una función **solo existen mientras la función se ejecuta**:
+
+```python
+def calcular_descuento(precio):  # <1>
+    tasa = 0.15  # <2>
+    descuento = precio * tasa  # <3>
+    return precio - descuento
+
+resultado = calcular_descuento(100)  # <4>
+print(resultado)  # 85.0
+# print(tasa)  # ❌ NameError: 'tasa' no existe aquí fuera
+# print(descuento)  # ❌ NameError: 'descuento' no existe aquí fuera
+```
+
+1. `precio` es un parámetro: también es local a la función.
+2. `tasa` se crea dentro de la función. Es local.
+3. `descuento` se crea dentro de la función. Es local.
+4. Al terminar la función, `tasa` y `descuento` desaparecen. Solo `resultado` sobrevive.
+
+## Scope global: la variable que todos ven
+
+Las variables definidas fuera de funciones son globales. Se pueden **leer** desde cualquier función:
+
+```python
+# Variables globales
+impuesto_base = 0.15  # <1>
+moneda = "USD"
+
+def calcular_precio_final(precio):
+    # Puede LEER variables globales
+    total = precio * (1 + impuesto_base)  # <2>
+    return f"{total:.2f} {moneda}"
+
+print(calcular_precio_final(100))  # 115.00 USD
+print(f"Impuesto configurado: {impuesto_base}")  # 0.15
+```
+
+1. `impuesto_base` y `moneda` son globales. Se definen fuera de cualquier función.
+2. La función puede leer `impuesto_base` sin problemas. No necesita hacer nada especial.
+
+### ⚠️ Pero no puedes MODIFICAR una global sin `global`
+
+```python
+contador = 0  # Global
+
+def incrementar():
+    # ❌ Esto da error: Python piensa que 'contador' es local
+    # porque hay una asignación (contador += 1)
+    # contador += 1  # UnboundLocalError
+
+    # ✅ Con 'global', le dices a Python que uses la variable global
+    global contador  # <1>
+    contador += 1
+
+incrementar()
+print(contador)  # 1
+incrementar()
+print(contador)  # 2
+```
+
+1. `global contador` le dice a Python: "no crees una variable nueva, usa la que está afuera".
+
+> **Simple is better than complex.** Evita `global` siempre que puedas. Si necesitas compartir estado, pasa valores como parámetros y devuélvelos con `return`.
+
+## El problema de las globales: por qué evitarlas
+
+```python
+# ❌ Código difícil de entender y depurar
+configuracion = {"tema": "oscuro", "idioma": "es"}
+
+def cambiar_tema():
+    global configuracion
+    configuracion["tema"] = "claro"
+
+def mostrar_tema():
+    print(configuracion["tema"])
+
+mostrar_tema()  # oscuro
+cambiar_tema()  # Cambia sin que quien llama lo sepa
+mostrar_tema()  # claro — ¿quién lo cambió?
+```
+
+```python
+# ✅ Código predecible y testeable
+def obtener_configuracion():
+    return {"tema": "oscuro", "idioma": "es"}
+
+def cambiar_tema(config, nuevo_tema):
+    nueva_config = config.copy()  # <1>
+    nueva_config["tema"] = nuevo_tema
+    return nueva_config  # <2>
+
+config = obtener_configuracion()
+nueva_config = cambiar_tema(config, "claro")
+print(config["tema"])       # oscuro — la original no cambió
+print(nueva_config["tema"]) # claro — la nueva sí
+```
+
+1. `.copy()` crea una copia para no modificar la original.
+2. Devuelve la nueva configuración. Quien llama decide si usarla.
+
+## Scope anidado: funciones dentro de funciones
+
+Puedes definir funciones dentro de otras funciones. Las variables del nivel exterior son visibles desde el interior:
+
+```python
+def fabrica_de_saludos(idioma):  # <1>
+    def saludar_es(nombre):  # <2>
+        return f"¡Hola, {nombre}!"
+
+    def saludar_en(nombre):
+        return f"Hello, {nombre}!"
+
+    if idioma == "es":
+        return saludar_es  # <3>
+    else:
+        return saludar_en
+
+saludar = fabrica_de_saludos("es")  # <4>
+print(saludar("Ana"))  # ¡Hola, Ana!
+```
+
+1. `fabrica_de_saludos` es la función exterior. `idioma` es su variable local.
+2. `saludar_es` es una función **anidada** dentro de `fabrica_de_saludos`.
+3. Retorna la función interna (no el resultado, la función misma).
+4. `saludar` ahora apunta a `saludar_es`.
+
+## `nonlocal`: modificar variables del scope exterior
+
+Si necesitas modificar una variable del scope padre (no global, sino de la función que te contiene), usa `nonlocal`:
+
+```python
+def crear_contador():  # <1>
+    cuenta = 0  # Variable del scope exterior (no global)
+
+    def incrementar():
+        nonlocal cuenta  # <2>
+        cuenta += 1
+        return cuenta
+
+    return incrementar
+
+contador = crear_contador()  # <3>
+print(contador())  # 1
+print(contador())  # 2
+print(contador())  # 3
+```
+
+1. `cuenta` es local de `crear_contador`, pero para `incrementar` es del scope exterior.
+2. `nonlocal cuenta` permite modificar `cuenta` desde la función anidada.
+3. Cada llamada a `contador()` incrementa la misma variable `cuenta`.
+
+## La regla LEGB: cómo Python busca variables
+
+Cuando usas una variable, Python la busca en este orden:
+
+| Orden | Scope | Significado | Ejemplo |
+|-------|-------|-------------|---------|
+| 1 | **L**ocal | Dentro de la función actual | `x` dentro de `def mi_funcion()` |
+| 2 | **E**nclosing | Función que contiene (anidada) | `x` en la función padre |
+| 3 | **G**lobal | Nivel del módulo (fuera de todo) | `x` al inicio del archivo |
+| 4 | **B**uilt-in | Funciones integradas de Python | `print`, `len`, `int` |
+
+```python
+x = "global"  # G
+
+def exterior():
+    x = "enclosing"  # E
+
+    def interior():
+        x = "local"  # L
+        print(x)
+
+    interior()
+
+exterior()  # Imprime: local
+```
+
+Python encuentra `x` en el scope **Local** primero y se detiene ahí.
+
+## Errores comunes
+
+### ❌ Modificar una global sin declararla
+
+```python
+contador = 0
+
+def sumar():
+    # ❌ Python cree que 'contador' es local porque hay asignación
+    # contador = contador + 1  # UnboundLocalError
+    pass
+
+# ✅ Solución 1: usa global
+def sumar_con_global():
+    global contador
+    contador += 1
+
+# ✅ Solución 2: evita globales (mejor)
+def sumar_pura(valor):
+    return valor + 1
+
+contador = sumar_pura(contador)
+```
+
+### ❌ Confundir scope con orden de ejecución
+
+```python
+def funcion_a():
+    print(x)  # ❌ x no existe aún — se define después
+
+x = 10
+funcion_a()  # Esto SÍ funciona porque x ya existe al llamar
+```
+
+### ❌ Sombras de variables (shadowing)
+
+```python
+len = 10  # ❌ ¡Sobrescribiste la función built-in len()!
+
+def mi_funcion():
+    print(len("hola"))  # TypeError: 'int' object is not callable
+
+# ✅ Usa nombres que no choquen con built-ins
+longitud = 10
+print(len("hola"))  # 4 — funciona
+```
+
+## Resumen
+
+| Scope | Dónde se define | Quién lo ve | Palabra clave |
+|-------|-----------------|-------------|---------------|
+| Local | Dentro de función | Solo esa función | — |
+| Enclosing | Función padre | Funciones anidadas | `nonlocal` |
+| Global | Fuera de funciones | Todo el módulo | `global` |
+| Built-in | Python mismo | Todo | — |
+
+| Principio del Zen | Aplicación al scope |
+|-------------------|---------------------|
+| Explicit is better than implicit | Usa parámetros y return en vez de globales |
+| Simple is better than complex | Variables locales son más simples de rastrear |
+| Readability counts | Si una variable necesita `global`, reconsidera el diseño |
+
+---
+
+**Anterior:** [4.3 Return: el resultado que vuelve](03-return.qmd) | **Siguiente:** [4.5 Funciones lambda](05-funciones-lambda.qmd)

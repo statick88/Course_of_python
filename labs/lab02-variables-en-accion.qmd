@@ -1,0 +1,117 @@
+---
+title: "Laboratorio 2: Variables en acción"
+subtitle: "Experimentar con tipos de datos y conversiones"
+execute:
+  eval: false
+---
+
+## Objetivos del laboratorio
+
+- Crear variables de diferentes tipos
+- Observar cómo Python infiere los tipos
+- Experimentar con conversiones entre tipos
+- Verificar tipos con la función `type()`
+
+## Requisitos previos
+
+- Haber completado el Laboratorio 1
+- Conocer los tipos básicos: int, float, str, bool
+
+## Paso 1: Crear el archivo de experimentación
+
+Crea un archivo llamado `tipos.py` en tu directorio de trabajo:
+
+```{python}
+# tipos.py — Laboratorio 2: Variables en acción
+
+# Crea variables de cada tipo
+edad = 25
+precio = 19.99
+nombre = "Ana"
+es_estudiante = True
+
+# Verifica el tipo de cada una
+print(f"edad = {edad} → tipo: {type(edad)}")
+print(f"precio = {precio} → tipo: {type(precio)}")
+print(f"nombre = {nombre} → tipo: {type(nombre)}")
+print(f"es_estudiante = {es_estudiante} → tipo: {type(es_estudiante)}")
+```
+
+Ejecuta con `python3 tipos.py` y observa la salida.
+
+## Paso 2: Experimentar con operaciones
+
+Agrega estas líneas al archivo y ejecuta de nuevo:
+
+```{python}
+# Operaciones entre tipos
+print()
+print("--- Operaciones ---")
+print(f"edad + 5 = {edad + 5}")           # int + int
+print(f"precio * 2 = {precio * 2}")       # float * int
+print(f"nombre * 3 = {nombre * 3}")       # str * int
+print(f"edad > 18 = {edad > 18}")         # comparación → bool
+```
+
+## Paso 3: Conversiones explícitas
+
+Agrega y ejecuta:
+
+```{python}
+# Conversiones entre tipos
+print()
+print("--- Conversiones ---")
+edad_texto = str(edad)
+print(f"str({edad}) = '{edad_texto}' → tipo: {type(edad_texto)}")
+
+precio_entero = int(precio)
+print(f"int({precio}) = {precio_entero} → tipo: {type(precio_entero)}")
+
+numero_texto = "42"
+numero = int(numero_texto)
+print(f"int('{numero_texto}') = {numero} → tipo: {type(numero)}")
+```
+
+## Paso 4: El desafío — ¿Qué pasa aquí?
+
+Antes de ejecutar, predice el resultado de cada línea:
+
+```{python}
+# Predice antes de ejecutar
+print("5" + "3")       # ¿Qué imprime?
+print(5 + 3)           # ¿Qué imprime?
+print(int("5") + 3)    # ¿Qué imprime?
+print("5" + str(3))    # ¿Qué imprime?
+print(bool(0))         # ¿Qué imprime?
+print(bool(1))         # ¿Qué imprime?
+print(bool(""))        # ¿Qué imprime?
+print(bool("hola"))    # ¿Qué imprime?
+```
+
+## Verificación de resultados
+
+La salida esperada del Paso 4 es:
+
+```
+53
+8
+8
+53
+False
+True
+False
+True
+```
+
+Si tu predicción fue diferente, analiza por qué. La diferencia entre `"5" + "3"` y `5 + 3` es el concepto más importante de este laboratorio.
+
+## Preguntas de reflexión
+
+1. ¿Por qué `int(19.99)` da `19` y no `20`?
+2. ¿Qué pasa si intentas `int("hola")`? ¿Por qué?
+3. ¿Por qué `bool(0)` es `False` pero `bool(1)` es `True`?
+4. ¿Qué otros valores crees que son `False` en Python?
+
+---
+
+[← Laboratorio 1](01-primer-programa.qmd) | [← Volver al Módulo 1](../index.qmd)

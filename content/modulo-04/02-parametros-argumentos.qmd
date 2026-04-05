@@ -1,0 +1,274 @@
+---
+title: "4.2 Parámetros y argumentos: la receta flexible"
+subtitle: "Cómo hacer que tus funciones acepten diferentes ingredientes"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Diferenciar entre parámetros y argumentos
+- Usar parámetros posicionales y con nombre
+- Definir valores por defecto para parámetros opcionales
+- Usar `*args` y `**kwargs` para funciones flexibles
+
+## Parámetro vs Argumento: no son lo mismo
+
+Piensa en una **receta de cocina**. La receta dice "agregar 2 tazas de harina" — eso es el **parámetro** (el espacio que necesita la receta). Cuando tú realmente pones la harina en el bowl, eso es el **argumento** (el valor real).
+
+```python
+# Definición: los parámetros son los "espacios vacíos"
+def preparar_cafe(tipo_cafe, cantidad):  # <1>
+    print(f"Preparando {cantidad} taza(s) de {tipo_cafe}")
+
+# Llamada: los argumentos son los "valores reales"
+preparar_cafe("espresso", 2)  # <2>
+preparar_cafe("latte", 1)     # <3>
+```
+
+1. `tipo_cafe` y `cantidad` son **parámetros**: los nombres que la función usa internamente.
+2. `"espresso"` y `2` son **argumentos posicionales**: se asignan en orden al primer y segundo parámetro.
+3. `"latte"` y `1` son otros argumentos. La misma función, diferentes valores.
+
+> **Explicit is better than implicit.** Los parámetros definen qué necesita la función; los argumentos son lo que tú le das.
+
+## Argumentos posicionales: el orden importa
+
+Cuando llamas una función, los argumentos se asignan **en orden** a los parámetros:
+
+```python
+def presentar(nombre, edad, ciudad):  # <1>
+    print(f"{nombre}, {edad} años, vive en {ciudad}")
+
+presentar("Ana", 28, "Quito")     # <2>
+presentar(28, "Ana", "Quito")     # <3> ¡Cuidado!
+```
+
+1. Tres parámetros: el orden es importante.
+2. Correcto: `"Ana"` → `nombre`, `28` → `edad`, `"Quito"` → `ciudad`.
+3. ¡Error lógico! `28` → `nombre`, `"Ana"` → `edad`. Python no protesta, pero el resultado es incorrecto.
+
+## Argumentos con nombre (keyword arguments): el orden no importa
+
+Puedes usar el nombre del parámetro al llamar la función. Así el orden ya no importa:
+
+```python
+def crear_perfil(nombre, edad, profesion):
+    print(f"{nombre} | {edad} años | {profesion}")
+
+# ✅ Con nombre: el orden no importa
+crear_perfil(edad=30, nombre="Carlos", profesion="Ingeniero")  # <1>
+
+# ✅ Mezclar posicionales y con nombre
+crear_perfil("María", profesion="Diseñadora", edad=25)  # <2>
+
+# ❌ Posicional después de keyword — SyntaxError
+# crear_perfil(nombre="Ana", 28)  # <3>
+```
+
+1. Cada argumento indica explícitamente a qué parámetro corresponde. No hay confusión posible.
+2. Los posicionales van primero, luego los keyword. Python lo permite siempre que respetes ese orden.
+3. Python no permite argumentos posicionales después de argumentos con nombre.
+
+> **Readability counts.** Los argumentos con nombre hacen que las llamadas a funciones se lean como documentación.
+
+## Valores por defecto: parámetros opcionales
+
+Puedes dar valores por defecto a los parámetros. Si no se proporciona un argumento, se usa el valor por defecto:
+
+```python
+def crear_cuenta(usuario, rol="estudiante", activo=True):  # <1>
+    print(f"Usuario: {usuario}")
+    print(f"Rol: {rol}")
+    print(f"Activo: {activo}")
+
+crear_cuenta("ana_garcia")  # <2>
+crear_cuenta("carlos_dev", rol="profesor")  # <3>
+crear_cuenta("maria_123", "admin", False)  # <4>
+```
+
+1. `rol` y `activo` tienen valores por defecto. Son opcionales al llamar la función.
+2. Solo se pasa `usuario`. `rol` será `"estudiante"` y `activo` será `True`.
+3. Se pasa `usuario` y se sobrescribe `rol`. `activo` mantiene su valor por defecto.
+4. Se pasan todos los argumentos. Los valores por defecto se ignoran.
+
+### ⚠️ Regla: parámetros sin defecto primero
+
+```python
+# ✅ Correcto: obligatorios primero, opcionales después
+def registrar(nombre, email, newsletter=True):
+    pass
+
+# ❌ Error: parámetro sin defecto después de uno con defecto
+# def registrar(newsletter=True, email):  # SyntaxError
+#     pass
+```
+
+## El peligro de los valores mutables por defecto
+
+Este es uno de los errores más comunes en Python. Presta atención:
+
+```python
+# ❌ PELIGRO: lista mutable como valor por defecto
+def agregar_item(item, lista=[]):  # <1>
+    lista.append(item)
+    return lista
+
+resultado1 = agregar_item("manzana")
+print(resultado1)  # ['manzana']
+
+resultado2 = agregar_item("pera")
+print(resultado2)  # ['manzana', 'pera'] — ¡¿Qué?!
+
+# ✅ Solución: usa None como valor por defecto
+def agregar_item_seguro(item, lista=None):  # <2>
+    if lista is None:
+        lista = []
+    lista.append(item)
+    return lista
+
+r1 = agregar_item_seguro("manzana")
+print(r1)  # ['manzana']
+
+r2 = agregar_item_seguro("pera")
+print(r2)  # ['pera'] — Correcto
+```
+
+1. La lista `[]` se crea **una sola vez** cuando se define la función. Todas las llamadas comparten la misma lista.
+2. `None` es inmutable. Cada vez que `lista` es `None`, se crea una lista nueva.
+
+> **Errors should never pass silently.** Si usas un valor mutable como defecto, Python no te avisa del error. El bug aparece silenciosamente.
+
+## `*args`: múltiples argumentos posicionales
+
+Cuando no sabes cuántos argumentos va a recibir tu función, usa `*args`:
+
+```python
+def sumar_todo(*args):  # <1>
+    total = 0
+    for numero in args:  # <2>
+        total += numero
+    return total
+
+print(sumar_todo(1, 2, 3))        # <3>
+print(sumar_todo(10, 20, 30, 40)) # <4>
+print(sumar_todo(5))              # <5>
+```
+
+1. `*args` captura todos los argumentos posicionales en una **tupla**. El nombre `args` es convención; puedes usar cualquier nombre.
+2. `args` es una tupla: puedes iterar sobre ella con `for`.
+3. `args` será `(1, 2, 3)` → total = 6.
+4. `args` será `(10, 20, 30, 40)` → total = 100.
+5. `args` será `(5,)` → total = 5.
+
+```python
+# Ejemplo práctico: calcular promedio de notas variables
+def calcular_promedio(*notas):  # <1>
+    if len(notas) == 0:
+        return 0
+    return sum(notas) / len(notas)
+
+print(calcular_promedio(8, 9, 7))       # <2>
+print(calcular_promedio(10, 8, 9, 7, 6))  # <3>
+```
+
+1. `*notas` acepta cualquier cantidad de notas. Más descriptivo que `*args`.
+2. `(8 + 9 + 7) / 3 = 8.0`.
+3. `(10 + 8 + 9 + 7 + 6) / 5 = 8.0`.
+
+## `**kwargs`: múltiples argumentos con nombre
+
+`**kwargs` captura argumentos con nombre en un **diccionario**:
+
+```python
+def crear_perfil_completo(nombre, **kwargs):  # <1>
+    print(f"Nombre: {nombre}")
+    for clave, valor in kwargs.items():  # <2>
+        print(f"  {clave}: {valor}")
+
+crear_perfil_completo(
+    "Ana",
+    edad=28,
+    ciudad="Quito",
+    profesion="Desarrolladora",
+    idioma="Español"
+)  # <3>
+```
+
+1. `nombre` es obligatorio. `**kwargs` captura todo lo demás como diccionario.
+2. `kwargs.items()` permite iterar sobre cada par clave-valor.
+3. `kwargs` será `{"edad": 28, "ciudad": "Quito", "profesion": "Desarrolladora", "idioma": "Español"}`.
+
+## Combinando todo: la firma completa
+
+Puedes combinar todos los tipos de parámetros en una sola función:
+
+```python
+def funcion_completa(obligatorio, opcional="default", *args, **kwargs):  # <1>
+    print(f"Obligatorio: {obligatorio}")
+    print(f"Opcional: {opcional}")
+    print(f"Args extra: {args}")
+    print(f"Kwargs extra: {kwargs}")
+
+funcion_completa("hola", "mundo", 1, 2, 3, clave="valor")  # <2>
+```
+
+1. Orden obligatorio: `obligatorio` → `opcional` → `*args` → `**kwargs`.
+2. `"hola"` → obligatorio, `"mundo"` → opcional, `(1, 2, 3)` → args, `{"clave": "valor"}` → kwargs.
+
+## Errores comunes
+
+### ❌ Argumentos de más o de menos
+
+```python
+def saludar(nombre, saludo="Hola"):
+    print(f"{saludo}, {nombre}")
+
+saludar("Ana", "Buenos días", "extra")  # TypeError: too many arguments
+saludar()  # TypeError: missing required argument
+```
+
+### ❌ Repetir un argumento
+
+```python
+def calcular(base, tasa=0.15):
+    return base * (1 + tasa)
+
+calcular(100, tasa=0.20, tasa=0.10)  # SyntaxError: argumento repetido
+```
+
+### ❌ Mutable como defecto (otra vez, porque es importante)
+
+```python
+# ❌ Este bug aparece en producción, no en pruebas
+def agregar_log(mensaje, logs=[]):
+    logs.append(mensaje)
+    return logs
+
+# ✅ Siempre usa None para mutables
+def agregar_log_seguro(mensaje, logs=None):
+    if logs is None:
+        logs = []
+    logs.append(mensaje)
+    return logs
+```
+
+## Resumen
+
+| Tipo | Sintaxis | Qué recibe | Ejemplo |
+|------|----------|------------|---------|
+| Posicional | `nombre` | Un valor en orden | `saludar("Ana")` |
+| Con defecto | `nombre="Hola"` | Un valor o el defecto | `saludar()` |
+| Keyword | `nombre="Ana"` | Valor con nombre | `saludar(nombre="Ana")` |
+| `*args` | `*args` | Tupla de valores | `sumar(1, 2, 3)` |
+| `**kwargs` | `**kwargs` | Diccionario de valores | `perfil(edad=25)` |
+
+| Principio del Zen | Aplicación |
+|-------------------|------------|
+| Explicit is better than implicit | Usa argumentos con nombre para claridad |
+| Simple is better than complex | Empieza con parámetros simples, agrega complejidad solo si es necesario |
+| Readability counts | Nombra `*args` y `**kwargs` con nombres descriptivos |
+
+---
+
+**Anterior:** [4.1 Definir funciones](01-definir-funciones.qmd) | **Siguiente:** [4.3 Return: el resultado que vuelve](03-return.qmd)

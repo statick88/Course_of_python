@@ -1,0 +1,91 @@
+---
+title: "Laboratorio 1: Tu primer programa"
+subtitle: "Instalar, configurar y ejecutar — paso a paso"
+execute:
+  eval: false
+---
+
+## Objetivos del laboratorio
+
+- Verificar que Python está instalado y funciona
+- Escribir un archivo `.py` desde cero
+- Ejecutarlo desde la terminal
+- Modificarlo y ver los cambios en tiempo real
+
+## Requisitos previos
+
+- Python 3.8+ instalado
+- Una terminal abierta
+- Un editor de texto (VS Code, nano, o el que prefieras)
+
+## Paso 1: Verificar Python
+
+Abre tu terminal y ejecuta:
+
+```bash
+python3 --version
+```
+
+Deberías ver algo como `Python 3.12.1` o superior. Si ves un error, regresa a la lección de instalación.
+
+## Paso 2: Crear un directorio de trabajo
+
+```bash
+mkdir -p ~/python-basico/laboratorio-1
+cd ~/python-basico/laboratorio-1
+```
+
+## Paso 3: Crear tu primer archivo
+
+Abre tu editor y crea un archivo llamado `saludo.py` con este contenido:
+
+```{python}
+#| eval: false
+nombre = input("¿Cómo te llamas? ")
+print(f"Hola, {nombre}. ¡Bienvenido a Python!")
+```
+
+Guárdalo en el directorio que creaste.
+
+## Paso 4: Ejecutar el programa
+
+En la terminal, ejecuta:
+
+```bash
+python3 saludo.py
+```
+
+El programa te pedirá tu nombre. Escribe algo y presiona Enter.
+
+## Paso 5: Modificar y experimentar
+
+Ahora modifica `saludo.py` para que:
+
+1. También pida tu ciudad
+2. Muestre un saludo que incluya nombre y ciudad
+3. Use un separador visual con guiones
+
+Ejecuta de nuevo y verifica que funciona.
+
+## Verificación de resultados
+
+Tu programa debería verse algo así al ejecutarlo:
+
+```
+¿Cómo te llamas? Ana
+¿De qué ciudad eres? Quito
+
+========================================
+Hola, Ana de Quito. ¡Bienvenido a Python!
+========================================
+```
+
+## Preguntas de reflexión
+
+1. ¿Qué pasa si no escribes nada y solo presionas Enter?
+2. ¿Qué tipo de dato devuelve `input()`? ¿Cómo lo verificarías?
+3. ¿Por qué usamos `f"..."` en vez de `"..." + nombre + "..."`?
+
+---
+
+[Laboratorio 2 →](02-variables-en-accion.qmd) | [← Volver al Módulo 1](../index.qmd)

@@ -1,0 +1,261 @@
+---
+title: "8.3 Crear tus propios módulos"
+subtitle: "De script suelto a código reutilizable"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Convertir un script en un módulo reutilizable
+- Usar `if __name__ == "__main__"` correctamente
+- Organizar funciones en archivos `.py` independientes
+- Importar módulos propios desde otros archivos
+
+## Tu primer módulo
+
+Hasta ahora has escrito scripts: archivos `.py` que se ejecutan de arriba a abajo y terminan. Un **módulo** es diferente: es un archivo `.py` diseñado para ser **importado** por otros programas.
+
+Piensa en la diferencia entre **cocinar para ti** (script) y **escribir una receta** (módulo). La receta la puede usar cualquiera, cuantas veces quiera.
+
+### Paso 1: Crea el archivo del módulo
+
+Crea un archivo llamado `calculadora.py`:
+
+```python
+# calculadora.py — Tu primer módulo
+# Este archivo puede ser importado por otros programas
+
+def sumar(a, b):  # <1>
+    """Suma dos números y devuelve el resultado."""
+    return a + b
+
+def restar(a, b):  # <2>
+    """Resta dos números y devuelve el resultado."""
+    return a - b
+
+def multiplicar(a, b):  # <3>
+    """Multiplica dos números y devuelve el resultado."""
+    return a * b
+
+def dividir(a, b):  # <4>
+    """Divide dos números. Lanza error si b es cero."""
+    if b == 0:
+        raise ValueError("No se puede dividir por cero")
+    return a / b
+
+PI = 3.14159  # <5> — constante del módulo
+```
+
+1. Cada función es una **herramienta** que otros programas pueden usar. El nombre dice exactamente qué hace.
+2. `restar()` recibe dos parámetros y devuelve la diferencia. Simple y directa.
+3. `multiplicar()` devuelve el producto. La documentación (docstring) explica su propósito.
+4. `dividir()` incluye validación: lanza un error claro si intentas dividir por cero.
+5. `PI` es una constante del módulo. Las MAYÚSCULAS indican que no debe modificarse.
+
+### Paso 2: Usa el módulo desde otro archivo
+
+Crea un segundo archivo llamado `mi_programa.py` en la **misma carpeta**:
+
+```python
+# mi_programa.py — Usa el módulo calculadora
+from calculadora import sumar, restar, dividir, PI  # <1>
+
+resultado = sumar(10, 5)  # <2> — 15
+print(f"10 + 5 = {resultado}")
+
+area_circulo = PI * multiplicar(5, 5)  # <3>
+print(f"Área del círculo: {area_circulo}")
+
+# También puedes importar todo el módulo
+import calculadora  # <4>
+print(f"División: {calculadora.dividir(20, 4)}")  # 5.0
+```
+
+1. `from calculadora import ...` importa funciones específicas del archivo `calculadora.py`. Ambos archivos deben estar en la misma carpeta.
+2. `sumar(10, 5)` llama a la función del módulo. No necesitas reescribir la lógica.
+3. Usas `PI` y `multiplicar()` directamente porque las importaste con `from ... import`.
+4. `import calculadora` importa todo el módulo. Accedes a sus funciones con `calculadora.funcion()`.
+
+> **Beautiful is better than ugly.** Un módulo bien nombrado hace que el código se lea como una historia.
+
+## El truco de `__name__`
+
+¿Qué pasa si quieres que tu módulo funcione **como programa** Y **como módulo importable**?
+
+```python
+# calculadora.py — Versión mejorada
+
+def sumar(a, b):
+    """Suma dos números."""
+    return a + b
+
+def restar(a, b):
+    """Resta dos números."""
+    return a - b
+
+# Este bloque solo se ejecuta si corres el archivo directamente
+if __name__ == "__main__":  # <1>
+    print("=== Calculadora ===")
+    print("10 + 5 =", sumar(10, 5))  # <2>
+    print("10 - 5 =", restar(10, 5))
+    print("Ejecutado directamente")
+```
+
+1. `__name__` es una variable especial de Python. Si ejecutas el archivo con `python calculadora.py`, `__name__` vale `"__main__"`. Si lo importas, `__name__` vale `"calculadora"`.
+2. Este código solo se ejecuta cuando corres `python calculadora.py` directamente. **No** se ejecuta cuando otro archivo hace `import calculadora`.
+
+### ¿Cómo funciona `__name__`?
+
+| Situación | Valor de `__name__` | ¿Se ejecuta el bloque? |
+|-----------|---------------------|------------------------|
+| `python calculadora.py` | `"__main__"` | ✅ Sí |
+| `import calculadora` | `"calculadora"` | ❌ No |
+
+```python
+# Verifícalo tú mismo
+print(f"Mi nombre es: {__name__}")  # <1>
+
+if __name__ == "__main__":
+    print("¡Me ejecutaron directamente!")  # <2>
+else:
+    print("¡Me importaron como módulo!")  # <3>
+```
+
+1. `__name__` siempre existe. Te dice cómo se está usando el archivo.
+2. Si el archivo es el programa principal, este mensaje aparece.
+3. Si el archivo fue importado por otro, aparece este mensaje en su lugar.
+
+## Módulos con estado
+
+Un módulo puede tener variables que mantienen su valor entre llamadas:
+
+```python
+# contador.py — Módulo con estado
+
+contador_llamadas = 0  # <1> — variable del módulo
+
+def registrar_accion(accion):
+    """Registra una acción y cuenta cuántas se han hecho."""
+    global contador_llamadas  # <2>
+    contador_llamadas += 1
+    print(f"[{contador_llamadas}] {accion}")
+
+def obtener_total():
+    """Devuelve el total de acciones registradas."""
+    return contador_llamadas
+```
+
+1. `contador_llamadas` es una variable del módulo. Todos los que importen este módulo comparten la misma variable.
+2. `global` indica que queremos modificar la variable del módulo, no crear una local.
+
+```python
+# uso_contador.py
+from contador import registrar_accion, obtener_total
+
+registrar_accion("Inicio de sesión")  # [1] Inicio de sesión
+registrar_accion("Archivo guardado")  # [2] Archivo guardado
+print(f"Total: {obtener_total()}")    # Total: 2
+```
+
+> **Explicit is better than implicit.** Los módulos con estado pueden ser confusos. Úsalos solo cuando tenga sentido (logs, contadores, configuraciones).
+
+## Estructura de un módulo profesional
+
+Un módulo bien organizado sigue esta estructura:
+
+```python
+"""
+nombre_modulo.py — Descripción breve del módulo.
+
+Este módulo proporciona funciones para [propósito].
+Autor: Tu nombre
+Versión: 1.0
+"""
+
+# 1. Imports estándar (primero)
+import os
+import math
+
+# 2. Imports de terceros (después)
+# import requests
+
+# 3. Constantes del módulo
+MAX_INTENTOS = 3
+VERSION = "1.0"
+
+# 4. Funciones públicas (las que otros usarán)
+def funcion_publica(parametro):
+    """Descripción de qué hace la función."""
+    pass
+
+# 5. Funciones privadas (empiezan con _)
+def _funcion_interna():
+    """Función auxiliar, no usar directamente."""
+    pass
+
+# 6. Código de ejecución directa
+if __name__ == "__main__":
+    print("Pruebas del módulo")
+```
+
+## Errores comunes al crear módulos
+
+### ❌ Error: Módulo no encontrado
+
+```python
+# ❌ El archivo no está en la misma carpeta
+import mi_modulo  # ModuleNotFoundError: No module named 'mi_modulo'
+```
+
+**Solución:** Python busca módulos en:
+1. El directorio actual (donde está el script que ejecutas)
+2. Las rutas del `PYTHONPATH`
+3. Los directorios de instalación de Python
+
+```python
+# ✅ Verifica dónde busca Python
+import sys
+print(sys.path)  # Lista de directorios donde Python busca módulos
+```
+
+### ❌ Error: Confundir nombre de módulo con nombre de archivo
+
+```python
+# ❌ Tu archivo se llama mi-modulo.py (con guión)
+import mi-modulo  # SyntaxError: el guión no es válido en nombres
+```
+
+**Solución:** Los archivos de módulos deben usar **guiones bajos**, no guiones:
+
+```python
+# ✅ Nombre correcto del archivo
+# mi_modulo.py
+import mi_modulo  # Funciona correctamente
+```
+
+### ❌ Error: Sombrear módulos estándar
+
+```python
+# ❌ Tu archivo se llama math.py
+import math  # ¡Importa TU archivo, no el módulo estándar!
+```
+
+**Solución:** **Nunca** uses nombres de módulos estándar para tus archivos. Python importará tu archivo en vez del módulo real.
+
+Nombres prohibidos: `math.py`, `random.py`, `datetime.py`, `os.py`, `json.py`, `sys.py`, `collections.py`
+
+## Resumen
+
+| Concepto | Cómo se hace | Principio del Zen |
+|----------|--------------|-------------------|
+| Crear módulo | Archivo `.py` con funciones | Simple is better than complex |
+| Importar módulo propio | `import mi_modulo` | Readability counts |
+| Ejecutable + importable | `if __name__ == "__main__"` | Explicit is better than implicit |
+| Función interna | Nombre con `_` al inicio | Explicit is better than implicit |
+| Nombres de archivo | `snake_case.py` | One obvious way to do it |
+| Evitar conflictos | No usar nombres de módulos estándar | Errors should never pass silently |
+
+---
+
+**Anterior:** [8.2 La biblioteca estándar](02-modulos-estandar.qmd) | **Siguiente:** [8.4 Paquetes](04-paquetes.qmd)

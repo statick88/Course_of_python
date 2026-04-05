@@ -1,0 +1,251 @@
+---
+title: "2.2 Operadores de comparación"
+subtitle: "El juez de Python — ¿es mayor? ¿es igual? ¿es diferente?"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Usar los 6 operadores de comparación de Python
+- Entender la diferencia entre `==` (comparación) y `=` (asignación)
+- Comparar strings, números y booleanos correctamente
+- Evitar errores comunes con comparación de floats
+
+## Los operadores de comparación — tu juez personal
+
+Imagina que los operadores de comparación son como un **juez en un partido de fútbol**. Su trabajo es mirar dos cosas y decir: "¿Son iguales? ¿Una es mayor? ¿Una es menor?" Y siempre responde con un **sí** (`True`) o un **no** (`False`).
+
+```python
+# Los 6 operadores de comparación de Python
+edad = 20
+limite = 18
+
+mayor_que = edad > limite       # <1>
+menor_que = edad < limite       # <2>
+mayor_o_igual = edad >= limite  # <3>
+menor_o_igual = edad <= limite  # <4>
+igual = edad == limite          # <5>
+diferente = edad != limite      # <6>
+```
+
+1. `>` devuelve `True` si el valor de la izquierda es **mayor** que el de la derecha. `20 > 18` es `True`.
+2. `<` devuelve `True` si el valor de la izquierda es **menor** que el de la derecha. `20 < 18` es `False`.
+3. `>=` devuelve `True` si es mayor **o igual**. `20 >= 18` es `True`.
+4. `<=` devuelve `True` si es menor **o igual**. `20 <= 18` es `False`.
+5. `==` compara si dos valores son **iguales**. `20 == 18` es `False`. ¡Dos signos de igual!
+6. `!=` compara si dos valores son **diferentes**. `20 != 18` es `True`.
+
+## Tabla de referencia rápida
+
+| Operador | Significado | Ejemplo | Resultado |
+|----------|-------------|---------|-----------|
+| `==` | Igual a | `5 == 5` | `True` |
+| `!=` | Diferente de | `5 != 3` | `True` |
+| `>` | Mayor que | `5 > 3` | `True` |
+| `<` | Menor que | `5 < 3` | `False` |
+| `>=` | Mayor o igual que | `5 >= 5` | `True` |
+| `<=` | Menor o igual que | `5 <= 3` | `False` |
+
+## El error más común: `=` vs `==`
+
+Este es el error que **todos** cometen al principio. Presta atención.
+
+```python
+# ❌ Error: un solo = es ASIGNACIÓN, no comparación
+# if edad = 18:  # <1> — ¡Esto da SyntaxError!
+
+# ✅ Correcto: dos == son COMPARACIÓN
+edad = 18  # <2> — Asignación: guardo 18 en la variable edad
+es_mayor = edad == 18  # <3> — Comparación: pregunto si edad es igual a 18
+print(es_mayor)  # True
+```
+
+1. Un solo `=` **asigna** un valor. No puedes usarlo en una condición porque Python espera una comparación.
+2. `edad = 18` significa "guarda el valor 18 en la variable llamada edad".
+3. `edad == 18` significa "¿el valor de edad es igual a 18?" y devuelve `True` o `False`.
+
+> **Explicit is better than implicit.** `=` es una orden ("guarda esto"), `==` es una pregunta ("¿es esto igual?"). No los confundas.
+
+## Comparar strings — el orden del diccionario
+
+Cuando comparas texto, Python usa el **orden alfabético** (en realidad, el valor Unicode de cada carácter).
+
+```python
+# Comparación de strings — orden alfabético
+fruta1 = "manzana"
+fruta2 = "pera"
+
+print(fruta1 < fruta2)  # <1> — True: "manzana" va antes que "pera"
+print(fruta1 > fruta2)  # <2> — False: "manzana" no va después que "pera"
+print(fruta1 == fruta2) # <3> — False: no son la misma fruta
+
+# ⚠️ Las mayúsculas importan
+print("Python" == "python")  # <4> — False: "P" ≠ "p"
+print("Python" < "python")   # <5> — True: las mayúsculas van antes en Unicode
+```
+
+1. `"manzana" < "pera"` es `True` porque "m" viene antes que "p" en el alfabeto.
+2. `"manzana" > "pera"` es `False` porque "m" no viene después de "p".
+3. `"manzana" == "pera"` es `False` porque son palabras diferentes.
+4. `"Python" == "python"` es `False`. Python distingue mayúsculas y minúsculas.
+5. `"Python" < "python"` es `True` porque en Unicode, las mayúsculas (A-Z: 65-90) tienen valores menores que las minúsculas (a-z: 97-122).
+
+### Comparar strings: normalizar antes
+
+```python
+# ✅ Buena práctica: normalizar antes de comparar
+usuario = "Ana"
+registro = "ana"
+
+# ❌ Comparación directa — falla por mayúsculas
+print(usuario == registro)  # False
+
+# ✅ Normalizar a minúsculas antes de comparar
+print(usuario.lower() == registro.lower())  # True <1>
+```
+
+1. `.lower()` convierte todo a minúsculas. `"Ana".lower()` = `"ana"`. Así la comparación funciona sin importar cómo escribió el usuario.
+
+## Comparar con booleanos — cuidado con las trampas
+
+```python
+# Los booleanos son números disfrazados
+print(True == 1)   # <1> — True
+print(False == 0)  # <2> — True
+print(True > False) # <3> — True (porque 1 > 0)
+
+# Pero no los confundas con números
+activo = True
+print(activo == 1)  # <4> — True técnicamente, pero NO lo uses así
+```
+
+1. En Python, `True` es internamente equivalente a `1`.
+2. `False` es internamente equivalente a `0`.
+3. `True > False` es `True` porque `1 > 0`.
+4. Aunque `True == 1` es técnicamente correcto, **no lo uses**. Es confuso y va contra la legibilidad.
+
+> **Readability counts.** Usa `True` y `False` para lógica, no `1` y `0`. El código debe comunicar intención.
+
+## Comparar floats — el problema de la precisión
+
+Los floats no son exactos. Esto puede causar sorpresas al compararlos.
+
+```python
+# ❌ Error: comparar floats directamente
+resultado = 0.1 + 0.2
+print(resultado == 0.3)  # <1> — ¡False!
+
+# ✅ Correcto: comparar con tolerancia
+tolerancia = 0.000001  # <2>
+print(abs(resultado - 0.3) < tolerancia)  # <3> — True
+
+# Alternativa: usar math.isclose (Python 3.5+)
+import math
+print(math.isclose(resultado, 0.3))  # <4> — True
+```
+
+1. `0.1 + 0.2` da `0.30000000000000004`, no `0.3` exacto. Por eso `== 0.3` es `False`.
+2. Una tolerancia pequeña define qué tan cerca deben estar los números para considerarlos "iguales".
+3. `abs(resultado - 0.3)` calcula la diferencia absoluta. Si es menor que la tolerancia, son "suficientemente iguales".
+4. `math.isclose()` es la forma recomendada de comparar floats. Maneja la tolerancia automáticamente.
+
+## Encadenar comparaciones — la forma Python
+
+Python te permite encadenar comparaciones de forma natural, como lo harías en matemáticas.
+
+```python
+edad = 25
+
+# ❌ Forma larga y repetitiva
+if edad >= 18 and edad <= 65:  # <1>
+    print("Edad laboral")
+
+# ✅ Forma Pythonica — encadenar comparaciones
+if 18 <= edad <= 65:  # <2>
+    print("Edad laboral")
+
+# Más ejemplos
+nota = 8.5
+if 0 <= nota <= 10:  # <3>
+    print("Nota válida")
+
+temperatura = 37
+if 36.5 <= temperatura <= 37.5:  # <4>
+    print("Temperatura normal")
+```
+
+1. `and` requiere repetir la variable `edad`. Funciona, pero es verboso.
+2. `18 <= edad <= 65` se lee como una oración. Python evalúa ambas condiciones al mismo tiempo.
+3. Validar que una nota esté en el rango 0-10 con una sola expresión.
+4. Verificar si una temperatura está en rango normal de forma clara y directa.
+
+## Errores comunes
+
+### ❌ Usar `=` en vez de `==`
+
+```python
+# ❌ Esto da error de sintaxis
+# if edad = 18:
+#     print("Tienes 18 años")
+
+# ✅ Usa == para comparar
+if edad == 18:  # <1>
+    print("Tienes 18 años")
+```
+
+1. `==` compara valores. `=` asigna valores. Nunca los confundas en condiciones.
+
+### ❌ Comparar tipos diferentes sin convertir
+
+```python
+# ❌ Comparar string con número — siempre False
+edad_input = "18"
+print(edad_input == 18)  # <1> — False: "18" (str) ≠ 18 (int)
+
+# ✅ Convertir antes de comparar
+print(int(edad_input) == 18)  # <2> — True: 18 (int) == 18 (int)
+```
+
+1. Python no convierte automáticamente. Un string `"18"` nunca será igual al número `18`.
+2. Convierte explícitamente con `int()` antes de comparar.
+
+### ❌ Confundir `is` con `==`
+
+```python
+# == compara VALORES
+a = [1, 2, 3]
+b = [1, 2, 3]
+print(a == b)  # <1> — True: tienen el mismo contenido
+
+# is compara IDENTIDAD (¿son el mismo objeto en memoria?)
+print(a is b)  # <2> — False: son listas diferentes en memoria
+```
+
+1. `==` pregunta: "¿tienen el mismo valor?" Sí, ambas listas contienen `[1, 2, 3]`.
+2. `is` pregunta: "¿son el mismo objeto en memoria?" No, son dos listas creadas por separado.
+
+> **Simple is better than complex.** Usa `==` para comparar valores. Usa `is` solo para comparar con `None`.
+
+## Zen de Python aplicado
+
+| Principio | Cómo se aplica aquí |
+|-----------|---------------------|
+| **Explicit is better than implicit** | Convierte tipos antes de comparar, no asumas que Python lo hará |
+| **Readability counts** | Encadena comparaciones: `18 <= edad <= 65` se lee como lenguaje natural |
+| **Simple is better than complex** | Usa `math.isclose()` para floats en vez de escribir tu propia tolerancia |
+
+## Resumen
+
+| Operador | Pregunta que hace | Ejemplo práctico |
+|----------|-------------------|------------------|
+| `==` | ¿Son iguales? | `if contraseña == correcta:` |
+| `!=` | ¿Son diferentes? | `if usuario != admin:` |
+| `>` | ¿Es mayor? | `if edad > 18:` |
+| `<` | ¿Es menor? | `if nota < 5:` |
+| `>=` | ¿Es mayor o igual? | `if saldo >= precio:` |
+| `<=` | ¿Es menor o igual? | `if intentos <= maximos:` |
+
+---
+
+**Anterior:** [2.1 Operadores aritméticos](01-operadores-aritmeticos.qmd) | **Siguiente:** [2.3 Operadores lógicos](03-operadores-logicos.qmd)

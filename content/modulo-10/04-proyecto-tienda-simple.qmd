@@ -1,0 +1,345 @@
+---
+title: "10.4 Proyecto guiado: Tienda de Productos"
+subtitle: "Sistema de inventario con búsqueda y carrito"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Construir un sistema de tienda con inventario
+- Implementar búsqueda y filtrado de productos
+- Crear un carrito de compras funcional
+- Manejar diccionarios anidados y listas complejas
+
+## La analogía del almacén
+
+Imagina que tienes un almacén con estantes. Cada estante tiene productos con:
+
+- **Etiqueta** (nombre del producto)
+- **Precio** (cuánto cuesta)
+- **Stock** (cuántos quedan)
+- **Categoría** (en qué estante está)
+
+Cuando un cliente llega, necesita:
+1. **Buscar** lo que quiere
+2. **Ver el precio**
+3. **Agregar al carrito**
+4. **Pagar el total**
+
+**Tu programa es el dependiente del almacén.** Sabe dónde está cada cosa, cuánto cuesta, y puede calcular la cuenta.
+
+> **Readability counts.** Un código bien organizado es como un almacén bien etiquetado: todo se encuentra rápido.
+
+## Paso 1: Estructura del proyecto
+
+```
+tienda_productos/
+├── main.py
+├── datos/
+│   └── productos.json
+└── modulos/
+    ├── __init__.py
+    ├── inventario.py
+    ├── carrito.py
+    └── utilidades.py
+```
+
+## Paso 2: Datos del producto
+
+Cada producto en nuestra tienda tiene esta estructura:
+
+```python
+producto_ejemplo = {
+    "id": 1,
+    "nombre": "Teclado mecánico",
+    "precio": 45.99,
+    "stock": 15,
+    "categoria": "perifericos",
+}
+```
+
+## Paso 3: El inventario
+
+En `modulos/inventario.py`:
+
+```python
+"""Módulo de inventario: gestiona productos de la tienda."""
+
+import json
+import os
+
+
+class Inventario:
+    """Gestiona el catálogo de productos."""
+
+    def __init__(self, archivo):
+        """Carga el inventario desde JSON."""
+        self.archivo = archivo
+        self.productos = self._cargar()
+
+    def _cargar(self):
+        """Carga productos o retorna lista con datos iniciales."""
+        if os.path.exists(self.archivo):
+            with open(self.archivo, "r", encoding="utf-8") as f:
+                return json.load(f)
+        return self._datos_iniciales()
+
+    def _datos_iniciales(self):
+        """Datos de ejemplo para empezar."""
+        return [
+            {"id": 1, "nombre": "Teclado mecánico", "precio": 45.99, "stock": 15, "categoria": "perifericos"},
+            {"id": 2, "nombre": "Mouse inalámbrico", "precio": 25.50, "stock": 30, "categoria": "perifericos"},
+            {"id": 3, "nombre": "Monitor 24 pulgadas", "precio": 199.99, "stock": 8, "categoria": "monitores"},
+            {"id": 4, "nombre": "Cable HDMI 2m", "precio": 8.99, "stock": 50, "categoria": "cables"},
+            {"id": 5, "nombre": "Webcam HD", "precio": 35.00, "stock": 20, "categoria": "perifericos"},
+        ]
+
+    def _guardar(self):
+        """Guarda el inventario actual en JSON."""
+        os.makedirs(os.path.dirname(self.archivo), exist_ok=True)
+        with open(self.archivo, "w", encoding="utf-8") as f:
+            json.dump(self.productos, f, indent=4, ensure_ascii=False)
+
+    def listar(self):
+        """Muestra todos los productos."""
+        print(f"\n{'ID':<5} {'Nombre':<25} {'Precio':>8} {'Stock':>6} {'Categoría':<15}")
+        print("-" * 62)
+        for p in self.productos:
+            print(f"{p['id']:<5} {p['nombre']:<25} ${p['precio']:>7.2f} {p['stock']:>6} {p['categoria']:<15}")
+
+    def buscar(self, termino):
+        """Busca productos por nombre (insensible a mayúsculas)."""
+        termino = termino.lower()
+        resultados = [
+            p for p in self.productos
+            if termino in p["nombre"].lower()
+        ]
+        return resultados
+
+    def filtrar_categoria(self, categoria):
+        """Filtra productos por categoría."""
+        return [
+            p for p in self.productos
+            if p["categoria"].lower() == categoria.lower()
+        ]
+
+    def obtener(self, id_producto):
+        """Busca un producto por su ID."""
+        for p in self.productos:
+            if p["id"] == id_producto:
+                return p
+        return None
+
+    def agregar_producto(self, nombre, precio, stock, categoria):
+        """Agrega un nuevo producto al inventario."""
+        nuevo_id = max((p["id"] for p in self.productos), default=0) + 1
+        producto = {
+            "id": nuevo_id,
+            "nombre": nombre,
+            "precio": precio,
+            "stock": stock,
+            "categoria": categoria,
+        }
+        self.productos.append(producto)
+        self._guardar()
+        return producto
+
+    def actualizar_stock(self, id_producto, cantidad):
+        """Actualiza el stock después de una venta."""
+        producto = self.obtener(id_producto)
+        if producto and producto["stock"] >= cantidad:
+            producto["stock"] -= cantidad
+            self._guardar()
+            return True
+        return False
+```
+
+## Paso 4: El carrito de compras
+
+En `modulos/carrito.py`:
+
+```python
+"""Módulo del carrito de compras."""
+
+
+class Carrito:
+    """Gestiona los productos que el cliente quiere comprar."""
+
+    def __init__(self):
+        """Inicializa un carrito vacío."""
+        self.items = []
+
+    def agregar(self, producto, cantidad=1):
+        """Agrega un producto al carrito."""
+        for item in self.items:
+            if item["producto"]["id"] == producto["id"]:
+                item["cantidad"] += cantidad
+                return
+        self.items.append({"producto": producto, "cantidad": cantidad})
+
+    def eliminar(self, id_producto):
+        """Elimina un producto del carrito."""
+        self.items = [
+            item for item in self.items
+            if item["producto"]["id"] != id_producto
+        ]
+
+    def total(self):
+        """Calcula el total del carrito."""
+        return sum(
+            item["producto"]["precio"] * item["cantidad"]
+            for item in self.items
+        )
+
+    def mostrar(self):
+        """Imprime el contenido del carrito."""
+        if not self.items:
+            print("El carrito está vacío.")
+            return
+
+        print(f"\n{'Producto':<25} {'Cant.':>5} {'Precio':>8} {'Subtotal':>10}")
+        print("-" * 52)
+        for item in self.items:
+            p = item["producto"]
+            subtotal = p["precio"] * item["cantidad"]
+            print(f"{p['nombre']:<25} {item['cantidad']:>5} ${p['precio']:>7.2f} ${subtotal:>9.2f}")
+
+        print("-" * 52)
+        print(f"{'TOTAL:':>35} ${self.total():>9.2f}")
+
+    def vaciar(self):
+        """Vacía el carrito."""
+        self.items = []
+
+    def cantidad_items(self):
+        """Total de unidades en el carrito."""
+        return sum(item["cantidad"] for item in self.items)
+```
+
+## Paso 5: El programa principal
+
+En `main.py`:
+
+```python
+"""
+Tienda de Productos
+Sistema de inventario y carrito de compras.
+"""
+
+from modulos.inventario import Inventario
+from modulos.carrito import Carrito
+from modulos.utilidades import limpiar_pantalla, pedir_opcion, pedir_texto
+
+
+def mostrar_menu_principal():
+    """Menú principal de la tienda."""
+    print("\n" + "=" * 40)
+    print("  🏪 TIENDA DE PRODUCTOS")
+    print("=" * 40)
+    print("  1. Ver catálogo completo")
+    print("  2. Buscar producto")
+    print("  3. Ver carrito")
+    print("  4. Agregar al carrito")
+    print("  5. Finalizar compra")
+    print("  6. Salir")
+    print("=" * 40)
+
+
+def main():
+    """Función principal."""
+    limpiar_pantalla()
+    inventario = Inventario("datos/productos.json")
+    carrito = Carrito()
+
+    while True:
+        mostrar_menu_principal()
+        opcion = pedir_opcion("Elige: ", ["1", "2", "3", "4", "5", "6"])
+
+        if opcion == "1":
+            limpiar_pantalla()
+            inventario.listar()
+
+        elif opcion == "2":
+            limpiar_pantalla()
+            termino = pedir_texto("Buscar: ")
+            resultados = inventario.buscar(termino)
+            if resultados:
+                print(f"\nSe encontraron {len(resultados)} producto(s):")
+                for p in resultados:
+                    print(f"  [{p['id']}] {p['nombre']} - ${p['precio']:.2f} (stock: {p['stock']})")
+            else:
+                print("No se encontraron productos.")
+
+        elif opcion == "3":
+            limpiar_pantalla()
+            carrito.mostrar()
+
+        elif opcion == "4":
+            limpiar_pantalla()
+            try:
+                id_prod = int(input("ID del producto: "))
+                producto = inventario.obtener(id_prod)
+                if producto and producto["stock"] > 0:
+                    cantidad = int(input(f"¿Cuántos? (stock: {producto['stock']}): "))
+                    if cantidad <= producto["stock"]:
+                        carrito.agregar(producto, cantidad)
+                        print(f"✅ {cantidad}x {producto['nombre']} agregado(s)")
+                    else:
+                        print("❌ No hay suficiente stock")
+                else:
+                    print("❌ Producto no encontrado o sin stock")
+            except ValueError:
+                print("❌ Ingresa un número válido")
+
+        elif opcion == "5":
+            limpiar_pantalla()
+            carrito.mostrar()
+            if carrito.cantidad_items() > 0:
+                print(f"\n💰 Total a pagar: ${carrito.total():.2f}")
+                resp = input("¿Confirmar compra? (s/n): ").lower()
+                if resp in ("s", "si", "sí"):
+                    for item in carrito.items:
+                        inventario.actualizar_stock(
+                            item["producto"]["id"], item["cantidad"]
+                        )
+                    carrito.vaciar()
+                    print("✅ ¡Compra realizada con éxito!")
+
+        elif opcion == "6":
+            print("\n👋 ¡Gracias por tu visita!")
+            break
+
+        input("\nPresiona Enter para continuar...")
+        limpiar_pantalla()
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## Errores comunes
+
+| Error | ❌ Así no | ✅ Así sí |
+|-------|-----------|-----------|
+| Vender sin stock | Restar stock sin verificar | `if producto["stock"] >= cantidad` |
+| Búsqueda case-sensitive | `"Teclado" == "teclado"` → False | `.lower()` en ambos lados |
+| Carrito con duplicados | Agregar mismo producto como item nuevo | Buscar si ya existe y sumar cantidad |
+| No guardar inventario | Modificar en memoria sin `_guardar()` | Llamar `_guardar()` tras cada cambio |
+
+> **Explicit is better than implicit.** Siempre verifica el stock antes de vender.
+
+## Resumen
+
+| Componente | Qué hace | Zen de Python |
+|------------|----------|---------------|
+| `inventario.py` | CRUD de productos + búsqueda | Simple is better than complex |
+| `carrito.py` | Gestión de compras | Beautiful is better than ugly |
+| `main.py` | Menú y flujo | Readability counts |
+| Búsqueda | Filtrado por nombre | There should be one obvious way |
+
+---
+
+**Anterior:** [10.3 Proyecto guiado: Gestor de Tareas](03-proyecto-gestor-tareas.qmd)
+
+**Siguiente:** [10.5 Proyecto guiado: Analizador de Datos](05-proyecto-analizador-datos.qmd)

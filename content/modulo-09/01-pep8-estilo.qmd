@@ -1,0 +1,289 @@
+---
+title: "9.1 PEP 8: el estilo que une a la comunidad"
+subtitle: "Indentación, espacios y convenciones que todo Pythonista respeta"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es PEP 8 y por qué existe
+- Aplicar las reglas de indentación y espaciado
+- Usar herramientas automáticas (linter) para verificar tu código
+- Saber cuándo romper las reglas — y cuándo no
+
+## ¿Qué es PEP 8?
+
+Imagina que cada programador escribiera código con su propio estilo: unos con tabs, otros con 2 espacios, otros con 4, algunos con llaves, otros sin. Sería como entrar a una **cafetería donde cada barista prepara el café a su manera**: uno con taza grande, otro con vaso, otro sin asa. El resultado funciona, pero nadie sabe qué esperar.
+
+PEP 8 es la **receta estándar** que toda la comunidad Python acordó seguir. No es una ley — es un acuerdo de caballeros para que cualquier persona pueda leer tu código y sentirse en casa.
+
+```python
+# ✅ Código PEP 8 — limpio y legible
+def calcular_promedio(notas):
+    """Calcula el promedio de una lista de notas."""
+    total = sum(notas)
+    return total / len(notas)
+
+# ❌ Código sin estilo — cada línea es una sorpresa
+def calcular_promedio(notas):
+  total=sum(notas)
+  return total/len(notas)
+```
+
+> **There should be one obvious way to do it.** PEP 8 es esa forma obvia para el estilo en Python.
+
+## Indentación: 4 espacios, siempre
+
+Python usa la indentación para definir bloques de código. La regla es simple: **4 espacios por nivel**. No tabs, no 2 espacios, no 8. Cuatro.
+
+```python
+# ✅ 4 espacios por nivel
+def procesar_datos(datos):
+    if datos:  # <1>
+        resultado = []
+        for item in datos:  # <2>
+            if item.es_valido():
+                resultado.append(item)  # <3>
+        return resultado
+    return []
+```
+
+1. El `if` está indentado con 4 espacios respecto a `def`.
+2. El `for` está indentado con 4 espacios respecto al `if` (8 en total).
+3. El `append` está indentado con 4 espacios respecto al `for` (12 en total).
+
+```python
+# ❌ Mezclar tabs y espacios — ERROR
+def procesar_datos(datos):
+	if datos:  # <1>
+        resultado = []  # <2>
+```
+
+1. Usa un tab (8 espacios visuales) en vez de 4 espacios.
+2. Usa 4 espacios. Python no permite mezclar tabs y espacios — genera `IndentationError`.
+
+> **Explicit is better than implicit.** Configura tu editor para que el tab inserte 4 espacios. Así nunca tendrás este problema.
+
+## Líneas de máximo 79 caracteres
+
+PEP 8 recomienda que ninguna línea supere los **79 caracteres**. Esto viene de los terminales antiguos, pero sigue siendo útil: permite ver dos archivos lado a lado sin scroll horizontal.
+
+```python
+# ❌ Línea demasiado larga — hay que hacer scroll
+resultado = calcular_promedio(notas) + calcular_promedio(examenes) + calcular_promedio(tareas) + calcular_promedio(proyectos)
+
+# ✅ Línea dividida con paréntesis
+resultado = (
+    calcular_promedio(notas)
+    + calcular_promedio(examenes)
+    + calcular_promedio(tareas)
+    + calcular_promedio(proyectos)
+)
+```
+
+### Truco: paréntesis para dividir líneas
+
+Python permite dividir líneas dentro de paréntesis `()`, corchetes `[]` o llaves `{}` sin necesidad de caracteres especiales:
+
+```python
+# ✅ División natural con paréntesis
+mensaje = (
+    f"Estimado {nombre}, "
+    f"su pedido #{numero} "
+    f"ha sido enviado a {direccion}."
+)
+
+# ✅ División con corchetes
+colores_favoritos = [
+    "rojo",
+    "azul",
+    "verde",
+    "amarillo",
+]
+```
+
+## Espacios en blanco: la respiración del código
+
+Los espacios en blanco son como las **pausas en una conversación**: sin ellas, todo se vuelve un galimatías. Con las pausas correctas, el mensaje es claro.
+
+### Espacios alrededor de operadores
+
+```python
+# ✅ Espacios alrededor de operadores
+edad = 25  # <1>
+precio = 19.99 + 5.00  # <2>
+descuento = precio * 0.15  # <3>
+
+# ❌ Sin espacios — difícil de leer
+edad=25
+precio=19.99+5.00
+descuento=precio*0.15
+```
+
+1. Espacio antes y después del `=` en asignaciones.
+2. Espacio antes y después del `+` en operaciones.
+3. Espacio antes y después del `*` en multiplicaciones.
+
+### Sin espacios en llamadas a funciones
+
+```python
+# ✅ Sin espacios dentro de los paréntesis
+print("Hola")  # <1>
+max(1, 2, 3)  # <2>
+
+# ❌ Espacios innecesarios
+print( "Hola" )  # <3>
+max( 1,2,3 )  # <4>
+```
+
+1. Sin espacio después de `(` ni antes de `)`.
+2. Espacio después de cada coma, pero no antes.
+3. Espacios innecesarios dentro de los paréntesis.
+4. Falta espacio después de la coma y sobra espacio al inicio.
+
+### Líneas en blanco: separar ideas
+
+```python
+# ✅ 2 líneas en blanco entre funciones
+def sumar(a, b):
+    return a + b
+
+
+def restar(a, b):  # <1>
+    return a - b
+
+
+# ✅ 1 línea en blanco dentro de una función para separar lógica
+def procesar_pedido(producto, cantidad):
+    precio_unitario = obtener_precio(producto)  # <2>
+    
+    total = precio_unitario * cantidad  # <3>
+    aplicar_descuento(total)
+```
+
+1. **2 líneas en blanco** entre definiciones de funciones de nivel superior.
+2. Primera parte: obtener datos.
+3. **1 línea en blanco** para separar la obtención de datos del procesamiento.
+
+## Imports: ordenados y al inicio
+
+Los imports siempre van al principio del archivo, en este orden:
+
+1. Librería estándar de Python
+2. Librerías de terceros
+3. Tus propios módulos
+
+```python
+# ✅ Imports organizados por grupo
+import os  # <1>
+import sys
+
+from datetime import datetime
+
+import requests  # <2>
+from flask import Flask
+
+from mi_proyecto.modelos import Usuario  # <3>
+from mi_proyecto.servicios import enviar_email
+```
+
+1. **Grupo 1:** Librería estándar (`os`, `sys`, `datetime`).
+2. **Grupo 2:** Librerías externas (`requests`, `flask`).
+3. **Grupo 3:** Módulos propios del proyecto.
+
+Cada grupo separado por una línea en blanco. Dentro de cada grupo, orden alfabético.
+
+```python
+# ❌ Imports desordenados y mezclados
+from mi_proyecto.modelos import Usuario
+import os
+import requests
+from datetime import datetime
+```
+
+### Imports: una línea por módulo
+
+```python
+# ✅ Un import por línea
+import os
+import sys
+import json
+
+# ❌ Múltiples imports en una línea
+import os, sys, json  # <1>
+```
+
+1. PEP 8 recomienda un import por línea para mayor claridad y facilitar la lectura de diffs en control de versiones.
+
+## Nombres: la convención de Python
+
+| Elemento | Convención | Ejemplo |
+|----------|------------|---------|
+| Variables | `snake_case` | `nombre_usuario` |
+| Funciones | `snake_case` | `calcular_promedio()` |
+| Clases | `PascalCase` | `UsuarioActivo` |
+| Constantes | `MAYÚSCULAS` | `MAX_INTENTOS` |
+| Métodos privados | `_snake_case` | `_validar_datos()` |
+
+```python
+# ✅ Convenciones correctas
+MAX_REINTENTOS = 3  # <1>
+
+class ProcesadorArchivos:  # <2>
+    def __init__(self, ruta_archivo):  # <3>
+        self._ruta = ruta_archivo  # <4>
+    
+    def procesar(self):  # <5>
+        pass
+```
+
+1. Constantes en MAYÚSCULAS con guiones bajos.
+2. Clases en PascalCase (cada palabra con mayúscula inicial).
+3. Funciones y métodos en snake_case.
+4. Atributos "privados" con guión bajo inicial.
+5. Métodos públicos en snake_case.
+
+## Herramientas automáticas: no memorices, automatiza
+
+Nadie memoriza todas las reglas de PEP 8. Los profesionales usan herramientas que revisan el código automáticamente:
+
+```bash
+# Instalar herramientas de verificación
+pip install ruff  # <1>
+
+# Verificar tu código
+ruff check mi_archivo.py  # <2>
+
+# Corregir automáticamente lo que se pueda
+ruff check --fix mi_archivo.py  # <3>
+```
+
+1. `ruff` es un linter ultrarrápido escrito en Rust. Reemplaza a `flake8`, `isort` y otros.
+2. Muestra todos los errores de estilo encontrados.
+3. Corrige automáticamente errores simples (espacios, imports, etc.).
+
+## Errores comunes
+
+| Error | ❌ Incorrecto | ✅ Correcto |
+|-------|---------------|-------------|
+| Usar tabs | `if x:` + tab | `if x:` + 4 espacios |
+| Líneas largas | `resultado = a + b + c + d + e + f + g + h + i + j + k` | Dividir con `()` |
+| Imports mezclados | `import os, sys` | `import os` + `import sys` |
+| Sin espacios | `x=5+y` | `x = 5 + y` |
+| Espacios en paréntesis | `print( "hola" )` | `print("hola")` |
+
+## Resumen
+
+| Regla PEP 8 | Ejemplo | Principio del Zen |
+|-------------|---------|-------------------|
+| 4 espacios de indentación | `def func():\n    pass` | Readability counts |
+| Máx. 79 caracteres por línea | Dividir con `()` | Beautiful is better than ugly |
+| Espacios alrededor de operadores | `x = 5 + 3` | Readability counts |
+| 2 líneas en blanco entre funciones | `def a():\n\n\ndef b():` | Simple is better than complex |
+| Imports ordenados al inicio | stdlib → terceros → propios | There should be one obvious way |
+| snake_case para funciones | `calcular_total()` | One obvious way to do it |
+
+---
+
+**Anterior:** [Índice del Módulo 9](index.qmd) | **Siguiente:** [9.2 Nombres descriptivos](02-nombres-descriptivos.qmd)

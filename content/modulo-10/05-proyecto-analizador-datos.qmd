@@ -1,0 +1,348 @@
+---
+title: "10.5 Proyecto guiado: Analizador de Datos"
+subtitle: "Procesa archivos CSV y genera reportes estadísticos"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Leer y procesar archivos CSV sin bibliotecas externas
+- Calcular estadísticas básicas: media, mediana, moda, desviación
+- Generar reportes en texto formateado
+- Manejar datos sucios y valores faltantes
+
+## La analogía del chef analítico
+
+Imagina que eres un chef que recibe una caja con ingredientes variados. Tu trabajo no es solo cocinar, sino **analizar qué tienes**:
+
+- ¿Cuántos ingredientes hay en total?
+- ¿Cuál es el más caro? ¿El más barato?
+- ¿Cuál es el precio promedio?
+- ¿Hay ingredientes repetidos?
+
+**El analizador de datos es ese chef.** Recibe datos crudos y te devuelve información útil para tomar decisiones.
+
+> **Readability counts.** Los datos bien presentados cuentan una historia. Los datos crudos solo cuentan números.
+
+## Paso 1: Estructura del proyecto
+
+```
+analizador_datos/
+├── main.py
+├── datos/
+│   └── ventas.csv
+└── modulos/
+    ├── __init__.py
+    ├── lector.py
+    ├── estadisticas.py
+    └── reporte.py
+```
+
+## Paso 2: Datos de ejemplo
+
+Crea `datos/ventas.csv`:
+
+```csv
+fecha,producto,cantidad,precio_unitario,total
+2026-01-15,Teclado,3,45.99,137.97
+2026-01-15,Mouse,5,25.50,127.50
+2026-01-16,Monitor,1,199.99,199.99
+2026-01-16,Teclado,2,45.99,91.98
+2026-01-17,Cable HDMI,10,8.99,89.90
+2026-01-17,Webcam,3,35.00,105.00
+2026-01-18,Mouse,4,25.50,102.00
+2026-01-18,Monitor,2,199.99,399.98
+2026-01-19,Teclado,1,45.99,45.99
+2026-01-19,Cable HDMI,8,8.99,71.92
+```
+
+## Paso 3: El lector de CSV
+
+En `modulos/lector.py`:
+
+```python
+"""Módulo para leer y parsear archivos CSV."""
+
+import csv
+
+
+def leer_csv(archivo):
+    """Lee un archivo CSV y retorna lista de diccionarios."""
+    registros = []
+    with open(archivo, "r", encoding="utf-8") as f:
+        lector = csv.DictReader(f)
+        for fila in lector:
+            registros.append(fila)
+    return registros
+
+
+def limpiar_registro(registro, campos_numericos):
+    """Convierte campos numéricos de string a float."""
+    limpio = {}
+    for clave, valor in registro.items():
+        if clave in campos_numericos:
+            try:
+                limpio[clave] = float(valor)
+            except (ValueError, TypeError):
+                limpio[clave] = 0.0
+        else:
+            limpio[clave] = valor
+    return limpio
+
+
+def cargar_datos(archivo, campos_numericos=None):
+    """Carga y limpia todos los registros del CSV."""
+    if campos_numericos is None:
+        campos_numericos = []
+
+    registros = leer_csv(archivo)
+    return [limpiar_registro(r, campos_numericos) for r in registros]
+```
+
+## Paso 4: El motor de estadísticas
+
+En `modulos/estadisticas.py`:
+
+```python
+"""Módulo de cálculos estadísticos."""
+
+
+def media(valores):
+    """Calcula el promedio de una lista de números."""
+    if not valores:
+        return 0.0
+    return sum(valores) / len(valores)
+
+
+def mediana(valores):
+    """Calcula el valor central de una lista ordenada."""
+    if not valores:
+        return 0.0
+    ordenados = sorted(valores)
+    n = len(ordenados)
+    medio = n // 2
+    if n % 2 == 0:
+        return (ordenados[medio - 1] + ordenados[medio]) / 2
+    return ordenados[medio]
+
+
+def moda(valores):
+    """Retorna el valor más frecuente."""
+    if not valores:
+        return None
+    frecuencias = {}
+    for v in valores:
+        frecuencias[v] = frecuencias.get(v, 0) + 1
+    return max(frecuencias, key=frecuencias.get)
+
+
+def desviacion_estandar(valores):
+    """Calcula la desviación estándar de la muestra."""
+    if len(valores) < 2:
+        return 0.0
+    promedio = media(valores)
+    varianza = sum((x - promedio) ** 2 for x in valores) / (len(valores) - 1)
+    return varianza ** 0.5
+
+
+def minimo(valores):
+    """Retorna el valor mínimo."""
+    return min(valores) if valores else 0.0
+
+
+def maximo(valores):
+    """Retorna el valor máximo."""
+    return max(valores) if valores else 0.0
+
+
+def resumen_numerico(valores, etiqueta="dato"):
+    """Genera un resumen estadístico completo."""
+    return {
+        "etiqueta": etiqueta,
+        "cantidad": len(valores),
+        "media": media(valores),
+        "mediana": mediana(valores),
+        "moda": moda(valores),
+        "minimo": minimo(valores),
+        "maximo": maximo(valores),
+        "desviacion": desviacion_estandar(valores),
+        "rango": maximo(valores) - minimo(valores),
+    }
+```
+
+## Paso 5: El generador de reportes
+
+En `modulos/reporte.py`:
+
+```python
+"""Módulo para generar reportes en texto."""
+
+from modulos.estadisticas import resumen_numerico
+
+
+def reporte_general(datos, campo_numerico):
+    """Genera un reporte estadístico de un campo numérico."""
+    valores = [registro[campo_numerico] for registro in datos]
+    resumen = resumen_numerico(valores, campo_numerico)
+
+    print(f"\n{'=' * 50}")
+    print(f"  📊 REPORTE: {resumen['etiqueta'].upper()}")
+    print(f"{'=' * 50}")
+    print(f"  Cantidad de registros:  {resumen['cantidad']}")
+    print(f"  Media (promedio):       ${resumen['media']:,.2f}")
+    print(f"  Mediana:                ${resumen['mediana']:,.2f}")
+    print(f"  Moda:                   ${resumen['moda']:,.2f}")
+    print(f"  Mínimo:                 ${resumen['minimo']:,.2f}")
+    print(f"  Máximo:                 ${resumen['maximo']:,.2f}")
+    print(f"  Rango:                  ${resumen['rango']:,.2f}")
+    print(f"  Desviación estándar:    ${resumen['desviacion']:,.2f}")
+    print(f"{'=' * 50}")
+
+
+def reporte_por_categoria(datos, campo_categoria, campo_valor):
+    """Genera reporte agrupado por categoría."""
+    grupos = {}
+    for registro in datos:
+        cat = registro[campo_categoria]
+        if cat not in grupos:
+            grupos[cat] = []
+        grupos[cat].append(registro[campo_valor])
+
+    print(f"\n{'=' * 50}")
+    print(f"  📊 REPORTE POR CATEGORÍA")
+    print(f"{'=' * 50}")
+    print(f"{'Categoría':<20} {'Cantidad':>10} {'Total':>12} {'Promedio':>10}")
+    print("-" * 52)
+
+    for cat, valores in sorted(grupos.items()):
+        total = sum(valores)
+        promedio = total / len(valores) if valores else 0
+        print(f"{cat:<20} {len(valores):>10} ${total:>10.2f} ${promedio:>9.2f}")
+
+    print(f"{'=' * 50}")
+
+
+def reporte_top_productos(datos, campo_nombre, campo_valor, n=5):
+    """Muestra los N productos con mayor valor."""
+    productos = {}
+    for registro in datos:
+        nombre = registro[campo_nombre]
+        if nombre not in productos:
+            productos[nombre] = 0
+        productos[nombre] += registro[campo_valor]
+
+    ordenados = sorted(productos.items(), key=lambda x: x[1], reverse=True)
+
+    print(f"\n{'=' * 50}")
+    print(f"  🏆 TOP {n} PRODUCTOS POR VENTAS")
+    print(f"{'=' * 50}")
+    for i, (nombre, total) in enumerate(ordenados[:n], 1):
+        print(f"  {i}. {nombre:<25} ${total:>10.2f}")
+    print(f"{'=' * 50}")
+```
+
+## Paso 6: El programa principal
+
+En `main.py`:
+
+```python
+"""
+Analizador de Datos CSV
+Procesa archivos y genera reportes estadísticos.
+"""
+
+import os
+from modulos.lector import cargar_datos
+from modulos.reporte import (
+    reporte_general,
+    reporte_por_categoria,
+    reporte_top_productos,
+)
+
+
+def mostrar_menu():
+    """Menú del analizador."""
+    print("\n" + "=" * 40)
+    print("  📊 ANALIZADOR DE DATOS")
+    print("=" * 40)
+    print("  1. Reporte general de ventas")
+    print("  2. Reporte por producto")
+    print("  3. Top productos más vendidos")
+    print("  4. Ver datos crudos")
+    print("  5. Salir")
+    print("=" * 40)
+
+
+def main():
+    """Función principal."""
+    archivo_csv = "datos/ventas.csv"
+
+    if not os.path.exists(archivo_csv):
+        print(f"❌ No se encontró el archivo: {archivo_csv}")
+        print("Crea el archivo CSV en la carpeta datos/ y vuelve a ejecutar.")
+        return
+
+    datos = cargar_datos(archivo_csv, campos_numericos=["cantidad", "precio_unitario", "total"])
+
+    if not datos:
+        print("❌ El archivo está vacío.")
+        return
+
+    print(f"✅ Se cargaron {len(datos)} registros de {archivo_csv}")
+
+    while True:
+        mostrar_menu()
+        opcion = input("Elige: ").strip()
+
+        if opcion == "1":
+            reporte_general(datos, "total")
+
+        elif opcion == "2":
+            reporte_por_categoria(datos, "producto", "total")
+
+        elif opcion == "3":
+            reporte_top_productos(datos, "producto", "cantidad")
+
+        elif opcion == "4":
+            print(f"\n{'Fecha':<12} {'Producto':<15} {'Cant.':>5} {'Precio':>8} {'Total':>8}")
+            print("-" * 52)
+            for r in datos:
+                print(f"{r['fecha']:<12} {r['producto']:<15} {r['cantidad']:>5.0f} ${r['precio_unitario']:>7.2f} ${r['total']:>7.2f}")
+
+        elif opcion == "5":
+            print("\n👋 ¡Hasta luego!")
+            break
+
+        input("\nPresiona Enter para continuar...")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## Errores comunes
+
+| Error | ❌ Así no | ✅ Así sí |
+|-------|-----------|-----------|
+| No manejar CSV vacío | Asumir que siempre tiene datos | `if not datos: return` |
+| Strings en vez de números | `"45.99" + "25.50"` → `"45.9925.50"` | Convertir con `float()` |
+| División por cero | `suma / len(lista)` sin verificar | `if lista else 0` |
+| No manejar campos faltantes | `registro["campo_inexistente"]` | Usar `.get()` o validar |
+
+> **Errors should never pass silently.** Valida cada dato antes de procesarlo.
+
+## Resumen
+
+| Componente | Qué hace | Zen de Python |
+|------------|----------|---------------|
+| `lector.py` | Lee y limpia CSV | Simple is better than complex |
+| `estadisticas.py` | Cálculos matemáticos | Beautiful is better than ugly |
+| `reporte.py` | Presentación de resultados | Readability counts |
+| `main.py` | Orquestación | Explicit is better than implicit |
+
+---
+
+**Anterior:** [10.4 Proyecto guiado: Tienda de Productos](04-proyecto-tienda-simple.qmd)
+
+**Siguiente:** [10.6 Presentar tu proyecto al mundo](06-presentacion-proyecto.qmd)

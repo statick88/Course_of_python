@@ -2,8 +2,8 @@
 
 ## Phase 1: Foundation / Infrastructure
 
-- [ ] 1.1 Inicializar repositorio Git y configurar .gitignore estándar para proyectos Python/Quarto
-- [ ] 1.2 Crear estructura de directorios según el diseño: content/, instructor/, shared/, output/, scripts/, tests/, config/, docs/
+- [x] 1.1 Inicializar repositorio Git y configurar .gitignore estándar para proyectos Python/Quarto
+- [x] 1.2 Crear estructura de directorios según el diseño: content/, instructor/, shared/, output/, scripts/, tests/, config/, docs/
 - [ ] 1.3 Instalar y configurar Quarto 1.3+ con kernel de Python integrado
 - [ ] 1.4 Configurar archivo .quarto.yml con opciones básicas de sitio web y formato de salida
 - [ ] 1.5 Establecer plantillas base para lecciones (lesson-template.qmd) y laboratorios (lab-template.qmd)

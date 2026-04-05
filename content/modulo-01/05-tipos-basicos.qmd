@@ -1,0 +1,296 @@
+---
+title: "1.5 Tipos de datos básicos"
+subtitle: "Enteros, decimales, texto y booleanos — los ladrillos de Python"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Identificar los 4 tipos de datos básicos de Python
+- Elegir el tipo correcto para cada situación
+- Convertir entre tipos cuando sea necesario
+- Entender por qué los tipos importan en las operaciones
+
+## Los 4 tipos fundamentales
+
+Todo en Python tiene un tipo. Los 4 que necesitas conocer primero:
+
+| Tipo | Nombre en Python | Ejemplo | Para qué sirve |
+|------|------------------|---------|----------------|
+| Números enteros | `int` | `42` | Contar, indexar, cantidades exactas |
+| Números decimales | `float` | `3.14` | Medidas, promedios, porcentajes |
+| Texto | `str` | `"hola"` | Nombres, mensajes, cualquier texto |
+| Verdadero/Falso | `bool` | `True` | Decisiones, condiciones, estados |
+
+```python
+# Cada valor tiene un tipo — Python lo sabe automáticamente
+edad = 25 # <1>
+precio = 19.99 # <2>
+nombre = "Ana" # <3>
+es_mayor = True # <4>
+
+# Puedes verificar el tipo en cualquier momento
+print(type(edad)) # <5>
+print(type(precio)) # <6>
+print(type(nombre)) # <7>
+print(type(es_mayor)) # <8>
+```
+
+1. `edad` es de tipo `int` (entero) porque es un número sin decimales.
+2. `precio` es de tipo `float` (flotante) porque tiene decimales.
+3. `nombre` es de tipo `str` (cadena de texto) porque está entre comillas.
+4. `es_mayor` es de tipo `bool` (booleano) porque es `True` o `False`.
+5. `type(edad)` devuelve `<class 'int'>`.
+6. `type(precio)` devuelve `<class 'float'>`.
+7. `type(nombre)` devuelve `<class 'str'>`.
+8. `type(es_mayor)` devuelve `<class 'bool'>`.
+
+> **Explicit is better than implicit.** Si usas el tipo correcto, el código comunica su intención sin necesidad de explicaciones.
+
+## Enteros (int): números sin decimales
+
+Los enteros son para contar cosas que no se pueden dividir: personas, intentos, días, items.
+
+```python
+# Usos naturales de los enteros
+cantidad_estudiantes = 35 # <1>
+intentos_restantes = 3
+anio_nacimiento = 1995
+temperatura_celsius = -5 # <2>
+
+# Operaciones que siempre devuelven enteros
+total = 10 + 5 # <3>
+diferencia = 100 - 37
+producto = 6 * 7
+```
+
+1. `cantidad_estudiantes` es un entero porque no puedes tener medio estudiante.
+2. Los enteros pueden ser negativos, como temperaturas bajo cero.
+3. Las operaciones entre enteros (`+`, `-`, `*`) siempre devuelven enteros.
+
+### División entera vs división normal
+
+```python
+# División normal → siempre devuelve float
+resultado = 10 / 3 # <1>
+print(resultado)
+
+# División entera → devuelve solo la parte entera
+resultado_entero = 10 // 3 # <2>
+print(resultado_entero)
+
+# El residuo (módulo)
+residuo = 10 % 3 # <3>
+print(residuo)
+```
+
+1. `/` siempre devuelve un `float`, incluso si la división es exacta. `10 / 3` = `3.333...`.
+2. `//` devuelve solo la parte entera de la división. `10 // 3` = `3`.
+3. `%` devuelve el residuo de la división. `10 % 3` = `1` (porque 10 = 3×3 + 1).
+
+> **Practicality beats purity.** Usa `/` cuando necesitas precisión y `//` cuando trabajas con cantidades discretas (como repartir items entre personas).
+
+## Decimales (float): números con precisión
+
+Los floats son para medidas, dinero, promedios — cualquier cosa que necesite decimales.
+
+```python
+# Usos naturales de los floats
+pi = 3.14159 # <1>
+peso_kg = 68.5
+porcentaje_descuento = 15.0
+temperatura_fahrenheit = 98.6
+```
+
+1. `pi` es un float porque tiene decimales. Los floats representan números con punto decimal.
+
+### ⚠️ Cuidado con la precisión de los floats
+
+Los floats no son perfectos. Esto es limitación de cómo las computadoras representan decimales:
+
+```python
+# Esto parece raro, pero es normal en cualquier lenguaje
+resultado = 0.1 + 0.2 # <1>
+print(resultado)
+
+# Para dinero, usa redondeo explícito
+precio_total = round(19.99 * 1.15, 2) # <2>
+print(precio_total)
+```
+
+1. `0.1 + 0.2` da `0.30000000000000004` en vez de `0.3`. Esto es normal en todos los lenguajes de programación.
+2. `round(valor, 2)` redondea a 2 decimales. Para dinero, siempre usa `round()` para evitar errores de precisión.
+
+> **Errors should never pass silently.** Si trabajas con dinero, siempre redondea explícitamente. No asumas que los floats son exactos.
+
+## Texto (str): cadenas de caracteres
+
+El texto en Python se escribe entre comillas. Puedes usar simples o dobles — lo importante es ser consistente.
+
+```python
+# Comillas dobles (recomendadas para texto con apóstrofes)
+saludo = "Hola, ¿cómo estás?" # <1>
+nombre_completo = "Ana García"
+
+# Comillas simples (ideales cuando el texto tiene dobles)
+cita = 'Dijo "hola" y se fue' # <2>
+
+# Texto de múltiples líneas
+descripcion = """
+Este es un texto
+que ocupa varias líneas
+sin necesidad de caracteres especiales.
+""" # <3>
+```
+
+1. Las comillas dobles son recomendadas para texto normal.
+2. Las comillas simples son útiles cuando el texto contiene comillas dobles.
+3. Las triple comillas `"""` permiten escribir texto de múltiples líneas sin caracteres especiales.
+
+### f-strings: la forma moderna de mezclar texto y variables
+
+```python
+nombre = "Ana"
+edad = 25
+ciudad = "Quito"
+
+# ✅ Forma moderna y legible (Python 3.6+)
+presentacion = f"Hola, soy {nombre}, tengo {edad} años y vivo en {ciudad}" # <1>
+
+# ❌ Forma antigua y confusa — no uses esto
+presentacion_vieja = "Hola, soy " + nombre + ", tengo " + str(edad) + " años" # <2>
+```
+
+1. Los f-strings (formatted strings) permiten insertar variables directamente en el texto usando `{variable}`. Son más legibles y eficientes.
+2. La concatenación con `+` es más difícil de leer y propensa a errores. No la uses cuando puedas usar f-strings.
+
+> **Readability counts.** Los f-strings se leen como texto normal. Las variables van entre llaves y Python las reemplaza automáticamente.
+
+### Operaciones con texto
+
+```python
+# Los textos se pueden "sumar" (concatenar)
+nombre = "Ana"
+apellido = "García"
+nombre_completo = nombre + " " + apellido # <1>
+
+# Los textos se pueden "multiplicar" (repetir)
+separador = "-" * 30 # <2>
+print(separador)
+
+# Longitud de un texto
+mensaje = "Hola Mundo"
+print(len(mensaje)) # <3>
+```
+
+1. El operador `+` con textos los concatena (une). `"Ana" + " " + "García"` = `"Ana García"`.
+2. El operador `*` con textos los repite. `"-" * 30` crea una línea de 30 guiones.
+3. `len()` devuelve la longitud del texto en caracteres. `"Hola Mundo"` tiene 10 caracteres (incluye el espacio).
+
+## Booleanos (bool): verdadero o falso
+
+Los booleanos representan decisiones binarias. Son la base de toda lógica en programación.
+
+```python
+# Valores booleanos directos
+es_mayor_de_edad = True # <1>
+tiene_descuento = False
+
+# Booleanos que resultan de comparaciones
+edad = 20
+es_mayor = edad >= 18 # <2>
+es_menor = edad < 18
+es_exactamente = edad == 18
+
+# Operaciones lógicas
+tiene_permiso = es_mayor and tiene_descuento # <3>
+puede_entrar = es_mayor or tiene_descuento # <4>
+no_es_mayor = not es_mayor # <5>
+```
+
+1. `True` y `False` son los únicos valores booleanos. Nota que se escriben con mayúscula inicial.
+2. Las comparaciones (`>=`, `<`, `==`) siempre devuelven un booleano. `20 >= 18` es `True`.
+3. `and` devuelve `True` solo si AMBOS operandos son `True`.
+4. `or` devuelve `True` si AL MENOS UN operando es `True`.
+5. `not` invierte el valor booleano. `not True` = `False`.
+
+> **Simple is better than complex.** Si una variable booleana necesita más de 3 palabras para nombrarse, reconsidera la lógica.
+
+## Conversión entre tipos
+
+A veces necesitas cambiar el tipo de un valor. Python te permite hacerlo explícitamente.
+
+```python
+# De texto a número
+edad_texto = "25"
+edad_numero = int(edad_texto) # <1>
+print(edad_numero + 5)
+
+# De número a texto
+precio = 19.99
+precio_texto = str(precio) # <2>
+print("El precio es $" + precio_texto)
+
+# De decimal a entero (pierde los decimales)
+nota_promedio = 8.7
+nota_entera = int(nota_promedio) # <3>
+print(nota_entera)
+
+# De entero a decimal
+cantidad = 5
+cantidad_decimal = float(cantidad) # <4>
+print(cantidad_decimal)
+```
+
+1. `int("25")` convierte el texto `"25"` al número entero `25`.
+2. `str(19.99)` convierte el número `19.99` al texto `"19.99"`.
+3. `int(8.7)` convierte el decimal `8.7` al entero `8`. Los decimales se pierden (no se redondea).
+4. `float(5)` convierte el entero `5` al decimal `5.0`.
+
+### ⚠️ Cuando la conversión falla
+
+```python
+# Esto funciona
+numero = int("42") # <1>
+
+# Esto da ERROR — no se puede convertir texto arbitrario a número
+# numero = int("hola") # <2>
+
+# Pero los floats en texto sí se pueden convertir a float
+decimal = float("3.14") # <3>
+```
+
+1. `int("42")` funciona porque `"42"` contiene solo dígitos.
+2. `int("hola")` genera un `ValueError` porque `"hola"` no es un número válido.
+3. `float("3.14")` funciona porque `"3.14"` es un número decimal válido en formato texto.
+
+> **Errors should never pass silently.** Si intentas convertir algo que no es un número, Python te avisa con un error. Más adelante aprenderás a manejar estos errores con elegancia.
+
+## Tabla de referencia rápida
+
+| Operación | Ejemplo | Resultado | Tipo |
+|-----------|---------|-----------|------|
+| Suma | `5 + 3` | `8` | int |
+| División | `5 / 2` | `2.5` | float |
+| División entera | `5 // 2` | `2` | int |
+| Residuo | `5 % 2` | `1` | int |
+| Potencia | `2 ** 3` | `8` | int |
+| Concatenar | `"hola" + " "` | `"hola "` | str |
+| Repetir | `"a" * 3` | `"aaa"` | str |
+| Longitud | `len("hola")` | `4` | int |
+| Comparar | `5 > 3` | `True` | bool |
+| Igualdad | `5 == 3` | `False` | bool |
+
+## Resumen
+
+| Tipo | Cuándo usarlo | Ejemplo práctico |
+|------|---------------|------------------|
+| `int` | Contar cosas enteras | `cantidad_productos = 5` |
+| `float` | Medidas y decimales | `precio_unitario = 9.99` |
+| `str` | Texto y mensajes | `mensaje_bienvenida = "Bienvenido"` |
+| `bool` | Decisiones y estados | `sesion_activa = True` |
+
+---
+
+**Siguiente:** [1.6 Entrada y salida de datos](06-input-output.qmd)

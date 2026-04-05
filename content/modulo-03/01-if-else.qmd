@@ -1,0 +1,268 @@
+---
+title: "3.1 if / else: el semáforo del código"
+subtitle: "Tu programa toma decisiones, como tú en la vida real"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender cómo Python toma decisiones con `if`, `elif` y `else`
+- Escribir condiciones con operadores de comparación
+- Combinar múltiples condiciones con operadores lógicos
+- Aplicar el principio de "camino feliz" en el código
+
+## El semáforo de tu programa
+
+Imagina que estás en un **semáforo**. Tu acción depende del color:
+
+- 🔴 **Rojo** → te detienes
+- 🟡 **Amarillo** → te preparas
+- 🟢 **Verde** → avanzas
+
+Tu programa funciona igual: **evalúa una condición y ejecuta un camino diferente** según el resultado.
+
+```python
+# El semáforo en código
+color = "verde" # <1>
+
+if color == "rojo": # <2>
+    print("¡Alto! No puedes pasar")
+elif color == "amarillo": # <3>
+    print("Prepárate, va a cambiar")
+else: # <4>
+    print("¡Avanza, camino libre!")
+```
+
+1. `color` es la variable que contiene el estado actual del semáforo.
+2. `if` evalúa la primera condición. Si es `True`, ejecuta su bloque y **salta todo lo demás**.
+3. `elif` (else + if) evalúa otra condición solo si la anterior fue `False`.
+4. `else` es el "camino por defecto": se ejecuta si **ninguna** condición anterior fue verdadera.
+
+> **Simple is better than complex.** Un `if` claro es mejor que una maraña de condiciones confusas.
+
+## Operadores de comparación: las preguntas que haces
+
+Cada `if` necesita una pregunta que se pueda responder con `True` o `False`.
+
+| Operador | Pregunta | Ejemplo | Resultado |
+|----------|----------|---------|-----------|
+| `==` | ¿Son iguales? | `5 == 5` | `True` |
+| `!=` | ¿Son diferentes? | `5 != 3` | `True` |
+| `>` | ¿Es mayor? | `10 > 3` | `True` |
+| `<` | ¿Es menor? | `3 < 10` | `True` |
+| `>=` | ¿Es mayor o igual? | `5 >= 5` | `True` |
+| `<=` | ¿Es menor o igual? | `3 <= 5` | `True` |
+
+```python
+# Comparaciones en acción
+edad = 20
+
+if edad >= 18: # <1>
+    print("Eres mayor de edad")
+
+if edad != 18: # <2>
+    print("No tienes exactamente 18 años")
+
+if edad < 65: # <3>
+    print("Aún no edad de jubilación")
+```
+
+1. `>=` compara si `edad` es mayor o igual a 18. `20 >= 18` es `True`.
+2. `!=` verifica que `edad` no sea exactamente 18. `20 != 18` es `True`.
+3. `<` comprueba si `edad` es menor que 65. `20 < 65` es `True`.
+
+### ⚠️ El error más común: `=` vs `==`
+
+```python
+# ❌ ERROR: un solo = es asignación, no comparación
+edad = 18
+if edad = 18:  # SyntaxError
+    print("Mayor de edad")
+
+# ✅ CORRECTO: == compara dos valores
+edad = 18
+if edad == 18:  # <1>
+    print("Mayor de edad")
+```
+
+1. `==` compara: "¿es `edad` igual a 18?" Devuelve `True` o `False`.
+
+> **Errors should never pass silently.** Python detecta este error al momento de escribir el código. Si ves `SyntaxError`, revisa que uses `==` para comparar.
+
+## El camino feliz: estructura recomendada
+
+En programación, el **"camino feliz"** es el escenario donde todo sale bien. La buena práctica es:
+
+1. Validar los casos de error primero
+2. Dejar el caso exitoso para el final (o para el `else`)
+
+```python
+# ❌ Camino triste primero (confuso)
+def verificar_acceso(edad):
+    if edad >= 18:
+        if edad < 65:
+            if edad >= 21:
+                return "Acceso completo"
+            else:
+                return "Acceso limitado"
+        else:
+            return "Descuento tercera edad"
+    else:
+        return "Acceso denegado"
+
+# ✅ Camino feliz claro (legible)
+def verificar_acceso(edad):
+    if edad < 18: # <1>
+        return "Acceso denegado"
+    if edad < 21: # <2>
+        return "Acceso limitado"
+    if edad >= 65: # <3>
+        return "Descuento tercera edad"
+    return "Acceso completo" # <4>
+```
+
+1. Primero validamos el caso más restrictivo: menor de 18.
+2. Si pasó el primer filtro, verificamos el siguiente: menor de 21.
+3. Luego el caso especial: 65 o más años.
+4. Si ninguna condición anterior se cumplió, es el camino feliz: acceso completo.
+
+> **Readability counts.** El código se lee de arriba a abajo como una lista de filtros. Cada `if` elimina un caso especial.
+
+## Operadores lógicos: combinar condiciones
+
+A veces necesitas hacer **más de una pregunta** al mismo tiempo.
+
+| Operador | Significado | Ejemplo | Resultado |
+|----------|-------------|---------|-----------|
+| `and` | Ambas deben ser verdaderas | `True and False` | `False` |
+| `or` | Al menos una debe ser verdadera | `True or False` | `True` |
+| `not` | Invierte el valor | `not True` | `False` |
+
+```python
+# Sistema de acceso a una película
+edad = 16
+tiene_permiso = True
+
+# Con 'and': AMBAS condiciones deben cumplirse
+if edad >= 18 and tiene_permiso: # <1>
+    print("Puedes entrar")
+else:
+    print("No puedes entrar")
+
+# Con 'or': BASTA con que una se cumpla
+es_vip = False
+if edad >= 18 or es_vip: # <2>
+    print("Puedes entrar")
+
+# Con 'not': invertir la lógica
+esta_prohibido = False
+if not esta_prohibido: # <3>
+    print("La entrada está permitida")
+```
+
+1. `and` requiere que AMBAS condiciones sean `True`. `edad >= 18` es `False`, así que todo el `if` es `False`.
+2. `or` basta con que UNA condición sea `True`. `es_vip` es `False`, pero si `edad >= 18` fuera `True`, entraría.
+3. `not` invierte el valor. `not False` = `True`, así que entra al bloque.
+
+### Tabla de verdad rápida
+
+| `and` | True | False |
+|-------|------|-------|
+| **True** | True | False |
+| **False** | False | False |
+
+| `or` | True | False |
+|------|------|-------|
+| **True** | True | True |
+| **False** | True | False |
+
+## El operador ternario: if en una línea
+
+Python tiene una forma compacta de escribir un `if/else` simple en una sola línea.
+
+```python
+# Forma larga
+edad = 20
+if edad >= 18:
+    estado = "mayor"
+else:
+    estado = "menor"
+
+# Forma compacta (operador ternario)
+edad = 20
+estado = "mayor" if edad >= 18 else "menor" # <1>
+```
+
+1. La sintaxis es: `valor_si_true if condicion else valor_si_false`. Útil para asignaciones simples.
+
+> **Beautiful is better than ugly.** El operador ternario es elegante cuando la lógica es simple. Si necesitas más de una condición, usa `if/else` normal.
+
+## Errores comunes
+
+### ❌ Olvidar los dos puntos
+
+```python
+# ❌ SyntaxError: faltan los dos puntos
+edad = 18
+if edad >= 18
+    print("Mayor de edad")
+
+# ✅ Correcto: los dos puntos son obligatorios
+edad = 18
+if edad >= 18:
+    print("Mayor de edad")
+```
+
+### ❌ Indentación incorrecta
+
+```python
+# ❌ IndentationError: Python usa indentación para definir bloques
+edad = 18
+if edad >= 18:
+print("Mayor de edad")  # Error: no está indentado
+
+# ✅ Correcto: 4 espacios de indentación
+edad = 18
+if edad >= 18:
+    print("Mayor de edad")  # 4 espacios desde el margen
+```
+
+### ❌ Comparar con `True` o `False` explícitamente
+
+```python
+# ❌ Redundante y poco Pythonico
+es_activo = True
+if es_activo == True:
+    print("Activo")
+
+# ✅ Directo y limpio
+es_activo = True
+if es_activo:
+    print("Activo")
+```
+
+## Resumen
+
+| Concepto | Sintaxis | Cuándo usarlo |
+|----------|----------|---------------|
+| `if` simple | `if condicion:` | Una sola decisión |
+| `if/else` | `if cond: ... else: ...` | Dos caminos posibles |
+| `if/elif/else` | `if ... elif ... else:` | Múltiples condiciones |
+| `and` | `cond1 and cond2` | Ambas deben cumplirse |
+| `or` | `cond1 or cond2` | Basta con una |
+| `not` | `not condicion` | Invertir la lógica |
+| Ternario | `x if cond else y` | Asignación simple en una línea |
+
+### Principios del Zen aplicados
+
+| Principio | Cómo se aplica |
+|-----------|----------------|
+| **Readability counts** | El camino feliz se lee como una historia |
+| **Simple is better than complex** | Un `if` claro vale más que tres anidados |
+| **Explicit is better than implicit** | Las condiciones deben ser evidentes |
+| **Flat is better than nested** | Evita anidar más de 2 niveles de `if` |
+
+---
+
+**Anterior:** [Índice del Módulo 3](index.qmd) | **Siguiente:** [3.2 Decisiones anidadas](02-if-anidado.qmd)

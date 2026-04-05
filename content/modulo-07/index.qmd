@@ -1,0 +1,47 @@
+---
+title: "Módulo 7: Manejo de Archivos"
+---
+
+## 🎯 Objetivos del Módulo
+
+Al completar este módulo, serás capaz de:
+
+- ✅ Abrir, leer y escribir archivos de texto de forma segura con `with open()`
+- ✅ Procesar archivos CSV con el módulo `csv` integrado
+- ✅ Manejar datos JSON con el módulo `json`
+- ✅ Usar `pathlib` para operaciones modernas de rutas y sistema de archivos
+- ✅ Implementar patrones robustos de manejo de errores al trabajar con archivos
+
+## 📚 Contenido
+
+| Lección | Tema | Tipo |
+|---------|------|------|
+| [7.1](01-abrir-cerrar-archivos.qmd) | Abrir y cerrar archivos — el contexto `with` | 📖 Teoría |
+| [7.2](02-leer-archivos.qmd) | Leer archivos — modos y técnicas | 💻 Práctica |
+| [7.3](03-escribir-archivos.qmd) | Escribir archivos — crear y modificar | 💻 Práctica |
+| [7.4](04-manejo-csv.qmd) | Manejo de archivos CSV | 📊 Datos |
+| [7.5](05-manejo-json.qmd) | Manejo de archivos JSON | 📦 Datos |
+| [7.6](06-pathlib.qmd) | pathlib — rutas modernas | 🛠️ Herramienta |
+| [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
+
+## 🏆 Desafíos del Módulo
+
+| # | Desafío | Dificultad |
+|---|---------|------------|
+| [1](desafio-01-diario-personal.qmd) | Diario personal | ⭐ Fácil |
+| [2](desafio-02-copiar-archivo.qmd) | Copiar archivo | ⭐ Fácil |
+| [3](desafio-03-log-analyzer.qmd) | Log Analyzer | ⭐⭐ Media |
+| [4](desafio-04-csv-a-diccionario.qmd) | CSV a diccionario | ⭐⭐ Media |
+| [5](desafio-05-configurador-json.qmd) | Configurador JSON | ⭐⭐ Media |
+| [6](desafio-06-buscador-archivos.qmd) | Buscador de archivos | ⭐⭐⭐ Difícil |
+| [7](desafio-07-gestor-contactos-csv.qmd) | Gestor de contactos CSV | ⭐⭐⭐ Difícil |
+
+## 📁 Recursos
+
+| Recurso | Descripción |
+|---------|-------------|
+| [Cheat Sheet](recursos/cheat-sheet-modulo-7.md) | Referencia rápida de manejo de archivos |
+
+---
+
+**Anterior:** [Módulo 6](../modulo-06/index.qmd) | **Siguiente:** [7.1 Abrir y cerrar archivos](01-abrir-cerrar-archivos.qmd)

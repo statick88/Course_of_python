@@ -1,0 +1,280 @@
+---
+title: "2.4 Casting avanzado"
+subtitle: "Transformar datos — convertir entre tipos de forma segura"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Convertir entre todos los tipos básicos de Python con confianza
+- Detectar y manejar errores de conversión antes de que rompan tu código
+- Usar funciones avanzadas como `round()`, `bin()`, `hex()` y `ord()`
+- Aplicar el principio de conversión explícita del Zen de Python
+
+## ¿Qué es el casting? — el traductor de Python
+
+Imagina que estás en un restaurante internacional. El chef solo habla español, pero los clientes hablan inglés, francés y japonés. Necesitas un **traductor** que convierta los pedidos al idioma del chef.
+
+El **casting** (o conversión de tipos) es exactamente eso: un traductor que convierte datos de un tipo a otro para que Python pueda trabajar con ellos.
+
+```python
+# Casting básico: las 4 funciones fundamentales
+texto_edad = "25"
+edad = int(texto_edad)       # <1> str → int
+
+precio = 19.99
+precio_texto = str(precio)   # <2> float → str
+
+cantidad = 5
+cantidad_decimal = float(cantidad)  # <3> int → float
+
+valor = 1
+es_verdadero = bool(valor)   # <4> int → bool
+```
+
+1. `int("25")` convierte el texto `"25"` al número entero `25`. Solo funciona si el texto contiene solo dígitos (y opcionalmente un signo `-`).
+2. `str(19.99)` convierte el número `19.99` al texto `"19.99"`. Siempre funciona — cualquier valor se puede convertir a string.
+3. `float(5)` convierte el entero `5` al decimal `5.0`. Útil cuando necesitas precisión decimal.
+4. `bool(1)` convierte a booleano. En Python, `0` es `False` y cualquier otro número es `True`.
+
+## Tabla de conversión completa
+
+| De → A | Función | Ejemplo | Resultado | ¿Siempre funciona? |
+|--------|---------|---------|-----------|-------------------|
+| str → int | `int()` | `int("42")` | `42` | Solo si son dígitos |
+| str → float | `float()` | `float("3.14")` | `3.14` | Solo si es número válido |
+| str → bool | `bool()` | `bool("hola")` | `True` | Siempre |
+| int → str | `str()` | `str(42)` | `"42"` | Siempre |
+| int → float | `float()` | `float(42)` | `42.0` | Siempre |
+| int → bool | `bool()` | `bool(42)` | `True` | Siempre |
+| float → int | `int()` | `int(3.9)` | `3` | Siempre (trunca) |
+| float → str | `str()` | `str(3.14)` | `"3.14"` | Siempre |
+| float → bool | `bool()` | `bool(0.0)` | `False` | Siempre |
+| bool → int | `int()` | `int(True)` | `1` | Siempre |
+| bool → float | `float()` | `float(False)` | `0.0` | Siempre |
+| bool → str | `str()` | `str(True)` | `"True"` | Siempre |
+
+## Conversiones que fallan — y cómo evitarlas
+
+```python
+# ❌ Esto genera ValueError
+# int("hola")      # ValueError: invalid literal for int()
+# int("3.14")      # ValueError: no puede convertir "3.14" directamente a int
+# float("abc")     # ValueError: no es un número
+
+# ✅ Patrón seguro: validar antes de convertir
+edad_input = "25"
+
+# Método 1: verificar con .isdigit()
+if edad_input.isdigit():  # <1>
+    edad = int(edad_input)
+    print(f"Edad: {edad}")
+else:
+    print("Error: ingresa un número entero válido")
+
+# Método 2: intentar y capturar el error (try/except)
+try:  # <2>
+    precio = float("19.99")
+    print(f"Precio: {precio}")
+except ValueError:
+    print("Error: el valor no es un número válido")
+```
+
+1. `.isdigit()` devuelve `True` si el string contiene solo dígitos. Es una validación rápida antes de convertir.
+2. `try/except` intenta la conversión y, si falla, ejecuta el bloque `except` en vez de romper el programa. Lo veremos en detalle más adelante.
+
+## Redondeo inteligente con `round()`
+
+```python
+# Redondeo básico
+pi = 3.14159265
+print(round(pi, 2))  # <1> — 3.14
+print(round(pi, 4))  # <2> — 3.1416
+
+# Redondeo a entero
+nota = 8.7
+print(round(nota))   # <3> — 9 (redondea al entero más cercano)
+
+# Redondeo de dinero
+subtotal = 19.99
+impuesto = subtotal * 0.15  # 2.9985
+total = subtotal + impuesto  # 22.9885
+total_redondeado = round(total, 2)  # <4> — 22.99
+print(f"Total: ${total_redondeado}")
+```
+
+1. `round(pi, 2)` redondea a 2 decimales. El segundo argumento indica cuántos decimales mantener.
+2. `round(pi, 4)` redondea a 4 decimales. `3.14159...` → `3.1416`.
+3. `round(nota)` sin segundo argumento redondea al entero más cercano. `8.7` → `9`.
+4. Para dinero, siempre redondea a 2 decimales para evitar errores de precisión.
+
+## Conversiones especiales — herramientas del taller
+
+### Números a diferentes bases
+
+```python
+# Decimal a binario (base 2)
+numero = 42
+binario = bin(numero)     # <1>
+print(binario)  # 0b101010
+
+# Decimal a hexadecimal (base 16)
+hexadecimal = hex(numero)  # <2>
+print(hexadecimal)  # 0x2a
+
+# Decimal a octal (base 8)
+octal = oct(numero)       # <3>
+print(octal)  # 0o52
+
+# De vuelta a decimal
+print(int("101010", 2))   # <4> — 42 (binario a decimal)
+print(int("2a", 16))      # <5> — 42 (hexadecimal a decimal)
+```
+
+1. `bin(42)` convierte a binario. El prefijo `0b` indica que es binario.
+2. `hex(42)` convierte a hexadecimal. El prefijo `0x` indica que es hexadecimal.
+3. `oct(42)` convierte a octal. El prefijo `0o` indica que es octal.
+4. `int("101010", 2)` convierte de binario a decimal. El segundo argumento `2` indica la base.
+5. `int("2a", 16)` convierte de hexadecimal a decimal. La base `16` usa dígitos 0-9 y letras a-f.
+
+### Caracteres y códigos Unicode
+
+```python
+# Carácter a código numérico (Unicode)
+codigo = ord("A")    # <1>
+print(codigo)  # 65
+
+codigo_z = ord("a")  # <2>
+print(codigo_z)  # 97
+
+# Código numérico a carácter
+caracter = chr(65)   # <3>
+print(caracter)  # A
+
+caracter_z = chr(97) # <4>
+print(caracter_z)  # a
+
+# Ejemplo práctico: verificar si un carácter es mayúscula
+letra = "M"
+es_mayuscula = 65 <= ord(letra) <= 90  # <5>
+print(es_mayuscula)  # True
+```
+
+1. `ord("A")` devuelve el código Unicode del carácter. `"A"` = `65`.
+2. `ord("a")` = `97`. Nota la diferencia: las minúsculas empiezan en 97, las mayúsculas en 65.
+3. `chr(65)` es el inverso de `ord()`. Convierte el código `65` de vuelta al carácter `"A"`.
+4. `chr(97)` = `"a"`.
+5. Los códigos 65-90 corresponden a las letras mayúsculas A-Z. Puedes usar esto para verificar sin métodos de string.
+
+## Casting booleano — el concepto de truthy y falsy
+
+En Python, **todo valor** puede evaluarse como booleano. No solo `True` y `False`.
+
+```python
+# Valores FALSY (se evalúan como False)
+print(bool(0))        # <1> — False: cero numérico
+print(bool(0.0))      # False: cero decimal
+print(bool(""))       # <2> — False: string vacío
+print(bool(None))     # <3> — False: ausencia de valor
+
+# Valores TRUTHY (se evalúan como True)
+print(bool(1))        # <4> — True: cualquier número distinto de 0
+print(bool(-5))       # True: incluso negativos
+print(bool("hola"))   # <5> — True: cualquier string no vacío
+print(bool([1, 2]))   # True: listas no vacías
+```
+
+1. `0` es el único número falsy. Cualquier otro número es truthy.
+2. `""` (string vacío) es falsy. Cualquier string con contenido es truthy.
+3. `None` representa "nada" o "sin valor". Siempre es falsy.
+4. `1` es truthy. `-5`, `3.14`, `0.001` — todos son truthy.
+5. `"hola"` es truthy. `" "`, `"0"`, `"False"` — también son truthy porque tienen contenido.
+
+### Aplicación práctica: validación elegante
+
+```python
+# ❌ Forma verbosa
+nombre = input("Nombre: ")
+if nombre == "":  # <1>
+    nombre = "Invitado"
+
+# ✅ Forma Pythonica
+nombre = input("Nombre: ")
+nombre = nombre or "Invitado"  # <2>
+```
+
+1. Comparar explícitamente con `""` funciona pero es más verboso.
+2. `nombre or "Invitado"`: si `nombre` es falsy (vacío), usa `"Invitado"`. Si tiene valor, lo mantiene.
+
+## Errores comunes
+
+### ❌ Asumir que int() redondea
+
+```python
+# ❌ int() NO redondea, TRUNCA (corta los decimales)
+nota = 8.9
+nota_entera = int(nota)  # <1>
+print(nota_entera)  # 8 — ¡no 9!
+
+# ✅ Usa round() si quieres redondear
+nota_redondeada = round(nota)  # <2>
+print(nota_redondeada)  # 9
+```
+
+1. `int(8.9)` trunca a `8`. Siempre redondea hacia cero, nunca hacia arriba.
+2. `round(8.9)` redondea al entero más cercano: `9`.
+
+### ❌ Intentar convertir strings con decimales a int directamente
+
+```python
+# ❌ Error: int() no acepta strings con punto decimal
+# int("3.14")  # ValueError
+
+# ✅ Correcto: primero a float, luego a int
+numero = int(float("3.14"))  # <1>
+print(numero)  # 3
+```
+
+1. Primero `float("3.14")` convierte a `3.14`, luego `int(3.14)` trunca a `3`.
+
+### ❌ Confundir str() con repr()
+
+```python
+# str() — para humanos (legible)
+texto = str(3.14159)     # <1>
+print(texto)  # "3.14159"
+
+# repr() — para debugging (preciso)
+representacion = repr(3.14159)  # <2>
+print(representacion)  # "3.14159"
+```
+
+1. `str()` convierte a una representación legible para humanos.
+2. `repr()` convierte a una representación precisa para debugging. Para números simples son iguales, pero difieren en casos complejos.
+
+## Zen de Python aplicado
+
+| Principio | Cómo se aplica aquí |
+|-----------|---------------------|
+| **Explicit is better than implicit** | Convierte tipos explícitamente con `int()`, `float()`, `str()` |
+| **Errors should never pass silently** | Usa `try/except` para capturar errores de conversión |
+| **Readability counts** | `nombre or "Invitado"` es más legible que `if nombre == "": nombre = "Invitado"` |
+
+## Resumen
+
+| Función | Convierte a | Ejemplo | Uso principal |
+|---------|-------------|---------|---------------|
+| `int()` | Entero | `int("42")` → `42` | Contar, indexar |
+| `float()` | Decimal | `float("3.14")` → `3.14` | Medidas, dinero |
+| `str()` | Texto | `str(42)` → `"42"` | Mostrar, concatenar |
+| `bool()` | Booleano | `bool("")` → `False` | Validar, decidir |
+| `round()` | Redondeado | `round(3.7)` → `4` | Dinero, notas |
+| `bin()` | Binario | `bin(42)` → `"0b101010"` | Sistemas, redes |
+| `hex()` | Hexadecimal | `hex(42)` → `"0x2a"` | Colores, memoria |
+| `ord()` | Código Unicode | `ord("A")` → `65` | Criptografía, validación |
+| `chr()` | Carácter | `chr(65)` → `"A"` | Generar texto |
+
+---
+
+**Anterior:** [2.3 Operadores lógicos](03-operadores-logicos.qmd) | **Siguiente:** [2.5 Strings avanzado](05-strings-avanzado.qmd)

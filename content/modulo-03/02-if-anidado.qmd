@@ -1,0 +1,245 @@
+---
+title: "3.2 Decisiones anidadas: capas de lógica"
+subtitle: "Cuando una decisión no es suficiente"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender cuándo y cómo anidar estructuras `if`
+- Evitar el "infierno de indentación" (pyramid of doom)
+- Refactorizar condiciones anidadas en código plano
+- Aplicar guard clauses para simplificar la lógica
+
+## ¿Qué es anidar decisiones?
+
+Anidar significa **poner un `if` dentro de otro `if`**. Es como un sistema de seguridad con múltiples capas: primero verificas la tarjeta, luego la contraseña, luego la huella.
+
+```python
+# Sistema de autenticación con múltiples capas
+usuario = "admin"
+password = "secreto123"
+token = "valido"
+
+if usuario == "admin": # <1>
+    if password == "secreto123": # <2>
+        if token == "valido": # <3>
+            print("Acceso concedido al panel")
+        else:
+            print("Token inválido")
+    else:
+        print("Contraseña incorrecta")
+else:
+    print("Usuario no encontrado")
+```
+
+1. Primera capa: ¿el usuario existe? Si no, ni siquiera verificamos lo demás.
+2. Segunda capa: ¿la contraseña es correcta? Solo si el usuario es válido.
+3. Tercera capa: ¿el token de seguridad es válido? Solo si las dos capas anteriores pasaron.
+
+> **Flat is better than nested.** Cada nivel de anidación agrega complejidad. Python recomienda no pasar de 3 niveles.
+
+## La pirámide de la muerte
+
+Cuando anidas demasiados `if`, el código forma una **pirámide** que se vuelve imposible de leer:
+
+```python
+# ❌ Pirámide de la muerte — NO hagas esto
+def procesar_pedido(producto, cantidad, usuario):
+    if usuario:
+        if usuario.activo:
+            if producto:
+                if producto.stock >= cantidad:
+                    if usuario.saldo >= producto.precio * cantidad:
+                        print("Pedido procesado")
+                    else:
+                        print("Saldo insuficiente")
+                else:
+                    print("Sin stock")
+            else:
+                print("Producto no existe")
+        else:
+            print("Usuario inactivo")
+    else:
+        print("Usuario no autenticado")
+```
+
+Cada nivel de indentación es una **carga cognitiva** para quien lee el código. Hay una forma mejor.
+
+## Guard clauses: la solución elegante
+
+Un **guard clause** (cláusula de guarda) es un `if` que **rechaza un caso temprano** y sale. El resultado: código plano y legible.
+
+```python
+# ✅ Guard clauses — código plano y claro
+def procesar_pedido(producto, cantidad, usuario):
+    if not usuario: # <1>
+        return "Usuario no autenticado"
+    if not usuario.activo: # <2>
+        return "Usuario inactivo"
+    if not producto: # <3>
+        return "Producto no existe"
+    if producto.stock < cantidad: # <4>
+        return "Sin stock suficiente"
+    if usuario.saldo < producto.precio * cantidad: # <5>
+        return "Saldo insuficiente"
+    
+    return "Pedido procesado" # <6>
+```
+
+1. **Guard 1**: Si no hay usuario, salimos inmediatamente. No seguimos leyendo.
+2. **Guard 2**: Si el usuario no está activo, salimos. Cada guard elimina un caso.
+3. **Guard 3**: Si el producto no existe, salimos.
+4. **Guard 4**: Si no hay stock suficiente, salimos.
+5. **Guard 5**: Si no hay saldo, salimos.
+6. **Camino feliz**: Si llegamos aquí, todas las validaciones pasaron. ¡Procesamos el pedido!
+
+> **Beautiful is better than ugly.** Los guard clauses transforman una pirámide en una lista plana de validaciones.
+
+## Anidación útil: cuando SÍ tiene sentido
+
+No toda anidación es mala. A veces tiene sentido lógico agrupar condiciones relacionadas:
+
+```python
+# ✅ Anidación con propósito: validar antes de operar
+def calcular_descuento(edad, es_cliente_frecuente, total_compra):
+    if total_compra > 100: # <1>
+        # Solo aplicamos descuentos si la compra supera $100
+        if edad >= 65: # <2>
+            descuento = 0.20  # 20% para tercera edad
+        elif es_cliente_frecuente: # <3>
+            descuento = 0.15  # 15% para clientes frecuentes
+        else:
+            descuento = 0.10  # 10% descuento base
+    else:
+        descuento = 0.00 # <4>
+    
+    return total_compra * (1 - descuento)
+```
+
+1. Primera decisión: ¿la compra califica para descuento? Si no, ni evaluamos las demás.
+2. Dentro del grupo "compras mayores a $100", verificamos si es tercera edad.
+3. Si no es tercera edad, verificamos si es cliente frecuente.
+4. Si no califica para ningún descuento especial, no hay descuento.
+
+La anidación aquí tiene sentido porque **agrupa lógicamente** las condiciones de descuento bajo una condición general.
+
+## Combinar condiciones vs. anidar
+
+Antes de anidar, pregúntate: **¿puedo combinar las condiciones con `and`?**
+
+```python
+# ❌ Anidación innecesaria
+temperatura = 30
+humedad = 80
+
+if temperatura > 25:
+    if humedad > 70:
+        print("Clima caluroso y húmedo")
+
+# ✅ Combinación con 'and' — más directo
+if temperatura > 25 and humedad > 70: # <1>
+    print("Clima caluroso y húmedo")
+```
+
+1. `and` combina ambas condiciones en una sola línea. Más legible y sin indentación extra.
+
+### Cuándo usar cada enfoque
+
+| Situación | Enfoque recomendado |
+|-----------|-------------------|
+| Ambas condiciones deben cumplirse | `and` |
+| Una condición depende de la otra | Anidar |
+| Validar antes de procesar | Guard clauses |
+| Múltiples caminos excluyentes | `elif` |
+| Agrupar lógica relacionada | Anidación con propósito |
+
+## Errores comunes
+
+### ❌ Anidar cuando `and` es suficiente
+
+```python
+# ❌ Innecesariamente anidado
+edad = 25
+tiene_entrada = True
+
+if edad >= 18:
+    if tiene_entrada:
+        print("Puede entrar")
+
+# ✅ Combinado con 'and'
+if edad >= 18 and tiene_entrada:
+    print("Puede entrar")
+```
+
+### ❌ Mezclar lógica con presentación
+
+```python
+# ❌ El if hace demasiado: valida, calcula Y muestra
+def verificar_edad(edad):
+    if edad >= 18:
+        resultado = True
+        print(f"Edad {edad}: autorizado")
+        return resultado
+    else:
+        resultado = False
+        print(f"Edad {edad}: no autorizado")
+        return resultado
+
+# ✅ Separar lógica de presentación
+def es_mayor_de_edad(edad): # <1>
+    return edad >= 18
+
+def mostrar_resultado(edad): # <2>
+    if es_mayor_de_edad(edad):
+        print(f"Edad {edad}: autorizado")
+    else:
+        print(f"Edad {edad}: no autorizado")
+```
+
+1. La función solo responde una pregunta: ¿es mayor de edad? Devuelve `True` o `False`.
+2. Esta función se encarga de mostrar el resultado. Separa la lógica de la presentación.
+
+> **Readability counts.** Cada función debe hacer UNA cosa bien. Validar y mostrar son dos cosas diferentes.
+
+### ❌ Condiciones demasiado largas
+
+```python
+# ❌ Difícil de leer
+if edad >= 18 and edad <= 65 and tiene_trabajo and salario > 1000 and not tiene_deudas:
+    print("Aprobado")
+
+# ✅ Variables con intención
+es_adulto = 18 <= edad <= 65 # <1>
+tiene_ingreso = tiene_trabajo and salario > 1000
+es_solvencia = not tiene_deudas
+
+if es_adulto and tiene_ingreso and es_solvencia: # <2>
+    print("Aprobado")
+```
+
+1. Python permite comparaciones encadenadas: `18 <= edad <= 65` es equivalente a `edad >= 18 and edad <= 65`.
+2. Las variables con nombre hacen que la condición se lea como una oración.
+
+## Resumen
+
+| Patrón | Cuándo usarlo | Ventaja |
+|--------|---------------|---------|
+| Guard clauses | Validar entrada temprano | Código plano y legible |
+| `and` / `or` | Combinar condiciones simples | Sin indentación extra |
+| Anidación con propósito | Agrupar lógica relacionada | Estructura clara |
+| Variables de condición | Condiciones complejas | Código autoexplicativo |
+
+### Principios del Zen aplicados
+
+| Principio | Cómo se aplica |
+|-----------|----------------|
+| **Flat is better than nested** | Prefiere guard clauses sobre anidación profunda |
+| **Readability counts** | Nombra las condiciones complejas |
+| **Simple is better than complex** | Usa `and` en vez de anidar cuando puedas |
+| **There should be one obvious way** | Guard clauses son la forma Pythonica de validar |
+
+---
+
+**Anterior:** [3.1 if / else](01-if-else.qmd) | **Siguiente:** [3.3 for loop](03-for-loop.qmd)

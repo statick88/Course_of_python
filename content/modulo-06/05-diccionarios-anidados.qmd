@@ -1,0 +1,255 @@
+---
+title: "6.5 Diccionarios anidados y JSON"
+subtitle: "Estructuras complejas — del diccionario al formato universal de datos"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Crear diccionarios dentro de diccionarios (anidados)
+- Acceder a valores en estructuras profundas
+- Usar diccionarios anidados para modelar datos reales
+- Convertir entre diccionarios Python y JSON
+- Recorrer estructuras anidados con bucles
+
+## ¿Qué es un diccionario anidado?
+
+Imagina un **archivador de oficina**. Cada cajón tiene una etiqueta (la clave), y dentro de cada cajón hay carpetas. Cada carpeta también tiene etiquetas, y dentro de cada carpeta hay documentos. Eso es un diccionario anidado: diccionarios dentro de diccionarios.
+
+```python
+# Un diccionario anidado: estudiantes con sus datos completos
+estudiantes = {
+    "EST001": {
+        "nombre": "Ana García",
+        "edad": 22,
+        "materias": {
+            "matematicas": 9.5,
+            "programacion": 9.8,
+            "fisica": 8.7
+        }
+    },
+    "EST002": {
+        "nombre": "Carlos López",
+        "edad": 24,
+        "materias": {
+            "matematicas": 7.2,
+            "programacion": 8.5,
+            "fisica": 7.8
+        }
+    }
+}  # <1>
+```
+
+1. `estudiantes` es un diccionario donde cada clave es un código de estudiante, y cada valor es **otro diccionario** con los datos del estudiante. Dentro de cada estudiante hay un diccionario de `materias` con sus calificaciones.
+
+## Acceder a valores anidados
+
+Acceder a datos profundos es como seguir un camino: vas de nivel en nivel.
+
+```python
+# Acceder al nombre del primer estudiante
+nombre = estudiantes["EST001"]["nombre"]  # <1>
+print(nombre)
+
+# Acceder a una calificación específica
+nota_prog = estudiantes["EST001"]["materias"]["programacion"]  # <2>
+print(f"Programación: {nota_prog}")
+
+# Acceder a todas las materias de un estudiante
+materias = estudiantes["EST002"]["materias"]  # <3>
+print(materias)
+```
+
+1. `estudiantes["EST001"]["nombre"]` sigue el camino: primero busca `"EST001"`, luego dentro de ese diccionario busca `"nombre"`. Resultado: `"Ana García"`.
+2. `estudiantes["EST001"]["materias"]["programacion"]` sigue tres niveles: estudiante → materias → programación. Resultado: `9.8`.
+3. `estudiantes["EST002"]["materias"]` devuelve el diccionario completo de materias del segundo estudiante.
+
+## Modificar valores anidados
+
+```python
+# Actualizar una calificación
+estudiantes["EST001"]["materias"]["matematicas"] = 9.7  # <1>
+
+# Agregar una nueva materia
+estudiantes["EST001"]["materias"]["quimica"] = 8.0  # <2>
+
+# Agregar un nuevo campo al estudiante
+estudiantes["EST001"]["email"] = "ana@universidad.edu"  # <3>
+
+print(estudiantes["EST001"])
+```
+
+1. Sobreescribe la calificación de matemáticas de `9.5` a `9.7`.
+2. Agrega una nueva materia `"quimica"` con calificación `8.0` al diccionario de materias.
+3. Agrega un nuevo campo `"email"` directamente al diccionario del estudiante.
+
+> **Simple is better than complex.** La misma sintaxis `dic[clave] = valor` funciona a cualquier nivel de anidamiento.
+
+## Recorrer diccionarios anidados
+
+```python
+# Recorrer todos los estudiantes y sus materias
+for codigo, datos in estudiantes.items():  # <1>
+    print(f"\n📋 {datos['nombre']} ({codigo})")
+    for materia, nota in datos["materias"].items():  # <2>
+        estado = "✅" if nota >= 8 else "⚠️"
+        print(f"   {estado} {materia}: {nota}")
+```
+
+1. El primer `for` recorre cada estudiante, obteniendo su código y sus datos.
+2. El segundo `for` (anidado) recorre las materias de cada estudiante. Es un bucle dentro de otro bucle.
+
+## Construir diccionarios anidados paso a paso
+
+```python
+# Construir un diccionario anidado desde cero
+biblioteca = {}  # <1>
+
+# Agregar un libro
+biblioteca["978-0-13-468599-1"] = {
+    "titulo": "Clean Code",
+    "autor": "Robert C. Martin",
+    "anio": 2008,
+    "prestado": False
+}  # <2>
+
+# Agregar otro libro
+biblioteca["978-0-201-63361-0"] = {
+    "titulo": "Design Patterns",
+    "autor": "Gang of Four",
+    "anio": 1994,
+    "prestado": True
+}  # <3>
+
+# Buscar libros de un autor específico
+for isbn, libro in biblioteca.items():
+    if "Martin" in libro["autor"]:  # <4>
+        print(f"Encontrado: {libro['titulo']}")
+```
+
+1. Empezamos con un diccionario vacío. Es el archivador vacío.
+2. Agregamos el primer libro con su ISBN como clave. El valor es un diccionario con los detalles del libro.
+3. Agregamos un segundo libro de la misma forma.
+4. Recorremos la biblioteca buscando libros de un autor específico.
+
+## Diccionarios y JSON: el formato universal
+
+JSON (JavaScript Object Notation) es el formato más usado para intercambiar datos en la web. La buena noticia: **un diccionario Python es casi idéntico a un objeto JSON**.
+
+```python
+import json
+
+# Diccionario Python
+usuario = {
+    "nombre": "Diego",
+    "edad": 30,
+    "activo": True,
+    "roles": ["admin", "editor"],
+    "direccion": None
+}  # <1>
+
+# Convertir a JSON (string)
+json_string = json.dumps(usuario, indent=2)  # <2>
+print(json_string)
+
+# Convertir de JSON a diccionario
+datos = json.loads(json_string)  # <3>
+print(datos["nombre"])
+```
+
+1. Este diccionario Python tiene tipos que JSON entiende: strings, números, booleanos, listas y `None`.
+2. `json.dumps()` convierte el diccionario a un string JSON. `indent=2` le da formato legible con sangría de 2 espacios.
+3. `json.loads()` convierte un string JSON de vuelta a un diccionario Python.
+
+### Conversión de tipos Python ↔ JSON
+
+| Python | JSON |
+|--------|------|
+| `dict` | `object` |
+| `list`, `tuple` | `array` |
+| `str` | `string` |
+| `int`, `float` | `number` |
+| `True` | `true` |
+| `False` | `false` |
+| `None` | `null` |
+
+## Leer y escribir archivos JSON
+
+```python
+import json
+
+# Escribir un diccionario a un archivo JSON
+datos = {
+    "estudiantes": [
+        {"nombre": "Ana", "nota": 9.5},
+        {"nombre": "Carlos", "nota": 7.8}
+    ]
+}
+
+# Guardar en archivo
+with open("datos.json", "w") as archivo:  # <1>
+    json.dump(datos, archivo, indent=2)  # <2>
+
+# Leer desde archivo
+with open("datos.json", "r") as archivo:  # <3>
+    datos_leidos = json.load(archivo)  # <4>
+
+print(datos_leidos)
+```
+
+1. `open("datos.json", "w")` abre el archivo en modo escritura. El `with` asegura que se cierre automáticamente.
+2. `json.dump(datos, archivo, indent=2)` escribe el diccionario directamente al archivo.
+3. `open("datos.json", "r")` abre el archivo en modo lectura.
+4. `json.load(archivo)` lee el archivo JSON y lo convierte en un diccionario Python.
+
+## ⚠️ Errores comunes
+
+```python
+datos = {
+    "usuario": {
+        "nombre": "Ana",
+        "config": {"tema": "oscuro"}
+    }
+}
+
+# ❌ Acceder a un nivel que no existe
+# print(datos["usuario"]["email"])  # KeyError: 'email'
+
+# ✅ Usar .get() en cada nivel
+email = datos.get("usuario", {}).get("email", "No disponible")  # <1>
+print(email)
+
+# ❌ Intentar convertir algo que no es JSON válido
+# json.loads("esto no es json")  # JSONDecodeError
+
+# ✅ Manejar el error
+try:
+    datos = json.loads("texto invalido")
+except json.JSONDecodeError:  # <2>
+    print("El texto no es un JSON válido")
+```
+
+1. `.get("usuario", {}).get("email", "No disponible")` es seguro: si `"usuario"` no existe, devuelve `{}`, y luego `.get("email", ...)` sobre ese diccionario vacío devuelve `"No disponible"`.
+2. `json.JSONDecodeError` se lanza cuando el texto no es JSON válido. Usar `try/except` maneja el error con elegancia.
+
+## Resumen
+
+| Operación | Sintaxis | Ejemplo |
+|-----------|----------|---------|
+| Acceder anidado | `dic[a][b][c]` | `estudiantes["EST001"]["nombre"]` |
+| Modificar anidado | `dic[a][b] = valor` | `datos["user"]["email"] = "x@y"` |
+| Python → JSON | `json.dumps(dic)` | `json.dumps(datos, indent=2)` |
+| JSON → Python | `json.loads(string)` | `json.loads('{"a": 1}')` |
+| Guardar archivo | `json.dump(dic, archivo)` | `json.dump(datos, f)` |
+| Leer archivo | `json.load(archivo)` | `datos = json.load(f)` |
+
+| Principio del Zen | Cómo aplica |
+|-------------------|-------------|
+| Simple is better than complex | `dic[a][b]` accede a cualquier nivel |
+| Readability counts | JSON con `indent=2` es legible por humanos |
+| Errors should never pass silently | Usa `try/except` con `json.loads()` |
+
+---
+
+**Anterior:** [6.4 Sets](04-sets.qmd) | **Siguiente:** [Resumen del Módulo 6](99-resumen.qmd)

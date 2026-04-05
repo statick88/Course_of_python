@@ -1,0 +1,176 @@
+---
+title: "10.6 Presentar tu proyecto al mundo"
+subtitle: "Documenta, prueba y comparte tu trabajo"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Escribir un README profesional para tu proyecto
+- Documentar funciones y módulos con docstrings
+- Crear una presentación clara de tu trabajo
+- Preparar tu proyecto para ser evaluado
+
+## La analogía de la vitrina
+
+Imagina que construyes el mueble más hermoso del mundo, pero lo guardas en un sótano oscuro. Nadie lo verá. Nadie sabrá lo que hiciste.
+
+**Tu código es ese mueble.** El README, la documentación y la presentación son la vitrina que lo muestra al mundo.
+
+> **Beautiful is better than ugly.** Un proyecto bien presentado es tan importante como un proyecto bien codeado.
+
+## El README perfecto
+
+Un README profesional responde estas preguntas:
+
+```markdown
+# 📋 Gestor de Tareas Personal
+
+> Una aplicación de consola para organizar tu día a día,
+> construida con Python puro.
+
+## ¿Qué problema resuelve?
+
+¿Cuántas veces has olvidado una tarea importante? Este programa
+actúa como tu asistente personal: guarda, organiza y te muestra
+tus tareas pendientes. Se ejecuta en la terminal y guarda todo
+automáticamente.
+
+## ✨ Características
+
+- ✅ Crear tareas con título y descripción
+- ✅ Marcar tareas como completadas
+- ✅ Eliminar tareas que ya no necesitas
+- ✅ Ver estadísticas de progreso
+- ✅ Persistencia automática en JSON
+- ✅ Validación de entrada del usuario
+
+## 🚀 Instalación y uso
+
+```bash
+# 1. Clona o descarga el proyecto
+cd gestor_tareas
+
+# 2. Ejecuta (no requiere instalación adicional)
+python main.py
+```
+
+## 📁 Estructura del proyecto
+
+```
+gestor_tareas/
+├── main.py              # Punto de entrada
+├── datos/
+│   └── tareas.json      # Datos persistentes
+└── modulos/
+    ├── gestor.py        # Lógica CRUD
+    └── utilidades.py    # Funciones auxiliares
+```
+
+## 🧪 Cómo probarlo
+
+1. Ejecuta `python main.py`
+2. Agrega al menos 3 tareas
+3. Marca una como completada
+4. Elimina una tarea
+5. Verifica que los cambios persistan al reiniciar
+
+## 📚 Lo que aprendí
+
+- Manejo de archivos JSON para persistencia
+- Programación orientada a objetos con clases
+- Validación de entrada del usuario
+- Separación de responsabilidades en módulos
+- Principios del Zen de Python aplicados
+
+## 👤 Autor
+
+Tu Nombre — 2026
+```
+
+## Docstrings profesionales
+
+Cada función debe tener un docstring que explique **qué hace**, **qué recibe** y **qué retorna**:
+
+```python
+def completar(self, id_tarea):
+    """Marca una tarea como completada.
+
+    Args:
+        id_tarea: El identificador numérico de la tarea.
+
+    Returns:
+        True si la tarea se encontró y se completó,
+        False si el ID no existe.
+    """
+    for tarea in self.tareas:
+        if tarea["id"] == id_tarea:
+            tarea["completada"] = True
+            self._guardar()
+            return True
+    return False
+```
+
+> **Explicit is better than implicit.** El docstring le dice al futuro programador exactamente qué esperar.
+
+## Checklist de presentación
+
+Antes de entregar tu proyecto, verifica:
+
+| Criterio | ¿Listo? |
+|----------|---------|
+| El programa se ejecuta sin errores | ☐ |
+| El README explica qué hace y cómo usarlo | ☐ |
+| Todas las funciones tienen docstrings | ☐ |
+| Los nombres de variables son descriptivos | ☐ |
+| No hay código comentado innecesario | ☐ |
+| Se manejan errores de entrada del usuario | ☐ |
+| Los datos persisten entre ejecuciones | ☐ |
+| La estructura de carpetas es clara | ☐ |
+
+## Cómo presentar tu proyecto oralmente
+
+Usa esta estructura de 3 minutos:
+
+```
+1. EL PROBLEMA (30 seg)
+   "¿Les ha pasado que...? Por eso creé..."
+
+2. LA SOLUCIÓN (60 seg)
+   "Mi programa permite... Las características principales son..."
+
+3. DEMO (60 seg)
+   "Déjenme mostrarles cómo funciona..."
+
+4. LO QUE APRENDÍ (30 seg)
+   "El mayor desafío fue... Aprendí que..."
+```
+
+> **Simple is better than complex.** En 3 minutos, enfócate en lo esencial.
+
+## Errores comunes al presentar
+
+| Error | ❌ Así no | ✅ Así sí |
+|-------|-----------|-----------|
+| README vacío | Solo el nombre del proyecto | Descripción, uso, estructura |
+| Sin docstrings | Código sin explicación | Cada función documentada |
+| No probar antes | "En mi máquina funciona" | Probar en limpio |
+| Código desordenado | Todo en un archivo | Módulos separados |
+| No manejar errores | Crash ante entrada inválida | Mensaje claro y continuar |
+
+## Resumen
+
+| Elemento | Propósito | Zen de Python |
+|----------|-----------|---------------|
+| README | Carta de presentación | Explicit is better than implicit |
+| Docstrings | Documentar funciones | Readability counts |
+| Estructura limpia | Facilitar navegación | Beautiful is better than ugly |
+| Demo funcional | Probar que funciona | Simple is better than complex |
+| Manejo de errores | Robustez | Errors should never pass silently |
+
+---
+
+**Anterior:** [10.5 Proyecto guiado: Analizador de Datos](05-proyecto-analizador-datos.qmd)
+
+**Siguiente:** [Cierre del curso](99-cierre-curso.qmd)

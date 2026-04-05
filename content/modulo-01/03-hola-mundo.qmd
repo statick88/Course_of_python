@@ -1,0 +1,244 @@
+---
+title: "1.3 Tu primer programa: Hola Mundo"
+subtitle: "Escribe, ejecuta y entiende tu primer código Python"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Escribir y ejecutar tu primer programa en Python
+- Entender qué hace la función `print()`
+- Diferenciar entre código fuente y salida
+- Comprender qué es una instrucción
+
+## Tu primer programa
+
+En programación, la tradición dice que tu primer programa debe mostrar "Hola Mundo" en pantalla. No es solo una tradición — es la forma más simple de verificar que todo funciona.
+
+```python
+# Este es mi primer programa en Python
+print("¡Hola Mundo!") # <1>
+```
+
+1. La función `print()` muestra el texto "¡Hola Mundo!" en la pantalla.
+
+**Salida:**
+```
+¡Hola Mundo!
+```
+
+## ¿Qué acaba de pasar?
+
+Desglosemos cada parte:
+
+| Parte | Qué es | Para qué sirve |
+|-------|--------|----------------|
+| `print` | **Función** | Muestra información en pantalla |
+| `(` y `)` | **Paréntesis** | Indican que estamos llamando a la función |
+| `"¡Hola Mundo!"` | **Argumento** | Lo que le pasamos a la función para que lo muestre |
+| `#` | **Comentario** | Texto que Python ignora — es para humanos |
+
+### La analogía de la cafetería
+
+Piensa en `print()` como pedir un café:
+
+- `print` = el **barista** (quien hace el trabajo)
+- `()` = la **orden** (le dices que trabaje)
+- `"¡Hola Mundo!"` = el **tipo de café** (qué quieres que haga)
+
+Sin el barista, no hay café. Sin `print`, no hay salida en pantalla.
+
+## La función `print()` en detalle
+
+`print()` puede mostrar mucho más que texto simple:
+
+### Múltiples valores
+
+```python
+# Puedes pasar varios valores separados por coma
+print("Python", "es", "genial") # <1>
+```
+
+1. `print()` acepta múltiples argumentos separados por coma. Por defecto, los separa con un espacio.
+
+**Salida:**
+```
+Python es genial
+```
+
+### Números
+
+```python
+# También imprime números
+print(42) # <1>
+print(3.14159) # <2>
+print(-7) # <3>
+```
+
+1. Imprime un número entero (int).
+2. Imprime un número decimal (float).
+3. Imprime un número negativo.
+
+### Operaciones matemáticas
+
+```python
+# Python calcula antes de imprimir
+print(2 + 3) # <1>
+print(10 * 5) # <2>
+print(100 / 3) # <3>
+```
+
+1. Python evalúa la suma `2 + 3` y luego imprime el resultado `5`.
+2. Python evalúa la multiplicación `10 * 5` y luego imprime el resultado `50`.
+3. Python evalúa la división `100 / 3` y luego imprime el resultado `33.333...`.
+
+### El separador
+
+Por defecto, `print()` separa los valores con un espacio. Puedes cambiarlo:
+
+```python
+# Usando guión como separador
+print("Python", "es", "genial", sep="-") # <1>
+```
+
+1. El argumento `sep="-"` cambia el separador predeterminado (espacio) por un guión.
+
+**Salida:**
+```
+Python-es-genial
+```
+
+### El final de línea
+
+Por defecto, `print()` agrega un salto de línea al final. Puedes cambiarlo:
+
+```python
+# Usando end para cambiar el final de línea
+print("Hola", end=" ") # <1>
+print("Mundo") # <2>
+```
+
+1. `end=" "` cambia el salto de línea por un espacio, permitiendo que el siguiente `print()` continúe en la misma línea.
+2. Este `print()` se imprime en la misma línea que el anterior.
+
+**Salida:**
+```
+Hola Mundo
+```
+
+## Comentarios: tu mejor amigo
+
+Los comentarios son notas que dejas en el código. Python los **ignora completamente**.
+
+```python
+# Esto es un comentario de una línea # <1>
+
+"""
+Esto es un comentario
+de múltiples líneas # <2>
+"""
+
+print("Los comentarios no se imprimen")  # <3>
+```
+
+1. Los comentarios de una línea comienzan con `#`.
+2. Los comentarios de múltiples líneas se escriben entre triple comillas `"""`.
+3. Los comentarios al final de la línea explican el código sin interferir con su ejecución.
+
+### Reglas de oro para comentarios
+
+1. **Explica el POR QUÉ, no el QUÉ**
+   - ❌ Mal: `# Imprime el nombre` → eso ya se ve en el código
+   - ✅ Bien: `# Usamos nombre en mayúsculas para consistencia con la base de datos`
+
+2. **Mantenlos actualizados**
+   - Un comentario viejo es peor que ningún comentario
+
+3. **Si el código necesita muchos comentarios, probablemente es muy complejo**
+
+## Errores comunes
+
+### Error de sintaxis: olvidar las comillas
+
+```python
+# Esto da ERROR — Python piensa que Hola es una variable
+# print(Hola Mundo) # <1>
+
+# Esto funciona — las comillas indican que es texto
+print("Hola Mundo") # <2>
+```
+
+1. Sin comillas, Python interpreta `Hola` y `Mundo` como nombres de variables, no como texto.
+2. Las comillas (simples o dobles) indican que el contenido es una cadena de texto (str).
+
+### Error de sintaxis: olvidar el paréntesis
+
+```python
+# Esto da ERROR — falta el paréntesis de cierre
+# print("Hola Mundo" # <1>
+
+# Esto funciona
+print("Hola Mundo") # <2>
+```
+
+1. Cada paréntesis de apertura `(` debe tener su paréntesis de cierre `)`.
+2. La sintaxis correcta requiere ambos paréntesis.
+
+### Error de mayúsculas
+
+```python
+# Esto da ERROR — Python distingue mayúsculas
+# Print("Hola Mundo") # <1>
+# PRINT("Hola Mundo") # <2>
+
+# Esto funciona — todo en minúsculas
+print("Hola Mundo") # <3>
+```
+
+1. `Print` con mayúscula inicial no existe en Python.
+2. `PRINT` en mayúsculas tampoco existe.
+3. `print` en minúsculas es la función correcta.
+
+> **Regla:** Python es **case-sensitive**. `print`, `Print` y `PRINT` son tres cosas diferentes.
+
+## Desafío rápido
+
+Sin ejecutar el código, ¿qué crees que imprime esto?
+
+```python
+print("5" + "3") # <1>
+print(5 + 3) # <2>
+```
+
+1. `"5" + "3"` concatena dos cadenas de texto, resultando en `"53"`.
+2. `5 + 3` suma dos números enteros, resultando en `8`.
+
+<details>
+<summary>Ver respuesta</summary>
+
+```
+53
+8
+```
+
+- `"5" + "3"` → **concatenación de texto** → `"53"`
+- `5 + 3` → **suma numérica** → `8`
+
+Más sobre esto en la lección de tipos de datos.
+</details>
+
+## Resumen
+
+| Concepto | Ejemplo |
+|----------|---------|
+| Imprimir texto | `print("Hola")` |
+| Imprimir número | `print(42)` |
+| Múltiples valores | `print("a", "b", "c")` |
+| Separador personalizado | `print("a", "b", sep="-")` |
+| Final de línea personalizado | `print("Hola", end=" ")` |
+| Comentario | `# Esto es un comentario` |
+
+---
+
+**Siguiente:** [1.4 Variables: las cajas de la memoria](04-variables.qmd)

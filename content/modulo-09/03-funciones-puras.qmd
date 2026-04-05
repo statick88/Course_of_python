@@ -1,0 +1,218 @@
+---
+title: "9.3 Funciones puras: predecibles y testeables"
+subtitle: "Misma entrada → misma salida, siempre. Sin sorpresas."
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es una función pura y por qué importa
+- Identificar efectos secundarios y cómo minimizarlos
+- Diseñar funciones predecibles que sean fáciles de testear
+- Saber cuándo es aceptable tener efectos secundarios
+
+## ¿Qué es una función pura?
+
+Una función pura es como una **máquina expendedora de confianza**: metes la misma moneda, presionas el mismo botón, y siempre recibes el mismo producto. No importa si es lunes o viernes, si está lloviendo o haciendo sol — el resultado es predecible.
+
+Una función pura cumple **dos reglas**:
+
+1. **Misma entrada → misma salida** siempre
+2. **No tiene efectos secundarios** (no modifica nada externo)
+
+```python
+# ✅ Función pura: siempre devuelve lo mismo para los mismos argumentos
+def calcular_area_rectangulo(base, altura):  # <1>
+    return base * altura
+
+# Siempre: calcular_area_rectangulo(5, 3) → 15
+# No importa cuándo, dónde o cuántas veces la llames
+```
+
+1. Esta función es pura: solo depende de sus parámetros y no modifica nada externo. Si llamas `calcular_area_rectangulo(5, 3)` un millón de veces, siempre devolverá `15`.
+
+```python
+# ❌ Función impura: depende de algo externo
+contador_global = 0  # <1>
+
+def incrementar():  # <2>
+    global contador_global
+    contador_global += 1
+    return contador_global
+
+# Primera vez: 1
+# Segunda vez: 2
+# Tercera vez: 3
+# ¡Misma llamada, diferente resultado!
+```
+
+1. `contador_global` es una variable externa que la función modifica.
+2. `incrementar()` es impura: depende de un estado externo y lo modifica. No puedes predecir su resultado sin saber el estado actual del contador.
+
+## Los dos pecados de las funciones impuras
+
+### Pecado 1: Depender de estado externo
+
+```python
+# ❌ Impura: depende de una variable global
+tasa_impuesto = 0.16  # <1>
+
+def calcular_precio_final(precio):
+    return precio * (1 + tasa_impuesto)  # <2>
+
+# Si alguien cambia tasa_impuesto, el resultado cambia
+# sin que la función lo indique
+```
+
+1. `tasa_impuesto` es una variable global externa a la función.
+2. El resultado depende de algo que la función no controla. Si otro código cambia `tasa_impuesto`, la función devuelve valores diferentes.
+
+```python
+# ✅ Pura: todo lo que necesita viene como parámetro
+def calcular_precio_final(precio, tasa_impuesto):  # <1>
+    return precio * (1 + tasa_impuesto)  # <2>
+
+# calcular_precio_final(100, 0.16) → 116.0
+# Siempre. Sin sorpresas.
+```
+
+1. La tasa de impuesto ahora es un parámetro explícito.
+2. La función es predecible: mismos argumentos = mismo resultado.
+
+### Pecado 2: Modificar estado externo (efectos secundarios)
+
+```python
+# ❌ Impura: modifica una lista que recibió como argumento
+def agregar_usuario(usuarios, nombre):
+    usuarios.append(nombre)  # <1>
+    return usuarios
+
+# La lista original se modifica — efecto secundario
+lista_original = ["Ana", "Pedro"]
+agregar_usuario(lista_original, "María")
+print(lista_original)  # ["Ana", "Pedro", "María"] — ¡se modificó!
+```
+
+1. `append()` modifica la lista original. Este es un efecto secundario: la función cambia algo fuera de su alcance.
+
+```python
+# ✅ Pura: crea una nueva lista sin modificar la original
+def agregar_usuario(usuarios, nombre):
+    nueva_lista = usuarios + [nombre]  # <1>
+    return nueva_lista
+
+# La lista original permanece intacta
+lista_original = ["Ana", "Pedro"]
+nueva_lista = agregar_usuario(lista_original, "María")
+print(lista_original)  # ["Ana", "Pedro"] — intacta
+print(nueva_lista)     # ["Ana", "Pedro", "María"] — nueva lista
+```
+
+1. El operador `+` crea una nueva lista sin modificar la original. No hay efecto secundario.
+
+## Cuándo SÍ usar funciones impuras
+
+No todas las funciones pueden ser puras. Un programa que **no hace nada externo** es como un restaurante donde cocinan pero nunca sirven: técnicamente perfecto, pero inútil.
+
+Las funciones impuras son necesarias para:
+
+| Acción | Por qué es impura | Ejemplo |
+|--------|-------------------|---------|
+| Leer archivos | Depende del contenido del archivo | `leer_configuracion()` |
+| Escribir archivos | Modifica el sistema de archivos | `guardar_reporte()` |
+| Peticiones HTTP | Depende de la respuesta del servidor | `obtener_clima(ciudad)` |
+| Base de datos | Lee/escribe estado externo | `guardar_usuario(datos)` |
+| Imprimir en pantalla | Efecto secundario visible | `print("Hola")` |
+
+### La estrategia: separar lo puro de lo impuro
+
+```python
+# ✅ Separación: lógica pura + efectos secundarios al borde
+
+# 1. Función pura: la lógica de negocio
+def calcular_descuento(precio, porcentaje):  # <1>
+    """Calcula el descuento. Siempre mismo resultado."""
+    return precio * (porcentaje / 100)
+
+# 2. Función impura: interacción con el mundo exterior
+def aplicar_descuento_y_mostrar(precio, porcentaje):  # <2>
+    """Coordina: calcula (puro) + muestra (impuro)."""
+    descuento = calcular_descuento(precio, porcentaje)
+    precio_final = precio - descuento
+    print(f"Descuento: ${descuento:.2f}")
+    print(f"Precio final: ${precio_final:.2f}")
+    return precio_final
+```
+
+1. `calcular_descuento` es pura: puedes testearla sin archivos, sin red, sin nada.
+2. `aplicar_descuento_y_mostrar` es impura (usa `print`), pero delega la lógica a la función pura.
+
+> **Simple is better than complex.** Mantén la mayor cantidad de lógica en funciones puras. Las funciones impuras deben ser simples coordinadoras.
+
+## Beneficios de las funciones puras
+
+```python
+# Beneficio 1: Fáciles de testear
+def es_palindromo(texto):
+    """Verifica si un texto se lee igual al revés."""
+    texto_limpio = texto.lower().replace(" ", "")
+    return texto_limpio == texto_limpio[::-1]
+
+# Test: sin configuración, sin estado, sin sorpresas
+assert es_palindromo("Ana") == True
+assert es_palindromo("hola") == False
+assert es_palindromo("reconocer") == True
+```
+
+```python
+# Beneficio 2: Seguras para usar en cualquier orden
+def sumar(a, b):
+    return a + b
+
+def multiplicar(a, b):
+    return a * b
+
+# No importa el orden:
+resultado1 = sumar(2, 3) + multiplicar(4, 5)  # <1>
+resultado2 = multiplicar(4, 5) + sumar(2, 3)  # <2>
+# resultado1 == resultado2 == 25
+```
+
+1. Ambas funciones son puras, así que el orden de ejecución no afecta el resultado.
+2. Mismo resultado, orden diferente. Las funciones puras son **conmutativas** en cuanto a efectos.
+
+```python
+# Beneficio 3: Fáciles de razonar
+def calcular_total(pedido):
+    """Calcula el total de un pedido."""
+    subtotal = sum(item["precio"] * item["cantidad"] for item in pedido)
+    impuesto = subtotal * 0.16
+    return subtotal + impuesto
+
+# Puedes leer esta función y saber exactamente qué hace.
+# No hay variables ocultas, no hay efectos sorpresa.
+```
+
+## Errores comunes
+
+| Error | ❌ Impura | ✅ Pura |
+|-------|-----------|---------|
+| Variable global | `total += precio` (global) | `return total + precio` |
+| Modificar parámetro | `lista.append(x)` | `return lista + [x]` |
+| Depender del tiempo | `datetime.now()` como default | `def procesar(fecha_actual):` |
+| Imprimir dentro | `print()` en la lógica | `return valor` (imprime fuera) |
+
+## Resumen
+
+| Concepto | Característica | Principio del Zen |
+|----------|----------------|-------------------|
+| Función pura | Misma entrada → misma salida | Simple is better than complex |
+| Sin efectos secundarios | No modifica estado externo | Explicit is better than implicit |
+| Parámetros explícitos | Todo lo necesario viene como argumento | Readability counts |
+| Separar puro/impuro | Lógica pura, efectos al borde | Beautiful is better than ugly |
+| Fáciles de testear | No necesitan configuración | Errors should never pass silently |
+
+---
+
+**Anterior:** [9.2 Nombres descriptivos](02-nombres-descriptivos.qmd) | **Siguiente:** [9.4 Manejo de errores](04-manejo-errores.qmd)

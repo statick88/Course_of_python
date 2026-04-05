@@ -1,0 +1,47 @@
+---
+title: "Módulo 5: Listas y Tuplas"
+---
+
+## 🎯 Objetivos del Módulo
+
+Al completar este módulo, serás capaz de:
+
+- ✅ Crear y manipular listas para almacenar colecciones ordenadas de datos
+- ✅ Acceder a elementos por índice y extraer secciones con slicing
+- ✅ Usar los métodos principales de listas: append, insert, remove, pop, sort
+- ✅ Iterar sobre listas con `for`, `enumerate()` y `zip()`
+- ✅ Crear y usar tuplas para datos inmutables
+- ✅ Trabajar con listas anidadas (matrices) para datos bidimensionales
+- ✅ Elegir entre lista y tupla según la situación
+
+## 📚 Contenido
+
+| Lección | Tema | Tipo |
+|---------|------|------|
+| [5.1](01-crear-listas.qmd) | Crear listas: tu primera colección ordenada | 📖 Teoría |
+| [5.2](02-indexar-slicing.qmd) | Indexar y slicing: encontrar lo que necesitas | 📖 Teoría |
+| [5.3](03-metodos-listas.qmd) | Métodos de listas: la navaja suiza | 💻 Práctica |
+| [5.4](04-iterar-listas.qmd) | Iterar listas: recorrer colecciones | 📖 Teoría |
+| [5.5](05-tuplas.qmd) | Tuplas: datos que no cambian | 📖 Teoría |
+| [5.6](06-listas-anidadas.qmd) | Listas anidadas: más allá de una dimensión | 📖 Teoría |
+| [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
+
+## 🏆 Desafíos del Módulo
+
+| # | Desafío | Dificultad |
+|---|---------|------------|
+| [1](desafio-01-promedio-notas.qmd) | Promedio de notas | ⭐ Fácil |
+| [2](desafio-02-invertir-lista.qmd) | Invertir una lista | ⭐ Fácil |
+| [3](desafio-03-eliminar-duplicados.qmd) | Eliminar duplicados | ⭐⭐ Media |
+| [4](desafio-04-estadisticas-lista.qmd) | Estadísticas de una lista | ⭐⭐ Media |
+| [5](desafio-05-combinar-listas.qmd) | Combinar listas ordenadas | ⭐⭐ Media |
+| [6](desafio-06-matriz-operaciones.qmd) | Operaciones con matrices | ⭐⭐⭐ Difícil |
+| [7](desafio-07-gestor-inventario.qmd) | Gestor de inventario | ⭐⭐⭐ Difícil |
+
+## 🛠️ Recursos
+
+- [Cheat Sheet del Módulo 5](recursos/cheat-sheet-modulo-5.md) — Referencia rápida de listas y tuplas
+
+---
+
+**Anterior:** [Módulo 4](../modulo-04/index.qmd) | **Siguiente:** [5.1 Crear listas](01-crear-listas.qmd)

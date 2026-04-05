@@ -1,0 +1,202 @@
+---
+title: "7.4 Manejo de archivos CSV"
+subtitle: "Tablas de datos en archivos de texto plano"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es un archivo CSV y su estructura
+- Leer archivos CSV con el módulo `csv` integrado
+- Escribir archivos CSV con encabezados
+- Usar `DictReader` y `DictWriter` para trabajar con diccionarios
+
+## ¿Qué es un CSV? — La analogía de la hoja de cálculo
+
+Un archivo CSV (**Comma-Separated Values**) es como una **hoja de cálculo guardada como texto plano**:
+
+- **Cada fila** es una línea del archivo
+- **Cada columna** está separada por una coma
+- **La primera fila** suele ser el encabezado (nombres de columnas)
+
+```
+nombre,edad,ciudad
+Ana,28,Quito
+Carlos,35,Guayaquil
+María,22,Cuenca
+```
+
+Esto es exactamente lo que verías si abrieras un CSV en un editor de texto. Simple, universal, y compatible con Excel, Google Sheets y cualquier programa.
+
+> **Simple is better than complex.** CSV es el formato de datos más simple que existe. Sin librerías externas, sin complicaciones.
+
+## Leer CSV con `csv.reader`
+
+Python incluye el módulo `csv` que hace el trabajo sucio por ti: maneja comas dentro de comillas, saltos de línea, y otros casos especiales.
+
+```python
+import csv
+
+# Archivo: empleados.csv
+# nombre,edad,ciudad
+# Ana,28,Quito
+# Carlos,35,Guayaquil
+# María,22,Cuenca
+
+with open("empleados.csv", "r") as archivo:
+    lector = csv.reader(archivo) # <1>
+    
+    for fila in lector:
+        print(fila) # <2>
+```
+
+1. `csv.reader()` crea un objeto que lee el archivo CSV y devuelve cada fila como una **lista de strings**.
+2. Cada `fila` es una lista: `['Ana', '28', 'Quito']`. Los números llegan como texto — debes convertirlos si los necesitas como números.
+
+**Salida:**
+```
+['nombre', 'edad', 'ciudad']
+['Ana', '28', 'Quito']
+['Carlos', '35', 'Guayaquil']
+['María', '22', 'Cuenca']
+```
+
+### Saltar el encabezado
+
+```python
+import csv
+
+with open("empleados.csv", "r") as archivo:
+    lector = csv.reader(archivo)
+    
+    encabezado = next(lector) # <1>
+    print(f"Columnas: {encabezado}")
+    
+    for fila in lector: # <2>
+        nombre = fila[0]
+        edad = int(fila[1]) # <3>
+        ciudad = fila[2]
+        print(f"{nombre} tiene {edad} años y vive en {ciudad}")
+```
+
+1. `next(lector)` avanza una fila y devuelve el encabezado: `['nombre', 'edad', 'ciudad']`.
+2. El bucle `for` ahora itera solo sobre las filas de datos, sin el encabezado.
+3. `int(fila[1])` convierte la edad de texto a número entero.
+
+## `csv.DictReader`: la forma elegante
+
+En vez de usar índices (`fila[0]`, `fila[1]`), `DictReader` te da cada fila como un **diccionario** donde las claves son los nombres de las columnas.
+
+```python
+import csv
+
+with open("empleados.csv", "r") as archivo:
+    lector = csv.DictReader(archivo) # <1>
+    
+    for fila in lector:
+        print(fila) # <2>
+```
+
+1. `DictReader` usa la primera fila del CSV como claves del diccionario.
+2. Cada `fila` es un diccionario: `{'nombre': 'Ana', 'edad': '28', 'ciudad': 'Quito'}`.
+
+### Procesar datos con `DictReader`
+
+```python
+import csv
+
+with open("empleados.csv", "r") as archivo:
+    lector = csv.DictReader(archivo)
+    
+    total_edad = 0
+    contador = 0
+    ciudades = set() # <1>
+    
+    for fila in lector:
+        edad = int(fila["edad"]) # <2>
+        total_edad += edad
+        contador += 1
+        ciudades.add(fila["ciudad"]) # <3>
+    
+    promedio = total_edad / contador
+    print(f"Promedio de edad: {promedio:.1f} años")
+    print(f"Ciudades: {', '.join(ciudades)}")
+```
+
+1. `set()` crea una colección sin duplicados — perfecto para obtener ciudades únicas.
+2. Acceder por nombre de columna: `fila["edad"]` en vez de `fila[1]`. Mucho más legible.
+3. `.add()` agrega la ciudad al conjunto. Si ya existe, no la duplica.
+
+> **Readability counts.** `fila["edad"]` se lee como una oración. `fila[1]` requiere que recuerdes qué columna es la segunda.
+
+## Escribir CSV con `csv.writer`
+
+```python
+import csv
+
+# Datos a escribir
+productos = [
+    ["Producto", "Precio", "Stock"], # <1>
+    ["Teclado", 25.99, 150],
+    ["Mouse", 12.50, 89],
+    ["Monitor", 199.99, 23],
+]
+
+with open("productos.csv", "w", newline="") as archivo: # <2>
+    escritor = csv.writer(archivo) # <3>
+    escritor.writerows(productos) # <4>
+
+print("Archivo 'productos.csv' creado exitosamente")
+```
+
+1. La primera fila es el encabezado con los nombres de las columnas.
+2. `newline=""` es **importante**: sin esto, Python agrega saltos de línea extra en Windows, creando líneas vacías entre cada fila.
+3. `csv.writer()` crea el objeto escritor.
+4. `.writerows()` escribe todas las filas de una vez. También existe `.writerow()` para una sola fila.
+
+## `csv.DictWriter`: escribir con diccionarios
+
+```python
+import csv
+
+# Lista de diccionarios — cada diccionario es una fila
+contactos = [
+    {"nombre": "Ana", "email": "ana@ejemplo.com", "telefono": "0991234567"},
+    {"nombre": "Carlos", "email": "carlos@ejemplo.com", "telefono": "0987654321"},
+    {"nombre": "María", "email": "maria@ejemplo.com", "telefono": "0976543210"},
+]
+
+campos = ["nombre", "email", "telefono"] # <1>
+
+with open("contactos.csv", "w", newline="") as archivo:
+    escritor = csv.DictWriter(archivo, fieldnames=campos) # <2>
+    escritor.writeheader() # <3>
+    escritor.writerows(contactos) # <4>
+```
+
+1. `fieldnames` define el orden de las columnas en el archivo CSV.
+2. `DictWriter` necesita saber los nombres de los campos para crear el encabezado.
+3. `.writeheader()` escribe la primera fila con los nombres de las columnas.
+4. `.writerows()` escribe cada diccionario como una fila del CSV.
+
+## Resumen
+
+| Clase | Para qué sirve | Devuelve |
+|-------|----------------|----------|
+| `csv.reader` | Leer CSV como listas | `['Ana', '28', 'Quito']` |
+| `csv.DictReader` | Leer CSV como diccionarios | `{'nombre': 'Ana', ...}` |
+| `csv.writer` | Escribir CSV desde listas | Filas con `.writerow()` |
+| `csv.DictWriter` | Escribir CSV desde diccionarios | Filas con `.writerows()` |
+
+### Principios del Zen aplicados
+
+| Principio | Cómo se aplica |
+|-----------|----------------|
+| **Readability counts** | `fila["edad"]` vs `fila[1]` |
+| **Simple is better than complex** | El módulo `csv` maneja casos especiales por ti |
+| **Explicit is better than implicit** | `newline=""` para evitar líneas vacías |
+
+---
+
+**Anterior:** [7.3 Escribir archivos](03-escribir-archivos.qmd) | **Siguiente:** [7.5 Manejo de JSON](05-manejo-json.qmd)

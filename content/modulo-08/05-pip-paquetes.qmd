@@ -1,0 +1,206 @@
+---
+title: "8.5 pip: el gestor de paquetes de Python"
+subtitle: "Instala el poder de la comunidad"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es PyPI y cómo funciona pip
+- Instalar, actualizar y desinstalar paquetes
+- Usar `requirements.txt` para gestionar dependencias
+- Conocer los paquetes más populares de Python
+
+## ¿Qué es pip?
+
+Si la **biblioteca estándar** es la caja de herramientas que viene con Python, **pip** es la **ferretería** donde compras herramientas especializadas.
+
+Python tiene una comunidad de más de **400,000 paquetes** publicados en **PyPI** (Python Package Index). pip es el programa que te permite descargar e instalar cualquiera de ellos.
+
+```bash
+# pip viene instalado con Python 3.4+
+pip --version        # Verifica que pip está instalado
+pip install requests # Instala el paquete "requests"
+```
+
+> **There should be one obvious way to do it.** pip es la forma oficial y estándar de instalar paquetes en Python.
+
+## Instalar tu primer paquete
+
+El paquete `requests` es el más popular para hacer peticiones HTTP. Vamos a instalarlo:
+
+```bash
+# Instalar un paquete
+pip install requests  # <1>
+
+# Ver qué se instaló
+pip show requests  # <2>
+```
+
+1. `pip install requests` descarga el paquete desde PyPI y lo instala en tu Python. Automáticamente instala también sus dependencias (otros paquetes que necesita).
+2. `pip show requests` muestra información del paquete: versión, ubicación, dependencias y autor.
+
+Ahora puedes usarlo en tu código:
+
+```python
+import requests  # <1> — ya no da error porque está instalado
+
+# Descargar una página web
+respuesta = requests.get("https://api.github.com")  # <2>
+print(respuesta.status_code)  # 200 — éxito <3>
+print(respuesta.json())       # Los datos en formato diccionario <4>
+```
+
+1. Ahora `import requests` funciona porque pip lo instaló.
+2. `requests.get()` hace una petición HTTP GET a la URL. Es como abrir una página en el navegador, pero desde código.
+3. `status_code` 200 significa que la petición fue exitosa.
+4. `.json()` convierte la respuesta JSON a un diccionario Python automáticamente.
+
+## Comandos esenciales de pip
+
+| Comando | Qué hace | Ejemplo |
+|---------|----------|---------|
+| `pip install paquete` | Instala un paquete | `pip install requests` |
+| `pip install paquete==1.0` | Instala versión específica | `pip install django==4.2` |
+| `pip install paquete --upgrade` | Actualiza a la última versión | `pip install requests --upgrade` |
+| `pip uninstall paquete` | Desinstala un paquete | `pip uninstall requests` |
+| `pip list` | Lista todos los paquetes instalados | `pip list` |
+| `pip show paquete` | Muestra detalles de un paquete | `pip show requests` |
+| `pip search palabra` | Busca paquetes (limitado) | `pip search web` |
+
+### Instalar versiones específicas
+
+```bash
+# Instalar una versión exacta
+pip install flask==2.3.0  # <1>
+
+# Instalar una versión compatible (mayor o igual, menor que)
+pip install "django>=4.0,<5.0"  # <2>
+
+# Instalar la última versión compatible
+pip install "requests>=2.28"  # <3>
+```
+
+1. `==` instala exactamente esa versión. Útil cuando necesitas compatibilidad exacta.
+2. `>=4.0,<5.0` instala cualquier versión 4.x. Es más flexible y permite actualizaciones de seguridad.
+3. `>=2.28` instala la versión más reciente que sea al menos 2.28.
+
+## requirements.txt — La receta de tu proyecto
+
+Cuando compartes tu proyecto, necesitas que otros sepan qué paquetes instalar. El archivo `requirements.txt` es esa **lista de ingredientes**:
+
+```
+# requirements.txt
+# Lista de dependencias del proyecto
+
+requests==2.31.0      # <1> — versión exacta
+flask>=2.3.0          # <2> — versión mínima
+pandas>=1.5,<2.0      # <3> — rango de versiones
+numpy                 # <4> — cualquier versión
+```
+
+1. `requests==2.31.0` — versión exacta. Garantiza que todos usen la misma versión.
+2. `flask>=2.3.0` — al menos esta versión. Permite actualizaciones compatibles.
+3. `pandas>=1.5,<2.0` — entre 1.5 y 1.99. Evita la versión 2.0 que podría romper cosas.
+4. `numpy` — sin restricción. Instala la última disponible.
+
+### Generar requirements.txt automáticamente
+
+```bash
+# Guardar todos los paquetes instalados
+pip freeze > requirements.txt  # <1>
+
+# Instalar todo desde el archivo
+pip install -r requirements.txt  # <2>
+```
+
+1. `pip freeze` lista todos los paquetes con sus versiones exactas. El `>` guarda la salida en el archivo.
+2. `-r requirements.txt` lee el archivo e instala todo lo que falta. Un comando y tu proyecto funciona.
+
+## Paquetes populares que debes conocer
+
+| Paquete | Para qué sirve | Instalación |
+|---------|----------------|-------------|
+| `requests` | Peticiones HTTP | `pip install requests` |
+| `flask` | Framework web ligero | `pip install flask` |
+| `django` | Framework web completo | `pip install django` |
+| `pandas` | Análisis de datos | `pip install pandas` |
+| `numpy` | Cálculo numérico | `pip install numpy` |
+| `matplotlib` | Gráficos y visualización | `pip install matplotlib` |
+| `pytest` | Testing de código | `pip install pytest` |
+| `black` | Formateo automático de código | `pip install black` |
+| `beautifulsoup4` | Scraping web | `pip install beautifulsoup4` |
+| `python-dotenv` | Variables de entorno | `pip install python-dotenv` |
+
+## Errores comunes con pip
+
+### ❌ Error: Permission denied
+
+```bash
+# ❌ Intentar instalar sin permisos
+pip install requests  # PermissionError: [Errno 13] Permission denied
+```
+
+**Solución:** Usa entornos virtuales (ver lección siguiente) o el flag `--user`:
+
+```bash
+# ✅ Instalar solo para tu usuario
+pip install --user requests
+
+# ✅ O mejor: usa un entorno virtual
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+pip install requests
+```
+
+### ❌ Error: Paquete no encontrado
+
+```bash
+# ❌ Nombre incorrecto
+pip install request  # ERROR: Could not find a version that satisfies the requirement
+
+# ✅ Nombre correcto
+pip install requests  # Funciona — nota la 's' al final
+```
+
+**Solución:** Verifica el nombre exacto en [pypi.org](https://pypi.org).
+
+### ❌ Error: Conflicto de dependencias
+
+```bash
+# ❌ Dos paquetes necesitan versiones diferentes del mismo paquete
+pip install paquete-a  # necesita requests==2.28
+pip install paquete-b  # necesita requests==2.31
+```
+
+**Solución:** Los entornos virtuales aíslan cada proyecto para evitar estos conflictos.
+
+### ❌ Error: pip desactualizado
+
+```bash
+# ⚠️ pip te avisa cuando hay una versión nueva
+pip install --upgrade pip  # <1> — actualiza pip mismo
+```
+
+1. Mantener pip actualizado es importante para seguridad y compatibilidad con paquetes nuevos.
+
+## Resumen
+
+| Comando | Para qué sirve | Principio del Zen |
+|---------|----------------|-------------------|
+| `pip install` | Instalar paquetes | Simple is better than complex |
+| `pip freeze > requirements.txt` | Documentar dependencias | Explicit is better than implicit |
+| `pip install -r requirements.txt` | Reproducir entorno | Readability counts |
+| `pip show` | Ver detalles del paquete | Readability counts |
+| `pip uninstall` | Limpiar paquetes no usados | Sparse is better than dense |
+
+| Principio del Zen | Aplicación |
+|-------------------|------------|
+| Batteries included | Python viene con pip incluido |
+| Simple is better than complex | Un comando instala cualquier paquete |
+| Explicit is better than implicit | requirements.txt documenta exactamente qué necesitas |
+
+---
+
+**Anterior:** [8.4 Paquetes](04-paquetes.qmd) | **Siguiente:** [8.6 Entornos virtuales](06-entornos-virtuales.qmd)

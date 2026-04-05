@@ -1,0 +1,286 @@
+---
+title: "3.4 while: repetir mientras se cumpla"
+subtitle: "El bucle que no sabe cuántas veces va a repetir"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender la diferencia entre `for` y `while`
+- Escribir bucles `while` con condiciones de parada seguras
+- Evitar bucles infinitos
+- Aplicar `while` para validación de entrada del usuario
+
+## `while`: el bucle persistente
+
+A diferencia del `for` (que sabe de antemano cuántas veces va a iterar), el `while` **repite mientras una condición sea verdadera**. No sabe cuándo va a terminar — solo sabe cuándo debe seguir.
+
+Piensa en un `while` como un **guardia de seguridad**: "¿Se cumple la condición? Sí → pasa. No → detente."
+
+```python
+# Cuenta regresiva con while
+contador = 5 # <1>
+
+while contador > 0: # <2>
+    print(f"Quedan {contador} segundos...")
+    contador = contador - 1 # <3>
+
+print("¡Tiempo!")
+```
+
+1. Inicializamos la variable de control antes del bucle. Sin esta línea, `contador` no existiría.
+2. `while` evalúa la condición ANTES de cada iteración. Si es `True`, ejecuta el bloque. Si es `False`, salta el bloque entero.
+3. **CRUCIAL**: modificamos la variable de control. Sin esta línea, `contador` siempre sería 5 y el bucle nunca terminaría (bucle infinito).
+
+> **Simple is better than complex.** Un `while` necesita tres cosas: inicialización, condición y actualización. Las tres son obligatorias.
+
+## `for` vs `while`: ¿cuál elegir?
+
+| Característica | `for` | `while` |
+|----------------|-------|---------|
+| ¿Sabes cuántas veces? | Sí | No |
+| Itera sobre | Colecciones | Condiciones |
+| Ejemplo típico | Recorrer una lista | Esperar una respuesta |
+| Riesgo | Bajo | Bucle infinito |
+
+```python
+# ✅ for: sabes exactamente cuántas veces (5)
+for i in range(5):
+    print(f"Iteración {i}")
+
+# ✅ while: NO sabes cuántas veces (depende del usuario)
+respuesta = ""
+while respuesta != "sí":
+    respuesta = input("¿Quieres continuar? (sí/no): ")
+```
+
+## Validación de entrada con `while`
+
+El uso más práctico del `while` es **validar que el usuario ingrese datos correctos**:
+
+```python
+# Pedir un número válido al usuario
+while True: # <1>
+    entrada = input("Ingresa un número entre 1 y 10: ")
+    
+    if entrada.isdigit(): # <2>
+        numero = int(entrada)
+        if 1 <= numero <= 10: # <3>
+            print(f"¡Correcto! Elegiste el {numero}")
+            break # <4>
+        else:
+            print("El número debe estar entre 1 y 10")
+    else:
+        print("Eso no es un número válido. Intenta de nuevo.")
+```
+
+1. `while True` crea un bucle que se repite indefinidamente. Es un patrón común cuando la condición de salida está dentro del bloque.
+2. `.isdigit()` verifica si el texto contiene solo dígitos. `"42".isdigit()` es `True`, pero `"abc".isdigit()` es `False`.
+3. Verificamos que el número esté en el rango esperado.
+4. `break` sale del bucle inmediatamente. Sin esto, el bucle continuaría para siempre.
+
+> **Errors should never pass silently.** Este patrón garantiza que el programa no avance hasta recibir datos válidos.
+
+## El acumulador con `while`
+
+El patrón acumulador también funciona con `while`:
+
+```python
+# Sumar números hasta que el usuario ingrese 0
+total = 0 # <1>
+
+print("=== SUMADORA ===")
+print("Ingresa números para sumar. Ingresa 0 para terminar.")
+
+while True:
+    entrada = input("Número: ")
+    
+    if not entrada.isdigit():
+        print("Solo se aceptan números positivos")
+        continue # <2>
+    
+    numero = int(entrada)
+    
+    if numero == 0: # <3>
+        break
+    
+    total = total + numero # <4>
+    print(f"Total acumulado: {total}")
+
+print(f"\nTotal final: {total}")
+```
+
+1. Inicializamos el acumulador antes del bucle.
+2. `continue` salta al inicio del bucle sin ejecutar lo que sigue. Si la entrada no es válida, pedimos otro número.
+3. El 0 es nuestra "señal de parada". Cuando el usuario ingresa 0, salimos del bucle.
+4. Acumulamos el número al total.
+
+## Bucle con centinela (valor centinela)
+
+Un **valor centinela** es un valor especial que indica "termina el bucle".
+
+```python
+# Registro de temperaturas hasta ingresar un valor centinela
+temperaturas = []
+CENTINELA = -999 # <1>
+
+print(f"Ingresa temperaturas (ingresa {CENTINELA} para terminar)")
+
+while True:
+    temp = float(input("Temperatura: "))
+    
+    if temp == CENTINELA: # <2>
+        break
+    
+    temperaturas.append(temp) # <3>
+
+if temperaturas: # <4>
+    promedio = sum(temperaturas) / len(temperaturas)
+    print(f"\nRegistraste {len(temperaturas)} temperaturas")
+    print(f"Promedio: {promedio:.1f}°C")
+    print(f"Máxima: {max(temperaturas)}°C")
+    print(f"Mínima: {min(temperaturas)}°C")
+else:
+    print("No se registraron temperaturas")
+```
+
+1. `CENTINELA` en MAYÚSCULAS: es una constante. El valor `-999` fue elegido porque es una temperatura poco común.
+2. Cuando el usuario ingresa el valor centinela, salimos del bucle.
+3. `.append()` agrega un elemento al final de la lista.
+4. `if temperaturas:` verifica si la lista no está vacía. Una lista vacía es "falsy" en Python.
+
+## Bucle infinito: el enemigo silencioso
+
+Un **bucle infinito** ocurre cuando la condición del `while` nunca se vuelve `False`.
+
+```python
+# ❌ BUCLE INFINITO — ¡NO ejecutes esto!
+contador = 1
+while contador > 0:  # contador siempre será positivo
+    print(contador)
+    contador = contador + 1  # ¡cada vez es más grande!
+
+# ✅ CORRECTO: condición que eventualmente será False
+contador = 1
+while contador <= 10:  # <1>
+    print(contador)
+    contador = contador + 1
+```
+
+1. La condición `contador <= 10` eventualmente será `False` cuando `contador` llegue a 11.
+
+### Cómo escapar de un bucle infinito
+
+Si accidentalmente ejecutas un bucle infinito:
+- **Terminal**: Presiona `Ctrl + C`
+- **Jupyter/Notebook**: Interrumpe el kernel (menú Kernel → Interrupt)
+
+## Patrón: reintentos con límite
+
+Un patrón muy útil: intentar algo varias veces antes de rendirse.
+
+```python
+import random
+
+intentos_maximos = 3 # <1>
+intento_actual = 0
+numero_secreto = random.randint(1, 5) # <2>
+
+print("¡Adivina el número del 1 al 5!")
+
+while intento_actual < intentos_maximos: # <3>
+    intento_actual = intento_actual + 1 # <4>
+    print(f"\nIntento {intento_actual} de {intentos_maximos}")
+    
+    adivinanza = int(input("Tu número: "))
+    
+    if adivinanza == numero_secreto:
+        print(f"🎉 ¡Correcto! El número era {numero_secreto}")
+        break # <5>
+    elif adivinanza < numero_secreto:
+        print("Más alto...")
+    else:
+        print("Más bajo...")
+else: # <6>
+    print(f"\n😔 Se acabaron los intentos. El número era {numero_secreto}")
+```
+
+1. Definimos el máximo de intentos permitidos.
+2. `random.randint(1, 5)` genera un número aleatorio entre 1 y 5 (ambos incluidos).
+3. El bucle se repite mientras no hayamos agotado los intentos.
+4. Incrementamos el contador de intentos al inicio de cada iteración.
+5. Si adivina correctamente, salimos del bucle con `break`.
+6. El `else` del `while` se ejecuta **solo si el bucle terminó normalmente** (sin `break`). Si el usuario adivinó y se ejecutó `break`, este `else` NO se ejecuta.
+
+> **Explicit is better than implicit.** El `else` del `while` es una característica única de Python. Se ejecuta cuando la condición se vuelve `False`, no cuando hay un `break`.
+
+## Errores comunes
+
+### ❌ Olvidar actualizar la variable de control
+
+```python
+# ❌ Bucle infinito: 'i' nunca cambia
+i = 0
+while i < 5:
+    print(i)
+    # ¡Falta: i = i + 1!
+
+# ✅ Correcto
+i = 0
+while i < 5:
+    print(i)
+    i = i + 1
+```
+
+### ❌ Condición que nunca se cumple
+
+```python
+# ❌ El bucle nunca se ejecuta
+edad = 15
+while edad > 18:  # 15 > 18 es False desde el inicio
+    print("Mayor de edad")
+
+# ✅ Lógica correcta
+edad = 15
+while edad < 18:
+    print(f"Aún menor, te faltan {18 - edad} años")
+    edad = edad + 1
+```
+
+### ❌ Confundir `=` con `==` en la condición
+
+```python
+# ❌ Esto asigna, no compara (y en Python genera SyntaxError en while)
+activo = True
+while activo = False:  # SyntaxError
+    print("Ejecutando...")
+
+# ✅ Correcto
+activo = True
+while activo == True:  # o simplemente: while activo:
+    print("Ejecutando...")
+    activo = False
+```
+
+## Resumen
+
+| Patrón | Estructura | Para qué sirve |
+|--------|-----------|----------------|
+| Contador | `while i < n:` | Repetir n veces |
+| Validación | `while not valido:` | Esperar entrada correcta |
+| Centinela | `while valor != CENTINELA:` | Leer hasta señal de fin |
+| Reintentos | `while intentos < max:` | Intentar con límite |
+| `while True` + `break` | Bucle infinito controlado | Salida desde dentro |
+
+### Principios del Zen aplicados
+
+| Principio | Cómo se aplica |
+|-----------|----------------|
+| **Simple is better than complex** | Usa `for` cuando sabes cuántas veces, `while` cuando no |
+| **Errors should never pass silently** | Valida entrada del usuario con `while` |
+| **Explicit is better than implicit** | El `else` del `while` tiene un comportamiento específico |
+
+---
+
+**Anterior:** [3.3 for loop](03-for-loop.qmd) | **Siguiente:** [3.5 break y continue](05-break-continue.qmd)

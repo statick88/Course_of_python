@@ -1,0 +1,237 @@
+---
+title: "9.4 Manejo de errores: falla con elegancia"
+subtitle: "Los errores no son el enemigo — ignorarlos sí"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender la diferencia entre errores y excepciones
+- Usar `try/except` para manejar errores con gracia
+- Crear excepciones personalizadas para tu dominio
+- Aplicar el principio EAFP vs LBYL
+
+## Los errores son tu amigo
+
+Imagina que eres un **paramédico**. Cuando un paciente llega con síntomas, no los ignoras esperando que se arreglen solos. Los diagnosticas, los tratas y previenes que empeoren.
+
+Los errores en Python funcionan igual: si los ignoras, el programa muere. Si los manejas, tu aplicación sobrevive y se recupera.
+
+```python
+# ❌ Sin manejo de errores — el programa muere
+edad = input("Ingresa tu edad: ")
+edad_numero = int(edad)  # <1>
+print(f"El próximo año tendrás {edad_numero + 1} años")
+
+# Si el usuario escribe "veinte" en vez de "20":
+# ValueError: invalid literal for int() with base 10: 'veinte'
+# 💀 El programa se detiene abruptamente
+```
+
+1. `int()` lanza un `ValueError` si el texto no es un número válido. Sin manejo de errores, el programa se detiene.
+
+```python
+# ✅ Con manejo de errores — el programa sobrevive
+edad = input("Ingresa tu edad: ")
+
+try:
+    edad_numero = int(edad)  # <1>
+    print(f"El próximo año tendrás {edad_numero + 1} años")
+except ValueError:  # <2>
+    print("Error: Por favor, ingresa un número válido.")  # <3>
+```
+
+1. El bloque `try` contiene el código que **podría fallar**.
+2. `except ValueError` captura específicamente errores de conversión.
+3. En vez de morir, el programa muestra un mensaje útil y continúa.
+
+> **Errors should never pass silently.** Captura los errores, pero nunca los ignores. Un error silencioso es un bug que espera el momento perfecto para explotar.
+
+## La anatomía de try/except
+
+```python
+try:
+    # Código que podría fallar
+    archivo = open("datos.txt", "r")  # <1>
+    contenido = archivo.read()
+    numero = int(contenido.strip())
+except FileNotFoundError:  # <2>
+    print("El archivo no existe. Creando uno nuevo...")
+    numero = 0
+except ValueError:  # <3>
+    print("El archivo no contiene un número válido.")
+    numero = 0
+except Exception as e:  # <4>
+    print(f"Error inesperado: {e}")
+    numero = 0
+else:  # <5>
+    print(f"Leído exitosamente: {numero}")
+finally:  # <6>
+    print("Proceso de lectura completado.")
+```
+
+1. Este código puede fallar de varias formas: archivo no encontrado, contenido no numérico, etc.
+2. `FileNotFoundError`: se ejecuta solo si el archivo no existe.
+3. `ValueError`: se ejecuta solo si el contenido no se puede convertir a número.
+4. `Exception`: captura **cualquier otro error** no contemplado. Úsalo como red de seguridad.
+5. `else`: se ejecuta **solo si no hubo errores**. Ideal para código que depende del éxito del `try`.
+6. `finally`: se ejecuta **siempre**, haya error o no. Ideal para limpieza (cerrar archivos, conexiones).
+
+## Jerarquía de excepciones
+
+Python organiza los errores en una **jerarquía familiar**. Capturar un padre captura a todos sus hijos:
+
+```
+BaseException
+├── SystemExit          # sys.exit()
+├── KeyboardInterrupt   # Ctrl+C
+└── Exception           # ← Aquí están casi todos los errores
+    ├── ValueError      # Valor incorrecto
+    ├── TypeError       # Tipo incorrecto
+    ├── KeyError        # Clave no existe en diccionario
+    ├── IndexError      # Índice fuera de rango
+    ├── FileNotFoundError  # Archivo no encontrado
+    ├── ZeroDivisionError  # División por cero
+    └── AttributeError  # Atributo no existe
+```
+
+```python
+# ✅ Capturar excepciones específicas (de más específica a más general)
+def dividir_seguro(a, b):
+    try:
+        resultado = a / b
+    except ZeroDivisionError:  # <1>
+        print("No se puede dividir por cero.")
+        return None
+    except TypeError:  # <2>
+        print("Ambos argumentos deben ser números.")
+        return None
+    else:
+        return resultado
+
+dividir_seguro(10, 2)    # → 5.0
+dividir_seguro(10, 0)    # → "No se puede dividir por cero."
+dividir_seguro(10, "a")  # → "Ambos argumentos deben ser números."
+```
+
+1. `ZeroDivisionError` es más específico que `Exception`. Se captura primero.
+2. `TypeError` captura cuando los tipos no son compatibles (ej. dividir por un string).
+
+```python
+# ❌ Capturar Exception es como usar una red para atrair mosquitos
+try:
+    resultado = 10 / 0
+except Exception:  # <1>
+    print("Algo salió mal")  # ¿Qué salió mal? ¿Por qué?
+```
+
+1. Capturar `Exception` genérico oculta el tipo real del error. No sabes si fue división por cero, tipo incorrecto, o cualquier otra cosa.
+
+> **Explicit is better than implicit.** Captura excepciones específicas. Así sabes exactamente qué falló y puedes actuar en consecuencia.
+
+## EAFP vs LBYL: dos filosofías
+
+En Python existen dos enfoques para manejar errores potenciales:
+
+| Enfoque | Significado | Filosofía |
+|---------|-------------|-----------|
+| **EAFP** | Easier to Ask for Forgiveness than Permission | Intenta y maneja el error |
+| **LBYL** | Look Before You Leap | Verifica antes de actuar |
+
+```python
+# ❌ LBYL (Look Before You Leap) — verificar antes
+def obtener_valor_seguro_lbyl(diccionario, clave):
+    if clave in diccionario:  # <1>
+        return diccionario[clave]
+    else:
+        return None
+
+# ✅ EAFP (Easier to Ask Forgiveness) — intentar y manejar
+def obtener_valor_seguro_eafp(diccionario, clave):
+    try:
+        return diccionario[clave]  # <2>
+    except KeyError:
+        return None
+```
+
+1. LBYL: verifica primero si la clave existe. Funciona, pero hace dos operaciones (verificar + acceder).
+2. EAFP: intenta acceder directamente. Si falla, lo maneja. Más Pythonico y más rápido.
+
+```python
+# ✅ EAFP es el estilo preferido en Python
+def leer_archivo_seguro(ruta):
+    try:
+        with open(ruta, "r") as archivo:  # <1>
+            return archivo.read()
+    except FileNotFoundError:
+        print(f"El archivo '{ruta}' no existe.")
+        return None
+    except PermissionError:
+        print(f"No tienes permiso para leer '{ruta}'.")
+        return None
+```
+
+1. Intenta abrir el archivo directamente. Si no existe o no hay permisos, lo maneja con elegancia.
+
+## Excepciones personalizadas
+
+Cuando tu aplicación tiene errores específicos del dominio, crea tus propias excepciones:
+
+```python
+# ✅ Excepciones personalizadas para tu dominio
+class ErrorDeValidacion(Exception):  # <1>
+    """Error cuando los datos de entrada no son válidos."""
+    pass
+
+class SaldoInsuficiente(Exception):  # <2>
+    """Error cuando el saldo no cubre la operación."""
+    def __init__(self, saldo, monto):
+        self.saldo = saldo
+        self.monto = monto
+        diferencia = monto - saldo
+        super().__init__(
+            f"Saldo insuficiente: tienes ${saldo:.2f}, "
+            f"necesitas ${monto:.2f} (faltan ${diferencia:.2f})"
+        )
+
+def retirar_saldo(saldo_actual, monto):
+    if monto > saldo_actual:
+        raise SaldoInsuficiente(saldo_actual, monto)  # <3>
+    return saldo_actual - monto
+
+try:
+    nuevo_saldo = retirar_saldo(100, 150)
+except SaldoInsuficiente as e:
+    print(f"Transacción rechazada: {e}")  # <4>
+```
+
+1. `ErrorDeValidacion` hereda de `Exception`. Es tu excepción base para validaciones.
+2. `SaldoInsuficiente` incluye información adicional (saldo y monto) para un mensaje de error detallado.
+3. `raise` lanza la excepción cuando se detecta la condición de error.
+4. El mensaje incluye toda la información necesaria para entender el problema.
+
+## Errores comunes
+
+| Error | ❌ Incorrecto | ✅ Correcto |
+|-------|---------------|-------------|
+| Capturar todo | `except:` | `except Exception:` |
+| Ignorar errores | `except: pass` | `except ValueError: print(...)` |
+| Exception muy genérico | `except Exception:` | `except ValueError:` |
+| No usar finally | Abrir archivo sin cerrar | `finally: archivo.close()` |
+| Lanzar Exception | `raise Exception("mal")` | `raise ValueError("mal")` |
+
+## Resumen
+
+| Concepto | Cuándo usarlo | Principio del Zen |
+|----------|---------------|-------------------|
+| `try/except` | Código que puede fallar | Errors should never pass silently |
+| Excepciones específicas | Sabes qué error esperar | Explicit is better than implicit |
+| `else` | Código que solo corre sin errores | Readability counts |
+| `finally` | Limpieza siempre necesaria | Simple is better than complex |
+| Excepciones propias | Errores de tu dominio | Beautiful is better than ugly |
+| EAFP | Estilo Pythonico | There should be one obvious way |
+
+---
+
+**Anterior:** [9.3 Funciones puras](03-funciones-puras.qmd) | **Siguiente:** [9.5 Documentación](05-documentacion.qmd)

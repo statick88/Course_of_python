@@ -1,0 +1,108 @@
+---
+title: "Módulo 5: Resumen y autoevaluación"
+subtitle: "Todo lo que aprendiste sobre listas y tuplas"
+execute:
+  eval: false
+---
+
+## 📋 Resumen del Módulo
+
+En este módulo dominaste las dos estructuras de datos más fundamentales de Python. Veamos todo lo que cubrimos:
+
+### Listas: tu colección ordenada
+
+| Concepto | Sintaxis | Ejemplo |
+|----------|----------|---------|
+| Crear | `[]` o `list()` | `notas = [8.5, 9.0, 7.5]` |
+| Acceder | `lista[índice]` | `notas[0]` → `8.5` |
+| Último | `lista[-1]` | `notas[-1]` → `7.5` |
+| Slicing | `lista[inicio:fin:paso]` | `notas[:2]` → `[8.5, 9.0]` |
+| Agregar | `append()`, `insert()`, `extend()` | `notas.append(10.0)` |
+| Eliminar | `remove()`, `pop()`, `del` | `notas.pop()` |
+| Ordenar | `sort()`, `sorted()` | `notas.sort()` |
+| Buscar | `in`, `index()`, `count()` | `9.0 in notas` |
+| Iterar | `for x in lista` | `for nota in notas:` |
+| Índice+valor | `enumerate()` | `for i, n in enumerate(notas):` |
+| Combinar | `zip()` | `for a, b in zip(lista1, lista2):` |
+| Crear nueva | List comprehension | `[x*2 for x in notas]` |
+
+### Tuplas: datos inmutables
+
+| Concepto | Sintaxis | Ejemplo |
+|----------|----------|---------|
+| Crear | `()` o comas | `coord = (10, 20)` |
+| Un elemento | `(valor,)` | `unico = (42,)` |
+| Acceder | `tupla[índice]` | `coord[0]` → `10` |
+| Desempaquetar | `a, b = tupla` | `x, y = coord` |
+| Capturar resto | `a, *resto = tupla` | `primero, *resto = (1,2,3,4)` |
+
+### Listas anidadas: datos en 2D
+
+| Concepto | Ejemplo | Nota |
+|----------|---------|------|
+| Crear matriz | `[[0]*3 for _ in range(3)]` | ✅ Independiente |
+| ❌ Error común | `[[0]*3] * 3` | Referencias compartidas |
+| Acceso 2D | `matriz[fila][col]` | Primero fila |
+| Recorrer | `for fila in m: for celda in fila:` | Bucle anidado |
+
+## 🧠 Autoevaluación
+
+Responde sin ejecutar código:
+
+**1.** ¿Qué devuelve este código?
+```python
+frutas = ["manzana", "banana", "cereza"]
+frutas.append("dátil")
+print(frutas[-1])
+```
+
+**2.** ¿Cuál es la diferencia entre `sort()` y `sorted()`?
+
+**3.** ¿Qué imprime este código?
+```python
+numeros = [1, 2, 3, 4, 5]
+print(numeros[1:4:2])
+```
+
+**4.** ¿Por qué `(5)` no es una tupla? ¿Cómo se corrige?
+
+**5.** ¿Qué problema tiene este código?
+```python
+matriz = [[0, 0]] * 3
+matriz[0][0] = 1
+print(matriz)
+```
+
+**6.** ¿Qué devuelve `list(range(2, 8, 2))`?
+
+**7.** ¿Cuál es la diferencia entre `lista.remove(x)` y `lista.pop(i)`?
+
+### Respuestas
+
+<details>
+<summary>Ver respuestas</summary>
+
+1. `"dátil"` — `append()` agrega al final y `[-1]` accede al último elemento.
+2. `sort()` modifica la lista original y devuelve `None`. `sorted()` crea una NUEVA lista ordenada y deja la original intacta.
+3. `[2, 4]` — empieza en índice 1 (valor 2), termina antes de 4, paso de 2.
+4. `(5)` sin coma es solo el número 5 entre paréntesis. Se corrige con `(5,)` — la coma es lo que crea la tupla.
+5. `[[1, 0], [1, 0], [1, 0]]` — `* 3` crea 3 referencias a la MISMA lista. Cambiar una cambia todas.
+6. `[2, 4, 6]` — empieza en 2, termina antes de 8, paso de 2.
+7. `remove(x)` elimina por valor (la primera aparición) y no devuelve nada. `pop(i)` elimina por índice y devuelve el valor eliminado.
+
+</details>
+
+## 🎯 Principios clave del Zen de Python aplicados
+
+| Principio | Aplicación en este módulo |
+|-----------|--------------------------|
+| **Beautiful is better than ugly** | List comprehensions elegantes vs bucles verbosos |
+| **Explicit is better than implicit** | Tuplas para datos fijos, listas para datos mutables |
+| **Simple is better than complex** | `for x in lista` en vez de `for i in range(len(lista))` |
+| **Readability counts** | Nombres descriptivos: `for fruta in frutas` vs `for x in lista` |
+| **Errors should never pass silently** | Verificar `in` antes de `remove()` o `index()` |
+| **There should be one obvious way to do it** | `lista[-1]` para el último elemento |
+
+---
+
+**Anterior:** [5.6 Listas anidadas](06-listas-anidadas.qmd) | **Siguiente:** [Módulo 6: Diccionarios y Sets](../modulo-06/index.qmd)

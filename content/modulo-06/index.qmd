@@ -1,0 +1,45 @@
+---
+title: "Módulo 6: Diccionarios y Sets"
+---
+
+## 🎯 Objetivos del Módulo
+
+Al completar este módulo, serás capaz de:
+
+- ✅ Crear diccionarios y entender su estructura clave-valor
+- ✅ Acceder, modificar y eliminar elementos de un diccionario
+- ✅ Iterar sobre claves, valores y pares clave-valor
+- ✅ Usar sets para eliminar duplicados y hacer operaciones de conjuntos
+- ✅ Trabajar con diccionarios anidados (estructuras tipo JSON)
+- ✅ Elegir entre lista, diccionario y set según la situación
+
+## 📚 Contenido
+
+| Lección | Tema | Tipo |
+|---------|------|------|
+| [6.1](01-crear-diccionarios.qmd) | Crear diccionarios: la agenda del programador | 📖 Teoría |
+| [6.2](02-acceder-modificar.qmd) | Acceder y modificar datos | 💻 Práctica |
+| [6.3](03-iterar-diccionarios.qmd) | Iterar sobre diccionarios | 📖 Teoría |
+| [6.4](04-sets.qmd) | Sets: colecciones sin duplicados | 📖 Teoría |
+| [6.5](05-diccionarios-anidados.qmd) | Diccionarios anidados y JSON | 💻 Práctica |
+| [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
+
+## 🏆 Desafíos del Módulo
+
+| # | Desafío | Dificultad |
+|---|---------|------------|
+| [1](desafio-01-agenda-contactos.qmd) | Agenda de contactos | ⭐ Fácil |
+| [2](desafio-02-contador-palabras.qmd) | Contador de palabras | ⭐ Fácil |
+| [3](desafio-03-inventario-tienda.qmd) | Inventario de tienda | ⭐⭐ Media |
+| [4](desafio-04-fusionar-diccionarios.qmd) | Fusionar diccionarios | ⭐⭐ Media |
+| [5](desafio-05-votaciones.qmd) | Sistema de votaciones | ⭐⭐ Media |
+| [6](desafio-06-base-datos-estudiantes.qmd) | Base de datos de estudiantes | ⭐⭐⭐ Difícil |
+| [7](desafio-07-analizador-votos.qmd) | Analizador de votos | ⭐⭐⭐ Difícil |
+
+## 📋 Recursos
+
+- [Cheat Sheet del Módulo 6](recursos/cheat-sheet-modulo-6.md)
+
+---
+
+**Anterior:** [Módulo 5: Listas y Tuplas](../modulo-05/index.qmd) | **Siguiente:** [6.1 Crear diccionarios](01-crear-diccionarios.qmd)

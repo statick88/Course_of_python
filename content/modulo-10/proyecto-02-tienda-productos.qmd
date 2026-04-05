@@ -1,0 +1,126 @@
+---
+title: "Proyecto 2: Tienda de Productos"
+subtitle: "⭐⭐⭐ Dificultad Difícil — Diccionarios, búsqueda, carrito, inventario"
+execute:
+  eval: false
+---
+
+## 📋 Descripción del Proyecto
+
+Construye un sistema completo de tienda con inventario de productos, búsqueda por nombre y categoría, carrito de compras, y gestión de stock. El programa debe simular una experiencia de compra real desde la terminal.
+
+> **La analogía:** Tu programa es como tener un pequeño supermercado en la terminal. El cliente busca productos, los agrega al carrito, y al final paga. El inventario se actualiza automáticamente.
+
+## 🎯 Requisitos mínimos
+
+### Funcionalidades obligatorias
+
+| # | Funcionalidad | Descripción |
+|---|---------------|-------------|
+| 1 | Catálogo completo | Mostrar todos los productos con precio y stock |
+| 2 | Búsqueda por nombre | Buscar productos que contengan el texto |
+| 3 | Filtrar por categoría | Mostrar solo productos de una categoría |
+| 4 | Carrito de compras | Agregar, ver contenido, calcular total |
+| 5 | Gestión de stock | Reducir stock al comprar, verificar disponibilidad |
+| 6 | Finalizar compra | Confirmar, descontar stock, mostrar recibo |
+| 7 | Persistencia | Guardar inventario en JSON entre sesiones |
+
+### Funcionalidades opcionales (puntos extra)
+
+| # | Funcionalidad | Puntos |
+|---|---------------|--------|
+| +1 | Agregar nuevos productos al inventario | ⭐ |
+| +2 | Eliminar productos del carrito | ⭐ |
+| +3 | Historial de compras | ⭐ |
+| +4 | Descuento por cantidad (+10 unidades = 10% off) | ⭐ |
+| +5 | Recibo detallado al finalizar compra | ⭐ |
+
+## 📐 Estructura de datos
+
+```python
+# Producto en el inventario:
+producto = {
+    "id": 1,
+    "nombre": "Teclado mecánico",
+    "precio": 45.99,
+    "stock": 15,
+    "categoria": "perifericos",
+}
+
+# Item en el carrito:
+item_carrito = {
+    "producto": {...},  # Referencia al producto
+    "cantidad": 2,
+}
+```
+
+## 🏗️ Estructura del proyecto esperada
+
+```
+tienda_productos/
+├── main.py              # Punto de entrada
+├── datos/
+│   └── productos.json   # Catálogo persistente
+└── modulos/
+    ├── __init__.py
+    ├── inventario.py    # Clase Inventario
+    ├── carrito.py       # Clase Carrito
+    └── utilidades.py    # Funciones auxiliares
+```
+
+## 📊 Criterios de evaluación
+
+| Criterio | Peso | Excelente (100%) | Aceptable (70%) | Insuficiente (0%) |
+|----------|------|-------------------|-----------------|-------------------|
+| Funcionalidad | 30% | Todas las funciones obligatorias | Faltan 1-2 funciones | No funciona |
+| Búsqueda y filtros | 20% | Búsqueda + categoría funcionan | Solo uno funciona | No hay búsqueda |
+| Carrito | 15% | Agregar, total, vaciar correctamente | Errores menores | No funciona |
+| Gestión de stock | 15% | Stock se actualiza y valida | Actualiza pero no valida | No gestiona stock |
+| Documentación | 10% | README completo + docstrings | README básico | Sin documentación |
+| Creatividad | 10% | 3+ funcionalidades extra | 1-2 extras | Solo lo mínimo |
+
+## 💡 Tips para empezar
+
+1. **Empieza por el inventario.** Carga datos iniciales y haz que se muestren bien.
+2. **El carrito es independiente.** Prueba el carrito sin inventario primero.
+3. **La búsqueda es un filtro.** Usa list comprehension con `.lower()`.
+4. **El stock es crítico.** Nunca permitas stock negativo.
+
+## 🚀 Ejemplo de ejecución
+
+```
+========================================
+  🏪 TIENDA DE PRODUCTOS
+========================================
+  1. Ver catálogo completo
+  2. Buscar producto
+  3. Ver carrito
+  4. Agregar al carrito
+  5. Finalizar compra
+  6. Salir
+========================================
+Elige: 2
+
+Buscar: teclado
+
+Se encontraron 1 producto(s):
+  [1] Teclado mecánico - $45.99 (stock: 15)
+
+Presiona Enter para continuar...
+```
+
+## ⚠️ Errores comunes a evitar
+
+| Error | Por qué es problema | Solución |
+|-------|---------------------|----------|
+| Stock negativo | Vender más de lo que hay | `if stock >= cantidad` |
+| Búsqueda case-sensitive | "teclado" ≠ "Teclado" | Usar `.lower()` en ambos |
+| Duplicados en carrito | Mismo producto como items separados | Buscar y sumar cantidad |
+| No guardar inventario | Los cambios de stock se pierden | `_guardar()` tras cada venta |
+| Precio como string | `"45.99" * 2` = `"45.9945.99"` | Convertir a `float` |
+
+---
+
+**Anterior:** [Proyecto 1: Gestor de Tareas](proyecto-01-gestor-tareas.qmd)
+
+**Siguiente:** [Proyecto 3: Analizador de Datos](proyecto-03-analizador-datos.qmd)

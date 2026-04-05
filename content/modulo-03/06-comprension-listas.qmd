@@ -1,0 +1,248 @@
+---
+title: "3.6 Comprensión de listas: elegancia Python"
+subtitle: "Crear listas en una línea — el superpoder de Python"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es una comprensión de listas y por qué es Pythonica
+- Transformar bucles `for` en comprensiones de listas
+- Agregar filtros con `if` dentro de la comprensión
+- Elegir cuándo usar comprensión y cuándo usar bucle tradicional
+
+## El atajo elegante
+
+Imagina que necesitas crear una lista con los cuadrados de los números del 1 al 10. La forma tradicional requiere 3 líneas:
+
+```python
+# Forma tradicional con bucle for
+cuadrados = [] # <1>
+for i in range(1, 11): # <2>
+    cuadrados.append(i ** 2) # <3>
+
+print(cuadrados)
+# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+```
+
+1. Creamos una lista vacía. Es el "contenedor" donde iremos poniendo los resultados.
+2. Iteramos del 1 al 10 (el 11 no se incluye).
+3. Calculamos el cuadrado (`i ** 2`) y lo agregamos a la lista con `.append()`.
+
+Ahora, la **comprensión de listas** hace exactamente lo mismo en UNA línea:
+
+```python
+# Comprensión de listas — una línea, mismo resultado
+cuadrados = [i ** 2 for i in range(1, 11)] # <1>
+
+print(cuadrados)
+# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+```
+
+1. La sintaxis es: `[expresion for variable in iterable]`. Lee de derecha a izquierda: "para cada `i` en `range(1, 11)`, calcula `i ** 2` y ponlo en la lista".
+
+> **Beautiful is better than ugly.** La comprensión de listas es más compacta, más rápida y más legible que el bucle equivalente.
+
+## Anatomía de una comprensión
+
+```
+[  EXPRESIÓN     for  VARIABLE  in  ITERABLE     if  CONDICIÓN  ]
+   ^^^^^^^^^          ^^^^^^^^       ^^^^^^^          ^^^^^^^^^
+   ¿Qué pongo?      ¿Cómo lo       ¿De dónde        ¿Qué filtro
+                    llamo?         saco los          aplico?
+                                    datos?
+```
+
+### Desglose paso a paso
+
+```python
+# Ejemplo: pares del 1 al 20
+pares = [n for n in range(1, 21) if n % 2 == 0] # <1>
+print(pares)
+# [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+```
+
+1. Desglose:
+   - `n` → la expresión: pon el número tal cual
+   - `for n in range(1, 21)` → itera del 1 al 20
+   - `if n % 2 == 0` → solo incluye si es par
+
+## Transformar bucles en comprensiones
+
+### Ejemplo 1: transformar valores
+
+```python
+# Bucle tradicional
+nombres = ["ana", "BENITO", "carlos", "DIANA"]
+nombres_capitalizados = []
+for nombre in nombres:
+    nombres_capitalizados.append(nombre.capitalize())
+
+# Comprensión de listas
+nombres_capitalizados = [nombre.capitalize() for nombre in nombres] # <1>
+# ['Ana', 'Benito', 'Carlos', 'Diana']
+```
+
+1. `.capitalize()` pone la primera letra en mayúscula y el resto en minúscula.
+
+### Ejemplo 2: filtrar elementos
+
+```python
+# Bucle tradicional
+precios = [12.50, 8.75, 15.00, 3.25, 20.00, 5.50]
+caros = []
+for precio in precios:
+    if precio >= 10:
+        caros.append(precio)
+
+# Comprensión con filtro
+caros = [precio for precio in precios if precio >= 10] # <1>
+# [12.5, 15.0, 20.0]
+```
+
+1. El `if` al final actúa como filtro: solo incluye los elementos que cumplen la condición.
+
+### Ejemplo 3: transformar Y filtrar
+
+```python
+# Bucle tradicional
+temperaturas = [22, 35, 18, 40, 28, 15, 38]
+alertas = []
+for temp in temperaturas:
+    if temp > 30:
+        alertas.append(f"ALERTA: {temp}°C")
+
+# Comprensión con transformación y filtro
+alertas = [f"ALERTA: {temp}°C" for temp in temperaturas if temp > 30] # <1>
+# ['ALERTA: 35°C', 'ALERTA: 40°C', 'ALERTA: 38°C']
+```
+
+1. Primero filtra (`if temp > 30`), luego transforma (`f"ALERTA: {temp}°C"`).
+
+## Comprensiones anidadas
+
+Puedes usar más de un `for` en una comprensión:
+
+```python
+# Tabla de multiplicar del 1 al 3
+tabla = [f"{i}x{j}={i*j}" for i in range(1, 4) for j in range(1, 4)] # <1>
+
+for operacion in tabla:
+    print(operacion)
+```
+
+1. El primer `for` es el bucle exterior, el segundo es el interior. Equivale a:
+   ```python
+   for i in range(1, 4):
+       for j in range(1, 4):
+           resultado.append(f"{i}x{j}={i*j}")
+   ```
+
+## Comprensión de diccionarios y conjuntos
+
+La misma idea aplica a otros tipos de colecciones:
+
+```python
+# Comprensión de diccionario {clave: valor for ...}
+numeros = [1, 2, 3, 4, 5]
+cuadrados_dict = {n: n ** 2 for n in numeros} # <1>
+# {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# Comprensión de conjunto {expresion for ...}
+palabras = ["hola", "mundo", "python", "hola", "mundo"]
+primeras_letras = {p[0] for p in palabras} # <2>
+# {'h', 'm', 'p'}
+```
+
+1. Usa llaves `{}` con formato `clave: valor` para crear un diccionario.
+2. Usa llaves `{}` sin `:` para crear un conjunto (set). Los conjuntos eliminan duplicados automáticamente.
+
+## Cuándo NO usar comprensión de listas
+
+Las comprensiones son poderosas, pero **no siempre son la mejor opción**:
+
+```python
+# ❌ Demasiado compleja para una sola línea
+resultado = [x * 2 if x > 5 else x * 3 for x in range(20) if x % 2 == 0 if x != 10]
+
+# ✅ Mejor como bucle tradicional — más legible
+resultado = []
+for x in range(20):
+    if x % 2 == 0 and x != 10:
+        if x > 5:
+            resultado.append(x * 2)
+        else:
+            resultado.append(x * 3)
+
+# ❌ Con efectos secundarios (no solo crea una lista)
+[print(i) for i in range(10)]  # Usa print() dentro — no es su propósito
+
+# ✅ Bucle tradicional para efectos secundarios
+for i in range(10):
+    print(i)
+```
+
+### Regla de oro
+
+> Si la comprensión necesita más de un `if` o una expresión compleja, usa un bucle `for` tradicional.
+
+## Errores comunes
+
+### ❌ Confundir la sintaxis
+
+```python
+# ❌ Paréntesis en vez de corchetes — esto crea un generador, no una lista
+cuadrados = (i ** 2 for i in range(5))  # Esto es un generador
+
+# ✅ Corchetes para listas
+cuadrados = [i ** 2 for i in range(5)]  # Esto es una lista
+```
+
+### ❌ Poner el `if` en el lugar equivocado
+
+```python
+# ❌ SyntaxError: el if de filtro va DESPUÉS del for
+# cuadrados = [i ** 2 if i % 2 == 0 for i in range(10)]
+
+# ✅ Correcto: el filtro va al final
+cuadrados_pares = [i ** 2 for i in range(10) if i % 2 == 0]
+
+# ✅ Pero si es if/else (ternario), va ANTES del for
+cuadrados_o_cero = [i ** 2 if i % 2 == 0 else 0 for i in range(10)] # <1>
+```
+
+1. La diferencia es sutil pero importante: `if condicion` al final es un filtro. `x if cond else y` antes del `for` es un operador ternario.
+
+### ❌ Crear listas enormes en memoria
+
+```python
+# ❌ Si el rango es muy grande, consume mucha memoria
+# millones = [i ** 2 for i in range(10_000_000)]
+
+# ✅ Usa generador (paréntesis) para procesar uno a uno
+# for cuadrado in (i ** 2 for i in range(10_000_000)):
+#     procesar(cuadrado)
+```
+
+## Resumen
+
+| Patrón | Sintaxis | Resultado |
+|--------|----------|-----------|
+| Básica | `[x for x in iterable]` | Lista transformada |
+| Con filtro | `[x for x in iterable if cond]` | Lista filtrada |
+| Con ternario | `[x if cond else y for x in iterable]` | Lista con condición |
+| Diccionario | `{k: v for k, v in iterable}` | Diccionario |
+| Conjunto | `{x for x in iterable}` | Set (sin duplicados) |
+
+### Principios del Zen aplicados
+
+| Principio | Cómo se aplica |
+|-----------|----------------|
+| **Beautiful is better than ugly** | Una comprensión elegante > 3 líneas de bucle |
+| **Readability counts** | Si no se lee fácil, usa bucle tradicional |
+| **Simple is better than complex** | Comprensiones simples sí; complejas, no |
+
+---
+
+**Anterior:** [3.5 break y continue](05-break-continue.qmd) | **Siguiente:** [Resumen del Módulo 3](99-resumen.qmd)

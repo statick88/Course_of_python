@@ -1,0 +1,56 @@
+---
+title: "Resumen del Módulo 7"
+---
+
+## Lo que aprendiste en este módulo
+
+| Concepto | Qué es | Ejemplo |
+|----------|--------|---------|
+| `open()` | Abrir archivos | `open("datos.txt", "r")` |
+| `with` | Gestión automática de recursos | `with open(...) as f:` |
+| `.read()` | Leer todo el contenido | `texto = f.read()` |
+| `.readline()` | Leer una línea | `linea = f.readline()` |
+| `.write()` | Escribir texto | `f.write("hola\n")` |
+| `csv.reader` | Leer CSV como listas | `for fila in csv.reader(f):` |
+| `csv.DictReader` | Leer CSV como diccionarios | `for fila in csv.DictReader(f):` |
+| `json.dump()` | Escribir JSON a archivo | `json.dump(data, f)` |
+| `json.load()` | Leer JSON desde archivo | `data = json.load(f)` |
+| `pathlib.Path` | Rutas modernas | `Path("docs") / "file.txt"` |
+
+## Modos de apertura de archivos
+
+| Modo | Qué hace | Cuándo usar |
+|------|----------|-------------|
+| `"r"` | Solo lectura | Leer archivos existentes |
+| `"w"` | Escritura (sobreescribe) | Crear archivos nuevos o reemplazar |
+| `"a"` | Append (agregar al final) | Logs, diarios, acumulación |
+| `"x"` | Creación exclusiva | Evitar sobrescribir accidentalmente |
+
+## Principios del Zen de Python aplicados
+
+| Principio | Cómo lo aplicaste |
+|-----------|-------------------|
+| **Beautiful is better than ugly** | `pathlib` con operador `/` vs `os.path.join()` |
+| **Simple is better than complex** | `with open()` cierra automáticamente |
+| **Readability counts** | `fila["edad"]` vs `fila[1]` en CSV |
+| **Explicit is better than implicit** | `newline=""` al escribir CSV |
+| **Errors should never pass silently** | `try/except` al leer archivos y JSON |
+| **There should be one obvious way** | `with` es la forma estándar de manejar archivos |
+
+## ¿Estás listo para el Módulo 8?
+
+Deberías poder:
+
+- [ ] Abrir y cerrar archivos de forma segura con `with open()`
+- [ ] Leer archivos completos o línea por línea
+- [ ] Escribir archivos nuevos y agregar contenido sin borrar
+- [ ] Leer y escribir archivos CSV con el módulo `csv`
+- [ ] Serializar y deserializar datos JSON
+- [ ] Usar `pathlib.Path` para navegar el sistema de archivos
+- [ ] Manejar errores comunes: `FileNotFoundError`, `json.JSONDecodeError`
+
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 8: Funciones**!
+
+---
+
+**Anterior:** [7.6 pathlib](06-pathlib.qmd) | **Siguiente:** [Módulo 8: Funciones](../modulo-08/index.qmd)

@@ -1,0 +1,85 @@
+---
+title: "Desafío 3: Conversor Fahrenheit ↔ Celsius"
+difficulty: "⭐⭐ Media"
+estimated_time: "12 minutos"
+---
+
+## Situación
+
+Estás desarrollando una aplicación de clima que necesita convertir temperaturas entre Fahrenheit y Celsius. Los usuarios de Estados Unidos usan Fahrenheit, mientras que el resto del mundo usa Celsius.
+
+## Tu misión
+
+Crea dos funciones:
+
+1. `celsius_a_fahrenheit(celsius)` — Convierte de Celsius a Fahrenheit
+   - Fórmula: `F = C × 9/5 + 32`
+2. `fahrenheit_a_celsius(fahrenheit)` — Convierte de Fahrenheit a Celsius
+   - Fórmula: `C = (F - 32) × 5/9`
+
+Prueba ambas funciones con valores conocidos:
+- 0°C = 32°F (punto de congelación del agua)
+- 100°C = 212°F (punto de ebullición del agua)
+- 98.6°F ≈ 37°C (temperatura corporal)
+
+## Ejemplo de ejecución
+
+```python
+print(f"0°C = {celsius_a_fahrenheit(0):.1f}°F")
+print(f"100°C = {celsius_a_fahrenheit(100):.1f}°F")
+print(f"98.6°F = {fahrenheit_a_celsius(98.6):.1f}°C")
+print(f"32°F = {fahrenheit_a_celsius(32):.1f}°C")
+```
+
+```
+0°C = 32.0°F
+100°C = 212.0°F
+98.6°F = 37.0°C
+32°F = 0.0°C
+```
+
+## Pista
+
+- Cada función debe tener un solo parámetro
+- Las fórmulas son matemáticas directas
+- Usa `return` para devolver el resultado
+
+## Criterios de éxito
+
+- [ ] `celsius_a_fahrenheit(0)` devuelve 32.0
+- [ ] `celsius_a_fahrenheit(100)` devuelve 212.0
+- [ ] `fahrenheit_a_celsius(98.6)` devuelve aproximadamente 37.0
+- [ ] `fahrenheit_a_celsius(32)` devuelve 0.0
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 3: Conversor Fahrenheit ↔ Celsius
+# Solución de referencia
+
+def celsius_a_fahrenheit(celsius):
+    """Convierte grados Celsius a Fahrenheit."""
+    return celsius * 9/5 + 32
+
+def fahrenheit_a_celsius(fahrenheit):
+    """Convierte grados Fahrenheit a Celsius."""
+    return (fahrenheit - 32) * 5/9
+
+# Pruebas con valores conocidos
+print(f"0°C = {celsius_a_fahrenheit(0):.1f}°F")
+print(f"100°C = {celsius_a_fahrenheit(100):.1f}°F")
+print(f"98.6°F = {fahrenheit_a_celsius(98.6):.1f}°C")
+print(f"32°F = {fahrenheit_a_celsius(32):.1f}°C")
+
+# Verificación: convertir y volver debe dar el mismo valor
+original = 25
+convertido = celsius_a_fahrenheit(original)
+de_vuelta = fahrenheit_a_celsius(convertido)
+print(f"\nVerificación: {original}°C → {convertido:.1f}°F → {de_vuelta:.1f}°C")
+```
+</details>
+
+---
+
+[← Desafío 2](desafio-02-area-circulo.qmd) | [Desafío 4 →](desafio-04-contador-vocales.qmd)

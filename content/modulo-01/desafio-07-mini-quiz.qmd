@@ -1,0 +1,193 @@
+---
+title: "Desafío 7: Mini quiz de conocimientos"
+difficulty: "⭐⭐⭐ Difícil"
+estimated_time: "25 minutos"
+---
+
+## Situación
+
+Necesitas crear un programa que evalúe los conocimientos básicos de Python de un estudiante. El quiz debe hacer preguntas, verificar respuestas, llevar un puntaje y dar retroalimentación al final.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Muestre un título atractivo para el quiz
+2. Haga al menos 5 preguntas sobre lo aprendido en el Módulo 1
+3. Cada pregunta debe tener opciones múltiples (a, b, c)
+4. Lleve un contador de respuestas correctas
+5. Al final, muestre el puntaje y un mensaje según el rendimiento
+6. Use variables descriptivas y código organizado
+
+### Preguntas sugeridas
+
+| # | Pregunta | Opciones | Respuesta correcta |
+|---|----------|----------|-------------------|
+| 1 | ¿Qué función muestra texto en pantalla? | a) input() b) print() c) show() | b |
+| 2 | ¿Qué tipo de dato es `3.14`? | a) int b) str c) float | c |
+| 3 | ¿Qué devuelve `input()`? | a) Un número b) Un texto (str) c) Un booleano | b |
+| 4 | ¿Cuál es la convención para nombrar variables en Python? | a) camelCase b) snake_case c) PascalCase | b |
+| 5 | ¿Qué hace `"hola" * 3`? | a) Error b) "holaholahola" c) "hola 3" | b |
+
+## Ejemplo de ejecución
+
+```
+╔══════════════════════════════════╗
+║   QUIZ: FUNDAMENTOS DE PYTHON   ║
+╚══════════════════════════════════╝
+
+Pregunta 1 de 5
+¿Qué función muestra texto en pantalla?
+  a) input()
+  b) print()
+  c) show()
+Tu respuesta: b
+✅ ¡Correcto!
+
+Pregunta 2 de 5
+¿Qué tipo de dato es 3.14?
+  a) int
+  b) str
+  c) float
+Tu respuesta: a
+❌ Incorrecto. La respuesta era: c
+
+...
+
+╔══════════════════════════════════╗
+║          RESULTADO FINAL         ║
+╚══════════════════════════════════╝
+
+Respuestas correctas: 3 de 5
+Porcentaje: 60.0%
+
+¡Buen trabajo! Sigue practicando para mejorar.
+```
+
+## Pista
+
+- Usa una variable `puntaje` que empiece en 0 y se incremente con cada respuesta correcta
+- Compara la respuesta del usuario con la correcta usando `==`
+- El porcentaje es: `(correctas / total) * 100`
+- Puedes usar `if/elif/else` para dar mensajes diferentes según el puntaje
+
+## Criterios de éxito
+
+- [ ] Al menos 5 preguntas con opciones múltiples
+- [ ] Verifica cada respuesta y muestra feedback inmediato
+- [ ] Lleva cuenta del puntaje
+- [ ] Muestra resultado final con porcentaje
+- [ ] Mensaje personalizado según rendimiento
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 7: Mini quiz de conocimientos
+# Solución de referencia
+
+print("╔══════════════════════════════════╗")
+print("║   QUIZ: FUNDAMENTOS DE PYTHON   ║")
+print("╚══════════════════════════════════╝")
+print()
+
+puntaje = 0
+total_preguntas = 5
+
+# Pregunta 1
+print(f"Pregunta 1 de {total_preguntas}")
+print("¿Qué función muestra texto en pantalla?")
+print("  a) input()")
+print("  b) print()")
+print("  c) show()")
+respuesta = input("Tu respuesta: ").strip().lower()
+if respuesta == "b":
+    print("✅ ¡Correcto!")
+    puntaje += 1
+else:
+    print("❌ Incorrecto. La respuesta era: b")
+print()
+
+# Pregunta 2
+print(f"Pregunta 2 de {total_preguntas}")
+print("¿Qué tipo de dato es 3.14?")
+print("  a) int")
+print("  b) str")
+print("  c) float")
+respuesta = input("Tu respuesta: ").strip().lower()
+if respuesta == "c":
+    print("✅ ¡Correcto!")
+    puntaje += 1
+else:
+    print("❌ Incorrecto. La respuesta era: c")
+print()
+
+# Pregunta 3
+print(f"Pregunta 3 de {total_preguntas}")
+print("¿Qué devuelve input()?")
+print("  a) Un número")
+print("  b) Un texto (str)")
+print("  c) Un booleano")
+respuesta = input("Tu respuesta: ").strip().lower()
+if respuesta == "b":
+    print("✅ ¡Correcto!")
+    puntaje += 1
+else:
+    print("❌ Incorrecto. La respuesta era: b")
+print()
+
+# Pregunta 4
+print(f"Pregunta 4 de {total_preguntas}")
+print("¿Cuál es la convención para nombrar variables en Python?")
+print("  a) camelCase")
+print("  b) snake_case")
+print("  c) PascalCase")
+respuesta = input("Tu respuesta: ").strip().lower()
+if respuesta == "b":
+    print("✅ ¡Correcto!")
+    puntaje += 1
+else:
+    print("❌ Incorrecto. La respuesta era: b")
+print()
+
+# Pregunta 5
+print(f"Pregunta 5 de {total_preguntas}")
+print('¿Qué hace "hola" * 3?')
+print('  a) Error')
+print('  b) "holaholahola"')
+print('  c) "hola 3"')
+respuesta = input("Tu respuesta: ").strip().lower()
+if respuesta == "b":
+    print("✅ ¡Correcto!")
+    puntaje += 1
+else:
+    print("❌ Incorrecto. La respuesta era: b")
+print()
+
+# Resultado final
+porcentaje = (puntaje / total_preguntas) * 100
+
+print("╔══════════════════════════════════╗")
+print("║          RESULTADO FINAL         ║")
+print("╚══════════════════════════════════╝")
+print()
+print(f"Respuestas correctas: {puntaje} de {total_preguntas}")
+print(f"Porcentaje: {porcentaje:.1f}%")
+print()
+
+if porcentaje == 100:
+    print("🏆 ¡Perfecto! Dominas los fundamentos de Python.")
+elif porcentaje >= 80:
+    print("🌟 ¡Excelente! Casi perfecto. Repasa los errores.")
+elif porcentaje >= 60:
+    print("👍 ¡Buen trabajo! Sigue practicando para mejorar.")
+elif porcentaje >= 40:
+    print("📚 Necesitas repasar. Relee las lecciones del módulo.")
+else:
+    print("💪 No te rindas. Vuelve a estudiar el módulo e intenta de nuevo.")
+```
+</details>
+
+---
+
+[← Desafío 6](06-formulario-contacto.qmd) | [← Volver al Módulo 1](../index.qmd)

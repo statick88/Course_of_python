@@ -1,0 +1,76 @@
+---
+title: "Desafío 3: Eliminar duplicados"
+difficulty: "⭐⭐ Media"
+estimated_time: "10 minutos"
+---
+
+## Situación
+
+Estás limpiando datos de una encuesta. Varios participantes enviaron respuestas duplicadas y necesitas eliminar los repetidos manteniendo el orden original de las respuestas únicas.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Tenga una lista con elementos duplicados
+2. Elimine los duplicados **manteniendo el orden original**
+3. Muestre la lista original, la lista limpia y cuántos duplicados se eliminaron
+
+## Ejemplo de ejecución
+
+```
+🧹 Limpiador de Duplicados
+
+Lista original:  ['rojo', 'azul', 'rojo', 'verde', 'azul', 'amarillo', 'rojo']
+Lista limpia:    ['rojo', 'azul', 'verde', 'amarillo']
+Duplicados eliminados: 3
+```
+
+## Pista
+
+- **No uses `set()`** directamente — los sets no mantienen el orden
+- Recorre la lista original y agrega solo los elementos que aún no están en la nueva lista
+- Usa `if elemento not in nueva_lista:` para verificar
+
+## Criterios de éxito
+
+- [ ] Elimina todos los duplicados
+- [ ] Mantiene el orden de primera aparición
+- [ ] Reporta cuántos duplicados se eliminaron
+- [ ] Funciona con cualquier tipo de dato en la lista
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 3: Eliminar duplicados
+# Solución de referencia
+
+datos = ["rojo", "azul", "rojo", "verde", "azul", "amarillo", "rojo"] # <1>
+
+limpia = [] # <2>
+for elemento in datos: # <3>
+    if elemento not in limpia: # <4>
+        limpia.append(elemento) # <5>
+
+duplicados = len(datos) - len(limpia) # <6>
+
+print("🧹 Limpiador de Duplicados")
+print()
+print(f"Lista original:  {datos}")
+print(f"Lista limpia:    {limpia}")
+print(f"Duplicados eliminados: {duplicados}")
+```
+
+1. Lista original con elementos repetidos: `"rojo"` aparece 3 veces, `"azul"` 2 veces.
+2. `limpia` empieza vacía — aquí iremos agregando solo los elementos únicos.
+3. Recorremos cada elemento de la lista original en orden.
+4. `if elemento not in limpia:` verifica si ya lo agregamos. Solo lo agregamos la primera vez.
+5. `append()` agrega el elemento a la lista limpia. Como solo se agrega si no existe, no hay duplicados.
+6. La diferencia entre el tamaño original y el limpio es la cantidad de duplicados eliminados: `7 - 4 = 3`.
+
+</details>
+
+---
+
+[← Desafío 2](desafio-02-invertir-lista.qmd) | [Desafío 4 →](desafio-04-estadisticas-lista.qmd)

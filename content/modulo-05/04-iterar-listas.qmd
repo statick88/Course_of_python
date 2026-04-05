@@ -1,0 +1,169 @@
+---
+title: "5.4 Iterar listas: recorrer colecciones"
+subtitle: "for, enumerate, zip y comprensión de listas"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Recorrer listas con `for` de forma limpia y Pythonica
+- Usar `enumerate()` para obtener índice y valor simultáneamente
+- Combinar dos listas con `zip()`
+- Crear listas nuevas con list comprehensions
+
+## El bucle for: recorrer elemento por elemento
+
+En Python, el `for` no funciona como en otros lenguajes. No cuenta índices — **itera directamente sobre los elementos**.
+
+```python
+# Así NO se itera en Python (estilo de otros lenguajes)
+# for i in range(len(colores)):  # <1>
+#     print(colores[i])
+
+# ✅ Así SÍ se itera en Python — directo sobre los elementos
+colores = ["rojo", "verde", "azul"] # <2>
+for color in colores: # <3>
+    print(f"Me gusta el color {color}")
+```
+
+1. Usar `range(len())` para iterar es un antipatrón en Python. Funciona, pero no es la forma Pythonica.
+2. Lista de colores para iterar.
+3. `for color in colores:` recorre cada elemento directamente. `color` toma el valor de cada elemento en cada iteración.
+
+> **Beautiful is better than ugly.** Iterar directamente sobre los elementos es más legible que usar índices. Python te da la herramienta correcta.
+
+## enumerate(): índice y valor al mismo tiempo
+
+A veces necesitas saber **en qué posición** estás, no solo el valor. `enumerate()` te da ambos:
+
+```python
+tareas = ["estudiar", "ejercitar", "descansar"] # <1>
+
+# enumerate() devuelve (índice, valor) en cada paso
+for indice, tarea in enumerate(tareas): # <2>
+    print(f"Tarea {indice + 1}: {tarea}")
+
+# Empezar desde otro número
+for numero, tarea in enumerate(tareas, start=1): # <3>
+    print(f"{numero}. {tarea}")
+```
+
+1. Lista de tareas pendientes.
+2. `enumerate(tareas)` devuelve pares: `(0, "estudiar")`, `(1, "ejercitar")`, `(2, "descansar")`. El `for` desempaqueta cada par en `indice` y `tarea`.
+3. `start=1` hace que el índice empiece en 1 en vez de 0. Más natural para listas numeradas.
+
+## zip(): combinar dos listas en paralelo
+
+`zip()` te permite recorrer **dos o más listas al mismo tiempo**, emparejando elementos por posición:
+
+```python
+nombres = ["Ana", "Carlos", "Diana"] # <1>
+edades = [25, 30, 28]
+
+# zip() empareja elemento por elemento
+for nombre, edad in zip(nombres, edades): # <2>
+    print(f"{nombre} tiene {edad} años")
+
+# Tres listas al mismo tiempo
+ciudades = ["Quito", "Guayaquil", "Cuenca"] # <3>
+for nombre, edad, ciudad in zip(nombres, edades, ciudades):
+    print(f"{nombre}, {edad} años, vive en {ciudad}")
+```
+
+1. Dos listas del mismo tamaño: nombres y edades.
+2. `zip(nombres, edades)` empareja: `("Ana", 25)`, `("Carlos", 30)`, `("Diana", 28)`. El `for` desempaqueta cada par.
+3. `zip()` funciona con cualquier cantidad de listas. Cada iteración da un elemento de cada lista.
+
+> **Practicality beats purity.** Si las listas tienen tamaños diferentes, `zip()` se detiene en la más corta. Es un comportamiento seguro que evita errores.
+
+## List comprehensions: crear listas en una línea
+
+Las **list comprehensions** (comprensiones de listas) son la forma más Pythonica de crear listas nuevas a partir de otras. Combinan un `for` y una expresión en una sola línea:
+
+```python
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] # <1>
+
+# Forma tradicional (varias líneas)
+cuadrados = [] # <2>
+for n in numeros:
+    cuadrados.append(n ** 2)
+
+# ✅ List comprehension (una línea)
+cuadrados = [n ** 2 for n in numeros] # <3>
+
+# Con filtro: solo los pares
+pares = [n for n in numeros if n % 2 == 0] # <4>
+
+# Con transformación y filtro
+dobles_impares = [n * 2 for n in numeros if n % 2 != 0] # <5>
+```
+
+1. Lista de números del 1 al 10.
+2. La forma tradicional requiere crear la lista vacía, iterar, y agregar con `append()`.
+3. `[n ** 2 for n in numeros]` crea `[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]` en una línea.
+4. `[n for n in numeros if n % 2 == 0]` filtra solo los pares: `[2, 4, 6, 8, 10]`.
+5. Combina transformación (`n * 2`) con filtro (`if n % 2 != 0`): `[2, 6, 10, 14, 18]`.
+
+### Anatomía de una list comprehension
+
+```
+[ expresión     for variable in iterable     if condición ]
+    ↑                    ↑                      ↑
+  Lo que va        De dónde viene       Filtro opcional
+  en la nueva      cada elemento
+  lista
+```
+
+> **Readability counts.** Las list comprehensions son elegantes, pero si son demasiado complejas, usa un bucle `for` normal. La claridad siempre gana.
+
+## Errores comunes al iterar
+
+```python
+frutas = ["manzana", "banana", "cereza"]
+
+# ❌ Modificar la lista mientras se itera
+# for fruta in frutas:  # <1>
+#     if fruta == "banana":
+#         frutas.remove(fruta)
+
+# ✅ Crear una nueva lista con filtro
+frutas = [f for f in frutas if f != "banana"] # <2>
+
+# ❌ Usar variables con nombres confusos
+# for x in frutas:  # <3>
+#     print(x.upper())
+
+# ✅ Nombres que revelan intención
+for fruta in frutas: # <4>
+    print(fruta.upper())
+
+# ❌ Iterar con range(len()) innecesariamente
+# for i in range(len(frutas)):  # <5>
+#     print(frutas[i])
+
+# ✅ Iterar directamente
+for fruta in frutas: # <6>
+    print(fruta)
+```
+
+1. Modificar una lista mientras la recorres causa comportamiento impredecible. Puedes saltarte elementos o causar errores.
+2. Crear una nueva lista con list comprehension es seguro y más Pythonico.
+3. `x` no dice nada sobre qué contiene. El código es difícil de entender.
+4. `fruta` comunica claramente qué representa cada elemento.
+5. `range(len())` es innecesario cuando solo necesitas los valores.
+6. Iterar directamente es más limpio, más rápido y más legible.
+
+## Resumen
+
+| Herramienta | Para qué sirve | Ejemplo |
+|-------------|----------------|---------|
+| `for x in lista` | Recorrer elementos | `for n in [1,2,3]: print(n)` |
+| `enumerate(lista)` | Índice + valor | `for i, n in enumerate([1,2,3])` |
+| `zip(lista1, lista2)` | Combinar listas | `for a, b in zip([1,2], [3,4])` |
+| `[expr for x in lista]` | Crear lista nueva | `[x*2 for x in [1,2,3]]` |
+| `[expr for x if cond]` | Filtrar y transformar | `[x for x in [1,2,3] if x > 1]` |
+
+---
+
+**Anterior:** [5.3 Métodos de listas](03-metodos-listas.qmd) | **Siguiente:** [5.5 Tuplas](05-tuplas.qmd)

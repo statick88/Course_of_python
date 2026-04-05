@@ -1,0 +1,192 @@
+---
+title: "5.6 Listas anidadas: más allá de una dimensión"
+subtitle: "Matrices, tablas y estructuras de datos en dos dimensiones"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Crear y entender listas dentro de listas (listas anidadas)
+- Acceder a elementos en múltiples dimensiones
+- Recorrer matrices con bucles anidados
+- Crear matrices con list comprehensions
+- Evitar el error más común: referencias compartidas
+
+## ¿Qué es una lista anidada?
+
+Una **lista anidada** es una lista que contiene otras listas como elementos. Es la forma más simple de representar datos en **dos dimensiones**, como una tabla o una matriz.
+
+```python
+# Piensa en un edificio con pisos y apartamentos
+# Piso 2: [Apt 201, Apt 202, Apt 203]
+# Piso 1: [Apt 101, Apt 102, Apt 103]
+# Piso 0: [Apt 001, Apt 002, Apt 003]
+
+edificio = [ # <1>
+    ["Apt 001", "Apt 002", "Apt 003"],  # Piso 0
+    ["Apt 101", "Apt 102", "Apt 103"],  # Piso 1
+    ["Apt 201", "Apt 202", "Apt 203"],  # Piso 2
+]
+
+# Acceder al apartamento del piso 1, posición 2
+print(edificio[1][2]) # <2>
+```
+
+1. `edificio` es una lista de 3 elementos, donde cada elemento es otra lista (un piso).
+2. `edificio[1][2]` primero accede al piso 1 (`["Apt 101", "Apt 102", "Apt 103"]`), luego al elemento 2 de ese piso: `"Apt 103"`.
+
+## Matrices: tablas de números
+
+El uso más común de listas anidadas son las **matrices** — tablas de números con filas y columnas:
+
+```python
+# Matriz 3x3 (3 filas, 3 columnas)
+matriz = [ # <1>
+    [1, 2, 3],  # Fila 0
+    [4, 5, 6],  # Fila 1
+    [7, 8, 9],  # Fila 2
+]
+
+# Acceder a un elemento específico
+print(matriz[0][0])  # <2>
+print(matriz[1][2])  # <3>
+print(matriz[2][1])  # <4>
+
+# Acceder a una fila completa
+print(matriz[1])  # <5>
+```
+
+1. Una matriz 3x3 es una lista de 3 listas, cada una con 3 elementos.
+2. `matriz[0][0]` = `1` — fila 0, columna 0 (esquina superior izquierda).
+3. `matriz[1][2]` = `6` — fila 1, columna 2.
+4. `matriz[2][1]` = `8` — fila 2, columna 1.
+5. `matriz[1]` = `[4, 5, 6]` — toda la fila 1.
+
+## Recorrer matrices con bucles anidados
+
+Para visitar cada elemento de una matriz, necesitas **dos bucles `for`** — uno para las filas y otro para las columnas:
+
+```python
+tablero = [ # <1>
+    ["X", "O", "X"],
+    ["O", "X", "O"],
+    ["X", "O", "X"],
+]
+
+# Recorrer fila por fila
+for fila in tablero: # <2>
+    for celda in fila: # <3>
+        print(celda, end=" ")
+    print()  # Salto de línea al final de cada fila
+
+# Con índices (cuando necesitas la posición)
+for i, fila in enumerate(tablero): # <4>
+    for j, celda in enumerate(fila): # <5>
+        print(f"[{i}][{j}] = {celda}")
+```
+
+1. Tablero de tres en raya representado como matriz 3x3.
+2. El primer `for` recorre cada fila (cada fila es una lista).
+3. El segundo `for` recorre cada celda dentro de la fila actual.
+4. `enumerate(tablero)` da el índice de la fila (`i`) y la fila misma.
+5. `enumerate(fila)` da el índice de la columna (`j`) y el valor de la celda.
+
+## Crear matrices con list comprehensions
+
+Las list comprehensions pueden crear matrices de forma elegante:
+
+```python
+# Matriz 3x4 de ceros
+matriz_ceros = [[0] * 4 for _ in range(3)] # <1>
+print(matriz_ceros)
+
+# Matriz identidad 3x3
+identidad = [ # <2>
+    [1 if i == j else 0 for j in range(3)]
+    for i in range(3)
+]
+print(identidad)
+
+# Tabla de multiplicar 5x5
+tabla = [[i * j for j in range(1, 6)] for i in range(1, 6)] # <3>
+```
+
+1. `[[0] * 4 for _ in range(3)]` crea 3 listas independientes de 4 ceros cada una. El `_` indica que no usamos la variable del loop.
+2. La matriz identidad tiene 1 en la diagonal principal y 0 en el resto. Usa una list comprehension anidada con condición.
+3. Tabla de multiplicar: cada celda `[i][j]` contiene `i * j`.
+
+## ⚠️ El error más común: referencias compartidas
+
+Este es el error que cometen el 90% de los principiantes con matrices:
+
+```python
+# ❌ FORMA INCORRECTA: todas las filas son la MISMA lista
+fila = [0, 0, 0] # <1>
+matriz_mal = [fila, fila, fila] # <2>
+
+matriz_mal[0][0] = 99 # <3>
+print(matriz_mal) # <4>
+
+# ✅ FORMA CORRECTA: cada fila es una lista independiente
+matriz_bien = [[0, 0, 0] for _ in range(3)] # <5>
+
+matriz_bien[0][0] = 99
+print(matriz_bien) # <6>
+```
+
+1. Creas una sola lista `fila`.
+2. Pones la MISMA referencia tres veces. No hay tres listas — hay una lista referenciada tres veces.
+3. Al cambiar `matriz_mal[0][0]`, cambias la única lista que existe.
+4. Resultado: `[[99, 0, 0], [99, 0, 0], [99, 0, 0]]`. ¡Todas las filas cambiaron!
+5. `[[0, 0, 0] for _ in range(3)]` crea 3 listas INDEPENDIENTES. Cada iteración del `for` crea una nueva lista.
+6. Resultado: `[[99, 0, 0], [0, 0, 0], [0, 0, 0]]`. Solo la primera fila cambió.
+
+> **Errors should never pass silently.** Este error no genera excepción — Python hace exactamente lo que le pediste. El problema es que pediste algo que no querías. Siempre usa list comprehensions para crear matrices.
+
+## Operaciones con matrices
+
+```python
+# Suma de dos matrices
+a = [[1, 2], [3, 4]] # <1>
+b = [[5, 6], [7, 8]]
+
+suma = [ # <2>
+    [a[i][j] + b[i][j] for j in range(2)]
+    for i in range(2)
+]
+print(suma)
+
+# Transpuesta (filas ↔ columnas)
+matriz = [[1, 2, 3], [4, 5, 6]] # <3>
+transpuesta = [ # <4>
+    [matriz[i][j] for i in range(2)]
+    for j in range(3)
+]
+print(transpuesta)
+
+# Sumar todos los elementos de una matriz
+total = sum(sum(fila) for fila in matriz) # <5>
+print(total)
+```
+
+1. Dos matrices 2x2 para sumar.
+2. Suma elemento por elemento: `[[6, 8], [10, 12]]`.
+3. Matriz 2x3 (2 filas, 3 columnas).
+4. La transpuesta convierte filas en columnas: `[[1, 4], [2, 5], [3, 6]]`.
+5. `sum(fila)` suma cada fila, y `sum(...)` suma todos los resultados. Total: `21`.
+
+## Resumen
+
+| Concepto | Ejemplo | Nota |
+|----------|---------|------|
+| Acceso | `matriz[fila][col]` | Primero fila, luego columna |
+| Fila completa | `matriz[0]` | Devuelve una lista |
+| Recorrer | `for fila in matriz: for celda in fila:` | Bucle anidado |
+| Crear seguro | `[[0]*n for _ in range(m)]` | List comprehension |
+| ❌ Crear mal | `[[0]*n] * m` | Referencias compartidas |
+| Transpuesta | `[[m[i][j] for i in range(f)] for j in range(c)]` | Filas ↔ columnas |
+
+---
+
+**Anterior:** [5.5 Tuplas](05-tuplas.qmd) | **Siguiente:** [Resumen del Módulo 5](99-resumen.qmd)

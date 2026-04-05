@@ -1,0 +1,152 @@
+---
+title: "Proyecto 3: Analizador de Datos CSV"
+subtitle: "⭐⭐⭐ Dificultad Difícil — CSV, estadísticas, reportes, datos reales"
+execute:
+  eval: false
+---
+
+## 📋 Descripción del Proyecto
+
+Construye una aplicación que lea archivos CSV (como hojas de cálculo), calcule estadísticas (media, mediana, moda, desviación estándar) y genere reportes profesionales. El programa debe manejar datos reales, incluyendo valores faltantes y errores de formato.
+
+> **La analogía:** Tu programa es como un analista financiero. Recibe una montaña de números y te devuelve respuestas claras: ¿cuánto se vendió en promedio? ¿Cuál fue el mejor mes? ¿Hay tendencias?
+
+## 🎯 Requisitos mínimos
+
+### Funcionalidades obligatorias
+
+| # | Funcionalidad | Descripción |
+|---|---------------|-------------|
+| 1 | Leer archivo CSV | Cargar datos desde archivo con `csv.DictReader` |
+| 2 | Limpiar datos | Convertir strings a números, manejar valores faltantes |
+| 3 | Estadísticas básicas | Media, mediana, moda, mínimo, máximo |
+| 4 | Desviación estándar | Calcular dispersión de los datos |
+| 5 | Reporte por categoría | Agrupar y resumir por un campo categórico |
+| 6 | Top N productos | Ordenar y mostrar los más relevantes |
+| 7 | Mostrar datos crudos | Imprimir la tabla completa formateada |
+
+### Funcionalidades opcionales (puntos extra)
+
+| # | Funcionalidad | Puntos |
+|---|---------------|--------|
+| +1 | Exportar reporte a archivo de texto | ⭐ |
+| +2 | Gráfico ASCII de barras simple | ⭐ |
+| +3 | Comparar dos archivos CSV | ⭐ |
+| +4 | Detección de valores atípicos (outliers) | ⭐ |
+| +5 | Resumen automático de todos los campos numéricos | ⭐ |
+
+## 📐 Estructura de datos
+
+```python
+# Un registro del CSV (después de limpiar):
+registro = {
+    "fecha": "2026-01-15",
+    "producto": "Teclado",
+    "cantidad": 3,              # Convertido a float
+    "precio_unitario": 45.99,   # Convertido a float
+    "total": 137.97,            # Convertido a float
+}
+```
+
+## 🏗️ Estructura del proyecto esperada
+
+```
+analizador_datos/
+├── main.py              # Punto de entrada
+├── datos/
+│   └── ventas.csv       # Datos de ejemplo
+└── modulos/
+    ├── __init__.py
+    ├── lector.py        # Lectura y limpieza de CSV
+    ├── estadisticas.py  # Cálculos estadísticos
+    └── reporte.py       # Generación de reportes
+```
+
+## 📊 Criterios de evaluación
+
+| Criterio | Peso | Excelente (100%) | Aceptable (70%) | Insuficiente (0%) |
+|----------|------|-------------------|-----------------|-------------------|
+| Lectura CSV | 20% | Lee y limpia correctamente | Lee pero no limpia bien | No lee CSV |
+| Estadísticas | 25% | Todas las métricas correctas | Faltan 1-2 métricas | Cálculos incorrectos |
+| Reportes | 20% | Reportes claros y formateados | Formato básico | Sin reportes |
+| Manejo de errores | 15% | Datos sucios no rompen el programa | Algunos errores no manejados | Crash con datos inválidos |
+| Documentación | 10% | README completo + docstrings | README básico | Sin documentación |
+| Creatividad | 10% | 3+ funcionalidades extra | 1-2 extras | Solo lo mínimo |
+
+## 💡 Tips para empezar
+
+1. **Crea tu CSV primero.** Usa datos simples para probar.
+2. **Limpia antes de calcular.** Convierte strings a números inmediatamente.
+3. **Prueba con datos vacíos.** ¿Qué pasa si el CSV no tiene filas?
+4. **La mediana necesita orden.** No olvides `sorted()` antes de calcularla.
+
+## 🚀 Ejemplo de ejecución
+
+```
+========================================
+  📊 ANALIZADOR DE DATOS
+========================================
+  1. Reporte general de ventas
+  2. Reporte por producto
+  3. Top productos más vendidos
+  4. Ver datos crudos
+  5. Salir
+========================================
+Elige: 1
+
+==================================================
+  📊 REPORTE: TOTAL
+==================================================
+  Cantidad de registros:  10
+  Media (promedio):       $137.22
+  Mediana:                $116.25
+  Moda:                   $45.99
+  Mínimo:                 $45.99
+  Máximo:                 $399.98
+  Rango:                  $353.99
+  Desviación estándar:    $103.45
+==================================================
+
+Presiona Enter para continuar...
+```
+
+## ⚠️ Errores comunes a evitar
+
+| Error | Por qué es problema | Solución |
+|-------|---------------------|----------|
+| Strings como números | `"10" + "5"` = `"105"` no `15` | `float(valor)` al leer |
+| División por cero | `suma / 0` lanza error | `if valores else 0` |
+| CSV con encabezados distintos | `DictReader` usa primera fila | Validar encabezados esperados |
+| No manejar valores vacíos | `float("")` lanza error | `try/except` con default |
+| Mediana sin ordenar | Resultado incorrecto | `sorted(valores)` primero |
+
+## 📝 Fórmulas de referencia
+
+```python
+# Media (promedio):
+media = sum(valores) / len(valores)
+
+# Mediana (valor central):
+ordenados = sorted(valores)
+# Si es par: promedio de los dos centrales
+# Si es impar: valor del medio
+
+# Desviación estándar (muestra):
+promedio = media(valores)
+varianza = sum((x - promedio) ** 2 for x in valores) / (len(valores) - 1)
+desviacion = varianza ** 0.5
+
+# Moda (más frecuente):
+frecuencias = {}
+for v in valores:
+    frecuencias[v] = frecuencias.get(v, 0) + 1
+moda = max(frecuencias, key=frecuencias.get)
+```
+
+> **Simple is better than complex.** Cada fórmula cabe en pocas líneas. No las compliques.
+
+---
+
+**Anterior:** [Proyecto 2: Tienda de Productos](proyecto-02-tienda-productos.qmd)
+
+**Siguiente:** [10.6 Presentar tu proyecto](06-presentacion-proyecto.qmd)

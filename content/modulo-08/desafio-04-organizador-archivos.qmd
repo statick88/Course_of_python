@@ -1,0 +1,160 @@
+---
+title: "Desafío 4: Organizador de archivos"
+difficulty: "⭐⭐ Media"
+estimated_time: "20 minutos"
+---
+
+## Situación
+
+Tu escritorio está lleno de archivos desorganizados: documentos, imágenes, scripts de Python y archivos de datos. Necesitas un programa que analice un directorio y te muestre un resumen organizado de su contenido.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Use `pathlib` para escanear el directorio actual (`.`)
+2. Agrupe los archivos por extensión
+3. Muestre un resumen con:
+   - Total de archivos encontrados
+   - Cantidad de archivos por tipo de extensión
+   - El archivo más grande y el más pequeño
+   - Los 3 archivos más recientes (por fecha de modificación)
+4. Use `os` para obtener el tamaño de los archivos
+
+## Ejemplo de ejecución
+
+```
+=== Organizador de Archivos ===
+
+📁 Directorio: /Users/statick/proyecto
+
+📊 Resumen:
+   Total de archivos: 15
+   Total de carpetas: 3
+
+📂 Archivos por extensión:
+   .py    → 5 archivos
+   .txt   → 3 archivos
+   .csv   → 2 archivos
+   .md    → 2 archivos
+   .json  → 1 archivo
+   .log   → 1 archivo
+   (sin extensión) → 1 archivo
+
+📏 Tamaño:
+   Más grande: datos.csv (2.4 MB)
+   Más pequeño: readme.md (156 B)
+
+🕐 Más recientes:
+   1. main.py (hace 2 minutos)
+   2. config.json (hace 1 hora)
+   3. datos.csv (hace 3 horas)
+```
+
+## Pista
+
+- `Path(".").iterdir()` itera sobre todos los elementos del directorio
+- `.is_file()` y `.is_dir()` distinguen archivos de carpetas
+- `.suffix` devuelve la extensión del archivo (ej: `.py`)
+- `.stat().st_size` devuelve el tamaño en bytes
+- `.stat().st_mtime` devuelve la fecha de modificación como timestamp
+- Usa `datetime.fromtimestamp()` para convertir el timestamp a fecha legible
+- Para formatear tamaños: divide entre 1024 para KB, entre 1024² para MB
+
+## Criterios de éxito
+
+- [ ] Escanea el directorio actual con `pathlib`
+- [ ] Agrupa archivos por extensión
+- [ ] Muestra total de archivos y carpetas
+- [ ] Identifica archivo más grande y más pequeño
+- [ ] Muestra los 3 archivos más recientes
+- [ ] Formatea tamaños de forma legible (B, KB, MB)
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 4: Organizador de archivos
+# Solución de referencia
+
+from pathlib import Path
+from datetime import datetime
+from collections import Counter
+
+def formatear_tamano(bytes):
+    """Convierte bytes a formato legible."""
+    if bytes < 1024:
+        return f"{bytes} B"
+    elif bytes < 1024 ** 2:
+        return f"{bytes / 1024:.1f} KB"
+    else:
+        return f"{bytes / (1024 ** 2):.1f} MB"
+
+
+def tiempo_relativo(timestamp):
+    """Calcula cuánto tiempo pasó desde el timestamp."""
+    ahora = datetime.now()
+    fecha = datetime.fromtimestamp(timestamp)
+    diff = ahora - fecha
+
+    segundos = int(diff.total_seconds())
+    if segundos < 60:
+        return f"hace {segundos} segundos"
+    elif segundos < 3600:
+        return f"hace {segundos // 60} minutos"
+    elif segundos < 86400:
+        return f"hace {segundos // 3600} horas"
+    else:
+        return f"hace {segundos // 86400} días"
+
+
+print("=== Organizador de Archivos ===")
+print()
+
+directorio = Path(".")
+print(f"📁 Directorio: {directorio.absolute()}")
+print()
+
+# Separar archivos y carpetas
+archivos = [p for p in directorio.iterdir() if p.is_file()]
+carpetas = [p for p in directorio.iterdir() if p.is_dir()]
+
+print(f"📊 Resumen:")
+print(f"   Total de archivos: {len(archivos)}")
+print(f"   Total de carpetas: {len(carpetas)}")
+print()
+
+# Agrupar por extensión
+extensiones = Counter()
+for archivo in archivos:
+    ext = archivo.suffix if archivo.suffix else "(sin extensión)"
+    extensiones[ext] += 1
+
+print("📂 Archivos por extensión:")
+for ext, cantidad in sorted(extensiones.items(), key=lambda x: -x[1]):
+    print(f"   {ext:<12} → {cantidad} archivo{'s' if cantidad > 1 else ''}")
+print()
+
+# Tamaño de archivos
+if archivos:
+    tamaños = [(p, p.stat().st_size) for p in archivos]
+    mas_grande = max(tamaños, key=lambda x: x[1])
+    mas_pequeno = min(tamaños, key=lambda x: x[1])
+
+    print("📏 Tamaño:")
+    print(f"   Más grande: {mas_grande[0].name} ({formatear_tamano(mas_grande[1])})")
+    print(f"   Más pequeño: {mas_pequeno[0].name} ({formatear_tamano(mas_pequeno[1])})")
+    print()
+
+    # Archivos más recientes
+    recientes = sorted(archivos, key=lambda p: p.stat().st_mtime, reverse=True)[:3]
+    print("🕐 Más recientes:")
+    for i, archivo in enumerate(recientes, 1):
+        tiempo = tiempo_relativo(archivo.stat().st_mtime)
+        print(f"   {i}. {archivo.name} ({tiempo})")
+```
+</details>
+
+---
+
+[← Desafío 3](desafio-03-aleatorios-avanzados.qmd) | [Desafío 5 →](desafio-05-api-clima.qmd)

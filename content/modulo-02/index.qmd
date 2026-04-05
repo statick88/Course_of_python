@@ -1,0 +1,48 @@
+---
+title: "Módulo 2: Tipos de Datos y Variables"
+---
+
+## 🎯 Objetivos del Módulo
+
+Al completar este módulo, serás capaz de:
+
+- ✅ Dominar todos los operadores aritméticos, de comparación y lógicos de Python
+- ✅ Convertir entre tipos de datos de forma segura y explícita
+- ✅ Manipular strings con métodos avanzados y f-strings
+- ✅ Resolver problemas reales con cálculos matemáticos y lógica
+- ✅ Validar datos de entrada antes de procesarlos
+
+## 📚 Contenido
+
+| Lección | Tema | Tipo |
+|---------|------|------|
+| [2.1](01-operadores-aritmeticos.qmd) | Operadores aritméticos: la calculadora de Python | 📖 Teoría |
+| [2.2](02-operadores-comparacion.qmd) | Operadores de comparación: el juez de Python | 📖 Teoría |
+| [2.3](03-operadores-logicos.qmd) | Operadores lógicos: el cerebro de Python | 📖 Teoría |
+| [2.4](04-casting-avanzado.qmd) | Casting avanzado: transformar datos | 💻 Práctica |
+| [2.5](05-strings-avanzado.qmd) | Strings avanzado: el taller de texto | 💻 Práctica |
+| [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
+
+## 🏆 Desafíos del Módulo
+
+| # | Desafío | Dificultad |
+|---|---------|------------|
+| [1](desafio-01-calculadora-propinas.qmd) | Calculadora de propinas | ⭐ Fácil |
+| [2](desafio-02-conversor-unidades.qmd) | Conversor de unidades | ⭐ Fácil |
+| [3](desafio-03-validador-edad.qmd) | Validador de edad | ⭐⭐ Media |
+| [4](desafio-04-generador-dni.qmd) | Generador de DNI | ⭐⭐ Media |
+| [5](desafio-05-cifrado-cesar.qmd) | Cifrado César | ⭐⭐ Media |
+| [6](desafio-06-analizador-texto.qmd) | Analizador de texto | ⭐⭐⭐ Difícil |
+| [7](desafio-07-mini-base-datos.qmd) | Mini base de datos | ⭐⭐⭐ Difícil |
+
+## 📋 Recursos
+
+| Recurso | Descripción |
+|---------|-------------|
+| [Cheat Sheet](recursos/cheat-sheet-modulo-2.md) | Referencia rápida de operadores y métodos |
+
+---
+
+**Anterior:** [Módulo 1: Introducción a Python](../modulo-01/index.qmd)
+
+**Siguiente:** [2.1 Operadores aritméticos](01-operadores-aritmeticos.qmd)

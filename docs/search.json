@@ -1,0 +1,986 @@
+[
+  {
+    "objectID": "labs/lab01-primer-programa.html",
+    "href": "labs/lab01-primer-programa.html",
+    "title": "Laboratorio 1: Tu primer programa",
+    "section": "",
+    "text": "Objetivos del laboratorio",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio 1: Tu primer programa</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab01-primer-programa.html#objetivos-del-laboratorio",
+    "href": "labs/lab01-primer-programa.html#objetivos-del-laboratorio",
+    "title": "Laboratorio 1: Tu primer programa",
+    "section": "",
+    "text": "Verificar que Python está instalado y funciona\nEscribir un archivo .py desde cero\nEjecutarlo desde la terminal\nModificarlo y ver los cambios en tiempo real",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio 1: Tu primer programa</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab01-primer-programa.html#requisitos-previos",
+    "href": "labs/lab01-primer-programa.html#requisitos-previos",
+    "title": "Laboratorio 1: Tu primer programa",
+    "section": "Requisitos previos",
+    "text": "Requisitos previos\n\nPython 3.8+ instalado\nUna terminal abierta\nUn editor de texto (VS Code, nano, o el que prefieras)",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio 1: Tu primer programa</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab01-primer-programa.html#paso-1-verificar-python",
+    "href": "labs/lab01-primer-programa.html#paso-1-verificar-python",
+    "title": "Laboratorio 1: Tu primer programa",
+    "section": "Paso 1: Verificar Python",
+    "text": "Paso 1: Verificar Python\nAbre tu terminal y ejecuta:\n\n\nBASH\n\npython3 --version\n\nDeberías ver algo como Python 3.12.1 o superior. Si ves un error, regresa a la lección de instalación.",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio 1: Tu primer programa</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab01-primer-programa.html#paso-2-crear-un-directorio-de-trabajo",
+    "href": "labs/lab01-primer-programa.html#paso-2-crear-un-directorio-de-trabajo",
+    "title": "Laboratorio 1: Tu primer programa",
+    "section": "Paso 2: Crear un directorio de trabajo",
+    "text": "Paso 2: Crear un directorio de trabajo\n\n\nBASH\n\nmkdir -p ~/python-basico/laboratorio-1\ncd ~/python-basico/laboratorio-1",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio 1: Tu primer programa</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab01-primer-programa.html#paso-3-crear-tu-primer-archivo",
+    "href": "labs/lab01-primer-programa.html#paso-3-crear-tu-primer-archivo",
+    "title": "Laboratorio 1: Tu primer programa",
+    "section": "Paso 3: Crear tu primer archivo",
+    "text": "Paso 3: Crear tu primer archivo\nAbre tu editor y crea un archivo llamado saludo.py con este contenido:\n\n\n\n\n\nGuárdalo en el directorio que creaste.",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio 1: Tu primer programa</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab01-primer-programa.html#paso-4-ejecutar-el-programa",
+    "href": "labs/lab01-primer-programa.html#paso-4-ejecutar-el-programa",
+    "title": "Laboratorio 1: Tu primer programa",
+    "section": "Paso 4: Ejecutar el programa",
+    "text": "Paso 4: Ejecutar el programa\nEn la terminal, ejecuta:\n\n\nBASH\n\npython3 saludo.py\n\nEl programa te pedirá tu nombre. Escribe algo y presiona Enter.",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio 1: Tu primer programa</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab01-primer-programa.html#paso-5-modificar-y-experimentar",
+    "href": "labs/lab01-primer-programa.html#paso-5-modificar-y-experimentar",
+    "title": "Laboratorio 1: Tu primer programa",
+    "section": "Paso 5: Modificar y experimentar",
+    "text": "Paso 5: Modificar y experimentar\nAhora modifica saludo.py para que:\n\nTambién pida tu ciudad\nMuestre un saludo que incluya nombre y ciudad\nUse un separador visual con guiones\n\nEjecuta de nuevo y verifica que funciona.",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio 1: Tu primer programa</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab01-primer-programa.html#verificación-de-resultados",
+    "href": "labs/lab01-primer-programa.html#verificación-de-resultados",
+    "title": "Laboratorio 1: Tu primer programa",
+    "section": "Verificación de resultados",
+    "text": "Verificación de resultados\nTu programa debería verse algo así al ejecutarlo:\n¿Cómo te llamas? Ana\n¿De qué ciudad eres? Quito\n\n========================================\nHola, Ana de Quito. ¡Bienvenido a Python!\n========================================",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio 1: Tu primer programa</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab01-primer-programa.html#preguntas-de-reflexión",
+    "href": "labs/lab01-primer-programa.html#preguntas-de-reflexión",
+    "title": "Laboratorio 1: Tu primer programa",
+    "section": "Preguntas de reflexión",
+    "text": "Preguntas de reflexión\n\n¿Qué pasa si no escribes nada y solo presionas Enter?\n¿Qué tipo de dato devuelve input()? ¿Cómo lo verificarías?\n¿Por qué usamos f\"...\" en vez de \"...\" + nombre + \"...\"?\n\n\nLaboratorio 2 → | ← Volver al Módulo 1",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio 1: Tu primer programa</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab02-variables-en-accion.html",
+    "href": "labs/lab02-variables-en-accion.html",
+    "title": "Laboratorio 2: Variables en acción",
+    "section": "",
+    "text": "Objetivos del laboratorio",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 2: Variables en acción</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab02-variables-en-accion.html#objetivos-del-laboratorio",
+    "href": "labs/lab02-variables-en-accion.html#objetivos-del-laboratorio",
+    "title": "Laboratorio 2: Variables en acción",
+    "section": "",
+    "text": "Crear variables de diferentes tipos\nObservar cómo Python infiere los tipos\nExperimentar con conversiones entre tipos\nVerificar tipos con la función type()",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 2: Variables en acción</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab02-variables-en-accion.html#requisitos-previos",
+    "href": "labs/lab02-variables-en-accion.html#requisitos-previos",
+    "title": "Laboratorio 2: Variables en acción",
+    "section": "Requisitos previos",
+    "text": "Requisitos previos\n\nHaber completado el Laboratorio 1\nConocer los tipos básicos: int, float, str, bool",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 2: Variables en acción</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab02-variables-en-accion.html#paso-1-crear-el-archivo-de-experimentación",
+    "href": "labs/lab02-variables-en-accion.html#paso-1-crear-el-archivo-de-experimentación",
+    "title": "Laboratorio 2: Variables en acción",
+    "section": "Paso 1: Crear el archivo de experimentación",
+    "text": "Paso 1: Crear el archivo de experimentación\nCrea un archivo llamado tipos.py en tu directorio de trabajo:\n\n\n\n\n\nEjecuta con python3 tipos.py y observa la salida.",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 2: Variables en acción</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab02-variables-en-accion.html#paso-2-experimentar-con-operaciones",
+    "href": "labs/lab02-variables-en-accion.html#paso-2-experimentar-con-operaciones",
+    "title": "Laboratorio 2: Variables en acción",
+    "section": "Paso 2: Experimentar con operaciones",
+    "text": "Paso 2: Experimentar con operaciones\nAgrega estas líneas al archivo y ejecuta de nuevo:",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 2: Variables en acción</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab02-variables-en-accion.html#paso-3-conversiones-explícitas",
+    "href": "labs/lab02-variables-en-accion.html#paso-3-conversiones-explícitas",
+    "title": "Laboratorio 2: Variables en acción",
+    "section": "Paso 3: Conversiones explícitas",
+    "text": "Paso 3: Conversiones explícitas\nAgrega y ejecuta:",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 2: Variables en acción</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab02-variables-en-accion.html#paso-4-el-desafío-qué-pasa-aquí",
+    "href": "labs/lab02-variables-en-accion.html#paso-4-el-desafío-qué-pasa-aquí",
+    "title": "Laboratorio 2: Variables en acción",
+    "section": "Paso 4: El desafío — ¿Qué pasa aquí?",
+    "text": "Paso 4: El desafío — ¿Qué pasa aquí?\nAntes de ejecutar, predice el resultado de cada línea:",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 2: Variables en acción</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab02-variables-en-accion.html#verificación-de-resultados",
+    "href": "labs/lab02-variables-en-accion.html#verificación-de-resultados",
+    "title": "Laboratorio 2: Variables en acción",
+    "section": "Verificación de resultados",
+    "text": "Verificación de resultados\nLa salida esperada del Paso 4 es:\n53\n8\n8\n53\nFalse\nTrue\nFalse\nTrue\nSi tu predicción fue diferente, analiza por qué. La diferencia entre \"5\" + \"3\" y 5 + 3 es el concepto más importante de este laboratorio.",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 2: Variables en acción</span>"
+    ]
+  },
+  {
+    "objectID": "labs/lab02-variables-en-accion.html#preguntas-de-reflexión",
+    "href": "labs/lab02-variables-en-accion.html#preguntas-de-reflexión",
+    "title": "Laboratorio 2: Variables en acción",
+    "section": "Preguntas de reflexión",
+    "text": "Preguntas de reflexión\n\n¿Por qué int(19.99) da 19 y no 20?\n¿Qué pasa si intentas int(\"hola\")? ¿Por qué?\n¿Por qué bool(0) es False pero bool(1) es True?\n¿Qué otros valores crees que son False en Python?\n\n\n← Laboratorio 1 | ← Volver al Módulo 1",
+    "crumbs": [
+      "Laboratorios Prácticos",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 2: Variables en acción</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/README.html",
+    "href": "quizzes/README.html",
+    "title": "Quizzes Interactivos",
+    "section": "",
+    "text": "Quizzes Disponibles",
+    "crumbs": [
+      "Evaluación: Quizzes Interactivos",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Quizzes Interactivos</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/README.html#quizzes-disponibles",
+    "href": "quizzes/README.html#quizzes-disponibles",
+    "title": "Quizzes Interactivos",
+    "section": "",
+    "text": "Quiz\nMódulo\nPreguntas\n\n\n\n\nQuiz Módulo 1\nIntroducción a Python\n10",
+    "crumbs": [
+      "Evaluación: Quizzes Interactivos",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Quizzes Interactivos</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/README.html#instrucciones",
+    "href": "quizzes/README.html#instrucciones",
+    "title": "Quizzes Interactivos",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nCada quiz tiene preguntas de opción múltiple\nPuedes intentar cada quiz tantas veces como necesites\nEl resultado se muestra inmediatamente al finalizar\n\n\nVolver al índice: Inicio",
+    "crumbs": [
+      "Evaluación: Quizzes Interactivos",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Quizzes Interactivos</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz-modulo-01.html",
+    "href": "quizzes/quiz-modulo-01.html",
+    "title": "Quiz: Módulo 1 — Introducción a Python",
+    "section": "",
+    "text": "Evaluación del Módulo 1\nResponde las siguientes preguntas para evaluar tu comprensión de los conceptos fundamentales de Python.\nVolver a Quizzes: README | Anterior: Módulo 1",
+    "crumbs": [
+      "Evaluación: Quizzes Interactivos",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Quiz: Módulo 1 — Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz-modulo-01.html#evaluación-del-módulo-1",
+    "href": "quizzes/quiz-modulo-01.html#evaluación-del-módulo-1",
+    "title": "Quiz: Módulo 1 — Introducción a Python",
+    "section": "",
+    "text": "¿Qué función se usa para mostrar texto en pantalla?\n\ninput()\nprint()\nshow()\ndisplay()\n\n\nExplicación: print() es la función incorporada de Python que envía texto a la salida estándar (pantalla).\n\n\n\n\n¿Qué tipo de dato es 3.14?\n\nint\nstr\nfloat\nbool\n\n\nExplicación: Los números con decimales son de tipo float en Python.\n\n\n\n\n¿Qué devuelve siempre la función input()?\n\nUn número entero\nUn texto (str)\nUn booleano\nUna lista\n\n\nExplicación: input() siempre devuelve una cadena de texto (str), incluso si el usuario escribe un número.\n\n\n\n\n¿Cuál es la convención correcta para nombrar variables en Python?\n\ncamelCase\nsnake_case\nPascalCase\nkebab-case\n\n\nExplicación: Python usa snake_case por convención (PEP 8): nombre_usuario, edad_maxima.\n\n\n\n\n¿Qué hace \"hola\" * 3?\n\nDa un error\nProduce \"holaholahola\"\nProduce \"hola 3\"\nProduce [\"hola\", \"hola\", \"hola\"]\n\n\nExplicación: El operador * con texto repite la cadena el número de veces indicado.\n\n\n\n\n¿Cuál es el resultado de 10 // 3?\n\n3.33\n3\n1\n10\n\n\nExplicación: // es la división entera, que descarta los decimales y devuelve solo la parte entera.\n\n\n\n\n¿Qué palabra reservada se usa para definir una función?\n\nfunction\ndef\nfunc\ndefine\n\n\nExplicación: En Python, las funciones se definen con def nombre_funcion():.\n\n\n\n\n¿Cuál es el resultado de bool(0)?\n\nTrue\nFalse\nError\nNone\n\n\nExplicación: En Python, 0, \"\", [], {}, y None se evalúan como False. Todo lo demás es True.\n\n\n\n\n¿Qué hace el método .strip() en un string?\n\nDivide el texto en palabras\nElimina espacios al inicio y final\nConvierte a mayúsculas\nReemplaza caracteres\n\n\nExplicación: \"  hola  \".strip() devuelve \"hola\".\n\n\n\n\n¿Qué principio del Zen de Python dice “El código se lee más veces de las que se escribe”?\n\nBeautiful is better than ugly\nSimple is better than complex\nReadability counts\nExplicit is better than implicit\n\n\nExplicación: “Readability counts” enfatiza que el código debe ser legible porque se lee mucho más de lo que se escribe.",
+    "crumbs": [
+      "Evaluación: Quizzes Interactivos",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Quiz: Módulo 1 — Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Programación Python Fundamentos",
+    "section": "",
+    "text": "🐍 Bienvenido al Curso\nEste curso te lleva desde cero conocimiento de programación hasta escribir tus propios programas en Python. No necesitas experiencia previa — solo curiosidad y ganas de aprender.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programación Python Fundamentos</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#bienvenido-al-curso",
+    "href": "index.html#bienvenido-al-curso",
+    "title": "Programación Python Fundamentos",
+    "section": "",
+    "text": "¿Qué vas a aprender?\n\n\n\nMódulo\nTema\nDesafíos\n\n\n\n\n1\nIntroducción a Python\n7\n\n\n2\nTipos de Datos y Variables\n7\n\n\n3\nEstructuras de Control\n8\n\n\n4\nFunciones\n8\n\n\n5\nListas y Tuplas\n7\n\n\n6\nDiccionarios y Sets\n7\n\n\n7\nManejo de Archivos\n7\n\n\n8\nMódulos y Paquetes\n7\n\n\n9\nBuenas Prácticas de Código\n7\n\n\n10\nProyecto Integrador\n5\n\n\n\nTotal: 70+ desafíos prácticos\n\n\nMetodología\nEste curso sigue la metodología Aprender Haciendo:\n\nTeoría mínima — Lo justo para entender el concepto\nDemostración — Código que puedes ejecutar y modificar\nDesafío — Problema real que debes resolver tú\nReflexión — ¿Qué aprendiste? ¿Qué harías diferente?\n\n\n“El código es comunicación. Si no puedes leerlo, no puedes mantenerlo.” — Diego Saavedra\n\n\n\nRequisitos\n\nComputadora con acceso a internet\nPython 3.8+ instalado\nEditor de texto (VS Code recomendado)\nGanas de aprender\n\n\n\n¿Cómo navegar?\nUsa el sidebar izquierdo para ir a cualquier módulo. Cada módulo tiene:\n\n📖 Lecciones — Contenido teórico con ejemplos\n💻 Laboratorios — Ejercicios paso a paso\n🏆 Desafíos — Problemas para resolver solo\n\n\nCurso desarrollado por Diego Saavedra para Abacom Capacitación y Servicios",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programación Python Fundamentos</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre el Instructor",
+    "section": "",
+    "text": "Diego Saavedra\nInstructor Principal — Abacom Capacitación y Servicios\nFullStack Developer, Ethical Hacker, Security Architect y Profesor con más de 10 años de experiencia en la industria tecnológica.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sobre el Instructor</span>"
+    ]
+  },
+  {
+    "objectID": "about.html#diego-saavedra",
+    "href": "about.html#diego-saavedra",
+    "title": "Sobre el Instructor",
+    "section": "",
+    "text": "Experiencia Académica\n\n\n\n\n\n\n\n\nInstitución\nPeríodo\nCursos Dictados\n\n\n\n\nESPE (Dept. Ciencias de la Computación)\n2023-2024\nDesarrollo de Software, Seguridad\n\n\nAbacom (Capacitación y Servicios)\n2022-Actual\nEthical Hacking, Pentesting, Cybersecurity\n\n\nCodings Academy\n2024\nFullStack, DevOps, Web Development\n\n\nIST Juan Montalvo\n2019-2022\nProgramación, IT\n\n\nUniversidad Zulia\n-\nInvestigación, Educación Superior\n\n\n\n\n\nCertificaciones\n\nCKA — Certified Kubernetes Administrator (KodeKloud)\nCKS — Certified Kubernetes Security Specialist (En progreso)\neWPTXv2 — Web Application Penetration Testing (En progreso)\n\n\n\nFormación Académica\n\nMaster en Ciberseguridad, Seguridad Defensiva y Ofensiva — UCM (En proceso)\nMaster en Ciencias y Tecnologías de la Computación — UTPL\nPregrado — Universidad Nacional de Loja (2007-2011)\n\n\n\nFilosofía de Enseñanza\n\n“No soy aquí para caerles bien. Soy aquí para hacerlos aprender.”\n\nMi metodología se basa en:\n\nAnalogías primero — Uso ejemplos del mundo real antes de mostrar código\nMétodo socrático — Hago preguntas antes de dar respuestas\nAprender haciendo — 70+ desafíos prácticos, no solo teoría\nCódigo como comunicación — Nombres que revelan intención, código legible\nPensamiento atómico — Funciones pequeñas, responsabilidad única\n\n\n\nContacto\n\nGitHub: statick88\nBlog: statick88.github.io\n\n\nEste curso es parte del catálogo de Abacom Capacitación y Servicios",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sobre el Instructor</span>"
+    ]
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Licencia Creative Commons\nEste material educativo está licenciado bajo:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "license.html#licencia-creative-commons",
+    "href": "license.html#licencia-creative-commons",
+    "title": "Licencia",
+    "section": "",
+    "text": "CC BY-SA 4.0\nAtribución-CompartirIgual 4.0 Internacional\n\n\n\nCC BY-SA 4.0\n\n\n\n\nUsted es libre de:\n\nCompartir — copiar y redistribuir el material en cualquier medio o formato\nAdaptar — remezclar, transformar y construir sobre el material para cualquier propósito, incluso comercial\n\n\n\nBajo los siguientes términos:\n\nAtribución — Usted debe dar crédito de manera adecuada, proporcionar un enlace a la licencia e indicar si se realizaron cambios. Puede hacerlo de cualquier manera razonable, pero no de manera que sugiera que el licenciante lo respalda a usted o su uso.\nCompartirIgual — Si remezcla, transforma o crea a partir del material, debe distribuir sus contribuciones bajo la misma licencia que el original.\n\n\n\nAviso Legal\nEste es un resumen legible por humanos de la licencia. Para ver el texto legal completo, visite:\nhttps://creativecommons.org/licenses/by-sa/4.0/legalcode\n\n© 2026 Diego Saavedra. Todos los derechos reservados bajo los términos de la licencia CC BY-SA 4.0.\nMaterial desarrollado para Abacom Capacitación y Servicios",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/01-que-es-python.html",
+    "href": "content/modulo-01/01-que-es-python.html",
+    "title": "1.1 ¿Qué es Python?",
+    "section": "",
+    "text": "Objetivos de esta lección\nAl terminar esta lección podrás:",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.1 ¿Qué es Python?</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/01-que-es-python.html#objetivos-de-esta-lección",
+    "href": "content/modulo-01/01-que-es-python.html#objetivos-de-esta-lección",
+    "title": "1.1 ¿Qué es Python?",
+    "section": "",
+    "text": "Explicar qué es Python y para qué se usa\nContar la historia detrás del lenguaje\nEntender la filosofía Zen de Python\nIdentificar las áreas donde Python domina",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.1 ¿Qué es Python?</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/01-que-es-python.html#qué-es-python-la-analogía-del-multiherramienta",
+    "href": "content/modulo-01/01-que-es-python.html#qué-es-python-la-analogía-del-multiherramienta",
+    "title": "1.1 ¿Qué es Python?",
+    "section": "¿Qué es Python? — La analogía del multiherramienta",
+    "text": "¿Qué es Python? — La analogía del multiherramienta\nImagina que vas a armar un mueble. Necesitas:\n\nDestornillador para los tornillos\nLlave inglesa para las tuercas\nMartillo para los clavos\nNivel para que quede derecho\n\nEso son los lenguajes de programación especializados. C es como un destornillador profesional — hace UNA cosa extremadamente bien. Java es como una llave inglesa ajustable — versátil pero pesada.\nPython es como un multiherramienta Swiss Army. No es el mejor destornillador del mundo, pero puedes hacer el 90% del trabajo con una sola herramienta. Y eso lo hace increíblemente valioso.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.1 ¿Qué es Python?</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/01-que-es-python.html#historia-rápida",
+    "href": "content/modulo-01/01-que-es-python.html#historia-rápida",
+    "title": "1.1 ¿Qué es Python?",
+    "section": "Historia rápida",
+    "text": "Historia rápida\n\n\n\n\n\n\n\nAño\nEvento\n\n\n\n\n1989\nGuido van Rossum empieza a trabajar en Python durante las vacaciones de Navidad en Holanda\n\n\n1991\nSe publica Python 0.9.0 — ya tenía clases, herencia y manejo de excepciones\n\n\n2000\nPython 2.0 — list comprehensions, garbage collector\n\n\n2008\nPython 3.0 — ruptura con Python 2, diseño más limpio\n\n\n2020\nPython 2 llega a su fin — Python 3 es el estándar\n\n\n2024\nPython es el lenguaje #1 en el ranking TIOBE\n\n\n\n\nDato curioso: El nombre NO viene de la serpiente. Guido era fanático del grupo de comedia británico Monty Python. Por eso los ejemplos oficiales hablan de “spam” y “eggs”.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.1 ¿Qué es Python?</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/01-que-es-python.html#para-qué-se-usa-python",
+    "href": "content/modulo-01/01-que-es-python.html#para-qué-se-usa-python",
+    "title": "1.1 ¿Qué es Python?",
+    "section": "¿Para qué se usa Python?",
+    "text": "¿Para qué se usa Python?\nPython está en todas partes. Literalmente.\n\n🌐 Desarrollo Web\n\nDjango y Flask — frameworks para crear sitios web\nInstagram, Pinterest, Spotify usan Python en su backend\n\n\n\n🤖 Inteligencia Artificial\n\nTensorFlow, PyTorch — las bibliotecas de IA más usadas del mundo\nChatGPT, Midjourney, y todos los modelos de IA usan Python\n\n\n\n📊 Ciencia de Datos\n\npandas, numpy, matplotlib — análisis y visualización\nEmpresas como Netflix y Uber toman decisiones con datos en Python\n\n\n\n🔧 Automatización\n\nScripts para tareas repetitivas\nDevOps, testing, deployment\n\n\n\n🎮 Desarrollo de Juegos\n\nPygame — biblioteca para crear juegos 2D\nHerramientas de desarrollo como Blender usan Python\n\n\n\n🔐 Ciberseguridad\n\nHerramientas de pentesting como Scapy\nScripts de automatización de pruebas de seguridad\n\n\n\n🗄️ Bases de Datos\n\nSQLite — base de datos incluida en Python (no requiere instalación)\nSQLAlchemy — ORM para PostgreSQL, MySQL, MariaDB\npsycopg2 — driver para PostgreSQL\npymysql — driver para MySQL/MariaDB",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.1 ¿Qué es Python?</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/01-que-es-python.html#la-filosofía-de-python-el-zen",
+    "href": "content/modulo-01/01-que-es-python.html#la-filosofía-de-python-el-zen",
+    "title": "1.1 ¿Qué es Python?",
+    "section": "La filosofía de Python: El Zen",
+    "text": "La filosofía de Python: El Zen\nPython tiene una filosofía escrita. Se llama “El Zen de Python” y puedes leerla directamente en tu computadora:\n\n\nPYTHON\n\n1import this\n\n\n1\n\nEl módulo this contiene el Zen de Python. Al importarlo, se imprime en pantalla automáticamente.\n\n\nLos principios más importantes:\n\n“Beautiful is better than ugly” — El código bonito es mejor que el feo\n“Simple is better than complex” — Simple es mejor que complejo\n“Readability counts” — La legibilidad importa\n“There should be one– and preferably only one –obvious way to do it” — Debe haber una forma obvia de hacer las cosas\n\nEsto significa que en Python, escribimos código para que los humanos lo lean, no las máquinas.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.1 ¿Qué es Python?</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/01-que-es-python.html#python-vs-otros-lenguajes-comparación-rápida",
+    "href": "content/modulo-01/01-que-es-python.html#python-vs-otros-lenguajes-comparación-rápida",
+    "title": "1.1 ¿Qué es Python?",
+    "section": "Python vs otros lenguajes — Comparación rápida",
+    "text": "Python vs otros lenguajes — Comparación rápida\n\nImprimir “Hola Mundo”\nPython:\n\n\nPYTHON\n\n1print(\"Hola Mundo\")\n\n\n1\n\nEn Python, una sola línea de código es suficiente para imprimir texto en pantalla.\n\n\nJava:\n\n\nJAVA\n\npublic class HolaMundo {\n    public static void main(String[] args) {\n        System.out.println(\"Hola Mundo\");\n    }\n}\n\nC++:\n\n\nCPP\n\n#include &lt;iostream&gt;\nint main() {\n    std::cout &lt;&lt; \"Hola Mundo\" &lt;&lt; std::endl;\n    return 0;\n}\n\n¿Ves la diferencia? Python te deja ir al grano.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.1 ¿Qué es Python?</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/01-que-es-python.html#por-qué-python-para-principiantes",
+    "href": "content/modulo-01/01-que-es-python.html#por-qué-python-para-principiantes",
+    "title": "1.1 ¿Qué es Python?",
+    "section": "¿Por qué Python para principiantes?",
+    "text": "¿Por qué Python para principiantes?\n\nSintaxis limpia — Se lee como inglés básico\nTipado dinámico — No necesitas declarar tipos de variables\nComunidad enorme — Si tienes un problema, alguien ya lo resolvió\nVersátil — Aprendes un lenguaje y puedes hacer de todo\nDemanda laboral — Es el lenguaje más solicitado en ofertas de trabajo",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.1 ¿Qué es Python?</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/01-que-es-python.html#resumen",
+    "href": "content/modulo-01/01-que-es-python.html#resumen",
+    "title": "1.1 ¿Qué es Python?",
+    "section": "Resumen",
+    "text": "Resumen\n\n\n\n\n\n\n\nConcepto\nIdea clave\n\n\n\n\n¿Qué es?\nLenguaje de programación de alto nivel, interpretado y multipropósito\n\n\n¿Quién lo creó?\nGuido van Rossum, 1989\n\n\n¿Por qué Python?\nSintaxis simple, versátil, enorme comunidad\n\n\n¿Para qué sirve?\nWeb, IA, datos, automatización, juegos, seguridad, bases de datos\n\n\nFilosofía\nCódigo legible, simple y hermoso\n\n\n\n\nSiguiente: 1.2 Instalación y configuración",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.1 ¿Qué es Python?</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html",
+    "href": "content/modulo-01/02-instalacion.html",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "",
+    "text": "Objetivos de esta lección",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#objetivos-de-esta-lección",
+    "href": "content/modulo-01/02-instalacion.html#objetivos-de-esta-lección",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "",
+    "text": "Instalar Python en tu sistema operativo\nVerificar que la instalación funciona correctamente\nInstalar y usar IPython como herramienta de aprendizaje\nElegir y configurar un editor de código\nEntender la diferencia entre terminal, intérprete y editor",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#paso-1-instalar-python",
+    "href": "content/modulo-01/02-instalacion.html#paso-1-instalar-python",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Paso 1: Instalar Python",
+    "text": "Paso 1: Instalar Python\n\nEn Windows\n\n\nPYTHON\n\n# Verificar si Python está instalado en Windows\n1python --version\n\n\n1\n\nEn Windows, el comando puede ser python o py en lugar de python3.\n\n\nProceso de instalación:\n\nVe a https://python.org/downloads\nDescarga el instalador para Windows\nIMPORTANTE: Marca la casilla “Add Python to PATH” antes de instalar &lt;1&gt;\nHaz clic en “Install Now”\nEsta opción agrega Python al PATH del sistema, permitiendo ejecutar python desde cualquier terminal.\n\n\n\nEn macOS\n\n\nBASH\n\n# Verificar si Python está instalado en macOS\n1python3 --version\n\n\n1\n\nmacOS incluye Python 2 por defecto, pero necesitamos Python 3.\n\n\nInstalación con Homebrew (recomendado):\n\n\nBASH\n\n# Instalar Homebrew si no lo tienes\n1/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n\n# Instalar Python 3\n2brew install python3\n\n# Verificar la instalación\n3python3 --version\n\n\n1\n\nHomebrew es el gestor de paquetes más popular para macOS.\n\n2\n\nEste comando instala la última versión estable de Python 3.\n\n3\n\nDeberías ver algo como Python 3.12.x o superior.\n\n\n\n\nEn Linux (Ubuntu/Debian)\n\n\nBASH\n\n# Actualizar la lista de paquetes\n1sudo apt update\n\n# Instalar Python 3 y pip\n2sudo apt install python3 python3-pip python3-venv\n\n# Verificar la instalación\n3python3 --version\n4pip3 --version\n\n\n1\n\nActualiza la lista de paquetes disponibles en los repositorios.\n\n2\n\nInstala Python 3, el gestor de paquetes pip y el módulo de entornos virtuales.\n\n3\n\nDeberías ver la versión de Python instalada.\n\n4\n\npip es el gestor de paquetes de Python, necesario para instalar bibliotecas externas.\n\n\n\n\nEn Linux (Fedora/RHEL)\n\n\nBASH\n\n# Instalar Python 3 en Fedora\n1sudo dnf install python3 python3-pip python3-devel\n\n# Verificar la instalación\n2python3 --version\n\n\n1\n\ndnf es el gestor de paquetes de Fedora. python3-devel incluye archivos de desarrollo necesarios para algunas bibliotecas.\n\n2\n\nVerifica que Python 3 se instaló correctamente.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#paso-2-verificar-la-instalación",
+    "href": "content/modulo-01/02-instalacion.html#paso-2-verificar-la-instalación",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Paso 2: Verificar la instalación",
+    "text": "Paso 2: Verificar la instalación\nAbre tu terminal (o PowerShell en Windows) y ejecuta:\n\n\nBASH\n\n1python3 --version\n\n\n1\n\nEste comando muestra la versión de Python instalada. Deberías ver algo como Python 3.12.1.\n\n\n\nNota: En Windows, a veces el comando es python en lugar de python3.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#paso-3-el-intérprete-interactivo",
+    "href": "content/modulo-01/02-instalacion.html#paso-3-el-intérprete-interactivo",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Paso 3: El intérprete interactivo",
+    "text": "Paso 3: El intérprete interactivo\nPython viene con un intérprete interactivo — una consola donde puedes escribir código y ver resultados inmediatamente.\n\n\nBASH\n\n# Iniciar el intérprete interactivo de Python\n1python3\n\n\n1\n\nEste comando abre el intérprete interactivo de Python. Verás el prompt &gt;&gt;&gt; indicando que Python está listo para recibir comandos.\n\n\nVerás algo así:\nPython 3.12.1 (main, Dec 15 2024, 00:00:00)\n[GCC ...] on linux\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n&gt;&gt;&gt;\nEl &gt;&gt;&gt; es el prompt de Python. Significa que está esperando tu código.\n\n\nPYTHON\n\n# Esto es un comentario — Python lo ignora\n1print(\"¡Hola desde el intérprete!\")\n\n# Puedes hacer matemáticas directamente\n22 + 2\n\n# Variables\n3nombre = \"Diego\"\n4print(f\"Hola, {nombre}\")\n\n\n1\n\nLa función print() muestra texto en pantalla.\n\n2\n\nPython evalúa expresiones matemáticas y muestra el resultado automáticamente.\n\n3\n\nLas variables se crean asignando un valor con el operador =.\n\n4\n\nLos f-strings permiten insertar variables directamente en el texto.\n\n\nPara salir del intérprete, escribe exit() o presiona Ctrl+D (Linux/macOS) o Ctrl+Z seguido de Enter (Windows).",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#paso-4-tu-primer-archivo-de-código",
+    "href": "content/modulo-01/02-instalacion.html#paso-4-tu-primer-archivo-de-código",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Paso 4: Tu primer archivo de código",
+    "text": "Paso 4: Tu primer archivo de código\nEl intérprete es genial para probar cosas, pero para programas reales necesitas archivos.\n\nCrear tu primer script\n\nAbre un editor de texto (VS Code, Sublime Text, o incluso el bloc de notas)\nEscribe este código:\n\n\n\n\n\n\n\nGuarda el archivo como mi_primer_programa.py\nEn la terminal, navega al directorio donde guardaste el archivo\nEjecuta:\n\n\n\nBASH\n\npython3 mi_primer_programa.py",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#paso-5-elegir-un-editor-de-código",
+    "href": "content/modulo-01/02-instalacion.html#paso-5-elegir-un-editor-de-código",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Paso 5: Elegir un editor de código",
+    "text": "Paso 5: Elegir un editor de código\nUn editor de código es como tu taller de trabajo. Estas son las mejores opciones:\n\n\n\nEditor\nPrecio\nNivel\nRecomendado para\n\n\n\n\nVS Code\nGratis\nTodos\n✅ Recomendación principal\n\n\nPyCharm Community\nGratis\nIntermedio\nProyectos grandes\n\n\nSublime Text\nGratis (trial)\nTodos\nLigero y rápido\n\n\nVim/Neovim\nGratis\nAvanzado\nUsuarios de terminal\n\n\n\n\nInstalar VS Code (recomendado)\n\nDescarga desde https://code.visualstudio.com\nInstala la extensión Python de Microsoft\nInstala la extensión Python Extension Pack",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#paso-6-estructura-de-un-proyecto-python",
+    "href": "content/modulo-01/02-instalacion.html#paso-6-estructura-de-un-proyecto-python",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Paso 6: Estructura de un proyecto Python",
+    "text": "Paso 6: Estructura de un proyecto Python\nUn proyecto organizado se ve así:\nmi_proyecto/\n├── main.py          # Punto de entrada\n├── utils.py         # Funciones auxiliares\n├── datos/           # Archivos de datos\n│   └── ejemplo.csv\n├── tests/           # Tests del proyecto\n│   └── test_main.py\n└── README.md        # Descripción del proyecto",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#resumen",
+    "href": "content/modulo-01/02-instalacion.html#resumen",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Resumen",
+    "text": "Resumen\n\n\n\nPaso\nQué hicimos\n\n\n\n\n1\nInstalamos Python en Windows, macOS o Linux\n\n\n2\nVerificamos con python3 --version\n\n\n3\nProbamos el intérprete interactivo\n\n\n4\nInstalamos y probamos IPython\n\n\n5\nCreamos nuestro primer archivo .py\n\n\n6\nElegimos un editor de código\n\n\n7\nAprendimos la estructura de un proyecto\n\n\n\n\nSiguiente: 1.3 Tu primer programa: Hola Mundo",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/03-hola-mundo.html",
+    "href": "content/modulo-01/03-hola-mundo.html",
+    "title": "1.3 Tu primer programa: Hola Mundo",
+    "section": "",
+    "text": "Objetivos de esta lección",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>1.3 Tu primer programa: Hola Mundo</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/03-hola-mundo.html#objetivos-de-esta-lección",
+    "href": "content/modulo-01/03-hola-mundo.html#objetivos-de-esta-lección",
+    "title": "1.3 Tu primer programa: Hola Mundo",
+    "section": "",
+    "text": "Escribir y ejecutar tu primer programa en Python\nEntender qué hace la función print()\nDiferenciar entre código fuente y salida\nComprender qué es una instrucción",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>1.3 Tu primer programa: Hola Mundo</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/03-hola-mundo.html#tu-primer-programa",
+    "href": "content/modulo-01/03-hola-mundo.html#tu-primer-programa",
+    "title": "1.3 Tu primer programa: Hola Mundo",
+    "section": "Tu primer programa",
+    "text": "Tu primer programa\nEn programación, la tradición dice que tu primer programa debe mostrar “Hola Mundo” en pantalla. No es solo una tradición — es la forma más simple de verificar que todo funciona.\n\n\nPYTHON\n\n# Este es mi primer programa en Python\n1print(\"¡Hola Mundo!\")\n\n\n1\n\nLa función print() muestra el texto “¡Hola Mundo!” en la pantalla.\n\n\nSalida:\n¡Hola Mundo!",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>1.3 Tu primer programa: Hola Mundo</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/03-hola-mundo.html#qué-acaba-de-pasar",
+    "href": "content/modulo-01/03-hola-mundo.html#qué-acaba-de-pasar",
+    "title": "1.3 Tu primer programa: Hola Mundo",
+    "section": "¿Qué acaba de pasar?",
+    "text": "¿Qué acaba de pasar?\nDesglosemos cada parte:\n\n\n\n\n\n\n\n\nParte\nQué es\nPara qué sirve\n\n\n\n\nprint\nFunción\nMuestra información en pantalla\n\n\n( y )\nParéntesis\nIndican que estamos llamando a la función\n\n\n\"¡Hola Mundo!\"\nArgumento\nLo que le pasamos a la función para que lo muestre\n\n\n#\nComentario\nTexto que Python ignora — es para humanos\n\n\n\n\nLa analogía de la cafetería\nPiensa en print() como pedir un café:\n\nprint = el barista (quien hace el trabajo)\n() = la orden (le dices que trabaje)\n\"¡Hola Mundo!\" = el tipo de café (qué quieres que haga)\n\nSin el barista, no hay café. Sin print, no hay salida en pantalla.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>1.3 Tu primer programa: Hola Mundo</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/03-hola-mundo.html#la-función-print-en-detalle",
+    "href": "content/modulo-01/03-hola-mundo.html#la-función-print-en-detalle",
+    "title": "1.3 Tu primer programa: Hola Mundo",
+    "section": "La función print() en detalle",
+    "text": "La función print() en detalle\nprint() puede mostrar mucho más que texto simple:\n\nMúltiples valores\n\n\nPYTHON\n\n# Puedes pasar varios valores separados por coma\n1print(\"Python\", \"es\", \"genial\")\n\n\n1\n\nprint() acepta múltiples argumentos separados por coma. Por defecto, los separa con un espacio.\n\n\nSalida:\nPython es genial\n\n\nNúmeros\n\n\nPYTHON\n\n# También imprime números\n1print(42)\n2print(3.14159)\n3print(-7)\n\n\n1\n\nImprime un número entero (int).\n\n2\n\nImprime un número decimal (float).\n\n3\n\nImprime un número negativo.\n\n\n\n\nOperaciones matemáticas\n\n\nPYTHON\n\n# Python calcula antes de imprimir\n1print(2 + 3)\n2print(10 * 5)\n3print(100 / 3)\n\n\n1\n\nPython evalúa la suma 2 + 3 y luego imprime el resultado 5.\n\n2\n\nPython evalúa la multiplicación 10 * 5 y luego imprime el resultado 50.\n\n3\n\nPython evalúa la división 100 / 3 y luego imprime el resultado 33.333....\n\n\n\n\nEl separador\nPor defecto, print() separa los valores con un espacio. Puedes cambiarlo:\n\n\nPYTHON\n\n# Usando guión como separador\n1print(\"Python\", \"es\", \"genial\", sep=\"-\")\n\n\n1\n\nEl argumento sep=\"-\" cambia el separador predeterminado (espacio) por un guión.\n\n\nSalida:\nPython-es-genial\n\n\nEl final de línea\nPor defecto, print() agrega un salto de línea al final. Puedes cambiarlo:\n\n\nPYTHON\n\n# Usando end para cambiar el final de línea\n1print(\"Hola\", end=\" \")\n2print(\"Mundo\")\n\n\n1\n\nend=\" \" cambia el salto de línea por un espacio, permitiendo que el siguiente print() continúe en la misma línea.\n\n2\n\nEste print() se imprime en la misma línea que el anterior.\n\n\nSalida:\nHola Mundo",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>1.3 Tu primer programa: Hola Mundo</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/03-hola-mundo.html#comentarios-tu-mejor-amigo",
+    "href": "content/modulo-01/03-hola-mundo.html#comentarios-tu-mejor-amigo",
+    "title": "1.3 Tu primer programa: Hola Mundo",
+    "section": "Comentarios: tu mejor amigo",
+    "text": "Comentarios: tu mejor amigo\nLos comentarios son notas que dejas en el código. Python los ignora completamente.\n\n\nPYTHON\n\n1# Esto es un comentario de una línea\n\n\"\"\"\nEsto es un comentario\n2de múltiples líneas\n\"\"\"\n\n3print(\"Los comentarios no se imprimen\")\n\n\n1\n\nLos comentarios de una línea comienzan con #.\n\n2\n\nLos comentarios de múltiples líneas se escriben entre triple comillas \"\"\".\n\n3\n\nLos comentarios al final de la línea explican el código sin interferir con su ejecución.\n\n\n\nReglas de oro para comentarios\n\nExplica el POR QUÉ, no el QUÉ\n\n❌ Mal: # Imprime el nombre → eso ya se ve en el código\n✅ Bien: # Usamos nombre en mayúsculas para consistencia con la base de datos\n\nMantenlos actualizados\n\nUn comentario viejo es peor que ningún comentario\n\nSi el código necesita muchos comentarios, probablemente es muy complejo",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>1.3 Tu primer programa: Hola Mundo</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/03-hola-mundo.html#errores-comunes",
+    "href": "content/modulo-01/03-hola-mundo.html#errores-comunes",
+    "title": "1.3 Tu primer programa: Hola Mundo",
+    "section": "Errores comunes",
+    "text": "Errores comunes\n\nError de sintaxis: olvidar las comillas\n\n\nPYTHON\n\n# Esto da ERROR — Python piensa que Hola es una variable\n1# print(Hola Mundo)\n\n# Esto funciona — las comillas indican que es texto\n2print(\"Hola Mundo\")\n\n\n1\n\nSin comillas, Python interpreta Hola y Mundo como nombres de variables, no como texto.\n\n2\n\nLas comillas (simples o dobles) indican que el contenido es una cadena de texto (str).\n\n\n\n\nError de sintaxis: olvidar el paréntesis\n\n\nPYTHON\n\n# Esto da ERROR — falta el paréntesis de cierre\n1# print(\"Hola Mundo\"\n\n# Esto funciona\n2print(\"Hola Mundo\")\n\n\n1\n\nCada paréntesis de apertura ( debe tener su paréntesis de cierre ).\n\n2\n\nLa sintaxis correcta requiere ambos paréntesis.\n\n\n\n\nError de mayúsculas\n\n\nPYTHON\n\n# Esto da ERROR — Python distingue mayúsculas\n1# Print(\"Hola Mundo\")\n2# PRINT(\"Hola Mundo\")\n\n# Esto funciona — todo en minúsculas\n3print(\"Hola Mundo\")\n\n\n1\n\nPrint con mayúscula inicial no existe en Python.\n\n2\n\nPRINT en mayúsculas tampoco existe.\n\n3\n\nprint en minúsculas es la función correcta.\n\n\n\nRegla: Python es case-sensitive. print, Print y PRINT son tres cosas diferentes.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>1.3 Tu primer programa: Hola Mundo</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/03-hola-mundo.html#desafío-rápido",
+    "href": "content/modulo-01/03-hola-mundo.html#desafío-rápido",
+    "title": "1.3 Tu primer programa: Hola Mundo",
+    "section": "Desafío rápido",
+    "text": "Desafío rápido\nSin ejecutar el código, ¿qué crees que imprime esto?\n\n\nPYTHON\n\n1print(\"5\" + \"3\")\n2print(5 + 3)\n\n\n1\n\n\"5\" + \"3\" concatena dos cadenas de texto, resultando en \"53\".\n\n2\n\n5 + 3 suma dos números enteros, resultando en 8.\n\n\n\n\nVer respuesta\n\n53\n8\n\n\"5\" + \"3\" → concatenación de texto → \"53\"\n5 + 3 → suma numérica → 8\n\nMás sobre esto en la lección de tipos de datos.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>1.3 Tu primer programa: Hola Mundo</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/03-hola-mundo.html#resumen",
+    "href": "content/modulo-01/03-hola-mundo.html#resumen",
+    "title": "1.3 Tu primer programa: Hola Mundo",
+    "section": "Resumen",
+    "text": "Resumen\n\n\n\nConcepto\nEjemplo\n\n\n\n\nImprimir texto\nprint(\"Hola\")\n\n\nImprimir número\nprint(42)\n\n\nMúltiples valores\nprint(\"a\", \"b\", \"c\")\n\n\nSeparador personalizado\nprint(\"a\", \"b\", sep=\"-\")\n\n\nFinal de línea personalizado\nprint(\"Hola\", end=\" \")\n\n\nComentario\n# Esto es un comentario\n\n\n\n\nSiguiente: 1.4 Variables: las cajas de la memoria",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>1.3 Tu primer programa: Hola Mundo</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-09/index.html",
+    "href": "content/modulo-09/index.html",
+    "title": "Módulo 09",
+    "section": "",
+    "text": "🎯 Objetivos del Módulo\nContenido en desarrollo…\nAnterior: Módulo 8",
+    "crumbs": [
+      "Módulo 9: Buenas Prácticas",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Módulo 09</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-10/index.html",
+    "href": "content/modulo-10/index.html",
+    "title": "Módulo 10",
+    "section": "",
+    "text": "🎯 Objetivos del Módulo\nContenido en desarrollo…\nAnterior: Módulo 9",
+    "crumbs": [
+      "Módulo 10: Proyecto Integrador",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Módulo 10</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#paso-4-ipython-el-intérprete-mejorado",
+    "href": "content/modulo-01/02-instalacion.html#paso-4-ipython-el-intérprete-mejorado",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Paso 4: IPython — El intérprete mejorado",
+    "text": "Paso 4: IPython — El intérprete mejorado\nIPython es una versión mejorada del intérprete interactivo de Python. Ofrece:\n\nAutocompletado con Tab\nHistorial de comandos\nAyuda integrada con ?\nMagic commands para tareas especiales\nMejor formato de salida\n\n\nInstalar IPython\n\n\nBASH\n\n# Instalar IPython con pip\n1pip3 install ipython\n\n\n1\n\nIPython se instala como cualquier otro paquete de Python usando pip.\n\n\n\n\nUsar IPython\n\n\nBASH\n\n# Iniciar IPython\n1ipython\n\n\n1\n\nIPython muestra un prompt diferente: In [1]: en lugar de &gt;&gt;&gt;.\n\n\n\n\nPYTHON\n\n# Ayuda integrada con ?\n1print?\n\n# Autocompletado con Tab\n2pri&lt;TAB&gt;\n\n# Historial de comandos\n# Usa las flechas arriba/abajo para navegar el historial\n\n# Magic commands\n3%timeit sum(range(1000))\n4%ls\n\n\n1\n\nEl signo ? después de una función muestra su documentación.\n\n2\n\nPresiona Tab para autocompletar nombres de funciones y variables.\n\n3\n\n%timeit mide el tiempo de ejecución de un comando.\n\n4\n\n%ls lista archivos en el directorio actual (como el comando ls de Linux).\n\n\n\n\nIPython vs Intérprete estándar\n\n\n\nCaracterística\nIntérprete estándar\nIPython\n\n\n\n\nPrompt\n&gt;&gt;&gt;\nIn [1]:\n\n\nAutocompletado\nBásico\nAvanzado con Tab\n\n\nHistorial\nLimitado\nCompleto con flechas\n\n\nAyuda\nhelp(función)\nfunción?\n\n\nMagic commands\nNo\nSí (%timeit, %ls, etc.)\n\n\nFormato de salida\nBásico\nMejorado con colores",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#paso-5-tu-primer-archivo-de-código",
+    "href": "content/modulo-01/02-instalacion.html#paso-5-tu-primer-archivo-de-código",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Paso 5: Tu primer archivo de código",
+    "text": "Paso 5: Tu primer archivo de código\nEl intérprete es genial para probar cosas, pero para programas reales necesitas archivos.\n\nCrear tu primer script\n\n\nPYTHON\n\n# mi_primer_programa.py\n1print(\"¡Hola Mundo!\")\n2nombre = input(\"¿Cómo te llamas? \")\n3print(f\"Encantado, {nombre}\")\n\n\n1\n\nprint() muestra texto en pantalla.\n\n2\n\ninput() lee texto ingresado por el usuario y lo almacena en la variable nombre.\n\n3\n\nEl f-string f\"...\" inserta el valor de la variable nombre en el texto.\n\n\nPara ejecutar el archivo:\n\n\nBASH\n\n# Ejecutar el script de Python\n1python3 mi_primer_programa.py\n\n\n1\n\nEste comando ejecuta el archivo mi_primer_programa.py con el intérprete de Python.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#paso-6-elegir-un-editor-de-código",
+    "href": "content/modulo-01/02-instalacion.html#paso-6-elegir-un-editor-de-código",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Paso 6: Elegir un editor de código",
+    "text": "Paso 6: Elegir un editor de código\nUn editor de código es como tu taller de trabajo. Estas son las mejores opciones:\n\n\n\nEditor\nPrecio\nNivel\nRecomendado para\n\n\n\n\nVS Code\nGratis\nTodos\n✅ Recomendación principal\n\n\nPyCharm Community\nGratis\nIntermedio\nProyectos grandes\n\n\nSublime Text\nGratis (trial)\nTodos\nLigero y rápido\n\n\nVim/Neovim\nGratis\nAvanzado\nUsuarios de terminal\n\n\n\n\nInstalar VS Code (recomendado)\n\nDescarga desde https://code.visualstudio.com\nInstala la extensión Python de Microsoft\nInstala la extensión Python Extension Pack",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/02-instalacion.html#paso-7-estructura-de-un-proyecto-python",
+    "href": "content/modulo-01/02-instalacion.html#paso-7-estructura-de-un-proyecto-python",
+    "title": "1.2 Instalación y configuración del entorno",
+    "section": "Paso 7: Estructura de un proyecto Python",
+    "text": "Paso 7: Estructura de un proyecto Python\nUn proyecto organizado se ve así:\nmi_proyecto/\n├── main.py\n├── utils.py\n├── datos/\n│   └── ejemplo.csv\n├── tests/\n│   └── test_main.py\n└── README.md\n\n1\n\nmain.py es el punto de entrada del programa.\n\n2\n\nutils.py contiene funciones auxiliares reutilizables.\n\n3\n\ndatos/ almacena archivos de datos que usa el programa.\n\n4\n\ntests/ contiene pruebas automatizadas del código.\n\n5\n\nREADME.md describe el proyecto y cómo usarlo.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.2 Instalación y configuración del entorno</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/04-variables.html",
+    "href": "content/modulo-01/04-variables.html",
+    "title": "1.4 Variables: las cajas de la memoria",
+    "section": "",
+    "text": "Objetivos de esta lección",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>1.4 Variables: las cajas de la memoria</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/04-variables.html#objetivos-de-esta-lección",
+    "href": "content/modulo-01/04-variables.html#objetivos-de-esta-lección",
+    "title": "1.4 Variables: las cajas de la memoria",
+    "section": "",
+    "text": "Entender qué es una variable y cómo funciona la asignación\nElegir nombres que revelen intención\nUsar variables para hacer código legible y mantenible\nComprender que en Python las variables son etiquetas, no cajas",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>1.4 Variables: las cajas de la memoria</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/04-variables.html#qué-es-una-variable",
+    "href": "content/modulo-01/04-variables.html#qué-es-una-variable",
+    "title": "1.4 Variables: las cajas de la memoria",
+    "section": "¿Qué es una variable?",
+    "text": "¿Qué es una variable?\nEn otros lenguajes, una variable es como una caja donde guardas algo. En Python es diferente: es una etiqueta que le pones a un valor.\n\n\nPYTHON\n\n# La etiqueta \"edad\" apunta al valor 25\n1edad = 25\n\n# Ahora \"edad\" apunta a 26. El 25 sigue existiendo,\n# pero ya nadie lo usa — Python lo limpia solo\n2edad = 26\n\n\n1\n\nLa variable edad es una etiqueta que apunta al valor 25. En Python, las variables no almacenan valores, sino que los referencian.\n\n2\n\nAl reasignar edad = 26, la etiqueta edad ahora apunta a un nuevo valor. El valor anterior (25) queda sin referencias y Python lo limpia automáticamente.\n\n\n\nBeautiful is better than ugly. Un buen nombre hace que el código se lea como una oración.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>1.4 Variables: las cajas de la memoria</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/04-variables.html#nombres-que-hablan",
+    "href": "content/modulo-01/04-variables.html#nombres-que-hablan",
+    "title": "1.4 Variables: las cajas de la memoria",
+    "section": "Nombres que hablan",
+    "text": "Nombres que hablan\nMira estos dos bloques. Hacen exactamente lo mismo, pero ¿cuál entiendes sin pensar?\n\n\nPYTHON\n\n# ❌ Nombres que no dicen nada\n1x = 9.99\n2y = 0.15\n3z = x * y\n\n\n1\n\nx no revela qué representa. ¿Es un precio? ¿Una medida? ¿Un contador?\n\n2\n\ny tampoco dice nada sobre su propósito.\n\n3\n\nz es el resultado de una operación desconocida.\n\n\n\n\nPYTHON\n\n# ✅ Nombres que cuentan una historia\n1precio_base = 9.99\n2tasa_impuesto = 0.15\n3monto_impuesto = precio_base * tasa_impuesto\n\n\n1\n\nprecio_base indica claramente que es el precio antes de impuestos.\n\n2\n\ntasa_impuesto revela que es el porcentaje de impuesto aplicado.\n\n3\n\nmonto_impuesto muestra que es el resultado de calcular el impuesto sobre el precio base.\n\n\nEl segundo bloque no necesita comentarios. Los nombres hacen todo el trabajo.\n\nReglas para nombrar\n\n\n\n\n\n\n\n\nRegla\nEjemplo válido\n❌ Inválido\n\n\n\n\nSolo letras, números y guiones bajos\nnombre_usuario\nnombre-usuario\n\n\nNo puede empezar con número\nusuario1\n1usuario\n\n\nNo puede ser palabra reservada\nmi_clase\nclass\n\n\nDistingue mayúsculas\nNombre ≠ nombre\n—\n\n\n\n\n\nPalabras reservadas de Python\nEstas palabras tienen significado especial. No puedes usarlas como nombres de variables:\n\n\nPYTHON\n\n1import keyword\n\n2print(keyword.kwlist)\n\n\n1\n\nEl módulo keyword contiene información sobre las palabras reservadas de Python.\n\n2\n\nkwlist es una lista que contiene todas las palabras reservadas del lenguaje.\n\n\nLas más importantes que encontrarás desde el día uno:\n\n\n\nPalabra\nPara qué sirve\n\n\n\n\nif, else, elif\nTomar decisiones\n\n\nfor, while\nRepetir acciones\n\n\ndef\nDefinir funciones\n\n\nclass\nDefinir clases\n\n\nreturn\nDevolver un resultado\n\n\nimport\nUsar código de otros módulos\n\n\nTrue, False, None\nValores especiales\n\n\nand, or, not\nOperadores lógicos\n\n\ntry, except, finally\nManejar errores\n\n\nwith, as\nGestión de recursos\n\n\n\n\nSimple is better than complex. Si necesitas más de 3 palabras para nombrar una variable, probablemente esa variable hace demasiado.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>1.4 Variables: las cajas de la memoria</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/04-variables.html#asignación-múltiple",
+    "href": "content/modulo-01/04-variables.html#asignación-múltiple",
+    "title": "1.4 Variables: las cajas de la memoria",
+    "section": "Asignación múltiple",
+    "text": "Asignación múltiple\nPython te permite asignar varias variables en una sola línea. Úsalo con moderación — cuando haga el código más claro, no más corto.\n\n\nPYTHON\n\n# ✅ Claro: valores relacionados\n1ancho, alto = 800, 600\n\n# ✅ Claro: intercambio de valores (sin variable temporal)\nprimero = 1\nsegundo = 2\n2primero, segundo = segundo, primero\n\n# ❌ Confuso: demasiadas cosas a la vez\n3a, b, c, d, e = 1, \"hola\", 3.14, True, None\n\n\n1\n\nancho recibe 800 y alto recibe 600. Útil para dimensiones relacionadas.\n\n2\n\nPython permite intercambiar valores sin variable temporal: primero ahora es 2 y segundo ahora es 1.\n\n3\n\nAsignar demasiados valores en una línea hace el código difícil de leer y mantener.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>1.4 Variables: las cajas de la memoria</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/04-variables.html#el-tipo-importa-pero-python-lo-sabe-por-ti",
+    "href": "content/modulo-01/04-variables.html#el-tipo-importa-pero-python-lo-sabe-por-ti",
+    "title": "1.4 Variables: las cajas de la memoria",
+    "section": "El tipo importa — pero Python lo sabe por ti",
+    "text": "El tipo importa — pero Python lo sabe por ti\nEn Python no declaras el tipo. Python lo infiere del valor:\n\n\nPYTHON\n\n1nombre = \"Ana\"\n2edad = 30\n3estatura = 1.65\n4es_estudiante = True\n\n\n1\n\nPython infiere que nombre es de tipo str (cadena de texto) porque el valor está entre comillas.\n\n2\n\nPython infiere que edad es de tipo int (número entero) porque no tiene decimales.\n\n3\n\nPython infiere que estatura es de tipo float (número decimal) porque tiene punto decimal.\n\n4\n\nPython infiere que es_estudiante es de tipo bool (booleano) porque el valor es True.\n\n\nPuedes verificar el tipo en cualquier momento:\n\n\nPYTHON\n\n1print(type(nombre))\n2print(type(edad))\n3print(type(estatura))\n4print(type(es_estudiante))\n\n\n1\n\ntype(nombre) devuelve &lt;class 'str'&gt; — es una cadena de texto.\n\n2\n\ntype(edad) devuelve &lt;class 'int'&gt; — es un número entero.\n\n3\n\ntype(estatura) devuelve &lt;class 'float'&gt; — es un número decimal.\n\n4\n\ntype(es_estudiante) devuelve &lt;class 'bool'&gt; — es un booleano.\n\n\n\nReadability counts. Si necesitas saber el tipo de una variable mirando el código, el nombre debería dar una pista.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>1.4 Variables: las cajas de la memoria</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/04-variables.html#convención-snake_case",
+    "href": "content/modulo-01/04-variables.html#convención-snake_case",
+    "title": "1.4 Variables: las cajas de la memoria",
+    "section": "Convención: snake_case",
+    "text": "Convención: snake_case\nEn Python, las variables se escriben en snake_case: todas minúsculas, palabras separadas por guión bajo.\n\n\nPYTHON\n\n# ✅ Convención de Python\n1nombre_completo = \"Diego Saavedra\"\nedad_maxima = 65\nes_activo = True\n\n# ❌ Otros lenguajes (no uses esto en Python)\n2nombreCompleto = \"Diego Saavedra\"\n3NombreCompleto = \"Diego Saavedra\"\n4NOMBRE_COMPLETO = \"Diego Saavedra\"\n\n\n1\n\nsnake_case es la convención oficial de Python (PEP 8). Todas las palabras en minúsculas separadas por guión bajo.\n\n2\n\ncamelCase es la convención de JavaScript. No se usa en Python.\n\n3\n\nPascalCase es la convención de Java y C#. En Python se reserva para nombres de clases.\n\n4\n\nUPPER_SNAKE_CASE se usa solo para constantes en Python.\n\n\n\nThere should be one obvious way to do it. En Python, esa forma es snake_case.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>1.4 Variables: las cajas de la memoria</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/04-variables.html#constantes-la-convención-de-mayúsculas",
+    "href": "content/modulo-01/04-variables.html#constantes-la-convención-de-mayúsculas",
+    "title": "1.4 Variables: las cajas de la memoria",
+    "section": "Constantes: la convención de MAYÚSCULAS",
+    "text": "Constantes: la convención de MAYÚSCULAS\nPython no tiene constantes reales, pero hay una convención: si un valor no debe cambiar, escríbelo en MAYÚSCULAS.\n\n\nPYTHON\n\n# Constantes del sistema\n1PI = 3.14159\n2VELOCIDAD_LUZ = 299_792_458\nMAX_INTENTOS = 3\nURL_API = \"https://api.ejemplo.com\"\n\n# El guión bajo en números grandes mejora la legibilidad\n3poblacion_mundial = 8_000_000_000\n\n\n1\n\nPI es una constante matemática. Las MAYÚSCULAS indican que no debe modificarse.\n\n2\n\nVELOCIDAD_LUZ usa guiones bajos para separar dígitos, haciendo el número más legible. Python ignora estos guiones.\n\n3\n\n8_000_000_000 es más fácil de leer que 8000000000. Python lo interpreta como 8000000000.\n\n\n\nExplicit is better than implicit. Las MAYÚSCULAS le dicen a otro programador: “este valor no debería cambiar”.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>1.4 Variables: las cajas de la memoria</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/04-variables.html#resumen",
+    "href": "content/modulo-01/04-variables.html#resumen",
+    "title": "1.4 Variables: las cajas de la memoria",
+    "section": "Resumen",
+    "text": "Resumen\n\n\n\n\n\n\n\n\nConcepto\nEjemplo\nPrincipio del Zen\n\n\n\n\nNombres con intención\nprecio_base en vez de x\nBeautiful is better than ugly\n\n\nsnake_case\nnombre_usuario\nOne obvious way to do it\n\n\nMAYÚSCULAS para constantes\nMAX_INTENTOS = 3\nExplicit is better than implicit\n\n\nAsignación clara\nedad = 25\nSimple is better than complex\n\n\nCódigo autoexplicativo\nSin comentarios innecesarios\nReadability counts\n\n\n\n\nSiguiente: 1.5 Tipos de datos básicos",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>1.4 Variables: las cajas de la memoria</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/05-tipos-basicos.html",
+    "href": "content/modulo-01/05-tipos-basicos.html",
+    "title": "1.5 Tipos de datos básicos",
+    "section": "",
+    "text": "Objetivos de esta lección",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>1.5 Tipos de datos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/05-tipos-basicos.html#objetivos-de-esta-lección",
+    "href": "content/modulo-01/05-tipos-basicos.html#objetivos-de-esta-lección",
+    "title": "1.5 Tipos de datos básicos",
+    "section": "",
+    "text": "Identificar los 4 tipos de datos básicos de Python\nElegir el tipo correcto para cada situación\nConvertir entre tipos cuando sea necesario\nEntender por qué los tipos importan en las operaciones",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>1.5 Tipos de datos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/05-tipos-basicos.html#los-4-tipos-fundamentales",
+    "href": "content/modulo-01/05-tipos-basicos.html#los-4-tipos-fundamentales",
+    "title": "1.5 Tipos de datos básicos",
+    "section": "Los 4 tipos fundamentales",
+    "text": "Los 4 tipos fundamentales\nTodo en Python tiene un tipo. Los 4 que necesitas conocer primero:\n\n\n\n\n\n\n\n\n\nTipo\nNombre en Python\nEjemplo\nPara qué sirve\n\n\n\n\nNúmeros enteros\nint\n42\nContar, indexar, cantidades exactas\n\n\nNúmeros decimales\nfloat\n3.14\nMedidas, promedios, porcentajes\n\n\nTexto\nstr\n\"hola\"\nNombres, mensajes, cualquier texto\n\n\nVerdadero/Falso\nbool\nTrue\nDecisiones, condiciones, estados\n\n\n\n\n\nPYTHON\n\n# Cada valor tiene un tipo — Python lo sabe automáticamente\n1edad = 25\n2precio = 19.99\n3nombre = \"Ana\"\n4es_mayor = True\n\n# Puedes verificar el tipo en cualquier momento\n5print(type(edad))\n6print(type(precio))\n7print(type(nombre))\n8print(type(es_mayor))\n\n\n1\n\nedad es de tipo int (entero) porque es un número sin decimales.\n\n2\n\nprecio es de tipo float (flotante) porque tiene decimales.\n\n3\n\nnombre es de tipo str (cadena de texto) porque está entre comillas.\n\n4\n\nes_mayor es de tipo bool (booleano) porque es True o False.\n\n5\n\ntype(edad) devuelve &lt;class 'int'&gt;.\n\n6\n\ntype(precio) devuelve &lt;class 'float'&gt;.\n\n7\n\ntype(nombre) devuelve &lt;class 'str'&gt;.\n\n8\n\ntype(es_mayor) devuelve &lt;class 'bool'&gt;.\n\n\n\nExplicit is better than implicit. Si usas el tipo correcto, el código comunica su intención sin necesidad de explicaciones.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>1.5 Tipos de datos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/05-tipos-basicos.html#enteros-int-números-sin-decimales",
+    "href": "content/modulo-01/05-tipos-basicos.html#enteros-int-números-sin-decimales",
+    "title": "1.5 Tipos de datos básicos",
+    "section": "Enteros (int): números sin decimales",
+    "text": "Enteros (int): números sin decimales\nLos enteros son para contar cosas que no se pueden dividir: personas, intentos, días, items.\n\n\nPYTHON\n\n# Usos naturales de los enteros\n1cantidad_estudiantes = 35\nintentos_restantes = 3\nanio_nacimiento = 1995\n2temperatura_celsius = -5\n\n# Operaciones que siempre devuelven enteros\n3total = 10 + 5\ndiferencia = 100 - 37\nproducto = 6 * 7\n\n\n1\n\ncantidad_estudiantes es un entero porque no puedes tener medio estudiante.\n\n2\n\nLos enteros pueden ser negativos, como temperaturas bajo cero.\n\n3\n\nLas operaciones entre enteros (+, -, *) siempre devuelven enteros.\n\n\n\nDivisión entera vs división normal\n\n\nPYTHON\n\n# División normal → siempre devuelve float\n1resultado = 10 / 3\nprint(resultado)\n\n# División entera → devuelve solo la parte entera\n2resultado_entero = 10 // 3\nprint(resultado_entero)\n\n# El residuo (módulo)\n3residuo = 10 % 3\nprint(residuo)\n\n\n1\n\n/ siempre devuelve un float, incluso si la división es exacta. 10 / 3 = 3.333....\n\n2\n\n// devuelve solo la parte entera de la división. 10 // 3 = 3.\n\n3\n\n% devuelve el residuo de la división. 10 % 3 = 1 (porque 10 = 3×3 + 1).\n\n\n\nPracticality beats purity. Usa / cuando necesitas precisión y // cuando trabajas con cantidades discretas (como repartir items entre personas).",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>1.5 Tipos de datos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/05-tipos-basicos.html#decimales-float-números-con-precisión",
+    "href": "content/modulo-01/05-tipos-basicos.html#decimales-float-números-con-precisión",
+    "title": "1.5 Tipos de datos básicos",
+    "section": "Decimales (float): números con precisión",
+    "text": "Decimales (float): números con precisión\nLos floats son para medidas, dinero, promedios — cualquier cosa que necesite decimales.\n\n\nPYTHON\n\n# Usos naturales de los floats\n1pi = 3.14159\npeso_kg = 68.5\nporcentaje_descuento = 15.0\ntemperatura_fahrenheit = 98.6\n\n\n1\n\npi es un float porque tiene decimales. Los floats representan números con punto decimal.\n\n\n\n⚠️ Cuidado con la precisión de los floats\nLos floats no son perfectos. Esto es limitación de cómo las computadoras representan decimales:\n\n\nPYTHON\n\n# Esto parece raro, pero es normal en cualquier lenguaje\n1resultado = 0.1 + 0.2\nprint(resultado)\n\n# Para dinero, usa redondeo explícito\n2precio_total = round(19.99 * 1.15, 2)\nprint(precio_total)\n\n\n1\n\n0.1 + 0.2 da 0.30000000000000004 en vez de 0.3. Esto es normal en todos los lenguajes de programación.\n\n2\n\nround(valor, 2) redondea a 2 decimales. Para dinero, siempre usa round() para evitar errores de precisión.\n\n\n\nErrors should never pass silently. Si trabajas con dinero, siempre redondea explícitamente. No asumas que los floats son exactos.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>1.5 Tipos de datos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/05-tipos-basicos.html#texto-str-cadenas-de-caracteres",
+    "href": "content/modulo-01/05-tipos-basicos.html#texto-str-cadenas-de-caracteres",
+    "title": "1.5 Tipos de datos básicos",
+    "section": "Texto (str): cadenas de caracteres",
+    "text": "Texto (str): cadenas de caracteres\nEl texto en Python se escribe entre comillas. Puedes usar simples o dobles — lo importante es ser consistente.\n\n\nPYTHON\n\n# Comillas dobles (recomendadas para texto con apóstrofes)\n1saludo = \"Hola, ¿cómo estás?\"\nnombre_completo = \"Ana García\"\n\n# Comillas simples (ideales cuando el texto tiene dobles)\n2cita = 'Dijo \"hola\" y se fue'\n\n# Texto de múltiples líneas\ndescripcion = \"\"\"\nEste es un texto\nque ocupa varias líneas\nsin necesidad de caracteres especiales.\n3\"\"\"\n\n\n1\n\nLas comillas dobles son recomendadas para texto normal.\n\n2\n\nLas comillas simples son útiles cuando el texto contiene comillas dobles.\n\n3\n\nLas triple comillas \"\"\" permiten escribir texto de múltiples líneas sin caracteres especiales.\n\n\n\nf-strings: la forma moderna de mezclar texto y variables\n\n\nPYTHON\n\nnombre = \"Ana\"\nedad = 25\nciudad = \"Quito\"\n\n# ✅ Forma moderna y legible (Python 3.6+)\n1presentacion = f\"Hola, soy {nombre}, tengo {edad} años y vivo en {ciudad}\"\n\n# ❌ Forma antigua y confusa — no uses esto\n2presentacion_vieja = \"Hola, soy \" + nombre + \", tengo \" + str(edad) + \" años\"\n\n\n1\n\nLos f-strings (formatted strings) permiten insertar variables directamente en el texto usando {variable}. Son más legibles y eficientes.\n\n2\n\nLa concatenación con + es más difícil de leer y propensa a errores. No la uses cuando puedas usar f-strings.\n\n\n\nReadability counts. Los f-strings se leen como texto normal. Las variables van entre llaves y Python las reemplaza automáticamente.\n\n\n\nOperaciones con texto\n\n\nPYTHON\n\n# Los textos se pueden \"sumar\" (concatenar)\nnombre = \"Ana\"\napellido = \"García\"\n1nombre_completo = nombre + \" \" + apellido\n\n# Los textos se pueden \"multiplicar\" (repetir)\n2separador = \"-\" * 30\nprint(separador)\n\n# Longitud de un texto\nmensaje = \"Hola Mundo\"\n3print(len(mensaje))\n\n\n1\n\nEl operador + con textos los concatena (une). \"Ana\" + \" \" + \"García\" = \"Ana García\".\n\n2\n\nEl operador * con textos los repite. \"-\" * 30 crea una línea de 30 guiones.\n\n3\n\nlen() devuelve la longitud del texto en caracteres. \"Hola Mundo\" tiene 10 caracteres (incluye el espacio).",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>1.5 Tipos de datos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/05-tipos-basicos.html#booleanos-bool-verdadero-o-falso",
+    "href": "content/modulo-01/05-tipos-basicos.html#booleanos-bool-verdadero-o-falso",
+    "title": "1.5 Tipos de datos básicos",
+    "section": "Booleanos (bool): verdadero o falso",
+    "text": "Booleanos (bool): verdadero o falso\nLos booleanos representan decisiones binarias. Son la base de toda lógica en programación.\n\n\nPYTHON\n\n# Valores booleanos directos\n1es_mayor_de_edad = True\ntiene_descuento = False\n\n# Booleanos que resultan de comparaciones\nedad = 20\n2es_mayor = edad &gt;= 18\nes_menor = edad &lt; 18\nes_exactamente = edad == 18\n\n# Operaciones lógicas\n3tiene_permiso = es_mayor and tiene_descuento\n4puede_entrar = es_mayor or tiene_descuento\n5no_es_mayor = not es_mayor\n\n\n1\n\nTrue y False son los únicos valores booleanos. Nota que se escriben con mayúscula inicial.\n\n2\n\nLas comparaciones (&gt;=, &lt;, ==) siempre devuelven un booleano. 20 &gt;= 18 es True.\n\n3\n\nand devuelve True solo si AMBOS operandos son True.\n\n4\n\nor devuelve True si AL MENOS UN operando es True.\n\n5\n\nnot invierte el valor booleano. not True = False.\n\n\n\nSimple is better than complex. Si una variable booleana necesita más de 3 palabras para nombrarse, reconsidera la lógica.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>1.5 Tipos de datos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/05-tipos-basicos.html#conversión-entre-tipos",
+    "href": "content/modulo-01/05-tipos-basicos.html#conversión-entre-tipos",
+    "title": "1.5 Tipos de datos básicos",
+    "section": "Conversión entre tipos",
+    "text": "Conversión entre tipos\nA veces necesitas cambiar el tipo de un valor. Python te permite hacerlo explícitamente.\n\n\nPYTHON\n\n# De texto a número\nedad_texto = \"25\"\n1edad_numero = int(edad_texto)\nprint(edad_numero + 5)\n\n# De número a texto\nprecio = 19.99\n2precio_texto = str(precio)\nprint(\"El precio es $\" + precio_texto)\n\n# De decimal a entero (pierde los decimales)\nnota_promedio = 8.7\n3nota_entera = int(nota_promedio)\nprint(nota_entera)\n\n# De entero a decimal\ncantidad = 5\n4cantidad_decimal = float(cantidad)\nprint(cantidad_decimal)\n\n\n1\n\nint(\"25\") convierte el texto \"25\" al número entero 25.\n\n2\n\nstr(19.99) convierte el número 19.99 al texto \"19.99\".\n\n3\n\nint(8.7) convierte el decimal 8.7 al entero 8. Los decimales se pierden (no se redondea).\n\n4\n\nfloat(5) convierte el entero 5 al decimal 5.0.\n\n\n\n⚠️ Cuando la conversión falla\n\n\nPYTHON\n\n# Esto funciona\n1numero = int(\"42\")\n\n# Esto da ERROR — no se puede convertir texto arbitrario a número\n2# numero = int(\"hola\")\n\n# Pero los floats en texto sí se pueden convertir a float\n3decimal = float(\"3.14\")\n\n\n1\n\nint(\"42\") funciona porque \"42\" contiene solo dígitos.\n\n2\n\nint(\"hola\") genera un ValueError porque \"hola\" no es un número válido.\n\n3\n\nfloat(\"3.14\") funciona porque \"3.14\" es un número decimal válido en formato texto.\n\n\n\nErrors should never pass silently. Si intentas convertir algo que no es un número, Python te avisa con un error. Más adelante aprenderás a manejar estos errores con elegancia.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>1.5 Tipos de datos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/05-tipos-basicos.html#tabla-de-referencia-rápida",
+    "href": "content/modulo-01/05-tipos-basicos.html#tabla-de-referencia-rápida",
+    "title": "1.5 Tipos de datos básicos",
+    "section": "Tabla de referencia rápida",
+    "text": "Tabla de referencia rápida\n\n\n\nOperación\nEjemplo\nResultado\nTipo\n\n\n\n\nSuma\n5 + 3\n8\nint\n\n\nDivisión\n5 / 2\n2.5\nfloat\n\n\nDivisión entera\n5 // 2\n2\nint\n\n\nResiduo\n5 % 2\n1\nint\n\n\nPotencia\n2 ** 3\n8\nint\n\n\nConcatenar\n\"hola\" + \" \"\n\"hola \"\nstr\n\n\nRepetir\n\"a\" * 3\n\"aaa\"\nstr\n\n\nLongitud\nlen(\"hola\")\n4\nint\n\n\nComparar\n5 &gt; 3\nTrue\nbool\n\n\nIgualdad\n5 == 3\nFalse\nbool",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>1.5 Tipos de datos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/05-tipos-basicos.html#resumen",
+    "href": "content/modulo-01/05-tipos-basicos.html#resumen",
+    "title": "1.5 Tipos de datos básicos",
+    "section": "Resumen",
+    "text": "Resumen\n\n\n\nTipo\nCuándo usarlo\nEjemplo práctico\n\n\n\n\nint\nContar cosas enteras\ncantidad_productos = 5\n\n\nfloat\nMedidas y decimales\nprecio_unitario = 9.99\n\n\nstr\nTexto y mensajes\nmensaje_bienvenida = \"Bienvenido\"\n\n\nbool\nDecisiones y estados\nsesion_activa = True\n\n\n\n\nSiguiente: 1.6 Entrada y salida de datos",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>1.5 Tipos de datos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/06-input-output.html",
+    "href": "content/modulo-01/06-input-output.html",
+    "title": "1.6 Entrada y salida de datos",
+    "section": "",
+    "text": "Objetivos de esta lección",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>1.6 Entrada y salida de datos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/06-input-output.html#objetivos-de-esta-lección",
+    "href": "content/modulo-01/06-input-output.html#objetivos-de-esta-lección",
+    "title": "1.6 Entrada y salida de datos",
+    "section": "",
+    "text": "Usar input() para recibir datos del usuario\nFormatear salidas claras con print() y f-strings\nValidar que los datos recibidos tienen el tipo correcto\nConstruir programas que interactúen de forma segura con el usuario",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>1.6 Entrada y salida de datos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/06-input-output.html#la-regla-de-oro-nunca-confíes-en-la-entrada",
+    "href": "content/modulo-01/06-input-output.html#la-regla-de-oro-nunca-confíes-en-la-entrada",
+    "title": "1.6 Entrada y salida de datos",
+    "section": "La regla de oro: nunca confíes en la entrada",
+    "text": "La regla de oro: nunca confíes en la entrada\n\nZero Trust aplicado a Python: Todo lo que viene del usuario es texto, y todo texto es sospechoso hasta que lo valides.\n\n\n\nPYTHON\n\n# input() SIEMPRE devuelve texto (str), aunque el usuario escriba un número\n1edad = input(\"¿Cuántos años tienes? \")\n2print(type(edad))\n\n# Si quieres usarlo como número, debes convertirlo explícitamente\n3edad_numero = int(edad)\nprint(f\"El próximo año tendrás {edad_numero + 1}\")\n\n\n1\n\ninput() siempre devuelve una cadena de texto (str), incluso si el usuario escribe un número.\n\n2\n\ntype(edad) confirma que es &lt;class 'str'&gt;. Esto es fundamental entenderlo.\n\n3\n\nint(edad) convierte el texto a número entero. Sin esta conversión, no podrías hacer operaciones matemáticas.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>1.6 Entrada y salida de datos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/06-input-output.html#input-la-puerta-de-entrada",
+    "href": "content/modulo-01/06-input-output.html#input-la-puerta-de-entrada",
+    "title": "1.6 Entrada y salida de datos",
+    "section": "input(): la puerta de entrada",
+    "text": "input(): la puerta de entrada\nLa función input() hace dos cosas: 1. Muestra un mensaje al usuario 2. Espera a que el usuario escriba algo y presione Enter\n\n\nPYTHON\n\n# El mensaje es opcional, pero siempre inclúyelo — sin él, el usuario no sabe qué hacer\n1nombre = input(\"Ingresa tu nombre: \")\n2print(f\"Hola, {nombre}\")\n\n\n1\n\ninput() muestra el mensaje “Ingresa tu nombre:” y espera a que el usuario escriba algo. Lo que escriba se almacena en la variable nombre.\n\n2\n\nEl f-string inserta el valor de nombre en el mensaje de saludo.\n\n\n\nEl problema del tipo: todo es texto\n\n\nPYTHON\n\n# ❌ Esto falla silenciosamente para el usuario\n1edad = input(\"Tu edad: \")\n# El usuario escribe \"veinte\" en vez de \"20\"\n# Y cuando intentas usarlo como número... ¡BOOM!\n2# resultado = edad + 5\n\n# ✅ Forma segura: validar y convertir\n3entrada = input(\"Tu edad: \")\n4if entrada.isdigit():\n    edad = int(entrada)\n    print(f\"En 5 años tendrás {edad + 5}\")\nelse:\n    print(\"Por favor, ingresa un número válido\")\n\n\n1\n\ninput() siempre devuelve texto. Si el usuario escribe “veinte”, edad será \"veinte\", no 20.\n\n2\n\n\"veinte\" + 5 genera un TypeError porque no se puede sumar texto con números.\n\n3\n\nPrimero almacenamos la entrada en una variable llamada entrada para validarla antes de convertirla.\n\n4\n\n.isdigit() verifica si la cadena contiene solo dígitos. \"20\".isdigit() es True, pero \"veinte\".isdigit() es False.\n\n\n\nErrors should never pass silently. Si el usuario ingresa algo inesperado, tu programa debe responder con claridad, no crashear.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>1.6 Entrada y salida de datos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/06-input-output.html#print-la-ventana-de-salida",
+    "href": "content/modulo-01/06-input-output.html#print-la-ventana-de-salida",
+    "title": "1.6 Entrada y salida de datos",
+    "section": "print(): la ventana de salida",
+    "text": "print(): la ventana de salida\nYa conoces print() básico. Ahora veamos cómo hacer salidas profesionales.\n\nSeparadores y finales personalizados\n\n\nPYTHON\n\n# Separador personalizado\n1print(\"Python\", \"3.14\", \"Fundamentos\", sep=\" | \")\n\n# Sin salto de línea al final\n2print(\"Cargando\", end=\"\")\nprint(\"... \", end=\"\")\nprint(\"listo!\")\n\n\n1\n\nsep=\" | \" cambia el separador predeterminado (espacio) por \" | \". Resultado: Python | 3.14 | Fundamentos.\n\n2\n\nend=\"\" elimina el salto de línea al final, permitiendo que el siguiente print() continúe en la misma línea.\n\n\n\n\nTablas alineadas\n\n\nPYTHON\n\n# Usando f-strings con ancho fijo para alinear columnas\n1print(f\"{'Producto':&lt;15} {'Precio':&gt;8} {'Stock':&gt;6}\")\nprint(f\"{'-'*15} {'-'*8} {'-'*6}\")\n2print(f\"{'Teclado':&lt;15} {25.99:&gt;8.2f} {150:&gt;6}\")\nprint(f\"{'Mouse':&lt;15} {12.50:&gt;8.2f} {89:&gt;6}\")\nprint(f\"{'Monitor':&lt;15} {199.99:&gt;8.2f} {23:&gt;6}\")\n\n\n1\n\n:&lt;15 alinea el texto a la izquierda con 15 caracteres de ancho. :&gt;8 alinea a la derecha con 8 caracteres.\n\n2\n\n:&gt;8.2f alinea a la derecha con 8 caracteres de ancho y 2 decimales. El f indica que es un número flotante.\n\n\nSalida:\nProducto          Precio  Stock\n--------------- -------- ------\nTeclado            25.99    150\nMouse              12.50     89\nMonitor           199.99     23\n\nBeautiful is better than ugly. Una salida bien formateada no es vanidad — es usabilidad.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>1.6 Entrada y salida de datos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/06-input-output.html#patrón-pedir-validar-procesar",
+    "href": "content/modulo-01/06-input-output.html#patrón-pedir-validar-procesar",
+    "title": "1.6 Entrada y salida de datos",
+    "section": "Patrón: pedir, validar, procesar",
+    "text": "Patrón: pedir, validar, procesar\nEste es el patrón que usarás en todos tus programas interactivos:\n\n\nPYTHON\n\n# Paso 1: Pedir\n1entrada = input(\"Ingresa tu año de nacimiento: \")\n\n# Paso 2: Validar\n2if entrada.isdigit() and len(entrada) == 4:\n    anio = int(entrada)\n\n    # Paso 3: Procesar\n3    edad = 2026 - anio\n    print(f\"Tienes (o tendrás) {edad} años este año\")\nelse:\n    print(\"Error: Ingresa un año válido de 4 dígitos\")\n\n\n1\n\nPrimero pedimos el dato al usuario y lo almacenamos como texto.\n\n2\n\nValidamos que sea un número de 4 dígitos antes de convertirlo.\n\n3\n\nSolo después de validar, convertimos a entero y procesamos.\n\n\n\nVersión robusta con manejo de errores\n\n\nPYTHON\n\n# Este patrón lo usarás constantemente\n1while True:\n    try:\n        entrada = input(\"Ingresa tu edad: \")\n2        edad = int(entrada)\n\n3        if edad &lt; 0 or edad &gt; 150:\n            print(\"Error: La edad debe estar entre 0 y 150\")\n            continue\n\n4        break\n\n5    except ValueError:\n        print(\"Error: Eso no parece un número. Intenta de nuevo.\")\n\nprint(f\"Edad registrada: {edad}\")\n\n\n1\n\nwhile True crea un bucle infinito que solo se rompe cuando el dato es válido.\n\n2\n\nint(entrada) puede generar un ValueError si el texto no es un número válido.\n\n3\n\nValidamos que la edad esté en un rango razonable (0-150 años).\n\n4\n\nbreak sale del bucle cuando el dato es válido.\n\n5\n\nexcept ValueError captura el error cuando int() no puede convertir el texto.\n\n\n\nThere should be one obvious way to do it. Este patrón while True + try/except es la forma estándar en Python de validar entrada numérica.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>1.6 Entrada y salida de datos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/06-input-output.html#ejemplo-completo-registro-simple",
+    "href": "content/modulo-01/06-input-output.html#ejemplo-completo-registro-simple",
+    "title": "1.6 Entrada y salida de datos",
+    "section": "Ejemplo completo: registro simple",
+    "text": "Ejemplo completo: registro simple\n\n\nPYTHON\n\n# Programa de registro de estudiante\n# Cada parte sigue el patrón: pedir → validar → procesar\n\n1print(\"=\" * 40)\nprint(\"   REGISTRO DE ESTUDIANTE\")\nprint(\"=\" * 40)\n\n# Nombre: debe tener al menos 2 caracteres\nwhile True:\n2    nombre = input(\"Nombre completo: \").strip()\n    if len(nombre) &gt;= 2:\n        break\n    print(\"Error: El nombre debe tener al menos 2 caracteres\")\n\n# Edad: número entre 0 y 150\nwhile True:\n    try:\n        edad = int(input(\"Edad: \"))\n        if 0 &lt;= edad &lt;= 150:\n            break\n        print(\"Error: Edad debe estar entre 0 y 150\")\n    except ValueError:\n        print(\"Error: Ingresa un número válido\")\n\n# Carrera: texto libre\ncarrera = input(\"Carrera: \").strip()\n\n# Resumen\nprint()\nprint(\"-\" * 40)\nprint(\"Datos registrados:\")\n3print(f\"  Nombre:  {nombre}\")\nprint(f\"  Edad:    {edad}\")\nprint(f\"  Carrera: {carrera}\")\nprint(\"-\" * 40)\nprint(\"¡Registro exitoso!\")\n\n\n1\n\n\"=\" * 40 crea una línea de 40 caracteres iguales para separar secciones visualmente.\n\n2\n\n.strip() elimina los espacios al inicio y al final del texto ingresado.\n\n3\n\nLos f-strings formatean la salida de manera legible y alineada.",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>1.6 Entrada y salida de datos</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-01/06-input-output.html#resumen",
+    "href": "content/modulo-01/06-input-output.html#resumen",
+    "title": "1.6 Entrada y salida de datos",
+    "section": "Resumen",
+    "text": "Resumen\n\n\n\nFunción\nQué hace\nDetalle importante\n\n\n\n\ninput(\"mensaje\")\nLee texto del usuario\nSiempre devuelve str\n\n\nprint(valor)\nMuestra en pantalla\nAcepta múltiples valores\n\n\nint(texto)\nConvierte a entero\nFalla si no es número\n\n\nfloat(texto)\nConvierte a decimal\nAcepta “3.14”, “2e10”\n\n\nstr(valor)\nConvierte a texto\nFunciona con cualquier tipo\n\n\n.strip()\nQuita espacios\n\" hola \".strip() → \"hola\"\n\n\n.isdigit()\nVerifica si es número\n\"123\".isdigit() → True\n\n\n\n\nPrincipios aplicados en esta lección\n\n\n\nPrincipio del Zen\nCómo se aplica\n\n\n\n\nReadability counts\nSalidas formateadas y alineadas\n\n\nErrors should never pass silently\nValidación con try/except\n\n\nExplicit is better than implicit\nConversión explícita de tipos\n\n\nSimple is better than complex\nPatrón while + try/except\n\n\n\n\nSiguiente: Desafío 1: Saludo personalizado",
+    "crumbs": [
+      "Módulo 1: Introducción a Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>1.6 Entrada y salida de datos</span>"
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+---
+title: "Desafío 1: Diario personal"
+difficulty: "⭐ Fácil"
+estimated_time: "10 minutos"
+---
+
+## Situación
+
+Quieres crear un diario personal digital donde puedas registrar tus pensamientos del día. Cada entrada debe guardarse con la fecha y hora actual, y las entradas anteriores deben conservarse.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Pida al usuario que escriba una entrada de diario
+2. Guarde la entrada en un archivo `diario.txt` con la fecha y hora
+3. Cada nueva entrada se agrega al final sin borrar las anteriores
+4. Muestre un mensaje de confirmación
+
+## Ejemplo de ejecución
+
+```
+📔 === MI DIARIO PERSONAL ===
+
+Escribe tu entrada de hoy (o 'salir' para terminar):
+> Hoy aprendí a manejar archivos en Python. ¡Fue genial!
+
+✅ Entrada guardada en diario.txt
+
+¿Quieres escribir otra entrada? (s/n): n
+📖 Hasta la próxima...
+```
+
+## Pista
+
+- Usa el modo `"a"` para agregar sin borrar
+- Importa `datetime` para obtener la fecha y hora actual
+- Usa un bucle `while` para permitir múltiples entradas
+- La condición de salida es que el usuario escriba `"salir"`
+
+## Criterios de éxito
+
+- [ ] El programa pide entradas al usuario
+- [ ] Cada entrada se guarda con fecha y hora
+- [ ] Las entradas anteriores se conservan
+- [ ] El usuario puede escribir múltiples entradas
+- [ ] El programa termina cuando el usuario escribe "salir"
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 1: Diario personal
+# Solución de referencia
+
+from datetime import datetime
+
+ARCHIVO_DIARIO = "diario.txt"
+
+print("📔 === MI DIARIO PERSONAL ===\n")
+
+while True:
+    entrada = input("Escribe tu entrada de hoy (o 'salir' para terminar):\n> ")
+    
+    if entrada.lower() == "salir":
+        print("\n📖 Hasta la próxima...")
+        break
+    
+    if entrada.strip():  # Solo guardar si no está vacío
+        fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        with open(ARCHIVO_DIARIO, "a") as diario:
+            diario.write(f"[{fecha}]\n")
+            diario.write(f"{entrada}\n")
+            diario.write("-" * 40 + "\n")
+        
+        print(f"\n✅ Entrada guardada en {ARCHIVO_DIARIO}\n")
+    else:
+        print("\n⚠️ La entrada está vacía. Intenta de nuevo.\n")
+```
+</details>
+
+---
+
+[← Volver al Módulo 7](index.qmd) | [Desafío 2 →](desafio-02-copiar-archivo.qmd)

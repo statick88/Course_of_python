@@ -1,0 +1,179 @@
+---
+title: "Desafío 7: Cajero automático"
+difficulty: "⭐⭐⭐ Difícil"
+estimated_time: "40 minutos"
+---
+
+## Situación
+
+Vas a simular un cajero automático completo. Este es el desafío integrador del módulo: combina `if/else`, bucles, validación y lógica de negocio en un solo programa.
+
+## Tu misión
+
+Crea un programa que simule un cajero con las siguientes funciones:
+
+1. **Consultar saldo** — muestra el saldo actual
+2. **Depositar** — agrega dinero a la cuenta
+3. **Retirar** — saca dinero (no puede superar el saldo)
+4. **Historial** — muestra las últimas transacciones
+5. **Salir** — termina el programa
+
+## Requisitos técnicos
+
+- Saldo inicial: $1,000
+- Cada transacción debe registrarse con tipo, monto y resultado
+- No se puede retirar más del saldo disponible
+- El historial debe mostrar al menos las últimas 10 transacciones
+- El menú se repite hasta que el usuario decida salir
+
+## Ejemplo de ejecución
+
+```
+=== CAJERO AUTOMÁTICO ===
+Bienvenido, usuario
+
+Saldo actual: $1,000.00
+
+1. Consultar saldo
+2. Depositar
+3. Retirar
+4. Historial
+5. Salir
+
+Elige una opción: 3
+
+¿Cuánto deseas retirar? 200
+✅ Retiro exitoso: $200.00
+Saldo actual: $800.00
+
+1. Consultar saldo
+2. Depositar
+3. Retirar
+4. Historial
+5. Salir
+
+Elige una opción: 4
+
+=== HISTORIAL DE TRANSACCIONES ===
+#1  | Retiro   | -$200.00 | Saldo: $800.00
+#0  | Inicial  |          | Saldo: $1,000.00
+
+1. Consultar saldo
+2. Depositar
+3. Retirar
+4. Historial
+5. Salir
+
+Elige una opción: 5
+
+¡Gracias por usar nuestro cajero!
+```
+
+## Pista
+
+- Usa un `while True` para el menú principal
+- Usa `if/elif/else` para cada opción del menú
+- Almacena las transacciones en una lista de diccionarios o tuplas
+- Para el historial, itera la lista con `for` y formatea cada línea
+- Valida que los montos sean positivos y que el retiro no exceda el saldo
+- Usa `break` para salir del menú principal
+
+## Criterios de éxito
+
+- [ ] Menú interactivo que se repite
+- [ ] Consultar saldo muestra el valor correcto
+- [ ] Depositar incrementa el saldo
+- [ ] Retirar decrementa el saldo (y valida que haya suficiente)
+- [ ] Historial muestra las transacciones realizadas
+- [ ] Salir termina el programa correctamente
+- [ ] Toda la entrada del usuario es validada
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 7: Cajero automático
+# Solución de referencia
+
+print("=== CAJERO AUTOMÁTICO ===")
+print("Bienvenido, usuario\n")
+
+saldo = 1000.00
+historial = [{"tipo": "Inicial", "monto": 0, "saldo": saldo}]
+
+while True:
+    print(f"\nSaldo actual: ${saldo:,.2f}")
+    print()
+    print("1. Consultar saldo")
+    print("2. Depositar")
+    print("3. Retirar")
+    print("4. Historial")
+    print("5. Salir")
+    
+    opcion = input("\nElige una opción: ").strip()
+    
+    if opcion == "1":
+        print(f"\n💰 Tu saldo es: ${saldo:,.2f}")
+    
+    elif opcion == "2":
+        while True:
+            monto_str = input("\n¿Cuánto deseas depositar? $")
+            if monto_str.replace(".", "").isdigit():
+                monto = float(monto_str)
+                if monto > 0:
+                    break
+            print("⚠️ Ingresa un monto válido mayor a 0.")
+        
+        saldo = saldo + monto
+        historial.append({"tipo": "Depósito", "monto": monto, "saldo": saldo})
+        print(f"✅ Depósito exitoso: ${monto:,.2f}")
+        print(f"Saldo actual: ${saldo:,.2f}")
+    
+    elif opcion == "3":
+        while True:
+            monto_str = input("\n¿Cuánto deseas retirar? $")
+            if monto_str.replace(".", "").isdigit():
+                monto = float(monto_str)
+                if monto > 0:
+                    if monto <= saldo:
+                        break
+                    print(f"⚠️ Saldo insuficiente. Tu saldo es: ${saldo:,.2f}")
+                else:
+                    print("⚠️ Ingresa un monto mayor a 0.")
+            else:
+                print("⚠️ Ingresa un monto válido.")
+        
+        saldo = saldo - monto
+        historial.append({"tipo": "Retiro", "monto": monto, "saldo": saldo})
+        print(f"✅ Retiro exitoso: ${monto:,.2f}")
+        print(f"Saldo actual: ${saldo:,.2f}")
+    
+    elif opcion == "4":
+        print("\n=== HISTORIAL DE TRANSACCIONES ===")
+        for i, transaccion in enumerate(historial):
+            tipo = transaccion["tipo"]
+            monto = transaccion["monto"]
+            saldo_hist = transaccion["saldo"]
+            
+            if monto > 0:
+                if tipo == "Depósito":
+                    monto_str = f"+${monto:,.2f}"
+                else:
+                    monto_str = f"-${monto:,.2f}"
+            else:
+                monto_str = ""
+            
+            print(f"#{i:<3} | {tipo:<10} | {monto_str:>10} | Saldo: ${saldo_hist:,.2f}")
+    
+    elif opcion == "5":
+        print("\n¡Gracias por usar nuestro cajero!")
+        break
+    
+    else:
+        print("⚠️ Opción no válida. Elige 1-5.")
+```
+</details>
+
+---
+
+[← Desafío 6](desafio-06-generador-contrasenas.qmd) | [← Volver al Módulo 3](index.qmd)

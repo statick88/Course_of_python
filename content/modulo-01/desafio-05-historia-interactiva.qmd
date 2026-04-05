@@ -1,0 +1,100 @@
+---
+title: "Desafío 5: Historia interactiva"
+difficulty: "⭐⭐ Media"
+estimated_time: "15 minutos"
+---
+
+## Situación
+
+Quieres crear una mini aventura de texto donde el usuario es el protagonista. El programa le pide datos personales y los integra en una historia coherente.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Pida el nombre del protagonista
+2. Pida su profesión u oficio
+3. Pida un objeto especial que lleva consigo
+4. Pida el nombre de un lugar
+5. Genere una historia corta usando todos esos datos
+6. La historia debe tener al menos 3 párrafos
+
+## Ejemplo de ejecución
+
+```
+=== CREADOR DE HISTORIAS ===
+
+Nombre del protagonista: Ana
+Profesión: ingeniera
+Objeto especial: una linterna mágica
+Lugar: el bosque encantado
+
+--- Tu historia ---
+
+Ana era una ingeniera que vivía al borde del bosque encantado.
+Un día, decidió adentrarse en sus profundidades llevando solo
+una linterna mágica que había encontrado en el ático de su abuela.
+
+El bosque estaba oscuro, pero la linterna mágica iluminaba
+el camino con una luz azulada. Ana sabía que su formación como
+ingeniera le sería útil para resolver los acertijos del bosque.
+
+Después de horas de caminata, Ana descubrió que la linterna
+no solo iluminaba: también revelaba puertas ocultas entre los
+árboles. La aventura apenas comenzaba...
+
+--- Fin del capítulo 1 ---
+```
+
+## Pista
+
+- Usa variables con nombres descriptivos para cada dato
+- Los f-strings pueden contener expresiones complejas
+- Usa `\n` para saltos de línea dentro de un string
+
+## Criterios de éxito
+
+- [ ] Pide al menos 4 datos al usuario
+- [ ] La historia usa TODOS los datos ingresados
+- [ ] Tiene al menos 3 párrafos
+- [ ] La historia tiene coherencia narrativa
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 5: Historia interactiva
+# Solución de referencia
+
+print("=== CREADOR DE HISTORIAS ===")
+print()
+
+protagonista = input("Nombre del protagonista: ").strip()
+profesion = input("Profesión: ").strip()
+objeto = input("Objeto especial: ").strip()
+lugar = input("Lugar: ").strip()
+
+historia = f"""
+{protagonista} era un/a {profesion} que vivía al borde de {lugar}.
+Un día, decidió adentrarse en sus profundidades llevando solo
+{objeto} que había encontrado en el ático de su abuelo.
+
+{lugar.title()} estaba oscuro, pero {objeto} iluminaba
+el camino con una luz misteriosa. {protagonista} sabía que su formación como
+{profesion} le sería útil para resolver los acertijos del lugar.
+
+Después de horas de caminata, {protagonista} descubrió que {objeto}
+no solo iluminaba: también revelaba puertas ocultas entre los
+árboles. La aventura apenas comenzaba...
+"""
+
+print()
+print("--- Tu historia ---")
+print(historia)
+print("--- Fin del capítulo 1 ---")
+```
+</details>
+
+---
+
+[← Desafío 4](04-calculadora-imc.qmd) | [Desafío 6 →](06-formulario-contacto.qmd)

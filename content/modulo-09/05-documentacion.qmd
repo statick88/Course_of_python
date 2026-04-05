@@ -1,0 +1,321 @@
+---
+title: "9.5 Documentación: tu yo del futuro te lo agradecerá"
+subtitle: "El código le dice a la máquina qué hacer. La documentación le dice a los humanos por qué."
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Escribir docstrings profesionales siguiendo la convención de Google
+- Documentar módulos, funciones, clases y métodos
+- Usar type hints para hacer el código auto-documentado
+- Saber qué documentar y qué no
+
+## ¿Por qué documentar?
+
+Imagina que encuentras una **herramienta antigua en un taller**. Tiene forma extraña, no tiene etiqueta, y el artesano que la creó ya no está. ¿Para qué sirve? ¿Cómo se usa?
+
+El código sin documentación es exactamente esa herramienta. Puede que funcione perfectamente, pero nadie sabe cómo usarlo sin invertigar durante horas.
+
+```python
+# ❌ Sin documentación — ¿qué hace esto?
+def proc(d, t):
+    r = {}
+    for i in d:
+        if i["t"] == t:
+            r[i["id"]] = i["v"]
+    return r
+
+# ✅ Con documentación — claro como el agua
+def filtrar_por_tipo(datos, tipo_busqueda):
+    """Filtra una lista de diccionarios por tipo de dato.
+    
+    Recorre la lista de datos y devuelve un diccionario donde
+    las claves son los IDs y los valores son los datos filtrados
+    que coinciden con el tipo especificado.
+    
+    Args:
+        datos: Lista de diccionarios con claves 'id', 't', 'v'.
+        tipo_busqueda: El valor de 't' que se quiere filtrar.
+    
+    Returns:
+        Diccionario {id: valor} con los elementos que coinciden.
+    """
+    resultado = {}
+    for elemento in datos:
+        if elemento["tipo"] == tipo_busqueda:
+            resultado[elemento["id"]] = elemento["valor"]
+    return resultado
+```
+
+> **Readability counts.** La documentación no es un lujo — es una necesidad. Tu yo del futuro (y tus compañeros) te lo agradecerán.
+
+## Docstrings: la documentación de Python
+
+En Python, la documentación va dentro del código como **docstrings**: cadenas de texto entre triple comillas justo después de la definición.
+
+```python
+def calcular_promedio(notas):
+    """Calcula el promedio aritmético de una lista de notas.
+    
+    Args:
+        notas: Lista de números enteros o flotantes.
+    
+    Returns:
+        El promedio como número flotante.
+    
+    Raises:
+        ValueError: Si la lista está vacía.
+        TypeError: Si algún elemento no es numérico.
+    """
+    if not notas:
+        raise ValueError("La lista de notas no puede estar vacía")
+    
+    if not all(isinstance(n, (int, float)) for n in notas):
+        raise TypeError("Todas las notas deben ser numéricas")
+    
+    return sum(notas) / len(notas)
+```
+
+### Formato Google: el estándar de la comunidad
+
+El formato Google es el más legible y el más usado en la comunidad Python:
+
+```python
+def funcion_ejemplo(param1, param2, param3=10):
+    """Resumen corto y directo de lo que hace la función.
+    
+    Descripción más detallada que explica el comportamiento,
+    casos especiales y cualquier cosa importante que el usuario
+    deba saber antes de usar esta función.
+    
+    Args:
+        param1: Descripción del primer parámetro.
+        param2: Descripción del segundo parámetro.
+            Si la descripción es larga, puedes continuar
+            en la siguiente línea con indentación.
+        param3: Descripción del parámetro opcional.
+            Por defecto es 10.
+    
+    Returns:
+        Descripción del valor de retorno.
+        Incluye el tipo si no es obvio.
+    
+    Raises:
+        ValueError: Cuándo y por qué se lanza.
+        TypeError: Cuándo y por qué se lanza.
+    
+    Examples:
+        >>> funcion_ejemplo(1, 2)
+        3
+        >>> funcion_ejemplo(1, 2, param3=20)
+        23
+    """
+    return param1 + param2 + param3
+```
+
+### Docstrings de una línea
+
+Para funciones simples, una línea es suficiente:
+
+```python
+def sumar(a, b):
+    """Devuelve la suma de dos números."""
+    return a + b
+
+def es_par(numero):
+    """Retorna True si el número es par, False si es impar."""
+    return numero % 2 == 0
+
+def obtener_nombre(usuario_id):
+    """Busca y retorna el nombre del usuario con el ID dado."""
+    pass
+```
+
+> **Simple is better than complex.** Si una función es tan simple que su nombre ya dice todo, un docstring de una línea es suficiente.
+
+## Documentar clases
+
+Las clases necesitan documentación a dos niveles: la clase en sí y cada método público.
+
+```python
+class CarritoCompras:
+    """Representa un carrito de compras en una tienda en línea.
+    
+    Permite agregar productos, calcular totales y aplicar
+    descuentos. El carrito persiste durante la sesión del usuario.
+    
+    Attributes:
+        items: Diccionario con los productos agregados.
+        descuento: Porcentaje de descuento aplicado (0-100).
+    """
+    
+    def __init__(self):
+        """Inicializa un carrito vacío sin descuento."""
+        self.items = {}
+        self.descuento = 0
+    
+    def agregar_producto(self, nombre, precio, cantidad=1):
+        """Agrega un producto al carrito.
+        
+        Si el producto ya existe, incrementa la cantidad.
+        
+        Args:
+            nombre: Nombre del producto.
+            precio: Precio unitario del producto.
+            cantidad: Cantidad a agregar. Por defecto 1.
+        """
+        if nombre in self.items:
+            self.items[nombre]["cantidad"] += cantidad
+        else:
+            self.items[nombre] = {
+                "precio": precio,
+                "cantidad": cantidad
+            }
+    
+    def calcular_total(self):
+        """Calcula el total del carrito con descuento aplicado.
+        
+        Returns:
+            El total como número flotante con 2 decimales.
+        """
+        subtotal = sum(
+            item["precio"] * item["cantidad"]
+            for item in self.items.values()
+        )
+        total = subtotal * (1 - self.descuento / 100)
+        return round(total, 2)
+```
+
+## Documentar módulos
+
+Al inicio de cada archivo `.py`, agrega un docstring que describa el propósito del módulo:
+
+```python
+"""Módulo de validación de datos de usuario.
+
+Este módulo proporciona funciones para validar emails,
+contraseñas y nombres de usuario según las reglas del negocio.
+
+Funciones principales:
+    - validar_email: Verifica el formato de un correo electrónico.
+    - validar_password: Comprueba la fortaleza de una contraseña.
+    - validar_nombre: Asegura que el nombre cumple las reglas.
+
+Ejemplo de uso:
+    >>> from validadores import validar_email
+    >>> validar_email("usuario@ejemplo.com")
+    True
+"""
+
+def validar_email(email):
+    """Verifica que el email tenga un formato válido."""
+    return "@" in email and "." in email
+```
+
+## Type hints: documentación ejecutable
+
+Los type hints son anotaciones que indican qué tipo de datos espera una función. No cambian el comportamiento, pero hacen el código **auto-documentado**:
+
+```python
+# ✅ Con type hints — el código se documenta solo
+def calcular_precio_final(
+    precio_base: float,
+    tasa_impuesto: float = 0.16,
+    descuento: float = 0.0
+) -> float:
+    """Calcula el precio final con impuesto y descuento.
+    
+    Args:
+        precio_base: Precio original del producto.
+        tasa_impuesto: Tasa de impuesto (0.16 = 16%).
+        descuento: Descuento adicional (0.10 = 10%).
+    
+    Returns:
+        Precio final redondeado a 2 decimales.
+    """
+    precio_con_impuesto = precio_base * (1 + tasa_impuesto)
+    precio_final = precio_con_impuesto * (1 - descuento)
+    return round(precio_final, 2)
+```
+
+### Type hints para estructuras complejas
+
+```python
+from typing import List, Dict, Optional, Tuple
+
+# ✅ Type hints claros para estructuras complejas
+def procesar_estudiantes(
+    estudiantes: List[Dict[str, str]]
+) -> Dict[str, Tuple[float, int]]:
+    """Procesa la lista de estudiantes y retorna estadísticas.
+    
+    Args:
+        estudiantes: Lista de diccionarios con datos de estudiantes.
+    
+    Returns:
+        Diccionario con {nombre: (promedio, cantidad_materias)}.
+    """
+    pass
+
+def buscar_usuario(
+    usuarios: List[str],
+    nombre: str
+) -> Optional[str]:
+    """Busca un usuario en la lista.
+    
+    Returns:
+        El nombre del usuario si existe, None si no se encuentra.
+    """
+    for usuario in usuarios:
+        if nombre.lower() in usuario.lower():
+            return usuario
+    return None
+```
+
+## Qué NO documentar
+
+```python
+# ❌ Documentar lo obvio — ruido innecesario
+def sumar(a, b):
+    """Esta función recibe dos parámetros a y b
+    y devuelve la suma de a más b usando el operador +."""
+    return a + b
+
+# ✅ Documentar el porqué, no el qué
+def calcular_umbral_critico(datos):
+    """Calcula el umbral crítico usando la fórmula de 
+    Thompson (ver paper: Thompson et al., 2023).
+    
+    Este umbral se usa para detectar anomalías en los datos
+    de sensores. Valores por encima indican posible fallo.
+    """
+    pass
+```
+
+> **Beautiful is better than ugly.** La documentación debe agregar valor, no repetir lo que el código ya dice.
+
+## Errores comunes
+
+| Error | ❌ Incorrecto | ✅ Correcto |
+|-------|---------------|-------------|
+| Sin docstring | `def func(): pass` | `def func(): """Descripción."""` |
+| Docstring obvio | `"""Suma a + b"""` | Documentar el contexto de uso |
+| Docstring desactualizado | Código cambió, docstring no | Actualizar al refactorizar |
+| Sin ejemplos | Solo descripción | Incluir `>>> ejemplos` |
+| Sin type hints | `def func(a, b):` | `def func(a: int, b: int) -> int:` |
+
+## Resumen
+
+| Elemento | Qué documentar | Principio del Zen |
+|----------|----------------|-------------------|
+| Módulo | Propósito y funciones principales | Readability counts |
+| Función | Qué hace, args, returns, raises | Explicit is better than implicit |
+| Clase | Responsabilidad y attributes | Beautiful is better than ugly |
+| Método | Comportamiento específico | Simple is better than complex |
+| Type hints | Tipos de parámetros y retorno | Readability counts |
+
+---
+
+**Anterior:** [9.4 Manejo de errores](04-manejo-errores.qmd) | **Siguiente:** [9.6 Testing básico](06-testing-basico.qmd)

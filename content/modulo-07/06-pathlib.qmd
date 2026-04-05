@@ -1,0 +1,289 @@
+---
+title: "7.6 pathlib — Rutas modernas"
+subtitle: "Olvida os.path, abraza pathlib"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender por qué `pathlib` reemplaza a `os.path`
+- Crear rutas con `Path` de forma intuitiva
+- Navegar directorios, listar archivos y verificar existencia
+- Usar métodos de `Path` para operaciones comunes del sistema de archivos
+
+## La analogía del GPS
+
+Trabajar con rutas de archivos es como usar un GPS:
+
+- **`os.path`** es como dar instrucciones verbales: `"ve a la calle 5, gira a la derecha, luego sube 3 cuadras"`. Funciona, pero es incómodo.
+- **`pathlib`** es como tener un mapa interactivo: tocas el destino y listo. Es **orientado a objetos** y se siente natural.
+
+```python
+# ❌ La forma antigua (os.path)
+import os
+ruta = os.path.join("documentos", "proyectos", "python", "archivo.txt")
+existe = os.path.exists(ruta)
+nombre = os.path.basename(ruta)
+directorio = os.path.dirname(ruta)
+
+# ✅ La forma moderna (pathlib)
+from pathlib import Path
+ruta = Path("documentos") / "proyectos" / "python" / "archivo.txt"
+existe = ruta.exists()
+nombre = ruta.name
+directorio = ruta.parent
+```
+
+> **Beautiful is better than ugly.** `pathlib` hace que trabajar con rutas sea intuitivo y legible. El operador `/` para unir rutas es genial.
+
+## `Path`: el objeto ruta
+
+`Path` es la clase principal de `pathlib`. Representa una ruta del sistema de archivos como un objeto con métodos útiles.
+
+```python
+from pathlib import Path
+
+# Crear un objeto Path
+ruta = Path("documentos/notas.txt") # <1>
+
+# Propiedades útiles
+print(ruta.name)        # notas.txt — nombre del archivo
+print(ruta.stem)        # notas — nombre sin extensión
+print(ruta.suffix)      # .txt — extensión
+print(ruta.parent)      # documentos — directorio padre
+print(ruta.is_absolute()) # False — es una ruta relativa
+```
+
+1. `Path()` crea un objeto ruta. No verifica si el archivo existe — solo representa la ruta.
+
+## Unir rutas con el operador `/`
+
+La magia de `pathlib` es que puedes unir rutas con el operador `/`:
+
+```python
+from pathlib import Path
+
+base = Path("proyecto") # <1>
+src = base / "src" # <2>
+modulo = src / "main.py" # <3>
+
+print(modulo)  # proyecto/src/main.py
+```
+
+1. `base` es la ruta base del proyecto.
+2. `base / "src"` une las rutas: `proyecto/src`.
+3. `src / "main.py"` añade el archivo: `proyecto/src/main.py`.
+
+> **Simple is better than complex.** El operador `/` funciona igual en Windows, Mac y Linux. No necesitas preocuparte por `\` vs `/`.
+
+## Verificar existencia y tipo
+
+```python
+from pathlib import Path
+
+ruta_archivo = Path("datos.txt")
+ruta_carpeta = Path("documentos")
+
+# Verificar existencia
+if ruta_archivo.exists(): # <1>
+    print("El archivo existe")
+
+# Verificar si es archivo o directorio
+if ruta_archivo.is_file(): # <2>
+    print("Es un archivo")
+
+if ruta_carpeta.is_dir(): # <3>
+    print("Es un directorio")
+```
+
+1. `.exists()` devuelve `True` si la ruta existe (archivo o directorio).
+2. `.is_file()` devuelve `True` solo si es un archivo (no un directorio).
+3. `.is_dir()` devuelve `True` solo si es un directorio.
+
+## Listar archivos de un directorio
+
+```python
+from pathlib import Path
+
+directorio = Path("proyecto")
+
+# Listar todo el contenido
+for elemento in directorio.iterdir(): # <1>
+    tipo = "📁" if elemento.is_dir() else "📄"
+    print(f"{tipo} {elemento.name}")
+```
+
+1. `.iterdir()` itera sobre todos los elementos directos del directorio (no recursivo).
+
+### Buscar archivos con patrones: `.glob()`
+
+```python
+from pathlib import Path
+
+proyecto = Path("proyecto")
+
+# Buscar todos los archivos .py
+archivos_python = list(proyecto.glob("**/*.py")) # <1>
+print(f"Archivos Python encontrados: {len(archivos_python)}")
+
+for archivo in archivos_python:
+    print(f"  📄 {archivo}")
+
+# Buscar archivos .txt solo en el directorio actual
+archivos_txt = list(proyecto.glob("*.txt")) # <2>
+print(f"Archivos TXT: {archivos_txt}")
+```
+
+1. `"**/*.py"` busca archivos `.py` en el directorio actual **y todos los subdirectorios**. El `**` significa "recursivo".
+2. `"*.txt"` busca archivos `.txt` solo en el directorio especificado (no recursivo).
+
+## Crear directorios y archivos
+
+```python
+from pathlib import Path
+
+# Crear un directorio (y todos los directorios padres si no existen)
+ruta = Path("proyecto/src/utils")
+ruta.mkdir(parents=True, exist_ok=True) # <1>
+
+# Crear un archivo vacío
+archivo = Path("proyecto/README.md")
+archivo.touch() # <2>
+
+# Crear un archivo con contenido
+archivo = Path("proyecto/notas.txt")
+archivo.write_text("Hola desde pathlib\n") # <3>
+
+# Leer el contenido
+contenido = archivo.read_text() # <4>
+print(contenido)
+```
+
+1. `mkdir(parents=True, exist_ok=True)` crea el directorio y todos los directorios intermedios. `exist_ok=True` evita error si ya existe.
+2. `.touch()` crea un archivo vacío o actualiza su fecha de modificación si ya existe.
+3. `.write_text()` escribe texto en el archivo (lo crea si no existe).
+4. `.read_text()` lee todo el contenido del archivo como texto.
+
+## Operaciones útiles con archivos
+
+```python
+from pathlib import Path
+
+archivo = Path("documento.txt")
+
+# Renombrar
+archivo.rename("documento_final.txt") # <1>
+
+# Mover a otro directorio
+archivo = Path("documento_final.txt")
+archivo.rename(Path("archivos") / "documento_final.txt") # <2>
+
+# Eliminar
+archivo = Path("archivos/documento_final.txt")
+archivo.unlink() # <3>
+
+# Eliminar directorio vacío
+Path("archivos").rmdir() # <4>
+```
+
+1. `.rename()` renombra el archivo o lo mueve a otra ubicación.
+2. Mover un archivo es lo mismo que renombrarlo a una ruta diferente.
+3. `.unlink()` elimina el archivo. Es el equivalente a `os.remove()`.
+4. `.rmdir()` elimina un directorio **solo si está vacío**.
+
+## Ejemplo completo: organizador de archivos
+
+```python
+from pathlib import Path
+
+def organizar_descargas(carpeta_descargas):
+    """Organiza archivos de una carpeta por extensión."""
+    
+    descargas = Path(carpeta_descargas)
+    
+    if not descargas.is_dir():
+        print(f"Error: '{descargas}' no es un directorio válido")
+        return
+    
+    # Mapeo de extensiones a carpetas
+    extensiones = {
+        ".pdf": "Documentos",
+        ".docx": "Documentos",
+        ".jpg": "Imágenes",
+        ".png": "Imágenes",
+        ".mp3": "Música",
+        ".mp4": "Videos",
+        ".zip": "Comprimidos",
+    }
+    
+    organizados = 0
+    
+    for archivo in descargas.iterdir():
+        if archivo.is_file(): # <1>
+            extension = archivo.suffix.lower() # <2>
+            carpeta_destino = extensiones.get(extension) # <3>
+            
+            if carpeta_destino:
+                destino = descargas / carpeta_destino
+                destino.mkdir(exist_ok=True) # <4>
+                archivo.rename(destino / archivo.name) # <5>
+                organizados += 1
+                print(f"  ✅ {archivo.name} → {carpeta_destino}/")
+    
+    print(f"\n📦 {organizados} archivos organizados")
+
+# Uso
+organizar_descargas("mi_carpeta_descargas")
+```
+
+1. `.is_file()` asegura que solo procesamos archivos, no directorios.
+2. `.suffix` obtiene la extensión del archivo (ej: `.pdf`). `.lower()` la convierte a minúsculas.
+3. `.get(extension)` busca la carpeta destino en el diccionario. Si la extensión no está mapeada, devuelve `None`.
+4. `mkdir(exist_ok=True)` crea la carpeta si no existe, sin error si ya existe.
+5. `.rename()` mueve el archivo a la carpeta destino.
+
+## pathlib vs os.path
+
+| Operación | `os.path` | `pathlib` |
+|-----------|-----------|-----------|
+| Unir rutas | `os.path.join(a, b)` | `a / b` |
+| Nombre archivo | `os.path.basename(p)` | `p.name` |
+| Extensión | `os.path.splitext(p)[1]` | `p.suffix` |
+| Directorio padre | `os.path.dirname(p)` | `p.parent` |
+| Existe | `os.path.exists(p)` | `p.exists()` |
+| Es archivo | `os.path.isfile(p)` | `p.is_file()` |
+| Es directorio | `os.path.isdir(p)` | `p.is_dir()` |
+| Tamaño | `os.path.getsize(p)` | `p.stat().st_size` |
+| Leer texto | `open(p).read()` | `p.read_text()` |
+| Escribir texto | `open(p, "w").write(t)` | `p.write_text(t)` |
+
+> **There should be one obvious way to do it.** Desde Python 3.4, `pathlib` es la forma recomendada de trabajar con rutas.
+
+## Resumen
+
+| Método | Qué hace | Ejemplo |
+|--------|----------|---------|
+| `Path("ruta")` | Crear objeto ruta | `Path("docs/file.txt")` |
+| `ruta.exists()` | Verificar existencia | `True` o `False` |
+| `ruta.is_file()` | Es un archivo | `True` o `False` |
+| `ruta.is_dir()` | Es un directorio | `True` o `False` |
+| `ruta.iterdir()` | Listar contenido | Iterar sobre elementos |
+| `ruta.glob("*.py")` | Buscar con patrón | Lista de archivos |
+| `ruta.mkdir()` | Crear directorio | `mkdir(parents=True)` |
+| `ruta.read_text()` | Leer archivo | Devuelve string |
+| `ruta.write_text()` | Escribir archivo | Crea o sobrescribe |
+| `ruta.rename()` | Renombrar/mover | Cambia nombre o ubicación |
+| `ruta.unlink()` | Eliminar archivo | Borra el archivo |
+
+### Principios del Zen aplicados
+
+| Principio | Cómo se aplica |
+|-----------|----------------|
+| **Beautiful is better than ugly** | `ruta / "subdir" / "file"` vs `os.path.join(ruta, "subdir", "file")` |
+| **Simple is better than complex** | `ruta.read_text()` vs `open(ruta).read()` |
+| **Readability counts** | Los métodos se leen como acciones naturales |
+
+---
+
+**Anterior:** [7.5 Manejo de JSON](05-manejo-json.qmd) | **Siguiente:** [Resumen del Módulo 7](99-resumen.qmd)

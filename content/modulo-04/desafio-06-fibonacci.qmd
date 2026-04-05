@@ -1,0 +1,86 @@
+---
+title: "Desafío 6: Secuencia de Fibonacci"
+difficulty: "⭐⭐⭐ Difícil"
+estimated_time: "20 minutos"
+---
+
+## Situación
+
+Estás analizando patrones en la naturaleza para un proyecto de biología computacional. La secuencia de Fibonacci aparece en las espirales de los girasoles, las conchas de los caracoles y las ramas de los árboles.
+
+## Tu misión
+
+Crea una función llamada `fibonacci_lista` que:
+
+1. Reciba un número `n` como parámetro
+2. Devuelva una **lista** con los primeros `n` números de Fibonacci
+3. La secuencia comienza: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+4. Maneja el caso de `n = 0` (devuelve lista vacía) y `n = 1` (devuelve `[0]`)
+
+## Ejemplo de ejecución
+
+```python
+print(fibonacci_lista(1))   # [0]
+print(fibonacci_lista(5))   # [0, 1, 1, 2, 3]
+print(fibonacci_lista(10))  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+```
+
+## Pista
+
+- Los dos primeros números son 0 y 1
+- Cada número siguiente es la suma de los dos anteriores
+- Puedes usar un bucle `for` para generar la secuencia
+- Mantén los dos últimos números en variables y actualízalos en cada iteración
+
+## Criterios de éxito
+
+- [ ] `fibonacci_lista(0)` devuelve `[]`
+- [ ] `fibonacci_lista(1)` devuelve `[0]`
+- [ ] `fibonacci_lista(2)` devuelve `[0, 1]`
+- [ ] `fibonacci_lista(10)` devuelve los 10 primeros Fibonacci
+- [ ] La función usa iteración (no recursión) para ser eficiente
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 6: Secuencia de Fibonacci
+# Solución de referencia
+
+def fibonacci_lista(n):
+    """Genera los primeros n números de Fibonacci como lista.
+
+    La secuencia de Fibonacci comienza: 0, 1, 1, 2, 3, 5, 8, ...
+    Cada número es la suma de los dos anteriores.
+    """
+    if n <= 0:
+        return []
+    if n == 1:
+        return [0]
+
+    secuencia = [0, 1]  # <1>
+    for _ in range(2, n):  # <2>
+        siguiente = secuencia[-1] + secuencia[-2]  # <3>
+        secuencia.append(siguiente)  # <4>
+
+    return secuencia
+
+# Pruebas
+print(f"n=1:  {fibonacci_lista(1)}")
+print(f"n=5:  {fibonacci_lista(5)}")
+print(f"n=10: {fibonacci_lista(10)}")
+print(f"n=0:  {fibonacci_lista(0)}")
+
+# Verificación: cada número es la suma de los dos anteriores
+fib = fibonacci_lista(10)
+print("\nVerificación:")
+for i in range(2, len(fib)):
+    suma = fib[i-1] + fib[i-2]
+    correcto = "✅" if fib[i] == suma else "❌"
+    print(f"  {fib[i-1]} + {fib[i-2]} = {fib[i]} {correcto}")
+```
+</details>
+
+---
+
+[← Desafío 5](desafio-05-numero-primo.qmd) | [Desafío 7 →](desafio-07-calculadora-funciones.qmd)

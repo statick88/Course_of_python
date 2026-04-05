@@ -1,0 +1,235 @@
+---
+title: "6.2 Acceder y modificar diccionarios"
+subtitle: "Leer, escribir y borrar — el CRUD de los diccionarios"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Acceder a valores por clave con `[]` y `.get()`
+- Modificar y agregar nuevos pares clave-valor
+- Eliminar elementos con `del`, `.pop()` y `.popitem()`
+- Entender la diferencia entre acceso seguro y acceso directo
+- Usar `.setdefault()` para valores por defecto
+
+## Acceder a valores: dos caminos
+
+Imagina que buscas un contacto en tu teléfono. Hay dos formas: **tocar directamente el nombre** (rápido, pero si no existe, error) o **usar la barra de búsqueda** (si no existe, te dice "no encontrado").
+
+```python
+# Diccionario de ejemplo
+producto = {
+    "nombre": "Laptop",
+    "precio": 999.99,
+    "stock": 15
+}
+
+# ✅ Forma directa: corchetes []
+nombre = producto["nombre"]  # <1>
+print(nombre)
+
+# ✅ Forma segura: .get()
+precio = producto.get("precio")  # <2>
+print(precio)
+
+# ¿Qué pasa si la clave no existe?
+# categoria = producto["categoria"]  # <3> ¡ERROR!
+categoria = producto.get("categoria")  # <4>
+print(categoria)
+```
+
+1. `producto["nombre"]` accede directamente al valor. Si la clave existe, es rápido y limpio.
+2. `producto.get("precio")` hace lo mismo, pero es **seguro**: si la clave no existe, devuelve `None` en vez de lanzar un error.
+3. `producto["categoria"]` genera un `KeyError` porque la clave `"categoria"` no existe en el diccionario.
+4. `producto.get("categoria")` devuelve `None` silenciosamente. No rompe tu programa.
+
+> **Errors should never pass silently.** Usa `[]` cuando estés **seguro** de que la clave existe. Usa `.get()` cuando la clave pueda no existir.
+
+### Valor por defecto con `.get()`
+
+```python
+# .get() permite definir un valor si la clave no existe
+descuento = producto.get("descuento", 0)  # <1>
+print(f"Descuento: {descuento}%")
+
+# Sin valor por defecto, devuelve None
+etiqueta = producto.get("etiqueta")  # <2>
+print(f"Etiqueta: {etiqueta}")
+```
+
+1. `producto.get("descuento", 0)` devuelve `0` porque `"descuento"` no existe. El segundo argumento es el **valor por defecto**.
+2. Sin segundo argumento, `.get()` devuelve `None` cuando la clave no existe.
+
+## Modificar valores existentes
+
+Modificar un valor es tan simple como asignar un nuevo valor a una clave existente:
+
+```python
+inventario = {
+    "manzanas": 50,
+    "peras": 30,
+    "uvas": 25
+}
+
+# Modificar un valor existente
+inventario["manzanas"] = 45  # <1>
+print(inventario)
+
+# El diccionario actualizado
+# {'manzanas': 45, 'peras': 30, 'uvas': 25}
+```
+
+1. `inventario["manzanas"] = 45` **sobreescribe** el valor anterior (`50`) con el nuevo (`45`). Si la clave ya existe, se actualiza.
+
+## Agregar nuevos pares clave-valor
+
+La misma sintaxis sirve para **agregar** claves que no existen:
+
+```python
+configuracion = {
+    "tema": "oscuro",
+    "idioma": "es"
+}
+
+# Agregar una nueva clave
+configuracion["notificaciones"] = True  # <1>
+
+# Agregar varias claves a la vez
+configuracion.update({
+    "fuente": "Arial",
+    "tamano": 14,
+    "auto_guardado": True
+})  # <2>
+
+print(configuracion)
+```
+
+1. `configuracion["notificaciones"] = True` agrega un nuevo par clave-valor. Si la clave no existía, se crea.
+2. `.update()` permite agregar o actualizar **múltiples** pares de una vez. Es como fusionar dos diccionarios.
+
+> **Simple is better than complex.** La misma sintaxis `diccionario[clave] = valor` sirve para crear y modificar. Python decide según si la clave ya existe.
+
+## Eliminar elementos: tres métodos
+
+Hay tres formas de eliminar datos de un diccionario, cada una con su propósito:
+
+```python
+usuario = {
+    "nombre": "Ana",
+    "email": "ana@correo.com",
+    "password": "secreto123",
+    "edad": 28,
+    "telefono": "0987654321"
+}
+
+# Método 1: del — elimina sin devolver el valor
+del usuario["password"]  # <1>
+print(usuario)
+
+# Método 2: .pop() — elimina y devuelve el valor
+telefono = usuario.pop("telefono")  # <2>
+print(f"Teléfono eliminado: {telefono}")
+
+# Método 3: .popitem() — elimina el último par agregado
+ultimo = usuario.popitem()  # <3>
+print(f"Último elemento: {ultimo}")
+```
+
+1. `del usuario["password"]` elimina el par clave-valor completamente. No devuelve nada. Si la clave no existe, genera `KeyError`.
+2. `usuario.pop("telefono")` elimina el par y **devuelve** el valor. Útil cuando necesitas el dato antes de borrarlo. También acepta un valor por defecto: `usuario.pop("fax", "no existe")`.
+3. `usuario.popitem()` elimina y devuelve el **último** par insertado (en Python 3.7+ los diccionarios mantienen el orden). Devuelve una tupla `(clave, valor)`.
+
+### Comparación de métodos de eliminación
+
+| Método | Devuelve valor | Si la clave no existe | Cuándo usarlo |
+|--------|----------------|----------------------|---------------|
+| `del dic[key]` | No | `KeyError` | Cuando estás seguro de que existe |
+| `dic.pop(key)` | Sí (el valor) | `KeyError` (o valor por defecto) | Cuando necesitas el valor eliminado |
+| `dic.popitem()` | Sí (tupla clave, valor) | `KeyError` si está vacío | Cuando necesitas el último elemento |
+
+## ⚠️ Errores comunes
+
+```python
+datos = {"nombre": "Ana", "edad": 28}
+
+# ❌ Acceder a clave inexistente con []
+# print(datos["direccion"])  # KeyError: 'direccion'
+
+# ✅ Usar .get() con valor por defecto
+print(datos.get("direccion", "No registrada"))  # <1>
+
+# ❌ Intentar eliminar clave inexistente con del
+# del datos["direccion"]  # KeyError: 'direccion'
+
+# ✅ Usar .pop() con valor por defecto
+datos.pop("direccion", None)  # <2>
+```
+
+1. `.get("direccion", "No registrada")` devuelve `"No registrada"` en vez de lanzar un error.
+2. `.pop("direccion", None)` no hace nada si la clave no existe. Es seguro y silencioso.
+
+## Verificar si una clave existe
+
+```python
+config = {
+    "debug": True,
+    "host": "localhost"
+}
+
+# Verificar con 'in'
+if "debug" in config:  # <1>
+    print("Modo debug activado")
+
+# Verificar con 'not in'
+if "puerto" not in config:  # <2>
+    print("Puerto no configurado, usando por defecto")
+```
+
+1. `"debug" in config` devuelve `True` si la clave existe en el diccionario. Es la forma más rápida y legible de verificar.
+2. `"puerto" not in config` devuelve `True` si la clave **no** existe. Útil para configurar valores por defecto.
+
+## `.setdefault()`: crear si no existe
+
+```python
+estadisticas = {"visitas": 100}
+
+# Si la clave existe, devuelve su valor
+visitas = estadisticas.setdefault("visitas", 0)  # <1>
+print(visitas)  # 100
+
+# Si la clave NO existe, la crea con el valor por defecto
+compartidos = estadisticas.setdefault("compartidos", 0)  # <2>
+print(compartidos)  # 0
+print(estadisticas)
+```
+
+1. `"visitas"` ya existe, así que `setdefault()` devuelve `100` sin modificar nada.
+2. `"compartidos"` no existe, así que `setdefault()` lo crea con valor `0` y lo devuelve.
+
+> **Practicality beats purity.** `setdefault()` es útil cuando quieres inicializar un valor solo si no existe, sin sobrescribir lo que ya hay.
+
+## Resumen
+
+| Operación | Sintaxis | Ejemplo |
+|-----------|----------|---------|
+| Acceder (directo) | `dic[key]` | `producto["nombre"]` |
+| Acceder (seguro) | `dic.get(key, default)` | `producto.get("color", "N/A")` |
+| Modificar | `dic[key] = nuevo_valor` | `producto["precio"] = 899` |
+| Agregar | `dic[key] = valor` | `producto["color"] = "negro"` |
+| Actualizar varios | `dic.update({...})` | `producto.update({"x": 1, "y": 2})` |
+| Eliminar (directo) | `del dic[key]` | `del producto["color"]` |
+| Eliminar (con valor) | `dic.pop(key, default)` | `producto.pop("color", None)` |
+| Eliminar último | `dic.popitem()` | `ultimo = dic.popitem()` |
+| Verificar existencia | `key in dic` | `"nombre" in producto` |
+| Crear si no existe | `dic.setdefault(key, default)` | `dic.setdefault("x", 0)` |
+
+| Principio del Zen | Cómo aplica |
+|-------------------|-------------|
+| Errors should never pass silently | Usa `.get()` en vez de `[]` cuando no estés seguro |
+| Simple is better than complex | `dic[key] = valor` sirve para crear y modificar |
+| Readability counts | `"clave" in dic` se lee como lenguaje natural |
+
+---
+
+**Anterior:** [6.1 Crear diccionarios](01-crear-diccionarios.qmd) | **Siguiente:** [6.3 Iterar sobre diccionarios](03-iterar-diccionarios.qmd)

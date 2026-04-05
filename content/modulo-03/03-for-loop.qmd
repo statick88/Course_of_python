@@ -1,0 +1,248 @@
+---
+title: "3.3 for: el bucle que cuenta por ti"
+subtitle: "Repetir sin repetir — el poder de la iteración"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender cómo funciona el bucle `for` en Python
+- Iterar sobre listas, rangos y cadenas de texto
+- Usar `range()` para generar secuencias numéricas
+- Aplicar `for` para procesar colecciones de datos
+
+## El bucle `for`: tu asistente incansable
+
+Imagina que tienes una **lista de tareas** y debes marcar cada una como completada. Puedes hacerlo una por una manualmente, o puedes decirle a un asistente: "recorre toda la lista y márcalas".
+
+El `for` es ese asistente: **recorre cada elemento de una colección y ejecuta un bloque de código**.
+
+```python
+# Lista de tareas pendientes
+tareas = ["Revisar correo", "Escribir código", "Hacer pruebas", "Documentar"]
+
+for tarea in tareas: # <1>
+    print(f"✅ Completada: {tarea}") # <2>
+```
+
+1. `for tarea in tareas:` significa: "para cada elemento en `tareas`, llámalo `tarea` y ejecuta el bloque". La variable `tarea` toma el valor de cada elemento, uno por uno.
+2. En cada iteración, `tarea` contiene un elemento diferente de la lista. Se ejecuta 4 veces, una por cada tarea.
+
+> **Readability counts.** El `for` en Python se lee casi como inglés: "para cada tarea en tareas, imprime...".
+
+## Iterar sobre diferentes tipos
+
+El `for` no solo funciona con listas. Puede iterar sobre **cualquier cosa que sea iterable**.
+
+```python
+# Iterar sobre una cadena de texto
+lenguaje = "Python"
+for letra in lenguaje: # <1>
+    print(letra, end="-")
+# Resultado: P-y-t-h-o-n-
+
+# Iterar sobre una tupla
+coordenadas = (10, 20, 30)
+for valor in coordenadas: # <2>
+    print(f"Coordenada: {valor}")
+
+# Iterar sobre un diccionario
+precios = {"manzana": 1.50, "banana": 0.75, "cereza": 2.00}
+for fruta in precios: # <3>
+    print(f"{fruta}: ${precios[fruta]}")
+```
+
+1. Un string es iterable: cada carácter es un elemento. `letra` toma cada letra de "Python".
+2. Una tupla también es iterable. Funciona igual que una lista, pero es inmutable.
+3. Al iterar un diccionario directamente, obtienes las **claves**. Para obtener el valor, usas `precios[fruta]`.
+
+### Iterar diccionarios de formas diferentes
+
+```python
+precios = {"manzana": 1.50, "banana": 0.75, "cereza": 2.00}
+
+# Solo claves (por defecto)
+for fruta in precios: # <1>
+    print(fruta)
+
+# Solo valores
+for precio in precios.values(): # <2>
+    print(precio)
+
+# Clave y valor al mismo tiempo
+for fruta, precio in precios.items(): # <3>
+    print(f"{fruta} cuesta ${precio}")
+```
+
+1. Iterar directamente sobre el diccionario devuelve las claves: `"manzana"`, `"banana"`, `"cereza"`.
+2. `.values()` devuelve solo los valores: `1.50`, `0.75`, `2.00`.
+3. `.items()` devuelve pares `(clave, valor)`. La asignación múltiple `fruta, precio` desempaqueta cada par.
+
+## `range()`: generar secuencias numéricas
+
+Cuando necesitas repetir algo un número específico de veces, usas `range()`.
+
+```python
+# range(n) genera números de 0 a n-1
+for i in range(5): # <1>
+    print(i)  # Imprime: 0, 1, 2, 3, 4
+
+# range(inicio, fin) genera números desde inicio hasta fin-1
+for i in range(3, 8): # <2>
+    print(i)  # Imprime: 3, 4, 5, 6, 7
+
+# range(inicio, fin, paso) con incremento personalizado
+for i in range(0, 20, 5): # <3>
+    print(i)  # Imprime: 0, 5, 10, 15
+
+# Cuenta regresiva
+for i in range(10, 0, -1): # <4>
+    print(i)
+print("¡Despegue!")
+```
+
+1. `range(5)` genera `[0, 1, 2, 3, 4]`. El número final (5) NO se incluye.
+2. `range(3, 8)` genera `[3, 4, 5, 6, 7]`. Empieza en 3 y termina en 7 (8 no se incluye).
+3. `range(0, 20, 5)` genera `[0, 5, 10, 15]`. El tercer argumento es el "paso" o incremento.
+4. `range(10, 0, -1)` genera `[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]`. Paso negativo para cuenta regresiva.
+
+### Tabla de referencia: `range()`
+
+| Forma | Qué genera | Ejemplo de uso |
+|-------|-----------|----------------|
+| `range(5)` | 0, 1, 2, 3, 4 | Repetir 5 veces |
+| `range(1, 6)` | 1, 2, 3, 4, 5 | Contar desde 1 |
+| `range(0, 10, 2)` | 0, 2, 4, 6, 8 | Números pares |
+| `range(10, 0, -1)` | 10, 9, 8, ..., 1 | Cuenta regresiva |
+| `range(100, 0, -10)` | 100, 90, 80, ..., 10 | Descenso de 10 en 10 |
+
+## El acumulador: patrón fundamental
+
+Un **acumulador** es una variable que va sumando (o acumulando) valores en cada iteración.
+
+```python
+# Calcular el total de una lista de precios
+precios = [12.50, 8.75, 15.00, 6.25, 20.00]
+
+total = 0 # <1>
+for precio in precios: # <2>
+    total = total + precio # <3>
+
+print(f"Total a pagar: ${total:.2f}") # <4>
+```
+
+1. Inicializamos el acumulador en 0. Antes de empezar, no hemos sumado nada.
+2. Iteramos sobre cada precio de la lista.
+3. En cada iteración, sumamos el precio actual al total. `total = total + precio` es la clave del patrón.
+4. `:.2f` formatea el número con exactamente 2 decimales.
+
+### Contador: otro patrón esencial
+
+Similar al acumulador, pero en vez de sumar valores, **cuenta cuántas veces** se cumple una condición.
+
+```python
+# Contar cuántos números son pares
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+pares = 0 # <1>
+for numero in numeros:
+    if numero % 2 == 0: # <2>
+        pares = pares + 1 # <3>
+
+print(f"Hay {pares} números pares")
+```
+
+1. Inicializamos el contador en 0.
+2. Verificamos si el número es par usando el operador módulo (`%`). Si `numero % 2 == 0`, es par.
+3. Si la condición se cumple, incrementamos el contador en 1.
+
+## `enumerate()`: obtener el índice y el valor
+
+A veces necesitas saber **en qué posición** estás, no solo el valor.
+
+```python
+frutas = ["manzana", "banana", "cereza", "dátil"]
+
+for indice, fruta in enumerate(frutas): # <1>
+    print(f"{indice + 1}. {fruta}")
+```
+
+1. `enumerate()` devuelve pares `(índice, valor)`. El índice empieza en 0 por defecto.
+
+```python
+# Empezar el índice desde 1
+for posicion, fruta in enumerate(frutas, start=1): # <1>
+    print(f"{posicion}. {fruta}")
+```
+
+1. `start=1` hace que el índice comience en 1 en vez de 0. Más natural para listas numeradas.
+
+## Errores comunes
+
+### ❌ Modificar la lista mientras iteras
+
+```python
+# ❌ PELIGROSO: modificar la lista que estás recorriendo
+numeros = [1, 2, 3, 4, 5]
+for n in numeros:
+    if n % 2 == 0:
+        numeros.remove(n)  # ¡Puede saltar elementos!
+
+# ✅ CORRECTO: crear una nueva lista
+numeros = [1, 2, 3, 4, 5]
+pares = []
+for n in numeros:
+    if n % 2 == 0:
+        pares.append(n)
+```
+
+### ❌ Usar índices cuando no es necesario
+
+```python
+# ❌ Innecesariamente complicado
+frutas = ["manzana", "banana", "cereza"]
+for i in range(len(frutas)):  # <1>
+    print(frutas[i])
+
+# ✅ Pythonico: iterar directamente
+for fruta in frutas:
+    print(fruta)
+```
+
+1. `range(len(frutas))` es un patrón de otros lenguajes. En Python, puedes iterar directamente sobre la lista.
+
+### ❌ Olvidar que `range` no incluye el límite
+
+```python
+# ❌ Error común: esperar que range(5) incluya el 5
+for i in range(5):
+    print(i)  # Imprime 0, 1, 2, 3, 4 — NO imprime 5
+
+# ✅ Si necesitas incluir el 5, usa range(6)
+for i in range(6):
+    print(i)  # Imprime 0, 1, 2, 3, 4, 5
+```
+
+## Resumen
+
+| Patrón | Sintaxis | Para qué sirve |
+|--------|----------|----------------|
+| Iterar lista | `for item in lista:` | Procesar cada elemento |
+| Iterar rango | `for i in range(n):` | Repetir n veces |
+| Iterar con índice | `for i, v in enumerate(lista):` | Necesitas posición y valor |
+| Iterar diccionario | `for k, v in diccionario.items():` | Clave y valor |
+| Acumulador | `total = total + valor` | Sumar valores |
+| Contador | `contador = contador + 1` | Contar ocurrencias |
+
+### Principios del Zen aplicados
+
+| Principio | Cómo se aplica |
+|-----------|----------------|
+| **Readability counts** | Iterar directamente es más legible que usar índices |
+| **Simple is better than complex** | `for item in lista` > `for i in range(len(lista))` |
+| **There should be one obvious way** | En Python, iterar directamente es la forma natural |
+
+---
+
+**Anterior:** [3.2 Decisiones anidadas](02-if-anidado.qmd) | **Siguiente:** [3.4 while loop](04-while-loop.qmd)

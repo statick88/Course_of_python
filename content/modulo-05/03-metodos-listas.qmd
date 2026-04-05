@@ -1,0 +1,220 @@
+---
+title: "5.3 Métodos de listas: la navaja suiza"
+subtitle: "Agregar, quitar, ordenar y transformar — todo sin crear listas nuevas"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Dominar los métodos principales para agregar elementos: `append()`, `insert()`, `extend()`
+- Eliminar elementos con `remove()`, `pop()`, `clear()` y `del`
+- Ordenar listas con `sort()` y `reverse()`
+- Buscar elementos con `index()` y `count()`
+- Diferenciar entre métodos que modifican la lista y los que devuelven valores
+
+## Agregar elementos: tres formas
+
+Python te da tres herramientas para agregar elementos, cada una para una situación diferente:
+
+```python
+# append(): agregar al FINAL — el más usado
+tareas = ["estudiar Python"] # <1>
+tareas.append("hacer ejercicio") # <2>
+tareas.append("leer documentación") # <3>
+print(tareas)
+
+# insert(): agregar en una POSICIÓN específica
+tareas.insert(1, "revisar emails") # <4>
+print(tareas)
+
+# extend(): agregar MÚLTIPLES elementos al final
+tareas.extend(["almorzar", "descansar"]) # <5>
+print(tareas)
+```
+
+1. Lista inicial con una sola tarea.
+2. `append()` agrega `"hacer ejercicio"` al final. La lista ahora tiene 2 elementos.
+3. Otro `append()` agrega `"leer documentación"` al final. Ahora hay 3 elementos.
+4. `insert(1, "revisar emails")` inserta en la posición 1, desplazando los demás. Resultado: `['estudiar Python', 'revisar emails', 'hacer ejercicio', 'leer documentación']`.
+5. `extend()` toma una lista y agrega cada elemento individualmente al final. Es como hacer múltiples `append()` en una sola llamada.
+
+> **Simple is better than complex.** Usa `append()` para un elemento, `extend()` para varios, `insert()` cuando la posición importa.
+
+## Eliminar elementos: cuatro formas
+
+Cada método de eliminación tiene un comportamiento diferente. Elige el correcto según lo que necesites:
+
+```python
+colores = ["rojo", "verde", "azul", "amarillo", "verde"] # <1>
+
+# remove(): elimina por VALOR (la primera aparición)
+colores.remove("verde") # <2>
+print(colores)
+
+# pop(): elimina por ÍNDICE y devuelve el valor
+eliminado = colores.pop(2) # <3>
+print(f"Eliminé: {eliminado}")
+print(colores)
+
+# pop() sin argumento: elimina el último
+ultimo = colores.pop() # <4>
+print(f"Último: {ultimo}")
+
+# clear(): vacía la lista completa
+colores.clear() # <5>
+print(colores)
+```
+
+1. Lista con 5 colores. Nota que `"verde"` aparece dos veces.
+2. `remove("verde")` elimina solo la PRIMERA aparición de `"verde"`. La segunda sigue ahí.
+3. `pop(2)` elimina el elemento en el índice 2 (`"amarillo"`) y lo devuelve. Útil cuando necesitas el valor eliminado.
+4. `pop()` sin argumento elimina y devuelve el último elemento. Es como una pila (stack).
+5. `clear()` elimina TODOS los elementos. La lista queda vacía `[]`.
+
+### Eliminar con `del`
+
+`del` es una instrucción de Python, no un método de lista. Elimina por índice o por rango:
+
+```python
+numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] # <1>
+
+# Eliminar un elemento por índice
+del numeros[0] # <2>
+print(numeros)
+
+# Eliminar un rango de elementos
+del numeros[2:5] # <3>
+print(numeros)
+
+# Eliminar toda la lista (la variable deja de existir)
+del numeros # <4>
+# print(numeros)  # Esto daría NameError
+```
+
+1. Lista de 10 números.
+2. `del numeros[0]` elimina el primer elemento. La lista queda `[1, 2, 3, 4, 5, 6, 7, 8, 9]`.
+3. `del numeros[2:5]` elimina los elementos en las posiciones 2, 3 y 4.
+4. `del numeros` elimina la variable completa. Ya no existe — intentar usarla da `NameError`.
+
+## Ordenar listas
+
+```python
+# sort(): ordena la lista EN SU LUGAR (modifica la original)
+notas = [7.5, 9.0, 6.0, 8.5, 10.0] # <1>
+notas.sort() # <2>
+print(notas)
+
+# Ordenar de mayor a menor
+notas.sort(reverse=True) # <3>
+print(notas)
+
+# sorted(): devuelve una NUEVA lista ordenada (no modifica la original)
+original = [3, 1, 4, 1, 5] # <4>
+ordenada = sorted(original) # <5>
+print(f"Original: {original}")
+print(f"Ordenada: {ordenada}")
+
+# reverse(): invertir la lista en su lugar
+frutas = ["manzana", "banana", "cereza"] # <6>
+frutas.reverse()
+print(frutas)
+```
+
+1. Lista de notas desordenadas.
+2. `sort()` ordena de menor a mayor: `[6.0, 7.5, 8.5, 9.0, 10.0]`. Modifica la lista original.
+3. `reverse=True` ordena de mayor a menor: `[10.0, 9.0, 8.5, 7.5, 6.0]`.
+4. `original` se mantiene intacta porque `sorted()` no la modifica.
+5. `sorted(original)` devuelve una NUEVA lista ordenada: `[1, 1, 3, 4, 5]`.
+6. `reverse()` invierte el orden de los elementos en su lugar: `['cereza', 'banana', 'manzana']`.
+
+> **There should be one obvious way to do it.** Pero aquí hay dos: `sort()` modifica, `sorted()` crea copia. Usa `sort()` si no necesitas la original, `sorted()` si sí.
+
+## Buscar y contar
+
+```python
+lenguajes = ["Python", "JavaScript", "Go", "Python", "Rust", "Go"] # <1>
+
+# index(): encontrar la posición de un valor
+posicion = lenguajes.index("Go") # <2>
+print(posicion)
+
+# count(): cuántas veces aparece un valor
+veces = lenguajes.count("Python") # <3>
+print(veces)
+
+# Verificar si un elemento existe (con 'in')
+existe = "Java" in lenguajes # <4>
+print(existe)
+
+no_existe = "C++" not in lenguajes # <5>
+print(no_existe)
+```
+
+1. Lista con elementos repetidos.
+2. `index("Go")` devuelve `2` — la posición de la PRIMERA aparición de `"Go"`.
+3. `count("Python")` devuelve `2` — aparece dos veces en la lista.
+4. `"Java" in lenguajes` devuelve `False` — `"Java"` no está en la lista.
+5. `"C++" not in lenguajes` devuelve `True` — `"C++"` efectivamente no está.
+
+## Errores comunes con métodos
+
+```python
+# ❌ Esperar que sort() devuelva la lista ordenada
+numeros = [3, 1, 2]
+# resultado = numeros.sort()  # <1>
+
+# ✅ sort() modifica en su lugar, devuelve None
+numeros = [3, 1, 2]
+numeros.sort()
+resultado = numeros  # <2>
+
+# ❌ remove() con valor que no existe
+frutas = ["manzana", "banana"]
+# frutas.remove("uva")  # <3>
+
+# ✅ Verificar antes de eliminar
+if "uva" in frutas:
+    frutas.remove("uva")
+else:
+    print("La uva no está en la lista")  # <4>
+
+# ❌ index() con valor que no existe
+# frutas.index("pera")  # <5>
+
+# ✅ Usar 'in' primero
+if "pera" in frutas:
+    print(frutas.index("pera"))
+else:
+    print("La pera no está en la lista")  # <6>
+```
+
+1. `numeros.sort()` devuelve `None`, no la lista ordenada. Es un error común de principiante.
+2. Después de `sort()`, la variable `numeros` ya está ordenada. Asígnala directamente.
+3. `remove("uva")` genera `ValueError` porque `"uva"` no está en la lista.
+4. Verificar con `in` antes de `remove()` evita el error.
+5. `index("pera")` genera `ValueError` si el valor no existe.
+6. Siempre verifica con `in` antes de usar `index()` si no estás seguro de que el valor existe.
+
+## Tabla de referencia: métodos de listas
+
+| Método | Qué hace | Modifica la lista | Devuelve |
+|--------|----------|:-----------------:|----------|
+| `append(x)` | Agrega `x` al final | ✅ Sí | `None` |
+| `insert(i, x)` | Inserta `x` en posición `i` | ✅ Sí | `None` |
+| `extend(iterable)` | Agrega varios elementos | ✅ Sí | `None` |
+| `remove(x)` | Elimina primera aparición de `x` | ✅ Sí | `None` |
+| `pop(i)` | Elimina y devuelve elemento en `i` | ✅ Sí | El elemento |
+| `pop()` | Elimina y devuelve el último | ✅ Sí | El elemento |
+| `clear()` | Vacía la lista | ✅ Sí | `None` |
+| `sort()` | Ordena la lista | ✅ Sí | `None` |
+| `reverse()` | Invierte la lista | ✅ Sí | `None` |
+| `index(x)` | Posición de `x` | ❌ No | Índice (int) |
+| `count(x)` | Cuántas veces aparece `x` | ❌ No | Cantidad (int) |
+| `copy()` | Copia superficial | ❌ No | Nueva lista |
+
+> **Readability counts.** Si un método devuelve `None`, significa que modifica la lista en su lugar. Si devuelve un valor, la lista no cambia.
+
+---
+
+**Anterior:** [5.2 Indexar y slicing](02-indexar-slicing.qmd) | **Siguiente:** [5.4 Iterar listas](04-iterar-listas.qmd)

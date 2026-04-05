@@ -1,0 +1,63 @@
+---
+title: "Programación Python Fundamentos"
+subtitle: "De cero a programador — Aprende Python con desafíos prácticos"
+author: "Diego Saavedra"
+date: "2026-04-03"
+format:
+  html:
+    toc: false
+    page-layout: full
+execute:
+  echo: false
+---
+
+## 🐍 Bienvenido al Curso
+
+Este curso te lleva desde **cero conocimiento de programación** hasta escribir tus propios programas en Python. No necesitas experiencia previa — solo curiosidad y ganas de aprender.
+
+### ¿Qué vas a aprender?
+
+| Módulo | Tema | Desafíos |
+|--------|------|----------|
+| 1 | Introducción a Python | 7 |
+| 2 | Tipos de Datos y Variables | 7 |
+| 3 | Estructuras de Control | 8 |
+| 4 | Funciones | 8 |
+| 5 | Listas y Tuplas | 7 |
+| 6 | Diccionarios y Sets | 7 |
+| 7 | Manejo de Archivos | 7 |
+| 8 | Módulos y Paquetes | 7 |
+| 9 | Buenas Prácticas de Código | 7 |
+| 10 | Proyecto Integrador | 5 |
+
+**Total: 70+ desafíos prácticos**
+
+### Metodología
+
+Este curso sigue la metodología **Aprender Haciendo**:
+
+1. **Teoría mínima** — Lo justo para entender el concepto
+2. **Demostración** — Código que puedes ejecutar y modificar
+3. **Desafío** — Problema real que debes resolver tú
+4. **Reflexión** — ¿Qué aprendiste? ¿Qué harías diferente?
+
+> "El código es comunicación. Si no puedes leerlo, no puedes mantenerlo." — Diego Saavedra
+
+### Requisitos
+
+- Computadora con acceso a internet
+- Python 3.8+ instalado
+- Editor de texto (VS Code recomendado)
+- Ganas de aprender
+
+### ¿Cómo navegar?
+
+Usa el sidebar izquierdo para ir a cualquier módulo. Cada módulo tiene:
+
+- 📖 **Lecciones** — Contenido teórico con ejemplos
+- 💻 **Laboratorios** — Ejercicios paso a paso
+- 🏆 **Desafíos** — Problemas para resolver solo
+
+---
+
+*Curso desarrollado por **Diego Saavedra** para **Abacom Capacitación y Servicios***

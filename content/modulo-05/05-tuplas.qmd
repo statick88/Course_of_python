@@ -1,0 +1,211 @@
+---
+title: "5.5 Tuplas: datos que no cambian"
+subtitle: "Inmutabilidad como ventaja — cuando los datos deben ser fijos"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es una tupla y por qué la inmutabilidad es útil
+- Crear tuplas con diferentes sintaxis
+- Acceder a elementos y hacer slicing en tuplas
+- Saber cuándo usar tupla vs lista
+- Desempaquetar tuplas para asignar variables
+
+## ¿Qué es una tupla?
+
+Una tupla es como una lista, pero **inmutable**: una vez creada, no puedes cambiarla. Piensa en ella como una **fotografía** de datos — captura un momento y no se modifica.
+
+```python
+# Lista: puedes modificarla
+semana_lista = ["lunes", "martes", "miércoles"] # <1>
+semana_lista[0] = "Lunes"  # ✅ Funciona
+
+# Tupla: NO puedes modificarla
+semana_tupla = ("lunes", "martes", "miércoles") # <2>
+# semana_tupla[0] = "Lunes"  # ❌ Error: las tuplas son inmutables
+```
+
+1. Las listas son mutables: puedes cambiar, agregar o eliminar elementos después de crearlas.
+2. Las tuplas usan paréntesis `()` en vez de corchetes `[]`. Una vez creadas, sus elementos son fijos.
+
+> **Explicit is better than implicit.** Si un conjunto de datos no debería cambiar, usa una tupla. Le dice a otros programadores (y a ti mismo en el futuro): "estos valores son constantes".
+
+## Crear tuplas: tres formas
+
+```python
+# Forma 1: paréntesis (la más común)
+coordenadas = (10, 20) # <1>
+
+# Forma 2: sin paréntesis — Python entiende la tupla por las comas
+punto = 30, 40 # <2>
+print(type(punto))
+
+# Forma 3: tuple() para convertir otros iterables
+desde_lista = tuple([1, 2, 3]) # <3>
+desde_texto = tuple("abc") # <4>
+
+# Tupla de un solo elemento — ¡necesitas la coma!
+un_elemento = (42,) # <5>
+no_es_tupla = (42) # <6>
+print(type(un_elemento))
+print(type(no_es_tupla))
+```
+
+1. `(10, 20)` es una tupla de dos elementos. Los paréntesis son opcionales pero recomendados por claridad.
+2. `30, 40` también es una tupla. Python la reconoce por la coma, no por los paréntesis.
+3. `tuple([1, 2, 3])` convierte la lista en tupla: `(1, 2, 3)`.
+4. `tuple("abc")` convierte el texto en tupla: `('a', 'b', 'c')`.
+5. `(42,)` con coma es una tupla de un elemento. La coma es lo que la hace tupla.
+6. `(42)` sin coma es solo el número `42` entre paréntesis. No es una tupla.
+
+## Acceder a elementos y slicing
+
+Las tuplas soportan las mismas operaciones de acceso que las listas — solo que no puedes modificarlas:
+
+```python
+colores = ("rojo", "verde", "azul", "amarillo") # <1>
+
+# Acceso por índice
+print(colores[0]) # <2>
+print(colores[-1]) # <3>
+
+# Slicing
+print(colores[1:3]) # <4>
+
+# Longitud
+print(len(colores)) # <5>
+
+# Buscar
+print("azul" in colores) # <6>
+print(colores.index("verde")) # <7>
+print(colores.count("rojo")) # <8>
+```
+
+1. Tupla de 4 colores.
+2. `colores[0]` devuelve `"rojo"` — acceso por índice positivo.
+3. `colores[-1]` devuelve `"amarillo"` — acceso por índice negativo.
+4. `colores[1:3]` devuelve `('verde', 'azul')` — slicing funciona igual que en listas.
+5. `len(colores)` devuelve `4`.
+6. `"azul" in colores` devuelve `True`.
+7. `index("verde")` devuelve `1`.
+8. `count("rojo")` devuelve `1`.
+
+## Desempaquetado: la magia de las tuplas
+
+El **desempaquetado** (unpacking) te permite asignar cada elemento de una tupla a una variable diferente:
+
+```python
+# Desempaquetado básico
+coordenada = (10, 20) # <1>
+x, y = coordenada # <2>
+print(f"x = {x}, y = {y}")
+
+# Desempaquetado directo desde la creación
+nombre, edad, ciudad = ("Ana", 28, "Quito") # <3>
+print(f"{nombre}, {edad} años, {ciudad}")
+
+# Desempaquetado con asterisco — captura el resto
+primero, *resto = [1, 2, 3, 4, 5] # <4>
+print(f"Primero: {primero}")
+print(f"Resto: {resto}")
+
+# Intercambio de variables (sin variable temporal)
+a = 5
+b = 10
+a, b = b, a # <5>
+print(f"a = {a}, b = {b}")
+```
+
+1. Tupla de dos elementos representando coordenadas.
+2. `x, y = coordenada` desempaqueta: `x` recibe `10`, `y` recibe `20`.
+3. Desempaquetado directo: cada variable recibe el elemento en su posición.
+4. `*resto` captura todos los elementos restantes en una lista: `[2, 3, 4, 5]`.
+5. `a, b = b, a` intercambia valores usando desempaquetado de tuplas. Es la forma Pythonica de hacer swap.
+
+## ¿Cuándo usar tupla vs lista?
+
+| Criterio | Lista `[]` | Tupla `()` |
+|----------|:----------:|:----------:|
+| ¿Los datos cambian? | ✅ Sí | ❌ No |
+| ¿Necesitas agregar/quitar? | ✅ Sí | ❌ No |
+| ¿Son datos heterogéneos? | ⚠️ Puede | ✅ Ideal |
+| ¿Como clave de diccionario? | ❌ No | ✅ Sí |
+| ¿Rendimiento importa? | Normal | ✅ Más rápida |
+| ¿Protección contra cambios? | ❌ No | ✅ Sí |
+
+### Ejemplos prácticos
+
+```python
+# ✅ Tupla: datos que no deben cambiar
+DIAS_SEMANA = ("lunes", "martes", "miércoles", "jueves", "viernes") # <1>
+COORDENADAS_GPS = (-0.1807, -78.4678) # <2>
+VERSION_APP = (2, 1, 0) # <3>
+
+# ✅ Lista: datos que cambian
+carrito_compras = ["libro", "lápiz", "cuaderno"] # <4>
+carrito_compras.append("borrador")
+
+# ✅ Tupla como clave de diccionario (las listas NO pueden ser claves)
+poblacion = {
+    ("Ecuador", "Quito"): 2_000_000, # <5>
+    ("Ecuador", "Guayaquil"): 2_700_000,
+}
+```
+
+1. Los días de la semana nunca cambian. Una tupla protege contra modificaciones accidentales.
+2. Las coordenadas GPS de un lugar son fijas.
+3. El número de versión es un dato que, una vez definido, no se modifica.
+4. Un carrito de compras cambia constantemente: agregas y quitas productos.
+5. Las tuplas pueden ser claves de diccionario porque son inmutables (hashables). Las listas no pueden.
+
+## Errores comunes con tuplas
+
+```python
+# ❌ Intentar modificar una tupla
+colores = ("rojo", "verde", "azul")
+# colores[0] = "amarillo"  # <1>
+
+# ✅ Crear una nueva tupla con el cambio
+colores = ("amarillo",) + colores[1:] # <2>
+print(colores)
+
+# ❌ Olvidar la coma en tupla de un elemento
+# punto = (5)  # <3>
+
+# ✅ La coma es obligatoria
+punto = (5,) # <4>
+
+# ❌ Desempaquetar con número incorrecto de variables
+coordenadas = (10, 20, 30)
+# x, y = coordenadas  # <5>
+
+# ✅ Mismo número de variables que elementos
+x, y, z = coordenadas # <6>
+
+# ✅ O usar asterisco para capturar el resto
+x, *resto = coordenadas # <7>
+```
+
+1. `TypeError: 'tuple' object does not support item assignment`. Las tuplas son inmutables.
+2. Para "modificar" una tupla, crea una nueva combinando partes. `('amarillo',) + ('verde', 'azul')` = `('amarillo', 'verde', 'azul')`.
+3. `(5)` sin coma es solo el número `5` entre paréntesis, no una tupla.
+4. `(5,)` con coma es una tupla de un elemento.
+5. `ValueError: too many values to unpack`. Hay 3 elementos pero solo 2 variables.
+6. Mismo número de variables que elementos: `x=10, y=20, z=30`.
+7. `*resto` captura los elementos sobrantes: `x=10, resto=[20, 30]`.
+
+## Resumen
+
+| Concepto | Ejemplo | Principio del Zen |
+|----------|---------|-------------------|
+| Tupla inmutable | `(1, 2, 3)` | Explicit is better than implicit |
+| Coma obligatoria | `(42,)` | Readability counts |
+| Desempaquetado | `x, y = (1, 2)` | Beautiful is better than ugly |
+| Tupla como clave | `{(1,2): "valor"}` | Practicality beats purity |
+| No modificar | `colores + ("nuevo",)` | Immutable data is safer |
+
+---
+
+**Anterior:** [5.4 Iterar listas](04-iterar-listas.qmd) | **Siguiente:** [5.6 Listas anidadas](06-listas-anidadas.qmd)

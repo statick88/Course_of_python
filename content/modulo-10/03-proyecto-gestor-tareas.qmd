@@ -1,0 +1,312 @@
+---
+title: "10.3 Proyecto guiado: Gestor de Tareas"
+subtitle: "Construye una aplicación completa paso a paso"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Construir un gestor de tareas funcional desde cero
+- Integrar archivos JSON, funciones y control de flujo
+- Aplicar validación de entrada del usuario
+- Crear un programa que persista datos entre sesiones
+
+## La analogía del tablero Kanban
+
+¿Has visto esos tableros con columnas "Por hacer", "En progreso", "Hecho"? Eso es exactamente lo que vamos a construir, pero en la terminal.
+
+**Tu gestor de tareas es como un asistente personal** que nunca olvida nada. Le dices qué hacer, él lo anota, y te lo recuerda cuando vuelves.
+
+> **Simple is better than complex.** No necesitas una base de datos. Un archivo JSON es suficiente.
+
+## Paso 1: La estructura del proyecto
+
+```
+gestor_tareas/
+├── main.py
+├── datos/
+│   └── tareas.json
+└── modulos/
+    ├── __init__.py
+    ├── gestor.py
+    └── utilidades.py
+```
+
+Crea esta estructura en tu computadora:
+
+```bash
+mkdir -p gestor_tareas/datos gestor_tareas/modulos
+touch gestor_tareas/main.py
+touch gestor_tareas/modulos/__init__.py
+touch gestor_tareas/modulos/gestor.py
+touch gestor_tareas/modulos/utilidades.py
+```
+
+## Paso 2: Las utilidades
+
+En `modulos/utilidades.py`:
+
+```python
+"""Utilidades reutilizables para el gestor de tareas."""
+
+import os
+
+
+def limpiar_pantalla():
+    """Limpia la consola según el sistema operativo."""
+    os.system("cls" if os.name == "nt" else "clear")
+
+
+def pedir_opcion(mensaje, opciones_validas):
+    """Pide una opción al usuario hasta que sea válida."""
+    while True:
+        opcion = input(mensaje).strip()
+        if opcion in opciones_validas:
+            return opcion
+        print(f"Opción no válida. Elige entre: {', '.join(opciones_validas)}")
+
+
+def pedir_texto(mensaje, obligatorio=True):
+    """Pide texto al usuario. Si es obligatorio, no permite vacío."""
+    while True:
+        texto = input(mensaje).strip()
+        if texto or not obligatorio:
+            return texto
+        print("Este campo es obligatorio.")
+
+
+def confirmar(mensaje):
+    """Pide confirmación sí/no."""
+    while True:
+        resp = input(f"{mensaje} (s/n): ").lower().strip()
+        if resp in ("s", "si", "sí"):
+            return True
+        if resp in ("n", "no"):
+            return False
+        print("Responde 's' o 'n'.")
+```
+
+## Paso 3: El gestor de tareas
+
+En `modulos/gestor.py`:
+
+```python
+"""Lógica de negocio del gestor de tareas."""
+
+import json
+import os
+from datetime import datetime
+
+
+class GestorTareas:
+    """Gestiona las tareas: crear, listar, completar, eliminar."""
+
+    def __init__(self, archivo):
+        """Inicializa el gestor con la ruta del archivo de datos."""
+        self.archivo = archivo
+        self.tareas = self._cargar()
+
+    def _cargar(self):
+        """Carga tareas desde JSON. Retorna lista vacía si no existe."""
+        if os.path.exists(self.archivo):
+            with open(self.archivo, "r", encoding="utf-8") as f:
+                return json.load(f)
+        return []
+
+    def _guardar(self):
+        """Guarda la lista actual de tareas en JSON."""
+        os.makedirs(os.path.dirname(self.archivo), exist_ok=True)
+        with open(self.archivo, "w", encoding="utf-8") as f:
+            json.dump(self.tareas, f, indent=4, ensure_ascii=False)
+
+    def _siguiente_id(self):
+        """Calcula el siguiente ID disponible."""
+        if not self.tareas:
+            return 1
+        return max(t["id"] for t in self.tareas) + 1
+
+    def agregar(self, titulo, descripcion=""):
+        """Crea una nueva tarea y la guarda."""
+        tarea = {
+            "id": self._siguiente_id(),
+            "titulo": titulo,
+            "descripcion": descripcion,
+            "completada": False,
+            "fecha": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        }
+        self.tareas.append(tarea)
+        self._guardar()
+        return tarea
+
+    def listar(self, solo_pendientes=False):
+        """Muestra las tareas. Si solo_pendientes, filtra las completadas."""
+        tareas_mostrar = [
+            t for t in self.tareas
+            if not solo_pendientes or not t["completada"]
+        ]
+
+        if not tareas_mostrar:
+            print("No hay tareas para mostrar.")
+            return
+
+        print(f"\n{'ID':<5} {'Estado':<8} {'Título':<30} {'Fecha':<20}")
+        print("-" * 65)
+        for t in tareas_mostrar:
+            estado = "✅" if t["completada"] else "⬜"
+            print(f"{t['id']:<5} {estado:<8} {t['titulo']:<30} {t['fecha']:<20}")
+
+    def completar(self, id_tarea):
+        """Marca una tarea como completada."""
+        for tarea in self.tareas:
+            if tarea["id"] == id_tarea:
+                tarea["completada"] = True
+                self._guardar()
+                return True
+        return False
+
+    def eliminar(self, id_tarea):
+        """Elimina una tarea por su ID."""
+        self.tareas = [t for t in self.tareas if t["id"] != id_tarea]
+        self._guardar()
+
+    def estadisticas(self):
+        """Muestra un resumen de tareas."""
+        total = len(self.tareas)
+        completadas = sum(1 for t in self.tareas if t["completada"])
+        pendientes = total - completadas
+        print(f"\n📊 Estadísticas:")
+        print(f"   Total: {total}")
+        print(f"   Pendientes: {pendientes}")
+        print(f"   Completadas: {completadas}")
+        if total > 0:
+            porcentaje = (completadas / total) * 100
+            print(f"   Progreso: {porcentaje:.1f}%")
+```
+
+## Paso 4: El programa principal
+
+En `main.py`:
+
+```python
+"""
+Gestor de Tareas Personal
+Aplicación de consola para organizar tu día.
+"""
+
+from modulos.gestor import GestorTareas
+from modulos.utilidades import (
+    limpiar_pantalla,
+    pedir_opcion,
+    pedir_texto,
+    confirmar,
+)
+
+
+def mostrar_menu():
+    """Imprime el menú principal."""
+    print("\n" + "=" * 40)
+    print("  📋 GESTOR DE TAREAS")
+    print("=" * 40)
+    print("  1. Ver todas las tareas")
+    print("  2. Ver solo pendientes")
+    print("  3. Agregar nueva tarea")
+    print("  4. Completar tarea")
+    print("  5. Eliminar tarea")
+    print("  6. Estadísticas")
+    print("  7. Salir")
+    print("=" * 40)
+
+
+def main():
+    """Función principal del programa."""
+    limpiar_pantalla()
+    gestor = GestorTareas("datos/tareas.json")
+
+    while True:
+        mostrar_menu()
+        opcion = pedir_opcion("Elige una opción: ", ["1", "2", "3", "4", "5", "6", "7"])
+
+        if opcion == "1":
+            limpiar_pantalla()
+            gestor.listar()
+
+        elif opcion == "2":
+            limpiar_pantalla()
+            gestor.listar(solo_pendientes=True)
+
+        elif opcion == "3":
+            limpiar_pantalla()
+            titulo = pedir_texto("Título de la tarea: ")
+            descripcion = pedir_texto("Descripción (opcional): ", obligatorio=False)
+            tarea = gestor.agregar(titulo, descripcion)
+            print(f"✅ Tarea '{tarea['titulo']}' agregada con ID {tarea['id']}")
+
+        elif opcion == "4":
+            gestor.listar(solo_pendientes=True)
+            try:
+                id_tarea = int(input("ID de la tarea a completar: "))
+                if gestor.completar(id_tarea):
+                    print("✅ Tarea marcada como completada")
+                else:
+                    print("❌ No se encontró esa tarea")
+            except ValueError:
+                print("❌ Ingresa un número válido")
+
+        elif opcion == "5":
+            gestor.listar()
+            try:
+                id_tarea = int(input("ID de la tarea a eliminar: "))
+                if confirmar("¿Estás seguro de eliminar esta tarea?"):
+                    gestor.eliminar(id_tarea)
+                    print("🗑️ Tarea eliminada")
+            except ValueError:
+                print("❌ Ingresa un número válido")
+
+        elif opcion == "6":
+            gestor.estadisticas()
+
+        elif opcion == "7":
+            print("\n👋 ¡Hasta luego! Tus tareas están guardadas.")
+            break
+
+        input("\nPresiona Enter para continuar...")
+        limpiar_pantalla()
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## Paso 5: Ejecuta tu proyecto
+
+```bash
+cd gestor_tareas
+python main.py
+```
+
+## Errores comunes
+
+| Error | ❌ Así no | ✅ Así sí |
+|-------|-----------|-----------|
+| No crear directorio de datos | `open("tareas.json")` sin verificar | `os.makedirs(..., exist_ok=True)` |
+| IDs duplicados | `len(tareas) + 1` siempre | `max(id for t in tareas) + 1` |
+| No manejar archivo vacío | Asumir que siempre existe | Verificar con `os.path.exists()` |
+| No validar entrada | `int(input())` directo | `try/except ValueError` |
+
+> **Errors should never pass silently.** Cada entrada del usuario debe validarse.
+
+## Resumen
+
+| Componente | Qué hace | Zen de Python |
+|------------|----------|---------------|
+| `utilidades.py` | Validación y utilidades | Don't repeat yourself |
+| `gestor.py` | Lógica CRUD de tareas | Simple is better than complex |
+| `main.py` | Menú y flujo del programa | Readability counts |
+| `datos/tareas.json` | Persistencia automática | Explicit is better than implicit |
+
+---
+
+**Anterior:** [10.2 Estructura del proyecto](02-estructura-proyecto.qmd)
+
+**Siguiente:** [10.4 Proyecto guiado: Tienda de Productos](04-proyecto-tienda-simple.qmd)

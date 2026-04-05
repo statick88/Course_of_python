@@ -1,0 +1,47 @@
+---
+title: "Resumen del Módulo 4: Funciones"
+---
+
+## Lo que aprendiste en este módulo
+
+| Concepto | Qué es | Ejemplo |
+|----------|--------|---------|
+| `def` | Definir una función reutilizable | `def saludar():` |
+| Parámetros | Datos que la función necesita | `def calcular(base, tasa)` |
+| Argumentos | Valores reales al llamar | `calcular(100, 0.15)` |
+| `return` | Devolver un resultado | `return base * tasa` |
+| Scope local | Variable solo visible dentro | `x` dentro de `def f()` |
+| Scope global | Variable visible en todo | `x` fuera de funciones |
+| `*args` | Múltiples argumentos posicionales | `def suma(*args)` |
+| `**kwargs` | Múltiples argumentos con nombre | `def perfil(**datos)` |
+| Lambda | Función anónima de una línea | `lambda x: x * 2` |
+| Recursión | Función que se llama a sí misma | `def factorial(n)` |
+
+## Principios del Zen de Python aplicados
+
+| Principio | Cómo lo aplicaste |
+|-----------|-------------------|
+| Beautiful is better than ugly | Funciones con nombres descriptivos que cuentan una historia |
+| Readability counts | Docstrings, parámetros con nombre, código autoexplicativo |
+| Explicit is better than implicit | `return` en vez de `print()`, parámetros claros |
+| Simple is better than complex | Lambdas para operaciones simples, recursión con caso base claro |
+| There should be one obvious way | `def` para funciones con nombre, lambda para funciones de orden superior |
+| Errors should never pass silently | Caso base en recursión, validación de parámetros |
+
+## ¿Estás listo para el Módulo 5?
+
+Deberías poder:
+
+- [ ] Definir funciones con `def` y docstrings apropiados
+- [ ] Usar parámetros posicionales, con nombre, `*args` y `**kwargs`
+- [ ] Diferenciar entre `print()` y `return`
+- [ ] Explicar la diferencia entre scope local y global
+- [ ] Crear funciones lambda para `sorted()`, `filter()` y `map()`
+- [ ] Implementar una función recursiva con caso base y caso recursivo
+- [ ] Identificar cuándo usar recursión y cuándo usar iteración
+
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 5: Estructuras de Control**!
+
+---
+
+**Anterior:** [4.6 Funciones recursivas](06-funciones-recursivas.qmd) | **Siguiente:** [Módulo 5](../modulo-05/index.qmd)

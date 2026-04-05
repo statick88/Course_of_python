@@ -1,0 +1,297 @@
+---
+title: "4.1 Definir funciones: tu primera multiherramienta"
+subtitle: "Escribe una vez, usa muchas veces"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender qué es una función y por qué es la base del código reutilizable
+- Definir funciones con `def` siguiendo la convención de Python
+- Llamar funciones y pasarles información
+- Aplicar el principio DRY (Don't Repeat Yourself)
+
+## ¿Qué es una función?
+
+Imagina que tienes una **multiherramienta** en tu mochila. Cada vez que necesitas un destornillador, no fabricas uno nuevo — sacas el que ya tienes y lo usas. Eso es exactamente una función: **una herramienta que guardas una vez y usas todas las veces que necesites**.
+
+```python
+# Sin funciones: repites el mismo código una y otra vez
+print("=== BIENVENIDO ===")
+print("Usuario: Ana")
+print("=== BIENVENIDO ===")
+print("Usuario: Carlos")
+print("=== BIENVENIDO ===")
+print("Usuario: María")
+
+# Con funciones: escribes una vez, usas muchas veces
+def mostrar_bienvenida(nombre):  # <1>
+    print("=== BIENVENIDO ===")
+    print(f"Usuario: {nombre}")
+
+mostrar_bienvenida("Ana")    # <2>
+mostrar_bienvenida("Carlos")
+mostrar_bienvenida("María")
+```
+
+1. `def` es la palabra clave que le dice a Python: "voy a crear una función". `mostrar_bienvenida` es el nombre, y `nombre` es el dato que necesita para funcionar.
+2. **Llamar** la función significa ejecutarla. Cada llamada usa el mismo código, pero con datos diferentes.
+
+> **There should be one obvious way to do it.** Si repites el mismo código más de dos veces, necesitas una función.
+
+## La anatomía de una función
+
+Cada función en Python tiene partes claras, como una receta de cocina:
+
+```python
+def calcular_area_rectangulo(base, altura):  # <1>
+    """Calcula el área de un rectángulo."""  # <2>
+    area = base * altura  # <3>
+    return area  # <4>
+
+resultado = calcular_area_rectangulo(5, 3)  # <5>
+print(f"El área es: {resultado}")
+```
+
+1. **Definición**: `def` + nombre + paréntesis + parámetros + dos puntos. El nombre sigue `snake_case`.
+2. **Docstring**: Texto entre triple comillas que explica qué hace la función. Es la documentación oficial.
+3. **Cuerpo**: El código que se ejecuta cuando llamas la función. Siempre indentado (4 espacios).
+4. **Return**: El resultado que la función devuelve. Sin `return`, la función devuelve `None`.
+5. **Llamada**: Usas el nombre + paréntesis + argumentos para ejecutarla.
+
+## Tu primera función
+
+Empecemos con algo simple: una función que saluda.
+
+```python
+# Paso 1: Definir la función
+def saludar():  # <1>
+    print("¡Hola! Bienvenido al curso de Python.")
+    print("Espero que estés aprendiendo mucho.")
+
+# Paso 2: Llamar la función
+saludar()  # <2>
+saludar()  # <3>
+```
+
+1. La función `saludar` no necesita parámetros (los paréntesis están vacíos). Solo ejecuta dos `print()`.
+2. Primera llamada: ejecuta todo el código dentro de la función.
+3. Segunda llamada: ejecuta el mismo código otra vez. Sin repetir las líneas de `print()`.
+
+> **Simple is better than complex.** Una función sin parámetros es el punto de partida más simple.
+
+## Funciones con parámetros
+
+Ahora hagamos la función más útil: que salude a cada persona por su nombre.
+
+```python
+def saludar_persona(nombre):  # <1>
+    print(f"¡Hola, {nombre}! Bienvenido al curso.")
+
+saludar_persona("Ana")    # <2>
+saludar_persona("Carlos")
+saludar_persona("María")
+```
+
+1. `nombre` es un **parámetro**: un dato que la función necesita para funcionar. Es como un espacio vacío que se llena al llamar la función.
+2. `"Ana"` es un **argumento**: el valor real que le pasas al parámetro `nombre`.
+
+## ¿Por qué usar funciones?
+
+### Razón 1: No repetir código (DRY)
+
+```python
+# ❌ Sin funciones: mismo código repetido 3 veces
+print("--- Factura #1 ---")
+print("Subtotal: $100.00")
+print("IVA (15%): $15.00")
+print("Total: $115.00")
+
+print("--- Factura #2 ---")
+print("Subtotal: $200.00")
+print("IVA (15%): $30.00")
+print("Total: $230.00")
+
+print("--- Factura #3 ---")
+print("Subtotal: $50.00")
+print("IVA (15%): $7.50")
+print("Total: $57.50")
+```
+
+```python
+# ✅ Con funciones: una sola definición, múltiples usos
+def mostrar_factura(numero, subtotal):  # <1>
+    iva = subtotal * 0.15
+    total = subtotal + iva
+    print(f"--- Factura #{numero} ---")
+    print(f"Subtotal: ${subtotal:.2f}")
+    print(f"IVA (15%): ${iva:.2f}")
+    print(f"Total: ${total:.2f}")
+
+mostrar_factura(1, 100)  # <2>
+mostrar_factura(2, 200)
+mostrar_factura(3, 50)
+```
+
+1. La función encapsula toda la lógica de la factura. Si cambia el IVA, lo modificas en un solo lugar.
+2. Cada llamada genera una factura diferente con los mismos cálculos.
+
+### Razón 2: Código más legible
+
+```python
+# ❌ Código sin funciones: ¿qué hace esto?
+p = 3.14159 * 5 ** 2
+c = 2 * 3.14159 * 5
+print(f"Área: {p}, Circunferencia: {c}")
+
+# ✅ Código con funciones: se lee como una oración
+def calcular_area_circulo(radio):
+    return 3.14159 * radio ** 2
+
+def calcular_circunferencia(radio):
+    return 2 * 3.14159 * radio
+
+area = calcular_area_circulo(5)
+circunferencia = calcular_circunferencia(5)
+print(f"Área: {area}, Circunferencia: {circunferencia}")
+```
+
+> **Readability counts.** Los nombres de funciones convierten matemáticas crípticas en código que se lee como instrucciones claras.
+
+## El docstring: documenta tu función
+
+El docstring es la primera línea después del `def`. Explica qué hace la función sin entrar en detalles de implementación.
+
+```python
+def convertir_temperatura(celsius):
+    """Convierte grados Celsius a Fahrenheit.
+
+    Args:
+        celsius: Temperatura en grados Celsius.
+
+    Returns:
+        La temperatura equivalente en grados Fahrenheit.
+    """
+    return celsius * 9/5 + 32
+
+# Puedes ver el docstring así:
+print(convertir_temperatura.__doc__)  # <1>
+```
+
+1. `__doc__` es un atributo especial que contiene el texto del docstring. Python lo usa para generar documentación automática.
+
+## Convención de nombres para funciones
+
+| Regla | Ejemplo válido | ❌ Inválido |
+|-------|----------------|-------------|
+| snake_case | `calcular_promedio` | `calcularPromedio` |
+| Verbo al inicio | `obtener_usuario` | `usuario_obtener` |
+| Descriptivo | `enviar_correo` | `hacer_algo` |
+| Sin números al inicio | `procesar2datos` | `2procesar` |
+
+```python
+# ✅ Nombres que dicen qué hacen
+def calcular_promedio(notas):
+    return sum(notas) / len(notas)
+
+def es_mayor_de_edad(edad):
+    return edad >= 18
+
+def formatear_nombre(nombre, apellido):
+    return f"{apellido}, {nombre}"
+
+# ❌ Nombres que no dicen nada
+def hacer(x):
+    pass
+
+def proceso(a, b, c):
+    pass
+```
+
+> **Beautiful is better than ugly.** Una función bien nombrada hace que el código se lea como una historia.
+
+## Funciones vacías: el placeholder `pass`
+
+A veces necesitas definir una función pero aún no sabes qué va adentro. Usa `pass`:
+
+```python
+def procesar_datos(datos):
+    """Procesa los datos del archivo."""
+    pass  # <1>
+
+def validar_usuario(usuario):
+    """Valida que el usuario exista en la base de datos."""
+    pass  # <2>
+```
+
+1. `pass` es una instrucción que no hace nada. Sirve como marcador de posición.
+2. Útil cuando diseñas la estructura de tu programa antes de implementar cada parte.
+
+## Errores comunes
+
+### ❌ Olvidar los dos puntos después del `def`
+
+```python
+# ❌ Error de sintaxis
+def saludar()
+    print("Hola")
+
+# ✅ Correcto
+def saludar():
+    print("Hola")
+```
+
+### ❌ Mala indentación del cuerpo
+
+```python
+# ❌ El cuerpo debe estar indentado
+def saludar():
+print("Hola")  # IndentationError
+
+# ✅ 4 espacios de indentación
+def saludar():
+    print("Hola")
+```
+
+### ❌ Llamar la función antes de definirla
+
+```python
+# ❌ La función no existe aún
+despedir()  # NameError
+
+def despedir():
+    print("¡Hasta luego!")
+
+# ✅ Primero define, luego llama
+def despedir():
+    print("¡Hasta luego!")
+
+despedir()
+```
+
+### ❌ Confundir definir con llamar
+
+```python
+# ❌ Esto solo define la función, NO la ejecuta
+def saludar():
+    print("Hola")
+
+# ✅ Necesitas los paréntesis para ejecutarla
+saludar()
+```
+
+## Resumen
+
+| Concepto | Ejemplo | Principio del Zen |
+|----------|---------|-------------------|
+| Definir función | `def nombre():` | Simple is better than complex |
+| Docstring | `"""Explica qué hace"""` | Explicit is better than implicit |
+| Llamar función | `nombre()` | Readability counts |
+| No repetir código | Una función, muchos usos | There should be one obvious way |
+| Nombres descriptivos | `calcular_promedio` | Beautiful is better than ugly |
+| Placeholder | `pass` | Practicality beats purity |
+
+---
+
+**Anterior:** [Módulo 4: Funciones](index.qmd) | **Siguiente:** [4.2 Parámetros y argumentos](02-parametros-argumentos.qmd)

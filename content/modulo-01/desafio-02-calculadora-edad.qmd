@@ -1,0 +1,81 @@
+---
+title: "Desafío 2: Calculadora de edad"
+difficulty: "⭐ Fácil"
+estimated_time: "8 minutos"
+---
+
+## Situación
+
+Un hospital necesita un programa rápido para calcular la edad de los pacientes y determinar si son mayores de edad. El programa debe ser claro y evitar errores con datos inválidos.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Pida el nombre del paciente
+2. Pida su edad actual
+3. Calcule en qué año nació (aproximadamente)
+4. Determine si es mayor de edad (18+)
+5. Calcule cuántos años tendrá en 10 años
+6. Muestre un resumen completo
+
+## Ejemplo de ejecución
+
+```
+=== CALCULADORA DE EDAD — HOSPITAL ===
+
+Nombre del paciente: Carlos
+Edad actual: 25
+
+--- Ficha del paciente ---
+Paciente: Carlos
+Edad actual: 25 años
+Año de nacimiento (aprox.): 2001
+¿Es mayor de edad?: Sí
+Edad en 10 años: 35 años
+```
+
+## Pista
+
+- `mayor_edad = edad >= 18` te da un booleano directamente
+- Puedes convertir un booleano a texto con una expresión condicional: `"Sí" if condicion else "No"`
+
+## Criterios de éxito
+
+- [ ] Calcula el año de nacimiento correctamente
+- [ ] Determina si es mayor de edad
+- [ ] Proyecta la edad a 10 años
+- [ ] La salida está organizada en secciones
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 2: Calculadora de edad
+# Solución de referencia
+
+anio_actual = 2026
+
+print("=== CALCULADORA DE EDAD — HOSPITAL ===")
+print()
+
+nombre = input("Nombre del paciente: ").strip()
+edad = int(input("Edad actual: "))
+
+anio_nacimiento = anio_actual - edad
+es_mayor = edad >= 18
+edad_futura = edad + 10
+
+print()
+print("--- Ficha del paciente ---")
+print(f"Paciente: {nombre}")
+print(f"Edad actual: {edad} años")
+print(f"Año de nacimiento (aprox.): {anio_nacimiento}")
+print(f"¿Es mayor de edad?: {'Sí' if es_mayor else 'No'}")
+print(f"Edad en 10 años: {edad_futura} años")
+```
+</details>
+
+---
+
+[← Desafío 1](01-saludo-personalizado.qmd) | [Desafío 3 →](03-conversor-moneda.qmd)

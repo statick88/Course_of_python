@@ -1,0 +1,243 @@
+---
+title: "9.6 Testing básico: confianza en tu código"
+subtitle: "Si no está testeado, no funciona — solo parece que funciona"
+execute:
+  eval: false
+---
+
+## Objetivos de esta lección
+
+- Entender por qué los tests son tu red de seguridad
+- Escribir tests unitarios con `pytest`
+- Usar `assert` para verificar resultados esperados
+- Organizar tests de forma profesional
+
+## ¿Por qué testear?
+
+Imagina que construyes un **puente**. Antes de dejar que los autos pasen, ¿verificas que aguante el peso? Claro que sí. Los tests son esa verificación para tu código.
+
+Sin tests, cada cambio que haces es como cruzar un puente sin saber si las vigas aguantan. Puede que funcione hoy... pero ¿y mañana?
+
+```python
+# Sin tests: ¿funciona? ¿Quién sabe?
+def calcular_descuento(precio, porcentaje):
+    return precio * (porcentaje / 100)
+
+# Con tests: SÍ funciona, y lo puedo demostrar
+def test_calcular_descuento_10_por_ciento():
+    """10% de descuento sobre $100 debe ser $10."""
+    resultado = calcular_descuento(100, 10)
+    assert resultado == 10.0  # <1>
+
+def test_calcular_descuento_cero():
+    """0% de descuento no debe cambiar el precio."""
+    resultado = calcular_descuento(100, 0)
+    assert resultado == 0.0  # <2>
+
+def test_calcular_descuento_cien():
+    """100% de descuento debe dar $0."""
+    resultado = calcular_descuento(100, 100)
+    assert resultado == 100.0  # <3>
+```
+
+1. `assert` verifica que el resultado sea el esperado. Si no lo es, el test falla.
+2. Un descuento del 0% debe dar 0 como descuento (no cambia el precio).
+3. **¡BUG ENCONTRADO!** 100% de descuento sobre $100 debería dar $100 de descuento, no $0. El test revela el error.
+
+> **Errors should never pass silently.** Los tests hacen que los errores pasen ruidosamente — exactamente como deben.
+
+## Tu primer test con pytest
+
+`pytest` es el framework de testing más popular de Python. Es simple, poderoso y no requiere boilerplate.
+
+```bash
+# Instalar pytest
+pip install pytest
+
+# Ejecutar todos los tests en el directorio actual
+pytest
+
+# Ejecutar con detalles
+pytest -v
+```
+
+### Estructura de un test
+
+```python
+# archivo: test_calculadora.py
+
+def sumar(a, b):
+    """Suma dos números."""
+    return a + b
+
+# ✅ Estructura de un test con pytest
+def test_sumar_dos_positivos():
+    # Arrange: preparar los datos
+    a = 5
+    b = 3
+    esperado = 8
+    
+    # Act: ejecutar la función
+    resultado = sumar(a, b)
+    
+    # Assert: verificar el resultado
+    assert resultado == esperado  # <1>
+```
+
+1. Si `resultado` no es igual a `esperado`, pytest muestra un error detallado con ambos valores.
+
+### Tests que fallan — y eso es BUENO
+
+```python
+def dividir(a, b):
+    return a / b
+
+def test_dividir_por_cero():
+    """Dividir por cero debe lanzar ZeroDivisionError."""
+    dividir(10, 0)  # <1>
+    # Si llegamos aquí, el test falla porque no hubo error
+```
+
+1. Este test fallará porque `dividir(10, 0)` lanza una excepción. ¡Pero eso es lo que queremos! Necesitamos verificar que se lance el error correcto:
+
+```python
+def test_dividir_por_cero():
+    """Dividir por cero debe lanzar ZeroDivisionError."""
+    import pytest
+    with pytest.raises(ZeroDivisionError):  # <1>
+        dividir(10, 0)  # <2>
+```
+
+1. `pytest.raises` verifica que se lance la excepción esperada.
+2. Si la excepción se lanza, el test pasa. Si no se lanza, el test falla.
+
+## Tests parametrizados: un test, muchos casos
+
+En vez de escribir un test por cada caso, usa `@pytest.mark.parametrize`:
+
+```python
+import pytest
+
+def es_palindromo(texto):
+    """Verifica si un texto se lee igual al revés."""
+    texto_limpio = texto.lower().replace(" ", "")
+    return texto_limpio == texto_limpio[::-1]
+
+# ✅ Un test, múltiples casos
+@pytest.mark.parametrize("texto, esperado", [
+    ("Ana", True),           # <1>
+    ("reconocer", True),     # <2>
+    ("hola", False),         # <3>
+    ("Dábale arroz a la zorra el abad", True),  # <4>
+    ("Python", False),       # <5>
+    ("a", True),             # <6>
+    ("", True),              # <7>
+])
+def test_es_palindromo(texto, esperado):
+    assert es_palindromo(texto) == esperado
+```
+
+1. "Ana" es palíndromo → True.
+2. "reconocer" es palíndromo → True.
+3. "hola" NO es palíndromo → False.
+4. Frase palíndromo con espacios → True.
+5. "Python" NO es palíndromo → False.
+6. Un solo carácter es palíndromo → True.
+7. String vacío es palíndromo → True.
+
+Pytest ejecutará **7 tests separados**, uno por cada fila. Si uno falla, sabrás exactamente cuál.
+
+## Organizar tests profesionalmente
+
+```
+mi_proyecto/
+├── calculadora.py          # Código principal
+├── test_calculadora.py     # Tests (al lado del código)
+└── tests/                  # O en directorio separado
+    ├── test_calculadora.py
+    ├── test_validadores.py
+    └── test_modelos.py
+```
+
+### Convención de nombres
+
+```python
+# ✅ Patrón: test_ + función + condición + resultado
+def test_sumar_dos_positivos_devuelve_suma():
+    assert sumar(2, 3) == 5
+
+def test_sumar_negativo_y_positivo_devuelve_diferencia():
+    assert sumar(-5, 3) == -2
+
+def test_sumar_ceros_devuelve_cero():
+    assert sumar(0, 0) == 0
+
+# ❌ Nombres que no dicen nada
+def test_1():
+    pass
+
+def test_suma():
+    pass
+```
+
+> **Readability counts.** El nombre del test debe leerse como una oración que describe qué se está verificando.
+
+## Tests de integración: cuando las piezas se juntan
+
+Los tests unitarios verifican funciones individuales. Los tests de integración verifican que las funciones trabajen juntas:
+
+```python
+# Funciones individuales (ya testeadas unitariamente)
+def calcular_subtotal(items):
+    """Suma el precio de todos los items."""
+    return sum(item["precio"] * item["cantidad"] for item in items)
+
+def aplicar_descuento(subtotal, porcentaje):
+    """Aplica un porcentaje de descuento."""
+    return subtotal * (1 - porcentaje / 100)
+
+def calcular_impuesto(monto, tasa=0.16):
+    """Calcula el impuesto sobre un monto."""
+    return round(monto * tasa, 2)
+
+# ✅ Test de integración: verifica el flujo completo
+def test_flujo_completo_de_compra():
+    """Verifica que el cálculo total de una compra sea correcto."""
+    items = [
+        {"nombre": "Camisa", "precio": 50, "cantidad": 2},
+        {"nombre": "Pantalón", "precio": 80, "cantidad": 1},
+    ]
+    
+    subtotal = calcular_subtotal(items)
+    assert subtotal == 180
+    
+    con_descuento = aplicar_descuento(subtotal, 10)
+    assert con_descuento == 162.0
+    
+    total = con_descuento + calcular_impuesto(con_descuento)
+    assert total == 187.92
+```
+
+## Errores comunes
+
+| Error | ❌ Incorrecto | ✅ Correcto |
+|-------|---------------|-------------|
+| Sin asserts | `def test_algo(): funcion()` | `assert funcion() == esperado` |
+| Tests que dependen entre sí | Test B necesita que A corra primero | Cada test es independiente |
+| Tests con datos reales | Conectar a BD real en tests | Usar datos de prueba |
+| Nombres genéricos | `test_1()`, `test_a()` | `test_sumar_positivos_devuelve_suma()` |
+| No testear errores | Solo testear el caso feliz | Testear casos límite y errores |
+
+## Resumen
+
+| Concepto | Para qué sirve | Principio del Zen |
+|----------|----------------|-------------------|
+| `assert` | Verificar resultados esperados | Errors should never pass silently |
+| `pytest.raises` | Verificar que se lanza un error | Explicit is better than implicit |
+| Parametrización | Un test, muchos casos | Simple is better than complex |
+| Tests independientes | Cada test funciona solo | Readability counts |
+| Tests de integración | Verificar flujo completo | Beautiful is better than ugly |
+
+---
+
+**Anterior:** [9.5 Documentación](05-documentacion.qmd) | **Siguiente:** [Resumen del Módulo 9](99-resumen.qmd)
