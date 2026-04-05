@@ -36,10 +36,17 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+      - name: Verify Quarto project
+        run: |
+          echo "=== Files in root ==="
+          ls -la
+          echo "=== _quarto.yml exists? ==="
+          test -f _quarto.yml && echo "YES" || echo "NO"
+          echo "=== Quarto version ==="
+          quarto --version
+
       - name: Render Quarto Book
-        uses: quarto-dev/quarto-actions/render@v2
-        with:
-          to: html
+        run: quarto render --to html
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
