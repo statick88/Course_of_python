@@ -9,10 +9,8 @@ project:
     - "images/*.svg"
     - "recursos"
 
-  # Disable code execution globally - challenges have input() that requires interaction
-  execute: false
-
 book:
+  execute: false
   title: "Programación Python Fundamentos"
   subtitle: "De cero a programador — Aprende Python con desafíos prácticos"
   author: "Diego Saavedra"
