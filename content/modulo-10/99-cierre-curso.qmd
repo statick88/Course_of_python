@@ -123,7 +123,7 @@ Cada vez que aprendas algo nuevo, construye:
 Cada vez que escribas código, pregúntate:
 
 ```python
-import this  # <1>
+import **this**  # <1>
 ```
 
 1. El Zen de Python no es solo poesía. Es una guía práctica para tomar decisiones de diseño.

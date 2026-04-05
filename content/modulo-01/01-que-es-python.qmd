@@ -86,7 +86,7 @@ Python tiene una filosofía escrita. Se llama **"El Zen de Python"** y puedes le
 import this # <1>
 ```
 
-1. El módulo `this` contiene el Zen de Python. Al importarlo, se imprime en pantalla automáticamente.
+1. El módulo `**this**` contiene el Zen de Python. Al importarlo, se imprime en pantalla automáticamente.
 
 Los principios más importantes:
 
