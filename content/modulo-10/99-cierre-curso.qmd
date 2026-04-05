@@ -126,7 +126,7 @@ Cada vez que escribas código, pregúntate:
 import **this**  # <1>
 ```
 
-1. El Zen de Python no es solo poesía. Es una guía práctica para tomar decisiones de diseño.
+1. El **Zen de Python** no es solo poesía. Es una guía práctica para tomar decisiones de diseño.
 
 | Principio | Pregunta que debes hacerte |
 |-----------|---------------------------|

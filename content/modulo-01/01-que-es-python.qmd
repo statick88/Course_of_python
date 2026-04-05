@@ -80,7 +80,7 @@ Python está en todas partes. Literalmente.
 
 ## La filosofía de Python: El Zen
 
-Python tiene una filosofía escrita. Se llama **"El Zen de Python"** y puedes leerla directamente en tu computadora:
+Python tiene una filosofía escrita. Se llama **"El **Zen de Python****" y puedes leerla directamente en tu computadora:
 
 ```python
 import this # <1>
