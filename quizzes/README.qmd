@@ -7,12 +7,22 @@ title: "Quizzes Interactivos"
 | Quiz | Módulo | Preguntas |
 |------|--------|-----------|
 | [Quiz Módulo 1](quiz-modulo-01.qmd) | Introducción a Python | 10 |
+| [Quiz Módulo 2](quiz-modulo-02.qmd) | Tipos de Datos y Variables | 10 |
+| [Quiz Módulo 3](quiz-modulo-03.qmd) | Estructuras de Control | 10 |
+| [Quiz Módulo 4](quiz-modulo-04.qmd) | Funciones | 10 |
+| [Quiz Módulo 5](quiz-modulo-05.qmd) | Listas y Tuplas | 10 |
+| [Quiz Módulo 6](quiz-modulo-06.qmd) | Diccionarios y Sets | 10 |
+| [Quiz Módulo 7](quiz-modulo-07.qmd) | Manejo de Archivos | 10 |
+| [Quiz Módulo 8](quiz-modulo-08.qmd) | Módulos y Paquetes | 10 |
+| [Quiz Módulo 9](quiz-modulo-09.qmd) | Buenas Prácticas y Testing | 10 |
+| [Quiz Módulo 10](quiz-modulo-10.qmd) | Proyecto Final y Buenas Prácticas de Desarrollo | 10 |
 
 ## Instrucciones
 
 - Cada quiz tiene preguntas de opción múltiple
 - Puedes intentar cada quiz tantas veces como necesites
 - El resultado se muestra inmediatamente al finalizar
+- Usa los quizzes para autoevaluar tu progreso después de completar cada módulo
 
 ---
 

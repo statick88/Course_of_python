@@ -1,0 +1,133 @@
+---
+title: "Quiz: Módulo 9 — Buenas Prácticas y Testing"
+---
+
+## Evaluación del Módulo 9
+
+Responde las siguientes preguntas para evaluar tu comprensión de buenas prácticas de código y testing en Python.
+
+::: {.quizdown}
+
+### ¿Qué significa PEP 8 en Python?
+
+- [ ] Python Enhancement Proposal 8
+- [x] Python Enhancement Proposal 8 (Estilo de Código)
+- [ ] Python Error Protocol 8
+- [ ] Python Execution Process 8
+
+> **Explicación:** PEP 8 es la guía de estilo de código para Python. Proporciona convenciones sobre cómo formatear el código para máxima legibilidad, incluyendo reglas de indentación, longitud de líneas, nombres de variables, etc.
+
+---
+
+### ¿Cuál es la longitud máxima recomendada de línea según PEP 8?
+
+- [ ] 60 caracteres
+- [ ] 80 caracteres
+- [x] 79 caracteres
+- [ ] 100 caracteres
+
+> **Explicación:** PEP 8 recomienda limitar las líneas a 79 caracteres máximo para facilitar la lectura en dispositivos con pantallas más pequeñas y permitir tener dos archivos lado a lado en editores con salto de línea.
+
+---
+
+### ¿Cómo se nombran las constantes en Python según PEP 8?
+
+- [ ] camelCase
+- [ ] snake_case
+- [x] UPPER_SNAKE_CASE
+- [ ] PascalCase
+
+> **Explicación:** Según PEP 8, las constantes deben nombrarse usando mayúsculas con guiones bajos (UPPER_SNAKE_CASE), como `MAX_CONNECTIONS = 100` o `PI = 3.14159`.
+
+---
+
+### ¿Qué es una función pura en programación funcional?
+
+- [ ] Una función que no tiene parámetros
+- [x] Una función que siempre retorna el mismo output para el mismo input y no tiene efectos secundarios
+- [ ] Una función que solo trabaja con números puros
+- [ ] Una función escrita en C
+
+> **Explicación:** Una función pura tiene dos propiedades: 1) Dados los mismos_inputs, siempre retorna el mismo_output, y 2) No tiene efectos secundarios (no modifica estado externo, no hace I/O, etc.). Esto las hace predecibles y fáciles de testear.
+
+---
+
+### ¿Cuál de los siguientes es un buen nombre para una variable que almacena el total de precios?
+
+- [ ] t
+- [ ] total
+- [x] total_precio
+- [ ] tmp
+
+> **Explicación:** Los nombres de variables deben ser descriptivos y indicar claramente su propósito. `total_precio` es mucho más claro que `t` o `tmp`, y mejor que `total` porque especifica qué tipo de total es.
+
+---
+
+### ¿Qué bloque se ejecuta siempre en una estructura try-except, independientemente de si ocurre una excepción o no?
+
+- [ ] try
+- [ ] except
+- [x] finally
+- [ ] else
+
+> **Explicación:** El bloque `finally` se ejecuta siempre después de los bloques `try` y `except`, ya sea que ocurriera una excepción o no. Es útil para limpiar recursos como cerrar archivos o liberar conexiones.
+
+---
+
+### ¿Qué hace el bloque `else` en una estructura try-except-else?
+
+- [ ] Se ejecuta si ocurre una excepción
+- [x] Se ejecuta si no ocurre ninguna excepción
+- [ ] Se ejecuta siempre
+- [ ] Nunca se ejecuta
+
+> **Explicación:** El bloque `else` en try-except-else se ejecuta solo si no ocurre ninguna excepción en el bloque `try`. Si ocurre una excepción, se salta directamente al bloque `except` correspondiente.
+
+---
+
+### ¿Cuál es el propósito principal de los docstrings en Python?
+
+- [ ] Comentar código complejo
+- [x] Documentar funciones, clases y módulos
+- [ ] Almacenar datos de configuración
+- [ ] Crear multilíneas de texto
+
+> **Explicación:** Los docstrings son cadenas de texto que aparecen como primera instrucción en una función, clase o módulo. Se usan para documentar qué hace el código, sus parámetros, retorno, y ejemplos de uso. Pueden ser accedidos en tiempo de ejecución con `__doc__`.
+
+---
+
+### ¿Qué marco de testing viene incluido con la instalación estándar de Python?
+
+- [ ] pytest
+- [x] unittest
+- [ ] nose
+- [ ] doctest
+
+> **Explicación:** El marco `unittest` viene incluido con la instalación estándar de Python. Está inspirado en JUnit de Java y proporciona una forma estructurada de escribir y ejecutar pruebas.
+
+---
+
+### ¿Qué hace el decorador `@property` en Python?
+
+- [ ] Hace que un método sea estático
+- [x] Permite acceder a un método como si fuera un atributo
+- [ ] Hace que un método sea privado
+- [ ] Cachea el resultado de un método
+
+> **Explicación:** El decorador `@property` permite definir un método que se puede acceder como un atributo (sin paréntesis). Esto es útil para encapsular lógica de cómputo mientras se mantiene una interfaz simple de atributo.
+
+---
+
+### ¿Cuál de los siguientes es un buen práctica para manejar errores en Python?
+
+- [ ] Ignorar todas las excepciones con `except: pass`
+- [x] Capturar excepciones específicas en lugar de usar `except:`
+- [ ] Nunca usar try-except
+- [ ] Siempre lanzar excepciones genéricas
+
+> **Explicación:** Es una buena práctica capturar excepciones específicas (como `ValueError`, `FileNotFoundError`) en lugar de usar un `except:` genérico que atrapa TODO. Esto permite manejar diferentes tipos de errores de manera apropiada y no ocultar problemas inesperados.
+
+:::
+
+---
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 9](../content/modulo-09/index.qmd)

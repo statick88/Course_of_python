@@ -1,0 +1,138 @@
+---
+title: "Quiz: Módulo 10 — Proyecto Final y Buenas Prácticas de Desarrollo"
+---
+
+## Evaluación del Módulo 10
+
+Responde las siguientes preguntas para evaluar tu comprensión del desarrollo de proyectos completos y buenas prácticas de desarrollo en Python.
+
+::: {.quizdown}
+
+### ¿Cuál es el primer paso recomendado antes de comenzar a programar un proyecto?
+
+- [ ] Escribir el código principal
+- [x] Planificar y definir los requisitos del proyecto
+- [ ] Configurar la base de datos
+- [ ] Elegir el framework más popular
+
+> **Explicación:** Antes de escribir una sola línea de código, es fundamental planificar el proyecto: definir objetivos, requisitos funcionales y no funcionales, identificar usuarios y casos de uso. Esto evita retrabajo y asegura que el proyecto resuelva el problema correcto.
+
+---
+
+### ¿Qué principio sugiere dividir un proyecto en componentes independientes y reutilizables?
+
+- [ ] Principio de Responsabilidad Única
+- [x] Principio de Modularidad
+- [ ] Principio de Menor Sorpresa
+- [ ] Principio de Código Abierto
+
+> **Explic:** El principio de modularidad sugiere dividir un sistema en componentes independientes que puedan desarrollarse, probarse y mantenerse por separado. Cada módulo debe tener una responsabilidad bien definida y comunicarse con otros a través de interfaces claras.
+
+---
+
+### ¿Cuál de las siguientes es una buena práctica para nombrar funciones en Python?
+
+- [ ] Usar nombres cortos como `f()`, `proc()`, `calc()`
+- [x] Usar nombres descriptivos en snake_case que indiquen qué hace la función
+- [ ] Usar nombres en camelCase como en JavaScript
+- [ ] Nunca usar guiones bajos en nombres de funciones
+
+> **Explicación:** Los nombres de funciones deben ser descriptivos y seguir la convención snake_case de Python. Un buen nombre como `calcular_total_con_impuestos()` es mucho más claro que `calc()` o `process()`.
+
+---
+
+### ¿Qué es el refactorización de código?
+
+- [ ] Escribir código desde cero
+- [x] Mejorar la estructura del código existente sin cambiar su comportamiento externo
+- [ ] Agregar nuevas funcionalidades al código
+- [ ] Eliminar comentarios del código
+
+> **Explicación:** La refactorización es el proceso de reestructurar código existente para mejorar su legibilidad, mantenibilidad o rendimiento, sin cambiar su comportamiento externo. Incluye acciones como extraer métodos, renombrar variables, simplificar conditionals, etc.
+
+---
+
+### ¿Cuál de los siguientes NO es un beneficio de escribir tests antes o durante el desarrollo?
+
+- [ ] Detectar errores temprano
+- [ ] Documentar el comportamiento esperado
+- [x] Eliminar la necesidad de documentación
+- [ ] Facilitar cambios futuros con confianza
+
+> **Explicación:** Los tests ayudan a detectar errores temprano, documentan el comportamiento esperado y facilitan cambios futuros, pero NO eliminan la necesidad de documentación. La documentación explicativa (qué hace el código, por qué se diseñó así) sigue siendo esencial junto con los tests (que verifican que hace).
+
+---
+
+### ¿Qué significa el acrónimo SOLID en diseño de software?
+
+- [ ] Solo Desarrolladores Ingeniosos Logran Dominar
+- [x] Principios de diseño: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion
+- [ ] Sistema Operativo Ligero y Dinámico
+- [ ] Servicio Online de Integración y Deploy
+
+> **Explicación:** SOLID es un acrónimo para cinco principios de diseño de software que ayudan a crear sistemas mantenibles y escalables:
+- S: Single Responsibility Principle
+- O: Open/Closed Principle
+- L: Liskov Substitution Principle
+- I: Interface Segregation Principle
+- D: Dependency Inversion Principle
+
+---
+
+### ¿Cuál es el propósito de un README.md en un proyecto de GitHub?
+
+- [ ] Almacenar configuraciones sensibles
+- [x] Proporcionar información esencial sobre el proyecto
+- [ ] Compilar el código automáticamente
+- [ ] Reemplazar la necesidad de comentarios en el código
+
+> **Explicación:** El archivo README.md es la primera página que ven los visitantes de tu repositorio. Debe incluir: descripción del proyecto, cómo instalarlo, cómo usarlo, ejemplos, licencia, y cómo contribuir. Es esencial para que otros entiendan y usen tu proyecto.
+
+---
+
+### ¿Qué hace el archivo `.gitignore` en un repositorio de Git?
+
+- [ ] Ignora todos los archivos del repositorio
+- [x] Especifica qué archivos o patrones no deben ser trackeados por Git
+- [ ] Convierte el repositorio en privado
+- [ ] Acelera las operaciones de Git
+
+> **Explicación:** El archivo `.gitignore` le dice a Git qué archivos o directorios ignorar (no trackear). Es útil para excluir archivos temporales, dependencias, archivos de build, datos sensibles, etc., que no deben estar en el repositorio.
+
+---
+
+### ¿Cuál de los siguientes es un buen práctica para manejar credenciales y datos sensibles en Python?
+
+- [ ] Incluirlos directamente en el código fuente
+- [x] Usar variables de entorno o archivos de configuración externos
+- [ ] Almacenarlos en comentarios del código
+- [ ] Enviarlos por correo electrónico al equipo
+
+> **Explicación:** Las credenciales (API keys, passwords, tokens) nunca deben hardcodearse en el fuente. Las buenas prácticas incluyen: variables de entorno, archivos de configuración externos (no versionados), o servicios especializados de gestión de secrets.
+
+---
+
+### ¿Qué significa que un proyecto sea "deployable"?
+
+- [ ] Que tenga una interfaz gráfica bonita
+- [x] Que pueda ser desplegado y ejecutado en un entorno de producción con mínima configuración
+- [ ] Que esté escrito solo con funciones puras
+- [ ] Que tenga el 100% de cobertura de tests
+
+> **Explicación:** Un proyecto deployable tiene todo lo necesario para pasar de desarrollo a producción: dependencias bien definidas, configuración externa, scripts de inicio, manejo de errores apropiado, y documentación clara de cómo ponerlo en marcha.
+
+---
+
+### ¿Cuál de las siguientes describe mejor el enfoque iterativo de desarrollo?
+
+- [ ] Escribir todo el código de una vez y luego testear
+- [x] Desarrollar en pequeños incrementos, testeando y recibiendo feedback frecuentemente
+- [ ] Nunca cambiar los requisitos una vez que empezamos
+- [ ] Desarrollar la interfaz antes que la lógica
+
+> **Explicación:** El desarrollo iterativo implica construir el proyecto en pequeños incrementos funcionales. Después de cada incremento, se testa, se revisa y se ajusta basado en feedback. Esto permite adaptarse a cambios, detectar problemas temprano, y entregar valor continuamente.
+
+:::
+
+---
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 10](../content/modulo-10/index.qmd)

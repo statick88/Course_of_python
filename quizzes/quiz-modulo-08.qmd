@@ -1,0 +1,122 @@
+---
+title: "Quiz: Módulo 8 — Módulos y Paquetes"
+---
+
+## Evaluación del Módulo 8
+
+Responde las siguientes preguntas para evaluar tu comprensión de módulos y paquetes en Python.
+
+::: {.quizdown}
+
+### ¿Cuál es la forma correcta de importar el módulo math en Python?
+
+- [ ] import math as
+- [x] import math
+- [ ] include math
+- [ ] require math
+
+> **Explicación:** La sintaxis correcta para importar un módulo en Python es `import nombre_modulo`. El módulo math proporciona funciones matemáticas como sqrt(), sin(), cos(), etc.
+
+---
+
+### ¿Qué archivo special se necesita para que un directorio se considere un paquete en Python?
+
+- [ ] package.json
+- [ ] __main__.py
+- [x] __init__.py
+- [ ] setup.py
+
+> **Explicación:** El archivo `__init__.py` (que puede estar vacío) le indica a Python que el directorio debe ser tratado como un paquete. Esto permite importar módulos desde ese directorio usando notación de punto.
+
+---
+
+### ¿Cuál de las siguientes es una forma válida de importar una función específica de un módulo?
+
+- [ ] import math.sqrt
+- [x] from math import sqrt
+- [ ] include sqrt from math
+- [ ] import sqrt(math)
+
+> **Explicación:** La sintaxis `from modulo import funcion` permite importar específicamente una función de un módulo, evitando tener que usar el prefijo del módulo cada vez que se usa.
+
+---
+
+### ¿Qué hace el comando `pip list`?
+
+- [ ] Instala nuevos paquetes
+- [x] Muestra los paquetes instalados actualmente
+- [ ] Actualiza todos los paquetes
+- [ ] Elimina paquetes no utilizados
+
+> **Explicación:** `pip list` muestra todos los paquetes de Python instalados en el entorno actual junto con sus versiones. Es útil para verificar qué dependencias tienes disponibles.
+
+---
+
+### ¿Cuál es el propósito de un entorno virtual en Python?
+
+- [ ] Aumentar la velocidad de ejecución
+- [x] Aislar las dependencias de un proyecto de otras
+- [ ] Compilar código Python a máquina
+- [ ] Traducir Python a otros lenguajes
+
+> **Explicación:** Un entorno virtual crea un espacio aislado donde puedes instalar paquetes sin afectar la instalación global de Python. Esto evita conflictos entre versiones de paquetes de diferentes proyectos.
+
+---
+
+### ¿Cómo se activa un entorno virtual creado con `venv` en Linux/macOS?
+
+- [ ] start venv
+- [x] source venv/bin/activate
+- [ ] activate venv
+- [ ] run venv
+
+> **Explicación:** En Linux y macOS, se activa un entorno virtual con `source ruta/al/entorno/bin/activate`. En Windows, sería `ruta\al\entorno\Scripts\activate`.
+
+---
+
+### ¿Qué hace el archivo `requirements.txt` en un proyecto Python?
+
+- [ ] Define la estructura del proyecto
+- [x] Lista las dependencias y sus versiones necesarias
+- [ ] Contiene el código principal de la aplicación
+- [ ] Almacena la documentación del proyecto
+
+> **Explicación:** El archivo `requirements.txt` lista todos los paquetes de Python necesarios para que un proyecto funcione correctamente, incluyendo sus versiones específicas. Permite reproducir fácilmente el entorno con `pip install -r requirements.txt`.
+
+---
+
+### ¿Cuál es la diferencia entre `import numpy` y `import numpy as np`?
+
+- [ ] No hay diferencia
+- [x] El segundo crea un alias np para numpy
+- [ ] El primero es más rápido
+- [ ] El segundo importa menos funcionalidades
+
+> **Explicación:** Usar `as` crea un alias (nombre alternativo) para el módulo importado. `import numpy as np` permite referirse a numpy como `np` en todo el código, lo que es más conveniente y es una convención común.
+
+---
+
+### ¿Qué módulo de la biblioteca estándar se usa para trabajar con fechas y horas?
+
+- [ ] time
+- [ ] calendar
+- [x] datetime
+- [ ] date
+
+> **Explicación:** El módulo `datetime` proporciona clases para manipular fechas y horas de manera tanto simple como compleja. Incluye funcionalidades para aritmética de fechas, zonas horarias y formateo.
+
+---
+
+### ¿Cuál de las siguientes afirmaciones sobre los paquetes es correcta?
+
+- [ ] Los paquetes solo pueden contener un módulo
+- [x] Los paquetes pueden contener submódulos y subpaquetes
+- [ ] Los paquetes no pueden tener un __init__.py
+- [ ] Los paquetes son exclusivos de Python 3
+
+> **Explicación:** Los paquetes en Python pueden estar jerarquicamente organizados, conteniendo submódulos (archivos .py) y subpaquetes (directorios con su propio __init__.py). Esto permite una organización lógica y escalable del código.
+
+:::
+
+---
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 8](../content/modulo-08/index.qmd)
