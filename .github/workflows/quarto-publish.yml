@@ -26,7 +26,10 @@ jobs:
           cd /tmp
           curl -fsSL https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.29/quarto-1.7.29-linux-amd64.tar.gz -o quarto.tar.gz
           tar -xzf quarto.tar.gz
-          sudo cp -r quarto-1.7.29-linux-amd64/* /opt/quarto/
+          ls -la
+          sudo cp -r quarto-1.7.29-linux-amd64/quarto /opt/quarto || \
+          sudo cp -r quarto/quarto /opt/quarto || \
+          sudo mkdir -p /opt/quarto && sudo cp -r quarto-1.7.29-linux-amd64/* /opt/quarto/
           rm -rf quarto*
           quarto --version
 
