@@ -1,0 +1,62 @@
+name: 💬 General Feedback
+description: Share your thoughts, suggestions, or general feedback about the course
+title: "[Feedback]: <brief description>"
+labels: ["feedback"]
+assignees:
+  - statick88
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to provide feedback on the Python course! Your input helps us improve the learning experience.
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Your Feedback
+      description: Share your thoughts, suggestions, or general comments about the course
+      placeholder: What did you like? What could be improved? Any ideas for new content?
+      rows: 5
+    validations:
+      required: true
+  - type: dropdown
+    id: course-section
+    attributes:
+      label: Course Section
+      description: Which part of the course does your feedback relate to?
+      options:
+        - General Course
+        - Module 1: Introduction to Python
+        - Module 2: Data Types and Variables
+        - Module 3: Control Structures
+        - Module 4: Functions
+        - Module 5: Lists and Tuples
+        - Module 6: Dictionaries and Sets
+        - Module 7: File Handling
+        - Module 8: Modules and Packages
+        - Module 9: Best Practices and Testing
+        - Module 10: Final Project
+        - Labs and Exercises
+        - Quizzes
+        - Other
+      default: "General Course"
+  - type: checkboxes
+    id: feedback-type
+    attributes:
+      label: Type of Feedback
+      description: What kind of feedback are you providing?
+      options:
+        - Label: 👍 Positive feedback about what's working well
+        - Label: 💡 Suggestion for improvement or new content
+        - Label: ❓ Question or clarification needed
+        - Label: 🔧 Technical issue with the course materials
+        - Label: 📝 Typo, grammar, or formatting issue
+        - Label: 🎯 Other (please specify in description)
+  - type: textarea
+    id: contact
+    attributes:
+      label: Contact Information (Optional)
+      description: If you'd like us to follow up with you, please provide your email or preferred contact method
+      placeholder: your.email@example.com
+      rows: 2
+    validations:
+      required: false

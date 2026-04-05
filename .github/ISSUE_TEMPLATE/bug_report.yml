@@ -1,0 +1,100 @@
+name: 🐛 Bug Report
+description: Report a bug or issue with the course materials
+title: "[Bug]: <brief description>"
+labels: ["bug"]
+assignees:
+  - statick88
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please provide as much detail as possible to help us fix the issue.
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: Describe the bug you encountered
+      placeholder: What happened? What did you expect to happen?
+      rows: 5
+    validations:
+      required: true
+  - type: dropdown
+    id: course-section
+    attributes:
+      label: Course Section
+      description: Where did you encounter the bug?
+      options:
+        - Module 1: Introduction to Python
+        - Module 2: Data Types and Variables
+        - Module 3: Control Structures
+        - Module 4: Functions
+        - Module 5: Lists and Tuples
+        - Module 6: Dictionaries and Sets
+        - Module 7: File Handling
+        - Module 8: Modules and Packages
+        - Module 9: Best Practices and Testing
+        - Module 10: Final Project
+        - Labs and Exercises
+        - Quizzes
+        - Course Navigation/Site
+        - Other
+      default: "Course Navigation/Site"
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Provide detailed steps to reproduce the bug
+      placeholder: 1. Go to '...' 2. Click on '...' 3. Scroll down to '...' 4. See error
+      rows: 5
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      rows: 3
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      rows: 3
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - Low: Typo, minor formatting issue
+        - Medium: Incorrect information, broken link
+        - High: Major error affecting learning
+        - Critical: Course unusable or major security issue
+      default: "Medium"
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or code snippets about the bug here
+      placeholder: Any additional information that might help us reproduce or understand the issue
+      rows: 3
+    validations:
+      required: false
+  - type: checkboxes
+    id: tried-fixes
+    attributes:
+      label: Troubleshooting Already Tried
+      description: What have you tried to fix the issue?
+      options:
+        - Refreshed the page
+        - Cleared browser cache
+        - Tried a different browser
+        - Checked internet connection
+        - Verified the URL is correct
+        - None of the above
+    validations:
+      required: false
