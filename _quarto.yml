@@ -1,0 +1,364 @@
+# Programación Python Fundamentos
+# Licensed under CC BY-SA 4.0 - Diego Saavedra 2026
+project:
+  type: book
+  output-dir: docs
+  resources:
+    - "images/*.png"
+    - "images/*.jpg"
+    - "images/*.svg"
+    - "recursos"
+
+book:
+  title: "Programación Python Fundamentos"
+  subtitle: "De cero a programador — Aprende Python con desafíos prácticos"
+  author: "Diego Saavedra"
+  output-file: "programacion_python_fundamentos"
+  date: today
+  date-format: medium
+  favicon: images/python-logo.png
+  description: "Curso completo de programación Python para principiantes — 70+ desafíos prácticos, laboratorios interactivos y proyectos reales"
+  keyword: "Python, Programación, Fundamentos, Desarrollo de Software, Abacom, Curso"
+  url: https://github.com/statick88/course_of_python
+
+  # Professional navigation features
+  reader-mode: true
+  back-to-top-navigation: true
+  page-navigation: true
+  search: true
+
+  # Sidebar config
+  sidebar:
+    logo: images/python-logo.png
+    search: true
+    collapse-level: 1
+    pinned: true
+
+  # Repository info
+  repo-url: https://github.com/statick88/course_of_python
+  repo-branch: main
+  repo-actions:
+    - edit
+    - issue
+
+  # Sharing and downloads
+  sharing:
+    - twitter
+    - linkedin
+  downloads:
+    - pdf
+    - epub
+
+  # Cover image
+  image: images/portada-python.svg
+  image-alt: "Programación Python Fundamentos - Curso Completo"
+
+  # Open Graph / Social Media
+  open-graph:
+    image: images/portada-python.svg
+    image-alt: "Programación Python Fundamentos"
+    title: "Programación Python Fundamentos"
+    description: "Curso completo de Python para principiantes con 70+ desafíos prácticos"
+
+  twitter-card:
+    image: images/portada-python.svg
+    image-alt: "Programación Python Fundamentos"
+    title: "Programación Python Fundamentos"
+    description: "Curso completo de Python para principiantes"
+    card-style: summary_large_image
+
+  # Cover image for PDF/EPUB
+  cover-image: images/portada-python.svg
+
+  # Professional footer
+  page-footer:
+    border: true
+    left: |
+      © 2026 **Diego Saavedra**. Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+    center: |
+      Material educativo para **Abacom Capacitación y Servicios**
+    right: |
+      Built with [Quarto](https://quarto.org/)
+
+  # Chapter structure
+  chapters:
+    - index.qmd
+    - about.qmd
+    - license.qmd
+
+    - part: "Módulo 1: Introducción a Python"
+      chapters:
+        - content/modulo-01/01-que-es-python.qmd
+        - content/modulo-01/02-instalacion.qmd
+        - content/modulo-01/03-hola-mundo.qmd
+        - content/modulo-01/04-variables.qmd
+        - content/modulo-01/05-tipos-basicos.qmd
+        - content/modulo-01/06-input-output.qmd
+        - content/modulo-01/99-resumen.qmd
+
+    - part: "Módulo 2: Tipos de Datos y Variables"
+      chapters:
+        - content/modulo-02/index.qmd
+        - content/modulo-02/01-operadores-aritmeticos.qmd
+        - content/modulo-02/02-operadores-comparacion.qmd
+        - content/modulo-02/03-operadores-logicos.qmd
+        - content/modulo-02/04-casting-avanzado.qmd
+        - content/modulo-02/05-strings-avanzado.qmd
+        - content/modulo-02/99-resumen.qmd
+        - part: "Desafíos Módulo 2"
+          chapters:
+            - content/modulo-02/desafio-01-calculadora-propinas.qmd
+            - content/modulo-02/desafio-02-conversor-unidades.qmd
+            - content/modulo-02/desafio-03-validador-edad.qmd
+            - content/modulo-02/desafio-04-generador-dni.qmd
+            - content/modulo-02/desafio-05-cifrado-cesar.qmd
+            - content/modulo-02/desafio-06-analizador-texto.qmd
+            - content/modulo-02/desafio-07-mini-base-datos.qmd
+
+    - part: "Módulo 3: Estructuras de Control"
+      chapters:
+        - content/modulo-03/index.qmd
+        - content/modulo-03/01-if-else.qmd
+        - content/modulo-03/02-if-anidado.qmd
+        - content/modulo-03/03-for-loop.qmd
+        - content/modulo-03/04-while-loop.qmd
+        - content/modulo-03/05-break-continue.qmd
+        - content/modulo-03/06-comprension-listas.qmd
+        - content/modulo-03/99-resumen.qmd
+        - part: "Desafíos Módulo 3"
+          chapters:
+            - content/modulo-03/desafio-01-par-o-impar.qmd
+            - content/modulo-03/desafio-02-tabla-multiplicar.qmd
+            - content/modulo-03/desafio-03-fizzbuzz.qmd
+            - content/modulo-03/desafio-04-adivina-numero.qmd
+            - content/modulo-03/desafio-05-piedra-papel-tijera.qmd
+            - content/modulo-03/desafio-06-generador-contrasenas.qmd
+            - content/modulo-03/desafio-07-cajero-automatico.qmd
+
+    - part: "Módulo 4: Funciones"
+      chapters:
+        - content/modulo-04/index.qmd
+        - content/modulo-04/01-definir-funciones.qmd
+        - content/modulo-04/02-parametros-argumentos.qmd
+        - content/modulo-04/03-return.qmd
+        - content/modulo-04/04-scope-variables.qmd
+        - content/modulo-04/05-funciones-lambda.qmd
+        - content/modulo-04/06-funciones-recursivas.qmd
+        - content/modulo-04/99-resumen.qmd
+        - part: "Desafíos Módulo 4"
+          chapters:
+            - content/modulo-04/desafio-01-saludo-funcion.qmd
+            - content/modulo-04/desafio-02-area-circulo.qmd
+            - content/modulo-04/desafio-03-fahrenheit-celsius.qmd
+            - content/modulo-04/desafio-04-contador-vocales.qmd
+            - content/modulo-04/desafio-05-numero-primo.qmd
+            - content/modulo-04/desafio-06-fibonacci.qmd
+            - content/modulo-04/desafio-07-calculadora-funciones.qmd
+
+    - part: "Módulo 5: Listas y Tuplas"
+      chapters:
+        - content/modulo-05/index.qmd
+        - content/modulo-05/01-crear-listas.qmd
+        - content/modulo-05/02-indexar-slicing.qmd
+        - content/modulo-05/03-metodos-listas.qmd
+        - content/modulo-05/04-iterar-listas.qmd
+        - content/modulo-05/05-tuplas.qmd
+        - content/modulo-05/06-listas-anidadas.qmd
+        - content/modulo-05/99-resumen.qmd
+        - part: "Desafíos Módulo 5"
+          chapters:
+            - content/modulo-05/desafio-01-promedio-notas.qmd
+            - content/modulo-05/desafio-02-invertir-lista.qmd
+            - content/modulo-05/desafio-03-eliminar-duplicados.qmd
+            - content/modulo-05/desafio-04-estadisticas-lista.qmd
+            - content/modulo-05/desafio-05-combinar-listas.qmd
+            - content/modulo-05/desafio-06-matriz-operaciones.qmd
+            - content/modulo-05/desafio-07-gestor-inventario.qmd
+
+    - part: "Módulo 6: Diccionarios y Sets"
+      chapters:
+        - content/modulo-06/index.qmd
+        - content/modulo-06/01-crear-diccionarios.qmd
+        - content/modulo-06/02-acceder-modificar.qmd
+        - content/modulo-06/03-iterar-diccionarios.qmd
+        - content/modulo-06/04-sets.qmd
+        - content/modulo-06/05-diccionarios-anidados.qmd
+        - content/modulo-06/99-resumen.qmd
+        - part: "Desafíos Módulo 6"
+          chapters:
+            - content/modulo-06/desafio-01-agenda-contactos.qmd
+            - content/modulo-06/desafio-02-contador-palabras.qmd
+            - content/modulo-06/desafio-03-inventario-tienda.qmd
+            - content/modulo-06/desafio-04-fusionar-diccionarios.qmd
+            - content/modulo-06/desafio-05-votaciones.qmd
+            - content/modulo-06/desafio-06-base-datos-estudiantes.qmd
+            - content/modulo-06/desafio-07-analizador-votos.qmd
+
+    - part: "Módulo 7: Manejo de Archivos"
+      chapters:
+        - content/modulo-07/index.qmd
+        - content/modulo-07/01-abrir-cerrar-archivos.qmd
+        - content/modulo-07/02-leer-archivos.qmd
+        - content/modulo-07/03-escribir-archivos.qmd
+        - content/modulo-07/04-manejo-csv.qmd
+        - content/modulo-07/05-manejo-json.qmd
+        - content/modulo-07/06-pathlib.qmd
+        - content/modulo-07/99-resumen.qmd
+        - part: "Desafíos Módulo 7"
+          chapters:
+            - content/modulo-07/desafio-01-diario-personal.qmd
+            - content/modulo-07/desafio-02-copiar-archivo.qmd
+            - content/modulo-07/desafio-03-log-analyzer.qmd
+            - content/modulo-07/desafio-04-csv-a-diccionario.qmd
+            - content/modulo-07/desafio-05-configurador-json.qmd
+            - content/modulo-07/desafio-06-buscador-archivos.qmd
+            - content/modulo-07/desafio-07-gestor-contactos-csv.qmd
+
+    - part: "Módulo 8: Módulos y Paquetes"
+      chapters:
+        - content/modulo-08/index.qmd
+        - content/modulo-08/01-importar-modulos.qmd
+        - content/modulo-08/02-modulos-estandar.qmd
+        - content/modulo-08/03-crear-modulos.qmd
+        - content/modulo-08/04-paquetes.qmd
+        - content/modulo-08/05-pip-paquetes.qmd
+        - content/modulo-08/06-entornos-virtuales.qmd
+        - content/modulo-08/99-resumen.qmd
+        - part: "Desafíos Módulo 8"
+          chapters:
+            - content/modulo-08/desafio-01-mi-primer-modulo.qmd
+            - content/modulo-08/desafio-02-generador-fechas.qmd
+            - content/modulo-08/desafio-03-aleatorios-avanzados.qmd
+            - content/modulo-08/desafio-04-organizador-archivos.qmd
+            - content/modulo-08/desafio-05-api-clima.qmd
+            - content/modulo-08/desafio-06-web-scraper.qmd
+            - content/modulo-08/desafio-07-proyecto-modular.qmd
+
+    - part: "Módulo 9: Buenas Prácticas"
+      chapters:
+        - content/modulo-09/index.qmd
+        - content/modulo-09/01-pep8-estilo.qmd
+        - content/modulo-09/02-nombres-descriptivos.qmd
+        - content/modulo-09/03-funciones-puras.qmd
+        - content/modulo-09/04-manejo-errores.qmd
+        - content/modulo-09/05-documentacion.qmd
+        - content/modulo-09/06-testing-basico.qmd
+        - content/modulo-09/99-resumen.qmd
+        - part: "Desafíos Módulo 9"
+          chapters:
+            - content/modulo-09/desafio-01-refactorizar-codigo.qmd
+            - content/modulo-09/desafio-02-docstrings.qmd
+            - content/modulo-09/desafio-03-validador-robusto.qmd
+            - content/modulo-09/desafio-04-test-calculadora.qmd
+            - content/modulo-09/desafio-05-linter-codigo.qmd
+            - content/modulo-09/desafio-06-refactorizar-proyecto.qmd
+            - content/modulo-09/desafio-07-code-review.qmd
+
+    - part: "Módulo 10: Proyecto Integrador"
+      chapters:
+        - content/modulo-10/index.qmd
+        - content/modulo-10/01-planificar-proyecto.qmd
+        - content/modulo-10/02-estructura-proyecto.qmd
+        - content/modulo-10/03-proyecto-gestor-tareas.qmd
+        - content/modulo-10/04-proyecto-tienda-simple.qmd
+        - content/modulo-10/05-proyecto-analizador-datos.qmd
+        - content/modulo-10/06-presentacion-proyecto.qmd
+        - content/modulo-10/99-cierre-curso.qmd
+        - part: "Proyectos Finales"
+          chapters:
+            - content/modulo-10/proyecto-01-gestor-tareas.qmd
+            - content/modulo-10/proyecto-02-tienda-productos.qmd
+            - content/modulo-10/proyecto-03-analizador-datos.qmd
+
+    - part: "Laboratorios Prácticos"
+      chapters:
+        - labs/README.md
+        - labs/lab01-primer-programa.qmd
+        - labs/lab02-variables-en-accion.qmd
+
+    - part: "Evaluación: Quizzes Interactivos"
+      chapters:
+        - quizzes/README.qmd
+        - quizzes/quiz-modulo-01.qmd
+
+bibliography: references.bib
+biblio-style: apalike
+
+filters:
+  - include-code-files
+  - collapse-callout
+  - linkrot
+  - quizdown
+  - line-highlight
+  - details
+  - code-fullscreen
+  - fancy-text
+  - fontawesome
+  - highlight-text
+  - language-cell-decorator
+  - code-appendix
+  - badge
+  - qrcode
+  - custom-callout
+  - bsicons
+  - social-embeds
+  - wordcount
+
+# Plugin-specific options
+quizdown:
+  use-bootstrap-css: true
+
+wordcount:
+  output: "auto"
+
+linkrot:
+  warn: true
+
+extensions:
+  linkrot:
+    skip-patterns:
+      - "^http://localhost(:[0-9]+)?(/.*)?$"
+
+code-fullscreen:
+  button: true
+
+format:
+  html:
+    number-sections: false
+    theme:
+      dark: solar
+      light: cosmo
+    number-depth: 4
+    link-external-icon: true
+    link-external-newwindow: true
+    css:
+      - theme.scss
+      - css/styles.css
+    include-in-header:
+      - text: |
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  pdf:
+    documentclass: scrreprt
+    classoption:
+      - "onepage"
+      - "openany"
+    papersize: a4
+    toc: true
+    margin-top: 35mm
+    margin-left: 30mm
+    margin-bottom: 30mm
+    margin-right: 30mm
+    titlepage-geometry:
+      - top=35mm
+      - bottom=30mm
+      - right=30mm
+      - left=30mm
+
+  epub:
+    belongs-to-collection: "Programación Python Fundamentos"
+    group-position: 0
+    creator: "Diego Saavedra"
+    rights: "© Diego Saavedra | 2026"
+    fig-responsive: true
+    number-sections: true

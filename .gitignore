@@ -41,7 +41,6 @@ env/
 Thumbs.db
 
 # Quarto
-_quarto.yml
 _quarto/
 *.qmd-files
 *.html
