@@ -95,6 +95,13 @@ book:
         - content/modulo-01/05-tipos-basicos.qmd
         - content/modulo-01/06-input-output.qmd
         - content/modulo-01/99-resumen.qmd
+        - content/modulo-01/desafio-01-saludo-personalizado.qmd
+        - content/modulo-01/desafio-02-calculadora-edad.qmd
+        - content/modulo-01/desafio-03-conversor-moneda.qmd
+        - content/modulo-01/desafio-04-calculadora-imc.qmd
+        - content/modulo-01/desafio-05-historia-interactiva.qmd
+        - content/modulo-01/desafio-06-formulario-contacto.qmd
+        - content/modulo-01/desafio-07-mini-quiz.qmd
 
     - part: "Módulo 2: Tipos de Datos y Variables"
       chapters:
@@ -105,15 +112,6 @@ book:
         - content/modulo-02/04-casting-avanzado.qmd
         - content/modulo-02/05-strings-avanzado.qmd
         - content/modulo-02/99-resumen.qmd
-        - part: "Desafíos Módulo 2"
-          chapters:
-            - content/modulo-02/desafio-01-calculadora-propinas.qmd
-            - content/modulo-02/desafio-02-conversor-unidades.qmd
-            - content/modulo-02/desafio-03-validador-edad.qmd
-            - content/modulo-02/desafio-04-generador-dni.qmd
-            - content/modulo-02/desafio-05-cifrado-cesar.qmd
-            - content/modulo-02/desafio-06-analizador-texto.qmd
-            - content/modulo-02/desafio-07-mini-base-datos.qmd
 
     - part: "Módulo 3: Estructuras de Control"
       chapters:
@@ -125,15 +123,6 @@ book:
         - content/modulo-03/05-break-continue.qmd
         - content/modulo-03/06-comprension-listas.qmd
         - content/modulo-03/99-resumen.qmd
-        - part: "Desafíos Módulo 3"
-          chapters:
-            - content/modulo-03/desafio-01-par-o-impar.qmd
-            - content/modulo-03/desafio-02-tabla-multiplicar.qmd
-            - content/modulo-03/desafio-03-fizzbuzz.qmd
-            - content/modulo-03/desafio-04-adivina-numero.qmd
-            - content/modulo-03/desafio-05-piedra-papel-tijera.qmd
-            - content/modulo-03/desafio-06-generador-contrasenas.qmd
-            - content/modulo-03/desafio-07-cajero-automatico.qmd
 
     - part: "Módulo 4: Funciones"
       chapters:
@@ -145,15 +134,6 @@ book:
         - content/modulo-04/05-funciones-lambda.qmd
         - content/modulo-04/06-funciones-recursivas.qmd
         - content/modulo-04/99-resumen.qmd
-        - part: "Desafíos Módulo 4"
-          chapters:
-            - content/modulo-04/desafio-01-saludo-funcion.qmd
-            - content/modulo-04/desafio-02-area-circulo.qmd
-            - content/modulo-04/desafio-03-fahrenheit-celsius.qmd
-            - content/modulo-04/desafio-04-contador-vocales.qmd
-            - content/modulo-04/desafio-05-numero-primo.qmd
-            - content/modulo-04/desafio-06-fibonacci.qmd
-            - content/modulo-04/desafio-07-calculadora-funciones.qmd
 
     - part: "Módulo 5: Listas y Tuplas"
       chapters:
@@ -165,15 +145,6 @@ book:
         - content/modulo-05/05-tuplas.qmd
         - content/modulo-05/06-listas-anidadas.qmd
         - content/modulo-05/99-resumen.qmd
-        - part: "Desafíos Módulo 5"
-          chapters:
-            - content/modulo-05/desafio-01-promedio-notas.qmd
-            - content/modulo-05/desafio-02-invertir-lista.qmd
-            - content/modulo-05/desafio-03-eliminar-duplicados.qmd
-            - content/modulo-05/desafio-04-estadisticas-lista.qmd
-            - content/modulo-05/desafio-05-combinar-listas.qmd
-            - content/modulo-05/desafio-06-matriz-operaciones.qmd
-            - content/modulo-05/desafio-07-gestor-inventario.qmd
 
     - part: "Módulo 6: Diccionarios y Sets"
       chapters:
@@ -184,15 +155,6 @@ book:
         - content/modulo-06/04-sets.qmd
         - content/modulo-06/05-diccionarios-anidados.qmd
         - content/modulo-06/99-resumen.qmd
-        - part: "Desafíos Módulo 6"
-          chapters:
-            - content/modulo-06/desafio-01-agenda-contactos.qmd
-            - content/modulo-06/desafio-02-contador-palabras.qmd
-            - content/modulo-06/desafio-03-inventario-tienda.qmd
-            - content/modulo-06/desafio-04-fusionar-diccionarios.qmd
-            - content/modulo-06/desafio-05-votaciones.qmd
-            - content/modulo-06/desafio-06-base-datos-estudiantes.qmd
-            - content/modulo-06/desafio-07-analizador-votos.qmd
 
     - part: "Módulo 7: Manejo de Archivos"
       chapters:
@@ -204,15 +166,6 @@ book:
         - content/modulo-07/05-manejo-json.qmd
         - content/modulo-07/06-pathlib.qmd
         - content/modulo-07/99-resumen.qmd
-        - part: "Desafíos Módulo 7"
-          chapters:
-            - content/modulo-07/desafio-01-diario-personal.qmd
-            - content/modulo-07/desafio-02-copiar-archivo.qmd
-            - content/modulo-07/desafio-03-log-analyzer.qmd
-            - content/modulo-07/desafio-04-csv-a-diccionario.qmd
-            - content/modulo-07/desafio-05-configurador-json.qmd
-            - content/modulo-07/desafio-06-buscador-archivos.qmd
-            - content/modulo-07/desafio-07-gestor-contactos-csv.qmd
 
     - part: "Módulo 8: Módulos y Paquetes"
       chapters:
@@ -224,15 +177,6 @@ book:
         - content/modulo-08/05-pip-paquetes.qmd
         - content/modulo-08/06-entornos-virtuales.qmd
         - content/modulo-08/99-resumen.qmd
-        - part: "Desafíos Módulo 8"
-          chapters:
-            - content/modulo-08/desafio-01-mi-primer-modulo.qmd
-            - content/modulo-08/desafio-02-generador-fechas.qmd
-            - content/modulo-08/desafio-03-aleatorios-avanzados.qmd
-            - content/modulo-08/desafio-04-organizador-archivos.qmd
-            - content/modulo-08/desafio-05-api-clima.qmd
-            - content/modulo-08/desafio-06-web-scraper.qmd
-            - content/modulo-08/desafio-07-proyecto-modular.qmd
 
     - part: "Módulo 9: Buenas Prácticas"
       chapters:
@@ -244,15 +188,6 @@ book:
         - content/modulo-09/05-documentacion.qmd
         - content/modulo-09/06-testing-basico.qmd
         - content/modulo-09/99-resumen.qmd
-        - part: "Desafíos Módulo 9"
-          chapters:
-            - content/modulo-09/desafio-01-refactorizar-codigo.qmd
-            - content/modulo-09/desafio-02-docstrings.qmd
-            - content/modulo-09/desafio-03-validador-robusto.qmd
-            - content/modulo-09/desafio-04-test-calculadora.qmd
-            - content/modulo-09/desafio-05-linter-codigo.qmd
-            - content/modulo-09/desafio-06-refactorizar-proyecto.qmd
-            - content/modulo-09/desafio-07-code-review.qmd
 
     - part: "Módulo 10: Proyecto Integrador"
       chapters:
@@ -264,11 +199,9 @@ book:
         - content/modulo-10/05-proyecto-analizador-datos.qmd
         - content/modulo-10/06-presentacion-proyecto.qmd
         - content/modulo-10/99-cierre-curso.qmd
-        - part: "Proyectos Finales"
-          chapters:
-            - content/modulo-10/proyecto-01-gestor-tareas.qmd
-            - content/modulo-10/proyecto-02-tienda-productos.qmd
-            - content/modulo-10/proyecto-03-analizador-datos.qmd
+        - content/modulo-10/proyecto-01-gestor-tareas.qmd
+        - content/modulo-10/proyecto-02-tienda-productos.qmd
+        - content/modulo-10/proyecto-03-analizador-datos.qmd
 
     - part: "Laboratorios Prácticos"
       chapters:
@@ -276,7 +209,7 @@ book:
         - labs/lab01-primer-programa.qmd
         - labs/lab02-variables-en-accion.qmd
 
-    - part: "Evaluación: Quizzes Interactivos"
+    - part: "Evaluación: Quizzes"
       chapters:
         - quizzes/README.qmd
         - quizzes/quiz-modulo-01.qmd
