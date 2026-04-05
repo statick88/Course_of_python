@@ -24,7 +24,7 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: 1.6.42
+          version: 1.7.29
 
       - name: Install Python
         uses: actions/setup-python@v5
