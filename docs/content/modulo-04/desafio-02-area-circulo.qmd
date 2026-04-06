@@ -4,6 +4,11 @@ difficulty: "⭐ Fácil"
 estimated_time: "8 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Una tienda de pisos necesita calcular el área de pisos circulares para dar presupuestos a sus clientes. Necesitas una función que reciba el radio y devuelva el área.

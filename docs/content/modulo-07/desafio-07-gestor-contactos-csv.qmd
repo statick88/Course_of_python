@@ -4,6 +4,11 @@ difficulty: "⭐⭐⭐ Difícil"
 estimated_time: "30 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Necesitas crear un sistema completo de gestión de contactos que permita agregar, buscar, listar y eliminar contactos. Los datos deben persistir en un archivo CSV para que no se pierdan al cerrar el programa.

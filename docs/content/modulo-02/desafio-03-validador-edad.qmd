@@ -4,6 +4,11 @@ difficulty: "⭐⭐ Media"
 estimated_time: "15 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Estás desarrollando el sistema de registro para una plataforma que tiene restricciones de edad. Necesitas validar que los datos ingresados sean correctos antes de procesarlos.

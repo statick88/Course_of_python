@@ -4,6 +4,11 @@ difficulty: "⭐ Fácil"
 estimated_time: "10 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Eres el desarrollador de una pequeña aplicación de agenda personal. Necesitas crear un programa que permita al usuario gestionar contactos básicos usando diccionarios.

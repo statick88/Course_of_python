@@ -4,6 +4,11 @@ difficulty: "⭐ Fácil"
 estimated_time: "10 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Quieres crear un diario personal digital donde puedas registrar tus pensamientos del día. Cada entrada debe guardarse con la fecha y hora actual, y las entradas anteriores deben conservarse.

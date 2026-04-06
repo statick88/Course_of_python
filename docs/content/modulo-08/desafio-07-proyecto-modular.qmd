@@ -4,6 +4,11 @@ difficulty: "⭐⭐⭐ Difícil"
 estimated_time: "40 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Tu equipo necesita construir una aplicación de gestión de tareas. El proyecto debe estar bien organizado en módulos y paquetes para que varios desarrolladores puedan trabajar simultáneamente sin conflictos.

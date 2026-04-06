@@ -4,6 +4,11 @@ difficulty: "⭐ Fácil"
 estimated_time: "10 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Un sistema de gestión necesita generar reportes con fechas formateadas de diferentes maneras. Tu tarea es crear un programa que use el módulo `datetime` para mostrar información temporal útil.

@@ -4,6 +4,11 @@ difficulty: "⭐⭐ Media"
 estimated_time: "15 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Una pequeña tienda necesita un sistema básico de inventario. El dueño quiere poder agregar productos, ver el stock, y saber qué productos necesitan reabastecimiento (stock menor a 5 unidades).

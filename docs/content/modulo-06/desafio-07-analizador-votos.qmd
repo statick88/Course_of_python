@@ -4,6 +4,11 @@ difficulty: "⭐⭐⭐ Difícil"
 estimated_time: "25 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Una empresa de encuestas necesita un analizador de datos de votaciones. Los datos vienen en formato de lista de diccionarios (cada voto es un diccionario con datos del votante y su elección). Necesitas procesar estos datos y generar un reporte completo.

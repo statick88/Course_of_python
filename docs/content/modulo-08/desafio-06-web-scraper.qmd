@@ -4,6 +4,11 @@ difficulty: "⭐⭐⭐ Difícil"
 estimated_time: "30 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Necesitas extraer información de una página web para un análisis de datos. Tu tarea es crear un programa que descargue una página web y extraiga datos específicos de su contenido HTML.

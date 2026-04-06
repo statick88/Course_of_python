@@ -4,6 +4,11 @@ difficulty: "⭐ Fácil"
 estimated_time: "8 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Un compañero de equipo te envía este código para que lo revises. Funciona, pero es difícil de leer y mantener. Tu misión es refactorizarlo siguiendo las buenas prácticas de Python.

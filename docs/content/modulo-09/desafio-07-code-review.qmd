@@ -4,6 +4,11 @@ difficulty: "⭐⭐⭐ Difícil"
 estimated_time: "20 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Un desarrollador junior ha enviado un Pull Request con un módulo de gestión de estudiantes. Tu rol como desarrollador senior es hacer una **revisión de código completa**, identificando problemas y sugiriendo mejoras.

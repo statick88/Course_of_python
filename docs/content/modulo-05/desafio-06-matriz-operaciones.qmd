@@ -4,6 +4,11 @@ difficulty: "⭐⭐⭐ Difícil"
 estimated_time: "15 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Estás desarrollando un módulo para un videojuego de estrategia. El tablero del juego es una matriz y necesitas implementar operaciones básicas: mostrar el tablero, contar unidades de un tipo, y encontrar la posición de la unidad más fuerte.

@@ -4,6 +4,11 @@ difficulty: "⭐ Fácil"
 estimated_time: "5 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Eres el asistente de un profesor que necesita calcular el promedio de notas de sus estudiantes. Tiene las notas en una lista y necesita obtener el promedio de forma automática.

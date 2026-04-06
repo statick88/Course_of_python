@@ -4,6 +4,11 @@ difficulty: "⭐⭐ Media"
 estimated_time: "15 minutos"
 ---
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 ## Situación
 
 Dos departamentos de una empresa tienen listas de empleados con diferentes datos. El departamento de RRHH tiene nombres y cargos, mientras que el departamento de TI tiene emails y departamentos técnicos. Necesitas fusionar esta información en un solo registro por empleado.
