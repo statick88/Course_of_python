@@ -1,0 +1,123 @@
+---
+title: "Quiz: Módulo 4 — Funciones"
+---
+
+## Evaluación del Módulo 4
+
+Responde las siguientes preguntas para evaluar tu comprensión de las funciones en Python.
+
+::: {.quizdown}
+
+### ¿Cómo se define una función en Python?
+
+- [ ] function mi_funcion():
+- [x] def mi_funcion():
+- [ ] def mi_funcion
+- [ ] create mi_funcion():
+
+> **Explicación:** En Python, las funciones se definen con la palabra clave `def` seguida del nombre y paréntesis.
+
+---
+
+### ¿Qué palabra reservada se usa para devolver un valor desde una función?
+
+- [ ] return
+- [x] return
+- [ ] give
+- [ ] output
+
+> **Explicación:** La palabra clave `return` se usa para devolver un valor desde una función y terminar su ejecución.
+
+---
+
+### ¿Qué ocurre si una función no tiene una instrucción `return`?
+
+- [ ] Devuelve 0
+- [x] Devuelve None
+- [ ] Da error
+- [ ] Devuelve False
+
+> **Explicación:** Todas las funciones en Python devuelven un valor. Si no hay `return`, devuelven `None` por defecto.
+
+---
+
+### ¿Cómo se llaman los valores que se pasan a una función?
+
+- [ ] Variables
+- [x] Argumentos
+- [ ] Parámetros
+- [ ] Ambos B y C son correctos
+
+> **Explicación:** Los parámetros son las variables en la definición de la función. Los argumentos son los valores reales que se pasan al llamarla.
+
+---
+
+### ¿Qué es el scope (alcance) de una variable?
+
+- [ ] El tipo de dato de la variable
+- [x] La región del programa donde la variable es accesible
+- [ ] El valor de la variable
+- [ ] El nombre de la variable
+
+> **Explicación:** El scope determina dónde en el código una variable puede ser accedida. Python tiene scope local y global.
+
+---
+
+### ¿Qué palabra reservada se usa para acceder a una variable global desde dentro de una función?
+
+- [ ] global
+- [x] global
+- [ ] worldwide
+- [ ] internacional
+
+> **Explicación:** Para modificar una variable global dentro de una función, se debe declarar como `global` dentro de la función.
+
+---
+
+### ¿Qué es una función lambda en Python?
+
+- [ ] Una función que no devuelve nada
+- [x] Una función anónima definida en una sola línea
+- [ ] Una función que solo acepta un argumento
+- [ ] Una función recursiva
+
+> **Explicación:** Las funciones lambda son funciones pequeñas y anónimas definidas con `lambda argumentos: expresión`.
+
+---
+
+### ¿Cuál es la sintaxis correcta de una función lambda que suma dos números?
+
+- [ ] lambda x, y: x + y
+- [x] lambda x, y: x + y
+- [ ] lambda(x, y) { return x + y }
+- [ ] function(x, y) { x + y }
+
+> **Explicación:** La sintaxis de lambda es `lambda parámetros: expresión`. No necesita `return` explícito.
+
+---
+
+### ¿Qué significa que una función sea "pura"?
+
+- [ ] Que no tiene parámetros
+- [x] Que siempre devuelve el mismo output para el mismo input y no tiene efectos secundarios
+- [ ] Que está escrita en un solo línea
+- [ ] Que solo usa funciones incorporadas
+
+> **Explicación:** Una función pura es determinista (mismo input = mismo output) y no modifica nada fuera de su scope.
+
+---
+
+### ¿Cuál es la diferencia entre `args` y `kwargs` en Python?
+
+- [ ] `args` es para textos, `kwargs` para números
+- [x] `args` captura argumentos posicionales, `kwargs` captura argumentos con nombre
+- [ ] Son sinónimos
+- [ ] `args` es antiguo, `kwargs` es nuevo
+
+> **Explicación:** `*args` permite pasar un número variable de argumentos posicionales. `**kwargs` permite pasar un número variable de argumentos con nombre (diccionario).
+
+:::
+
+---
+
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 4](../content/modulo-04/index.qmd)

@@ -1,0 +1,131 @@
+---
+title: "Desafío 6: Operaciones con matrices"
+difficulty: "⭐⭐⭐ Difícil"
+estimated_time: "15 minutos"
+---
+
+## Situación
+
+Estás desarrollando un módulo para un videojuego de estrategia. El tablero del juego es una matriz y necesitas implementar operaciones básicas: mostrar el tablero, contar unidades de un tipo, y encontrar la posición de la unidad más fuerte.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Represente un tablero de juego como una matriz (lista de listas)
+2. Muestre el tablero con formato visual
+3. Cuente cuántas unidades de cada tipo hay en el tablero
+4. Encuentre la posición (fila, columna) de la unidad con mayor poder
+5. Calcule el poder total del ejército
+
+## Ejemplo de ejecución
+
+```
+⚔️ Tablero de Estrategia
+
+Tablero:
+  [ G  A  S  .  . ]
+  [ .  G  A  S  . ]
+  [ .  .  G  A  S ]
+  [ .  .  .  .  . ]
+  [ .  .  .  .  . ]
+
+📊 Resumen del ejército:
+  Guerreros (G): 3
+  Arqueros (A):  3
+  Soldados (S):  3
+  Vacíos (.):    16
+
+💪 Poder total del ejército: 390
+🏆 Unidad más fuerte: Guerrero en posición [0][0] con poder 100
+```
+
+## Pista
+
+- Usa bucles anidados para recorrer la matriz: `for fila in tablero: for celda in fila:`
+- `enumerate()` te da la posición: `for i, fila in enumerate(tablero): for j, celda in enumerate(fila):`
+- Puedes usar un diccionario para contar cada tipo de unidad
+- Asigna poderes: G=100, A=80, S=50
+
+## Criterios de éxito
+
+- [ ] Muestra el tablero con formato visual
+- [ ] Cuenta correctamente cada tipo de unidad
+- [ ] Encuentra la posición de la unidad más fuerte
+- [ ] Calcula el poder total del ejército
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 6: Operaciones con matrices
+# Solución de referencia
+
+# Tablero: G=Guerrero, A=Arquero, S=Soldado, .=Vacío
+tablero = [ # <1>
+    ["G", "A", "S", ".", "."],
+    [".", "G", "A", "S", "."],
+    [".", ".", "G", "A", "S"],
+    [".", ".", ".", ".", "."],
+    [".", ".", ".", ".", "."],
+]
+
+poderes = {"G": 100, "A": 80, "S": 50, ".": 0} # <2>
+nombres = {"G": "Guerrero", "A": "Arquero", "S": "Soldado"}
+
+# Mostrar tablero
+print("⚔️ Tablero de Estrategia")
+print()
+print("Tablero:")
+for fila in tablero: # <3>
+    print(f"  [{'  '.join(fila)}]") # <4>
+
+# Contar unidades
+conteo = {tipo: 0 for tipo in poderes} # <5>
+for fila in tablero: # <6>
+    for celda in fila:
+        if celda in conteo:
+            conteo[celda] += 1
+
+print()
+print("📊 Resumen del ejército:")
+for tipo, nombre in nombres.items(): # <7>
+    print(f"  {nombre}s ({tipo}): {conteo[tipo]}")
+print(f"  Vacíos (.): {conteo['.']}")
+
+# Poder total y unidad más fuerte
+poder_total = 0 # <8>
+max_poder = 0
+max_pos = (0, 0)
+
+for i, fila in enumerate(tablero): # <9>
+    for j, celda in enumerate(fila):
+        poder = poderes.get(celda, 0) # <10>
+        poder_total += poder
+        if poder > max_poder: # <11>
+            max_poder = poder
+            max_pos = (i, j)
+            max_tipo = celda
+
+print()
+print(f"💪 Poder total del ejército: {poder_total}")
+print(f"🏆 Unidad más fuerte: {nombres[max_tipo]} en posición [{max_pos[0]}][{max_pos[1]}] con poder {max_poder}")
+```
+
+1. Matriz 5x5 representando el tablero del juego. Cada celda tiene un tipo de unidad o está vacía.
+2. Diccionario de poderes: cada tipo de unidad tiene un valor de poder asociado.
+3. Recorre cada fila del tablero para mostrarlo visualmente.
+4. `'  '.join(fila)` une los elementos de la fila con doble espacio: `"G  A  S  .  ."`.
+5. Diccionario de conteo inicializado en 0 para cada tipo: `{'G': 0, 'A': 0, 'S': 0, '.': 0}`.
+6. Bucle anidado recorre cada celda de la matriz y cuenta las unidades.
+7. Muestra el conteo de cada tipo de unidad con su nombre completo.
+8. Variables para rastrear el poder total y la unidad más fuerte encontrada.
+9. `enumerate` en ambos bucles da las coordenadas `(i, j)` de cada celda.
+10. `poderes.get(celda, 0)` obtiene el poder de la celda. Si no existe en el diccionario, devuelve 0.
+11. Si el poder actual es mayor que el máximo encontrado, actualiza el máximo y guarda la posición.
+
+</details>
+
+---
+
+[← Desafío 5](desafio-05-combinar-listas.qmd) | [Desafío 7 →](desafio-07-gestor-inventario.qmd)

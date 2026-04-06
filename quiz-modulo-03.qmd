@@ -1,0 +1,141 @@
+---
+title: "Quiz: Módulo 3 — Estructuras de Control"
+subtitle: "Evaluación interactiva con puntuación"
+format:
+  revealjs:
+    theme: [dark, solar]
+    quiz:
+      checkKey: 'c'
+      resetKey: 'q'
+      shuffleKey: 't'
+      allowNumberKeys: true
+      defaultCorrect: "¡Correcto! 🎉"
+      defaultIncorrect: "¡Incorrecto! 😔"
+      includeScore: true
+revealjs-plugins:
+  - parmsam/quiz
+---
+
+## Quiz: Módulo 3 — Pregunta 1
+
+¿Qué palabra reservada se usa para iniciar una condicional en Python? {.quiz-question}
+
+- [if]{.correct data-explanation="¡Exactamente! En Python, se usa if para iniciar una estructura condicional."}
+- cuando
+- si
+- if
+
+---
+
+## Quiz: Módulo 3 — Pregunta 2
+
+¿Cuál es el operador lógico que representa "Y" en Python? {.quiz-question}
+
+- &
+- [and]{.correct data-explanation="¡Correcto! En Python, el operador lógico AND se escribe como and en minúsculas."}
+- &&
+- AND
+
+---
+
+## Quiz: Módulo 3 — Pregunta 3
+
+¿Qué hace la instrucción `break` dentro de un bucle? {.quiz-question}
+
+- Salta a la siguiente iteración
+- [Sale completamente del bucle]{.correct data-explanation="¡Exactamente! break termina inmediatamente el bucle más interno en el que se encuentra."}
+- Reinicia el bucle desde el principio
+- Detiene el programa
+
+---
+
+## Quiz: Módulo 3 — Pregunta 4
+
+¿Qué hace la instrucción `continue` dentro de un bucle? {.quiz-question}
+
+- [Salta a la siguiente iteración]{.correct data-explanation="¡Correcto! continue omite el resto de la iteración actual y pasa directamente a la siguiente."}
+- Sale completamente del bucle
+- Reinicia el bucle desde el principio
+- Detiene el programa
+
+---
+
+## Quiz: Módulo 3 — Pregunta 5
+
+¿Cuál es el resultado de `range(5)`? {.quiz-question}
+
+- [0, 1, 2, 3, 4, 5]
+- [range(0, 5)]{.correct data-explanation="¡Exactamente! range(5) crea un objeto range que representa los números del 0 al 4. Para ver la lista, necesitas convertirlo con list(range(5))."}
+- [1, 2, 3, 4, 5]
+- Error
+
+---
+
+## Quiz: Módulo 3 — Pregunta 6
+
+¿Cómo se escribe un bucle que se ejecuta exactamente 10 veces? {.quiz-question}
+
+- [for i in range(10)]{.correct data-explanation="¡Correcto! range(10) genera números del 0 al 9 (10 elementos en total)."}
+- for i in range(1, 10):
+- for i in range(0, 10):
+- for i in range(10):
+
+---
+
+## Quiz: Módulo 3 — Pregunta 7
+
+¿Qué imprime el siguiente código?
+```python
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+``` {.quiz-question}
+
+- 1 2 3 4 5
+- [1 2 4 5]{.correct data-explanation="¡Correcto! Cuando i es 3, continue salta el print, por eso no se imprime el 3."}
+- 1 2 3 5
+- 1 2 4
+
+---
+
+## Quiz: Módulo 3 — Pregunta 8
+
+¿Cuál es la diferencia entre `while` y `for` en Python? {.quiz-question}
+
+- while es para listas, for para números
+- [while se ejecuta mientras una condición sea verdadera, for itera sobre una secuencia]{.correct data-explanation="¡Correcto! while continúa mientras su condición sea verdadera. for itera sobre cada elemento de una secuencia."}
+- Son idénticos
+- for solo funciona con strings
+
+---
+
+## Quiz: Módulo 3 — Pregunta 9
+
+¿Qué hace el siguiente código?
+```python
+contador = 0
+while contador < 5:
+    print(contador)
+    contador += 1
+``` {.quiz-question}
+
+- Imprime 0 1 2 3 4 5
+- [Imprime 0 1 2 3 4]{.correct data-explanation="¡Exactamente! El bucle se ejecuta mientras contador sea menor que 5, imprimiendo 0, 1, 2, 3, 4."}
+- Imprime 1 2 3 4 5
+- Imprime 5 4 3 2 1 0
+
+---
+
+## Quiz: Módulo 3 — Pregunta 10
+
+¿Cuál es el resultado de `10 % 3`? {.quiz-question}
+
+- 3
+- [1]{.correct data-explanation="¡Correcto! El operador % (módulo) devuelve el resto de la división. 10 dividido por 3 es 3 con resto 1."}
+- 0.33
+- 10
+
+::: footer
+Usa la tecla 'c' para verificar tu respuesta • 'q' para reiniciar la pregunta
+:::

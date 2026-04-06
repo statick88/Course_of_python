@@ -1,0 +1,86 @@
+---
+title: "Desafío 2: Conversor de unidades"
+difficulty: "⭐ Fácil"
+estimated_time: "10 minutos"
+---
+
+## Situación
+
+Estás viajando entre países y necesitas convertir entre diferentes sistemas de medición. Un amigo te pide un programa que haga conversiones rápidas.
+
+## Tu misión
+
+Crea un programa que convierta:
+
+1. Kilómetros a millas (1 km = 0.621371 millas)
+2. Celsius a Fahrenheit (°F = °C × 9/5 + 32)
+3. Kilogramos a libras (1 kg = 2.20462 libras)
+
+El programa debe pedir un valor en cada unidad y mostrar las 3 conversiones.
+
+## Ejemplo de ejecución
+
+```
+=== CONVERSOR DE UNIDADES ===
+
+--- Distancia ---
+Kilómetros: 100
+100.0 km = 62.14 millas
+
+--- Temperatura ---
+Grados Celsius: 37
+37.0°C = 98.6°F
+
+--- Peso ---
+Kilogramos: 70
+70.0 kg = 154.32 libras
+```
+
+## Pista
+
+- Las fórmulas son:
+  - Millas = km × 0.621371
+  - Fahrenheit = celsius × 9/5 + 32
+  - Libras = kg × 2.20462
+- Usa `round(valor, 2)` para redondear
+- Separa cada sección con prints vacíos o líneas decorativas
+
+## Criterios de éxito
+
+- [ ] Convierte kilómetros a millas correctamente
+- [ ] Convierte Celsius a Fahrenheit correctamente
+- [ ] Convierte kilogramos a libras correctamente
+- [ ] La salida está organizada por secciones
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 2: Conversor de unidades
+# Solución de referencia
+
+print("=== CONVERSOR DE UNIDADES ===")
+print()
+
+# <1> Distancia: km a millas
+km = float(input("Kilómetros: "))
+millas = round(km * 0.621371, 2)
+print(f"{km} km = {millas} millas")
+print()
+
+# <2> Temperatura: Celsius a Fahrenheit
+celsius = float(input("Grados Celsius: "))
+fahrenheit = round(celsius * 9 / 5 + 32, 2)
+print(f"{celsius}°C = {fahrenheit}°F")
+print()
+
+# <3> Peso: kg a libras
+kg = float(input("Kilogramos: "))
+libras = round(kg * 2.20462, 2)
+print(f"{kg} kg = {libras} libras")
+```
+</details>
+
+---
+
+[← Desafío 1](desafio-01-calculadora-propinas.qmd) | [Desafío 3 →](desafio-03-validador-edad.qmd)

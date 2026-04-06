@@ -1,0 +1,129 @@
+---
+title: "Quiz: Módulo 9 — Buenas Prácticas y Testing"
+subtitle: "Evaluación interactiva con puntuación"
+format:
+  revealjs:
+    theme: [dark, solar]
+    quiz:
+      checkKey: 'c'
+      resetKey: 'q'
+      shuffleKey: 't'
+      allowNumberKeys: true
+      defaultCorrect: "¡Correcto! 🎉"
+      defaultIncorrect: "¡Incorrecto! 😔"
+      includeScore: true
+revealjs-plugins:
+  - parmsam/quiz
+---
+
+## Quiz: Módulo 9 — Pregunta 1
+
+¿Qué significa PEP 8 en Python? {.quiz-question}
+
+- Python Enhancement Proposal 8
+- [Python Enhancement Proposal 8 (Estilo de Código)]{.correct data-explanation="¡Exactamente! PEP 8 es la guía de estilo de código para Python. Proporciona convenciones sobre cómo formatear el código."}
+- Python Error Protocol 8
+- Python Execution Process 8
+
+---
+
+## Quiz: Módulo 9 — Pregunta 2
+
+¿Cuál es la longitud máxima recomendada de línea según PEP 8? {.quiz-question}
+
+- 60 caracteres
+- 80 caracteres
+- [79 caracteres]{.correct data-explanation="¡Correcto! PEP 8 recomienda limitar las líneas a 79 caracteres máximo para facilitar la lectura."}
+- 100 caracteres
+
+---
+
+## Quiz: Módulo 9 — Pregunta 3
+
+¿Cómo se nombran las constantes en Python según PEP 8? {.quiz-question}
+
+- camelCase
+- snake_case
+- [UPPER_SNAKE_CASE]{.correct data-explanation="¡Correcto! Según PEP 8, las constantes deben nombrarse usando mayúsculas con guiones bajos (UPPER_SNAKE_CASE)."}
+- PascalCase
+
+---
+
+## Quiz: Módulo 9 — Pregunta 4
+
+¿Qué es una función pura en programación funcional? {.quiz-question}
+
+- Una función que no tiene parámetros
+- [Una función que siempre retorna el mismo output para el mismo input y no tiene efectos secundarios]{.correct data-explanation="¡Exactamente! Una función pura siempre retorna el mismo resultado para los mismos parámetros y no modifica nada externo."}
+- Una función que solo trabaja con números puros
+- Una función escrita en C
+
+---
+
+## Quiz: Módulo 9 — Pregunta 5
+
+¿Cuál de los siguientes es un buen nombre para una variable que almacena el total de precios? {.quiz-question}
+
+- t
+- total
+- [total_precio]{.correct data-explanation="¡Correcto! Los nombres de variables deben ser descriptivos y indicar claramente su propósito."}
+- tmp
+
+---
+
+## Quiz: Módulo 9 — Pregunta 6
+
+¿Qué bloque se ejecuta siempre en una estructura try-except, independientemente de si ocurre una excepción o no? {.quiz-question}
+
+- try
+- except
+- [finally]{.correct data-explanation="¡Correcto! El bloque finally se ejecuta siempre después de los bloques try y except."}
+- else
+
+---
+
+## Quiz: Módulo 9 — Pregunta 7
+
+¿Qué hace el bloque `else` en una estructura try-except-else? {.quiz-question}
+
+- Se ejecuta si ocurre una excepción
+- [Se ejecuta si no ocurre ninguna excepción]{.correct data-explanation="¡Correcto! El bloque else en try-except-else se ejecuta solo si no ocurre ninguna excepción."}
+- Se ejecuta siempre
+- Nunca se ejecuta
+
+---
+
+## Quiz: Módulo 9 — Pregunta 8
+
+¿Cuál es el propósito principal de los docstrings en Python? {.quiz-question}
+
+- Comentar código complejo
+- [Documentar funciones, clases y módulos]{.correct data-explanation="¡Exactamente! Los docstrings son cadenas de texto que aparecen como primera instrucción en una función, clase o módulo."}
+- Almacenar datos de configuración
+- Crear multilíneas de texto
+
+---
+
+## Quiz: Módulo 9 — Pregunta 9
+
+¿Qué marco de testing viene incluido con la instalación estándar de Python? {.quiz-question}
+
+- pytest
+- [unittest]{.correct data-explanation="¡Correcto! El marco unittest viene incluido con la instalación estándar de Python."}
+- nose
+- doctest
+
+---
+
+## Quiz: Módulo 9 — Pregunta 10
+
+¿Qué hace el decorador `@property` en Python? {.quiz-question}
+
+- Hace que un método sea estático
+- [Permite acceder a un método como si fuera un atributo]{.correct data-explanation="¡Exactamente! El decorador @property permite definir un método que se puede acceder como un atributo."}
+- Hace que un método sea privado
+- Cachea el resultado de un método
+
+::: footer
+Usa la tecla 'c' para verificar tu respuesta • 'q' para reiniciar la pregunta
+:::

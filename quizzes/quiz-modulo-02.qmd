@@ -1,0 +1,123 @@
+---
+title: "Quiz: Módulo 2 — Tipos de Datos y Variables"
+---
+
+## Evaluación del Módulo 2
+
+Responde las siguientes preguntas para evaluar tu comprensión de los tipos de datos y variables en Python.
+
+::: {.quizdown}
+
+### ¿Cuál es el resultado de `type(5)`?
+
+- [ ] <code>int</code>
+- [x] <class 'int'>
+- [ ] "int"
+- [ ] int()
+
+> **Explicación:** La función `type()` retorna el objeto de tipo, no una cadena. Por eso muestra `<class 'int'>`.
+
+---
+
+### ¿Qué ocurre al ejecutar `numero = 10; numero = "dieciocho"; type(numero)`?
+
+- [ ] Da error por reasignar tipos
+- [x] Devuelve `<class 'str'>`
+- [ ] Devuelve `<class 'int'>`
+- [ ] Devuelve ambos tipos
+
+> **Explicación:** Python permite reasignar variables a diferentes tipos. El tipo actual es el último asignado.
+
+---
+
+### ¿Cómo se representa el número 1000 en notación científica en Python?
+
+- [ ] 1e3
+- [x] 1e3 o 1.0e3
+- [ ] 10^3
+- [ ] 10**3
+
+> **Explicación:** En notación científica, se usa `e` para indicar "veces 10 elevado a". Tanto `1e3` como `1.0e3` representan 1000.
+
+---
+
+### ¿Cuál de las siguientes es una forma válida de crear un complejo en Python?
+
+- [ ] complex(3, 4)
+- [x] 3 + 4j
+- [ ] Ambos son válidos
+- [ ] Ninguno es válido
+
+> **Explicación:** Python permite crear complejos tanto con `complex(real, imag)` como usando el sufijo `j` para la parte imaginaria.
+
+---
+
+### ¿Qué devuelve `bool("")`?
+
+- [ ] True
+- [x] False
+- [ ] Error
+- [ ] None
+
+> **Explicación:** Las cadenas vacías se evalúan como False en contexto booleano.
+
+---
+
+### ¿Cuál es la diferencia entre `=` y `==` en Python?
+
+- [ ] `=` compara, `==` asigna
+- [x] `=` asigna, `==` compara
+- [ ] Ambos hacen lo mismo
+- [ ] `=` es para números, `==` para texto
+
+> **Explicación:** El operador `=` es de asignación, mientras que `==` es de comparación de igualdad.
+
+---
+
+### ¿Qué tipo de dato resulta de `10 / 3`?
+
+- [ ] int
+- [x] float
+- [ ] complex
+- [ ] Depende de la versión
+
+> **Explicación:** En Python 3, la división `/` siempre retorna un float, incluso si el resultado es un número entero.
+
+---
+
+### ¿Cómo se escribe un número binario en Python?
+
+- [ ] 0b1010
+- [x] 0b1010
+- [ ] b1010
+- [ ] 1010b
+
+> **Explicación:** Los números binarios se prefijan con `0b` seguido de los dígitos binarios (0 y 1).
+
+---
+
+### ¿Qué hace el código `a, b = b, a`?
+
+- [ ] Intercambia los valores de a y b
+- [ ] Asigna b a ambas variables
+- [ ] Da error de sintaxis
+- [ ] Duplica el valor de b
+
+> **Explicación:** Esta es la forma pythonica de intercambiar variables sin necesidad de una temporal.
+
+---
+
+### ¿Cuál es el resultado de `bool([])`?
+
+- [ ] True
+- [x] False
+- [ ] Error
+- [ ] None
+
+> **Explicación:** Las listas vacías se evalúan como False en contexto booleano, al igual que otros contenedores vacíos.
+
+:::
+
+---
+
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 2](../content/modulo-02/index.qmd)

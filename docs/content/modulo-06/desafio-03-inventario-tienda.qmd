@@ -1,0 +1,136 @@
+---
+title: "Desafío 3: Inventario de tienda"
+difficulty: "⭐⭐ Media"
+estimated_time: "15 minutos"
+---
+
+## Situación
+
+Una pequeña tienda necesita un sistema básico de inventario. El dueño quiere poder agregar productos, ver el stock, y saber qué productos necesitan reabastecimiento (stock menor a 5 unidades).
+
+## Tu misión
+
+Crea un programa que:
+
+1. Cree un inventario inicial con al menos 4 productos (nombre: cantidad)
+2. Permita al usuario elegir una operación: agregar, ver, buscar o alertar
+3. **Agregar**: pide nombre y cantidad, lo suma al inventario (o lo crea si no existe)
+4. **Ver**: muestra todos los productos con su stock
+5. **Buscar**: busca un producto y muestra su stock
+6. **Alertar**: muestra los productos con stock menor a 5 unidades
+
+## Ejemplo de ejecución
+
+```
+=== INVENTARIO DE TIENDA ===
+
+Inventario inicial:
+  Manzanas: 50
+  Peras: 3
+  Uvas: 25
+  Naranjas: 2
+
+--- Menú ---
+1. Agregar producto
+2. Ver inventario
+3. Buscar producto
+4. Alertas de stock bajo
+5. Salir
+
+Elige una opción: 4
+
+⚠️ Productos con stock bajo (< 5):
+  Peras: 3
+  Naranjas: 2
+```
+
+## Pista
+
+- Usa un diccionario para el inventario: `{"producto": cantidad}`
+- Para agregar: usa `inventario[producto] = inventario.get(producto, 0) + cantidad`
+- Para alertas: itera con `.items()` y filtra con `if cantidad < 5`
+- Usa un bucle `while True` para el menú hasta que el usuario elija salir
+
+## Criterios de éxito
+
+- [ ] Inventario inicial con al menos 4 productos
+- [ ] Menú con 4 opciones funcionales
+- [ ] Agregar producto (nuevo o existente)
+- [ ] Buscar producto con mensaje si no existe
+- [ ] Alertas de stock bajo (< 5 unidades)
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 3: Inventario de tienda
+# Solución de referencia
+
+print("=== INVENTARIO DE TIENDA ===")
+print()
+
+# Inventario inicial
+inventario = {
+    "manzanas": 50,
+    "peras": 3,
+    "uvas": 25,
+    "naranjas": 2
+}
+
+print("Inventario inicial:")
+for producto, cantidad in inventario.items():
+    print(f"  {producto.capitalize()}: {cantidad}")
+
+while True:
+    print()
+    print("--- Menú ---")
+    print("1. Agregar producto")
+    print("2. Ver inventario")
+    print("3. Buscar producto")
+    print("4. Alertas de stock bajo")
+    print("5. Salir")
+
+    opcion = input("Elige una opción: ").strip()
+
+    if opcion == "1":
+        nombre = input("Nombre del producto: ").lower().strip()
+        cantidad = int(input("Cantidad a agregar: "))
+        inventario[nombre] = inventario.get(nombre, 0) + cantidad
+        print(f"✅ {nombre}: ahora hay {inventario[nombre]} unidades")
+
+    elif opcion == "2":
+        print()
+        print("--- Inventario completo ---")
+        for producto, cantidad in inventario.items():
+            print(f"  {producto.capitalize()}: {cantidad}")
+
+    elif opcion == "3":
+        busqueda = input("¿Qué producto buscas? ").lower().strip()
+        stock = inventario.get(busqueda)
+        if stock is not None:
+            print(f"📦 {busqueda.capitalize()}: {stock} unidades")
+        else:
+            print(f"❌ '{busqueda}' no está en el inventario")
+
+    elif opcion == "4":
+        bajo_stock = {p: c for p, c in inventario.items() if c < 5}
+        if bajo_stock:
+            print()
+            print("⚠️ Productos con stock bajo (< 5):")
+            for producto, cantidad in bajo_stock.items():
+                print(f"  {producto.capitalize()}: {cantidad}")
+        else:
+            print("✅ Todos los productos tienen stock suficiente")
+
+    elif opcion == "5":
+        print("¡Hasta luego!")
+        break
+
+    else:
+        print("Opción no válida. Intenta de nuevo.")
+```
+</details>
+
+---
+
+[← Desafío 2](desafio-02-contador-palabras.qmd) | [Desafío 4 →](desafio-04-fusionar-diccionarios.qmd)

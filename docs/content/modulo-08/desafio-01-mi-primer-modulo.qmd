@@ -1,0 +1,91 @@
+---
+title: "Desafío 1: Mi primer módulo"
+difficulty: "⭐ Fácil"
+estimated_time: "10 minutos"
+---
+
+## Situación
+
+Eres el desarrollador de un equipo que está construyendo una aplicación. Tu primera tarea es crear un módulo reutilizable con funciones de conversión que todo el equipo pueda usar.
+
+## Tu misión
+
+Crea un módulo llamado `conversiones.py` que contenga:
+
+1. Una función `celsius_a_fahrenheit(celsius)` que convierta grados Celsius a Fahrenheit
+2. Una función `fahrenheit_a_celsius(fahrenheit)` que convierta grados Fahrenheit a Celsius
+3. Una función `kilometros_a_millas(km)` que convierta kilómetros a millas
+4. Una función `millas_a_kilometros(millas)` que convierta millas a kilómetros
+5. Un bloque `if __name__ == "__main__"` que pruebe todas las funciones
+
+### Fórmulas
+
+- Fahrenheit = Celsius × 9/5 + 32
+- Celsius = (Fahrenheit - 32) × 5/9
+- 1 kilómetro = 0.621371 millas
+- 1 milla = 1.60934 kilómetros
+
+## Ejemplo de ejecución
+
+```
+=== Módulo de Conversiones ===
+
+100°C = 212.0°F
+32°F = 0.0°C
+10 km = 6.21 millas
+5 millas = 8.05 km
+```
+
+## Pista
+
+- Cada función debe recibir un parámetro numérico y devolver el resultado
+- El bloque `if __name__ == "__main__"` solo se ejecuta cuando corres `python conversiones.py` directamente
+- Usa f-strings para formatear la salida con 2 decimales: `{valor:.2f}`
+
+## Criterios de éxito
+
+- [ ] Las 4 funciones están definidas correctamente
+- [ ] Cada función tiene un docstring que explica qué hace
+- [ ] El bloque `if __name__ == "__main__"` prueba las funciones
+- [ ] Los resultados son numéricamente correctos
+- [ ] El archivo puede ser importado sin ejecutar las pruebas
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# conversiones.py — Módulo de conversiones de unidades
+
+def celsius_a_fahrenheit(celsius):
+    """Convierte grados Celsius a Fahrenheit."""
+    return celsius * 9 / 5 + 32
+
+
+def fahrenheit_a_celsius(fahrenheit):
+    """Convierte grados Fahrenheit a Celsius."""
+    return (fahrenheit - 32) * 5 / 9
+
+
+def kilometros_a_millas(km):
+    """Convierte kilómetros a millas."""
+    return km * 0.621371
+
+
+def millas_a_kilometros(millas):
+    """Convierte millas a kilómetros."""
+    return millas * 1.60934
+
+
+if __name__ == "__main__":
+    print("=== Módulo de Conversiones ===")
+    print()
+    print(f"100°C = {celsius_a_fahrenheit(100):.1f}°F")
+    print(f"32°F = {fahrenheit_a_celsius(32):.1f}°C")
+    print(f"10 km = {kilometros_a_millas(10):.2f} millas")
+    print(f"5 millas = {millas_a_kilometros(5):.2f} km")
+```
+</details>
+
+---
+
+[← Volver al Módulo 8](../index.qmd) | [Desafío 2 →](desafio-02-generador-fechas.qmd)

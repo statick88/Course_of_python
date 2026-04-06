@@ -1,0 +1,105 @@
+---
+title: "Quiz: Módulo 7 — Manejo de Archivos"
+---
+
+## Evaluación del Módulo 7
+
+Responde las siguientes preguntas para evaluar tu comprensión del manejo de archivos en Python.
+
+::: {.quizdown}
+
+### ¿Cuál es la forma correcta de abrir un archivo para lectura en Python?
+
+- [ ] open("archivo.txt", "w")
+- [x] open("archivo.txt", "r")
+- [ ] open("archivo.txt", "rw")
+- [ ] open("archivo.txt", "read")
+
+> **Explicación:** El modo "r" es para lectura (read). Es el modo por defecto si no se especifica.
+
+### ¿Qué palabra reservada se usa para asegurar que un archivo se cierre correctamente incluso si ocurre un error?
+
+- [ ] finally
+- [x] with
+- [ ] auto
+- [ ] close
+
+> **Explicación:** La sentencia `with` crea un contexto que asegura que el archivo se cierre automáticamente al salir del bloque, incluso si ocurre una excepción.
+
+### ¿Qué método se usa para leer todo el contenido de un archivo de una vez?
+
+- [ ] readline()
+- [x] read()
+- [ ] readlines()
+- [ ] load()
+
+> **Explicación:** El método `read()` lee todo el contenido del archivo y lo retorna como un string. `readline()` lee una línea y `readlines()` lee todas las líneas en una lista.
+
+### ¿Cuál es la diferencia entre `read()` y `readline()`?
+
+- [ ] `read()` lee una línea, `readline()` lee todo
+- [x] `read()` lee todo el archivo, `readline()` lee una línea a la vez
+- [ ] Son idénticos
+- [ ] `read()` requiere un número de bytes
+
+> **Explicación:** `read()` retorna todo el contenido como un string. `readline()` retorna una sola línea (incluyendo el salto de línea al final).
+
+### ¿Qué hace el método `seek()` en un archivo?
+
+- [ ] Busca texto dentro del archivo
+- [x] Cambia la posición actual de lectura/escritura
+- [ ] Cierra el archivo
+- [ ] Guarda cambios en disco
+
+> **Explicación:** `seek()` permite mover el puntero de archivo a una posición específica para leer o escribir desde ahí.
+
+### ¿Cuál es la codificación por defecto al abrir un archivo en Python 3?
+
+- [ ] ASCII
+- [x] UTF-8
+- [ ] ISO-8859-1
+- [ ] Depende del sistema
+
+> **Explicación:** En Python 3, la codificación por defecto es UTF-8, lo que permite manejar correctamente caracteres internacionales.
+
+### ¿Cómo se abre un archivo para escritura que sobrescribe el contenido existente?
+
+- [ ] open("archivo.txt", "r")
+- [x] open("archivo.txt", "w")
+- [ ] open("archivo.txt", "a")
+- [ ] open("archivo.txt", "rw+")
+
+> **Explicación:** El modo "w" es para escritura (write) y sobrescribe el contenido existente. El modo "a" es para append (añadir al final).
+
+### ¿Qué método se usa para escribir una línea en un archivo?
+
+- [ ] write_line()
+- [x] write()
+- [ ] put()
+- [ ] insert()
+
+> **Explicación:** El método `write()` escribe una string en el archivo. No agrega automáticamente un salto de línea; hay que incluirlo explícitamente si se quiere.
+
+### ¿Para qué se usa el módulo `csv` en Python?
+
+- [ ] Para comprimir archivos
+- [x] Para leer y escribir archivos CSV (Valores Separados por Comas)
+- [ ] Para convertir imágenes
+- [ ] Para encriptar datos
+
+> **Explicación:** El módulo csv proporciona funcionalidad para leer y escribir datos en formato CSV, manejando correctamente comas, comillas y saltos de línea dentro de los campos.
+
+### ¿Qué clase del módulo `pathlib` se usa para representar rutas de archivos?
+
+- [ ] FilePath
+- [x] Path
+- [ ] File
+- [ ] Directory
+
+> **Explicación:** El módulo pathlib proporciona una orientación objetorientada para manejar rutas de archivos. La clase principal es `Path`, que representa tanto archivos como directorios.
+
+:::
+
+---
+
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 7](../content/modulo-07/index.qmd)

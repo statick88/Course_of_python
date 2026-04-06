@@ -1,0 +1,122 @@
+---
+title: "Desafío 6: Analizador de texto"
+difficulty: "⭐⭐⭐ Difícil"
+estimated_time: "25 minutos"
+---
+
+## Situación
+
+Estás construyendo una herramienta de análisis de texto para un procesador de palabras. Necesitas extraer estadísticas detalladas de cualquier texto que el usuario ingrese.
+
+## Tu misión
+
+Crea un programa que analice un texto y calcule:
+
+1. **Total de caracteres** (incluyendo espacios)
+2. **Total de caracteres sin espacios**
+3. **Total de palabras**
+4. **Total de oraciones** (separadas por `.`, `!` o `?`)
+5. **Letra más frecuente** (sin contar espacios ni puntuación)
+6. **Porcentaje de vocales** sobre el total de letras
+7. **Palabra más larga** del texto
+
+## Ejemplo de ejecución
+
+```
+=== ANALIZADOR DE TEXTO ===
+
+Ingresa un texto: Python es un lenguaje de programación versátil. Es fácil de aprender y muy poderoso.
+
+--- Análisis ---
+Caracteres totales: 95
+Caracteres (sin espacios): 79
+Palabras: 15
+Oraciones: 2
+Letra más frecuente: 'e' (10 veces)
+Porcentaje de vocales: 40.5%
+Palabra más larga: 'programación' (12 letras)
+```
+
+## Pista
+
+- Usa `len(texto)` para caracteres totales
+- Usa `texto.count(" ")` para contar espacios
+- Usa `texto.split()` para obtener la lista de palabras
+- Para oraciones, cuenta `.`, `!` y `?` con `.count()`
+- Para la letra más frecuente, recorre el texto y usa un diccionario o `.count()` para cada letra
+- Las vocales son: `a, e, i, o, u` (y sus versiones mayúsculas)
+- Para la palabra más larga, usa `max()` con `key=len`
+
+## Criterios de éxito
+
+- [ ] Cuenta caracteres totales y sin espacios correctamente
+- [ ] Cuenta palabras correctamente
+- [ ] Cuenta oraciones correctamente
+- [ ] Identifica la letra más frecuente
+- [ ] Calcula el porcentaje de vocales
+- [ ] Encuentra la palabra más larga
+- [ ] Maneja texto vacío sin errores
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 6: Analizador de texto
+# Solución de referencia
+
+print("=== ANALIZADOR DE TEXTO ===")
+print()
+
+# <1> Pedir texto
+texto = input("Ingresa un texto: ").strip()
+
+if not texto:
+    print("✗ El texto está vacío. Ingresa algo para analizar.")
+else:
+    # <2> Contar caracteres
+    total_caracteres = len(texto)
+    sin_espacios = total_caracteres - texto.count(" ")
+    
+    # <3> Contar palabras
+    palabras = texto.split()
+    total_palabras = len(palabras)
+    
+    # <4> Contar oraciones
+    oraciones = texto.count(".") + texto.count("!") + texto.count("?")
+    if oraciones == 0:
+        oraciones = 1  # Si no hay puntuación, es una oración
+    
+    # <5> Letra más frecuente
+    letras_solo = [c.lower() for c in texto if c.isalpha()]
+    if letras_solo:
+        letra_mas_frecuente = max(set(letras_solo), key=letras_solo.count)
+        frecuencia = letras_solo.count(letra_mas_frecuente)
+    else:
+        letra_mas_frecuente = "N/A"
+        frecuencia = 0
+    
+    # <6> Porcentaje de vocales
+    vocales = "aeiouáéíóú"
+    total_vocales = sum(1 for c in letras_solo if c.lower() in vocales)
+    total_letras = len(letras_solo)
+    porcentaje_vocales = round((total_vocales / total_letras * 100), 1) if total_letras > 0 else 0
+    
+    # <7> Palabra más larga
+    palabra_larga = max(palabras, key=len)
+    
+    # <8> Mostrar resultados
+    print()
+    print("--- Análisis ---")
+    print(f"Caracteres totales: {total_caracteres}")
+    print(f"Caracteres (sin espacios): {sin_espacios}")
+    print(f"Palabras: {total_palabras}")
+    print(f"Oraciones: {oraciones}")
+    print(f"Letra más frecuente: '{letra_mas_frecuente}' ({frecuencia} veces)")
+    print(f"Porcentaje de vocales: {porcentaje_vocales}%")
+    print(f"Palabra más larga: '{palabra_larga}' ({len(palabra_larga)} letras)")
+```
+</details>
+
+---
+
+[← Desafío 5](desafio-05-cifrado-cesar.qmd) | [Desafío 7 →](desafio-07-mini-base-datos.qmd)

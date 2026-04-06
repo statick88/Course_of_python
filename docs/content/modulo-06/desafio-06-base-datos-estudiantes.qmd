@@ -1,0 +1,209 @@
+---
+title: "Desafío 6: Base de datos de estudiantes"
+difficulty: "⭐⭐⭐ Difícil"
+estimated_time: "25 minutos"
+---
+
+## Situación
+
+Una universidad necesita un sistema básico para gestionar estudiantes. Cada estudiante tiene múltiples datos personales y académicos. El sistema debe permitir registrar estudiantes, consultar información y generar reportes.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Use una estructura de diccionarios anidados para almacenar estudiantes
+2. Cada estudiante debe tener: nombre, edad, carrera, y un diccionario de calificaciones
+3. Implemente un menú con las siguientes opciones:
+   - **Registrar**: agrega un nuevo estudiante con sus datos
+   - **Consultar**: busca un estudiante por ID y muestra toda su información
+   - **Promedio**: calcula y muestra el promedio de calificaciones de un estudiante
+   - **Ranking**: muestra todos los estudiantes ordenados por promedio (mayor a menor)
+   - **Eliminar**: elimina un estudiante por ID
+   - **Salir**: termina el programa
+
+## Ejemplo de ejecución
+
+```
+=== SISTEMA DE GESTIÓN ESTUDIANTIL ===
+
+--- Menú ---
+1. Registrar estudiante
+2. Consultar estudiante
+3. Ver promedio
+4. Ranking general
+5. Eliminar estudiante
+6. Salir
+
+Elige una opción: 1
+ID del estudiante: EST001
+Nombre: Ana García
+Edad: 22
+Carrera: Ingeniería
+Calificación Matemáticas: 9.5
+Calificación Programación: 9.8
+Calificación Física: 8.7
+✅ Estudiante EST001 registrado
+
+Elige una opción: 4
+
+--- Ranking General ---
+🥇 Ana García (EST001) — Promedio: 9.33
+```
+
+## Pista
+
+- La estructura principal es: `{"EST001": {"nombre": ..., "edad": ..., "carrera": ..., "calificaciones": {"mat": 9.5, ...}}}`
+- Para el promedio: `sum(calificaciones.values()) / len(calificaciones)`
+- Para el ranking: calcula el promedio de cada estudiante y ordena con `sorted()`
+- Usa `.get()` para acceso seguro en datos anidados
+
+## Criterios de éxito
+
+- [ ] Estructura de diccionarios anidados funcional
+- [ ] Registro completo de estudiantes con calificaciones
+- [ ] Consulta por ID con toda la información
+- [ ] Cálculo de promedio individual
+- [ ] Ranking general ordenado por promedio
+- [ ] Eliminación de estudiantes
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 6: Base de datos de estudiantes
+# Solución de referencia
+
+print("=== SISTEMA DE GESTIÓN ESTUDIANTIL ===")
+print()
+
+# Base de datos inicial
+estudiantes = {
+    "EST001": {
+        "nombre": "Ana García",
+        "edad": 22,
+        "carrera": "Ingeniería",
+        "calificaciones": {
+            "Matemáticas": 9.5,
+            "Programación": 9.8,
+            "Física": 8.7
+        }
+    },
+    "EST002": {
+        "nombre": "Carlos López",
+        "edad": 24,
+        "carrera": "Diseño",
+        "calificaciones": {
+            "Matemáticas": 7.2,
+            "Programación": 8.5,
+            "Física": 7.8
+        }
+    }
+}
+
+def calcular_promedio(est):
+    """Calcula el promedio de calificaciones de un estudiante."""
+    califs = est.get("calificaciones", {})
+    if not califs:
+        return 0
+    return sum(califs.values()) / len(califs)
+
+while True:
+    print()
+    print("--- Menú ---")
+    print("1. Registrar estudiante")
+    print("2. Consultar estudiante")
+    print("3. Ver promedio")
+    print("4. Ranking general")
+    print("5. Eliminar estudiante")
+    print("6. Salir")
+
+    opcion = input("Elige una opción: ").strip()
+
+    if opcion == "1":
+        id_est = input("ID del estudiante: ").strip()
+        if id_est in estudiantes:
+            print(f"❌ Ya existe un estudiante con ID {id_est}")
+            continue
+
+        nombre = input("Nombre: ").strip()
+        edad = int(input("Edad: "))
+        carrera = input("Carrera: ").strip()
+
+        calificaciones = {}
+        print("Ingresa calificaciones (deja vacío para terminar):")
+        while True:
+            materia = input("  Materia: ").strip()
+            if not materia:
+                break
+            nota = float(input(f"  Calificación de {materia}: "))
+            calificaciones[materia] = nota
+
+        estudiantes[id_est] = {
+            "nombre": nombre,
+            "edad": edad,
+            "carrera": carrera,
+            "calificaciones": calificaciones
+        }
+        print(f"✅ Estudiante {id_est} registrado")
+
+    elif opcion == "2":
+        busqueda = input("ID del estudiante: ").strip()
+        est = estudiantes.get(busqueda)
+        if est:
+            print()
+            print(f"--- Ficha: {est['nombre']} ---")
+            print(f"  ID: {busqueda}")
+            print(f"  Edad: {est['edad']}")
+            print(f"  Carrera: {est['carrera']}")
+            print(f"  Calificaciones:")
+            for mat, nota in est["calificaciones"].items():
+                print(f"    {mat}: {nota}")
+            print(f"  Promedio: {calcular_promedio(est):.2f}")
+        else:
+            print(f"❌ No se encontró el estudiante {busqueda}")
+
+    elif opcion == "3":
+        busqueda = input("ID del estudiante: ").strip()
+        est = estudiantes.get(busqueda)
+        if est:
+            promedio = calcular_promedio(est)
+            print(f"📊 {est['nombre']}: promedio {promedio:.2f}")
+        else:
+            print(f"❌ No se encontró el estudiante {busqueda}")
+
+    elif opcion == "4":
+        print()
+        print("--- Ranking General ---")
+        ranking = sorted(
+            estudiantes.items(),
+            key=lambda x: calcular_promedio(x[1]),
+            reverse=True
+        )
+        medallas = ["🥇", "🥈", "🥉"]
+        for i, (id_est, datos) in enumerate(ranking):
+            medalla = medallas[i] if i < 3 else "   "
+            promedio = calcular_promedio(datos)
+            print(f"{medalla} {datos['nombre']} ({id_est}) — Promedio: {promedio:.2f}")
+
+    elif opcion == "5":
+        id_est = input("ID del estudiante a eliminar: ").strip()
+        if id_est in estudiantes:
+            nombre = estudiantes[id_est]["nombre"]
+            del estudiantes[id_est]
+            print(f"🗑️ Estudiante {nombre} ({id_est}) eliminado")
+        else:
+            print(f"❌ No se encontró el estudiante {id_est}")
+
+    elif opcion == "6":
+        print("¡Hasta luego!")
+        break
+
+    else:
+        print("Opción no válida. Intenta de nuevo.")
+```
+</details>
+
+---
+
+[← Desafío 5](desafio-05-votaciones.qmd) | [Desafío 7 →](desafio-07-analizador-votos.qmd)

@@ -1,0 +1,123 @@
+---
+title: "Desafío 4: CSV a diccionario"
+difficulty: "⭐⭐ Media"
+estimated_time: "20 minutos"
+---
+
+## Situación
+
+Tienes un archivo CSV con datos de estudiantes y necesitas convertirlo en una estructura de datos de Python (lista de diccionarios) para poder hacer consultas y análisis.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Lea un archivo CSV de estudiantes
+2. Convierta cada fila en un diccionario
+3. Permita buscar estudiantes por nombre
+4. Calcule el promedio general de calificaciones
+
+## Formato del archivo CSV
+
+```csv
+nombre,edad,calificacion,carrera
+Ana García,22,9.5,Ingeniería
+Carlos López,24,8.0,Medicina
+María Torres,21,9.8,Ingeniería
+Pedro Ruiz,23,7.5,Derecho
+Laura Díaz,22,8.9,Medicina
+```
+
+## Ejemplo de ejecución
+
+```
+📊 === CSV A DICCIONARIO ===
+
+📚 Estudiantes cargados: 5
+
+🔍 Buscar estudiante por nombre: Ana
+
+  Nombre: Ana García
+  Edad: 22
+  Calificación: 9.5
+  Carrera: Ingeniería
+
+📈 Promedio general: 8.74
+🏆 Mejor calificación: 9.8 (María Torres)
+```
+
+## Pista
+
+- Usa `csv.DictReader` para leer el archivo como diccionarios
+- Convierte `calificacion` y `edad` a números con `float()` e `int()`
+- Usa `max()` con `key=` para encontrar la mejor calificación
+- Para la búsqueda, usa una comprensión de lista con `in`
+
+## Criterios de éxito
+
+- [ ] Lee el CSV y lo convierte en lista de diccionarios
+- [ ] Permite buscar por nombre (búsqueda parcial)
+- [ ] Calcula el promedio general
+- [ ] Encuentra la mejor calificación
+- [ ] Muestra la información formateada
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 4: CSV a diccionario
+# Solución de referencia
+
+import csv
+
+# Paso 1: Crear archivo CSV de prueba
+CSV_FILE = "estudiantes.csv"
+
+with open(CSV_FILE, "w", newline="") as f:
+    escritor = csv.writer(f)
+    escritor.writerow(["nombre", "edad", "calificacion", "carrera"])
+    escritor.writerow(["Ana García", 22, 9.5, "Ingeniería"])
+    escritor.writerow(["Carlos López", 24, 8.0, "Medicina"])
+    escritor.writerow(["María Torres", 21, 9.8, "Ingeniería"])
+    escritor.writerow(["Pedro Ruiz", 23, 7.5, "Derecho"])
+    escritor.writerow(["Laura Díaz", 22, 8.9, "Medicina"])
+
+# Paso 2: Leer CSV como diccionarios
+estudiantes = []
+
+with open(CSV_FILE, "r") as f:
+    lector = csv.DictReader(f)
+    for fila in lector:
+        fila["edad"] = int(fila["edad"])
+        fila["calificacion"] = float(fila["calificacion"])
+        estudiantes.append(fila)
+
+print("📊 === CSV A DICCIONARIO ===\n")
+print(f"📚 Estudiantes cargados: {len(estudiantes)}\n")
+
+# Paso 3: Buscar por nombre
+busqueda = input("🔍 Buscar estudiante por nombre: ").strip().lower()
+
+resultados = [e for e in estudiantes if busqueda in e["nombre"].lower()]
+
+if resultados:
+    for est in resultados:
+        print(f"\n  Nombre: {est['nombre']}")
+        print(f"  Edad: {est['edad']}")
+        print(f"  Calificación: {est['calificacion']}")
+        print(f"  Carrera: {est['carrera']}")
+else:
+    print(f"  No se encontraron resultados para '{busqueda}'")
+
+# Paso 4: Estadísticas
+promedio = sum(e["calificacion"] for e in estudiantes) / len(estudiantes)
+mejor = max(estudiantes, key=lambda e: e["calificacion"])
+
+print(f"\n📈 Promedio general: {promedio:.2f}")
+print(f"🏆 Mejor calificación: {mejor['calificacion']} ({mejor['nombre']})")
+```
+</details>
+
+---
+
+[← Desafío 3](desafio-03-log-analyzer.qmd) | [Desafío 5 →](desafio-05-configurador-json.qmd)

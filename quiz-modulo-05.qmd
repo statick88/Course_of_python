@@ -1,0 +1,129 @@
+---
+title: "Quiz: Módulo 5 — Listas y Tuplas"
+subtitle: "Evaluación interactiva con puntuación"
+format:
+  revealjs:
+    theme: [dark, solar]
+    quiz:
+      checkKey: 'c'
+      resetKey: 'q'
+      shuffleKey: 't'
+      allowNumberKeys: true
+      defaultCorrect: "¡Correcto! 🎉"
+      defaultIncorrect: "¡Incorrecto! 😔"
+      includeScore: true
+revealjs-plugins:
+  - parmsam/quiz
+---
+
+## Quiz: Módulo 5 — Pregunta 1
+
+¿Cuál es la diferencia principal entre listas y tuplas en Python? {.quiz-question}
+
+- Las listas son más rápidas
+- [Las listas son mutables, las tuplas son inmutables]{.correct data-explanation="¡Exactamente! Las listas pueden modificarse después de su creación (mutables), mientras que las tuplas no pueden cambiarse (inmutables)."}
+- Las tuplas pueden tener más elementos
+- Las listas solo almacenan números
+
+---
+
+## Quiz: Módulo 5 — Pregunta 2
+
+¿Cómo se crea una lista vacía en Python? {.quiz-question}
+
+- lista = ()
+- [lista = []]{.correct data-explanation="¡Correcto! Las listas se crean con corchetes []. Los paréntesis () son para tuplas y las llaves {} para diccionarios."}
+- lista = {}
+- lista = list
+
+---
+
+## Quiz: Módulo 5 — Pregunta 3
+
+¿Qué método se usa para agregar un elemento al final de una lista? {.quiz-question}
+
+- add()
+- [append()]{.correct data-explanation="¡Exactamente! El método append() agrega un elemento al final de la lista. insert() permite especificar la posición."}
+- insert()
+- push()
+
+---
+
+## Quiz: Módulo 5 — Pregunta 4
+
+¿Cuál es el resultado de `lista = [1, 2, 3]; lista[1] = 99; lista`? {.quiz-question}
+
+- [1, 2, 3]
+- [[1, 99, 3]]{.correct data-explanation="¡Correcto! Las listas son mutables, por lo que podemos cambiar el valor en cualquier posición usando el índice."}
+- Error
+- [1, 2, 3]
+
+---
+
+## Quiz: Módulo 5 — Pregunta 5
+
+¿Cómo se accede al último elemento de una lista llamada `mi_lista`? {.quiz-question}
+
+- mi_lista[length]
+- [mi_lista[-1]]{.correct data-explanation="¡Exactamente! En Python, los índices negativos cuentan desde el final: -1 es el último elemento, -2 el penúltimo, etc."}
+- mi_lista[length-1]
+- mi_lista[last]
+
+---
+
+## Quiz: Módulo 5 — Pregunta 6
+
+¿Qué hace el método `pop()` en una lista? {.quiz-question}
+
+- Agrega un elemento al final
+- [Elimina y retorna el último elemento]{.correct data-explanation="¡Correcto! pop() elimina el último elemento de la lista y lo retorna. Si se pasa un índice, elimina ese elemento específico."}
+- Ordena la lista
+- Invierte la lista
+
+---
+
+## Quiz: Módulo 5 — Pregunta 7
+
+¿Cuál es el resultado de `[1, 2, 3] + [4, 5]`? {.quiz-question}
+
+- [[1, 2, 3, 4, 5]]{.correct data-explanation="¡Exactamente! El operador + con listas las concatena (une) en una nueva lista."}
+- Error
+- [[1, 2, 3], [4, 5]]
+- [1, 2, 3, 4, 5]
+
+---
+
+## Quiz: Módulo 5 — Pregunta 8
+
+¿Cómo se crea una tupla con un solo elemento? {.quiz-question}
+
+- tupla = (1)
+- [tupla = (1,)]{.correct data-explanation="¡Exactamente! Para crear una tupla de un solo elemento, necesitamos la coma: (1,). Sin la coma, Python interpreta (1) como el número 1 entre paréntesis."}
+- tupla = [1]
+- tupla = 1,
+
+---
+
+## Quiz: Módulo 5 — Pregunta 9
+
+¿Qué método se usa para contar cuántas veces aparece un elemento en una lista? {.quiz-question}
+
+- [count()]{.correct data-explanation="¡Correcto! El método count() retorna el número de veces que aparece un elemento específico en la lista."}
+- frequency()
+- ocurrences()
+- count()
+
+---
+
+## Quiz: Módulo 5 — Pregunta 10
+
+¿Cuál es el resultado de `list("hola")`? {.quiz-question}
+
+- ["h", "o", "l", "a"]
+- [['h', 'o', 'l', 'a']]{.correct data-explanation="¡Exactamente! Al convertir una string a lista, cada carácter se convierte en un elemento separado de la lista."}
+- Error
+- "hola"
+
+::: footer
+Usa la tecla 'c' para verificar tu respuesta • 'q' para reiniciar la pregunta
+:::

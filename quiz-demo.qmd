@@ -1,0 +1,46 @@
+---
+title: "Quiz Demo - Módulo 1"
+format: 
+  revealjs:
+    quiz:
+      checkKey: 'c'
+      resetKey: 'q'
+      shuffleKey: 't'
+      allowNumberKeys: true
+      defaultCorrect: "¡Correcto!"
+      defaultIncorrect: "¡Incorrecto!"
+      includeScore: true
+revealjs-plugins:
+  - parmsam/quiz
+---
+
+## Quiz: Módulo 1 — Pregunta 1
+
+¿Qué función se usa para mostrar texto en pantalla? {.quiz-question}
+
+- input()
+- [print()]{.correct}
+- show()
+- display()
+
+---
+
+## Quiz: Módulo 1 — Pregunta 2
+
+¿Qué tipo de dato es `3.14`? {.quiz-question}
+
+- int
+- str
+- [float]{.correct}
+- bool
+
+---
+
+## Quiz: Módulo 1 — Pregunta 3
+
+¿Qué devuelve siempre la función `input()`? {.quiz-question}
+
+- Un número entero
+- [Un texto (str)]{.correct}
+- Un booleano
+- Una lista

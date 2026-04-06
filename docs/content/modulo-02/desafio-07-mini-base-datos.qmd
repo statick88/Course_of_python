@@ -1,0 +1,161 @@
+---
+title: "Desafío 7: Mini base de datos"
+difficulty: "⭐⭐⭐ Difícil"
+estimated_time: "30 minutos"
+---
+
+## Situación
+
+Necesitas crear un sistema simple para registrar y consultar información de contactos. No puedes usar bases de datos aún, pero puedes simular una usando strings y operaciones de texto.
+
+## Tu misión
+
+Crea un programa que funcione como una mini base de datos de contactos:
+
+1. Permita registrar contactos con: nombre, email, teléfono y edad
+2. Almacene cada contacto como una línea de texto con campos separados por `|`
+3. Permita buscar contactos por nombre (parcial, insensible a mayúsculas)
+4. Muestre estadísticas: total de contactos, promedio de edad
+5. Muestre todos los contactos en formato de tabla
+
+### Formato de almacenamiento:
+```
+Ana García|ana@email.com|0991234567|25
+Carlos López|carlos@email.com|0987654321|30
+```
+
+## Ejemplo de ejecución
+
+```
+=== MINI BASE DE DATOS DE CONTACTOS ===
+
+--- Registrar contacto 1 ---
+Nombre: Ana García
+Email: ana@email.com
+Teléfono: 0991234567
+Edad: 25
+
+--- Registrar contacto 2 ---
+Nombre: Carlos López
+Email: carlos@email.com
+Teléfono: 0987654321
+Edad: 30
+
+--- Registrar contacto 3 ---
+Nombre: María Torres
+Email: maria@email.com
+Teléfono: 0976543210
+Edad: 28
+
+--- Base de datos ---
+Total de contactos: 3
+Promedio de edad: 27.7 años
+
+--- Directorio ---
+| Nombre         | Email            | Teléfono   | Edad |
+|----------------|------------------|------------|------|
+| Ana García     | ana@email.com    | 0991234567 | 25   |
+| Carlos López   | carlos@email.com | 0987654321 | 30   |
+| María Torres   | maria@email.com  | 0976543210 | 28   |
+
+--- Búsqueda ---
+Buscar contacto: ana
+✓ Encontrado: Ana García | ana@email.com | 0991234567 | 25 años
+```
+
+## Pista
+
+- Usa una variable string para almacenar todos los contactos, separados por `\n`
+- Cada contacto es una línea con campos separados por `|`
+- Para buscar, convierte todo a minúsculas con `.lower()` y usa `in`
+- Para la tabla, usa f-strings con alineación: `{nombre:<16}`
+- Para el promedio, acumula las edades y divide entre la cantidad
+- Usa `.split("\n")` para separar contactos y `.split("|")` para separar campos
+
+## Criterios de éxito
+
+- [ ] Registra al menos 3 contactos
+- [ ] Almacena en formato `nombre|email|teléfono|edad`
+- [ ] Calcula el promedio de edad correctamente
+- [ ] Muestra los contactos en formato de tabla alineada
+- [ ] Busca contactos de forma parcial e insensible a mayúsculas
+- [ ] Maneja el caso de búsqueda sin resultados
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 7: Mini base de datos
+# Solución de referencia
+
+print("=== MINI BASE DE DATOS DE CONTACTOS ===")
+print()
+
+# <1> Registrar contactos
+contactos = ""
+NUM_CONTACTOS = 3
+suma_edades = 0
+
+for i in range(1, NUM_CONTACTOS + 1):
+    print(f"--- Registrar contacto {i} ---")
+    nombre = input("Nombre: ").strip()
+    email = input("Email: ").strip()
+    telefono = input("Teléfono: ").strip()
+    edad = input("Edad: ").strip()
+    
+    # Validar que la edad sea un número
+    if edad.isdigit():
+        suma_edades += int(edad)
+    else:
+        edad = "0"
+    
+    # Agregar al almacenamiento (formato: nombre|email|teléfono|edad)
+    contacto = f"{nombre}|{email}|{telefono}|{edad}"
+    if contactos:
+        contactos += "\n" + contacto
+    else:
+        contactos = contacto
+    print()
+
+# <2> Estadísticas
+lista_contactos = contactos.split("\n")
+total = len(lista_contactos)
+promedio_edad = round(suma_edades / total, 1) if total > 0 else 0
+
+print("--- Base de datos ---")
+print(f"Total de contactos: {total}")
+print(f"Promedio de edad: {promedio_edad} años")
+
+# <3> Mostrar directorio en formato de tabla
+print()
+print("--- Directorio ---")
+print(f"| {'Nombre':<16} | {'Email':<16} | {'Teléfono':<10} | {'Edad':<4} |")
+print(f"|{'-' * 18}|{'-' * 18}|{'-' * 12}|{'-' * 6}|")
+
+for contacto in lista_contactos:
+    campos = contacto.split("|")
+    nombre_c, email_c, tel_c, edad_c = campos
+    print(f"| {nombre_c:<16} | {email_c:<16} | {tel_c:<10} | {edad_c:<4} |")
+
+# <4> Búsqueda
+print()
+print("--- Búsqueda ---")
+busqueda = input("Buscar contacto: ").strip().lower()
+
+encontrado = False
+for contacto in lista_contactos:
+    campos = contacto.split("|")
+    nombre_c = campos[0]
+    
+    if busqueda in nombre_c.lower():  # <5> Búsqueda insensible a mayúsculas
+        print(f"✓ Encontrado: {contacto.replace('|', ' | ')} años")
+        encontrado = True
+
+if not encontrado:
+    print(f"✗ No se encontraron contactos con '{busqueda}'")
+```
+</details>
+
+---
+
+[← Desafío 6](desafio-06-analizador-texto.qmd) | [← Volver al Módulo 2](../index.qmd)

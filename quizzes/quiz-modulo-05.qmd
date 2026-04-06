@@ -1,0 +1,123 @@
+---
+title: "Quiz: Módulo 5 — Listas y Tuplas"
+---
+
+## Evaluación del Módulo 5
+
+Responde las siguientes preguntas para evaluar tu comprensión de listas y tuplas en Python.
+
+::: {.quizdown}
+
+### ¿Cuál es la diferencia principal entre listas y tuplas en Python?
+
+- [ ] Las listas son más rápidas
+- [x] Las listas son mutables, las tuplas son inmutables
+- [ ] Las tuplas pueden tener más elementos
+- [ ] Las listas solo almacenan números
+
+> **Explicación:** Las listas pueden modificarse después de su creación (mutables), mientras que las tuplas no pueden cambiarse (inmutables).
+
+---
+
+### ¿Cómo se crea una lista vacía en Python?
+
+- [ ] lista = ()
+- [x] lista = []
+- [ ] lista = {}
+- [ ] lista = list
+
+> **Explicación:** Las listas se crean con corchetes [] . Los paréntesis () son para tuplas y las llaves {} para diccionarios.
+
+---
+
+### ¿Qué método se usa para agregar un elemento al final de una lista?
+
+- [ ] add()
+- [x] append()
+- [ ] insert()
+- [ ] push()
+
+> **Explicación:** El método `append()` agrega un elemento al final de la lista. `insert()` permite especificar la posición.
+
+---
+
+### ¿Cuál es el resultado de `lista = [1, 2, 3]; lista[1] = 99; lista`?
+
+- [ ] [1, 2, 3]
+- [ ] [1, 99, 3]
+- [x] [1, 99, 3]
+- [ ] Error
+
+> **Explicación:** Las listas son mutables, por lo que podemos cambiar el valor en cualquier posición usando el índice.
+
+---
+
+### ¿Cómo se accede al último elemento de una lista llamada `mi_lista`?
+
+- [ ] mi_lista[length]
+- [x] mi_lista[-1]
+- [ ] mi_lista[length-1]
+- [ ] mi_lista[last]
+
+> **Explicación:** En Python, los índices negativos cuentan desde el final: -1 es el último elemento, -2 el penúltimo, etc.
+
+---
+
+### ¿Qué hace el método `pop()` en una lista?
+
+- [ ] Agrega un elemento al final
+- [x] Elimina y retorna el último elemento
+- [ ] Ordena la lista
+- [ ] Invierte la lista
+
+> **Explicación:** `pop()` elimina el último elemento de la lista y lo retorna. Si se pasa un índice, elimina ese elemento específico.
+
+---
+
+### ¿Cuál es el resultado de `[1, 2, 3] + [4, 5]`?
+
+- [ ] [1, 2, 3, 4, 5]
+- [x] [1, 2, 3, 4, 5]
+- [ ] Error
+- [ ] [[1, 2, 3], [4, 5]]
+
+> **Explicación:** El operador `+` con listas las concatena (une) en una nueva lista.
+
+---
+
+### ¿Cómo se crea una tupla con un solo elemento?
+
+- [ ] tupla = (1)
+- [x] tupla = (1,)
+- [ ] tupla = [1]
+- [ ] tupla = 1,
+
+> **Explicación:** Para crear una tupla de un solo elemento, necesitamos la coma: `(1,)`. Sin la coma, Python interpreta `(1)` como el número 1 entre paréntesis.
+
+---
+
+### ¿Qué método se usa para contar cuántas veces aparece un elemento en una lista?
+
+- [ ] count()
+- [x] count()
+- [ ] frequency()
+- [ ] ocurrences()
+
+> **Explicación:** El método `count()` retorna el número de veces que aparece un elemento específico en la lista.
+
+---
+
+### ¿Cuál es el resultado de `list("hola")`?
+
+- [ ] ["h", "o", "l", "a"]
+- [x] ['h', 'o', 'l', 'a']
+- [ ] Error
+- [ ] "hola"
+
+> **Explicación:** Al convertir una string a lista, cada carácter se convierte en un elemento separado de la lista.
+
+:::
+
+---
+
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 5](../content/modulo-05/index.qmd)

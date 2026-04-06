@@ -1,0 +1,135 @@
+---
+title: "Quiz: Módulo 3 — Estructuras de Control"
+---
+
+## Evaluación del Módulo 3
+
+Responde las siguientes preguntas para evaluar tu comprensión de las estructuras de control en Python.
+
+::: {.quizdown}
+
+### ¿Qué palabra reservada se usa para iniciar una condicional en Python?
+
+- [ ] if
+- [x] if
+- [ ] cuando
+- [ ] si
+
+> **Explicación:** En Python, se usa `if` para iniciar una estructura condicional.
+
+---
+
+### ¿Cuál es el operador lógico que representa "Y" en Python?
+
+- [ ] &
+- [x] and
+- [ ] &&
+- [ ] AND
+
+> **Explicación:** En Python, el operador lógico AND se escribe como `and` en minúsculas.
+
+---
+
+### ¿Qué hace la instrucción `break` dentro de un bucle?
+
+- [ ] Salta a la siguiente iteración
+- [x] Sale completamente del bucle
+- [ ] Reinicia el bucle desde el principio
+- [ ] Detiene el programa
+
+> **Explicación:** `break` termina inmediatamente el bucle más interno en el que se encuentra.
+
+---
+
+### ¿Qué hace la instrucción `continue` dentro de un bucle?
+
+- [x] Salta a la siguiente iteración
+- [ ] Sale completamente del bucle
+- [ ] Reinicia el bucle desde el principio
+- [ ] Detiene el programa
+
+> **Explicación:** `continue` omite el resto de la iteración actual y pasa directamente a la siguiente.
+
+---
+
+### ¿Cuál es el resultado de `range(5)`?
+
+- [ ] [0, 1, 2, 3, 4, 5]
+- [x] range(0, 5)
+- [ ] [1, 2, 3, 4, 5]
+- [ ] Error
+
+> **Explicación:** `range(5)` crea un objeto range que representa los números del 0 al 4. Para ver la lista, necesitas convertirlo con `list(range(5))`.
+
+---
+
+### ¿Cómo se escribe un bucle que se ejecuta exactamente 10 veces?
+
+- [ ] for i in range(10):
+- [x] for i in range(10):
+- [ ] for i in range(1, 10):
+- [ ] for i in range(0, 10):
+
+> **Explicación:** `range(10)` genera números del 0 al 9 (10 elementos en total). Todas las opciones excepto la tercera ejecutan 10 veces, pero la primera es la más convencional.
+
+---
+
+### ¿Qué imprime el siguiente código?
+```python
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+```
+
+- [ ] 1 2 3 4 5
+- [x] 1 2 4 5
+- [ ] 1 2 3 5
+- [ ] 1 2 4
+
+> **Explicación:** Cuando `i` es 3, `continue` salta el `print`, por eso no se imprime el 3.
+
+---
+
+### ¿Cuál es la diferencia entre `while` y `for` en Python?
+
+- [ ] `while` es para listas, `for` para números
+- [x] `while` se ejecuta mientras una condición sea verdadera, `for` itera sobre una secuencia
+- [ ] Son idénticos
+- [ ] `for` solo funciona con strings
+
+> **Explicación:** `while` continúa mientras su condición sea verdadera. `for` itera sobre cada elemento de una secuencia (lista, rango, etc.).
+
+---
+
+### ¿Qué hace el siguiente código?
+```python
+contador = 0
+while contador < 5:
+    print(contador)
+    contador += 1
+```
+
+- [ ] Imprime 0 1 2 3 4 5
+- [x] Imprime 0 1 2 3 4
+- [ ] Imprime 1 2 3 4 5
+- [ ] Imprime 5 4 3 2 1 0
+
+> **Explicación:** El bucle se ejecuta mientras contador sea menor que 5, imprimiendo 0, 1, 2, 3, 4.
+
+---
+
+### ¿Cuál es el resultado de `10 % 3`?
+
+- [ ] 3
+- [x] 1
+- [ ] 0.33
+- [ ] 10
+
+> **Explic:** El operador `%` (módulo) devuelve el resto de la división. 10 dividido por 3 es 3 con resto 1.
+
+:::
+
+---
+
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 3](../content/modulo-03/index.qmd)

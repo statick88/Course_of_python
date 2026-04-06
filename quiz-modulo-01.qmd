@@ -1,0 +1,129 @@
+---
+title: "Quiz: Módulo 1 — Introducción a Python"
+subtitle: "Evaluación interactiva con puntuación"
+format:
+  revealjs:
+    theme: [dark, solar]
+    quiz:
+      checkKey: 'c'
+      resetKey: 'q'
+      shuffleKey: 't'
+      allowNumberKeys: true
+      defaultCorrect: "¡Correcto! 🎉"
+      defaultIncorrect: "¡Incorrecto! 😔"
+      includeScore: true
+revealjs-plugins:
+  - parmsam/quiz
+---
+
+## Quiz: Módulo 1 — Pregunta 1
+
+¿Qué función se usa para mostrar texto en pantalla? {.quiz-question}
+
+- input()
+- [print()]{.correct data-explanation="¡Exactamente! print() es la función incorporada de Python que envía texto a la salida estándar (pantalla)."}
+- show()
+- display()
+
+---
+
+## Quiz: Módulo 1 — Pregunta 2
+
+¿Qué tipo de dato es `3.14`? {.quiz-question}
+
+- int
+- str
+- [float]{.correct data-explanation="¡Correcto! Los números con decimales son de tipo float en Python."}
+- bool
+
+---
+
+## Quiz: Módulo 1 — Pregunta 3
+
+¿Qué devuelve siempre la función `input()`? {.quiz-question}
+
+- Un número entero
+- [Un texto (str)]{.correct data-explanation="¡Exactamente! input() siempre devuelve una cadena de texto (str), incluso si el usuario escribe un número. Debes convertirlo si necesitas otro tipo."}
+- Un booleano
+- Una lista
+
+---
+
+## Quiz: Módulo 1 — Pregunta 4
+
+¿Cuál es la convención correcta para nombrar variables en Python? {.quiz-question}
+
+- [snake_case]{.correct data-explanation="¡Correcto! Python usa snake_case por convención (PEP 8): nombre_usuario, edad_maxima."}
+- camelCase
+- PascalCase
+- kebab-case
+
+---
+
+## Quiz: Módulo 1 — Pregunta 5
+
+¿Qué hace `"hola" * 3`? {.quiz-question}
+
+- Da un error
+- [Produce "holaholahola"]{.correct data-explanation="¡Exactamente! El operador * con texto repite la cadena el número de veces indicado."}
+- Produce "hola 3"
+- Produce ["hola", "hola", "hola"]
+
+---
+
+## Quiz: Módulo 1 — Pregunta 6
+
+¿Cuál es el resultado de `10 // 3`? {.quiz-question}
+
+- 3.33
+- [3]{.correct data-explanation="¡Correcto! // es la división entera, que descarta los decimales y devuelve solo la parte entera."}
+- 1
+- 10
+
+---
+
+## Quiz: Módulo 1 — Pregunta 7
+
+¿Qué palabra reservada se usa para definir una función? {.quiz-question}
+
+- function
+- [def]{.correct data-explanation="¡Exactamente! En Python, las funciones se definen con def nombre_funcion():."}
+- func
+- define
+
+---
+
+## Quiz: Módulo 1 — Pregunta 8
+
+¿Cuál es el resultado de `bool(0)`? {.quiz-question}
+
+- True
+- [False]{.correct data-explanation="¡Correcto! En Python, 0, \"\", [], {}, y None se evalúan como False. Todo lo demás es True."}
+- Error
+- None
+
+---
+
+## Quiz: Módulo 1 — Pregunta 9
+
+¿Qué hace el método `.strip()` en un string? {.quiz-question}
+
+- Divide el texto en palabras
+- [Elimina espacios al inicio y final]{.correct data-explanation="¡Exactamente! \"  hola  \".strip() devuelve \"hola\"."}
+- Convierte a mayúsculas
+- Reemplaza caracteres
+
+---
+
+## Quiz: Módulo 1 — Pregunta 10
+
+¿Qué principio del Zen de Python dice "El código se lee más veces de las que se escribe"? {.quiz-question}
+
+- Beautiful is better than ugly
+- Simple is better than complex
+- [Readability counts]{.correct data-explanation="¡Correcto! \"Readability counts\" enfatiza que el código debe ser legible porque se lee mucho más de lo que se escribe."}
+- Explicit is better than implicit
+
+::: footer
+Usa la tecla 'c' para verificar tu respuesta • 'q' para reiniciar la pregunta
+:::

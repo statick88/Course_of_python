@@ -1,0 +1,15 @@
+---
+title: "Test Quiz Standalone"
+format:
+  revealjs:
+    quiz: 
+      checkKey: 'c'
+revealjs-plugins:
+  - parmsam/quiz
+---
+
+## Question {.quiz-question}
+
+- Option 1
+- [Correct]{.correct}
+- Option 3

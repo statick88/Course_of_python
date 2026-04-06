@@ -1,0 +1,122 @@
+---
+title: "Desafío 5: Piedra, papel o tijera"
+difficulty: "⭐⭐ Media"
+estimated_time: "25 minutos"
+---
+
+## Situación
+
+El juego clásico de piedra, papel o tijera contra la computadora. Necesitas implementar la lógica completa del juego con puntuación.
+
+## Tu misión
+
+Crea un programa que:
+
+1. Permita al jugador elegir entre piedra, papel o tijera
+2. La computadora elija aleatoriamente
+3. Determine el ganador de cada ronda
+4. Lleve un marcador de victorias
+5. Se repita hasta que alguien gane 3 rondas
+
+## Reglas del juego
+
+- 🪨 **Piedra** vence a ✂️ Tijera
+- 📄 **Papel** vence a 🪨 Piedra
+- ✂️ **Tijera** vence a 📄 Papel
+- Misma elección = empate
+
+## Ejemplo de ejecución
+
+```
+=== PIEDRA, PAPEL O TIJERA ===
+Primero en ganar 3 rondas
+
+Ronda 1
+Tu elección (piedra/papel/tijera): piedra
+Computadora: tijera
+🪨 vs ✂️ → ¡Ganaste esta ronda!
+
+Marcador: Tú 1 - 0 Computadora
+
+Ronda 2
+Tu elección (piedra/papel/tijera): papel
+Computadora: papel
+📄 vs 📄 → ¡Empate!
+
+Marcador: Tú 1 - 0 Computadora
+
+...
+
+🏆 ¡GANASTE! Marcador final: 3 - 1
+```
+
+## Pista
+
+- Usa una lista `["piedra", "papel", "tijera"]` y `random.choice()` para la computadora
+- Crea una función o condiciones para determinar el ganador
+- Usa un `while` que se repita mientras ambos tengan menos de 3 victorias
+- Valida que la entrada del usuario sea válida
+
+## Criterios de éxito
+
+- [ ] El jugador puede elegir piedra, papel o tijera
+- [ ] La computadora elige aleatoriamente
+- [ ] Se determina correctamente el ganador de cada ronda
+- [ ] Se lleva el marcador
+- [ ] El juego termina cuando alguien llega a 3 victorias
+- [ ] Se valida la entrada del usuario
+
+<details>
+<summary>Ver solución de referencia</summary>
+
+```{python}
+# Desafío 5: Piedra, papel o tijera
+# Solución de referencia
+
+import random
+
+print("=== PIEDRA, PAPEL O TIJERA ===")
+print("Primero en ganar 3 rondas\n")
+
+opciones = ["piedra", "papel", "tijera"]
+victorias_jugador = 0
+victorias_cpu = 0
+ronda = 0
+
+while victorias_jugador < 3 and victorias_cpu < 3:
+    ronda = ronda + 1
+    print(f"--- Ronda {ronda} ---")
+    
+    jugador = input("Tu elección (piedra/papel/tijera): ").lower().strip()
+    
+    if jugador not in opciones:
+        print("⚠️ Opción no válida. Elige piedra, papel o tijera.\n")
+        continue
+    
+    cpu = random.choice(opciones)
+    
+    print(f"Computadora: {cpu}")
+    
+    if jugador == cpu:
+        print("🤝 ¡Empate!")
+    elif (jugador == "piedra" and cpu == "tijera") or \
+         (jugador == "papel" and cpu == "piedra") or \
+         (jugador == "tijera" and cpu == "papel"):
+        print("🎉 ¡Ganaste esta ronda!")
+        victorias_jugador = victorias_jugador + 1
+    else:
+        print("😔 La computadora gana esta ronda")
+        victorias_cpu = victorias_cpu + 1
+    
+    print(f"\nMarcador: Tú {victorias_jugador} - {victorias_cpu} Computadora\n")
+
+if victorias_jugador == 3:
+    print(f"🏆 ¡GANASTE! Marcador final: {victorias_jugador} - {victorias_cpu}")
+else:
+    print(f"💻 La computadora gana. Marcador final: {victorias_jugador} - {victorias_cpu}")
+```
+</details>
+
+---
+
+[← Desafío 4](desafio-04-adivina-numero.qmd) | [Desafío 6 →](desafio-06-generador-contrasenas.qmd)
