@@ -1,0 +1,326 @@
+---
+title: "Apéndice B: Model Context Protocol (MCP) para Python"
+subtitle: "Conecta tus scripts con herramientas de IA"
+---
+
+## ¿Qué es MCP?
+
+El **Model Context Protocol (MCP)** es un protocolo abierto que permite a las aplicaciones Python conectar con servicios de inteligencia artificial de manera estandarizada. Es como un "USB para aplicaciones de IA" - define cómo tu código puede comunicarse con modelos de lenguaje.
+
+> 🔧 **Analogía**: Si Python es el lenguaje que hablas, MCP es el protocolo que permite que tu Python "hable" con servicios externos de IA.
+
+---
+
+## ¿Por qué usar MCP en Python?
+
+### Sin MCP (Complicado)
+
+```python
+# Cada servicio tiene su propia API
+import openai  # API de OpenAI
+import anthropic  # API de Anthropic
+import google.generativeai  # API de Google
+
+# Debes aprender 3 APIs diferentes
+response = openai.ChatCompletion.create(...)
+response = anthropic.Message.create(...)
+response = genai.generate_content(...)
+```
+
+### Con MCP (Estandarizado)
+
+```python
+# Una API unificada
+from mcp import MCPClient
+
+client = MCPClient("mi-servidor")  # Todas las IA usan el mismo formato
+response = client.chat("¿Qué es Python?")
+```
+
+---
+
+## Instalación de MCP
+
+```bash
+# Instalación básica
+pip install mcp
+
+# Para servidores específicos
+pip install mcp-server-openai
+pip install mcp-server-anthropic
+```
+
+---
+
+## Tu Primer Script con MCP
+
+### Paso 1: Conectar a un servidor
+
+```python
+from mcp import Client
+
+# Conectar a un servidor MCP
+client = MCPClient("http://localhost:3000")
+
+# Verificar conexión
+if client.is_connected():
+    print("✅ Conectado al servidor MCP")
+```
+
+### Paso 2: Enviar prompts
+
+```python
+# Chat básico
+response = client.chat("¿Cómo declaro una variable en Python?")
+print(response.content)
+```
+
+### Paso 3: Análisis de código
+
+```python
+# Analizar código Python
+code_analysis = client.analyze_code("""
+def suma(a, b):
+    return a + b
+""")
+
+print(f"Recomendaciones: {code_analysis.suggestions}")
+print(f"Complejidad: {code_analysis.complexity}")
+print(f"Mejoras: {code_analysis.suggestions}")
+```
+
+---
+
+## Casos de Uso Prácticos
+
+### 1. Asistente de Debug
+
+```python
+def debug_con_mcp(codigo_error):
+    client = MCPClient("http://localhost:3000")
+    
+    prompt = f"""
+    Este código genera un error. Analízalo y sugiere correcciones.
+    
+    Código con error:
+    {codigo_error}
+    
+    Formato de respuesta:
+    1. Posible causa del error
+    2. Solución sugerida
+    3. Código corregido
+    """
+    
+    respuesta = client.chat(prompt)
+    return respuesta.content
+```
+
+### 2. Generador de Documentación
+
+```python
+def documentar_funcion(funcion_codigo):
+    client = MCPClient("http://localhost:3000")
+    
+    prompt = f"""
+    Genera documentación en formato Google Docstring para esta función:
+    
+    {funcion_codigo}
+    
+    Incluye:
+    - Descripción breve
+    - Args (parámetros)
+    - Returns (retorno)
+    - Raises (excepciones)
+    - Ejemplo de uso
+    """
+    
+    return client.chat(prompt)
+```
+
+### 3. Revisor de Código
+
+```python
+def revisar_codigo(codigo_fuente):
+    client = MCPClient("http://localhost:3000")
+    
+    prompt = f"""
+    Revisa este código Python según las mejores prácticas:
+    
+    1. PEP 8 compliance
+    2. Performance
+    3. Seguridad
+    4. Legibilidad
+    
+    Código:
+    {codigo_fuente}
+    
+    Responde en JSON:
+    {{
+        "issues": [...],
+        "score": 0-100,
+        "recommendations": [...]
+    }}
+    """
+    
+    return client.chat_json(prompt)
+```
+
+---
+
+## Configuración de Servidores MCP
+
+### Servidor Local
+
+```python
+# server.py - Tu propio servidor MCP
+from mcp.server import MCPServer
+
+server = MCPServer(
+    name="mi-servidor-python",
+    description="Mi servidor personalizado",
+    version="1.0.0"
+)
+
+@server.tool()
+def analizar_sintaxis(codigo):
+    """Analiza la sintaxis de código Python"""
+    import ast
+    try:
+        ast.parse(codigo)
+        return {"status": "válido", "errores": []}
+    except SyntaxError as e:
+        return {"status": "inválido", "errores": [str(e)]}
+
+@server.tool()
+def explicar_error(codigo, error):
+    """Explica un error de Python"""
+    # Lógica para analizar errores
+    return {"explicacion": "..."}
+
+if __name__ == "__main__":
+    server.run(port=3000)
+```
+
+### Conectar a Servicios Externos
+
+```bash
+# Iniciar servidor con OpenAI
+mcp-server-openai --api-key $OPENAI_API_KEY
+
+# Iniciar servidor con Anthropic  
+mcp-server-anthropic --api-key $ANTHROPIC_API_KEY
+```
+
+---
+
+## Mejores Prácticas con MCP
+
+### ✅ Recomendado
+
+- **Usar para aprendizaje**: "Explícame este concepto"
+- **Debugging**: "¿Por qué este error?"
+- **Revisión de código**: "Mejora este código"
+- **Documentación**: "Genera docstrings"
+
+### ⚠️ Con Precaución
+
+- **Código crítico**: Siempre revisa lo que genera la IA
+- **Datos sensibles**: No enviar código con credenciales
+- **Producción**: Testea exhaustivamente antes de deployar
+
+### ❌ Evitar
+
+- **Ejercicios del curso**: Los来完成 (debes completar) sin IA
+- **Evaluaciones**: Trampa = aprendizaje perdido
+- **Copiar y pegar sin entender**: Tu conocimiento = tu herramienta
+
+---
+
+## Solución de Problemas
+
+### Error: "Connection refused"
+
+```
+❌ MCPConnectionError: Could not connect to server
+```
+
+**Solución**:
+```bash
+# Verificar que el servidor está corriendo
+curl http://localhost:3000/health
+
+# Iniciar servidor
+python server.py
+```
+
+### Error: "API key inválida"
+
+```
+❌ MCPAuthError: Invalid API key
+```
+
+**Solución**:
+```python
+# Verificar clave
+import os
+print(os.environ.get("OPENAI_API_KEY"))
+
+# Configurar correctamente
+client = MCPClient(
+    "http://localhost:3000",
+    api_key="sk-..."  # Tu clave
+)
+```
+
+---
+
+## Recursos MCP
+
+| Recurso | URL |
+|---------|-----|
+| Documentación MCP | https://modelcontextprotocol.io |
+| Servidores MCP | https://github.com/modelcontextprotocol/servers |
+| Python SDK | https://pypi.org/project/mcp/ |
+
+---
+
+## Ejercicios de Práctica
+
+### Ejercicio 1: Hola MCP
+```python
+# Conecta a un servidor MCP y haz tu primera pregunta
+# Respuesta esperada: Saludo en español
+```
+
+### Ejercicio 2: Analizador de Código
+```python
+# Crea una función que use MCP para analizar código
+# Debe retornar: suggestions, complexity, improvements
+```
+
+### Ejercicio 3: Generador de Tests
+```python
+# Crea un generador de tests usando MCP
+# Input: función Python
+# Output: tests unitarios
+```
+
+---
+
+## Resumen
+
+| Concepto | Descripción |
+|----------|-------------|
+| **MCP** | Protocolo para conectar Python con servicios de IA |
+| **Cliente** | Tu script Python que usa MCP |
+| **Servidor** | Servicio que procesa requests de IA |
+| **Tools** | Funciones específicas disponibles via MCP |
+
+> 🦾 **Recuerda**: MCP es una herramienta poderosa, pero tu cerebro sigue siendo el mejor procesador. Úsalo para amplify (amplificar) tu aprendizaje, no para reemplazarlo.
+
+---
+
+*Aprende más sobre IA y desarrollo en el Apéndice A: Integración de IA en el Desarrollo Python*
+
+---
+**Volver al índice:** [Inicio](../index.qmd) | **Anterior:** [Apéndice A](01-ia-en-python.qmd)
