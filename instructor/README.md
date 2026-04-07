@@ -8,10 +8,16 @@ Este directorio contiene todos los recursos necesarios para impartir el curso de
 
 | Archivo | Contenido |
 |---------|------------|
-| [modulo-01-guia-instructor.md](modulo-01-guia-instructor.md) | Guía completa del Módulo 1 (ya existía) |
+| [modulo-01-guia-instructor.md](modulo-01-guia-instructor.md) | Guía completa del Módulo 1 |
 | [modulo-02-guia-instructor.md](modulo-02-guia-instructor.md) | Guía del Módulo 2 - Tipos de Datos |
 | [modulo-03-guia-instructor.md](modulo-03-guia-instructor.md) | Guía del Módulo 3 - Estructuras de Control |
 | [modulo-04-guia-instructor.md](modulo-04-guia-instructor.md) | Guía del Módulo 4 - Funciones |
+| [modulo-05-guia-instructor.md](modulo-05-guia-instructor.md) | Guía del Módulo 5 - Listas y Tuplas |
+| [modulo-06-guia-instructor.md](modulo-06-guia-instructor.md) | Guía del Módulo 6 - Diccionarios y Sets |
+| [modulo-07-guia-instructor.md](modulo-07-guia-instructor.md) | Guía del Módulo 7 - Manejo de Archivos |
+| [modulo-08-guia-instructor.md](modulo-08-guia-instructor.md) | Guía del Módulo 8 - Módulos y Paquetes |
+| [modulo-09-guia-instructor.md](modulo-09-guia-instructor.md) | Guía del Módulo 9 - Buenas Prácticas y Testing |
+| [modulo-10-guia-instructor.md](modulo-10-guia-instructor.md) | Guía del Módulo 10 - Proyecto Final |
 
 ### Recursos Generales
 
@@ -52,7 +58,6 @@ Este directorio contiene todos los recursos necesarios para impartir el curso de
 
 ## Próximas Actualizaciones
 
-- Guías de módulos 5-10 (en desarrollo)
 - Presentaciones en formato Quarto para cada módulo
 - Soluciones detalladas de los 70+ desafíos
 - Rúbricas específicas por módulo
