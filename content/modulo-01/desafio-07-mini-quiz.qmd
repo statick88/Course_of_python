@@ -6,6 +6,11 @@ estimated_time: "25 minutos"
 
 ## Situación
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 Necesitas crear un programa que evalúe los conocimientos básicos de Python de un estudiante. El quiz debe hacer preguntas, verificar respuestas, llevar un puntaje y dar retroalimentación al final.
 
 ## Tu misión

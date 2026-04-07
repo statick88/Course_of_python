@@ -6,6 +6,11 @@ estimated_time: "8 minutos"
 
 ## Situación
 
+> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.
+> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
+> se te pedirá explicar cada paso en detalle durante la verificación.
+
+
 Un hospital necesita un programa rápido para calcular la edad de los pacientes y determinar si son mayores de edad. El programa debe ser claro y evitar errores con datos inválidos.
 
 ## Tu misión
