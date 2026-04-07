@@ -5,6 +5,10 @@ execute:
   eval: false
 ---
 
+
+> ⚠️ **Importante Anti-IA:** Este proyecto integrador está diseñado para que demuestres tus habilidades de programación.
+> El código debe **TECLEARSE**, no generarse con IA. Se te pedirá explicar cada decisión de diseño durante la presentación.
+
 ## 📋 Descripción del Proyecto
 
 Construye una aplicación de consola que permita gestionar tareas personales. El programa debe permitir crear, listar, completar y eliminar tareas, guardando todo en un archivo JSON para que no se pierdan al cerrar el programa.

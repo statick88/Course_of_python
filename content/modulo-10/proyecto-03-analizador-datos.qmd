@@ -5,6 +5,10 @@ execute:
   eval: false
 ---
 
+
+> ⚠️ **Importante Anti-IA:** Este proyecto integrador está diseñado para que demuestres tus habilidades de programación.
+> El código debe **TECLEARSE**, no generarse con IA. Se te pedirá explicar cada decisión de diseño durante la presentación.
+
 ## 📋 Descripción del Proyecto
 
 Construye una aplicación que lea archivos CSV (como hojas de cálculo), calcule estadísticas (media, mediana, moda, desviación estándar) y genere reportes profesionales. El programa debe manejar datos reales, incluyendo valores faltantes y errores de formato.

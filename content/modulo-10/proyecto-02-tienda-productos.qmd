@@ -5,6 +5,10 @@ execute:
   eval: false
 ---
 
+
+> ⚠️ **Importante Anti-IA:** Este proyecto integrador está diseñado para que demuestres tus habilidades de programación.
+> El código debe **TECLEARSE**, no generarse con IA. Se te pedirá explicar cada decisión de diseño durante la presentación.
+
 ## 📋 Descripción del Proyecto
 
 Construye un sistema completo de tienda con inventario de productos, búsqueda por nombre y categoría, carrito de compras, y gestión de stock. El programa debe simular una experiencia de compra real desde la terminal.
