@@ -1,0 +1,224 @@
+---
+title: "Laboratorio 10: Proyecto Integrador"
+subtitle: "Integrar todos los conceptos del curso"
+execute:
+  eval: false
+---
+
+# Laboratorio 10: Proyecto Integrador
+
+**Módulo:** 10 - Proyecto Integrador
+**Duración Estimada:** 120 minutos
+**Dificultad:** Avanzado
+
+## Objetivos
+
+- Integrar todos los conceptos del curso en un proyecto real
+- Aplicar buenas prácticas de código limpio
+- Estructurar proyecto con módulos y paquetes
+- Manejar archivos y persistencia de datos
+- Documentar y testear el proyecto
+
+## Requisitos Previos
+
+- Módulos 1-9 completados
+- Todas las habilidades previas
+
+## Opciones de Proyecto
+
+Elige **UNA** de las siguientes opciones:
+
+---
+
+## Opción A: Sistema de Gestión de Tareas
+
+### Estructura del Proyecto
+
+```
+gestor_tareas/
+    __init__.py
+    tarea.py          # Clase Tarea
+    gestor.py         # Clase GestorTareas
+    archivo.py        # Guardar/cargar JSON
+    main.py           # Menú interactivo
+    tests.py          # Tests básicos
+```
+
+### Funcionalidades Requeridas
+
+1. **Clase Tarea:**
+   - Título, descripción, prioridad (alta/media/baja)
+   - Estado (pendiente/en progreso/completada)
+   - Fecha de creación y opcional de vencimiento
+
+2. **Clase GestorTareas:**
+   - Agregar, eliminar, completar tareas
+   - Filtrar por prioridad o estado
+   - Listar todas o filtradas
+   - Estadísticas (total, pendientes, completadas)
+
+3. **Persistencia:**
+   - Guardar en JSON automáticamente
+   - Cargar al iniciar
+
+4. **Menú Interactivo:**
+   - Interface por consola con opciones claras
+   - Validación de entrada
+
+### Código Base
+
+`tarea.py`:
+```python
+from datetime import datetime
+
+class Tarea:
+    """Representa una tarea con estado y prioridad."""
+    
+    def __init__(self, titulo, descripcion, prioridad="media"):
+        self.titulo = titulo
+        self.descripcion = descripcion
+        self.prioridad = prioridad
+        self.estado = "pendiente"
+        self.fecha_creacion = datetime.now()
+        self.fecha_vencimiento = None
+    
+    def completar(self):
+        """Marca la tarea como completada."""
+        self.estado = "completada"
+    
+    def __str__(self):
+        estado_icon = {"pendiente": "⏳", "en progreso": "🔄", "completada": "✅"}
+        return f"{estado_icon.get(self.estado, '?')} [{self.prioridad}] {self.titulo}"
+```
+
+`gestor.py`:
+```python
+import json
+from pathlib import Path
+from tarea import Tarea
+
+class GestorTareas:
+    """Gestiona una colección de tareas con persistencia."""
+    
+    def __init__(self, archivo="tareas.json"):
+        self.archivo = archivo
+        self.tareas = []
+        self.cargar()
+    
+    def agregar(self, titulo, descripcion, prioridad="media"):
+        """Agrega una nueva tarea."""
+        tarea = Tarea(titulo, descripcion, prioridad)
+        self.tareas.append(tarea)
+        return tarea
+    
+    def completar(self, indice):
+        """Completa una tarea por índice."""
+        if 0 <= indice < len(self.tareas):
+            self.tareas[indice].completar()
+        else:
+            raise IndexError("Índice fuera de rango")
+    
+    def filtrar(self, estado=None, prioridad=None):
+        """Filtra tareas por estado y/o prioridad."""
+        resultado = self.tareas
+        if estado:
+            resultado = [t for t in resultado if t.estado == estado]
+        if prioridad:
+            resultado = [t for t in resultado if t.prioridad == prioridad]
+        return resultado
+    
+    def estadisticas(self):
+        """Retorna estadísticas de tareas."""
+        return {
+            "total": len(self.tareas),
+            "pendientes": len(self.filtrar(estado="pendiente")),
+            "completadas": len(self.filtrar(estado="completada"))
+        }
+    
+    def guardar(self):
+        """Guarda tareas en JSON."""
+        datos = [vars(t) for t in self.tareas]
+        with open(self.archivo, "w", encoding="utf-8") as f:
+            json.dump(datos, f, indent=2, default=str)
+    
+    def cargar(self):
+        """Carga tareas desde JSON."""
+        ruta = Path(self.archivo)
+        if ruta.exists():
+            with open(ruta, "r", encoding="utf-8") as f:
+                datos = json.load(f)
+            # Reconstruir objetos Tarea
+            for d in datos:
+                tarea = Tarea(d["titulo"], d["descripcion"], d["prioridad"])
+                tarea.estado = d["estado"]
+                self.tareas.append(tarea)
+```
+
+---
+
+## Opción B: Tienda de Productos
+
+### Funcionalidades
+
+1. CRUD de productos (crear, ver, actualizar, eliminar)
+2. Carrito de compras
+3. Generar factura en CSV
+4. Reportes en JSON
+
+---
+
+## Opción C: Analizador de Datos
+
+### Funcionalidades
+
+1. Leer CSV de datos
+2. Calcular estadísticas (media, mediana, moda)
+3. Filtrar y agrupar datos
+4. Generar reporte en HTML
+
+---
+
+## Entrega del Proyecto
+
+### Qué Entregar
+
+1. **Código fuente** completo con estructura de carpetas
+2. **README.md** con instrucciones de uso
+3. **Tests** que verifiquen funcionalidades principales
+4. **Capturas de pantalla** de ejecución
+5. **Reflexión** de 1 párrafo sobre lo aprendido
+
+### Criterios de Evaluación
+
+| Criterio | Peso | Descripción |
+|----------|------|-------------|
+| Funcionalidad | 30% | El código funciona completamente |
+| Estructura | 20% | Módulos organizados, código limpio |
+| Documentación | 15% | Docstrings, README, comentarios |
+| Manejo de errores | 15% | Excepciones capturadas, mensajes claros |
+| Creatividad | 10% | Funcionalidades adicionales |
+| Presentación | 10% | Código ejecuta y se demuestra |
+
+## Troubleshooting
+
+| Problema | Solución |
+|----------|----------|
+| `ModuleNotFoundError` | Verificar `__init__.py` y rutas de import |
+| JSON no serializa | Usar `default=str` en `json.dump` |
+| Menú se cierra | Usar `while True` con opción de salida |
+| Tests no pasan | Verificar `assert` y valores esperados |
+
+## Conclusión
+
+Este proyecto integra todo lo aprendido: funciones, estructuras de datos, archivos, módulos, buenas prácticas.
+
+## Checklist de Aceptación
+
+- [ ] Proyecto tiene estructura con múltiples módulos
+- [ ] Funcionalidades principales implementadas
+- [ ] Persistencia con archivos (JSON/CSV)
+- [ ] Manejo de errores en operaciones críticas
+- [ ] Docstrings en todas las funciones públicas
+- [ ] Tests básicos con assert
+- [ ] README con instrucciones
+- [ ] Código ejecuta sin errores

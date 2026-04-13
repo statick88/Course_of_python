@@ -1,0 +1,75 @@
+---
+title: ""
+---
+
+<br><br><br><br>
+
+<div style="text-align: center; font-size: 1.1em;">
+
+# PREFACIO DEL INSTRUCTOR
+
+<br><br><br>
+
+## Cómo usar este curso
+
+<br>
+
+**Este documento está diseñado para:**
+
+- *Estudiantes autodidactas* que aprenden a su ritmo
+- *Instructores* que imparten el curso en formato presencial
+- *Abacom Capacitación y Servicios* como material de referencia
+
+<br><br>
+
+---
+
+<br>
+
+### Para estudiantes
+
+1. **No saltes el Módulo 0** — pensamiento computacional es la base de todo
+2. **Haz los desafíos ANTES de ver las soluciones** — la lucha es parte del aprendizaje
+3. **Usa los labs como práctica guiada** — son tu espacio seguro para experimentar
+4. **Toma los quizzes como autoevaluación** — no hay penalización por intentar múltiples veces
+5. **Elige UN proyecto integrador** y termínalo antes de empezar otro
+
+<br>
+
+### Para instructores
+
+1. **Cada módulo tiene guía de instructor** en `instructor/` con planes de sesión
+2. **Los desafíos tienen soluciones** en las guías de instructor
+3. **Los quizzes son listos para usar** — no necesitas crear evaluaciones adicionales
+4. **Los labs son progresivos** — cada uno construye sobre el anterior
+5. **Los proyectos integradores tienen rúbrica** en `instructor/rubrica-proyectos-integradores.md`
+
+<br>
+
+### Formato del curso
+
+| Componente | Cantidad | Propósito |
+|-----------|----------|-----------|
+| **Módulos** | 11 (0-10) | Contenido teórico progresivo |
+| **Unidades** | ~70 | Conceptos individuales |
+| **Desafíos** | 63 | Práctica aplicada por concepto |
+| **Labs** | 10 | Práctica guiada por módulo |
+| **Quizzes** | 10 | Evaluación de conocimiento |
+| **Proyectos** | 5 | Integración de múltiples conceptos |
+| **Horas estimadas** | 50+ | Curso completo |
+
+<br>
+
+> "La mejor forma de enseñar programación es con desafíos reales, no con teoría abstracta."
+> 
+> — *Diego Saavedra*
+
+<br><br>
+
+---
+
+<br>
+
+*Loja, Ecuador — Abril 2026*
+
+</div>

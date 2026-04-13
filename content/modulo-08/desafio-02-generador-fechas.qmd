@@ -50,6 +50,7 @@ Crea un programa que:
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 2: Generador de fechas
 # Solución de referencia
 

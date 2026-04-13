@@ -1,0 +1,134 @@
+---
+title: "Laboratorio 3: Estructuras de Control"
+subtitle: "Condicionales, bucles y list comprehension en acción"
+execute:
+  eval: false
+---
+
+# Laboratorio 3: Estructuras de Control
+
+**Módulo:** 3 - Estructuras de Control
+**Duración Estimada:** 60 minutos
+**Dificultad:** Principiante-Intermedio
+
+## Objetivos
+
+- Implementar condicionales `if/elif/else` en escenarios reales
+- Construir bucles `for` y `while` para iterar datos
+- Aplicar `break` y `continue` para controlar flujo
+- Usar list comprehension para transformar datos
+
+## Requisitos Previos
+
+- Python 3.9+ instalado
+- VS Code con extensión Python
+- Conocimiento de variables y operadores (Módulos 1-2)
+
+## Pasos del Laboratorio
+
+### Paso 1: Clasificador de Edades (15 min)
+
+Crea un programa que clasifique una edad en categorías:
+
+```python
+edad = int(input("Ingresa tu edad: "))
+
+if edad < 0:
+    print("❌ Edad no válida")
+elif edad < 13:
+    print("👶 Niño")
+elif edad < 18:
+    print("🧑 Adolescente")
+elif edad < 65:
+    print("👨 Adulto")
+else:
+    print("👴 Adulto mayor")
+```
+
+**Tu misión:** Modifica el programa para que también muestre si la persona es mayor de edad para votar (>= 18 en Ecuador).
+
+### Paso 2: Tabla de Multiplicar con For (10 min)
+
+```python
+numero = int(input("Tabla del número: "))
+
+for i in range(1, 11):
+    resultado = numero * i
+    print(f"{numero} x {i} = {resultado}")
+```
+
+**Tu misión:** Haz que el usuario elija hasta qué número multiplicar (no solo 10).
+
+### Paso 3: FizzBuzz Clásico (15 min)
+
+Implementa FizzBuzz:
+- Números del 1 al 50
+- Múltiplos de 3 → "Fizz"
+- Múltiplos de 5 → "Buzz"
+- Múltiplos de 3 y 5 → "FizzBuzz"
+
+```python
+for i in range(1, 51):
+    if i % 3 == 0 and i % 5 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
+```
+
+### Paso 4: Validador de Contraseña con While (10 min)
+
+```python
+PASSWORD_SECRETA = "Python2026"
+intentos = 0
+max_intentos = 3
+
+while intentos < max_intentos:
+    intento = input("Ingresa la contraseña: ")
+    if intento == PASSWORD_SECRETA:
+        print("✅ Acceso concedido")
+        break
+    else:
+        intentos += 1
+        print(f"❌ Incorrecta. Intentos restantes: {max_intentos - intentos}")
+else:
+    print("🔒 Cuenta bloqueada")
+```
+
+### Paso 5: List Comprehension - Filtrar Pares (10 min)
+
+```python
+numeros = list(range(1, 21))
+
+# Usando list comprehension
+pares = [n for n in numeros if n % 2 == 0]
+print(f"Pares: {pares}")
+
+# Cuadrados
+cuadrados = [n**2 for n in numeros]
+print(f"Cuadrados: {cuadrados}")
+```
+
+## Troubleshooting
+
+| Problema | Solución |
+|----------|----------|
+| `SyntaxError: invalid syntax` en `elif` | Verificar indentación (4 espacios) |
+| Bucle infinito | Agregar `break` o condición de salida |
+| `range()` no incluye el último número | Usar `range(inicio, fin+1)` |
+| List comprehension no filtra bien | Verificar condición después de `if` |
+
+## Conclusión
+
+Has dominado las estructuras de control de flujo, fundamentales para cualquier programa Python.
+
+## Checklist de Aceptación
+
+- [ ] El clasificador de edades funciona con categorías personalizadas
+- [ ] La tabla de multiplicar permite elegir el rango
+- [ ] FizzBuzz produce salida correcta del 1 al 50
+- [ ] El validador de contraseña bloquea después de 3 intentos
+- [ ] Los list comprehensions filtran y transforman correctamente

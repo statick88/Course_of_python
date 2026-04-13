@@ -54,6 +54,7 @@ $100.00 USD = €92.00 EUR
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 3: Conversor de moneda
 # Solución de referencia
 

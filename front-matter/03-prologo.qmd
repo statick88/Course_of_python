@@ -1,0 +1,101 @@
+---
+title: "Prólogo: Por qué este curso es diferente"
+---
+
+# Prólogo
+
+## Por qué este curso es diferente
+
+Si has intentado aprender Python antes y te frustraste, este curso fue diseñado para ti.
+
+La mayoría de cursos com así:
+
+> "Python es un lenguaje de programación interpretado de alto nivel creado por Guido van Rossum en 1991..."
+
+**Aburrido.** Y peor: no te enseña a **pensar como programador**.
+
+---
+
+## La filosofía de este curso
+
+Este curso se basa en 3 pilares:
+
+### 1. Pensamiento computacional primero
+
+Antes de escribir una línea de código, aprendes a **descomponer problemas**, **reconocer patrones** y **diseñar algoritmos**. Esto es lo que diferencia a un programador de alguien que solo copia código.
+
+> **Inspirado en MIT 6.0001**: El curso introductorio de MIT no empieza con Python — empieza con computación.
+
+### 2. Desafíos reales, no ejercicios de libro
+
+Cada concepto se enseña con un problema del mundo real:
+- No "escribe un bucle for" sino "crea un validador de contraseñas"
+- No "aprende diccionarios" sino "construye una agenda de contactos"
+- No "estudia funciones" sino "haz una calculadora modular"
+
+### 3. Código limpio desde el día uno
+
+No esperas al Módulo 9 para aprender buenas prácticas. Desde el primer `print()`, aprendes que **el código es comunicación** — para ti mismo en 6 meses y para otros desarrolladores.
+
+---
+
+## Estructura del curso
+
+| Módulo | Tema | Proyectos |
+|--------|------|-----------|
+| **0** | Pensamiento computacional | Ejercicios de lógica |
+| **1-2** | Fundamentos | Saludos, calculadoras, conversores |
+| **3-4** | Control y funciones | FizzBuzz, adivina el número, factorial |
+| **5-6** | Estructuras de datos | Inventarios, agendas, estadísticas |
+| **7-8** | Archivos y módulos | Diario personal, API clima, web scraper |
+| **9** | Buenas prácticas | Refactorización, testing, docstrings |
+| **10** | **Proyectos integradores** | **Gestor tareas, Tienda, Hangman, Caesar Cipher, Analizador datos** |
+
+---
+
+## ¿Para quién es este curso?
+
+✅ **Sí es para ti si:**
+- Nunca has programado o tienes conocimientos muy básicos
+- Has intentado aprender Python antes pero te perdiste
+- Quieres construir proyectos reales, no solo ejercicios
+- Te interesa pensar como programador, no solo aprender sintaxis
+
+❌ **No es para ti si:**
+- Ya tienes 2+ años de experiencia en Python
+- Buscas un curso de Django/Flask (esto es fundamentos)
+- Esperas aprender machine learning o data science (aunque las bases están aquí)
+
+---
+
+## Metodología de aprendizaje
+
+Cada módulo sigue este ciclo:
+
+```
+Teoría (15 min) → Ejemplo guiado (10 min) → Desafío (20 min) → Lab (30 min) → Quiz (15 min)
+```
+
+**Total por módulo**: ~90 minutos de contenido activo + práctica independiente.
+
+---
+
+## Agradecimientos especiales
+
+Este curso no existiría sin:
+
+- **Ana Bell, Eric Grimson y John Guttag** (MIT 6.0001) — por inspirar la estructura de pensamiento computacional y los proyectos Hangman/Caesar Cipher
+- **La Python Software Foundation** — por mantener el lenguaje que amamos
+- **Quarto Project** — por la plataforma que hace este curso interactivo y accesible
+- **Abacom Capacitación y Servicios** — por confiar en contenido técnico de calidad
+- **Los cientos de estudiantes** que han pasado por mis aulas y me han enseñado cómo enseñar mejor
+
+---
+
+> "Este curso no te va a hacer un experto en Python en 50 horas. Pero te va a dar las bases sólidas para que, con práctica, puedas construir cualquier cosa que imagines."
+> 
+> — *Diego Saavedra, Abril 2026*
+
+<br>
+
+[Índice del curso →](../index.qmd)

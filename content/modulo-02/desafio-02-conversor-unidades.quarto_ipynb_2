@@ -1,0 +1,132 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "8a5baba3",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "title: \"Desafío 2: Conversor de unidades\"\n",
+    "difficulty: \"⭐ Fácil\"\n",
+    "estimated_time: \"10 minutos\"\n",
+    "---\n",
+    "\n",
+    "## Situación\n",
+    "\n",
+    "Estás viajando entre países y necesitas convertir entre diferentes sistemas de medición. Un amigo te pide un programa que haga conversiones rápidas.\n",
+    "\n",
+    "## Tu misión\n",
+    "\n",
+    "Crea un programa que convierta:\n",
+    "\n",
+    "1. Kilómetros a millas (1 km = 0.621371 millas)\n",
+    "2. Celsius a Fahrenheit (°F = °C × 9/5 + 32)\n",
+    "3. Kilogramos a libras (1 kg = 2.20462 libras)\n",
+    "\n",
+    "El programa debe pedir un valor en cada unidad y mostrar las 3 conversiones.\n",
+    "\n",
+    "## Ejemplo de ejecución\n",
+    "\n",
+    "```\n",
+    "=== CONVERSOR DE UNIDADES ===\n",
+    "\n",
+    "--- Distancia ---\n",
+    "Kilómetros: 100\n",
+    "100.0 km = 62.14 millas\n",
+    "\n",
+    "--- Temperatura ---\n",
+    "Grados Celsius: 37\n",
+    "37.0°C = 98.6°F\n",
+    "\n",
+    "--- Peso ---\n",
+    "Kilogramos: 70\n",
+    "70.0 kg = 154.32 libras\n",
+    "```\n",
+    "\n",
+    "## Pista\n",
+    "\n",
+    "- Las fórmulas son:\n",
+    "  - Millas = km × 0.621371\n",
+    "  - Fahrenheit = celsius × 9/5 + 32\n",
+    "  - Libras = kg × 2.20462\n",
+    "- Usa `round(valor, 2)` para redondear\n",
+    "- Separa cada sección con prints vacíos o líneas decorativas\n",
+    "\n",
+    "## Criterios de éxito\n",
+    "\n",
+    "- [ ] Convierte kilómetros a millas correctamente\n",
+    "- [ ] Convierte Celsius a Fahrenheit correctamente\n",
+    "- [ ] Convierte kilogramos a libras correctamente\n",
+    "- [ ] La salida está organizada por secciones\n",
+    "\n",
+    "<details>\n",
+    "<summary>Ver solución de referencia</summary>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "17772e9b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#| eval: false\n",
+    "# Desafío 2: Conversor de unidades\n",
+    "# Solución de referencia\n",
+    "\n",
+    "print(\"=== CONVERSOR DE UNIDADES ===\")\n",
+    "print()\n",
+    "\n",
+    "# <1> Distancia: km a millas\n",
+    "km = float(input(\"Kilómetros: \"))\n",
+    "millas = round(km * 0.621371, 2)\n",
+    "print(f\"{km} km = {millas} millas\")\n",
+    "print()\n",
+    "\n",
+    "# <2> Temperatura: Celsius a Fahrenheit\n",
+    "celsius = float(input(\"Grados Celsius: \"))\n",
+    "fahrenheit = round(celsius * 9 / 5 + 32, 2)\n",
+    "print(f\"{celsius}°C = {fahrenheit}°F\")\n",
+    "print()\n",
+    "\n",
+    "# <3> Peso: kg a libras\n",
+    "kg = float(input(\"Kilogramos: \"))\n",
+    "libras = round(kg * 2.20462, 2)\n",
+    "print(f\"{kg} kg = {libras} libras\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "18747965",
+   "metadata": {},
+   "source": [
+    "</details>\n",
+    "\n",
+    "---\n",
+    "\n",
+    "[← Desafío 1](desafio-01-calculadora-propinas.qmd) | [Desafío 3 →](desafio-03-validador-edad.qmd)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -88,6 +88,7 @@ Porcentaje: 60.0%
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 7: Mini quiz de conocimientos
 # Solución de referencia
 

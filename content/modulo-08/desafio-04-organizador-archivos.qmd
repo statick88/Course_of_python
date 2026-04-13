@@ -74,6 +74,7 @@ Crea un programa que:
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 4: Organizador de archivos
 # Solución de referencia
 

@@ -78,6 +78,7 @@ reporte()
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 6: Refactorizar mini proyecto completo
 # Solución de referencia
 

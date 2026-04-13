@@ -54,6 +54,7 @@ Edad aproximada: 31 años
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 1: Saludo personalizado
 # Solución de referencia
 

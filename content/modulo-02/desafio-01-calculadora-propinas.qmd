@@ -53,6 +53,7 @@ Cada persona paga: $32.78
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 1: Calculadora de propinas
 # Solución de referencia
 

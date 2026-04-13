@@ -1,0 +1,201 @@
+---
+title: "Laboratorio 9: Buenas Prácticas"
+subtitle: "PEP 8, docstrings, funciones puras y testing"
+execute:
+  eval: false
+---
+
+# Laboratorio 9: Buenas Prácticas
+
+**Módulo:** 9 - Buenas Prácticas
+**Duración Estimada:** 60 minutos
+**Dificultad:** Intermedio-Avanzado
+
+## Objetivos
+
+- Aplicar PEP 8 para estilo de código
+- Usar nombres descriptivos y documentar con docstrings
+- Crear funciones puras y manejar errores
+- Escribir tests básicos con `assert`
+- Usar un linter para verificar código
+
+## Requisitos Previos
+
+- Módulos 1-8 completados
+- Funciones, módulos y archivos
+
+## Pasos del Laboratorio
+
+### Paso 1: Refactorizar Código (15 min)
+
+**Código antes (malo):**
+```python
+# MALO - Nombres crípticos, sin docstrings
+def f(x,y):
+ z=x+y
+ return z
+
+a=5
+b=10
+c=f(a,b)
+print(c)
+```
+
+**Tu misión - Refactorizar:**
+```python
+def sumar_numeros(primer_numero: int, segundo_numero: int) -> int:
+    """Suma dos números y retorna el resultado.
+    
+    Args:
+        primer_numero: El primer sumando.
+        segundo_numero: El segundo sumando.
+    
+    Returns:
+        La suma de los dos números.
+    """
+    return primer_numero + segundo_numero
+
+# Uso claro y documentado
+base = 5
+incremento = 10
+resultado = sumar_numeros(base, incremento)
+print(f"{base} + {incremento} = {resultado}")
+```
+
+### Paso 2: Funciones Puras (15 min)
+
+```python
+# ❌ IMPURA: Depende de variable global
+contador = 0
+
+def incrementar():
+    global contador
+    contador += 1
+    return contador
+
+# ✅ PURA: Solo depende de sus argumentos
+def crear_contador(inicio: int = 0):
+    """Crea un contador independiente."""
+    estado = {"valor": inicio}
+    
+    def incrementar():
+        estado["valor"] += 1
+        return estado["valor"]
+    
+    return incrementar
+
+# Uso
+contador_a = crear_contador(0)
+contador_b = crear_contador(100)
+
+print(f"Contador A: {contador_a()}, {contador_a()}, {contador_a()}")
+print(f"Contador B: {contador_b()}, {contador_b()}")
+```
+
+### Paso 3: Manejo de Errores Robusto (15 min)
+
+```python
+def dividir_seguro(a, b):
+    """Divide dos números con manejo completo de errores.
+    
+    Args:
+        a: Dividendo (debe ser numérico)
+        b: Divisor (debe ser numérico y no cero)
+    
+    Returns:
+        Resultado de la división o mensaje de error.
+    """
+    try:
+        return float(a) / float(b)
+    except ValueError:
+        return "Error: Los argumentos deben ser números"
+    except ZeroDivisionError:
+        return "Error: No se puede dividir por cero"
+    except TypeError:
+        return "Error: Tipo de dato no soportado"
+
+# Pruebas
+print(dividir_seguro(10, 3))     # ✅ 3.33
+print(dividir_seguro(10, 0))     # ❌ ZeroDivisionError
+print(dividir_seguro(10, "a"))   # ❌ ValueError
+print(dividir_seguro(None, 5))   # ❌ TypeError
+```
+
+### Paso 4: Tests con Assert (15 min)
+
+```python
+def es_palindromo(texto: str) -> bool:
+    """Verifica si un texto es palíndromo."""
+    texto_limpio = texto.lower().replace(" ", "")
+    return texto_limpio == texto_limpio[::-1]
+
+# Tests
+def test_es_palindromo():
+    """Tests para es_palindromo."""
+    assert es_palindromo("ana") == True, "ana es palíndromo"
+    assert es_palindromo("hola") == False, "hola no es palíndromo"
+    assert es_palindromo("A mi loca Ana") == True, "ignora espacios y mayúsculas"
+    assert es_palindromo("") == True, "vacío es palíndromo"
+    print("✅ Todos los tests pasaron")
+
+# Ejecutar
+test_es_palindromo()
+```
+
+### Paso 5: Docstrings Completos (10 min)
+
+```python
+def filtrar_lista(
+    elementos: list,
+    incluir_si: callable,
+    transformar: callable = None
+) -> list:
+    """Filtra y opcionalmente transforma una lista.
+    
+    Args:
+        elementos: Lista de elementos a filtrar.
+        incluir_si: Función que retorna True para elementos a incluir.
+        transformar: Función opcional para transformar elementos incluidos.
+    
+    Returns:
+        Nueva lista con elementos filtrados y transformados.
+    
+    Example:
+        >>> nums = [1, 2, 3, 4, 5, 6]
+        >>> filtrar_lista(nums, lambda x: x % 2 == 0)
+        [2, 4, 6]
+    """
+    filtrados = [e for e in elementos if incluir_si(e)]
+    if transformar:
+        return [transformar(e) for e in filtrados]
+    return filtrados
+
+# Uso
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+pares = filtrar_lista(numeros, lambda x: x % 2 == 0)
+pares_doblados = filtrar_lista(numeros, lambda x: x % 2 == 0, lambda x: x * 2)
+
+print(f"Pares: {pares}")
+print(f"Pares doblados: {pares_doblados}")
+```
+
+## Troubleshooting
+
+| Problema | Solución |
+|----------|----------|
+| PEP 8 violations | Usar extension Pylint/Flake8 en VS Code |
+| `assert` no ejecuta | Ejecutar con `python -O` desactiva asserts |
+| Docstring no muestra | Usar `help(funcion)` para ver docstring |
+| Función no es pura | Eliminar dependencias globales |
+
+## Conclusión
+
+Aplicas buenas prácticas: PEP 8, docstrings, funciones puras, tests y manejo de errores.
+
+## Checklist de Aceptación
+
+- [ ] Código refactorizado sigue PEP 8 (nombres, espacios, docstrings)
+- [ ] Funciones puras no dependen de estado global
+- [ ] Manejo de errores captura ValueError, ZeroDivisionError, TypeError
+- [ ] Tests con assert verifican comportamiento correcto
+- [ ] Docstrings incluyen Args, Returns, Example

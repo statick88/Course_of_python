@@ -71,6 +71,7 @@ Elige una opción: 4
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 6: Base de datos de estudiantes
 # Solución de referencia
 

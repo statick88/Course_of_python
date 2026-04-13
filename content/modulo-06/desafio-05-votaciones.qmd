@@ -64,6 +64,7 @@ Votos registrados: ['Parque del Sol', 'Parque Central', 'Parque del Sol',
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 5: Sistema de votaciones
 # Solución de referencia
 

@@ -47,6 +47,7 @@ print(saludar("María"))
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 1: Saludo con función
 # Solución de referencia
 

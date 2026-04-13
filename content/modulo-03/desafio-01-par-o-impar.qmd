@@ -42,6 +42,7 @@ El número 7 es IMPAR
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 1: Par o impar
 # Solución de referencia
 

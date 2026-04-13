@@ -1,0 +1,203 @@
+---
+title: "Laboratorio 8: Módulos y Paquetes"
+subtitle: "Importar, crear y organizar código reutilizable"
+execute:
+  eval: false
+---
+
+# Laboratorio 8: Módulos y Paquetes
+
+**Módulo:** 8 - Módulos y Paquetes
+**Duración Estimada:** 75 minutos
+**Dificultad:** Intermedio-Avanzado
+
+## Objetivos
+
+- Importar módulos estándar y personalizados
+- Crear módulos propios con funciones reutilizables
+- Usar `pip` para instalar paquetes externos
+- Crear y usar entornos virtuales (`venv`)
+- Organizar código en paquetes con `__init__.py`
+
+## Requisitos Previos
+
+- Módulos 1-7 completados
+- Funciones y archivos
+
+## Pasos del Laboratorio
+
+### Paso 1: Mi Primer Módulo (20 min)
+
+Crea un archivo `calculadora.py`:
+
+```python
+"""Módulo de calculadora básica."""
+
+def sumar(a, b):
+    """Suma dos números."""
+    return a + b
+
+def restar(a, b):
+    """Resta dos números."""
+    return a - b
+
+def multiplicar(a, b):
+    """Multiplica dos números."""
+    return a * b
+
+def dividir(a, b):
+    """Divide dos números."""
+    if b == 0:
+        raise ValueError("No se puede dividir por cero")
+    return a / b
+
+if __name__ == "__main__":
+    # Pruebas
+    print(sumar(5, 3))
+    print(restar(10, 4))
+```
+
+Ahora crea `main.py` que lo use:
+
+```python
+from calculadora import sumar, restar, multiplicar, dividir
+
+print("=== Usando mi módulo ===")
+print(f"5 + 3 = {sumar(5, 3)}")
+print(f"10 - 4 = {restar(10, 4)}")
+print(f"6 * 7 = {multiplicar(6, 7)}")
+print(f"20 / 4 = {dividir(20, 4)}")
+```
+
+### Paso 2: Módulos Estándar (15 min)
+
+```python
+import os
+import sys
+import random
+from datetime import datetime
+from pathlib import Path
+
+# os y sys
+print(f"Directorio actual: {os.getcwd()}")
+print(f"Python version: {sys.version}")
+
+# random
+print(f"\nNúmero aleatorio: {random.randint(1, 100)}")
+print(f"Elección: {random.choice(['rojo', 'verde', 'azul'])}")
+
+# datetime
+ahora = datetime.now()
+print(f"Fecha: {ahora.strftime('%d/%m/%Y %H:%M:%S')}")
+
+# pathlib
+ruta = Path.cwd()
+print(f"\nArchivos en directorio:")
+for item in list(ruta.iterdir())[:5]:
+    print(f"  {item.name}")
+```
+
+### Paso 3: Entorno Virtual (15 min)
+
+```bash
+# Desde terminal
+python3 -m venv venv-lab08
+
+# Activar (macOS/Linux)
+source venv-lab08/bin/activate
+
+# Activar (Windows)
+# venv-lab08\Scripts\activate
+
+# Instalar paquete
+pip install requests
+
+# Ver instalados
+pip list
+
+# Desactivar
+# deactivate
+```
+
+### Paso 4: Usar Requests (15 min)
+
+```python
+import requests
+
+# GET simple
+response = requests.get("https://api.github.com")
+print(f"Status: {response.status_code}")
+print(f"URL: {response.url}")
+
+# JSON response
+data = response.json()
+print(f"GitHub API funciona: {'current_user_url' in data}")
+
+# Manejo de errores
+try:
+    response = requests.get("https://httpstat.us/404")
+    response.raise_for_status()
+except requests.exceptions.HTTPError as e:
+    print(f"HTTP Error: {e}")
+```
+
+### Paso 5: Paquete Propio (10 min)
+
+Estructura:
+```
+mi_paquete/
+    __init__.py
+    utils.py
+    validators.py
+```
+
+`mi_paquete/__init__.py`:
+```python
+from .utils import saludar
+from .validators import es_email_valido
+
+__all__ = ["saludar", "es_email_valido"]
+```
+
+`mi_paquete/utils.py`:
+```python
+def saludar(nombre):
+    """Saluda al usuario."""
+    return f"¡Hola, {nombre}! 👋"
+```
+
+`mi_paquete/validators.py`:
+```python
+def es_email_valido(email):
+    """Valida formato de email básico."""
+    return "@" in email and "." in email.split("@")[1]
+```
+
+Usar el paquete:
+```python
+from mi_paquete import saludar, es_email_valido
+
+print(saludar("Diego"))
+print(es_email_valido("test@example.com"))
+```
+
+## Troubleshooting
+
+| Problema | Solución |
+|----------|----------|
+| `ModuleNotFoundError` | Verificar que archivo está en mismo directorio o en PYTHONPATH |
+| `venv` no se activa | Usar ruta correcta: `source venv/bin/activate` |
+| `pip` no encuentra paquete | Verificar nombre exacto en PyPI |
+| `ImportError: cannot import` | Revisar `__init__.py` y nombres de módulos |
+
+## Conclusión
+
+Dominas importación, creación de módulos, venv y paquetes pip.
+
+## Checklist de Aceptación
+
+- [ ] Módulo calculadora.py funciona desde main.py
+- [ ] Módulos estándar (os, sys, random, datetime) se importan y usan
+- [ ] Entorno virtual creado y activado
+- [ ] requests instalado y hace GET exitoso
+- [ ] Paquete propio con __init__.py funciona

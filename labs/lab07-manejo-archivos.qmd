@@ -1,0 +1,176 @@
+---
+title: "Laboratorio 7: Manejo de Archivos"
+subtitle: "Texto, CSV, JSON y pathlib en práctica"
+execute:
+  eval: false
+---
+
+# Laboratorio 7: Manejo de Archivos
+
+**Módulo:** 7 - Manejo de Archivos
+**Duración Estimada:** 75 minutos
+**Dificultad:** Intermedio-Avanzado
+
+## Objetivos
+
+- Abrir, leer y escribir archivos con `open()` y contexto `with`
+- Procesar archivos CSV con el módulo `csv`
+- Leer y escribir JSON con el módulo `json`
+- Usar `pathlib` para operaciones de rutas
+- Manejar excepciones en operaciones de I/O
+
+## Requisitos Previos
+
+- Módulos 1-6 completados
+- Diccionarios y listas
+
+## Pasos del Laboratorio
+
+### Paso 1: Diario Personal (15 min)
+
+```python
+from datetime import datetime
+
+# Escribir entrada
+entrada = input("Escribe tu entrada de hoy: ")
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+with open("diario.txt", "a", encoding="utf-8") as f:
+    f.write(f"[{timestamp}] {entrada}\n")
+
+print("✅ Entrada guardada")
+
+# Leer todas las entradas
+print("\n=== Diario ===")
+with open("diario.txt", "r", encoding="utf-8") as f:
+    for linea in f:
+        print(linea.strip())
+```
+
+### Paso 2: CSV - Registro de Estudiantes (20 min)
+
+```python
+import csv
+
+# Escribir CSV
+estudiantes = [
+    {"nombre": "Ana", "edad": 20, "nota": 85},
+    {"nombre": "Luis", "edad": 22, "nota": 90},
+    {"nombre": "Carlos", "edad": 19, "nota": 78}
+]
+
+with open("estudiantes.csv", "w", newline="", encoding="utf-8") as f:
+    writer = csv.DictWriter(f, fieldnames=["nombre", "edad", "nota"])
+    writer.writeheader()
+    writer.writerows(estudiantes)
+
+print("✅ CSV creado")
+
+# Leer CSV
+with open("estudiantes.csv", "r", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        print(f"  {row['nombre']}: {row['nota']} puntos")
+```
+
+### Paso 3: JSON - Configuración (15 min)
+
+```python
+import json
+
+# Crear configuración
+config = {
+    "app": "Mi Aplicación",
+    "version": "1.0",
+    "debug": True,
+    "database": {
+        "host": "localhost",
+        "port": 5432,
+        "name": "mi_db"
+    },
+    "usuarios": ["admin", "user1", "user2"]
+}
+
+# Guardar JSON
+with open("config.json", "w", encoding="utf-8") as f:
+    json.dump(config, f, indent=2, ensure_ascii=False)
+
+print("✅ JSON guardado")
+
+# Leer JSON
+with open("config.json", "r", encoding="utf-8") as f:
+    datos = json.load(f)
+
+print(f"\nApp: {datos['app']} v{datos['version']}")
+print(f"DB: {datos['database']['host']}:{datos['database']['port']}")
+print(f"Usuarios: {', '.join(datos['usuarios'])}")
+```
+
+### Paso 4: Pathlib - Organizador (15 min)
+
+```python
+from pathlib import Path
+
+# Crear directorios
+Path("proyecto").mkdir(exist_ok=True)
+Path("proyecto/src").mkdir(exist_ok=True)
+Path("proyecto/tests").mkdir(exist_ok=True)
+
+# Crear archivos
+Path("proyecto/main.py").write_text("print('Hola')")
+Path("proyecto/README.md").write_text("# Mi Proyecto")
+
+# Listar archivos
+print("=== Proyecto ===")
+for archivo in Path("proyecto").rglob("*"):
+    if archivo.is_file():
+        print(f"  📄 {archivo.relative_to('proyecto')}")
+
+# Información de archivo
+archivo = Path("proyecto/main.py")
+print(f"\n  Nombre: {archivo.name}")
+print(f"  Extensión: {archivo.suffix}")
+print(f"  Directorio: {archivo.parent}")
+print(f"  Existe: {archivo.exists()}")
+```
+
+### Paso 5: Manejo de Errores I/O (10 min)
+
+```python
+archivo = "no_existe.txt"
+
+try:
+    with open(archivo, "r") as f:
+        contenido = f.read()
+except FileNotFoundError:
+    print(f"❌ El archivo '{archivo}' no existe")
+except PermissionError:
+    print(f"❌ No tienes permiso para leer '{archivo}'")
+except Exception as e:
+    print(f"❌ Error inesperado: {e}")
+else:
+    print("✅ Lectura exitosa")
+finally:
+    print("🏁 Operación completada")
+```
+
+## Troubleshooting
+
+| Problema | Solución |
+|----------|----------|
+| `FileNotFoundError` | Verificar ruta, usar `Path.exists()` |
+| `UnicodeDecodeError` | Especificar `encoding="utf-8"` |
+| CSV no guarda columnas | Usar `DictWriter` con `writeheader()` |
+| JSON no serializable | Convertir objetos a tipos básicos |
+
+## Conclusión
+
+Dominas lectura/escritura de archivos de texto, CSV, JSON y pathlib.
+
+## Checklist de Aceptación
+
+- [ ] Diario personal guarda y lee entradas con timestamps
+- [ ] CSV escribe y lee estudiantes con DictWriter/DictReader
+- [ ] JSON guarda configuración anidada con indentación
+- [ ] Pathlib crea estructura de directorios y lista archivos
+- [ ] Excepciones I/O manejan FileNotFoundError

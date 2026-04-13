@@ -60,6 +60,7 @@ DNI completo: 12345678-Z
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 4: Generador de DNI
 # Solución de referencia
 

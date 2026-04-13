@@ -48,6 +48,7 @@ Radio 0: 0.00
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 2: Área del círculo
 # Solución de referencia
 

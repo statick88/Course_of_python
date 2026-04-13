@@ -55,6 +55,7 @@ Lo lograste en 3 intentos
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 4: Adivina el número
 # Solución de referencia
 

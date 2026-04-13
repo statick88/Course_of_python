@@ -70,6 +70,7 @@ Marcador: Tú 1 - 0 Computadora
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 5: Piedra, papel o tijera
 # Solución de referencia
 

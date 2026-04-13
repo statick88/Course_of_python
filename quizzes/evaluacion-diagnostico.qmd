@@ -1,0 +1,197 @@
+---
+title: "Evaluación de Diagnóstico"
+subtitle: "¿Qué sabes antes de empezar?"
+execute:
+  eval: false
+---
+
+# Evaluación de Diagnóstico
+
+> **Objetivo**: Identificar tu nivel actual de conocimiento para adaptar tu experiencia de aprendizaje
+> **Duración**: 20 minutos
+> **No califica**: Esto NO afecta tu nota final — es solo para saber dónde estás
+
+---
+
+## Instrucciones
+
+Responde **todas** las preguntas con honestidad. No busques respuestas en Google.
+
+Si no sabes algo, marca **"No lo sé"** — ¡es completamente válido! Esto nos ayuda a saber dónde enfocarnos.
+
+---
+
+## Sección 1: Conocimientos Previos
+
+### 1. ¿Has programado antes?
+
+- [ ] Nunca he escrito código
+- [ ] He hecho tutoriales básicos (Codecademy, freeCodeCamp, etc.)
+- [ ] He creado proyectos pequeños por mi cuenta
+- [ ] Tengo experiencia profesional (1+ años)
+
+### 2. ¿Qué lenguajes conoces? (marca todos los que apliquen)
+
+- [ ] Ninguno
+- [ ] Python (básico)
+- [ ] Python (intermedio/avanzado)
+- [ ] JavaScript/TypeScript
+- [ ] Java
+- [ ] C/C++
+- [ ] Otro: _______________
+
+### 3. ¿Qué es una variable en programación?
+
+- [ ] No lo sé
+- [ ] Es algo que cambia constantemente
+- [ ] Es un espacio en memoria que almacena un valor
+- [ ] Es una función que retorna datos
+
+### 4. ¿Qué hace este código?
+
+```python
+x = 10
+y = 3
+resultado = x // y
+print(resultado)
+```
+
+- [ ] No lo sé
+- [ ] Imprime `3.333`
+- [ ] Imprime `3`
+- [ ] Imprime `30`
+- [ ] Da un error
+
+---
+
+## Sección 2: Lógica y Pensamiento Computacional
+
+### 5. Tienes una lista de 100 números y necesitas encontrar el mayor. ¿Cómo lo harías?
+
+- [ ] No lo sé
+- [ ] Reviso cada número uno por uno, guardando el más grande que encuentro
+- [ ] Los ordeno de mayor a menor y tomo el primero
+- [ ] Pido ayuda a alguien
+
+### 6. ¿Cuál es el resultado de este pseudocódigo?
+
+```
+contador = 0
+PARA i DESDE 1 HASTA 5 HACER
+    contador = contador + i
+FIN_PARA
+IMPRIMIR contador
+```
+
+- [ ] No lo sé
+- [ ] 5
+- [ ] 10
+- [ ] 15
+- [ ] Error
+
+### 7. Descompón este problema en al menos 3 pasos:
+
+**Problema**: Crear un programa que ordene una lista de nombres alfabéticamente y guarde el resultado en un archivo.
+
+**Tus pasos:**
+
+1. _______________________________________________
+2. _______________________________________________
+3. _______________________________________________
+
+---
+
+## Sección 3: Conceptos Técnicos
+
+### 8. ¿Qué es un algoritmo?
+
+- [ ] No lo sé
+- [ ] Un tipo de robot
+- [ ] Una secuencia finita de pasos para resolver un problema
+- [ ] Un programa de computadora
+
+### 9. ¿Qué diferencia hay entre `=` y `==` en Python?
+
+- [ ] No lo sé
+- [ ] Son lo mismo
+- [ ] `=` asigna un valor, `==` compara valores
+- [ ] `=` compara, `==` asigna
+
+### 10. ¿Qué imprime este código?
+
+```python
+numeros = [1, 2, 3, 4, 5]
+print(numeros[-1])
+```
+
+- [ ] No lo sé
+- [ ] `1`
+- [ ] `5`
+- [ ] Error
+
+### 11. ¿Qué es una función?
+
+- [ ] No lo sé
+- [ ] Un archivo de código
+- [ ] Un bloque de código reutilizable que realiza una tarea específica
+- [ ] Una variable especial
+
+### 12. ¿Para qué sirve `import` en Python?
+
+- [ ] No lo sé
+- [ ] Para traer datos de internet
+- [ ] Para usar código de otros módulos/bibliotecas
+- [ ] Para crear variables
+
+---
+
+## Sección 4: Expectativas
+
+### 13. ¿Qué esperas lograr con este curso? (marca todas las que apliquen)
+
+- [ ] Aprender Python desde cero
+- [ ] Mejorar mis habilidades actuales
+- [ ] Construir proyectos propios
+- [ ] Prepararme para entrevistas técnicas
+- [ ] Cambiar de carrera
+- [ ] Otro: _______________
+
+### 14. ¿Cuántas horas por semana puedes dedicar al curso?
+
+- [ ] Menos de 3 horas
+- [ ] 3-5 horas
+- [ ] 6-10 horas
+- [ ] Más de 10 horas
+
+### 15. ¿Cómo prefieres aprender?
+
+- [ ] Leyendo teoría primero
+- [ ] Viendo código y experimentando
+- [ ] Resolviendo problemas directamente
+- [ ] Con explicaciones paso a paso
+
+---
+
+## Evaluación (Para el Instructor)
+
+### Cálculo de Nivel
+
+| Sección | Puntos | Interpretación |
+|---------|--------|---------------|
+| **Sección 1** (1-4) | 0-4 pts | Conocimientos previos |
+| **Sección 2** (5-7) | 0-3 pts | Pensamiento lógico |
+| **Sección 3** (8-12) | 0-5 pts | Conceptos técnicos |
+| **Total** | **0-12 pts** | |
+
+### Clasificación
+
+| Puntaje | Nivel | Recomendación |
+|---------|-------|--------------|
+| **0-3** | Principiante absoluto | Empezar desde Módulo 0. Ir despacio. |
+| **4-6** | Principiante con nociones | Módulo 0 rápido, luego normal. |
+| **7-9** | Intermedio bajo | Puede saltar Módulo 0 si quiere. |
+| **10-12** | Intermedio | Enfocarse en desafíos y proyectos. |
+
+---
+
+[Comenzar el curso →](../index.qmd)

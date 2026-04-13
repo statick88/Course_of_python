@@ -1,0 +1,121 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "4f113ed4",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "title: \"Desafío 2: Tabla de multiplicar\"\n",
+    "difficulty: \"⭐ Fácil\"\n",
+    "estimated_time: \"10 minutos\"\n",
+    "---\n",
+    "\n",
+    "## Situación\n",
+    "\n",
+    "Una escuela primaria necesita un generador de tablas de multiplicar para que los estudiantes practiquen. Tu tarea es crear un programa que muestre la tabla completa de cualquier número.\n",
+    "\n",
+    "## Tu misión\n",
+    "\n",
+    "Crea un programa que:\n",
+    "\n",
+    "1. Pida un número al usuario\n",
+    "2. Muestre la tabla de multiplicar del 1 al 12\n",
+    "3. Formatee la salida de forma clara y alineada\n",
+    "\n",
+    "## Ejemplo de ejecución\n",
+    "\n",
+    "```\n",
+    "=== TABLA DE MULTIPLICAR ===\n",
+    "\n",
+    "¿De qué número quieres la tabla? 7\n",
+    "\n",
+    "--- Tabla del 7 ---\n",
+    " 7 x  1 =  7\n",
+    " 7 x  2 = 14\n",
+    " 7 x  3 = 21\n",
+    " 7 x  4 = 28\n",
+    " 7 x  5 = 35\n",
+    " 7 x  6 = 42\n",
+    " 7 x  7 = 49\n",
+    " 7 x  8 = 56\n",
+    " 7 x  9 = 63\n",
+    " 7 x 10 = 70\n",
+    " 7 x 11 = 77\n",
+    " 7 x 12 = 84\n",
+    "```\n",
+    "\n",
+    "## Pista\n",
+    "\n",
+    "- Usa un bucle `for` con `range(1, 13)` para iterar del 1 al 12\n",
+    "- En cada iteración, multiplica el número por el contador\n",
+    "- Usa f-strings para alinear: `f\"{numero} x {i:2} = {resultado:3}\"`\n",
+    "\n",
+    "## Criterios de éxito\n",
+    "\n",
+    "- [ ] El programa pide un número\n",
+    "- [ ] Muestra la tabla del 1 al 12\n",
+    "- [ ] La salida está formateada y alineada\n",
+    "- [ ] Usa un bucle `for` (no 12 prints manuales)\n",
+    "\n",
+    "<details>\n",
+    "<summary>Ver solución de referencia</summary>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "c57b19c5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#| eval: false\n",
+    "# Desafío 2: Tabla de multiplicar\n",
+    "# Solución de referencia\n",
+    "\n",
+    "print(\"=== TABLA DE MULTIPLICAR ===\")\n",
+    "print()\n",
+    "\n",
+    "numero = int(input(\"¿De qué número quieres la tabla? \"))\n",
+    "\n",
+    "print(f\"\\n--- Tabla del {numero} ---\")\n",
+    "for i in range(1, 13):\n",
+    "    resultado = numero * i\n",
+    "    print(f\"{numero} x {i:2} = {resultado:3}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "99b032dc",
+   "metadata": {},
+   "source": [
+    "</details>\n",
+    "\n",
+    "---\n",
+    "\n",
+    "[← Desafío 1](desafio-01-par-o-impar.qmd) | [Desafío 3 →](desafio-03-fizzbuzz.qmd)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

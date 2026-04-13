@@ -1,0 +1,148 @@
+---
+title: "Laboratorio 5: Listas y Tuplas"
+subtitle: "Manipular, iterar y transformar colecciones"
+execute:
+  eval: false
+---
+
+# Laboratorio 5: Listas y Tuplas
+
+**Módulo:** 5 - Listas y Tuplas
+**Duración Estimada:** 60 minutos
+**Dificultad:** Intermedio
+
+## Objetivos
+
+- Crear y manipular listas con métodos integrados
+- Aplicar slicing y indexación avanzada
+- Iterar listas con `enumerate()` y `zip()`
+- Usar tuplas para datos inmutables
+- Trabajar con listas anidadas (matrices)
+
+## Requisitos Previos
+
+- Módulos 1-4 completados
+- Funciones y estructuras de control
+
+## Pasos del Laboratorio
+
+### Paso 1: Gestor de Tareas con Listas (15 min)
+
+```python
+tareas = []
+
+while True:
+    print("\n=== Gestor de Tareas ===")
+    print("1. Agregar tarea")
+    print("2. Ver tareas")
+    print("3. Eliminar tarea")
+    print("4. Salir")
+    
+    opcion = input("Elige: ")
+    
+    if opcion == "1":
+        tarea = input("Tarea: ")
+        tareas.append(tarea)
+        print(f"✅ '{tarea}' agregada")
+    elif opcion == "2":
+        if tareas:
+            for i, t in enumerate(tareas, 1):
+                print(f"  {i}. {t}")
+        else:
+            print("  No hay tareas")
+    elif opcion == "3":
+        idx = int(input("Número de tarea: ")) - 1
+        if 0 <= idx < len(tareas):
+            eliminada = tareas.pop(idx)
+            print(f"🗑️ '{eliminada}' eliminada")
+    elif opcion == "4":
+        break
+```
+
+### Paso 2: Slicing y Métodos (15 min)
+
+```python
+numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Slicing
+print(f"Primeros 3: {numeros[:3]}")
+print(f"Últimos 3: {numeros[-3:]}")
+print(f"Del 2 al 5: {numeros[2:6]}")
+print(f"Invertida: {numeros[::-1]}")
+
+# Métodos
+frutas = ["manzana", "banana", "naranja"]
+frutas.extend(["pera", "uva"])
+frutas.sort()
+print(f"Ordenadas: {frutas}")
+frutas.reverse()
+print(f"Invertidas: {frutas}")
+```
+
+### Paso 3: Matriz 3x3 (15 min)
+
+```python
+# Crear matriz 3x3
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Mostrar
+print("Matriz:")
+for fila in matriz:
+    print(fila)
+
+# Sumar diagonal principal
+diagonal = [matriz[i][i] for i in range(3)]
+print(f"\nDiagonal: {diagonal}")
+print(f"Suma: {sum(diagonal)}")
+
+# Transponer
+transpuesta = [[matriz[j][i] for j in range(3)] for i in range(3)]
+print("\nTranspuesta:")
+for fila in transpuesta:
+    print(fila)
+```
+
+### Paso 4: Tuplas y Desempaquetado (15 min)
+
+```python
+# Tupla inmutable
+coordenadas = (10, 20)
+print(f"X: {coordenadas[0]}, Y: {coordenadas[1]}")
+
+# Desempaquetado
+x, y = coordenadas
+print(f"Desempaquetado: x={x}, y={y}")
+
+# Retornar múltiples valores
+def dividir_con_residuo(a, b):
+    cociente = a // b
+    residuo = a % b
+    return cociente, residuo
+
+q, r = dividir_con_residuo(17, 5)
+print(f"17 ÷ 5 = {q} residuo {r}")
+```
+
+## Troubleshooting
+
+| Problema | Solución |
+|----------|----------|
+| `IndexError: list index out of range` | Verificar longitud antes de acceder |
+| `pop()` elimina elemento equivocado | Usar índice correcto (base 0) |
+| Tupla no se puede modificar | Es inmutable por diseño, crear nueva |
+| Matriz comparte filas | Usar `[[0]*n for _ in range(m)]` |
+
+## Conclusión
+
+Dominas listas, tuplas, slicing, métodos y matrices.
+
+## Checklist de Aceptación
+
+- [ ] Gestor de tareas agrega/ve/elimina correctamente
+- [ ] Slicing extrae porciones específicas
+- [ ] Matriz 3x3 se muestra, suma diagonal y transpone
+- [ ] Tuplas se desempaquetan y retornan múltiples valores

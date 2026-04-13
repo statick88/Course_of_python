@@ -1,0 +1,132 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "b5490b97",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "title: \"Desafío 6: Secuencia de Fibonacci\"\n",
+    "difficulty: \"⭐⭐⭐ Difícil\"\n",
+    "estimated_time: \"20 minutos\"\n",
+    "---\n",
+    "\n",
+    "## Situación\n",
+    "\n",
+    "Estás analizando patrones en la naturaleza para un proyecto de biología computacional. La secuencia de Fibonacci aparece en las espirales de los girasoles, las conchas de los caracoles y las ramas de los árboles.\n",
+    "\n",
+    "## Tu misión\n",
+    "\n",
+    "Crea una función llamada `fibonacci_lista` que:\n",
+    "\n",
+    "1. Reciba un número `n` como parámetro\n",
+    "2. Devuelva una **lista** con los primeros `n` números de Fibonacci\n",
+    "3. La secuencia comienza: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...\n",
+    "4. Maneja el caso de `n = 0` (devuelve lista vacía) y `n = 1` (devuelve `[0]`)\n",
+    "\n",
+    "## Ejemplo de ejecución\n",
+    "\n",
+    "```python\n",
+    "print(fibonacci_lista(1))   # [0]\n",
+    "print(fibonacci_lista(5))   # [0, 1, 1, 2, 3]\n",
+    "print(fibonacci_lista(10))  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n",
+    "```\n",
+    "\n",
+    "## Pista\n",
+    "\n",
+    "- Los dos primeros números son 0 y 1\n",
+    "- Cada número siguiente es la suma de los dos anteriores\n",
+    "- Puedes usar un bucle `for` para generar la secuencia\n",
+    "- Mantén los dos últimos números en variables y actualízalos en cada iteración\n",
+    "\n",
+    "## Criterios de éxito\n",
+    "\n",
+    "- [ ] `fibonacci_lista(0)` devuelve `[]`\n",
+    "- [ ] `fibonacci_lista(1)` devuelve `[0]`\n",
+    "- [ ] `fibonacci_lista(2)` devuelve `[0, 1]`\n",
+    "- [ ] `fibonacci_lista(10)` devuelve los 10 primeros Fibonacci\n",
+    "- [ ] La función usa iteración (no recursión) para ser eficiente\n",
+    "\n",
+    "<details>\n",
+    "<summary>Ver solución de referencia</summary>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "54801fe8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#| eval: false\n",
+    "# Desafío 6: Secuencia de Fibonacci\n",
+    "# Solución de referencia\n",
+    "\n",
+    "def fibonacci_lista(n):\n",
+    "    \"\"\"Genera los primeros n números de Fibonacci como lista.\n",
+    "\n",
+    "    La secuencia de Fibonacci comienza: 0, 1, 1, 2, 3, 5, 8, ...\n",
+    "    Cada número es la suma de los dos anteriores.\n",
+    "    \"\"\"\n",
+    "    if n <= 0:\n",
+    "        return []\n",
+    "    if n == 1:\n",
+    "        return [0]\n",
+    "\n",
+    "    secuencia = [0, 1]  # <1>\n",
+    "    for _ in range(2, n):  # <2>\n",
+    "        siguiente = secuencia[-1] + secuencia[-2]  # <3>\n",
+    "        secuencia.append(siguiente)  # <4>\n",
+    "\n",
+    "    return secuencia\n",
+    "\n",
+    "# Pruebas\n",
+    "print(f\"n=1:  {fibonacci_lista(1)}\")\n",
+    "print(f\"n=5:  {fibonacci_lista(5)}\")\n",
+    "print(f\"n=10: {fibonacci_lista(10)}\")\n",
+    "print(f\"n=0:  {fibonacci_lista(0)}\")\n",
+    "\n",
+    "# Verificación: cada número es la suma de los dos anteriores\n",
+    "fib = fibonacci_lista(10)\n",
+    "print(\"\\nVerificación:\")\n",
+    "for i in range(2, len(fib)):\n",
+    "    suma = fib[i-1] + fib[i-2]\n",
+    "    correcto = \"✅\" if fib[i] == suma else \"❌\"\n",
+    "    print(f\"  {fib[i-1]} + {fib[i-2]} = {fib[i]} {correcto}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f2c819e3",
+   "metadata": {},
+   "source": [
+    "</details>\n",
+    "\n",
+    "---\n",
+    "\n",
+    "[← Desafío 5](desafio-05-numero-primo.qmd) | [Desafío 7 →](desafio-07-calculadora-funciones.qmd)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

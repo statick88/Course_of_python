@@ -1,0 +1,232 @@
+biblio-style: apalike
+bibliography: references.bib
+book:
+  author: Diego Saavedra
+  back-to-top-navigation: true
+  chapters:
+  - index.qmd
+  - about.qmd
+  - license.qmd
+  - chapters:
+    - content/modulo-00/index.qmd
+    - content/modulo-00/01-que-es-computacion.qmd
+    - content/modulo-00/02-descomposicion.qmd
+    - content/modulo-00/03-patrones.qmd
+    - content/modulo-00/04-pseudocodigo.qmd
+    - content/modulo-00/05-evaluacion.qmd
+    - content/modulo-00/99-resumen.qmd
+    part: 'Módulo 0: Pensamiento Computacional'
+  - chapters:
+    - content/modulo-01/index.qmd
+    - content/modulo-01/01-que-es-python.qmd
+    - content/modulo-01/02-instalacion.qmd
+    - content/modulo-01/03-hola-mundo.qmd
+    - content/modulo-01/04-variables.qmd
+    - content/modulo-01/05-tipos-basicos.qmd
+    - content/modulo-01/06-input-output.qmd
+    - content/modulo-01/99-resumen.qmd
+    - content/modulo-01/desafio-01-saludo-personalizado.qmd
+    - content/modulo-01/desafio-02-calculadora-edad.qmd
+    - content/modulo-01/desafio-03-conversor-moneda.qmd
+    - content/modulo-01/desafio-04-calculadora-imc.qmd
+    - content/modulo-01/desafio-05-historia-interactiva.qmd
+    - content/modulo-01/desafio-06-formulario-contacto.qmd
+    - content/modulo-01/desafio-07-mini-quiz.qmd
+    part: 'Módulo 1: Introducción a Python'
+  - chapters:
+    - content/modulo-02/index.qmd
+    - content/modulo-02/01-operadores-aritmeticos.qmd
+    - content/modulo-02/02-operadores-comparacion.qmd
+    - content/modulo-02/03-operadores-logicos.qmd
+    - content/modulo-02/04-casting-avanzado.qmd
+    - content/modulo-02/05-strings-avanzado.qmd
+    - content/modulo-02/99-resumen.qmd
+    - content/modulo-02/desafio-01-calculadora-propinas.qmd
+    - content/modulo-02/desafio-02-conversor-unidades.qmd
+    - content/modulo-02/desafio-03-validador-edad.qmd
+    - content/modulo-02/desafio-04-generador-dni.qmd
+    - content/modulo-02/desafio-05-cifrado-cesar.qmd
+    - content/modulo-02/desafio-06-analizador-texto.qmd
+    - content/modulo-02/desafio-07-mini-base-datos.qmd
+    part: 'Módulo 2: Tipos de Datos y Variables'
+  - chapters:
+    - content/modulo-03/index.qmd
+    - content/modulo-03/01-if-else.qmd
+    - content/modulo-03/02-if-anidado.qmd
+    - content/modulo-03/03-for-loop.qmd
+    - content/modulo-03/04-while-loop.qmd
+    - content/modulo-03/05-break-continue.qmd
+    - content/modulo-03/06-comprension-listas.qmd
+    - content/modulo-03/99-resumen.qmd
+    - content/modulo-03/desafio-01-par-o-impar.qmd
+    - content/modulo-03/desafio-02-tabla-multiplicar.qmd
+    - content/modulo-03/desafio-03-fizzbuzz.qmd
+    - content/modulo-03/desafio-04-adivina-numero.qmd
+    - content/modulo-03/desafio-05-piedra-papel-tijera.qmd
+    - content/modulo-03/desafio-06-generador-contrasenas.qmd
+    - content/modulo-03/desafio-07-cajero-automatico.qmd
+    part: 'Módulo 3: Estructuras de Control'
+  - chapters:
+    - content/modulo-04/index.qmd
+    - content/modulo-04/01-definir-funciones.qmd
+    - content/modulo-04/02-parametros-argumentos.qmd
+    - content/modulo-04/03-return.qmd
+    - content/modulo-04/04-scope-variables.qmd
+    - content/modulo-04/05-funciones-lambda.qmd
+    - content/modulo-04/06-funciones-recursivas.qmd
+    - content/modulo-04/99-resumen.qmd
+    - content/modulo-04/desafio-01-saludo-funcion.qmd
+    - content/modulo-04/desafio-02-area-circulo.qmd
+    - content/modulo-04/desafio-03-fahrenheit-celsius.qmd
+    - content/modulo-04/desafio-04-contador-vocales.qmd
+    - content/modulo-04/desafio-05-numero-primo.qmd
+    - content/modulo-04/desafio-06-fibonacci.qmd
+    - content/modulo-04/desafio-07-calculadora-funciones.qmd
+    part: 'Módulo 4: Funciones'
+  - chapters:
+    - content/modulo-10/index.qmd
+    - content/modulo-10/01-planificar-proyecto.qmd
+    - content/modulo-10/02-estructura-proyecto.qmd
+    - content/modulo-10/03-proyecto-gestor-tareas.qmd
+    - content/modulo-10/04-proyecto-tienda-simple.qmd
+    - content/modulo-10/05-proyecto-analizador-datos.qmd
+    - content/modulo-10/06-presentacion-proyecto.qmd
+    - content/modulo-10/99-cierre-curso.qmd
+    - content/modulo-10/proyecto-01-gestor-tareas.qmd
+    - content/modulo-10/proyecto-02-tienda-productos.qmd
+    - content/modulo-10/proyecto-03-analizador-datos.qmd
+    - content/modulo-10/proyecto-04-hangman.qmd
+    - content/modulo-10/proyecto-05-caesar-cipher.qmd
+    part: 'Módulo 10: Proyecto Integrador'
+  cover-image: images/portada-python.svg
+  date: today
+  date-format: medium
+  description: Curso completo de programación Python para principiantes — 70+ desafíos
+    prácticos, laboratorios interactivos y proyectos reales
+  downloads:
+  - pdf
+  - epub
+  favicon: images/python-logo.png
+  image: images/portada-python.svg
+  image-alt: Programación Python Fundamentos - Curso Completo
+  keyword: Python, Programación, Fundamentos, Desarrollo de Software, Abacom, Curso
+  open-graph:
+    description: Curso completo de Python para principiantes con 70+ desafíos prácticos
+    image: images/portada-python.svg
+    image-alt: Programación Python Fundamentos
+    title: Programación Python Fundamentos
+  output-file: programacion_python_fundamentos
+  page-footer:
+    border: true
+    center: 'Material educativo para **Abacom Capacitación y Servicios**
+
+      '
+    left: '© 2026 **Diego Saavedra**. Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+      '
+    right: 'Built with [Quarto](https://quarto.org/)
+
+      '
+  page-navigation: true
+  reader-mode: true
+  repo-actions:
+  - edit
+  - issue
+  repo-branch: main
+  repo-url: https://github.com/statick88/course_of_python
+  search: true
+  sharing:
+  - twitter
+  - linkedin
+  sidebar:
+    collapse-level: 1
+    logo: images/python-logo.png
+    pinned: true
+    search: true
+  subtitle: De cero a programador — Aprende Python con desafíos prácticos
+  title: Programación Python Fundamentos
+  twitter-card:
+    card-style: summary_large_image
+    description: Curso completo de Python para principiantes
+    image: images/portada-python.svg
+    image-alt: Programación Python Fundamentos
+    title: Programación Python Fundamentos
+  url: https://github.com/statick88/course_of_python
+code-fullscreen:
+  button: true
+extensions:
+  linkrot:
+    skip-patterns:
+    - ^http://localhost(:[0-9]+)?(/.*)?$
+filters:
+- include-code-files
+- collapse-callout
+- linkrot
+- quizdown
+- line-highlight
+- details
+- code-fullscreen
+- fancy-text
+- fontawesome
+- highlight-text
+- language-cell-decorator
+- code-appendix
+- badge
+- qrcode
+- custom-callout
+- bsicons
+- social-embeds
+- wordcount
+format:
+  epub:
+    belongs-to-collection: Programación Python Fundamentos
+    creator: Diego Saavedra
+    fig-responsive: true
+    group-position: 0
+    number-sections: true
+    rights: © Diego Saavedra | 2026
+  html:
+    css:
+    - theme.scss
+    - css/styles.css
+    include-in-header:
+    - text: '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        '
+    link-external-icon: true
+    link-external-newwindow: true
+    number-depth: 4
+    number-sections: false
+    theme:
+      dark: solar
+      light: cosmo
+  pdf:
+    classoption:
+    - onepage
+    - openany
+    documentclass: scrreprt
+    margin-bottom: 30mm
+    margin-left: 30mm
+    margin-right: 30mm
+    margin-top: 35mm
+    papersize: a4
+    titlepage-geometry:
+    - top=35mm
+    - bottom=30mm
+    - right=30mm
+    - left=30mm
+    toc: true
+linkrot:
+  warn: true
+project:
+  output-dir: docs
+  resources:
+  - images/*.png
+  - images/*.jpg
+  - images/*.svg
+  - recursos
+  type: book
+quizdown:
+  use-bootstrap-css: true
+wordcount:
+  output: auto

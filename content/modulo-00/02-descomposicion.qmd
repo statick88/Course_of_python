@@ -1,0 +1,202 @@
+---
+title: "0.2 Descomposición: dividir para conquistar"
+---
+
+# 0.2 Descomposición: dividir para conquistar
+
+> **Duración**: 45 minutos
+> **Objetivo**: Aprender a romper problemas grandes en piezas manejables
+
+---
+
+## El problema de los problemas grandes
+
+Imagina que te piden:
+
+> "Crea un programa que gestione una tienda online completa."
+
+**Si intentas resolverlo de una vez, te paralizas.** Es demasiado grande.
+
+La solución: **descomponer**.
+
+---
+
+## ¿Qué es descomposición?
+
+> **Descomposición** es dividir un problema complejo en sub-problemas más simples que puedes resolver individualmente.
+
+**Analogía**: No construyes una casa empezando por el techo. Construyes: cimientos → paredes → techo → acabados.
+
+---
+
+## Estrategia de descomposición
+
+### Paso 1: Identifica las responsabilidades principales
+
+Para la "tienda online":
+- ¿Qué necesita una tienda?
+  - Catálogo de productos
+  - Carrito de compras
+  - Procesar pagos
+  - Gestión de usuarios
+
+### Paso 2: Descompón cada responsabilidad
+
+**Carrito de compras**:
+- Agregar producto
+- Eliminar producto
+- Calcular total
+- Aplicar descuento
+
+### Paso 3: Sigue descomponiendo hasta que sea fácil
+
+**Calcular total**:
+- Sumar precios de productos
+- Agregar impuestos
+- Restar descuentos
+
+---
+
+## Ejemplo práctico: Preparar una cena
+
+### Problema grande
+> "Preparar una cena para 4 personas con entrada, plato fuerte y postre."
+
+### Descomposición
+
+```
+PREPARAR CENA
+├── ENTRADA: Ensalada César
+│   ├── Lavar lechuga
+│   ├── Preparar aderezo
+│   ├── Cortar crutones
+│   └── Mezclar todo
+│
+├── PLATO FUERTE: Pollo al horno
+│   ├── Marinar pollo
+│   ├── Precalentar horno
+│   ├── Hornear 45 min
+│   └── Verificar cocción
+│
+└── POSTRE: Helado con frutas
+    ├── Cortar frutas
+    ├── Servir helado
+    └── Decorar
+```
+
+**Cada sub-problema es simple** y puede resolverse en minutos.
+
+---
+
+## Desafío 0.3: Organizar un viaje
+
+### Situación
+
+Vas a organizar un viaje de 5 días a la playa para tu familia de 4 personas.
+
+### Tu misión
+
+Descompón el problema en al menos 4 categorías principales, y cada una en 3+ sub-tareas:
+
+```
+ORGANIZAR VIAJE
+├── _______________
+│   ├── _______________
+│   ├── _______________
+│   └── _______________
+│
+├── _______________
+│   ├── _______________
+│   ├── _______________
+│   └── _______________
+│
+├── _______________
+│   └── (completa)
+│
+└── _______________
+    └── (completa)
+```
+
+<details>
+<summary>Ver ejemplo de solución</summary>
+
+```
+ORGANIZAR VIAJE
+├── TRANSPORTE
+│   ├── Reservar vuelos
+│   ├── Verificar horarios
+│   └── Confirmar asientos
+│
+├── ALOJAMIENTO
+│   ├── Buscar hotel
+│   ├── Reservar habitación
+│   └── Confirmar check-in
+│
+├── ALIMENTACIÓN
+│   ├── Investigar restaurantes
+│   ├── Reservar mesa primera noche
+│   └── Comprar snacks para playa
+│
+└── ACTIVIDADES
+    ├── Planificar día de playa
+    ├── Reservar excursión
+    └── Verificar clima
+```
+
+</details>
+
+---
+
+## Aplicación a programación
+
+### Problema: Validar contraseña
+
+> "Crea un programa que valide contraseñas: mínimo 8 caracteres, al menos 1 mayúscula, 1 minúscula, 1 número y 1 símbolo."
+
+### Descomposición
+
+```
+VALIDAR CONTRASEÑA
+├── Verificar longitud (>= 8 caracteres)
+├── Verificar que tenga mayúscula
+├── Verificar que tenga minúscula
+├── Verificar que tenga número
+├── Verificar que tenga símbolo
+└── Si todo pasa → contraseña válida
+```
+
+Cada sub-problema se convierte en **una función** en Python.
+
+---
+
+## Principio clave
+
+> **Si un sub-problema sigue siendo complejo, descompónlo más.**
+
+**Regla práctica**: Cada sub-problema debe poder resolverse en **5-15 líneas de código** o menos.
+
+---
+
+## Conceptos clave
+
+| Concepto | Definición |
+|----------|-----------|
+| **Descomposición** | Dividir problema en sub-problemas |
+| **Responsabilidad** | Área funcional del problema |
+| **Sub-problema** | Pieza más pequeña y manejable |
+| **Regla 5-15 líneas** | Si necesita más, descompón más |
+
+---
+
+## Auto-evaluación
+
+- [ ] Puedo identificar 3+ categorías principales en un problema grande
+- [ ] Puedo descomponer cada categoría en sub-tareas
+- [ ] Sé cuándo dejar de descomponer (cuando es fácil de resolver)
+- [ ] Puedo explicar por qué la descomposición es útil
+
+---
+
+**Ahora** que sabes dividir problemas, aprenderás a **reconocer patrones** que se repiten.
+
+[← 0.1 Computación](01-que-es-computacion.qmd) | [0.3 Patrones →](03-patrones.qmd)

@@ -1,0 +1,263 @@
+---
+title: "0.5 Evaluación de enfores"
+---
+
+# 0.5 Evaluación de enfores: ¿hay una mejor manera?
+
+> **Duración**: 45 minutos
+> **Objetivo**: Comparar múltiples soluciones al mismo problema y elegir la mejor
+
+---
+
+## No hay una sola respuesta correcta
+
+En programación, **casi siempre hay múltiples formas de resolver el mismo problema**.
+
+La pregunta no es "¿funciona?" sino **"¿cuál funciona MEJOR?"**
+
+---
+
+## Criterios de evaluación
+
+| Criterio | Pregunta | Ejemplo |
+|----------|----------|---------|
+| **Legibilidad** | ¿Se entiende fácilmente? | Código claro > código clever |
+| **Eficiencia** | ¿Usa pocos recursos? | Menos operaciones = mejor |
+| **Mantenibilidad** | ¿Es fácil de modificar? | Funciones separadas > todo junto |
+| **Robustez** | ¿Maneja errores? | Validar entrada > asumir que funciona |
+
+---
+
+## Ejemplo: Buscar un nombre en una lista
+
+### Enfoque A: Búsqueda lineal
+
+```
+ALGORITMO buscar_lineal
+ENTRADA: lista de nombres, nombre a buscar
+SALIDA: posición del nombre o "no encontrado"
+
+INICIO
+    PARA i DESDE 0 HASTA longitud(lista) - 1 HACER
+        SI lista[i] = nombre_buscado ENTONCES
+            RETORNAR i
+        FIN_SI
+    FIN_PARA
+    RETORNAR "no encontrado"
+FIN
+```
+
+### Enfoque B: Búsqueda binaria (lista ordenada)
+
+```
+ALGORITMO buscar_binaria
+ENTRADA: lista ORDENADA de nombres, nombre a buscar
+SALIDA: posición o "no encontrado"
+
+INICIO
+    inicio ← 0
+    fin ← longitud(lista) - 1
+    
+    MIENTRAS inicio <= fin HACER
+        medio ← (inicio + fin) / 2
+        
+        SI lista[medio] = nombre_buscado ENTONCES
+            RETORNAR medio
+        SI_NO SI lista[medio] < nombre_buscado ENTONCES
+            inicio ← medio + 1
+        SI_NO
+            fin ← medio - 1
+        FIN_SI
+    FIN_MIENTRAS
+    
+    RETORNAR "no encontrado"
+FIN
+```
+
+### Comparación
+
+| Criterio | Lineal | Binaria |
+|----------|--------|---------|
+| **Requisito** | Ninguno | Lista debe estar ordenada |
+| **Operaciones (1000 elementos)** | Hasta 1000 | Máximo 10 |
+| **Legibilidad** | Simple | Más complejo |
+| **Cuándo usar** | Lista pequeña o desordenada | Lista grande y ordenada |
+
+**Conclusión**: No hay "mejor" absoluto. Depende del contexto.
+
+---
+
+## Desafío 0.8: Dos formas de sumar 1 a N
+
+### Problema
+
+Calcular la suma de todos los números del 1 al 100.
+
+### Enfoque A: Bucle
+
+```
+ALGORITMO suma_con_bucle
+ENTRADA: n = 100
+SALIDA: suma total
+
+INICIO
+    suma ← 0
+    PARA i DESDE 1 HASTA n HACER
+        suma ← suma + i
+    FIN_PARA
+    RETORNAR suma
+FIN
+```
+
+### Enfoque B: Fórmula de Gauss
+
+```
+ALGORITMO suma_con_formula
+ENTRADA: n = 100
+SALIDA: suma total
+
+INICIO
+    RETORNAR n * (n + 1) / 2
+FIN
+```
+
+### Tu misión
+
+Responde:
+
+1. ¿Cuál da el mismo resultado? **Ambos** (5050)
+2. ¿Cuál es más legible? _______________
+3. ¿Cuál es más eficiente? _______________
+4. ¿Cuál usarías y por qué? _______________
+
+<details>
+<summary>Ver análisis</summary>
+
+1. ✅ Ambos dan 5050
+2. **Fórmula** es más concisa, pero **bucle** es más intuitivo
+3. **Fórmula**: 1 operación (O(1)) vs **Bucle**: 100 operaciones (O(n))
+4. **Depende**: 
+   - Si n es pequeño y quieres claridad → cualquiera
+   - Si n es grande (1,000,000) → fórmula es infinitamente más rápida
+   - Si estás enseñando → bucle es más pedagógico
+
+</details>
+
+---
+
+## Heurística de selección
+
+Cuando tengas múltiples enfoques:
+
+```
+1. ¿Funcionan ambos correctamente?
+   ↓ Sí
+2. ¿Cuál es más legible?
+   ↓ Si hay empate
+3. ¿Cuál es más eficiente?
+   ↓ Si hay empate
+4. ¿Cuál es más fácil de mantener/modificar?
+```
+
+**Regla de oro**: Legibilidad > Eficiencia (en cursos y proyectos pequeños).
+
+---
+
+## Desafío 0.9: Ordenar 5 números
+
+### Problema
+
+Ordenar la lista: [42, 17, 83, 25, 61]
+
+### Tu misión
+
+Propón **2 enfoques diferentes** en pseudocódigo.
+
+**Enfoque 1**: ___________________________
+
+```
+(completa)
+```
+
+**Enfoque 2**: ___________________________
+
+```
+(completa)
+```
+
+<details>
+<summary>Ver dos enfoques comunes</summary>
+
+**Enfoque 1: Burbuja (comparar adyacentes)**
+```
+PARA i DESDE 0 HASTA n-1 HACER
+    PARA j DESDE 0 HASTA n-i-2 HACER
+        SI lista[j] > lista[j+1] ENTONCES
+            intercambiar lista[j] y lista[j+1]
+        FIN_SI
+    FIN_PARA
+FIN_PARA
+```
+
+**Enfoque 2: Selección (encontrar mínimo y mover)**
+```
+PARA i DESDE 0 HASTA n-1 HACER
+    min_idx ← i
+    PARA j DESDE i+1 HASTA n-1 HACER
+        SI lista[j] < lista[min_idx] ENTONCES
+            min_idx ← j
+        FIN_SI
+    FIN_PARA
+    intercambiar lista[i] y lista[min_idx]
+FIN_PARA
+```
+
+Ambos funcionan. Burbuja es más intuitivo. Selección hace menos intercambios.
+
+</details>
+
+---
+
+## Conceptos clave
+
+| Concepto | Definición |
+|----------|-----------|
+| **Trade-off** | Compensación entre criterios (legibilidad vs eficiencia) |
+| **Heurística** | Regla práctica para tomar decisiones |
+| **Contexto** | Las circunstancias que determinan cuál enfoque es mejor |
+
+---
+
+## Auto-evaluación
+
+- [ ] Puedo proponer 2+ enfoques para un problema
+- [ ] Puedo comparar enfoques usando criterios objetivos
+- [ ] Entiendo que "mejor" depende del contexto
+- [ ] Priorizo legibilidad sobre cleverness
+
+---
+
+## 🎉 ¡Módulo 0 completado!
+
+Ahora tienes las **herramientas de pensamiento** para aprender Python de forma efectiva.
+
+### Resumen de lo aprendido
+
+| Unidad | Lo clave |
+|--------|----------|
+| 0.1 | Todo programa es: Entrada → Proceso → Salida |
+| 0.2 | Divide problemas grandes en piezas pequeñas |
+| 0.3 | Reconoce patrones para reutilizar soluciones |
+| 0.4 | Escribe pseudocódigo antes que Python |
+| 0.5 | Compara enfoques y elige el mejor para el contexto |
+
+### Próximo paso: Módulo 1
+
+En el Módulo 1 aprenderás:
+- Instalar Python
+- Escribir tu primer programa
+- Usar variables y tipos de datos
+
+**Pero ahora**, antes de escribir código, vas a **pensar como programador**.
+
+[← 0.4 Pseudocódigo](04-pseudocodigo.qmd) | [Módulo 1: Introducción a Python →](../modulo-01/index.qmd)

@@ -9,31 +9,21 @@ format:
 
 Este material educativo está licenciado bajo:
 
-### CC BY-SA 4.0
+**Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional**
 
-**Atribución-CompartirIgual 4.0 Internacional**
+![CC BY-NC-SA](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png){width="88px"}
 
-![CC BY-SA 4.0](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+### Eres libre de:
 
-### Usted es libre de:
+- **Compartir** — copiar y redistribuir el material
+- **Adaptar** — remezclar, transformar y construir
 
-- **Compartir** — copiar y redistribuir el material en cualquier medio o formato
-- **Adaptar** — remezclar, transformar y construir sobre el material para cualquier propósito, incluso comercial
+### Bajo los términos:
 
-### Bajo los siguientes términos:
-
-- **Atribución** — Usted debe dar crédito de manera adecuada, proporcionar un enlace a la licencia e indicar si se realizaron cambios. Puede hacerlo de cualquier manera razonable, pero no de manera que sugiera que el licenciante lo respalda a usted o su uso.
-
-- **CompartirIgual** — Si remezcla, transforma o crea a partir del material, debe distribuir sus contribuciones bajo la misma licencia que el original.
-
-### Aviso Legal
-
-Este es un resumen legible por humanos de la licencia. Para ver el texto legal completo, visite:
-
-<https://creativecommons.org/licenses/by-sa/4.0/legalcode>
+- **Atribución** — Dar crédito adecuado
+- **NoComercial** — No usar con fines comerciales
+- **CompartirIgual** — Distribuir bajo la misma licencia
 
 ---
 
-© 2026 **Diego Saavedra**. Todos los derechos reservados bajo los términos de la licencia CC BY-SA 4.0.
-
-*Material desarrollado para **Abacom Capacitación y Servicios***
+*Material desarrollado para **Abacom Capacitación y Servicios** — 2026*

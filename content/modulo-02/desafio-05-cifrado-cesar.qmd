@@ -60,6 +60,7 @@ Hola Mundo
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 5: Cifrado César
 # Solución de referencia
 

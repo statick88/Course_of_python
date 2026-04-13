@@ -76,6 +76,7 @@ Crea un programa que:
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 6: Web scraper
 # Solución de referencia
 

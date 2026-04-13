@@ -59,6 +59,7 @@ FizzBuzz
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 3: FizzBuzz clásico
 # Solución de referencia
 

@@ -44,6 +44,7 @@ print(fibonacci_lista(10))  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 6: Secuencia de Fibonacci
 # Solución de referencia
 

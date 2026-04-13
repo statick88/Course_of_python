@@ -76,6 +76,7 @@ Cuenca:
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 7: Analizador de votos
 # Solución de referencia
 

@@ -58,6 +58,7 @@ Tablero:
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 6: Operaciones con matrices
 # Solución de referencia
 

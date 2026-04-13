@@ -53,6 +53,7 @@ Ventas diarias: [1200, 950, 1800, 1100, 2200, 1500, 800]
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 4: Estadísticas de una lista
 # Solución de referencia
 

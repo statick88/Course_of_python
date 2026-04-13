@@ -58,6 +58,7 @@ Campos por empleado: 4
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 4: Fusionar diccionarios
 # Solución de referencia
 

@@ -67,6 +67,7 @@ K7m$pL9@xQ2n
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 6: Generador de contraseñas
 # Solución de referencia
 

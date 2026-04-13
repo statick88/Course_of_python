@@ -55,6 +55,7 @@ print(f"32°F = {fahrenheit_a_celsius(32):.1f}°C")
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 3: Conversor Fahrenheit ↔ Celsius
 # Solución de referencia
 

@@ -62,6 +62,7 @@ Inventario actual:
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 7: Gestor de inventario
 # Solución de referencia
 

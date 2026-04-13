@@ -50,6 +50,7 @@ Escribe tu entrada de hoy (o 'salir' para terminar):
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 1: Diario personal
 # Solución de referencia
 

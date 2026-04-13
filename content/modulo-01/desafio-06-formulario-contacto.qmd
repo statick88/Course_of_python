@@ -74,6 +74,7 @@ Edad:       28 años
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 6: Formulario de contacto
 # Solución de referencia
 

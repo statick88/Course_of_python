@@ -1,0 +1,422 @@
+---
+title: "Proyecto 4: Juego del Ahorcado"
+subtitle: "⭐⭐⭐ Dificultad Intermedia-Avanzada — Strings, listas, random, archivos, lógica de juego"
+execute:
+  eval: false
+---
+
+
+> ⚠️ **Importante Anti-IA:** Este proyecto está diseñado para que demuestres tus habilidades de programación.
+> El código debe **TECLEARSE**, no generarse con IA. Se te pedirá explicar cada decisión de diseño durante la presentación.
+
+## 📋 Descripción del Proyecto
+
+Implementa el clásico juego del **Ahorado** (Hangman) en Python. La computadora elige una palabra secreta de una lista, el jugador adivina letras una a la vez, y debe descubrir la palabra antes de quedarse sin intentos.
+
+> **La analogía:** El ahorcado es como un detective que elimina sospechosos. Cada letra que aciertas descarta posibilidades. Cada letra incorrecta te acerca al final. ¿Puedes resolver el misterio antes de que se agoten las pistas?
+
+Este proyecto está inspirado en el **Problem Set 2 de MIT 6.0001: Introduction to Computer Science and Programming in Python**.
+
+## 🎯 Requisitos mínimos
+
+### Funcionalidades obligatorias
+
+| # | Funcionalidad | Descripción |
+|---|---------------|-------------|
+| 1 | Cargar lista de palabras | Leer desde un archivo `words.txt` (una palabra por línea) |
+| 2 | Elegir palabra aleatoria | Usar `random.choice()` para seleccionar la palabra secreta |
+| 3 | Mostrar progreso | Mostrar letras adivinadas y guiones para las restantes: `P _ _ H _ _` |
+| 4 | Solicitar letras | Pedir al jugador que ingrese una letra por turno |
+| 5 | Validar entrada | Rechazar letras ya usadas, caracteres inválidos, más de una letra |
+| 6 | Llevar conteo | Mostrar intentos restantes (6 incorrectos permitidos) |
+| 7 | Detectar fin de juego | Victoria (palabra completa) o derrota (sin intentos) |
+| 8 | Mostrar resultado | Revelar la palabra al final, sea victoria o derrota |
+
+### Funcionalidades opcionales (puntos extra)
+
+| # | Funcionalidad | Puntos |
+|---|---------------|--------|
+| +1 | Mostrar letras disponibles (abecedario) | ⭐ |
+| +2 | Dificultad ajustable (4, 6, 8 intentos) | ⭐ |
+| +3 | Puntuación basada en intentos usados | ⭐ |
+| +4 | Dibujar el ahorcado en ASCII art por cada error | ⭐ |
+| +5 | Estadísticas de partidas (ganadas/perdidas) guardadas en archivo | ⭐ |
+
+## 📐 Estructura de datos
+
+```python
+# Estado del juego:
+estado = {
+    "palabra_secreta": "PYTHON",
+    "letras_adivinadas": {"P", "O", "N"},
+    "intentos_restantes": 4,
+    "letras_usadas": {"P", "O", "N", "A", "E"},
+}
+
+# Visualización del progreso:
+mostrar_progreso("PYTHON", {"P", "O", "N"})
+# Retorna: "P _ _ H _ _ N"
+```
+
+## 🏗️ Estructura del proyecto esperada
+
+```
+ahorcado/
+├── main.py              # Punto de entrada
+├── words.txt            # Lista de palabras (una por línea)
+├── ahorcado.py          # Lógica del juego
+└── test_ahorcado.py     # Tests unitarios (opcional)
+```
+
+## 📊 Desafío progresivo
+
+Construye el juego paso a paso. Cada nivel agrega una funcionalidad nueva.
+
+### Nivel 1: Juego básico con palabra fija
+
+Implementa el esqueleto del juego con una palabra escrita directamente en el código.
+
+```python
+def obtener_palabra_fija():
+    """Devuelve una palabra fija para probar el juego."""
+    return "PYTHON"
+
+
+def mostrar_progreso(palabra, letras_adivinadas):
+    """Muestra la palabra con guiones para letras no adivinadas.
+
+    >>> mostrar_progreso("PYTHON", {"P", "O", "N"})
+    'P _ _ H _ _ N'
+    """
+    resultado = []
+    for letra in palabra:
+        if letra in letras_adivinadas:
+            resultado.append(letra)
+        else:
+            resultado.append("_")
+    return " ".join(resultado)
+
+
+def pedir_letra(letras_usadas):
+    """Solicita una letra al usuario y la valida."""
+    # TODO: implementar
+    pass
+
+
+def jugar():
+    """Función principal del juego."""
+    # TODO: implementar el ciclo del juego
+    pass
+
+
+if __name__ == "__main__":
+    jugar()
+```
+
+**Checklist del Nivel 1:**
+- [ ] `mostrar_progreso()` funciona correctamente con cualquier palabra y conjunto de letras
+- [ ] `pedir_letra()` valida que sea una sola letra del abecedario
+- [ ] El ciclo principal pide letras hasta acertar o fallar 6 veces
+- [ ] Mensaje de victoria o derrota al final
+
+### Nivel 2: Palabra aleatoria desde archivo
+
+Agrega la carga de palabras desde un archivo y la selección aleatoria.
+
+```python
+import random
+
+
+def cargar_palabras(ruta_archivo):
+    """Lee un archivo y devuelve una lista de palabras.
+
+    El archivo tiene una palabra por línea.
+    """
+    # TODO: abrir archivo, leer líneas, quitar \n, devolver lista
+    pass
+
+
+def obtener_palabra_aleatoria(ruta_archivo):
+    """Carga las palabras y devuelve una al azar."""
+    palabras = cargar_palabras(ruta_archivo)
+    return random.choice(palabras).upper()
+```
+
+**Crea el archivo `words.txt`:**
+
+```
+PYTHON
+PROGRAMACION
+COMPUTADORA
+ALGORITMO
+VARIABLE
+FUNCION
+DICCIONARIO
+LISTA
+BUCLE
+MODULO
+```
+
+**Checklist del Nivel 2:**
+- [ ] `cargar_palabras()` lee el archivo correctamente
+- [ ] `obtener_palabra_aleatoria()` devuelve una palabra en mayúsculas
+- [ ] El juego usa palabra aleatoria en vez de fija
+- [ ] Cada partida es diferente
+
+### Nivel 3: Control de letras usadas
+
+Impide que el jugador adivine la misma letra dos veces y muestra qué letras quedan.
+
+```python
+ABECEDARIO = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+def obtener_letras_disponibles(letras_usadas):
+    """Devuelve las letras que aún no se han usado.
+
+    >>> obtener_letras_disponibles({"A", "B", "C"})
+    'DEFGHIJKLMNOPQRSTUVWXYZ'
+    """
+    # TODO: implementar
+    pass
+
+
+def es_letra_valida(letra, letras_usadas):
+    """Verifica que la letra sea válida y no se haya usado.
+
+    Retorna (valida, mensaje_error).
+    """
+    # TODO: implementar validaciones
+    pass
+```
+
+**Checklist del Nivel 3:**
+- [ ] No se puede repetir una letra ya usada
+- [ ] Se muestra un mensaje claro si la letra ya fue usada
+- [ ] Se muestran las letras disponibles después de cada turno
+- [ ] Se rechazan números, símbolos y cadenas vacías
+
+### Nivel 4: Juego completo con ahorcado ASCII
+
+Agrega la representación visual del ahorcado y el flujo completo del juego.
+
+```python
+AHORCADO_ASCII = [
+    # 0 errores: sin dibujo
+    """
+       _______
+      |       |
+      |
+      |
+      |
+      |
+    __|__
+    """,
+    # 1 error: cabeza
+    """
+       _______
+      |       |
+      |       O
+      |
+      |
+      |
+    __|__
+    """,
+    # 2 errores: cabeza + cuerpo
+    """
+       _______
+      |       |
+      |       O
+      |       |
+      |       |
+      |
+    __|__
+    """,
+    # 3 errores: + brazo izquierdo
+    """
+       _______
+      |       |
+      |       O
+      |      /|
+      |       |
+      |
+    __|__
+    """,
+    # 4 errores: + brazo derecho
+    """
+       _______
+      |       |
+      |       O
+      |      /|\\
+      |       |
+      |
+    __|__
+    """,
+    # 5 errores: + pierna izquierda
+    """
+       _______
+      |       |
+      |       O
+      |      /|\\
+      |       |
+      |      /
+    __|__
+    """,
+    # 6 errores: cuerpo completo = game over
+    """
+       _______
+      |       |
+      |       O
+      |      /|\\
+      |       |
+      |      / \\
+    __|__
+    """,
+]
+
+
+def mostrar_ahorcado(intentos_restantes):
+    """Muestra el dibujo del ahorcado según los intentos restantes."""
+    errores = 6 - intentos_restantes
+    print(AHORCADO_ASCII[errores])
+```
+
+**Checklist del Nivel 4:**
+- [ ] El ahorcado se dibuja después de cada error
+- [ ] Se muestra el número de intentos restantes claramente
+- [ ] El juego termina exactamente a los 6 errores
+- [ ] Mensaje final revela la palabra completa
+
+## 📊 Criterios de evaluación
+
+| Criterio | Peso | Excelente (100%) | Aceptable (70%) | Insuficiente (0%) |
+|----------|------|-------------------|-----------------|-------------------|
+| Carga de archivo | 15% | Lee y procesa correctamente | Lee pero no limpia bien | No lee archivo |
+| Lógica del juego | 30% | Flujo completo sin bugs | Flujo funcional con edge cases | Juego no funciona |
+| Validación de entrada | 15% | Rechaza todo lo inválido | Rechaza casos básicos | Sin validación |
+| Interfaz de usuario | 15% | Clara, visual, intuitiva | Funcional pero básica | Confusa o incompleta |
+| ASCII art ahorcado | 10% | 7 estados correctos | Algunos estados | Sin dibujo |
+| Documentación | 15% | README + docstrings completos | README básico | Sin documentación |
+
+## 🚀 Ejemplo de ejecución
+
+```
+========================================
+         🎮 JUEGO DEL AHORCADO
+========================================
+
+       _______
+      |       |
+      |
+      |
+      |
+      |
+    __|__
+
+Palabra: _ _ _ _ _ _
+
+Intentos restantes: 6
+Letras disponibles: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+Ingresa una letra: a
+
+       _______
+      |       |
+      |       O
+      |
+      |
+      |
+    __|__
+
+¡Mal! La letra 'A' no está en la palabra.
+
+Palabra: _ _ _ _ _ _
+Intentos restantes: 5
+Letras disponibles: BCDEFGHIJKLMNOPQRSTUVWXYZ
+
+Ingresa una letra: p
+
+       _______
+      |       |
+      |       O
+      |
+      |
+      |
+    __|__
+
+¡Bien! La letra 'P' está en la palabra.
+
+Palabra: P _ _ _ _ _
+Intentos restantes: 5
+Letras disponibles: BCDEFGHIJKLMNOPQRSTUVWXYZ
+
+Ingresa una letra: y
+
+Palabra: P Y _ _ _ _
+¡Bien!
+
+Ingresa una letra: t
+
+Palabra: P Y _ _ O _
+¡Bien!
+
+Ingresa una letra: h
+
+========================================
+  🎉 ¡FELICIDADES! ¡GANASTE! 🎉
+========================================
+
+La palabra era: PYTHON
+Adivinaste con 3 intentos restantes.
+Puntuación: 12 puntos
+```
+
+## ⚠️ Errores comunes a evitar
+
+| Error | Por qué es problema | Solución |
+|-------|---------------------|----------|
+| Palabras en minúsculas y mayúsculas mezcladas | `"p" != "P"` en Python | Convierte todo a `.upper()` inmediatamente |
+| No validar entrada del usuario | `input("")` puede ser vacío o tener espacios | `entrada.strip().upper()` antes de procesar |
+| Permitir repetir letras | El jugador "gana" intentos adivinando la misma letra | Guarda `letras_usadas` y valida antes de procesar |
+| Archivo no encontrado | Ruta incorrecta al archivo `words.txt` | Usa ruta relativa al script o ruta absoluta |
+| No manejar EOF (Ctrl+D) | El programa crashea si el usuario cierra input | Envuelve `input()` en `try/except EOFError` |
+| Contar letras únicas vs todas | `"AAA"` tiene 1 letra única, no 3 | Para ganar, todas las letras **únicas** deben adivinarse |
+
+## 💡 Tips para empezar
+
+1. **Empieza con `mostrar_progreso()`.** Es la función más simple y la más útil para depurar.
+2. **Prueba sin archivo primero.** Usa una palabra fija hasta que el flujo funcione.
+3. **El conjunto `set` es tu amigo.** `letras_usadas = set()` permite verificar rápidamente si una letra ya se usó.
+4. **Prueba manualmente antes de automatizar.** Juega una partida completa a mano para entender el flujo.
+5. **Separa la lógica de la interfaz.** Las funciones que calculan no deben imprimir. Las que imprimen no deben calcular.
+
+## 📝 Funciones de referencia
+
+```python
+# Contar letras únicas restantes
+def letras_por_adivinar(palabra_secreta, letras_adivinadas):
+    """Devuelve el conjunto de letras que aún faltan por adivinar."""
+    letras_en_palabra = set(palabra_secreta)
+    return letras_en_palabra - letras_adivinadas
+
+
+# Verificar si ganó
+def gano_jugador(palabra_secreta, letras_adivinadas):
+    """True si todas las letras de la palabra fueron adivinadas."""
+    return len(letras_por_adivinar(palabra_secreta, letras_adivinadas)) == 0
+
+
+# Calcular puntuación
+def calcular_puntuacion(palabra_secreta, intentos_restantes, intentos_maximos):
+    """Más intentos restantes + palabras más largas = más puntos."""
+    letras_unicas = len(set(palabra_secreta))
+    return letras_unicas * intentos_restantes * 2
+```
+
+> **Simple is better than complex.** Cada función hace UNA cosa. `gano_jugador()` solo verifica. `mostrar_progreso()` solo formatea. No las mezcles.
+
+---
+
+**Anterior:** [Proyecto 3: Analizador de Datos CSV](proyecto-03-analizador-datos.qmd)
+
+**Siguiente:** [Proyecto 5: Cifrado César y Criptoanálisis](proyecto-05-caesar-cipher.qmd)

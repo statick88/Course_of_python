@@ -65,6 +65,7 @@ Archivo de log: servidor.log
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 3: Log Analyzer
 # Solución de referencia
 

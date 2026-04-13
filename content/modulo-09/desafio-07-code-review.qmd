@@ -169,6 +169,7 @@ estudiantes = cargar_estudiantes("estudiantes.csv")
 ### Código refactorizado
 
 ```{python}
+#| eval: false
 """Módulo de gestión de estudiantes.
 
 Proporciona funciones para cargar, procesar y guardar

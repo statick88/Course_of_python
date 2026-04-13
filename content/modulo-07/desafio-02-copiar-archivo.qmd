@@ -47,6 +47,7 @@ Archivo destino: notas_copia.txt
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 2: Copiar archivo
 # Solución de referencia
 

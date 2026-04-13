@@ -104,6 +104,7 @@ Opción: 5
 
 **`tareas/__init__.py`**
 ```{python}
+#| eval: false
 # tareas/__init__.py
 from .modelo import Tarea
 from .almacenamiento import guardar_tareas, cargar_tareas
@@ -114,6 +115,7 @@ __all__ = ["Tarea", "guardar_tareas", "cargar_tareas", "mostrar_menu", "mostrar_
 
 **`tareas/modelo.py`**
 ```{python}
+#| eval: false
 # tareas/modelo.py
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -139,6 +141,7 @@ class Tarea:
 
 **`tareas/almacenamiento.py`**
 ```{python}
+#| eval: false
 # tareas/almacenamiento.py
 import json
 from .modelo import Tarea
@@ -182,6 +185,7 @@ def cargar_tareas(archivo="tareas.json"):
 
 **`tareas/interfaz.py`**
 ```{python}
+#| eval: false
 # tareas/interfaz.py
 def mostrar_menu():
     """Muestra el menú principal del gestor."""
@@ -220,6 +224,7 @@ def pedir_tarea():
 
 **`main.py`**
 ```{python}
+#| eval: false
 # main.py — Programa principal
 from tareas import Tarea, guardar_tareas, cargar_tareas
 from tareas import mostrar_menu, mostrar_tareas, pedir_tarea

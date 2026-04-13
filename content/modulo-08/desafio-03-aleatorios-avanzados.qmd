@@ -68,6 +68,7 @@ Crea un programa que simule un sistema de sorteos con las siguientes funcionalid
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 3: Aleatorios avanzados
 # Solución de referencia
 

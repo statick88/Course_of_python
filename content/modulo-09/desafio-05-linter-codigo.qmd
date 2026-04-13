@@ -86,6 +86,7 @@ class GestorDatos:
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 5: Corregir errores de linter
 # Solución de referencia
 

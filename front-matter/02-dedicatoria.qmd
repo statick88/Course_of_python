@@ -1,0 +1,55 @@
+---
+title: "Dedicatoria"
+---
+
+<div style="text-align: center; margin-top: 15vh;">
+
+\vspace{3cm}
+
+{\Large \textbf{DEDICATORIA}}
+
+\vspace{2cm}
+
+\textit{A mi familia, por su paciencia infinita durante las largas noches de creación de este curso.}
+
+\vspace{1cm}
+
+\textit{A los cientos de estudiantes que han pasado por mis aulas en 6 universidades — ESPE, U. Internacional, Juan Montalvo, Codings Academy, U. Zulia y ABACOM — quienes me enseñaron tanto como yo a ellos.}
+
+\vspace{1cm}
+
+\textit{A mi hija \textbf{Victoria Saavedra}, por la inspiración de superación diaria y su pasión por su instrumento — la guitarra acústica. Ella me enseña cada día que la dedicación y el amor por lo que haces es el mejor camino a la maestría.}
+
+\vspace{1cm}
+
+\textit{A la comunidad Python global, que construye herramientas abiertas para que todos podamos aprender, sin importar nuestra ubicación o recursos.}
+
+\vspace{2cm}
+
+\rule{0.5\textwidth}{0.5pt}
+
+\vspace{1cm}
+
+\textbf{Este curso está dedicado especialmente a:}
+
+- \textit{Los que empiezan desde cero} — porque todos fuimos principiantes alguna vez
+- \textit{Los que se frustraron con otros cursos} — este está diseñado para que no te pierdas
+- \textit{Los instructores apasionados} — que creen en aprender haciendo, no solo leyendo
+- \textit{Abacom Capacitación y Servicios} — por confiar en la educación técnica de calidad
+
+\vspace{1cm}
+
+\begin{quote}
+"El mejor momento para aprender a programar fue hace 10 años. El segundo mejor momento es ahora."
+\end{quote}
+
+\vspace{2cm}
+
+\rule{0.5\textwidth}{0.5pt}
+
+\vspace{0.5cm}
+
+\textit{Primera edición: Abril 2026}
+\textit{Loja, Ecuador}
+
+</div>

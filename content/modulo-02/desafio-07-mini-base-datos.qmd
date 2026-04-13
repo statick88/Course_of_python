@@ -85,6 +85,7 @@ Buscar contacto: ana
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 7: Mini base de datos
 # Solución de referencia
 

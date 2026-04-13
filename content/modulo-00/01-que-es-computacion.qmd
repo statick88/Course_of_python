@@ -1,0 +1,214 @@
+---
+title: "0.1 ¿Qué es computación? De recetas a algoritmos"
+---
+
+# 0.1 ¿Qué es computación? De recetas a algoritmos
+
+> **Duración**: 45 minutos
+> **Objetivo**: Entender qué significa "computación" y cómo los algoritmos están en todas partes
+
+---
+
+## La idea fundamental
+
+**Computación** no es sobre computadoras. Es sobre **resolver problemas de forma sistemática**.
+
+> **Definición**: Un **algoritmo** es una secuencia finita de pasos bien definidos que transforma una entrada en una salida.
+
+---
+
+## Ejemplo del mundo real: Una receta de cocina
+
+```
+PROBLEMA: Preparar arroz con pollo
+
+ENTRADA:
+  - Arroz (1 taza)
+  - Pollo (500g)
+  - Agua (2 tazas)
+  - Sal (1 cucharadita)
+
+ALGORITMO:
+  1. Cortar el pollo en trozos
+  2. Hervir agua con sal
+  3. Agregar arroz al agua hirviendo
+  4. Cocinar 15 minutos
+  5. Agregar pollo cocido
+  6. Revolver y servir
+
+SALIDA: Arroz con pollo listo para comer
+```
+
+**¿Ves la estructura?** Entrada → Proceso → Salida. Eso es computación.
+
+---
+
+## De la cocina al código
+
+El mismo patrón aplica en programación:
+
+```python
+# Ejemplo: Calcular el promedio de 3 notas
+# ENTRADA: nota1, nota2, nota3
+# PROCESO: sumar y dividir entre 3
+# SALIDA: promedio
+
+nota1 = 85
+nota2 = 90
+nota3 = 78
+
+suma = nota1 + nota2 + nota3
+promedio = suma / 3
+
+print(f"El promedio es: {promedio}")
+```
+
+**Estructura**:
+- **Entrada**: Los 3 números (85, 90, 78)
+- **Proceso**: Sumar y dividir (el algoritmo)
+- **Salida**: El promedio (84.33)
+
+---
+
+## ¿Qué NO es un algoritmo?
+
+❌ **"Haz algo con los números"** → Muy vago, no son pasos claros
+❌ **"Sigue sumando para siempre"** → No es finito, nunca termina
+❌ **"Calcula el resultado correcto"** → No especifica CÓMO
+
+✅ **"Suma todos los números de la lista recorriéndola uno por uno"** → Claro, finito, definido
+
+---
+
+## Piensa como programador
+
+**Antes de escribir código**, pregúntate:
+
+| Pregunta | Ejemplo |
+|----------|---------|
+| ¿Cuál es la **ENTRADA**? | ¿Qué datos tengo? |
+| ¿Cuál es la **SALIDA**? | ¿Qué debo producir? |
+| ¿Cuál es el **PROCESO**? | ¿Qué pasos transforman entrada en salida? |
+| ¿Hay **casos especiales**? | ¿Qué pasa si la entrada está vacía? |
+
+---
+
+## Desafío 0.1: El Cajero Automático
+
+### Situación
+
+Eres el algoritmo de un cajero automático. Un usuario quiere retirar dinero.
+
+### Tu misión
+
+Completa el algoritmo:
+
+```
+PROBLEMA: Retirar dinero de cuenta bancaria
+
+ENTRADA:
+  - Saldo actual: $1000
+  - Monto a retirar: $300
+
+ALGORITMO:
+  1. Verificar que el monto sea _______________
+  2. Verificar que haya _______________ suficiente
+  3. Restar el monto del _______________
+  4. Entregar el _______________ al usuario
+  5. Mostrar el nuevo _______________
+
+SALIDA:
+  - Dinero entregado: $300
+  - Saldo restante: $700
+```
+
+<details>
+<summary>Ver solución</summary>
+
+```
+1. Verificar que el monto sea POSITIVO (> 0)
+2. Verificar que haya SALDO suficiente (saldo >= monto)
+3. Restar el monto del SALDO (nuevo_saldo = saldo - monto)
+4. Entregar el DINERO al usuario
+5. Mostrar el nuevo SALDO
+
+CASOS ESPECIALES:
+  - Si monto <= 0: "Error: monto debe ser positivo"
+  - Si monto > saldo: "Error: saldo insuficiente"
+```
+
+</details>
+
+---
+
+## Desafío 0.2: El Termómetro
+
+### Situación
+
+Tienes una temperatura en Celsius y necesitas convertirla a Fahrenheit.
+
+### Fórmula
+
+```
+Fahrenheit = (Celsius × 9/5) + 32
+```
+
+### Tu misión
+
+Escribe el algoritmo EN ESPAÑOL (no en Python):
+
+```
+ENTRADA: temperatura en Celsius (ej: 25°C)
+
+PASOS:
+  1. ________________________________
+  2. ________________________________
+  3. ________________________________
+
+SALIDA: temperatura en Fahrenheit (ej: 77°F)
+```
+
+<details>
+<summary>Ver solución</summary>
+
+```
+ENTRADA: celsius = 25
+
+PASOS:
+  1. Multiplicar celsius por 9/5 (25 × 9/5 = 45)
+  2. Sumar 32 al resultado (45 + 32 = 77)
+  3. El resultado es la temperatura en Fahrenheit
+
+SALIDA: fahrenheit = 77
+```
+
+</details>
+
+---
+
+## Conceptos clave
+
+| Concepto | Definición | Ejemplo |
+|----------|-----------|---------|
+| **Algoritmo** | Secuencia finita de pasos claros | Receta de cocina |
+| **Entrada** | Datos que recibe el algoritmo | Temperatura en Celsius |
+| **Proceso** | Pasos que transforman la entrada | Multiplicar y sumar |
+| **Salida** | Resultado final | Temperatura en Fahrenheit |
+| **Caso especial** | Situación que requiere manejo extra | Temperatura negativa |
+
+---
+
+## Auto-evaluación
+
+Marca las que puedas hacer:
+
+- [ ] Puedo explicar qué es un algoritmo con un ejemplo propio
+- [ ] Puedo identificar entrada, proceso y salida en un problema
+- [ ] Puedo detectar cuando un "algoritmo" no está bien definido
+- [ ] Puedo escribir los pasos en español para un problema simple
+
+---
+
+**¡Felicidades!** Ya entendiste la base de toda computación. Ahora aprenderás a **dividir problemas grandes** en la siguiente unidad.
+
+[← Índice del Módulo](index.qmd) | [0.2 Descomposición →](02-descomposicion.qmd)

@@ -1,0 +1,61 @@
+---
+title: "Licencia CC BY-NC-SA 4.0"
+---
+
+::: {style="text-align: center; margin-top: 10vh;"}
+
+\vspace{2cm}
+
+{\Large \textbf{Licencia}}
+
+\vspace{1cm}
+
+{\large Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional}
+
+\vspace{1cm}
+
+![CC BY-NC-SA](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png){width="88px"}
+
+\vspace{1cm}
+
+**Esta obra está bajo una licencia** [**Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es)
+
+\vspace{1.5cm}
+
+\rule{0.5\textwidth}{0.5pt}
+
+\vspace{1cm}
+
+{\large \textbf{Tú eres libre de:}}
+
+\vspace{0.5cm}
+
+✅ **Compartir** — copiar y redistribuir el material en cualquier medio o formato
+
+✅ **Adaptar** — remezclar, transformar y construir a partir del material
+
+\vspace{1cm}
+
+{\large \textbf{Bajo los siguientes términos:}}
+
+\vspace{0.5cm}
+
+🔵 **Atribución** — Debes dar crédito de manera adecuada, proporcionar un enlace a la licencia, e indicar si se hicieron cambios.
+
+🚫 **NoComercial** — No puedes utilizar el material con **propósitos comerciales**.
+
+🔄 **CompartirIgual** — Si remezclas, transformas o creas a partir del material, debes distribuir tus contribuciones bajo la **misma licencia**.
+
+\vspace{1.5cm}
+
+\rule{0.5\textwidth}{0.5pt}
+
+\vspace{1cm}
+
+{\small Material desarrollado para **Abacom Capacitación y Servicios** — 2026}
+
+{\small © Diego Saavedra. Todos los derechos reservados bajo CC BY-NC-SA 4.0}
+
+{\small Contacto comercial: dsaavedra88@gmail.com}
+
+:::

@@ -1,0 +1,108 @@
+---
+title: "Resumen del Módulo 0: Pensamiento Computacional"
+---
+
+# Resumen del Módulo 0: Pensamiento Computacional
+
+> **Tiempo total**: 4 horas
+> **Unidades**: 5 (0.1 a 0.5)
+
+---
+
+## Lo que aprendiste
+
+| Unidad | Concepto clave | Para qué sirve |
+|--------|---------------|----------------|
+| **0.1** | Todo programa es Entrada → Proceso → Salida | Entender cualquier problema antes de codificar |
+| **0.2** | Descomponer problemas grandes en piezas | No paralizarse ante problemas complejos |
+| **0.3** | Reconocer patrones que se repiten | Reutilizar soluciones, no reinventar |
+| **0.4** | Escribir pseudocódigo antes que Python | Evitar errores de lógica y ahorrar tiempo |
+| **0.5** | Comparar múltiples enfoques | Elegir la mejor solución, no la primera |
+
+---
+
+## El ciclo del programador
+
+Recuerda siempre:
+
+```
+1. ENTENDER → ¿Qué me piden? ¿Qué datos tengo?
+2. PLANIFICAR → Pseudocódigo, descomposición, patrones
+3. IMPLEMENTAR → Escribir Python (ahora sí)
+4. VERIFICAR → ¿Funciona? ¿Hay casos borde? ¿Se puede mejorar?
+```
+
+**Este módulo se enfocó en los pasos 1 y 2.** Los que la mayoría salta.
+
+---
+
+## Checklist de competencias
+
+Marca las que puedes hacer ahora:
+
+### Nivel: Puedo explicarlo
+- [ ] Qué es un algoritmo con mis propias palabras
+- [ ] Por qué la descomposición es útil
+- [ ] Qué es un patrón y dar un ejemplo
+
+### Nivel: Puedo aplicarlo
+- [ ] Descomponer un problema en 4+ sub-problemas
+- [ ] Identificar el patrón en un problema nuevo
+- [ ] Escribir pseudocódigo para un problema medio
+- [ ] Comparar 2 enfoques del mismo problema
+
+### Nivel: Lo uso naturalmente
+- [ ] Pienso en entrada/proceso/salida antes de codificar
+- [ ] No salto directo a Python sin planificar
+- [ ] Reconozco cuando un problema es similar a otro que ya resolví
+
+---
+
+## Auto-evaluación final
+
+### Ejercicio integrador: Gestor de inventario
+
+**Problema**: Una tienda necesita un programa que:
+1. Registre productos (nombre, precio, stock)
+2. Permita buscar un producto por nombre
+3. Permita agregar stock a un producto existente
+4. Muestre el valor total del inventario (precio × stock de cada uno)
+
+**Tu misión**: Aplica todo lo aprendido.
+
+**Antes de escribir Python:**
+
+1. **ENTENDER**: ¿Cuál es la entrada? ¿La salida?
+2. **PLANIFICAR**: 
+   - Descompón el problema en 4 sub-problemas
+   - Identifica patrones de cada sub-problema
+   - Escribe pseudocódigo para al menos 2 sub-problemas
+3. **IMPLEMENTAR**: (Solo después de los pasos anteriores)
+4. **VERIFICAR**: Prueba con datos de ejemplo
+
+<details>
+<summary>Ver descomposición sugerida</summary>
+
+```
+GESTOR INVENTARIO
+├── Registrar producto → Patrón: Agregar a colección
+├── Buscar producto → Patrón: Buscar en colección
+├── Agregar stock → Patrón: Actualizar elemento
+└── Calcular valor total → Patrón: Acumular
+```
+
+</details>
+
+---
+
+## ¿Listo para el Módulo 1?
+
+Si marcaste al menos **5 de 7** en el checklist de competencias, estás listo.
+
+Si marcaste menos, repasa las unidades donde tuviste dudas.
+
+---
+
+> **Nota**: Este módulo no tiene quiz. La evaluación es que puedas aplicar estos conceptos al aprender Python.
+
+[← 0.5 Evaluación](05-evaluacion.qmd) | [Módulo 1: Introducción a Python →](../modulo-01/index.qmd)

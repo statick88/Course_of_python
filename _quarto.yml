@@ -1,5 +1,5 @@
 # Programación Python Fundamentos
-# Licensed under CC BY-SA 4.0 - Diego Saavedra 2026
+# Licensed under CC BY-NC-SA 4.0 - Diego Saavedra 2026
 project:
   type: book
   output-dir: docs
@@ -74,7 +74,7 @@ book:
   page-footer:
     border: true
     left: |
-      © 2026 **Diego Saavedra**. Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+      © 2026 **Diego Saavedra**. Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
     center: |
       Material educativo para **Abacom Capacitación y Servicios**
     right: |
@@ -82,12 +82,29 @@ book:
 
   # Chapter structure
   chapters:
+    - front-matter/01-cover.qmd
+    - front-matter/02-dedicatoria.qmd
+    - front-matter/03-prologo.qmd
+    - front-matter/04-prefacio.qmd
+    - front-matter/05-licencia.qmd
+    - front-matter/06-agradecimientos.qmd
     - index.qmd
     - about.qmd
     - license.qmd
 
+    - part: "Módulo 0: Pensamiento Computacional"
+      chapters:
+        - content/modulo-00/index.qmd
+        - content/modulo-00/01-que-es-computacion.qmd
+        - content/modulo-00/02-descomposicion.qmd
+        - content/modulo-00/03-patrones.qmd
+        - content/modulo-00/04-pseudocodigo.qmd
+        - content/modulo-00/05-evaluacion.qmd
+        - content/modulo-00/99-resumen.qmd
+
     - part: "Módulo 1: Introducción a Python"
       chapters:
+        - content/modulo-01/index.qmd
         - content/modulo-01/01-que-es-python.qmd
         - content/modulo-01/02-instalacion.qmd
         - content/modulo-01/03-hola-mundo.qmd
@@ -112,6 +129,13 @@ book:
         - content/modulo-02/04-casting-avanzado.qmd
         - content/modulo-02/05-strings-avanzado.qmd
         - content/modulo-02/99-resumen.qmd
+        - content/modulo-02/desafio-01-calculadora-propinas.qmd
+        - content/modulo-02/desafio-02-conversor-unidades.qmd
+        - content/modulo-02/desafio-03-validador-edad.qmd
+        - content/modulo-02/desafio-04-generador-dni.qmd
+        - content/modulo-02/desafio-05-cifrado-cesar.qmd
+        - content/modulo-02/desafio-06-analizador-texto.qmd
+        - content/modulo-02/desafio-07-mini-base-datos.qmd
 
     - part: "Módulo 3: Estructuras de Control"
       chapters:
@@ -123,6 +147,13 @@ book:
         - content/modulo-03/05-break-continue.qmd
         - content/modulo-03/06-comprension-listas.qmd
         - content/modulo-03/99-resumen.qmd
+        - content/modulo-03/desafio-01-par-o-impar.qmd
+        - content/modulo-03/desafio-02-tabla-multiplicar.qmd
+        - content/modulo-03/desafio-03-fizzbuzz.qmd
+        - content/modulo-03/desafio-04-adivina-numero.qmd
+        - content/modulo-03/desafio-05-piedra-papel-tijera.qmd
+        - content/modulo-03/desafio-06-generador-contrasenas.qmd
+        - content/modulo-03/desafio-07-cajero-automatico.qmd
 
     - part: "Módulo 4: Funciones"
       chapters:
@@ -134,6 +165,13 @@ book:
         - content/modulo-04/05-funciones-lambda.qmd
         - content/modulo-04/06-funciones-recursivas.qmd
         - content/modulo-04/99-resumen.qmd
+        - content/modulo-04/desafio-01-saludo-funcion.qmd
+        - content/modulo-04/desafio-02-area-circulo.qmd
+        - content/modulo-04/desafio-03-fahrenheit-celsius.qmd
+        - content/modulo-04/desafio-04-contador-vocales.qmd
+        - content/modulo-04/desafio-05-numero-primo.qmd
+        - content/modulo-04/desafio-06-fibonacci.qmd
+        - content/modulo-04/desafio-07-calculadora-funciones.qmd
 
     - part: "Módulo 5: Listas y Tuplas"
       chapters:
@@ -145,6 +183,13 @@ book:
         - content/modulo-05/05-tuplas.qmd
         - content/modulo-05/06-listas-anidadas.qmd
         - content/modulo-05/99-resumen.qmd
+        - content/modulo-05/desafio-01-promedio-notas.qmd
+        - content/modulo-05/desafio-02-invertir-lista.qmd
+        - content/modulo-05/desafio-03-eliminar-duplicados.qmd
+        - content/modulo-05/desafio-04-estadisticas-lista.qmd
+        - content/modulo-05/desafio-05-combinar-listas.qmd
+        - content/modulo-05/desafio-06-matriz-operaciones.qmd
+        - content/modulo-05/desafio-07-gestor-inventario.qmd
 
     - part: "Módulo 6: Diccionarios y Sets"
       chapters:
@@ -155,6 +200,13 @@ book:
         - content/modulo-06/04-sets.qmd
         - content/modulo-06/05-diccionarios-anidados.qmd
         - content/modulo-06/99-resumen.qmd
+        - content/modulo-06/desafio-01-agenda-contactos.qmd
+        - content/modulo-06/desafio-02-contador-palabras.qmd
+        - content/modulo-06/desafio-03-inventario-tienda.qmd
+        - content/modulo-06/desafio-04-fusionar-diccionarios.qmd
+        - content/modulo-06/desafio-05-votaciones.qmd
+        - content/modulo-06/desafio-06-base-datos-estudiantes.qmd
+        - content/modulo-06/desafio-07-analizador-votos.qmd
 
     - part: "Módulo 7: Manejo de Archivos"
       chapters:
@@ -166,6 +218,13 @@ book:
         - content/modulo-07/05-manejo-json.qmd
         - content/modulo-07/06-pathlib.qmd
         - content/modulo-07/99-resumen.qmd
+        - content/modulo-07/desafio-01-diario-personal.qmd
+        - content/modulo-07/desafio-02-copiar-archivo.qmd
+        - content/modulo-07/desafio-03-log-analyzer.qmd
+        - content/modulo-07/desafio-04-csv-a-diccionario.qmd
+        - content/modulo-07/desafio-05-configurador-json.qmd
+        - content/modulo-07/desafio-06-buscador-archivos.qmd
+        - content/modulo-07/desafio-07-gestor-contactos-csv.qmd
 
     - part: "Módulo 8: Módulos y Paquetes"
       chapters:
@@ -176,7 +235,15 @@ book:
         - content/modulo-08/04-paquetes.qmd
         - content/modulo-08/05-pip-paquetes.qmd
         - content/modulo-08/06-entornos-virtuales.qmd
+        - content/modulo-08/07-eficiencia-big-o.qmd
         - content/modulo-08/99-resumen.qmd
+        - content/modulo-08/desafio-01-mi-primer-modulo.qmd
+        - content/modulo-08/desafio-02-generador-fechas.qmd
+        - content/modulo-08/desafio-03-aleatorios-avanzados.qmd
+        - content/modulo-08/desafio-04-organizador-archivos.qmd
+        - content/modulo-08/desafio-05-api-clima.qmd
+        - content/modulo-08/desafio-06-web-scraper.qmd
+        - content/modulo-08/desafio-07-proyecto-modular.qmd
 
     - part: "Módulo 9: Buenas Prácticas"
       chapters:
@@ -188,6 +255,13 @@ book:
         - content/modulo-09/05-documentacion.qmd
         - content/modulo-09/06-testing-basico.qmd
         - content/modulo-09/99-resumen.qmd
+        - content/modulo-09/desafio-01-refactorizar-codigo.qmd
+        - content/modulo-09/desafio-02-docstrings.qmd
+        - content/modulo-09/desafio-03-validador-robusto.qmd
+        - content/modulo-09/desafio-04-test-calculadora.qmd
+        - content/modulo-09/desafio-05-linter-codigo.qmd
+        - content/modulo-09/desafio-06-refactorizar-proyecto.qmd
+        - content/modulo-09/desafio-07-code-review.qmd
 
     - part: "Módulo 10: Proyecto Integrador"
       chapters:
@@ -202,15 +276,26 @@ book:
         - content/modulo-10/proyecto-01-gestor-tareas.qmd
         - content/modulo-10/proyecto-02-tienda-productos.qmd
         - content/modulo-10/proyecto-03-analizador-datos.qmd
+        - content/modulo-10/proyecto-04-hangman.qmd
+        - content/modulo-10/proyecto-05-caesar-cipher.qmd
 
     - part: "Laboratorios Prácticos"
       chapters:
         - labs/README.md
         - labs/lab01-primer-programa.qmd
         - labs/lab02-variables-en-accion.qmd
+        - labs/lab03-estructuras-control.qmd
+        - labs/lab04-funciones.qmd
+        - labs/lab05-listas-tuplas.qmd
+        - labs/lab06-diccionarios-sets.qmd
+        - labs/lab07-manejo-archivos.qmd
+        - labs/lab08-modulos-paquetes.qmd
+        - labs/lab09-buenas-practicas.qmd
+        - labs/lab10-proyecto-integrador.qmd
   
     - part: "Evaluación: Quizzes"
       chapters:
+        - quizzes/evaluacion-diagnostico.qmd
         - quizzes/README.qmd
         - quizzes/quiz-modulo-01.qmd
         - quizzes/quiz-modulo-02.qmd
@@ -223,11 +308,21 @@ book:
         - quizzes/quiz-modulo-09.qmd
         - quizzes/quiz-modulo-10.qmd
 
+    - part: "Tareas para Plataforma Q10"
+      chapters:
+        - q10/tarea-01-configuracion-entorno.md
+        - q10/tarea-02-calculadora-propinas.md
+        - q10/tarea-03-fizzbuzz-avanzado.md
+        - q10/tarea-04-calculadora-funciones.md
+        - q10/tarea-05-gestor-inventario.md
+        - q10/tareas-06-a-10.md
+
     - part: "Apéndices"
       chapters:
         - content/appendix/01-ia-en-python.qmd
         - content/appendix/02-mcp-para-python.qmd
         - content/appendix/03-phase-final.qmd
+        - content/appendix/04-python-314-ecosistema.qmd
 
 bibliography: references.bib
 biblio-style: apalike

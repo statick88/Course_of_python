@@ -48,6 +48,7 @@ Palabra más repetida: el (3 veces)
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 2: Contador de palabras
 # Solución de referencia
 

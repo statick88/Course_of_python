@@ -1,0 +1,90 @@
+---
+title: ""
+---
+
+<br><br><br><br>
+
+<div style="text-align: center; font-size: 1.1em;">
+
+# AGRADECIMIENTOS
+
+<br><br><br>
+
+Este curso no existiría sin la contribución de muchas personas e instituciones:
+
+<br><br>
+
+---
+
+<br>
+
+## A mi familia
+
+**A mi hija Victoria Saavedra**, por ser mi inspiración diaria de superación. Su pasión por la guitarra acústica me recuerda cada día que la dedicación y el amor por lo que haces es el mejor camino a la maestría.
+
+<br>
+
+**A mi familia**, por su paciencia infinita durante las largas noches de creación de este curso y por entender que la educación es una forma de dejar huella.
+
+<br><br>
+
+---
+
+<br>
+
+## A mis estudiantes
+
+A los **cientos de estudiantes** que han pasado por mis aulas en 6 universidades:
+
+- **ESPE** — Escuela Politécnica del Ejército
+- **Universidad Internacional**
+- **Juan Montalvo**
+- **Codings Academy**
+- **Universidad del Zulia**
+- **ABACOM Capacitación y Servicios**
+
+Cada uno me enseñó algo sobre cómo enseñar mejor. Este curso es tan suyo como mío.
+
+<br><br>
+
+---
+
+<br>
+
+## A la comunidad Python
+
+- **Python Software Foundation** — por mantener el lenguaje que amamos
+- **Guido van Rossum** — por crear Python con una visión de legibilidad y accesibilidad
+- **Ana Bell, Eric Grimson y John Guttag (MIT 6.0001)** — por inspirar la estructura de pensamiento computacional y los proyectos Hangman y Caesar Cipher
+- **RealPython, Python Morsels** — por recursos educativos de calidad
+- **Quarto Project** — por la plataforma que hace este curso interactivo
+
+<br><br>
+
+---
+
+<br>
+
+## A Abacom Capacitación y Servicios
+
+Por confiar en la educación técnica de calidad y por apoyar la creación de contenido educativo que transforma vidas profesionales.
+
+<br><br>
+
+---
+
+<br>
+
+> "Solo llegas lejos si llegas con otros."
+> 
+> — *Proverbio africano*
+
+<br><br>
+
+---
+
+<br>
+
+*Loja, Ecuador — Abril 2026*
+
+</div>

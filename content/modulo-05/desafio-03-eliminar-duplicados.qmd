@@ -43,6 +43,7 @@ Duplicados eliminados: 3
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 3: Eliminar duplicados
 # Solución de referencia
 

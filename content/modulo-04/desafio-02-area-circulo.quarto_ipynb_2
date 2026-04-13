@@ -1,0 +1,102 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Desafío 2: Área del círculo\"\n",
+        "difficulty: \"⭐ Fácil\"\n",
+        "estimated_time: \"8 minutos\"\n",
+        "---\n",
+        "\n",
+        "## Situación\n",
+        "\n",
+        "Una tienda de pisos necesita calcular el área de pisos circulares para dar presupuestos a sus clientes. Necesitas una función que reciba el radio y devuelva el área.\n",
+        "\n",
+        "## Tu misión\n",
+        "\n",
+        "Crea una función llamada `area_circulo` que:\n",
+        "\n",
+        "1. Reciba el radio del círculo como parámetro\n",
+        "2. Devuelva el área usando la fórmula: `π × radio²`\n",
+        "3. Usa `3.14159` como valor de π\n",
+        "4. Prueba con radios de 5, 10 y 0\n",
+        "\n",
+        "## Ejemplo de ejecución\n",
+        "\n",
+        "```python\n",
+        "print(f\"Radio 5: {area_circulo(5):.2f}\")\n",
+        "print(f\"Radio 10: {area_circulo(10):.2f}\")\n",
+        "print(f\"Radio 0: {area_circulo(0):.2f}\")\n",
+        "```\n",
+        "\n",
+        "```\n",
+        "Radio 5: 78.54\n",
+        "Radio 10: 314.16\n",
+        "Radio 0: 0.00\n",
+        "```\n",
+        "\n",
+        "## Pista\n",
+        "\n",
+        "- La fórmula del área es: `π × radio²`\n",
+        "- En Python, elevar al cuadrado es `radio ** 2`\n",
+        "- Usa `return` para devolver el resultado\n",
+        "\n",
+        "## Criterios de éxito\n",
+        "\n",
+        "- [ ] La función se llama `area_circulo`\n",
+        "- [ ] Recibe un parámetro `radio`\n",
+        "- [ ] Calcula correctamente el área\n",
+        "- [ ] Maneja el caso de radio 0\n",
+        "\n",
+        "<details>\n",
+        "<summary>Ver solución de referencia</summary>"
+      ],
+      "id": "0abfb93f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| eval: false\n",
+        "# Desafío 2: Área del círculo\n",
+        "# Solución de referencia\n",
+        "\n",
+        "def area_circulo(radio):\n",
+        "    \"\"\"Calcula el área de un círculo dado su radio.\"\"\"\n",
+        "    pi = 3.14159\n",
+        "    return pi * radio ** 2\n",
+        "\n",
+        "# Pruebas\n",
+        "print(f\"Radio 5: {area_circulo(5):.2f}\")\n",
+        "print(f\"Radio 10: {area_circulo(10):.2f}\")\n",
+        "print(f\"Radio 0: {area_circulo(0):.2f}\")"
+      ],
+      "id": "44952fe7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "</details>\n",
+        "\n",
+        "---\n",
+        "\n",
+        "[← Desafío 1](desafio-01-saludo-funcion.qmd) | [Desafío 3 →](desafio-03-fahrenheit-celsius.qmd)"
+      ],
+      "id": "564265ff"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

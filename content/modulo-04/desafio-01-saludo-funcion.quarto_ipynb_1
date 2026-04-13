@@ -1,0 +1,100 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Desafío 1: Saludo con función\"\n",
+        "difficulty: \"⭐ Fácil\"\n",
+        "estimated_time: \"5 minutos\"\n",
+        "---\n",
+        "\n",
+        "## Situación\n",
+        "\n",
+        "Estás construyendo el sistema de bienvenida para una aplicación. En vez de repetir el código de saludo cada vez que un usuario entra, decides crear una función reutilizable.\n",
+        "\n",
+        "## Tu misión\n",
+        "\n",
+        "Crea una función llamada `saludar` que:\n",
+        "\n",
+        "1. Reciba el nombre de una persona como parámetro\n",
+        "2. Devuelva un saludo personalizado con el formato: `\"¡Hola, {nombre}! Bienvenido al curso.\"`\n",
+        "3. Prueba la función con al menos 3 nombres diferentes\n",
+        "\n",
+        "## Ejemplo de ejecución\n",
+        "\n",
+        "```python\n",
+        "print(saludar(\"Ana\"))\n",
+        "print(saludar(\"Carlos\"))\n",
+        "print(saludar(\"María\"))\n",
+        "```\n",
+        "\n",
+        "```\n",
+        "¡Hola, Ana! Bienvenido al curso.\n",
+        "¡Hola, Carlos! Bienvenido al curso.\n",
+        "¡Hola, María! Bienvenido al curso.\n",
+        "```\n",
+        "\n",
+        "## Pista\n",
+        "\n",
+        "- Usa `def` para definir la función\n",
+        "- La función debe tener un parámetro: `nombre`\n",
+        "- Usa `return` para devolver el saludo (no `print`)\n",
+        "\n",
+        "## Criterios de éxito\n",
+        "\n",
+        "- [ ] La función se llama `saludar`\n",
+        "- [ ] Recibe un parámetro `nombre`\n",
+        "- [ ] Usa `return` (no `print` dentro de la función)\n",
+        "- [ ] El formato del saludo es correcto\n",
+        "\n",
+        "<details>\n",
+        "<summary>Ver solución de referencia</summary>"
+      ],
+      "id": "f2e6ba6e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| eval: false\n",
+        "# Desafío 1: Saludo con función\n",
+        "# Solución de referencia\n",
+        "\n",
+        "def saludar(nombre):\n",
+        "    \"\"\"Devuelve un saludo personalizado.\"\"\"\n",
+        "    return f\"¡Hola, {nombre}! Bienvenido al curso.\"\n",
+        "\n",
+        "# Pruebas\n",
+        "print(saludar(\"Ana\"))\n",
+        "print(saludar(\"Carlos\"))\n",
+        "print(saludar(\"María\"))"
+      ],
+      "id": "908e70ae",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "</details>\n",
+        "\n",
+        "---\n",
+        "\n",
+        "[← Volver al Módulo 4](../index.qmd) | [Desafío 2 →](desafio-02-area-circulo.qmd)"
+      ],
+      "id": "f3245639"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

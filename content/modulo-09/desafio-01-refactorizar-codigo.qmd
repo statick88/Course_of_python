@@ -54,6 +54,7 @@ print(x)
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 1: Refactorizar código desordenado
 # Solución de referencia
 

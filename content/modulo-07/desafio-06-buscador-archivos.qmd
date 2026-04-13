@@ -62,6 +62,7 @@ Buscar texto dentro de archivos? (s/n): n
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 6: Buscador de archivos
 # Solución de referencia
 

@@ -1,0 +1,306 @@
+---
+title: "0.4 Diseño de algoritmos: pseudocódigo antes que Python"
+---
+
+# 0.4 Diseño de algoritmos: pseudocódigo antes que Python
+
+> **Duración**: 60 minutos
+> **Objetivo**: Escribir la lógica de un programa EN ESPAÑOL antes de implementar
+
+---
+
+## ¿Por qué pseudocódigo?
+
+> **Pseudocódigo** es una descripción de un algoritmo en lenguaje natural estructurado, sin las reglas de un lenguaje de programación.
+
+**Problema**: Muchos estudiantes intentan escribir Python directamente. El resultado: código que no funciona, frustración, y horas perdiendo tiempo.
+
+**Solución**: Primero piensa en español. Después traduce a Python.
+
+---
+
+## El ciclo correcto
+
+```
+❌ MALO:
+   Problema → Escribir Python → Error → Error → Error → ¿Por qué no funciona?
+
+✅ BUENO:
+   Problema → Pseudocódigo → Verificar → Python → Funciona (casi siempre)
+```
+
+---
+
+## Reglas del pseudocódigo
+
+1. **Usa español** (o tu idioma nativo)
+2. **Sé preciso** pero sin sintaxis estricta
+3. **Indentación** para mostrar estructura
+4. **Palabras clave**: SI, SI_NO, MIENTRAS, PARA, REPETIR_HASTA
+
+---
+
+## Ejemplo: Encontrar el mayor de 3 números
+
+### Pseudocódigo
+
+```
+ALGORITMO encontrar_mayor
+ENTRADA: tres números a, b, c
+SALIDA: el mayor de los tres
+
+INICIO
+    SI a >= b Y a >= c ENTONCES
+        mayor ← a
+    SI_NO SI b >= a Y b >= c ENTONCES
+        mayor ← b
+    SI_NO
+        mayor ← c
+    FIN_SI
+    
+    RETORNAR mayor
+FIN
+```
+
+### Traducción a Python
+
+```python
+def encontrar_mayor(a, b, c):
+    if a >= b and a >= c:
+        mayor = a
+    elif b >= a and b >= c:
+        mayor = b
+    else:
+        mayor = c
+    return mayor
+```
+
+**¿Ves la correspondencia?** Línea por línea.
+
+---
+
+## Ejemplo: Sumar números hasta llegar a un límite
+
+### Pseudocódigo
+
+```
+ALGORITMO sumar_hasta_limite
+ENTRADA: lista de números, límite
+SALIDA: suma acumulada (sin pasar del límite)
+
+INICIO
+    suma ← 0
+    
+    PARA cada numero EN lista HACER
+        SI suma + numero <= límite ENTONCES
+            suma ← suma + numero
+        SI_NO
+            SALIR DEL BUCLE
+        FIN_SI
+    FIN_PARA
+    
+    RETORNAR suma
+FIN
+```
+
+### Prueba de escritorio
+
+```
+ENTRADA: lista = [10, 25, 30, 5, 15], límite = 50
+
+Iteración 1: suma = 0, numero = 10 → suma = 10 (10 <= 50 ✅)
+Iteración 2: suma = 10, numero = 25 → suma = 35 (35 <= 50 ✅)
+Iteración 3: suma = 35, numero = 30 → 35+30 = 65 > 50 ❌ → SALIR
+
+SALIDA: suma = 35
+```
+
+---
+
+## Desafío 0.6: FizzBuzz en pseudocódigo
+
+### Problema
+
+Imprimir números del 1 al 50, pero:
+- Múltiplos de 3 → "Fizz"
+- Múltiplos de 5 → "Buzz"
+- Múltiplos de 3 y 5 → "FizzBuzz"
+
+### Tu misión
+
+Escribe el pseudocódigo ANTES de ver la solución:
+
+```
+ALGORITMO fizzbuzz
+ENTRADA: ninguno (números fijos del 1 al 50)
+SALIDA: números o palabras Fizz/Buzz/FizzBuzz
+
+INICIO
+    
+    
+    
+    
+    
+    
+FIN
+```
+
+<details>
+<summary>Ver pseudocódigo de referencia</summary>
+
+```
+ALGORITMO fizzbuzz
+ENTRADA: ninguno
+SALIDA: secuencia impresa
+
+INICIO
+    PARA i DESDE 1 HASTA 50 HACER
+        SI i es divisible por 3 Y i es divisible por 5 ENTONCES
+            IMPRIMIR "FizzBuzz"
+        SI_NO SI i es divisible por 3 ENTONCES
+            IMPRIMIR "Fizz"
+        SI_NO SI i es divisible por 5 ENTONCES
+            IMPRIMIR "Buzz"
+        SI_NO
+            IMPRIMIR i
+        FIN_SI
+    FIN_PARA
+FIN
+```
+
+</details>
+
+<details>
+<summary>Ver solución en Python</summary>
+
+```python
+for i in range(1, 51):
+    if i % 3 == 0 and i % 5 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
+```
+
+</details>
+
+---
+
+## Desafío 0.7: Cajero automático completo
+
+### Problema
+
+Diseña el algoritmo para un cajero que permita:
+1. Verificar saldo
+2. Depositar dinero
+3. Retirar dinero (solo si hay saldo suficiente)
+
+### Pseudocódigo
+
+```
+ALGORITMO cajero_automatico
+ENTRADA: saldo_inicial, lista de operaciones
+SALIDA: saldo_final y registro de operaciones
+
+INICIO
+    saldo ← saldo_inicial
+    
+    PARA cada operacion EN lista HACER
+        TIPO ← tipo de operacion
+        MONTO ← monto de operacion
+        
+        SI TIPO = "deposito" ENTONCES
+            
+        SI_NO SI TIPO = "retiro" ENTONCES
+            
+            
+        SI_NO SI TIPO = "consulta" ENTONCES
+            
+        FIN_SI
+    FIN_PARA
+    
+    IMPRIMIR "Saldo final:", saldo
+FIN
+```
+
+Completa los espacios en blanco.
+
+<details>
+<summary>Ver solución completa</summary>
+
+```
+ALGORITMO cajero_automatico
+ENTRADA: saldo_inicial, lista de operaciones
+SALIDA: saldo_final
+
+INICIO
+    saldo ← saldo_inicial
+    
+    PARA cada operacion EN lista HACER
+        TIPO ← tipo de operacion
+        MONTO ← monto de operacion
+        
+        SI TIPO = "deposito" ENTONCES
+            saldo ← saldo + MONTO
+            IMPRIMIR "Depósito de", MONTO, "exitoso"
+            
+        SI_NO SI TIPO = "retiro" ENTONCES
+            SI MONTO <= saldo ENTONCES
+                saldo ← saldo - MONTO
+                IMPRIMIR "Retiro de", MONTO, "exitoso"
+            SI_NO
+                IMPRIMIR "Error: saldo insuficiente"
+            FIN_SI
+            
+        SI_NO SI TIPO = "consulta" ENTONCES
+            IMPRIMIR "Saldo actual:", saldo
+            
+        SI_NO
+            IMPRIMIR "Error: operación desconocida"
+        FIN_SI
+    FIN_PARA
+    
+    IMPRIMIR "Saldo final:", saldo
+FIN
+```
+
+</details>
+
+---
+
+## Cuándo usar pseudocódigo
+
+| Situación | ¿Pseudocódigo? | Por qué |
+|-----------|----------------|---------|
+| Problema simple (5 líneas) | ❌ Opcional | Puedes ir directo a Python |
+| Problema medio (10-20 líneas) | ✅ Recomendado | Evita errores de lógica |
+| Problema complejo (20+ líneas) | ✅ **Obligatorio** | Sin pseudocódigo, te pierdes |
+| Nunca programaste el problema | ✅ **Siempre** | Primero entiende, luego codifica |
+
+---
+
+## Conceptos clave
+
+| Concepto | Definición |
+|----------|-----------|
+| **Pseudocódigo** | Algoritmo en lenguaje natural estructurado |
+| **Prueba de escritorio** | Ejecutar algoritmo a mano con datos de ejemplo |
+| **Traducción** | Convertir pseudocódigo a Python línea por línea |
+
+---
+
+## Auto-evaluación
+
+- [ ] Puedo escribir pseudocódigo para un problema medio
+- [ ] Puedo traducir pseudocódigo a Python correctamente
+- [ ] Hago prueba de escritorio antes de codificar
+- [ ] Sé cuándo pseudocódigo es obligatorio vs opcional
+
+---
+
+**Última unidad**: Aprenderás a **elegir entre múltiples enfoques** para el mismo problema.
+
+[← 0.3 Patrones](03-patrones.qmd) | [0.5 Evaluación de enfoques →](05-evaluacion.qmd)

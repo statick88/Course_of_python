@@ -1,0 +1,469 @@
+---
+title: "Proyecto 5: Cifrado César y Criptoanálisis"
+subtitle: "⭐⭐⭐⭐ Dificultad Avanzada — Cifrado, descifrado, criptoanálisis por fuerza bruta, procesamiento de texto"
+execute:
+  eval: false
+---
+
+
+> ⚠️ **Importante Anti-IA:** Este proyecto integrador de criptografía básica está diseñado para que demuestres tus habilidades de programación.
+> El código debe **TECLEARSE**, no generarse con IA. Se te pedirá explicar cada decisión de diseño durante la presentación.
+
+## 📋 Descripción del Proyecto
+
+Implementa el **Cifrado César** — uno de los métodos de encriptación más antiguos de la historia — y luego construye un sistema que **rompa automáticamente** mensajes cifrados sin conocer la clave.
+
+> **La analogía:** El cifrado César es como un disco de letras (como los que usaban los espías). Giras el alfabeto N posiciones y cada letra se transforma. El truco: solo hay 26 posiciones posibles. Un atacante puede probarlas todas en segundos.
+
+Este proyecto está inspirado en los **Problem Sets 3 y 4 de MIT 6.0001**, donde se implementa cifrado César con criptoanálisis automático.
+
+## 🎯 Requisitos mínimos
+
+### Funcionalidades obligatorias
+
+| # | Funcionalidad | Descripción |
+|---|---------------|-------------|
+| 1 | Función `apply_shift(texto, desplazamiento)` | Desplaza cada letra N posiciones, preserva mayúsculas/minúsculas |
+| 2 | Función `cifrar(texto, desplazamiento)` | Alias de apply_shift para uso directo |
+| 3 | Función `descifrar(texto_cifrado, desplazamiento)` | Revierte el cifrado (desplazamiento negativo) |
+| 4 | Preservar caracteres no alfabéticos | Espacios, números, puntuación NO se modifican |
+| 5 | Cargar lista de palabras válidas | Leer `words.txt` para verificar si un texto tiene sentido |
+| 6 | Función `criptoanalizar(texto_cifrado)` | Prueba los 26 desplazamientos y encuentra el correcto |
+| 7 | Cargar mensaje cifrado desde archivo | Leer un archivo con texto encriptado |
+| 8 | Detectar automáticamente el desplazamiento correcto | Usar la lista de palabras para identificar la solución |
+
+### Funcionalidades opcionales (puntos extra)
+
+| # | Funcionalidad | Puntos |
+|---|---------------|--------|
+| +1 | Mostrar los 26 intentos de descifrado al usuario | ⭐ |
+| +2 | Cifrado Vigenère (clave de texto en vez de número) | ⭐ |
+| +3 | Descifrar mensajes con saltos de línea y múltiples párrafos | ⭐ |
+| +4 | Estadísticas del ataque: tiempo, intentos, palabras encontradas | ⭐ |
+| +5 | Interfaz de menú completo (cifrar, descifrar, crack, salir) | ⭐ |
+
+## 📐 Cómo funciona el Cifrado César
+
+El cifrado César desplaza cada letra del alfabeto un número fijo de posiciones.
+
+```
+Alfabeto original:  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+Desplazamiento 3:   D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+
+"HOLA" con desplazamiento 3:
+  H → K
+  O → R
+  L → O
+  A → D
+
+Resultado: "KROD"
+```
+
+**Reglas clave:**
+- Las letras **mayúsculas** permanecen mayúsculas
+- Las letras **minúsculas** permanecen minúsculas
+- Los **espacios, números y signos de puntuación** NO cambian
+- El alfabeto es **circular**: después de Z vuelve a A
+
+```python
+# Matemáticas del desplazamiento:
+# Para cada letra:
+#   1. Convertir letra a número (A=0, B=1, ..., Z=25)
+#   2. Sumar el desplazamiento
+#   3. Aplicar módulo 26 (para que vuelva a empezar si pasa de Z)
+#   4. Convertir número de vuelta a letra
+
+def letra_a_numero(letra):
+    """A → 0, B → 1, ..., Z → 25"""
+    return ord(letra.upper()) - ord("A")
+
+
+def numero_a_letra(numero, es_mayuscula):
+    """0 → A, 1 → B, ..., 25 → Z"""
+    letra = chr(numero + ord("A"))
+    return letra if es_mayuscula else letra.lower()
+
+
+# Ejemplo: desplazar 'Z' por 3
+# Z = 25, 25 + 3 = 28, 28 % 26 = 2, 2 = 'C'
+# ¡Z se convierte en C! El alfabeto es circular.
+```
+
+## 🏗️ Estructura del proyecto esperada
+
+```
+cesar/
+├── main.py              # Punto de entrada con menú
+├── cesar.py             # Funciones de cifrado/descifrado/criptoanálisis
+├── words.txt            # Lista de palabras válidas (una por línea)
+├── mensaje_cifrado.txt  # Mensaje encriptado para descifrar
+└── test_cesar.py        # Tests unitarios (opcional)
+```
+
+## 📊 Desafío progresivo
+
+Construye el sistema paso a paso. Cada nivel agrega una pieza del rompecabezas.
+
+### Nivel 1: Cifrar una palabra
+
+Implementa la función básica de desplazamiento para una sola palabra.
+
+```python
+def apply_shift(texto, desplazamiento):
+    """Aplica el cifrado César a un texto.
+
+    Args:
+        texto: El texto a cifrar (string).
+        desplazamiento: Cuántas posiciones desplazar (int, 0-25).
+
+    Returns:
+        El texto cifrado.
+
+    >>> apply_shift("HOLA", 3)
+    'KROD'
+    >>> apply_shift("abc", 1)
+    'bcd'
+    >>> apply_shift("Zebra", 2)
+    'Bgdtc'
+    """
+    resultado = []
+    for caracter in texto:
+        if caracter.isalpha():  # <1>
+            # TODO: calcular nueva letra
+            pass
+        else:
+            resultado.append(caracter)  # <2>
+    return "".join(resultado)
+
+
+def cifrar(texto, desplazamiento):
+    """Cifra un texto con César. Alias de apply_shift."""
+    return apply_shift(texto, desplazamiento)
+
+
+def descifrar(texto_cifrado, desplazamiento):
+    """Descifra un texto cifrado con César.
+
+    Equivale a apply_shift con desplazamiento negativo.
+    """
+    # TODO: implementar
+    pass
+```
+
+1. `isalpha()` verifica si es una letra del abecedario. Retorna `False` para espacios, números, puntuación.
+2. Los caracteres no alfabéticos se agregan tal cual al resultado.
+
+**Checklist del Nivel 1:**
+- [ ] `apply_shift("A", 1)` retorna `"B"`
+- [ ] `apply_shift("Z", 1)` retorna `"A"` (envuelve circularmente)
+- [ ] `apply_shift("Hola Mundo", 3)` preserva el espacio: `"Krod Pxqgr"`
+- [ ] `apply_shift("¡Hola! 123", 5)` preserva signos y números
+- [ ] `descifrar()` revierte correctamente el cifrado
+
+### Nivel 2: Cifrar y descifrar mensajes completos
+
+Extiende el funcionamiento para textos con múltiples líneas, párrafos y caracteres especiales.
+
+```python
+def cargar_mensaje_desde_archivo(ruta_archivo):
+    """Lee un archivo y devuelve su contenido como string."""
+    # TODO: abrir y leer archivo
+    pass
+
+
+def guardar_mensaje_en_archivo(ruta_archivo, mensaje):
+    """Escribe un mensaje en un archivo."""
+    # TODO: escribir en archivo
+    pass
+```
+
+**Crea el archivo `mensaje_cifrado.txt` con un mensaje cifrado:**
+
+```
+Sph wzqz qzw sfyqafy lqjw sp wzkd.
+Ls dsqz qzw kza dsqz.
+```
+
+(Esto fue cifrado con desplazamiento 22. Tu programa debe poder descifrarlo.)
+
+**Checklist del Nivel 2:**
+- [ ] Cifra correctamente textos con múltiples líneas
+- [ ] Preserva saltos de línea (`\n`)
+- [ ] `descifrar(cifrar("texto", 5), 5)` retorna `"texto"` (ida y vuelta)
+- [ ] Lee y escribe archivos correctamente
+
+### Nivel 3: Criptoanálisis — romper el cifrado
+
+**Esta es la parte crítica del proyecto.** Construye una función que pruebe los 26 desplazamientos posibles y detecte automáticamente cuál produce texto legible.
+
+```python
+def cargar_palabras_validas(ruta_archivo):
+    """Carga una lista de palabras válidas desde un archivo.
+
+    Returns:
+        Un set de palabras en mayúsculas para búsqueda rápida.
+    """
+    # TODO: leer archivo, convertir a mayúsculas, devolver set
+    pass
+
+
+def contar_palabras_validas(texto, palabras_validas):
+    """Cuenta cuántas palabras del texto están en la lista de válidas.
+
+    >>> palabras = {"HOLA", "MUNDO", "PYTHON", "CASA"}
+    >>> contar_palabras_validas("HOLA XYZ MUNDO", palabras)
+    2  # "HOLA" y "MUNDO" son válidas, "XYZ" no
+    """
+    palabras_del_texto = texto.upper().split()
+    contador = 0
+    for palabra in palabras_del_texto:
+        # Limpiar puntuación de los bordes
+        palabra_limpia = palabra.strip(".,;:!?\"'()-")
+        if palabra_limpia in palabras_validas:
+            contador += 1
+    return contador
+
+
+def es_texto_valido(texto, palabras_validas, umbral=0.5):
+    """Determina si un texto parece ser lenguaje real.
+
+    Un texto es "válido" si al menos el umbral (50%) de sus palabras
+    están en la lista de palabras válidas.
+
+    Returns:
+        (es_valido, proporción_de_palabras_validas)
+    """
+    palabras_del_texto = texto.upper().split()
+    if not palabras_del_texto:
+        return False, 0.0
+
+    validas = contar_palabras_validas(texto, palabras_validas)
+    proporcion = validas / len(palabras_del_texto)
+    return proporcion >= umbral, proporcion
+
+
+def criptoanalizar(texto_cifrado, ruta_words="words.txt"):
+    """Intenta descifrar un mensaje probando los 26 desplazamientos.
+
+    Este es el ataque de FUERZA BRUTA: prueba TODAS las claves posibles
+    y usa la lista de palabras para detectar cuál produce texto legible.
+
+    Args:
+        texto_cifrado: El mensaje encriptado.
+        ruta_words: Ruta al archivo con palabras válidas.
+
+    Returns:
+        (texto_descifrado, desplazamiento_correcto, todos_los_intentos)
+        donde todos_los_intentos es una lista de 26 tuplas
+        (desplazamiento, texto_descifrado, es_valido).
+    """
+    palabras_validas = cargar_palabras_validas(ruta_words)
+    todos_los_intentos = []
+
+    for desplazamiento in range(26):  # <1>
+        texto_descifrado = descifrar(texto_cifrado, desplazamiento)
+        es_valido, proporcion = es_texto_valido(texto_descifrado, palabras_validas)
+        todos_los_intentos.append((desplazamiento, texto_descifrado, es_valido))
+
+        if es_valido:  # <2>
+            return texto_descifrado, desplazamiento, todos_los_intentos
+
+    # Si ninguno es válido, retornar el mejor intento
+    # (el que tenga más palabras válidas)
+    return _mejor_intento(todos_los_intentos, palabras_validas)
+```
+
+1. Prueba cada desplazamiento de 0 a 25. Son solo 26 posibilidades — instantáneo para una computadora.
+2. En cuanto encuentra un texto que parece lenguaje real (≥50% palabras válidas), lo retorna.
+
+**¿Por qué funciona?** De los 26 desplazamientos posibles, solo **uno** produce texto legible en español. Los otros 25 producen basura como `"XJQF MZKW YTPR"`. Al verificar cuántas palabras existen en el diccionario, el texto correcto se destaca inmediatamente.
+
+```python
+def _mejor_intento(intentos, palabras_validas):
+    """Cuando ningún intento supera el umbral, devuelve el que tenga más palabras válidas."""
+    mejor_desplazamiento = 0
+    mejor_texto = intentos[0][1]
+    mejor_puntaje = -1
+
+    for desplazamiento, texto, _ in intentos:
+        puntaje = contar_palabras_validas(texto, palabras_validas)
+        if puntaje > mejor_puntaje:
+            mejor_puntaje = puntaje
+            mejor_desplazamiento = desplazamiento
+            mejor_texto = texto
+
+    return mejor_texto, mejor_desplazamiento, intentos
+```
+
+**Checklist del Nivel 3:**
+- [ ] `criptoanalizar()` encuentra el desplazamiento correcto para mensajes simples
+- [ ] Muestra los 26 intentos al usuario (formato tabla)
+- [ ] Funciona con mensajes de al menos 3-4 palabras
+- [ ] El umbral del 50% es razonable para español
+
+### Nivel 4: Criptoanálisis de texto multi-párrafo
+
+Maneja mensajes largos con saltos de línea, puntuación compleja y palabras acentuadas.
+
+```python
+def criptoanalizar_avanzado(texto_cifrado, ruta_words="words.txt"):
+    """Versión mejorada que maneja texto multi-párrafo.
+
+    Mejoras respecto a criptoanalizar():
+    - Ignora líneas vacías al contar palabras válidas
+    - Maneja acentos y ñ (alfabeto extendido opcional)
+    - Muestra estadísticas del análisis
+    """
+    # TODO: implementar mejoras
+    pass
+```
+
+**Checklist del Nivel 4:**
+- [ ] Descifra correctamente textos con múltiples párrafos
+- [ ] Muestra estadísticas: tiempo, desplazamiento encontrado, % de palabras válidas
+- [ ] Maneja correctamente textos con muchas líneas vacías
+- [ ] El mensaje descifrado es legible y coherente
+
+## 🔐 Conexión con criptografía del mundo real
+
+El Cifrado César fue usado por **Julio César** hace más de 2000 años para comunicarse con sus generales. Aunque parece sofisticado en su época, hoy cualquier computadora lo rompe en milisegundos.
+
+**¿Qué nos enseña?**
+
+| Concepto | Lección del César | Aplicación moderna |
+|----------|-------------------|-------------------|
+| Espacio de claves | Solo 26 posibilidades | AES tiene 2²⁵⁶ posibilidades |
+| Fuerza bruta | Probar todas las claves funciona si son pocas | La seguridad necesita claves largas |
+| Análisis de frecuencia | Las letras más comunes revelan patrones | Base de la criptoanálisis moderna |
+| Ofuscación ≠ seguridad | Esconder no es proteger | No uses "seguridad por oscuridad" |
+
+> **La diferencia entre César y AES-256:** César tiene 26 claves posibles. AES-256 tiene 115,792,089,237,316,195,423,570,985,008,687,907,853,269,984,665,640,564,039,457,584,007,913,129,639,936 claves. Probarlas todas con la computadora más rápida del universo tardaría más que la edad del universo.
+
+## 📊 Criterios de evaluación
+
+| Criterio | Peso | Excelente (100%) | Aceptable (70%) | Insuficiente (0%) |
+|----------|------|-------------------|-----------------|-------------------|
+| Cifrado correcto | 20% | Preserva mayúsculas, minúsculas, especiales | No preserva algún tipo | No cifra correctamente |
+| Descifrado correcto | 15% | Revierte cifrado perfectamente | Errores con casos borde | No descifra |
+| Criptoanálisis | 30% | Encuentra desplazamiento automáticamente | Necesita ajuste manual | No funciona |
+| Manejo de archivos | 10% | Lee/escribe correctamente | Solo lee, no escribe | Sin manejo de archivos |
+| Texto multi-párrafo | 10% | Maneja saltos de línea y puntuación | Solo una línea | Crash con `\n` |
+| Documentación | 15% | README + docstrings + explicación del algoritmo | README básico | Sin documentación |
+
+## 🚀 Ejemplo de ejecución
+
+```
+========================================
+       🔐 CIFRADO CÉSAR Y CRIPTOANÁLISIS
+========================================
+
+  1. Cifrar un mensaje
+  2. Descifrar un mensaje
+  3. Criptoanalizar (romper cifrado)
+  4. Salir
+========================================
+Elige: 3
+
+Ingresa el texto cifrado: Sph wzqz qzw sfyqafy lqjw sp wzkd.
+
+🔍 Analizando 26 desplazamientos posibles...
+
+  Desplazamiento   ¿Texto válido?   Muestra del texto
+  ───────────────────────────────────────────────────
+       0               ❌           sph wzqz qzw sfyqafy...
+       1               ❌           rog vyby pyv rexpxzex...
+       2               ❌           qnf uxaq oxu qdqwowyd...
+       3               ❌           pme twzp nwt pcpvnvxc...
+       ...
+      22               ✅           Los datos son la nueva materia...
+      23               ❌           Knr czsnr rn m mtdwz lzsdmh...
+      24               ❌           Jmq byrmm qm l scvyk kyrcgl...
+      25               ❌           Ilp axqll pl l rbuxj jxqbfk...
+
+========================================
+  🔓 ¡MENSAJE DESCIFRADO!
+========================================
+
+  Desplazamiento encontrado: 22
+  Texto original:
+
+  Los datos son la nueva materia prima
+  del mundo digital.
+
+  Palabras válidas encontradas: 8/8 (100%)
+  Tiempo de análisis: 0.003 segundos
+========================================
+```
+
+## ⚠️ Errores comunes a evitar
+
+| Error | Por qué es problema | Solución |
+|-------|---------------------|----------|
+| No envolver el alfabeto | `"Z" + 1` debe ser `"A"`, no `[` | Usa módulo 26: `(numero + shift) % 26` |
+| Confundir `ord()` con posición en alfabeto | `ord("A")` es 65, no 0 | Resta `ord("A")`: `ord(letra) - ord("A")` |
+| No preservar mayúsculas/minúsculas | Todo se convierte en mayúsculas | Verifica `caracter.isupper()` y aplica la conversión correcta |
+| Modificar espacios y puntuación | `" "` desplaza a otro caracter | Solo transforma si `caracter.isalpha()` |
+| Umbral muy alto (0.8) | Mensajes cortos no alcanzan el 80% | Usa 0.5 (50%) como umbral por defecto |
+| No limpiar puntuación al contar palabras | `"hola,"` no match con `"HOLA"` | Usa `.strip(".,;:!?\"'()-")` antes de buscar |
+| Leer archivo con codificación incorrecta | Error con ñ y acentos | Usa `encoding="utf-8"` al abrir archivos |
+
+## 💡 Tips para empezar
+
+1. **Primero haz que `apply_shift` funcione.** Prueba con ejemplos manuales antes de pasar al criptoanálisis.
+2. **El truco del módulo 26 es la clave.** `(x + shift) % 26` resuelve el problema de envolver el alfabeto automáticamente.
+3. **Prueba el criptoanálisis con mensajes largos.** Con 2-3 palabras, varios desplazamientos pueden parecer válidos por casualidad. Con 8+ palabras, solo el correcto funciona.
+4. **Usa `words.txt` con palabras en español.** El archivo debe contener palabras comunes del idioma del mensaje.
+5. **Separa cifrado de criptoanálisis.** Son módulos independientes. El criptoanálisis usa `descifrar()` como herramienta.
+
+## 📝 Funciones de referencia
+
+```python
+# El corazón del cifrado:
+def apply_shift(texto, desplazamiento):
+    resultado = []
+    for caracter in texto:
+        if caracter.isalpha():
+            base = ord("A") if caracter.isupper() else ord("a")
+            # Convertir a 0-25, desplazar, envolver, convertir de vuelta
+            numero = (ord(caracter) - base + desplazamiento) % 26
+            resultado.append(chr(base + numero))
+        else:
+            resultado.append(caracter)
+    return "".join(resultado)
+
+
+# Descifrar = cifrar con desplazamiento inverso:
+def descifrar(texto_cifrado, desplazamiento):
+    return apply_shift(texto_cifrado, -desplazamiento)
+
+
+# Verificación rápida:
+assert descifrar(cifrar("Hola Mundo", 5), 5) == "Hola Mundo"
+```
+
+> **There should be one obvious way to do it.** `apply_shift` es la única función que necesita existir. `cifrar` y `descifrar` son aliases con nombres más descriptivos.
+
+## Pruebas de referencia
+
+```python
+# Tests básicos que tu código debe pasar:
+assert apply_shift("A", 1) == "B"
+assert apply_shift("Z", 1) == "A"
+assert apply_shift("a", 1) == "b"
+assert apply_shift("z", 1) == "a"
+assert apply_shift("Hello World!", 3) == "Khoor Zruog!"
+assert apply_shift("123", 5) == "123"
+assert apply_shift("", 10) == ""
+assert descifrar(apply_shift("Test", 7), 7) == "Test"
+
+# Test de ida y vuelta con todos los desplazamientos:
+for shift in range(26):
+    assert descifrar(apply_shift("ABCDEFGHIJKLMNOPQRSTUVWXYZ", shift), shift) == \
+           "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+```
+
+---
+
+**Anterior:** [Proyecto 4: Juego del Ahorcado](proyecto-04-hangman.qmd)
+
+**Siguiente:** [10.6 Presentar tu proyecto](06-presentacion-proyecto.qmd) | [Cierre del curso](99-cierre-curso.qmd)

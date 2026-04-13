@@ -1,0 +1,152 @@
+---
+title: "Laboratorio 6: Diccionarios y Sets"
+subtitle: "Clave-valor, conjuntos y operaciones"
+execute:
+  eval: false
+---
+
+# Laboratorio 6: Diccionarios y Sets
+
+**Módulo:** 6 - Diccionarios y Sets
+**Duración Estimada:** 60 minutos
+**Dificultad:** Intermedio
+
+## Objetivos
+
+- Crear y manipular diccionarios con claves-valor
+- Acceder, modificar y anidar diccionarios
+- Iterar diccionarios con `.items()`, `.keys()`, `.values()`
+- Usar sets para operaciones de conjuntos
+- Combinar diccionarios con `|` y `.update()`
+
+## Requisitos Previos
+
+- Módulos 1-5 completados
+- Listas y tuplas dominadas
+
+## Pasos del Laboratorio
+
+### Paso 1: Agenda de Contactos (15 min)
+
+```python
+agenda = {}
+
+while True:
+    print("\n=== Agenda ===")
+    print("1. Agregar contacto")
+    print("2. Buscar contacto")
+    print("3. Ver todos")
+    print("4. Salir")
+    
+    opcion = input("Elige: ")
+    
+    if opcion == "1":
+        nombre = input("Nombre: ")
+        telefono = input("Teléfono: ")
+        email = input("Email: ")
+        agenda[nombre] = {
+            "telefono": telefono,
+            "email": email
+        }
+        print(f"✅ {nombre} agregado")
+    elif opcion == "2":
+        nombre = input("Nombre a buscar: ")
+        if nombre in agenda:
+            contacto = agenda[nombre]
+            print(f"  📱 {contacto['telefono']}")
+            print(f"  📧 {contacto['email']}")
+        else:
+            print("  ❌ No encontrado")
+    elif opcion == "3":
+        for nombre, datos in agenda.items():
+            print(f"\n  {nombre}:")
+            print(f"    Tel: {datos['telefono']}")
+            print(f"    Email: {datos['email']}")
+    elif opcion == "4":
+        break
+```
+
+### Paso 2: Contador de Palabras (15 min)
+
+```python
+texto = input("Ingresa un texto: ").lower()
+palabras = texto.split()
+
+contador = {}
+for palabra in palabras:
+    contador[palabra] = contador.get(palabra, 0) + 1
+
+print("\nFrecuencia de palabras:")
+for palabra, cantidad in sorted(contador.items(), key=lambda x: x[1], reverse=True):
+    print(f"  {palabra}: {cantidad}")
+```
+
+### Paso 3: Inventario con Diccionarios Anidados (15 min)
+
+```python
+tienda = {
+    "Electrónica": {
+        "Laptop": {"precio": 999, "stock": 5},
+        "Mouse": {"precio": 25, "stock": 50}
+    },
+    "Ropa": {
+        "Camiseta": {"precio": 15, "stock": 100},
+        "Pantalón": {"precio": 30, "stock": 40}
+    }
+}
+
+# Mostrar inventario
+for categoria, productos in tienda.items():
+    print(f"\n📁 {categoria}:")
+    for producto, info in productos.items():
+        print(f"  {producto}: ${info['precio']} (stock: {info['stock']})")
+
+# Calcular valor total
+total = sum(info['precio'] * info['stock'] 
+            for productos in tienda.values() 
+            for info in productos.values())
+print(f"\n💰 Valor total del inventario: ${total}")
+```
+
+### Paso 4: Sets y Operaciones (15 min)
+
+```python
+# Crear sets
+grupo_a = {"Ana", "Luis", "Carlos", "María"}
+grupo_b = {"Luis", "Pedro", "María", "Sofia"}
+
+print(f"Grupo A: {grupo_a}")
+print(f"Grupo B: {grupo_b}")
+
+# Operaciones
+print(f"\nIntersección: {grupo_a & grupo_b}")
+print(f"Unión: {grupo_a | grupo_b}")
+print(f"Diferencia A-B: {grupo_a - grupo_b}")
+print(f"Diferencia simétrica: {grupo_a ^ grupo_b}")
+
+# Eliminar duplicados de lista
+nombres = ["Ana", "Luis", "Ana", "Carlos", "Luis"]
+unicos = list(set(nombres))
+print(f"\nOriginales: {nombres}")
+print(f"Únicos: {unicos}")
+```
+
+## Troubleshooting
+
+| Problema | Solución |
+|----------|----------|
+| `KeyError: 'clave'` | Usar `.get(clave, default)` |
+| Diccionario no actualiza | Verificar nombre de clave |
+| Set no mantiene orden | Sets son no ordenados por diseño |
+| `.items()` no funciona | Usar `for k, v in dict.items()` |
+
+## Conclusión
+
+Dominas diccionarios, sets y operaciones de conjuntos.
+
+## Checklist de Aceptación
+
+- [ ] Agenda agrega/busca/muestra contactos con diccionarios anidados
+- [ ] Contador de palabras usa `.get()` correctamente
+- [ ] Inventario calcula valor total con comprensión
+- [ ] Sets realizan intersección, unión, diferencia

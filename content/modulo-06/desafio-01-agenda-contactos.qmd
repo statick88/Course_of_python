@@ -61,6 +61,7 @@ Diego: 0963456789
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 1: Agenda de contactos
 # Solución de referencia
 

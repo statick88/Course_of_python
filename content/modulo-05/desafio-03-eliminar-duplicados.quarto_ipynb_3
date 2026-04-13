@@ -1,0 +1,121 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "3acd7c8a",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "title: \"Desafío 3: Eliminar duplicados\"\n",
+    "difficulty: \"⭐⭐ Media\"\n",
+    "estimated_time: \"10 minutos\"\n",
+    "---\n",
+    "\n",
+    "## Situación\n",
+    "\n",
+    "Estás limpiando datos de una encuesta. Varios participantes enviaron respuestas duplicadas y necesitas eliminar los repetidos manteniendo el orden original de las respuestas únicas.\n",
+    "\n",
+    "## Tu misión\n",
+    "\n",
+    "Crea un programa que:\n",
+    "\n",
+    "1. Tenga una lista con elementos duplicados\n",
+    "2. Elimine los duplicados **manteniendo el orden original**\n",
+    "3. Muestre la lista original, la lista limpia y cuántos duplicados se eliminaron\n",
+    "\n",
+    "## Ejemplo de ejecución\n",
+    "\n",
+    "```\n",
+    "🧹 Limpiador de Duplicados\n",
+    "\n",
+    "Lista original:  ['rojo', 'azul', 'rojo', 'verde', 'azul', 'amarillo', 'rojo']\n",
+    "Lista limpia:    ['rojo', 'azul', 'verde', 'amarillo']\n",
+    "Duplicados eliminados: 3\n",
+    "```\n",
+    "\n",
+    "## Pista\n",
+    "\n",
+    "- **No uses `set()`** directamente — los sets no mantienen el orden\n",
+    "- Recorre la lista original y agrega solo los elementos que aún no están en la nueva lista\n",
+    "- Usa `if elemento not in nueva_lista:` para verificar\n",
+    "\n",
+    "## Criterios de éxito\n",
+    "\n",
+    "- [ ] Elimina todos los duplicados\n",
+    "- [ ] Mantiene el orden de primera aparición\n",
+    "- [ ] Reporta cuántos duplicados se eliminaron\n",
+    "- [ ] Funciona con cualquier tipo de dato en la lista\n",
+    "\n",
+    "<details>\n",
+    "<summary>Ver solución de referencia</summary>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "5c095087",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#| eval: false\n",
+    "# Desafío 3: Eliminar duplicados\n",
+    "# Solución de referencia\n",
+    "\n",
+    "datos = [\"rojo\", \"azul\", \"rojo\", \"verde\", \"azul\", \"amarillo\", \"rojo\"] # <1>\n",
+    "\n",
+    "limpia = [] # <2>\n",
+    "for elemento in datos: # <3>\n",
+    "    if elemento not in limpia: # <4>\n",
+    "        limpia.append(elemento) # <5>\n",
+    "\n",
+    "duplicados = len(datos) - len(limpia) # <6>\n",
+    "\n",
+    "print(\"🧹 Limpiador de Duplicados\")\n",
+    "print()\n",
+    "print(f\"Lista original:  {datos}\")\n",
+    "print(f\"Lista limpia:    {limpia}\")\n",
+    "print(f\"Duplicados eliminados: {duplicados}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0df275a5",
+   "metadata": {},
+   "source": [
+    "1. Lista original con elementos repetidos: `\"rojo\"` aparece 3 veces, `\"azul\"` 2 veces.\n",
+    "2. `limpia` empieza vacía — aquí iremos agregando solo los elementos únicos.\n",
+    "3. Recorremos cada elemento de la lista original en orden.\n",
+    "4. `if elemento not in limpia:` verifica si ya lo agregamos. Solo lo agregamos la primera vez.\n",
+    "5. `append()` agrega el elemento a la lista limpia. Como solo se agrega si no existe, no hay duplicados.\n",
+    "6. La diferencia entre el tamaño original y el limpio es la cantidad de duplicados eliminados: `7 - 4 = 3`.\n",
+    "\n",
+    "</details>\n",
+    "\n",
+    "---\n",
+    "\n",
+    "[← Desafío 2](desafio-02-invertir-lista.qmd) | [Desafío 4 →](desafio-04-estadisticas-lista.qmd)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

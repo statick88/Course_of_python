@@ -61,6 +61,7 @@ Palabra más larga: 'programación' (12 letras)
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 6: Analizador de texto
 # Solución de referencia
 

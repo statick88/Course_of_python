@@ -61,6 +61,7 @@ Nuevo valor para 'theme': light
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 5: Configurador JSON
 # Solución de referencia
 

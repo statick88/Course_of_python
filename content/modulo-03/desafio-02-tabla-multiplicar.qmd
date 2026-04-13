@@ -55,6 +55,7 @@ Crea un programa que:
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 2: Tabla de multiplicar
 # Solución de referencia
 

@@ -56,6 +56,7 @@ Edad en 10 años: 35 años
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 2: Calculadora de edad
 # Solución de referencia
 

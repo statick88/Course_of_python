@@ -1,0 +1,111 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Desafío 1: Saludo personalizado\"\n",
+        "difficulty: \"⭐ Fácil\"\n",
+        "estimated_time: \"5 minutos\"\n",
+        "---\n",
+        "\n",
+        "## Situación\n",
+        "\n",
+        "> ⚠️ **Importante Anti-IA:** Este desafío está diseñado para que practiques tus habilidades de programación.\n",
+        "> Las soluciones deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,\n",
+        "> se te pedirá explicar cada paso en detalle durante la verificación.\n",
+        "\n",
+        "\n",
+        "Eres el desarrollador de un sistema de bienvenida para una empresa. Necesitas crear un programa que salude al usuario por su nombre y le dé información personalizada.\n",
+        "\n",
+        "## Tu misión\n",
+        "\n",
+        "Crea un programa que:\n",
+        "\n",
+        "1. Pida el nombre del usuario\n",
+        "2. Pida el año de nacimiento\n",
+        "3. Calcule la edad aproximada\n",
+        "4. Muestre un saludo personalizado con toda la información\n",
+        "\n",
+        "## Ejemplo de ejecución\n",
+        "\n",
+        "```\n",
+        "=== SISTEMA DE BIENVENIDA ===\n",
+        "\n",
+        "Ingresa tu nombre: Ana\n",
+        "Ingresa tu año de nacimiento: 1995\n",
+        "\n",
+        "--- Tu perfil ---\n",
+        "Nombre: Ana\n",
+        "Edad aproximada: 31 años\n",
+        "¡Bienvenida al sistema, Ana!\n",
+        "```\n",
+        "\n",
+        "## Pista\n",
+        "\n",
+        "- Usa `input()` para pedir datos\n",
+        "- Convierte el año a entero con `int()`\n",
+        "- Resta el año actual menos el año de nacimiento\n",
+        "- Usa f-strings para formatear la salida\n",
+        "\n",
+        "## Criterios de éxito\n",
+        "\n",
+        "- [ ] El programa pide nombre y año de nacimiento\n",
+        "- [ ] Calcula la edad correctamente\n",
+        "- [ ] La salida está formateada y es legible\n",
+        "- [ ] El saludo usa el nombre del usuario\n",
+        "\n",
+        "<details>\n",
+        "<summary>Ver solución de referencia</summary>"
+      ],
+      "id": "7debe24b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| eval: false\n",
+        "# Desafío 1: Saludo personalizado\n",
+        "# Solución de referencia\n",
+        "\n",
+        "anio_actual = 2026\n",
+        "\n",
+        "nombre = input(\"Ingresa tu nombre: \").strip()\n",
+        "anio_nacimiento = int(input(\"Ingresa tu año de nacimiento: \"))\n",
+        "\n",
+        "edad = anio_actual - anio_nacimiento\n",
+        "\n",
+        "print()\n",
+        "print(\"--- Tu perfil ---\")\n",
+        "print(f\"Nombre: {nombre}\")\n",
+        "print(f\"Edad aproximada: {edad} años\")\n",
+        "print(f\"¡Bienvenido al sistema, {nombre}!\")"
+      ],
+      "id": "d418b83a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "</details>\n",
+        "\n",
+        "---\n",
+        "\n",
+        "[← Volver al Módulo 1](../index.qmd) | [Desafío 2 →](02-calculadora-edad.qmd)"
+      ],
+      "id": "bbfc4590"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

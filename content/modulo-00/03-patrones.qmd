@@ -1,0 +1,187 @@
+---
+title: "0.3 Patrones y abstracción"
+---
+
+# 0.3 Patrones y abstracción: reconocer lo que se repite
+
+> **Duración**: 45 minutos
+> **Objetivo**: Identificar patrones en problemas diferentes para reutilizar soluciones
+
+---
+
+## ¿Qué es un patrón?
+
+> Un **patrón** es una estructura o comportamiento que se repite en diferentes contextos.
+
+Si ya resolviste un problema, y aparece otro similar, **no empieces desde cero**.
+
+---
+
+## Ejemplo: "Contar cosas"
+
+### Problema A: Contar votos
+
+```
+ENTRADA: Lista de nombres votados ["Ana", "Luis", "Ana", "Carlos", "Ana", "Luis"]
+SALIDA: Conteo por persona {"Ana": 3, "Luis": 2, "Carlos": 1}
+```
+
+### Problema B: Contar palabras en un texto
+
+```
+ENTRADA: "el gato y el perro y el raton"
+SALIDA: {"el": 3, "gato": 1, "y": 2, "perro": 1, "raton": 1}
+```
+
+### Problema C: Frecuencia de notas
+
+```
+ENTRADA: [85, 90, 85, 78, 90, 85, 92]
+SALIDA: {85: 3, 90: 2, 78: 1, 92: 1}
+```
+
+### **PATRÓN**: ¡Todos son el mismo problema!
+
+```
+ALGORITMO "CONTAR FRECUENCIA":
+  1. Crear diccionario vacío
+  2. Para cada elemento en la lista:
+     3. Si ya está en diccionario: sumar 1
+     4. Si no está: crear con valor 1
+  5. Retornar diccionario
+```
+
+**Una solución, tres aplicaciones.**
+
+---
+
+## Abstracción: lo que importa, no los detalles
+
+> **Abstracción** es ignorar los detalles específicos para enfocarte en la estructura común.
+
+### Ejemplo concreto
+
+- "Contar votos de Ana, Luis y Carlos" → **específico**
+- "Contar frecuencia de elementos" → **abstracto**
+
+El segundo sirve para **cualquier** lista, no solo votos.
+
+---
+
+## Desafío 0.4: Encuentra el patrón
+
+### Problema 1: Verificar acceso
+
+```
+ENTRADA: usuario = "admin", contraseña = "1234"
+SALIDA: True si coincide, False si no
+```
+
+### Problema 2: Validar código de descuento
+
+```
+ENTRADA: código ingresado = "VERANO2026", código válido = "VERANO2026"
+SALIDA: True si es válido, False si no
+```
+
+### Problema 3: Verificar producto en inventario
+
+```
+ENTRADA: producto = "Laptop", inventario = ["Mouse", "Laptop", "Teclado"]
+SALIDA: True si está en inventario, False si no
+```
+
+### Tu misión
+
+¿Cuál es el patrón común?
+
+<details>
+<summary>Ver solución</summary>
+
+**Patrón**: **Verificar pertenencia / coincidencia**
+
+```
+ALGORITMO "VERIFICAR":
+  1. Comparar valor_entrante con valor_esperado o lista_de_validos
+  2. Si coincide → True (acceso concedido, código válido, producto existe)
+  3. Si no coincide → False (acceso denegado, código inválido, no existe)
+```
+
+Este patrón aplica a: login, cupones, inventario, permisos, filtros, etc.
+
+</details>
+
+---
+
+## Patrones comunes en programación
+
+| Patrón | Descripción | Ejemplos de uso |
+|--------|-------------|-----------------|
+| **Contar** | Cuántas veces aparece algo | Votos, palabras, notas |
+| **Buscar** | ¿Está X en la lista? | Login, inventario, filtros |
+| **Filtrar** | Sacar solo los que cumplen condición | Mayores de edad, aprobados, pares |
+| **Transformar** | Cambiar cada elemento | Celsius → Fahrenheit, minúsculas → mayúsculas |
+| **Acumular** | Sumar todos los elementos | Total de compras, promedio, suma |
+| **Ordenar** | Organizar en orden | Ranking, lista alfabética, precios |
+
+---
+
+## Desafío 0.5: Clasifica por patrón
+
+Clasifica cada situación según el patrón (contar, buscar, filtrar, transformar, acumular, ordenar):
+
+1. Encontrar estudiantes con nota >= 60 → **Filtrar**
+2. Sumar todas las ventas del mes → _______________
+3. Convertir nombres a mayúsculas → _______________
+4. Verificar si un email ya está registrado → _______________
+5. Ordenar productos por precio → _______________
+6. Contar cuántos productos hay en stock → _______________
+
+<details>
+<summary>Ver respuestas</summary>
+
+1. Filtrar ✅
+2. **Acumular**
+3. **Transformar**
+4. **Buscar**
+5. **Ordenar**
+6. **Contar**
+
+</details>
+
+---
+
+## Por qué importa esto
+
+**Cuando reconoces un patrón**:
+- No reinventas la rueda
+- Sabes qué técnica usar antes de empezar
+- Puedes explicar tu enfoque al instructor
+- Encuentras errores más rápido
+
+> **Los programadores expertos no saben más sintaxis.** Reconocen más patrones.
+
+---
+
+## Conceptos clave
+
+| Concepto | Definición |
+|----------|-----------|
+| **Patrón** | Estructura que se repite en diferentes problemas |
+| **Abstracción** | Ignorar detalles para ver estructura común |
+| **Reutilización** | Aplicar solución conocida a problema similar |
+
+---
+
+## Auto-evaluación
+
+- [ ] Puedo identificar el patrón en un problema que nunca vi
+- [ ] Conozco 5+ patrones comunes y cuándo aplicarlos
+- [ ] Puedo explicar por qué dos problemas diferentes son "el mismo"
+- [ ] No empiezo a codificar sin pensar si ya resolví algo similar
+
+---
+
+**Siguiente paso**: Ahora que reconoces patrones, aprenderás a **escribir algoritmos en pseudocódigo** antes de tocar Python.
+
+[← 0.2 Descomposición](02-descomposicion.qmd) | [0.4 Pseudocódigo →](04-pseudocodigo.qmd)

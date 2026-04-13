@@ -54,6 +54,7 @@ Crea un módulo llamado `conversiones.py` que contenga:
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # conversiones.py — Módulo de conversiones de unidades
 
 def celsius_a_fahrenheit(celsius):

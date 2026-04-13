@@ -64,6 +64,7 @@ Email: ana@email.com
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 3: Validador de edad
 # Solución de referencia
 

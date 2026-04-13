@@ -65,6 +65,7 @@ Laura Díaz,22,8.9,Medicina
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 4: CSV a diccionario
 # Solución de referencia
 

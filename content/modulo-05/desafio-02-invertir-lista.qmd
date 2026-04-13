@@ -54,6 +54,7 @@ Playlist invertida (con slicing):
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 2: Invertir una lista
 # Solución de referencia
 

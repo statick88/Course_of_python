@@ -55,6 +55,7 @@ Crea un módulo `validadores.py` con las siguientes funciones:
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 3: Validador de datos robusto
 # Solución de referencia
 

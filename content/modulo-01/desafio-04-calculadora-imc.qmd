@@ -66,6 +66,7 @@ Recomendación: Consulta con un nutricionista
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 4: Calculadora de IMC
 # Solución de referencia
 

@@ -48,6 +48,7 @@ print(calculadora("potencia", 2, 3))     # Operación no válida: potencia
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 7: Calculadora con funciones
 # Solución de referencia
 

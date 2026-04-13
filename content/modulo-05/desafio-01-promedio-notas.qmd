@@ -46,6 +46,7 @@ Resultado: ✅ APROBADO
 <summary>Ver solución de referencia</summary>
 
 ```{python}
+#| eval: false
 # Desafío 1: Promedio de notas
 # Solución de referencia
 
