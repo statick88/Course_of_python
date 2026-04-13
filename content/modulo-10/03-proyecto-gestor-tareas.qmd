@@ -14,9 +14,11 @@ execute:
 
 ## La analogía del tablero Kanban
 
-¿Has visto esos tableros con columnas "Por hacer", "En progreso", "Hecho"? Eso es exactamente lo que vamos a construir, pero en la terminal.
+¿Has visto esos tableros con columnas "Por hacer", "En progreso", "Hecho"? Eso
+es exactamente lo que vamos a construir, pero en la terminal.
 
-**Tu gestor de tareas es como un asistente personal** que nunca olvida nada. Le dices qué hacer, él lo anota, y te lo recuerda cuando vuelves.
+**Tu gestor de tareas es como un asistente personal** que nunca olvida nada. Le
+dices qué hacer, él lo anota, y te lo recuerda cuando vuelves.
 
 > **Simple is better than complex.** No necesitas una base de datos. Un archivo JSON es suficiente.
 
@@ -309,4 +311,5 @@ python main.py
 
 **Anterior:** [10.2 Estructura del proyecto](02-estructura-proyecto.qmd)
 
-**Siguiente:** [10.4 Proyecto guiado: Tienda de Productos](04-proyecto-tienda-simple.qmd)
+**Siguiente:** [10.4 Proyecto guiado: Tienda de
+Productos](04-proyecto-tienda-simple.qmd)

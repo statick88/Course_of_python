@@ -83,8 +83,10 @@ Deberías poder:
 - [ ] Formatear salida con f-strings avanzados
 - [ ] Validar entrada de usuario antes de procesarla
 
-Si puedes hacer todo esto, ¡estás listo para el **Módulo 3: Estructuras de Control**!
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 3: Estructuras de
+Control**!
 
 ---
 
-**Anterior:** [2.5 Strings avanzado](05-strings-avanzado.qmd) | **Siguiente:** [Módulo 3: Estructuras de Control](../modulo-03/index.qmd)
+**Anterior:** [2.5 Strings avanzado](05-strings-avanzado.qmd) | **Siguiente:**
+[Módulo 3: Estructuras de Control](../modulo-03/index.qmd)

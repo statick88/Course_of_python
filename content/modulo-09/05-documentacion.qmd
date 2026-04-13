@@ -1,6 +1,7 @@
 ---
 title: "9.5 Documentación: tu yo del futuro te lo agradecerá"
-subtitle: "El código le dice a la máquina qué hacer. La documentación le dice a los humanos por qué."
+subtitle: "El código le dice a la máquina qué hacer. La documentación le dice a
+los humanos por qué."
 execute:
   eval: false
 ---
@@ -14,9 +15,12 @@ execute:
 
 ## ¿Por qué documentar?
 
-Imagina que encuentras una **herramienta antigua en un taller**. Tiene forma extraña, no tiene etiqueta, y el artesano que la creó ya no está. ¿Para qué sirve? ¿Cómo se usa?
+Imagina que encuentras una **herramienta antigua en un taller**. Tiene forma
+extraña, no tiene etiqueta, y el artesano que la creó ya no está. ¿Para qué
+sirve? ¿Cómo se usa?
 
-El código sin documentación es exactamente esa herramienta. Puede que funcione perfectamente, pero nadie sabe cómo usarlo sin invertigar durante horas.
+El código sin documentación es exactamente esa herramienta. Puede que funcione
+perfectamente, pero nadie sabe cómo usarlo sin invertigar durante horas.
 
 ```python
 # ❌ Sin documentación — ¿qué hace esto?
@@ -53,7 +57,8 @@ def filtrar_por_tipo(datos, tipo_busqueda):
 
 ## Docstrings: la documentación de Python
 
-En Python, la documentación va dentro del código como **docstrings**: cadenas de texto entre triple comillas justo después de la definición.
+En Python, la documentación va dentro del código como **docstrings**: cadenas de
+texto entre triple comillas justo después de la definición.
 
 ```python
 def calcular_promedio(notas):
@@ -137,7 +142,8 @@ def obtener_nombre(usuario_id):
 
 ## Documentar clases
 
-Las clases necesitan documentación a dos niveles: la clase en sí y cada método público.
+Las clases necesitan documentación a dos niveles: la clase en sí y cada método
+público.
 
 ```python
 class CarritoCompras:
@@ -190,7 +196,8 @@ class CarritoCompras:
 
 ## Documentar módulos
 
-Al inicio de cada archivo `.py`, agrega un docstring que describa el propósito del módulo:
+Al inicio de cada archivo `.py`, agrega un docstring que describa el propósito
+del módulo:
 
 ```python
 """Módulo de validación de datos de usuario.
@@ -216,7 +223,8 @@ def validar_email(email):
 
 ## Type hints: documentación ejecutable
 
-Los type hints son anotaciones que indican qué tipo de datos espera una función. No cambian el comportamiento, pero hacen el código **auto-documentado**:
+Los type hints son anotaciones que indican qué tipo de datos espera una función.
+No cambian el comportamiento, pero hacen el código **auto-documentado**:
 
 ```python
 # ✅ Con type hints — el código se documenta solo
@@ -318,4 +326,5 @@ def calcular_umbral_critico(datos):
 
 ---
 
-**Anterior:** [9.4 Manejo de errores](04-manejo-errores.qmd) | **Siguiente:** [9.6 Testing básico](06-testing-basico.qmd)
+**Anterior:** [9.4 Manejo de errores](04-manejo-errores.qmd) | **Siguiente:**
+[9.6 Testing básico](06-testing-basico.qmd)

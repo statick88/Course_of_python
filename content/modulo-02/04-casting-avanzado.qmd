@@ -14,9 +14,12 @@ execute:
 
 ## ¿Qué es el casting? — el traductor de Python
 
-Imagina que estás en un restaurante internacional. El chef solo habla español, pero los clientes hablan inglés, francés y japonés. Necesitas un **traductor** que convierta los pedidos al idioma del chef.
+Imagina que estás en un restaurante internacional. El chef solo habla español,
+pero los clientes hablan inglés, francés y japonés. Necesitas un **traductor**
+que convierta los pedidos al idioma del chef.
 
-El **casting** (o conversión de tipos) es exactamente eso: un traductor que convierte datos de un tipo a otro para que Python pueda trabajar con ellos.
+El **casting** (o conversión de tipos) es exactamente eso: un traductor que
+convierte datos de un tipo a otro para que Python pueda trabajar con ellos.
 
 ```python
 # Casting básico: las 4 funciones fundamentales
@@ -33,10 +36,14 @@ valor = 1
 es_verdadero = bool(valor)   # <4> int → bool
 ```
 
-1. `int("25")` convierte el texto `"25"` al número entero `25`. Solo funciona si el texto contiene solo dígitos (y opcionalmente un signo `-`).
-2. `str(19.99)` convierte el número `19.99` al texto `"19.99"`. Siempre funciona — cualquier valor se puede convertir a string.
-3. `float(5)` convierte el entero `5` al decimal `5.0`. Útil cuando necesitas precisión decimal.
-4. `bool(1)` convierte a booleano. En Python, `0` es `False` y cualquier otro número es `True`.
+1. `int("25")` convierte el texto `"25"` al número entero `25`. Solo funciona si
+el texto contiene solo dígitos (y opcionalmente un signo `-`).
+2. `str(19.99)` convierte el número `19.99` al texto `"19.99"`. Siempre funciona
+— cualquier valor se puede convertir a string.
+3. `float(5)` convierte el entero `5` al decimal `5.0`. Útil cuando necesitas
+precisión decimal.
+4. `bool(1)` convierte a booleano. En Python, `0` es `False` y cualquier otro
+número es `True`.
 
 ## Tabla de conversión completa
 
@@ -81,8 +88,10 @@ except ValueError:
     print("Error: el valor no es un número válido")
 ```
 
-1. `.isdigit()` devuelve `True` si el string contiene solo dígitos. Es una validación rápida antes de convertir.
-2. `try/except` intenta la conversión y, si falla, ejecuta el bloque `except` en vez de romper el programa. Lo veremos en detalle más adelante.
+1. `.isdigit()` devuelve `True` si el string contiene solo dígitos. Es una
+validación rápida antes de convertir.
+2. `try/except` intenta la conversión y, si falla, ejecuta el bloque `except` en
+vez de romper el programa. Lo veremos en detalle más adelante.
 
 ## Redondeo inteligente con `round()`
 
@@ -104,9 +113,11 @@ total_redondeado = round(total, 2)  # <4> — 22.99
 print(f"Total: ${total_redondeado}")
 ```
 
-1. `round(pi, 2)` redondea a 2 decimales. El segundo argumento indica cuántos decimales mantener.
+1. `round(pi, 2)` redondea a 2 decimales. El segundo argumento indica cuántos
+decimales mantener.
 2. `round(pi, 4)` redondea a 4 decimales. `3.14159...` → `3.1416`.
-3. `round(nota)` sin segundo argumento redondea al entero más cercano. `8.7` → `9`.
+3. `round(nota)` sin segundo argumento redondea al entero más cercano. `8.7` →
+`9`.
 4. Para dinero, siempre redondea a 2 decimales para evitar errores de precisión.
 
 ## Conversiones especiales — herramientas del taller
@@ -135,8 +146,10 @@ print(int("2a", 16))      # <5> — 42 (hexadecimal a decimal)
 1. `bin(42)` convierte a binario. El prefijo `0b` indica que es binario.
 2. `hex(42)` convierte a hexadecimal. El prefijo `0x` indica que es hexadecimal.
 3. `oct(42)` convierte a octal. El prefijo `0o` indica que es octal.
-4. `int("101010", 2)` convierte de binario a decimal. El segundo argumento `2` indica la base.
-5. `int("2a", 16)` convierte de hexadecimal a decimal. La base `16` usa dígitos 0-9 y letras a-f.
+4. `int("101010", 2)` convierte de binario a decimal. El segundo argumento `2`
+indica la base.
+5. `int("2a", 16)` convierte de hexadecimal a decimal. La base `16` usa dígitos
+0-9 y letras a-f.
 
 ### Caracteres y códigos Unicode
 
@@ -162,14 +175,18 @@ print(es_mayuscula)  # True
 ```
 
 1. `ord("A")` devuelve el código Unicode del carácter. `"A"` = `65`.
-2. `ord("a")` = `97`. Nota la diferencia: las minúsculas empiezan en 97, las mayúsculas en 65.
-3. `chr(65)` es el inverso de `ord()`. Convierte el código `65` de vuelta al carácter `"A"`.
+2. `ord("a")` = `97`. Nota la diferencia: las minúsculas empiezan en 97, las
+mayúsculas en 65.
+3. `chr(65)` es el inverso de `ord()`. Convierte el código `65` de vuelta al
+carácter `"A"`.
 4. `chr(97)` = `"a"`.
-5. Los códigos 65-90 corresponden a las letras mayúsculas A-Z. Puedes usar esto para verificar sin métodos de string.
+5. Los códigos 65-90 corresponden a las letras mayúsculas A-Z. Puedes usar esto
+para verificar sin métodos de string.
 
 ## Casting booleano — el concepto de truthy y falsy
 
-En Python, **todo valor** puede evaluarse como booleano. No solo `True` y `False`.
+En Python, **todo valor** puede evaluarse como booleano. No solo `True` y
+`False`.
 
 ```python
 # Valores FALSY (se evalúan como False)
@@ -189,7 +206,8 @@ print(bool([1, 2]))   # True: listas no vacías
 2. `""` (string vacío) es falsy. Cualquier string con contenido es truthy.
 3. `None` representa "nada" o "sin valor". Siempre es falsy.
 4. `1` es truthy. `-5`, `3.14`, `0.001` — todos son truthy.
-5. `"hola"` es truthy. `" "`, `"0"`, `"False"` — también son truthy porque tienen contenido.
+5. `"hola"` es truthy. `" "`, `"0"`, `"False"` — también son truthy porque
+tienen contenido.
 
 ### Aplicación práctica: validación elegante
 
@@ -205,7 +223,8 @@ nombre = nombre or "Invitado"  # <2>
 ```
 
 1. Comparar explícitamente con `""` funciona pero es más verboso.
-2. `nombre or "Invitado"`: si `nombre` es falsy (vacío), usa `"Invitado"`. Si tiene valor, lo mantiene.
+2. `nombre or "Invitado"`: si `nombre` es falsy (vacío), usa `"Invitado"`. Si
+tiene valor, lo mantiene.
 
 ## Errores comunes
 
@@ -251,7 +270,8 @@ print(representacion)  # "3.14159"
 ```
 
 1. `str()` convierte a una representación legible para humanos.
-2. `repr()` convierte a una representación precisa para debugging. Para números simples son iguales, pero difieren en casos complejos.
+2. `repr()` convierte a una representación precisa para debugging. Para números
+simples son iguales, pero difieren en casos complejos.
 
 ## Zen de Python aplicado
 
@@ -277,4 +297,5 @@ print(representacion)  # "3.14159"
 
 ---
 
-**Anterior:** [2.3 Operadores lógicos](03-operadores-logicos.qmd) | **Siguiente:** [2.5 Strings avanzado](05-strings-avanzado.qmd)
+**Anterior:** [2.3 Operadores lógicos](03-operadores-logicos.qmd) |
+**Siguiente:** [2.5 Strings avanzado](05-strings-avanzado.qmd)

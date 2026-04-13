@@ -19,7 +19,9 @@ Imagina que tienes **dos proyectos**:
 - **Proyecto A** necesita Django 3.2 (un sistema viejo que no puedes actualizar)
 - **Proyecto B** necesita Django 5.0 (un proyecto nuevo con las últimas funciones)
 
-Si instalas todo en el mismo Python, **uno de los dos se rompe**. Es como intentar que dos personas compartan el mismo teléfono con configuraciones diferentes.
+Si instalas todo en el mismo Python, **uno de los dos se rompe**. Es como
+intentar que dos personas compartan el mismo teléfono con configuraciones
+diferentes.
 
 ```
 # Sin entornos virtuales — CAOS
@@ -29,9 +31,12 @@ pip install django==5.0   # Proyecto B funciona ✅, Proyecto A se rompe ❌
 
 ## La solución: entornos virtuales
 
-Un **entorno virtual** es una **copia aislada** de Python exclusiva para un proyecto. Cada proyecto tiene su propio Python, su propio pip y sus propios paquetes.
+Un **entorno virtual** es una **copia aislada** de Python exclusiva para un
+proyecto. Cada proyecto tiene su propio Python, su propio pip y sus propios
+paquetes.
 
-Es como tener **casas separadas** para cada proyecto. Lo que pasa en una casa, no afecta a las demás.
+Es como tener **casas separadas** para cada proyecto. Lo que pasa en una casa,
+no afecta a las demás.
 
 ```
 proyecto_a/
@@ -61,7 +66,9 @@ cd mi_proyecto
 python -m venv venv  # <1>
 ```
 
-1. `python -m venv venv` significa: "usa el módulo `venv` de Python para crear un entorno virtual en la carpeta `venv`". El primer `venv` es el módulo, el segundo es el nombre de la carpeta.
+1. `python -m venv venv` significa: "usa el módulo `venv` de Python para crear
+un entorno virtual en la carpeta `venv`". El primer `venv` es el módulo, el
+segundo es el nombre de la carpeta.
 
 ### Paso 2: Activar el entorno
 
@@ -73,7 +80,8 @@ source venv/bin/activate  # <1>
 venv\Scripts\activate  # <2>
 ```
 
-1. `source` ejecuta el script de activación. Este modifica tu terminal para que use el Python del entorno virtual.
+1. `source` ejecuta el script de activación. Este modifica tu terminal para que
+use el Python del entorno virtual.
 2. En Windows, el script está en `Scripts\activate`.
 
 ### Paso 3: Verificar que funciona
@@ -85,9 +93,12 @@ venv\Scripts\activate  # <2>
 (venv) $ pip list  # <3> — solo muestra paquetes de este entorno
 ```
 
-1. `which python` (Mac/Linux) o `where python` (Windows) muestra la ruta. Debe apuntar a `mi_proyecto/venv/bin/python`, no al Python del sistema.
-2. La versión debe ser la misma que tu Python base, pero es una instalación separada.
-3. `pip list` muestra solo los paquetes instalados en este entorno. Inicialmente solo `pip` y `setuptools`.
+1. `which python` (Mac/Linux) o `where python` (Windows) muestra la ruta. Debe
+apuntar a `mi_proyecto/venv/bin/python`, no al Python del sistema.
+2. La versión debe ser la misma que tu Python base, pero es una instalación
+separada.
+3. `pip list` muestra solo los paquetes instalados en este entorno. Inicialmente
+solo `pip` y `setuptools`.
 
 ### Paso 4: Instalar paquetes
 
@@ -99,7 +110,8 @@ venv\Scripts\activate  # <2>
 (venv) $ pip list  # <2> — ahora muestra requests y flask
 ```
 
-1. `requests` y `flask` se instalan en `mi_proyecto/venv/lib/`. No afectan a otros proyectos.
+1. `requests` y `flask` se instalan en `mi_proyecto/venv/lib/`. No afectan a
+otros proyectos.
 2. Solo ves los paquetes de este entorno. Limpio y aislado.
 
 ### Paso 5: Desactivar el entorno
@@ -113,7 +125,8 @@ $ which python  # <2> — ahora apunta al Python del sistema
 $ pip list  # <3> — muestra los paquetes del sistema
 ```
 
-1. `deactivate` restaura tu terminal al estado original. El Python del entorno virtual deja de usarse.
+1. `deactivate` restaura tu terminal al estado original. El Python del entorno
+virtual deja de usarse.
 2. Ahora `python` apunta al Python global del sistema.
 3. `pip list` muestra los paquetes instalados globalmente.
 
@@ -145,7 +158,8 @@ pip freeze > requirements.txt  # <1>
 deactivate
 ```
 
-1. `requirements.txt` permite que cualquier persona reproduzca tu entorno exacto.
+1. `requirements.txt` permite que cualquier persona reproduzca tu entorno
+exacto.
 
 ## Reproducir un entorno existente
 
@@ -169,11 +183,13 @@ pip install -r requirements.txt  # <1>
 python main.py
 ```
 
-1. `-r requirements.txt` lee el archivo e instala exactamente las mismas versiones que usó el autor.
+1. `-r requirements.txt` lee el archivo e instala exactamente las mismas
+versiones que usó el autor.
 
 ## Dónde NO subir el entorno virtual
 
-El entorno virtual contiene miles de archivos binarios. **Nunca** lo subas a Git:
+El entorno virtual contiene miles de archivos binarios. **Nunca** lo subas a
+Git:
 
 ```
 # .gitignore — Archivos que Git debe ignorar
@@ -185,7 +201,8 @@ __pycache__/       # <3> — archivos compilados de Python
 
 1. `venv/` es la convención más común. Ignóralo siempre en `.gitignore`.
 2. Algunos proyectos usan `.env/` como nombre del entorno virtual.
-3. `__pycache__/` contiene archivos `.pyc` compilados. Se regeneran automáticamente.
+3. `__pycache__/` contiene archivos `.pyc` compilados. Se regeneran
+automáticamente.
 4. Los archivos `.pyc` individuales también deben ignorarse.
 
 ## Entornos virtuales y VS Code
@@ -196,7 +213,8 @@ Si usas VS Code, puedes seleccionar el intérprete del entorno virtual:
 2. Escribe: `Python: Select Interpreter`
 3. Elige el que dice `venv` — VS Code lo detecta automáticamente
 
-Ahora VS Code usará el Python del entorno virtual para ejecutar tu código, hacer autocompletado y verificar errores.
+Ahora VS Code usará el Python del entorno virtual para ejecutar tu código, hacer
+autocompletado y verificar errores.
 
 ## Errores comunes con entornos virtuales
 
@@ -211,7 +229,8 @@ source venv/bin/activate
 pip install requests  # Se instala en el entorno virtual
 ```
 
-**Solución:** Siempre verifica que ves `(venv)` en tu prompt antes de instalar paquetes.
+**Solución:** Siempre verifica que ves `(venv)` en tu prompt antes de instalar
+paquetes.
 
 ### ❌ Error: Múltiples entornos en el mismo proyecto
 
@@ -222,7 +241,8 @@ proyecto/
 └── env/        # Otro entorno más
 ```
 
-**Solución:** Elige **un solo nombre** para el entorno virtual y úsalo consistentemente. La convención es `venv/`.
+**Solución:** Elige **un solo nombre** para el entorno virtual y úsalo
+consistentemente. La convención es `venv/`.
 
 ### ❌ Error: El entorno virtual no funciona después de mover el proyecto
 
@@ -232,7 +252,8 @@ mv proyecto/ nueva_ubicacion/
 source venv/bin/activate  # Puede fallar
 ```
 
-**Solución:** Los entornos virtuales contienen rutas absolutas. Si mueves el proyecto, **recrea** el entorno:
+**Solución:** Los entornos virtuales contienen rutas absolutas. Si mueves el
+proyecto, **recrea** el entorno:
 
 ```bash
 # ✅ Borrar y recrear
@@ -279,4 +300,5 @@ proyecto/
 
 ---
 
-**Anterior:** [8.5 pip: gestor de paquetes](05-pip-paquetes.qmd) | **Siguiente:** [Resumen del Módulo 8](99-resumen.qmd)
+**Anterior:** [8.5 pip: gestor de paquetes](05-pip-paquetes.qmd) |
+**Siguiente:** [Resumen del Módulo 8](99-resumen.qmd)

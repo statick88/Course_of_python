@@ -74,7 +74,8 @@ print(f"El IVA es: ${iva}")  # $15.0
 
 ## Return temprano: salir antes de tiempo
 
-Puedes usar `return` en cualquier punto de la función. Cuando Python encuentra un `return`, **sale inmediatamente** de la función:
+Puedes usar `return` en cualquier punto de la función. Cuando Python encuentra
+un `return`, **sale inmediatamente** de la función:
 
 ```python
 def verificar_acceso(edad):  # <1>
@@ -93,7 +94,8 @@ print(verificar_acceso(30))   # Acceso permitido
 ```
 
 1. La función verifica diferentes condiciones de edad.
-2. Si la edad es negativa, retorna inmediatamente con un error. No sigue ejecutando el resto.
+2. Si la edad es negativa, retorna inmediatamente con un error. No sigue
+ejecutando el resto.
 3. Si es menor de 18, retorna "denegado" y sale.
 4. Si es 65 o más, retorna "preferencial" y sale.
 5. Si ninguna condición anterior se cumplió, retorna "permitido".
@@ -102,7 +104,8 @@ print(verificar_acceso(30))   # Acceso permitido
 
 ## Devolver múltiples valores
 
-Python permite devolver varios valores a la vez. En realidad, devuelve una **tupla**:
+Python permite devolver varios valores a la vez. En realidad, devuelve una
+**tupla**:
 
 ```python
 def dividir(dividendo, divisor):  # <1>
@@ -218,7 +221,8 @@ def procesar_pedido(producto, cantidad):
 1. Esta línea siempre se ejecuta al inicio.
 2. Si `cantidad <= 0`, retorna aquí y **todo lo demás se salta**.
 3. Si no hubo return temprano, llega aquí y devuelve el precio.
-4. Código después del `return` nunca se ejecuta. Python lo marca como inalcanzable.
+4. Código después del `return` nunca se ejecuta. Python lo marca como
+inalcanzable.
 
 ## Errores comunes
 
@@ -276,4 +280,5 @@ def valor_absoluto_correcto(numero):
 
 ---
 
-**Anterior:** [4.2 Parámetros y argumentos](02-parametros-argumentos.qmd) | **Siguiente:** [4.4 Scope de variables](04-scope-variables.qmd)
+**Anterior:** [4.2 Parámetros y argumentos](02-parametros-argumentos.qmd) |
+**Siguiente:** [4.4 Scope de variables](04-scope-variables.qmd)

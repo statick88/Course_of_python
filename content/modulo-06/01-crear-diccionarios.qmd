@@ -15,9 +15,12 @@ execute:
 
 ## ¿Qué es un diccionario?
 
-Imagina una **agenda de contactos**. No buscas a alguien por su posición (el tercero de la lista), sino por su **nombre**. Dices "busca a Ana" y la agenda te devuelve su teléfono, su email, su dirección.
+Imagina una **agenda de contactos**. No buscas a alguien por su posición (el
+tercero de la lista), sino por su **nombre**. Dices "busca a Ana" y la agenda te
+devuelve su teléfono, su email, su dirección.
 
-Un diccionario en Python funciona exactamente así: guardas datos asociados a una **clave** única, y los recuperas usando esa clave.
+Un diccionario en Python funciona exactamente así: guardas datos asociados a una
+**clave** única, y los recuperas usando esa clave.
 
 ```python
 # Una lista: buscas por posición
@@ -33,8 +36,10 @@ agenda = {
 print(agenda["Ana"])  # ¿Cuál es el teléfono de Ana?
 ```
 
-1. En una lista, accedes por **posición** (índice). Si no sabes en qué posición está Ana, debes recorrer toda la lista.
-2. En un diccionario, accedes por **clave**. No importa cuántos contactos haya, `"Ana"` siempre te devuelve su teléfono directamente.
+1. En una lista, accedes por **posición** (índice). Si no sabes en qué posición
+está Ana, debes recorrer toda la lista.
+2. En un diccionario, accedes por **clave**. No importa cuántos contactos haya,
+`"Ana"` siempre te devuelve su teléfono directamente.
 
 > **Beautiful is better than ugly.** Un diccionario organiza datos de forma que el código se lee como una consulta natural: "dame el teléfono de Ana".
 
@@ -42,7 +47,8 @@ print(agenda["Ana"])  # ¿Cuál es el teléfono de Ana?
 
 ## Anatomía de un diccionario
 
-Un diccionario es una colección de **pares clave-valor** separados por comas, envueltos en llaves `{}`.
+Un diccionario es una colección de **pares clave-valor** separados por comas,
+envueltos en llaves `{}`.
 
 ```python
 # Estructura básica de un diccionario
@@ -54,12 +60,14 @@ persona = {
 }
 ```
 
-1. `"nombre"` es la **clave** (siempre un string). `"Ana"` es el **valor** asociado.
+1. `"nombre"` es la **clave** (siempre un string). `"Ana"` es el **valor**
+asociado.
 2. `"edad"` es la clave. `28` es el valor (puede ser cualquier tipo).
 3. `"ciudad"` es la clave. `"Quito"` es el valor.
 4. `"es_estudiante"` es la clave. `True` es el valor booleano.
 
-Cada par clave-valor se separa con dos puntos `:`. Cada par se separa del siguiente con una coma `,`.
+Cada par clave-valor se separa con dos puntos `:`. Cada par se separa del
+siguiente con una coma `,`.
 
 ## Dos formas de crear diccionarios
 
@@ -77,8 +85,10 @@ producto = {
 carrito = {}  # <2>
 ```
 
-1. Las llaves `{}` con pares `clave: valor` son la forma más legible y usada en Python.
-2. `{}` crea un diccionario vacío. Es el punto de partida para construir diccionarios dinámicamente.
+1. Las llaves `{}` con pares `clave: valor` son la forma más legible y usada en
+Python.
+2. `{}` crea un diccionario vacío. Es el punto de partida para construir
+diccionarios dinámicamente.
 
 ### Forma 2: `dict()` (útil en casos especiales)
 
@@ -97,14 +107,17 @@ datos = dict([
 ])  # <2>
 ```
 
-1. `dict()` con argumentos con nombre es útil cuando las claves son identificadores válidos (sin espacios ni caracteres especiales).
-2. `dict()` con lista de tuplas es útil cuando los datos vienen de otra fuente (como una consulta a base de datos).
+1. `dict()` con argumentos con nombre es útil cuando las claves son
+identificadores válidos (sin espacios ni caracteres especiales).
+2. `dict()` con lista de tuplas es útil cuando los datos vienen de otra fuente
+(como una consulta a base de datos).
 
 > **There should be one obvious way to do it.** En la práctica, el 95% de las veces usarás `{}`. Usa `dict()` solo cuando tenga sentido.
 
 ## Las claves: reglas de oro
 
-No todo puede ser una clave. Las claves deben ser **inmutables** — no pueden cambiar después de crearse.
+No todo puede ser una clave. Las claves deben ser **inmutables** — no pueden
+cambiar después de crearse.
 
 ```python
 # ✅ Claves válidas (inmutables)
@@ -124,7 +137,8 @@ diccionario = {
 
 1. Los **strings** son las claves más comunes. Son inmutables y descriptivos.
 2. Los **enteros** también pueden ser claves. `42` es una clave válida.
-3. Las **tuplas** pueden ser claves porque son inmutables. Útil para coordenadas o combinaciones.
+3. Las **tuplas** pueden ser claves porque son inmutables. Útil para coordenadas
+o combinaciones.
 4. Los **booleanos** pueden ser claves, aunque es raro verlo en la práctica.
 5. Las **listas** NO pueden ser claves porque son mutables (pueden cambiar).
 6. Los **diccionarios** NO pueden ser claves porque también son mutables.
@@ -156,8 +170,10 @@ temperaturas = {
 }  # <2>
 ```
 
-1. La semana tiene un orden natural. El lunes siempre va primero. Una lista es perfecta.
-2. Las temperaturas tienen un nombre (el día) asociado a un valor. Un diccionario es perfecto.
+1. La semana tiene un orden natural. El lunes siempre va primero. Una lista es
+perfecta.
+2. Las temperaturas tienen un nombre (el día) asociado a un valor. Un
+diccionario es perfecto.
 
 > **Practicality beats purity.** No hay una respuesta absoluta. Elige la estructura que haga tu código más fácil de leer y mantener.
 
@@ -202,4 +218,5 @@ estudiante = {
 
 ---
 
-**Anterior:** [Módulo 6: Inicio](index.qmd) | **Siguiente:** [6.2 Acceder y modificar](02-acceder-modificar.qmd)
+**Anterior:** [Módulo 6: Inicio](index.qmd) | **Siguiente:** [6.2 Acceder y
+modificar](02-acceder-modificar.qmd)

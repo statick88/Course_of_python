@@ -6,7 +6,8 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Estás cenando en un restaurante con amigos. La cuenta llega y necesitan calcular cuánto debe pagar cada uno, incluyendo la propina.
+Estás cenando en un restaurante con amigos. La cuenta llega y necesitan calcular
+cuánto debe pagar cada uno, incluyendo la propina.
 
 ## Tu misión
 

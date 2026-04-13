@@ -14,7 +14,9 @@ execute:
 
 ## Los operadores aritméticos — tu calculadora de bolsillo
 
-Imagina que Python es como la **calculadora de tu celular**. Tiene las operaciones básicas que todos conocemos, pero también algunos trucos que la hacen más poderosa.
+Imagina que Python es como la **calculadora de tu celular**. Tiene las
+operaciones básicas que todos conocemos, pero también algunos trucos que la
+hacen más poderosa.
 
 ```python
 # Los 7 operadores aritméticos de Python
@@ -34,8 +36,10 @@ potencia = a ** b     # <7>
 2. `-` resta el segundo valor del primero. `17 - 5 = 12`.
 3. `*` multiplica dos valores. `17 * 5 = 85`.
 4. `/` divide y **siempre** devuelve un `float`. `17 / 5 = 3.4`.
-5. `//` divide y devuelve solo la parte entera (trunca, no redondea). `17 // 5 = 3`.
-6. `%` devuelve el **residuo** de la división. `17 % 5 = 2` (porque 17 = 3×5 + 2).
+5. `//` divide y devuelve solo la parte entera (trunca, no redondea). `17 // 5 =
+3`.
+6. `%` devuelve el **residuo** de la división. `17 % 5 = 2` (porque 17 = 3×5 +
+2).
 7. `**` eleva el primer número a la potencia del segundo. `17 ** 5 = 1,419,857`.
 
 ## Tabla de referencia rápida
@@ -52,7 +56,8 @@ potencia = a ** b     # <7>
 
 ## División: el operador con más personalidades
 
-La división en Python tiene **tres sabores**. Cada uno sirve para una situación diferente.
+La división en Python tiene **tres sabores**. Cada uno sirve para una situación
+diferente.
 
 ```python
 # 1. División normal (/) — siempre devuelve float
@@ -70,15 +75,19 @@ sobrante = personas % porciones  # <3>
 print(sobrante)  # 2
 ```
 
-1. `/` siempre devuelve un `float`. Útil cuando necesitas precisión decimal, como precios.
-2. `//` trunca (no redondea). `17 // 5 = 3`, no 4. Ideal para repartir cosas enteras.
-3. `%` te dice cuánto sobra después de repartir. `17 % 5 = 2` (sobran 2 porciones).
+1. `/` siempre devuelve un `float`. Útil cuando necesitas precisión decimal,
+como precios.
+2. `//` trunca (no redondea). `17 // 5 = 3`, no 4. Ideal para repartir cosas
+enteras.
+3. `%` te dice cuánto sobra después de repartir. `17 % 5 = 2` (sobran 2
+porciones).
 
 > **Practicality beats purity.** Usa `/` para cálculos precisos, `//` para repartir cosas enteras, y `%` para saber si algo es divisible o para calcular ciclos.
 
 ## El módulo (%) — el operador más útil que no conocías
 
-El módulo parece raro al principio, pero es **increíblemente útil** en la vida real.
+El módulo parece raro al principio, pero es **increíblemente útil** en la vida
+real.
 
 ```python
 # ¿Es par o impar?
@@ -97,8 +106,10 @@ ultimo_digito = dni % 10  # <3>
 print(ultimo_digito)  # 8
 ```
 
-1. `numero % 2` devuelve 0 si es par, 1 si es impar. Este es el uso más común del módulo.
-2. `minuto % 15 == 0` es verdadero cada 15 minutos. Útil para acciones periódicas.
+1. `numero % 2` devuelve 0 si es par, 1 si es impar. Este es el uso más común
+del módulo.
+2. `minuto % 15 == 0` es verdadero cada 15 minutos. Útil para acciones
+periódicas.
 3. `dni % 10` extrae el último dígito de cualquier número entero.
 
 ## Potencia (**) — matemáticas sin complicaciones
@@ -118,7 +129,8 @@ raiz_cubica = 27 ** (1/3)  # 3.0 — raíz cúbica <4>
 
 ## Operadores de asignación compuesta
 
-Python te permite combinar operaciones con asignación. Es como un **atajo de teclado** para matemáticas.
+Python te permite combinar operaciones con asignación. Es como un **atajo de
+teclado** para matemáticas.
 
 ```python
 saldo = 1000
@@ -139,7 +151,8 @@ saldo **= 2    # saldo = saldo ** 2 <8>
 ```
 
 1. `saldo = saldo + 200` funciona, pero repite el nombre de la variable.
-2. `saldo += 200` es más limpio y dice exactamente lo mismo: "suma 200 al saldo".
+2. `saldo += 200` es más limpio y dice exactamente lo mismo: "suma 200 al
+saldo".
 3. `-=` resta y asigna. `1200 - 150 = 1050`.
 4. `*=` multiplica y asigna. `1050 * 2 = 2100`.
 5. `/=` divide y asigna. `2100 / 4 = 525.0` (devuelve float).
@@ -149,7 +162,8 @@ saldo **= 2    # saldo = saldo ** 2 <8>
 
 ## Precedencia de operadores — el orden importa
 
-Python sigue reglas matemáticas para decidir qué operación hacer primero. Es como la **jerarquía de operaciones** que aprendiste en la escuela.
+Python sigue reglas matemáticas para decidir qué operación hacer primero. Es
+como la **jerarquía de operaciones** que aprendiste en la escuela.
 
 ```python
 # Sin paréntesis: Python sigue la precedencia
@@ -164,9 +178,12 @@ print(resultado)  # 20
 nota_final = (parcial1 * 0.3) + (parcial2 * 0.3) + (examen * 0.4)  # <3>
 ```
 
-1. La multiplicación (`*`) tiene mayor precedencia que la suma (`+`). Python calcula `3 * 4 = 12` primero, luego `2 + 12 = 14`.
-2. Los paréntesis `()` tienen la **máxima precedencia**. Python calcula `(2 + 3) = 5` primero, luego `5 * 4 = 20`.
-3. Los paréntesis hacen el código más legible y aseguran el orden correcto de operaciones.
+1. La multiplicación (`*`) tiene mayor precedencia que la suma (`+`). Python
+calcula `3 * 4 = 12` primero, luego `2 + 12 = 14`.
+2. Los paréntesis `()` tienen la **máxima precedencia**. Python calcula `(2 + 3)
+= 5` primero, luego `5 * 4 = 20`.
+3. Los paréntesis hacen el código más legible y aseguran el orden correcto de
+operaciones.
 
 ### Orden de precedencia (de mayor a menor)
 
@@ -195,7 +212,8 @@ personas_por_equipo = personas // equipos  # <2>
 print(personas_por_equipo)  # 3
 ```
 
-1. `/` siempre devuelve `float`. No sirve para repartir cosas que deben ser enteras.
+1. `/` siempre devuelve `float`. No sirve para repartir cosas que deben ser
+enteras.
 2. `//` trunca al entero inferior. Perfecto para repartir personas, items, etc.
 
 ### ❌ Olvidar la precedencia de operadores
@@ -208,7 +226,8 @@ promedio = nota1 + nota2 + nota3 / 3  # <1>
 promedio = (nota1 + nota2 + nota3) / 3  # <2>
 ```
 
-1. Sin paréntesis, Python divide solo `nota3` entre 3 y luego suma las demás notas.
+1. Sin paréntesis, Python divide solo `nota3` entre 3 y luego suma las demás
+notas.
 2. Con paréntesis, primero suma todas las notas y luego divide el total.
 
 ### ❌ Usar módulo con floats
@@ -221,7 +240,8 @@ resultado = 10.5 % 3.2  # <1>
 resultado = 10 % 3  # <2>
 ```
 
-1. El módulo con floats puede dar resultados imprecisos por cómo Python almacena decimales.
+1. El módulo con floats puede dar resultados imprecisos por cómo Python almacena
+decimales.
 2. Con enteros, el módulo siempre es exacto y predecible.
 
 ## Zen de Python aplicado
@@ -246,4 +266,5 @@ resultado = 10 % 3  # <2>
 
 ---
 
-**Anterior:** [Módulo 2: Inicio](index.qmd) | **Siguiente:** [2.2 Operadores de comparación](02-operadores-comparacion.qmd)
+**Anterior:** [Módulo 2: Inicio](index.qmd) | **Siguiente:** [2.2 Operadores de
+comparación](02-operadores-comparacion.qmd)

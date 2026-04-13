@@ -4,7 +4,8 @@ title: "Quiz: Módulo 1 — Introducción a Python"
 
 ## Evaluación del Módulo 1
 
-Responde las siguientes preguntas para evaluar tu comprensión de los conceptos fundamentales de Python.
+Responde las siguientes preguntas para evaluar tu comprensión de los conceptos
+fundamentales de Python.
 
 ::: {.quizdown}
 
@@ -120,4 +121,5 @@ Responde las siguientes preguntas para evaluar tu comprensión de los conceptos 
 
 ---
 
-**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 1](../content/modulo-01/index.qmd)
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo
+1](../content/modulo-01/index.qmd)

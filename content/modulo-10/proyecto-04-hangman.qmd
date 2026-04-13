@@ -1,6 +1,7 @@
 ---
 title: "Proyecto 4: Juego del Ahorcado"
-subtitle: "⭐⭐⭐ Dificultad Intermedia-Avanzada — Strings, listas, random, archivos, lógica de juego"
+subtitle: "⭐⭐⭐ Dificultad Intermedia-Avanzada — Strings, listas, random,
+archivos, lógica de juego"
 execute:
   eval: false
 ---
@@ -11,11 +12,14 @@ execute:
 
 ## 📋 Descripción del Proyecto
 
-Implementa el clásico juego del **Ahorado** (Hangman) en Python. La computadora elige una palabra secreta de una lista, el jugador adivina letras una a la vez, y debe descubrir la palabra antes de quedarse sin intentos.
+Implementa el clásico juego del **Ahorado** (Hangman) en Python. La computadora
+elige una palabra secreta de una lista, el jugador adivina letras una a la vez,
+y debe descubrir la palabra antes de quedarse sin intentos.
 
 > **La analogía:** El ahorcado es como un detective que elimina sospechosos. Cada letra que aciertas descarta posibilidades. Cada letra incorrecta te acerca al final. ¿Puedes resolver el misterio antes de que se agoten las pistas?
 
-Este proyecto está inspirado en el **Problem Set 2 de MIT 6.0001: Introduction to Computer Science and Programming in Python**.
+Este proyecto está inspirado en el **Problem Set 2 de MIT 6.0001: Introduction
+to Computer Science and Programming in Python**.
 
 ## 🎯 Requisitos mínimos
 
@@ -74,7 +78,8 @@ Construye el juego paso a paso. Cada nivel agrega una funcionalidad nueva.
 
 ### Nivel 1: Juego básico con palabra fija
 
-Implementa el esqueleto del juego con una palabra escrita directamente en el código.
+Implementa el esqueleto del juego con una palabra escrita directamente en el
+código.
 
 ```python
 def obtener_palabra_fija():
@@ -165,7 +170,8 @@ MODULO
 
 ### Nivel 3: Control de letras usadas
 
-Impide que el jugador adivine la misma letra dos veces y muestra qué letras quedan.
+Impide que el jugador adivine la misma letra dos veces y muestra qué letras
+quedan.
 
 ```python
 ABECEDARIO = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -384,11 +390,16 @@ Puntuación: 12 puntos
 
 ## 💡 Tips para empezar
 
-1. **Empieza con `mostrar_progreso()`.** Es la función más simple y la más útil para depurar.
-2. **Prueba sin archivo primero.** Usa una palabra fija hasta que el flujo funcione.
-3. **El conjunto `set` es tu amigo.** `letras_usadas = set()` permite verificar rápidamente si una letra ya se usó.
-4. **Prueba manualmente antes de automatizar.** Juega una partida completa a mano para entender el flujo.
-5. **Separa la lógica de la interfaz.** Las funciones que calculan no deben imprimir. Las que imprimen no deben calcular.
+1. **Empieza con `mostrar_progreso()`.** Es la función más simple y la más útil
+para depurar.
+2. **Prueba sin archivo primero.** Usa una palabra fija hasta que el flujo
+funcione.
+3. **El conjunto `set` es tu amigo.** `letras_usadas = set()` permite verificar
+rápidamente si una letra ya se usó.
+4. **Prueba manualmente antes de automatizar.** Juega una partida completa a
+mano para entender el flujo.
+5. **Separa la lógica de la interfaz.** Las funciones que calculan no deben
+imprimir. Las que imprimen no deben calcular.
 
 ## 📝 Funciones de referencia
 
@@ -417,6 +428,8 @@ def calcular_puntuacion(palabra_secreta, intentos_restantes, intentos_maximos):
 
 ---
 
-**Anterior:** [Proyecto 3: Analizador de Datos CSV](proyecto-03-analizador-datos.qmd)
+**Anterior:** [Proyecto 3: Analizador de Datos
+CSV](proyecto-03-analizador-datos.qmd)
 
-**Siguiente:** [Proyecto 5: Cifrado César y Criptoanálisis](proyecto-05-caesar-cipher.qmd)
+**Siguiente:** [Proyecto 5: Cifrado César y
+Criptoanálisis](proyecto-05-caesar-cipher.qmd)

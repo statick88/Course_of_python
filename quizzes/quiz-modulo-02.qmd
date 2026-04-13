@@ -4,7 +4,8 @@ title: "Quiz: Módulo 2 — Tipos de Datos y Variables"
 
 ## Evaluación del Módulo 2
 
-Responde las siguientes preguntas para evaluar tu comprensión de los tipos de datos y variables en Python.
+Responde las siguientes preguntas para evaluar tu comprensión de los tipos de
+datos y variables en Python.
 
 ::: {.quizdown}
 
@@ -120,4 +121,5 @@ Responde las siguientes preguntas para evaluar tu comprensión de los tipos de d
 
 ---
 
-**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 2](../content/modulo-02/index.qmd)
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo
+2](../content/modulo-02/index.qmd)

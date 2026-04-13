@@ -11,7 +11,9 @@ estimated_time: "20 minutos"
 > se te pedirá explicar cada paso en detalle durante la verificación.
 
 
-Una empresa necesita un programa que recopile datos de contacto de clientes potenciales. El programa debe validar cada dato antes de aceptarlo y mostrar un resumen formateado al final.
+Una empresa necesita un programa que recopile datos de contacto de clientes
+potenciales. El programa debe validar cada dato antes de aceptarlo y mostrar un
+resumen formateado al final.
 
 ## Tu misión
 

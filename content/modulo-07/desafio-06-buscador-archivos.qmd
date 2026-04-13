@@ -6,7 +6,9 @@ estimated_time: "30 minutos"
 
 ## Situación
 
-Tienes un proyecto con cientos de archivos distribuidos en múltiples carpetas. Necesitas una herramienta que te permita buscar archivos por nombre, extensión o contenido, similar al comando `find` de Linux.
+Tienes un proyecto con cientos de archivos distribuidos en múltiples carpetas.
+Necesitas una herramienta que te permita buscar archivos por nombre, extensión o
+contenido, similar al comando `find` de Linux.
 
 ## Tu misión
 

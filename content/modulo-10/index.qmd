@@ -27,7 +27,8 @@ Al completar este módulo, serás capaz de:
 
 ## 🏆 Elige tu Desafío Final
 
-Estos son los proyectos que construirás. **Elige UNO** según tu nivel de ambición:
+Estos son los proyectos que construirás. **Elige UNO** según tu nivel de
+ambición:
 
 | # | Proyecto | Dificultad | Qué integras |
 |---|----------|------------|--------------|
@@ -40,9 +41,12 @@ Estos son los proyectos que construirás. **Elige UNO** según tu nivel de ambic
 ::: {.callout-tip}
 ## ¿Por qué un proyecto integrador?
 
-Aprender a programar es como aprender a cocinar. Puedes memorizar recetas individuales, pero **hasta que no cocinas una cena completa para invitados, no sabes si realmente dominas la cocina**.
+Aprender a programar es como aprender a cocinar. Puedes memorizar recetas
+individuales, pero **hasta que no cocinas una cena completa para invitados, no
+sabes si realmente dominas la cocina**.
 
-Este módulo es esa cena. No es una receta más — es el momento donde **tú decides el menú, tú eliges los ingredientes, y tú cocinas**.
+Este módulo es esa cena. No es una receta más — es el momento donde **tú decides
+el menú, tú eliges los ingredientes, y tú cocinas**.
 :::
 
 ![Proyecto Integrador](../../images/modulo-10-proyecto-integrador.svg){fig-align="center" width="500"}

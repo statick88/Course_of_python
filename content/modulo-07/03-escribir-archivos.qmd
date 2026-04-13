@@ -22,7 +22,8 @@ Escribir en un archivo es como escribir en un cuaderno:
 
 ## `.write()`: escribir una cadena
 
-El método `.write()` escribe una cadena de texto en el archivo. **No agrega saltos de línea automáticamente** — debes incluirlos tú.
+El método `.write()` escribe una cadena de texto en el archivo. **No agrega
+saltos de línea automáticamente** — debes incluirlos tú.
 
 ```python
 # Crear un archivo nuevo (o sobrescribir uno existente)
@@ -32,7 +33,8 @@ with open("mi_diario.txt", "w") as archivo:
     archivo.write("Mañana seguiré practicando\n") # <3>
 ```
 
-1. `.write()` escribe exactamente el texto que le pasas. El `\n` al final crea un salto de línea.
+1. `.write()` escribe exactamente el texto que le pasas. El `\n` al final crea
+un salto de línea.
 2. Cada llamada a `.write()` continúa donde terminó la anterior.
 3. Al salir del bloque `with`, el archivo se guarda y cierra automáticamente.
 
@@ -48,7 +50,9 @@ with open("datos_importantes.txt", "w") as archivo:
     archivo.write("Nueva línea\n") # <1>
 ```
 
-1. Si `datos_importantes.txt` ya existía con 1000 líneas, **todas se pierden**. Solo queda `"Nueva línea\n"`. El modo `"w"` trunca el archivo a cero bytes antes de escribir.
+1. Si `datos_importantes.txt` ya existía con 1000 líneas, **todas se pierden**.
+Solo queda `"Nueva línea\n"`. El modo `"w"` trunca el archivo a cero bytes antes
+de escribir.
 
 ### La forma segura: verificar antes de sobrescribir
 
@@ -74,7 +78,8 @@ else:
 
 ## Modo `"a"`: agregar sin borrar
 
-El modo append (`"a"`) es perfecto para **logs**, **diarios** y cualquier caso donde quieras acumular información:
+El modo append (`"a"`) es perfecto para **logs**, **diarios** y cualquier caso
+donde quieras acumular información:
 
 ```python
 # Agregar una entrada al diario sin borrar las anteriores
@@ -83,7 +88,8 @@ with open("mi_diario.txt", "a") as archivo:
     archivo.write("Fue más fácil de lo que pensé\n")
 ```
 
-1. El modo `"a"` siempre escribe **al final** del archivo. Si el archivo no existe, lo crea automáticamente.
+1. El modo `"a"` siempre escribe **al final** del archivo. Si el archivo no
+existe, lo crea automáticamente.
 
 ### Ejemplo: sistema de logs simple
 
@@ -104,14 +110,16 @@ registrar_log("Error en módulo de pagos")
 ```
 
 1. `datetime` del módulo homónimo permite trabajar con fechas y horas.
-2. `.strftime()` formatea la fecha actual como una cadena legible: `"2026-04-04 15:30:00"`.
+2. `.strftime()` formatea la fecha actual como una cadena legible: `"2026-04-04
+15:30:00"`.
 3. Modo `"a"` para agregar al final sin borrar logs anteriores.
 4. Cada línea del log tiene el formato `[fecha] mensaje`.
 5. Cada llamada agrega una nueva línea al archivo.
 
 ## `.writelines()`: escribir múltiples líneas
 
-El método `.writelines()` escribe una **lista de strings** en el archivo. **No agrega saltos de línea** — debes incluirlos en cada string.
+El método `.writelines()` escribe una **lista de strings** en el archivo. **No
+agrega saltos de línea** — debes incluirlos en cada string.
 
 ```python
 # Lista de tareas para escribir en un archivo
@@ -125,7 +133,8 @@ with open("tareas.txt", "w") as archivo:
     archivo.writelines(tareas) # <2>
 ```
 
-1. Cada elemento de la lista debe incluir su propio `\n` si quieres saltos de línea.
+1. Cada elemento de la lista debe incluir su propio `\n` si quieres saltos de
+línea.
 2. `.writelines()` escribe cada elemento de la lista en orden, uno tras otro.
 
 ### Generar líneas dinámicamente
@@ -137,12 +146,14 @@ with open("numeros.txt", "w") as archivo:
     archivo.writelines(lineas) # <2>
 ```
 
-1. List comprehension que genera `["Número 1\n", "Número 2\n", ..., "Número 10\n"]`.
+1. List comprehension que genera `["Número 1\n", "Número 2\n", ..., "Número
+10\n"]`.
 2. `.writelines()` escribe todas las líneas de una vez.
 
 ## Modo `"x"`: creación exclusiva
 
-El modo `"x"` crea un archivo **solo si no existe**. Si ya existe, lanza `FileExistsError`.
+El modo `"x"` crea un archivo **solo si no existe**. Si ya existe, lanza
+`FileExistsError`.
 
 ```python
 try:
@@ -154,7 +165,8 @@ except FileExistsError: # <2>
     print("Usa un nombre diferente o elimina el archivo existente")
 ```
 
-1. El modo `"x"` intenta crear el archivo. Si ya existe, no lo sobrescribe — lanza un error.
+1. El modo `"x"` intenta crear el archivo. Si ya existe, no lo sobrescribe —
+lanza un error.
 2. `FileExistsError` se captura para manejar el caso donde el archivo ya existe.
 
 > **Errors should never pass silently.** El modo `"x"` es perfecto cuando necesitas garantizar que no sobrescribes un archivo importante.
@@ -206,7 +218,8 @@ generar_reporte(ventas_del_dia)
 ```
 
 1. `sum()` con generator expression calcula el total de todas las ventas.
-2. El operador ternario evita división por cero si la lista de ventas está vacía.
+2. El operador ternario evita división por cero si la lista de ventas está
+vacía.
 
 ## Resumen
 
@@ -228,4 +241,5 @@ generar_reporte(ventas_del_dia)
 
 ---
 
-**Anterior:** [7.2 Leer archivos](02-leer-archivos.qmd) | **Siguiente:** [7.4 Manejo de CSV](04-manejo-csv.qmd)
+**Anterior:** [7.2 Leer archivos](02-leer-archivos.qmd) | **Siguiente:** [7.4
+Manejo de CSV](04-manejo-csv.qmd)

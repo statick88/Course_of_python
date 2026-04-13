@@ -6,7 +6,9 @@ estimated_time: "15 minutos"
 
 ## Situación
 
-Estás desarrollando el sistema de registro para una plataforma que tiene restricciones de edad. Necesitas validar que los datos ingresados sean correctos antes de procesarlos.
+Estás desarrollando el sistema de registro para una plataforma que tiene
+restricciones de edad. Necesitas validar que los datos ingresados sean correctos
+antes de procesarlos.
 
 ## Tu misión
 

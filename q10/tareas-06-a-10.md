@@ -5,7 +5,9 @@
 **Módulo**: 6 - Diccionarios y Sets
 **Dificultad**: ⭐⭐ Intermedio
 
-Crea una agenda de contactos donde cada contacto es un diccionario con nombre, teléfono, email y dirección. Debe permitir buscar, agregar, editar y eliminar contactos.
+Crea una agenda de contactos donde cada contacto es un diccionario con nombre,
+teléfono, email y dirección. Debe permitir buscar, agregar, editar y eliminar
+contactos.
 
 **Entrega**: `agenda-contactos.py`
 
@@ -16,7 +18,8 @@ Crea una agenda de contactos donde cada contacto es un diccionario con nombre, t
 **Módulo**: 7 - Manejo de Archivos
 **Dificultad**: ⭐⭐ Intermedio
 
-Construye un diario personal que guarde entradas con fecha y hora en un archivo de texto. Debe permitir escribir nuevas entradas y leer todas las anteriores.
+Construye un diario personal que guarde entradas con fecha y hora en un archivo
+de texto. Debe permitir escribir nuevas entradas y leer todas las anteriores.
 
 **Entrega**: `diario-personal.py`
 
@@ -27,7 +30,9 @@ Construye un diario personal que guarde entradas con fecha y hora en un archivo 
 **Módulo**: 8 - Módulos y Paquetes
 **Dificultad**: ⭐⭐⭐ Avanzado
 
-Usa el módulo `requests` para consumir una API del clima (OpenWeatherMap). El usuario ingresa una ciudad y se muestra el clima actual con temperatura, humedad y descripción.
+Usa el módulo `requests` para consumir una API del clima (OpenWeatherMap). El
+usuario ingresa una ciudad y se muestra el clima actual con temperatura, humedad
+y descripción.
 
 **Entrega**: `api-clima.py`
 
@@ -38,7 +43,9 @@ Usa el módulo `requests` para consumir una API del clima (OpenWeatherMap). El u
 **Módulo**: 9 - Buenas Prácticas
 **Dificultad**: ⭐⭐⭐ Avanzado
 
-Te proporcionamos un archivo de código "sucio" (sin docstrings, nombres crípticos, sin manejo de errores). Tu misión es refactorizarlo siguiendo PEP 8, con nombres descriptivos, docstrings y manejo de errores.
+Te proporcionamos un archivo de código "sucio" (sin docstrings, nombres
+crípticos, sin manejo de errores). Tu misión es refactorizarlo siguiendo PEP 8,
+con nombres descriptivos, docstrings y manejo de errores.
 
 **Entrega**: Código original + refactorizado con explicación de cambios
 

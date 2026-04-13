@@ -6,7 +6,8 @@ estimated_time: "5 minutos"
 
 ## Situación
 
-Estás construyendo un módulo de matemáticas para una app educativa. Necesitas crear una función que determine si un número es par o impar.
+Estás construyendo un módulo de matemáticas para una app educativa. Necesitas
+crear una función que determine si un número es par o impar.
 
 ## Tu misión
 

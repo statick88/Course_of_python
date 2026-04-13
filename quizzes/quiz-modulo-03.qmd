@@ -4,7 +4,8 @@ title: "Quiz: Módulo 3 — Estructuras de Control"
 
 ## Evaluación del Módulo 3
 
-Responde las siguientes preguntas para evaluar tu comprensión de las estructuras de control en Python.
+Responde las siguientes preguntas para evaluar tu comprensión de las estructuras
+de control en Python.
 
 ::: {.quizdown}
 
@@ -132,4 +133,5 @@ while contador < 5:
 
 ---
 
-**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 3](../content/modulo-03/index.qmd)
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo
+3](../content/modulo-03/index.qmd)

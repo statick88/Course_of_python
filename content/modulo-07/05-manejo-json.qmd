@@ -14,16 +14,19 @@ execute:
 
 ## ¿Qué es JSON? — La analogía del idioma universal
 
-Imagina que necesitas enviar un mensaje a alguien que habla otro idioma. Necesitas un **traductor** que ambos entiendan.
+Imagina que necesitas enviar un mensaje a alguien que habla otro idioma.
+Necesitas un **traductor** que ambos entiendan.
 
-JSON (**JavaScript Object Notation**) es ese traductor universal en el mundo de la programación:
+JSON (**JavaScript Object Notation**) es ese traductor universal en el mundo de
+la programación:
 
 - **Python** lo entiende
 - **JavaScript** lo entiende
 - **Java** lo entiende
 - **Cualquier lenguaje** lo entiende
 
-Es como el **inglés de los datos**: no es el idioma nativo de nadie (bueno, sí de JavaScript), pero todos lo usan para comunicarse.
+Es como el **inglés de los datos**: no es el idioma nativo de nadie (bueno, sí
+de JavaScript), pero todos lo usan para comunicarse.
 
 ### JSON vs Diccionario de Python
 
@@ -51,7 +54,8 @@ usuario_json = '''
 
 ## De Python a JSON: serializar
 
-**Serializar** significa convertir un objeto de Python (diccionario, lista, etc.) a una cadena JSON.
+**Serializar** significa convertir un objeto de Python (diccionario, lista,
+etc.) a una cadena JSON.
 
 ```python
 import json
@@ -73,7 +77,8 @@ json_texto = json.dumps(configuracion) # <1>
 print(json_texto)
 ```
 
-1. `json.dumps()` (dump string) convierte un objeto de Python a una cadena JSON. Nota la **s** al final — significa que devuelve un **string**.
+1. `json.dumps()` (dump string) convierte un objeto de Python a una cadena JSON.
+Nota la **s** al final — significa que devuelve un **string**.
 
 ### JSON bonito: `indent`
 
@@ -83,7 +88,8 @@ json_bonito = json.dumps(configuracion, indent=4) # <1>
 print(json_bonito)
 ```
 
-1. `indent=4` agrega 4 espacios de indentación para hacer el JSON legible para humanos. Sin esto, todo estaría en una sola línea.
+1. `indent=4` agrega 4 espacios de indentación para hacer el JSON legible para
+humanos. Sin esto, todo estaría en una sola línea.
 
 ### Guardar JSON en un archivo
 
@@ -103,11 +109,13 @@ with open("config.json", "w") as archivo:
     print("Configuración guardada en config.json")
 ```
 
-1. `json.dump()` (sin la **s**) escribe directamente en un archivo. Nota la diferencia: `dumps` → string, `dump` → archivo.
+1. `json.dump()` (sin la **s**) escribe directamente en un archivo. Nota la
+diferencia: `dumps` → string, `dump` → archivo.
 
 ## De JSON a Python: deserializar
 
-**Deserializar** significa convertir una cadena JSON a un objeto de Python (diccionario, lista, etc.).
+**Deserializar** significa convertir una cadena JSON a un objeto de Python
+(diccionario, lista, etc.).
 
 ```python
 import json
@@ -131,8 +139,10 @@ print(datos["hobbies"][0]) # <4>
 
 1. `json.loads()` (load string) convierte una cadena JSON a un objeto de Python.
 2. `type(datos)` devuelve `<class 'dict'>` — ahora es un diccionario de Python.
-3. Accedes a los datos como cualquier diccionario: `datos["nombre"]` → `"Carlos"`.
-4. Las listas JSON se convierten en listas de Python: `datos["hobbies"]` → `['fútbol', 'música']`.
+3. Accedes a los datos como cualquier diccionario: `datos["nombre"]` →
+`"Carlos"`.
+4. Las listas JSON se convierten en listas de Python: `datos["hobbies"]` →
+`['fútbol', 'música']`.
 
 ### Leer JSON directamente desde un archivo
 
@@ -243,4 +253,5 @@ guardar_configuracion(config)
 
 ---
 
-**Anterior:** [7.4 Manejo de CSV](04-manejo-csv.qmd) | **Siguiente:** [7.6 pathlib](06-pathlib.qmd)
+**Anterior:** [7.4 Manejo de CSV](04-manejo-csv.qmd) | **Siguiente:** [7.6
+pathlib](06-pathlib.qmd)

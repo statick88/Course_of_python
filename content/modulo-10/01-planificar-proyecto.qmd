@@ -21,7 +21,9 @@ Imagina que quieres construir una casa. ¿Qué harías primero?
 
 La Opción A produce un desastre. La Opción B produce un hogar.
 
-**Programar es exactamente igual.** Los programadores novatos empiezan a escribir código sin planificar. Los programadores profesionales dibujan el plano primero.
+**Programar es exactamente igual.** Los programadores novatos empiezan a
+escribir código sin planificar. Los programadores profesionales dibujan el plano
+primero.
 
 > **Simple is better than complex.** Un buen plan simple vale más que mil líneas de código sin dirección.
 
@@ -98,7 +100,8 @@ tarea_ejemplo = {
 
 ## El principio: divide y vencerás
 
-Un proyecto grande asusta. Pero si lo divides en piezas pequeñas, cada pieza es fácil.
+Un proyecto grande asusta. Pero si lo divides en piezas pequeñas, cada pieza es
+fácil.
 
 ```python
 # ❌ MAL: Todo en una función gigante
@@ -172,4 +175,5 @@ _________________________________________
 
 **Anterior:** [Módulo 10: Inicio](index.qmd)
 
-**Siguiente:** [10.2 Estructura profesional del proyecto](02-estructura-proyecto.qmd)
+**Siguiente:** [10.2 Estructura profesional del
+proyecto](02-estructura-proyecto.qmd)

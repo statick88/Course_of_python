@@ -14,9 +14,12 @@ execute:
 
 ## Tu primer módulo
 
-Hasta ahora has escrito scripts: archivos `.py` que se ejecutan de arriba a abajo y terminan. Un **módulo** es diferente: es un archivo `.py` diseñado para ser **importado** por otros programas.
+Hasta ahora has escrito scripts: archivos `.py` que se ejecutan de arriba a
+abajo y terminan. Un **módulo** es diferente: es un archivo `.py` diseñado para
+ser **importado** por otros programas.
 
-Piensa en la diferencia entre **cocinar para ti** (script) y **escribir una receta** (módulo). La receta la puede usar cualquiera, cuantas veces quiera.
+Piensa en la diferencia entre **cocinar para ti** (script) y **escribir una
+receta** (módulo). La receta la puede usar cualquiera, cuantas veces quiera.
 
 ### Paso 1: Crea el archivo del módulo
 
@@ -47,11 +50,15 @@ def dividir(a, b):  # <4>
 PI = 3.14159  # <5> — constante del módulo
 ```
 
-1. Cada función es una **herramienta** que otros programas pueden usar. El nombre dice exactamente qué hace.
+1. Cada función es una **herramienta** que otros programas pueden usar. El
+nombre dice exactamente qué hace.
 2. `restar()` recibe dos parámetros y devuelve la diferencia. Simple y directa.
-3. `multiplicar()` devuelve el producto. La documentación (docstring) explica su propósito.
-4. `dividir()` incluye validación: lanza un error claro si intentas dividir por cero.
-5. `PI` es una constante del módulo. Las MAYÚSCULAS indican que no debe modificarse.
+3. `multiplicar()` devuelve el producto. La documentación (docstring) explica su
+propósito.
+4. `dividir()` incluye validación: lanza un error claro si intentas dividir por
+cero.
+5. `PI` es una constante del módulo. Las MAYÚSCULAS indican que no debe
+modificarse.
 
 ### Paso 2: Usa el módulo desde otro archivo
 
@@ -72,16 +79,21 @@ import calculadora  # <4>
 print(f"División: {calculadora.dividir(20, 4)}")  # 5.0
 ```
 
-1. `from calculadora import ...` importa funciones específicas del archivo `calculadora.py`. Ambos archivos deben estar en la misma carpeta.
-2. `sumar(10, 5)` llama a la función del módulo. No necesitas reescribir la lógica.
-3. Usas `PI` y `multiplicar()` directamente porque las importaste con `from ... import`.
-4. `import calculadora` importa todo el módulo. Accedes a sus funciones con `calculadora.funcion()`.
+1. `from calculadora import ...` importa funciones específicas del archivo
+`calculadora.py`. Ambos archivos deben estar en la misma carpeta.
+2. `sumar(10, 5)` llama a la función del módulo. No necesitas reescribir la
+lógica.
+3. Usas `PI` y `multiplicar()` directamente porque las importaste con `from ...
+import`.
+4. `import calculadora` importa todo el módulo. Accedes a sus funciones con
+`calculadora.funcion()`.
 
 > **Beautiful is better than ugly.** Un módulo bien nombrado hace que el código se lea como una historia.
 
 ## El truco de `__name__`
 
-¿Qué pasa si quieres que tu módulo funcione **como programa** Y **como módulo importable**?
+¿Qué pasa si quieres que tu módulo funcione **como programa** Y **como módulo
+importable**?
 
 ```python
 # calculadora.py — Versión mejorada
@@ -102,8 +114,11 @@ if __name__ == "__main__":  # <1>
     print("Ejecutado directamente")
 ```
 
-1. `__name__` es una variable especial de Python. Si ejecutas el archivo con `python calculadora.py`, `__name__` vale `"__main__"`. Si lo importas, `__name__` vale `"calculadora"`.
-2. Este código solo se ejecuta cuando corres `python calculadora.py` directamente. **No** se ejecuta cuando otro archivo hace `import calculadora`.
+1. `__name__` es una variable especial de Python. Si ejecutas el archivo con
+`python calculadora.py`, `__name__` vale `"__main__"`. Si lo importas,
+`__name__` vale `"calculadora"`.
+2. Este código solo se ejecuta cuando corres `python calculadora.py`
+directamente. **No** se ejecuta cuando otro archivo hace `import calculadora`.
 
 ### ¿Cómo funciona `__name__`?
 
@@ -146,8 +161,10 @@ def obtener_total():
     return contador_llamadas
 ```
 
-1. `contador_llamadas` es una variable del módulo. Todos los que importen este módulo comparten la misma variable.
-2. `global` indica que queremos modificar la variable del módulo, no crear una local.
+1. `contador_llamadas` es una variable del módulo. Todos los que importen este
+módulo comparten la misma variable.
+2. `global` indica que queremos modificar la variable del módulo, no crear una
+local.
 
 ```python
 # uso_contador.py
@@ -241,9 +258,11 @@ import mi_modulo  # Funciona correctamente
 import math  # ¡Importa TU archivo, no el módulo estándar!
 ```
 
-**Solución:** **Nunca** uses nombres de módulos estándar para tus archivos. Python importará tu archivo en vez del módulo real.
+**Solución:** **Nunca** uses nombres de módulos estándar para tus archivos.
+Python importará tu archivo en vez del módulo real.
 
-Nombres prohibidos: `math.py`, `random.py`, `datetime.py`, `os.py`, `json.py`, `sys.py`, `collections.py`
+Nombres prohibidos: `math.py`, `random.py`, `datetime.py`, `os.py`, `json.py`,
+`sys.py`, `collections.py`
 
 ## Resumen
 
@@ -258,4 +277,5 @@ Nombres prohibidos: `math.py`, `random.py`, `datetime.py`, `os.py`, `json.py`, `
 
 ---
 
-**Anterior:** [8.2 La biblioteca estándar](02-modulos-estandar.qmd) | **Siguiente:** [8.4 Paquetes](04-paquetes.qmd)
+**Anterior:** [8.2 La biblioteca estándar](02-modulos-estandar.qmd) |
+**Siguiente:** [8.4 Paquetes](04-paquetes.qmd)

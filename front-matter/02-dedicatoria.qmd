@@ -10,19 +10,26 @@ title: "Dedicatoria"
 
 \vspace{2cm}
 
-\textit{A mi familia, por su paciencia infinita durante las largas noches de creación de este curso.}
+\textit{A mi familia, por su paciencia infinita durante las largas noches de
+creación de este curso.}
 
 \vspace{1cm}
 
-\textit{A los cientos de estudiantes que han pasado por mis aulas en 6 universidades — ESPE, U. Internacional, Juan Montalvo, Codings Academy, U. Zulia y ABACOM — quienes me enseñaron tanto como yo a ellos.}
+\textit{A los cientos de estudiantes que han pasado por mis aulas en 6
+universidades — ESPE, U. Internacional, Juan Montalvo, Codings Academy, U. Zulia
+y ABACOM — quienes me enseñaron tanto como yo a ellos.}
 
 \vspace{1cm}
 
-\textit{A mi hija \textbf{Victoria Saavedra}, por la inspiración de superación diaria y su pasión por su instrumento — la guitarra acústica. Ella me enseña cada día que la dedicación y el amor por lo que haces es el mejor camino a la maestría.}
+\textit{A mi hija \textbf{Victoria Saavedra}, por la inspiración de superación
+diaria y su pasión por su instrumento — la guitarra acústica. Ella me enseña
+cada día que la dedicación y el amor por lo que haces es el mejor camino a la
+maestría.}
 
 \vspace{1cm}
 
-\textit{A la comunidad Python global, que construye herramientas abiertas para que todos podamos aprender, sin importar nuestra ubicación o recursos.}
+\textit{A la comunidad Python global, que construye herramientas abiertas para
+que todos podamos aprender, sin importar nuestra ubicación o recursos.}
 
 \vspace{2cm}
 
@@ -40,7 +47,8 @@ title: "Dedicatoria"
 \vspace{1cm}
 
 \begin{quote}
-"El mejor momento para aprender a programar fue hace 10 años. El segundo mejor momento es ahora."
+"El mejor momento para aprender a programar fue hace 10 años. El segundo mejor
+momento es ahora."
 \end{quote}
 
 \vspace{2cm}

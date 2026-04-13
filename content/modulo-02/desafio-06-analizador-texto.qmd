@@ -6,7 +6,9 @@ estimated_time: "25 minutos"
 
 ## Situación
 
-Estás construyendo una herramienta de análisis de texto para un procesador de palabras. Necesitas extraer estadísticas detalladas de cualquier texto que el usuario ingrese.
+Estás construyendo una herramienta de análisis de texto para un procesador de
+palabras. Necesitas extraer estadísticas detalladas de cualquier texto que el
+usuario ingrese.
 
 ## Tu misión
 

@@ -50,7 +50,8 @@ print(type(es_mayor)) # <8>
 
 ## Enteros (int): números sin decimales
 
-Los enteros son para contar cosas que no se pueden dividir: personas, intentos, días, items.
+Los enteros son para contar cosas que no se pueden dividir: personas, intentos,
+días, items.
 
 ```python
 # Usos naturales de los enteros
@@ -85,7 +86,8 @@ residuo = 10 % 3 # <3>
 print(residuo)
 ```
 
-1. `/` siempre devuelve un `float`, incluso si la división es exacta. `10 / 3` = `3.333...`.
+1. `/` siempre devuelve un `float`, incluso si la división es exacta. `10 / 3` =
+`3.333...`.
 2. `//` devuelve solo la parte entera de la división. `10 // 3` = `3`.
 3. `%` devuelve el residuo de la división. `10 % 3` = `1` (porque 10 = 3×3 + 1).
 
@@ -93,7 +95,8 @@ print(residuo)
 
 ## Decimales (float): números con precisión
 
-Los floats son para medidas, dinero, promedios — cualquier cosa que necesite decimales.
+Los floats son para medidas, dinero, promedios — cualquier cosa que necesite
+decimales.
 
 ```python
 # Usos naturales de los floats
@@ -103,11 +106,13 @@ porcentaje_descuento = 15.0
 temperatura_fahrenheit = 98.6
 ```
 
-1. `pi` es un float porque tiene decimales. Los floats representan números con punto decimal.
+1. `pi` es un float porque tiene decimales. Los floats representan números con
+punto decimal.
 
 ### ⚠️ Cuidado con la precisión de los floats
 
-Los floats no son perfectos. Esto es limitación de cómo las computadoras representan decimales:
+Los floats no son perfectos. Esto es limitación de cómo las computadoras
+representan decimales:
 
 ```python
 # Esto parece raro, pero es normal en cualquier lenguaje
@@ -119,14 +124,17 @@ precio_total = round(19.99 * 1.15, 2) # <2>
 print(precio_total)
 ```
 
-1. `0.1 + 0.2` da `0.30000000000000004` en vez de `0.3`. Esto es normal en todos los lenguajes de programación.
-2. `round(valor, 2)` redondea a 2 decimales. Para dinero, siempre usa `round()` para evitar errores de precisión.
+1. `0.1 + 0.2` da `0.30000000000000004` en vez de `0.3`. Esto es normal en todos
+los lenguajes de programación.
+2. `round(valor, 2)` redondea a 2 decimales. Para dinero, siempre usa `round()`
+para evitar errores de precisión.
 
 > **Errors should never pass silently.** Si trabajas con dinero, siempre redondea explícitamente. No asumas que los floats son exactos.
 
 ## Texto (str): cadenas de caracteres
 
-El texto en Python se escribe entre comillas. Puedes usar simples o dobles — lo importante es ser consistente.
+El texto en Python se escribe entre comillas. Puedes usar simples o dobles — lo
+importante es ser consistente.
 
 ```python
 # Comillas dobles (recomendadas para texto con apóstrofes)
@@ -146,7 +154,8 @@ sin necesidad de caracteres especiales.
 
 1. Las comillas dobles son recomendadas para texto normal.
 2. Las comillas simples son útiles cuando el texto contiene comillas dobles.
-3. Las triple comillas `"""` permiten escribir texto de múltiples líneas sin caracteres especiales.
+3. Las triple comillas `"""` permiten escribir texto de múltiples líneas sin
+caracteres especiales.
 
 ### f-strings: la forma moderna de mezclar texto y variables
 
@@ -162,8 +171,10 @@ presentacion = f"Hola, soy {nombre}, tengo {edad} años y vivo en {ciudad}" # <1
 presentacion_vieja = "Hola, soy " + nombre + ", tengo " + str(edad) + " años" # <2>
 ```
 
-1. Los f-strings (formatted strings) permiten insertar variables directamente en el texto usando `{variable}`. Son más legibles y eficientes.
-2. La concatenación con `+` es más difícil de leer y propensa a errores. No la uses cuando puedas usar f-strings.
+1. Los f-strings (formatted strings) permiten insertar variables directamente en
+el texto usando `{variable}`. Son más legibles y eficientes.
+2. La concatenación con `+` es más difícil de leer y propensa a errores. No la
+uses cuando puedas usar f-strings.
 
 > **Readability counts.** Los f-strings se leen como texto normal. Las variables van entre llaves y Python las reemplaza automáticamente.
 
@@ -184,13 +195,17 @@ mensaje = "Hola Mundo"
 print(len(mensaje)) # <3>
 ```
 
-1. El operador `+` con textos los concatena (une). `"Ana" + " " + "García"` = `"Ana García"`.
-2. El operador `*` con textos los repite. `"-" * 30` crea una línea de 30 guiones.
-3. `len()` devuelve la longitud del texto en caracteres. `"Hola Mundo"` tiene 10 caracteres (incluye el espacio).
+1. El operador `+` con textos los concatena (une). `"Ana" + " " + "García"` =
+`"Ana García"`.
+2. El operador `*` con textos los repite. `"-" * 30` crea una línea de 30
+guiones.
+3. `len()` devuelve la longitud del texto en caracteres. `"Hola Mundo"` tiene 10
+caracteres (incluye el espacio).
 
 ## Booleanos (bool): verdadero o falso
 
-Los booleanos representan decisiones binarias. Son la base de toda lógica en programación.
+Los booleanos representan decisiones binarias. Son la base de toda lógica en
+programación.
 
 ```python
 # Valores booleanos directos
@@ -209,8 +224,10 @@ puede_entrar = es_mayor or tiene_descuento # <4>
 no_es_mayor = not es_mayor # <5>
 ```
 
-1. `True` y `False` son los únicos valores booleanos. Nota que se escriben con mayúscula inicial.
-2. Las comparaciones (`>=`, `<`, `==`) siempre devuelven un booleano. `20 >= 18` es `True`.
+1. `True` y `False` son los únicos valores booleanos. Nota que se escriben con
+mayúscula inicial.
+2. Las comparaciones (`>=`, `<`, `==`) siempre devuelven un booleano. `20 >= 18`
+es `True`.
 3. `and` devuelve `True` solo si AMBOS operandos son `True`.
 4. `or` devuelve `True` si AL MENOS UN operando es `True`.
 5. `not` invierte el valor booleano. `not True` = `False`.
@@ -219,7 +236,8 @@ no_es_mayor = not es_mayor # <5>
 
 ## Conversión entre tipos
 
-A veces necesitas cambiar el tipo de un valor. Python te permite hacerlo explícitamente.
+A veces necesitas cambiar el tipo de un valor. Python te permite hacerlo
+explícitamente.
 
 ```python
 # De texto a número
@@ -245,7 +263,8 @@ print(cantidad_decimal)
 
 1. `int("25")` convierte el texto `"25"` al número entero `25`.
 2. `str(19.99)` convierte el número `19.99` al texto `"19.99"`.
-3. `int(8.7)` convierte el decimal `8.7` al entero `8`. Los decimales se pierden (no se redondea).
+3. `int(8.7)` convierte el decimal `8.7` al entero `8`. Los decimales se pierden
+(no se redondea).
 4. `float(5)` convierte el entero `5` al decimal `5.0`.
 
 ### ⚠️ Cuando la conversión falla
@@ -263,7 +282,8 @@ decimal = float("3.14") # <3>
 
 1. `int("42")` funciona porque `"42"` contiene solo dígitos.
 2. `int("hola")` genera un `ValueError` porque `"hola"` no es un número válido.
-3. `float("3.14")` funciona porque `"3.14"` es un número decimal válido en formato texto.
+3. `float("3.14")` funciona porque `"3.14"` es un número decimal válido en
+formato texto.
 
 > **Errors should never pass silently.** Si intentas convertir algo que no es un número, Python te avisa con un error. Más adelante aprenderás a manejar estos errores con elegancia.
 

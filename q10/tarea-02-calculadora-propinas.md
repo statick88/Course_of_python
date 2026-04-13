@@ -7,7 +7,8 @@
 
 ## Descripción
 
-Crea una calculadora de propinas que ayude a los usuarios a calcular cuánto dejar de propina en un restaurante.
+Crea una calculadora de propinas que ayude a los usuarios a calcular cuánto
+dejar de propina en un restaurante.
 
 ## Requisitos
 

@@ -14,7 +14,9 @@ execute:
 
 ## ¿Qué es una lambda?
 
-Una función lambda es como una **nota adhesiva** (post-it): es pequeña, rápida de escribir, y la usas para recordatorios simples. No escribes un documento entero en un post-it — lo usas para algo puntual.
+Una función lambda es como una **nota adhesiva** (post-it): es pequeña, rápida
+de escribir, y la usas para recordatorios simples. No escribes un documento
+entero en un post-it — lo usas para algo puntual.
 
 ```python
 # Función normal: como un documento formal
@@ -28,7 +30,9 @@ print(calcular_doble(5))  # 10
 print(doble(5))           # 10 — mismo resultado
 ```
 
-1. `lambda numero: numero * 2` es una función anónima de una línea. `lambda` crea la función, `numero` es el parámetro, y `numero * 2` es lo que retorna (sin necesidad de escribir `return`).
+1. `lambda numero: numero * 2` es una función anónima de una línea. `lambda`
+crea la función, `numero` es el parámetro, y `numero * 2` es lo que retorna (sin
+necesidad de escribir `return`).
 
 > **Simple is better than complex.** Si la función cabe en una línea y es simple, una lambda puede ser más limpia.
 
@@ -42,7 +46,8 @@ def funcion(parametros):
     return expresion
 ```
 
-1. Una lambda **siempre** tiene esta estructura: `lambda` + parámetros + `:` + expresión. La expresión se devuelve automáticamente — no necesitas `return`.
+1. Una lambda **siempre** tiene esta estructura: `lambda` + parámetros + `:` +
+expresión. La expresión se devuelve automáticamente — no necesitas `return`.
 
 ## Lambdas con diferentes cantidades de parámetros
 
@@ -71,7 +76,8 @@ print(promedio(8, 9, 7))  # 8.0
 
 ## El uso real de las lambdas: funciones de orden superior
 
-Las lambdas brillan cuando las pasas como argumento a otras funciones. Las tres funciones integradas más importantes son `sorted()`, `filter()` y `map()`.
+Las lambdas brillan cuando las pasas como argumento a otras funciones. Las tres
+funciones integradas más importantes son `sorted()`, `filter()` y `map()`.
 
 ### `sorted()` con lambda: ordenar como tú quieras
 
@@ -94,8 +100,10 @@ print(por_nota)
 # [('Carlos', 92), ('Diego', 92), ('Ana', 85), ('María', 78)]
 ```
 
-1. `key=lambda est: est[0]` le dice a `sorted()`: "ordena usando el primer elemento de cada tupla".
-2. `key=lambda est: est[1]` ordena por nota. `reverse=True` invierte el orden (de mayor a menor).
+1. `key=lambda est: est[0]` le dice a `sorted()`: "ordena usando el primer
+elemento de cada tupla".
+2. `key=lambda est: est[1]` ordena por nota. `reverse=True` invierte el orden
+(de mayor a menor).
 
 ```python
 # Sin lambda: necesitas definir una función aparte
@@ -121,7 +129,8 @@ aprobados = list(filter(lambda nota: nota >= 7, notas))  # <2>
 print(aprobados)  # [8, 9, 7, 10]
 ```
 
-1. `filter()` aplica la lambda a cada elemento. Si devuelve `True`, lo incluye. `list()` convierte el resultado en lista.
+1. `filter()` aplica la lambda a cada elemento. Si devuelve `True`, lo incluye.
+`list()` convierte el resultado en lista.
 2. Solo las notas mayores o iguales a 7 pasan el filtro.
 
 ### `map()` con lambda: transformar cada elemento
@@ -138,7 +147,8 @@ formateados = list(map(lambda p: f"${p:.2f}", con_iva))  # <2>
 print(formateados)  # ['$11.50', '$23.00', '$34.50', '$46.00', '$57.50']
 ```
 
-1. `map()` aplica la lambda a cada elemento y devuelve el resultado transformado.
+1. `map()` aplica la lambda a cada elemento y devuelve el resultado
+transformado.
 2. Puedes encadenar `map()` para múltiples transformaciones.
 
 ## Lambdas con diccionarios
@@ -161,7 +171,8 @@ poco_stock = list(filter(lambda p: p["stock"] < 30, productos))  # <2>
 print(f"Productos con poco stock: {len(poco_stock)}")
 ```
 
-1. `key=lambda p: p["precio"]` ordena los diccionarios por el valor de la clave `"precio"`.
+1. `key=lambda p: p["precio"]` ordena los diccionarios por el valor de la clave
+`"precio"`.
 2. Filtra los productos cuyo stock es menor a 30.
 
 ## Cuándo NO usar lambdas
@@ -183,7 +194,8 @@ print(absoluto(-5))  # 5
 print(absoluto(3))   # 3
 ```
 
-1. Las expresiones condicionales (`a if condition else b`) sí funcionan en lambdas porque son expresiones, no declaraciones.
+1. Las expresiones condicionales (`a if condition else b`) sí funcionan en
+lambdas porque son expresiones, no declaraciones.
 
 ### Regla de oro: si necesita nombre, usa `def`
 
@@ -264,4 +276,5 @@ print(resultado)  # [7, 9]
 
 ---
 
-**Anterior:** [4.4 Scope de variables](04-scope-variables.qmd) | **Siguiente:** [4.6 Funciones recursivas](06-funciones-recursivas.qmd)
+**Anterior:** [4.4 Scope de variables](04-scope-variables.qmd) | **Siguiente:**
+[4.6 Funciones recursivas](06-funciones-recursivas.qmd)

@@ -14,7 +14,9 @@ execute:
 
 ## Tu primer programa
 
-En programación, la tradición dice que tu primer programa debe mostrar "Hola Mundo" en pantalla. No es solo una tradición — es la forma más simple de verificar que todo funciona.
+En programación, la tradición dice que tu primer programa debe mostrar "Hola
+Mundo" en pantalla. No es solo una tradición — es la forma más simple de
+verificar que todo funciona.
 
 ```python
 # Este es mi primer programa en Python
@@ -60,7 +62,8 @@ Sin el barista, no hay café. Sin `print`, no hay salida en pantalla.
 print("Python", "es", "genial") # <1>
 ```
 
-1. `print()` acepta múltiples argumentos separados por coma. Por defecto, los separa con un espacio.
+1. `print()` acepta múltiples argumentos separados por coma. Por defecto, los
+separa con un espacio.
 
 **Salida:**
 ```
@@ -102,7 +105,8 @@ Por defecto, `print()` separa los valores con un espacio. Puedes cambiarlo:
 print("Python", "es", "genial", sep="-") # <1>
 ```
 
-1. El argumento `sep="-"` cambia el separador predeterminado (espacio) por un guión.
+1. El argumento `sep="-"` cambia el separador predeterminado (espacio) por un
+guión.
 
 **Salida:**
 ```
@@ -119,7 +123,8 @@ print("Hola", end=" ") # <1>
 print("Mundo") # <2>
 ```
 
-1. `end=" "` cambia el salto de línea por un espacio, permitiendo que el siguiente `print()` continúe en la misma línea.
+1. `end=" "` cambia el salto de línea por un espacio, permitiendo que el
+siguiente `print()` continúe en la misma línea.
 2. Este `print()` se imprime en la misma línea que el anterior.
 
 **Salida:**
@@ -129,7 +134,8 @@ Hola Mundo
 
 ## Comentarios: tu mejor amigo
 
-Los comentarios son notas que dejas en el código. Python los **ignora completamente**.
+Los comentarios son notas que dejas en el código. Python los **ignora
+completamente**.
 
 ```python
 # Esto es un comentario de una línea # <1>
@@ -144,7 +150,8 @@ print("Los comentarios no se imprimen")  # <3>
 
 1. Los comentarios de una línea comienzan con `#`.
 2. Los comentarios de múltiples líneas se escriben entre triple comillas `"""`.
-3. Los comentarios al final de la línea explican el código sin interferir con su ejecución.
+3. Los comentarios al final de la línea explican el código sin interferir con su
+ejecución.
 
 ### Reglas de oro para comentarios
 
@@ -169,8 +176,10 @@ print("Los comentarios no se imprimen")  # <3>
 print("Hola Mundo") # <2>
 ```
 
-1. Sin comillas, Python interpreta `Hola` y `Mundo` como nombres de variables, no como texto.
-2. Las comillas (simples o dobles) indican que el contenido es una cadena de texto (str).
+1. Sin comillas, Python interpreta `Hola` y `Mundo` como nombres de variables,
+no como texto.
+2. Las comillas (simples o dobles) indican que el contenido es una cadena de
+texto (str).
 
 ### Error de sintaxis: olvidar el paréntesis
 

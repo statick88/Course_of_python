@@ -41,4 +41,5 @@ Al completar este módulo, serás capaz de:
 
 ---
 
-**Anterior:** [Módulo 2: Tipos de Datos y Variables](../modulo-02/index.qmd) | **Siguiente:** [3.1 if / else](01-if-else.qmd)
+**Anterior:** [Módulo 2: Tipos de Datos y Variables](../modulo-02/index.qmd) |
+**Siguiente:** [3.1 if / else](01-if-else.qmd)

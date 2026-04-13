@@ -6,7 +6,9 @@ estimated_time: "30 minutos"
 
 ## Situación
 
-Una empresa necesita un generador de contraseñas seguras para sus empleados. Las contraseñas deben cumplir con requisitos de seguridad específicos y el usuario debe poder personalizar la longitud.
+Una empresa necesita un generador de contraseñas seguras para sus empleados. Las
+contraseñas deben cumplir con requisitos de seguridad específicos y el usuario
+debe poder personalizar la longitud.
 
 ## Tu misión
 

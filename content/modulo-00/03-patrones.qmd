@@ -13,7 +13,8 @@ title: "0.3 Patrones y abstracción"
 
 > Un **patrón** es una estructura o comportamiento que se repite en diferentes contextos.
 
-Si ya resolviste un problema, y aparece otro similar, **no empieces desde cero**.
+Si ya resolviste un problema, y aparece otro similar, **no empieces desde
+cero**.
 
 ---
 
@@ -22,7 +23,8 @@ Si ya resolviste un problema, y aparece otro similar, **no empieces desde cero**
 ### Problema A: Contar votos
 
 ```
-ENTRADA: Lista de nombres votados ["Ana", "Luis", "Ana", "Carlos", "Ana", "Luis"]
+ENTRADA: Lista de nombres votados ["Ana", "Luis", "Ana", "Carlos", "Ana",
+"Luis"]
 SALIDA: Conteo por persona {"Ana": 3, "Luis": 2, "Carlos": 1}
 ```
 
@@ -128,7 +130,8 @@ Este patrón aplica a: login, cupones, inventario, permisos, filtros, etc.
 
 ## Desafío 0.5: Clasifica por patrón
 
-Clasifica cada situación según el patrón (contar, buscar, filtrar, transformar, acumular, ordenar):
+Clasifica cada situación según el patrón (contar, buscar, filtrar, transformar,
+acumular, ordenar):
 
 1. Encontrar estudiantes con nota >= 60 → **Filtrar**
 2. Sumar todas las ventas del mes → _______________
@@ -182,6 +185,7 @@ Clasifica cada situación según el patrón (contar, buscar, filtrar, transforma
 
 ---
 
-**Siguiente paso**: Ahora que reconoces patrones, aprenderás a **escribir algoritmos en pseudocódigo** antes de tocar Python.
+**Siguiente paso**: Ahora que reconoces patrones, aprenderás a **escribir
+algoritmos en pseudocódigo** antes de tocar Python.
 
 [← 0.2 Descomposición](02-descomposicion.qmd) | [0.4 Pseudocódigo →](04-pseudocodigo.qmd)

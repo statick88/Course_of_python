@@ -6,7 +6,8 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Estás viajando entre países y necesitas convertir entre diferentes sistemas de medición. Un amigo te pide un programa que haga conversiones rápidas.
+Estás viajando entre países y necesitas convertir entre diferentes sistemas de
+medición. Un amigo te pide un programa que haga conversiones rápidas.
 
 ## Tu misión
 

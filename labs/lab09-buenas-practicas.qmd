@@ -190,7 +190,8 @@ print(f"Pares doblados: {pares_doblados}")
 
 ## Conclusión
 
-Aplicas buenas prácticas: PEP 8, docstrings, funciones puras, tests y manejo de errores.
+Aplicas buenas prácticas: PEP 8, docstrings, funciones puras, tests y manejo de
+errores.
 
 ## Checklist de Aceptación
 

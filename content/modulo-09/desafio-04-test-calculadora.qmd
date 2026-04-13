@@ -6,7 +6,9 @@ estimated_time: "15 minutos"
 
 ## Situación
 
-Tu equipo ha creado una calculadora básica y necesita tests que garanticen que funciona correctamente antes de lanzarla a producción. Sin tests, cada cambio es un riesgo.
+Tu equipo ha creado una calculadora básica y necesita tests que garanticen que
+funciona correctamente antes de lanzarla a producción. Sin tests, cada cambio es
+un riesgo.
 
 ## Tu misión
 

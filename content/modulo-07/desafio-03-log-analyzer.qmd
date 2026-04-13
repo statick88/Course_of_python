@@ -6,7 +6,10 @@ estimated_time: "20 minutos"
 
 ## Situación
 
-Eres un desarrollador DevOps y necesitas analizar los logs de un servidor. El archivo de log contiene miles de líneas con diferentes niveles de severidad (INFO, WARNING, ERROR, CRITICAL). Necesitas un programa que resuma qué está pasando en el servidor.
+Eres un desarrollador DevOps y necesitas analizar los logs de un servidor. El
+archivo de log contiene miles de líneas con diferentes niveles de severidad
+(INFO, WARNING, ERROR, CRITICAL). Necesitas un programa que resuma qué está
+pasando en el servidor.
 
 ## Tu misión
 

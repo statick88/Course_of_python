@@ -6,14 +6,18 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Eres el desarrollador de un equipo que está construyendo una aplicación. Tu primera tarea es crear un módulo reutilizable con funciones de conversión que todo el equipo pueda usar.
+Eres el desarrollador de un equipo que está construyendo una aplicación. Tu
+primera tarea es crear un módulo reutilizable con funciones de conversión que
+todo el equipo pueda usar.
 
 ## Tu misión
 
 Crea un módulo llamado `conversiones.py` que contenga:
 
-1. Una función `celsius_a_fahrenheit(celsius)` que convierta grados Celsius a Fahrenheit
-2. Una función `fahrenheit_a_celsius(fahrenheit)` que convierta grados Fahrenheit a Celsius
+1. Una función `celsius_a_fahrenheit(celsius)` que convierta grados Celsius a
+Fahrenheit
+2. Una función `fahrenheit_a_celsius(fahrenheit)` que convierta grados
+Fahrenheit a Celsius
 3. Una función `kilometros_a_millas(km)` que convierta kilómetros a millas
 4. Una función `millas_a_kilometros(millas)` que convierta millas a kilómetros
 5. Un bloque `if __name__ == "__main__"` que pruebe todas las funciones

@@ -7,7 +7,8 @@
 
 ## Descripción
 
-Configura tu entorno de desarrollo local para trabajar con Python. Esta tarea es fundamental para todo el curso.
+Configura tu entorno de desarrollo local para trabajar con Python. Esta tarea es
+fundamental para todo el curso.
 
 ## Pasos
 

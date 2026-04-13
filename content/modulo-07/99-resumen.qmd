@@ -53,4 +53,5 @@ Si puedes hacer todo esto, ¡estás listo para el **Módulo 8: Funciones**!
 
 ---
 
-**Anterior:** [7.6 pathlib](06-pathlib.qmd) | **Siguiente:** [Módulo 8: Funciones](../modulo-08/index.qmd)
+**Anterior:** [7.6 pathlib](06-pathlib.qmd) | **Siguiente:** [Módulo 8:
+Funciones](../modulo-08/index.qmd)

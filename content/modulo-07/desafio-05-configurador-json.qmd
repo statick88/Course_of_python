@@ -6,7 +6,10 @@ estimated_time: "20 minutos"
 
 ## Situación
 
-Estás construyendo una aplicación que necesita guardar y cargar su configuración. La configuración incluye preferencias del usuario como tema, idioma, notificaciones y más. El formato ideal es JSON porque es legible, universal y fácil de modificar.
+Estás construyendo una aplicación que necesita guardar y cargar su
+configuración. La configuración incluye preferencias del usuario como tema,
+idioma, notificaciones y más. El formato ideal es JSON porque es legible,
+universal y fácil de modificar.
 
 ## Tu misión
 

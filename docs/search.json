@@ -245,7 +245,7 @@
     "href": "content/modulo-00/index.html#por-qué-este-módulo",
     "title": "Módulo 0: Pensamiento Computacional",
     "section": "¿Por qué este módulo?",
-    "text": "¿Por qué este módulo?\nMuchos cursos comienzan con “instala Python” y saltan directo a la sintaxis. Pero escribir código no es lo mismo que pensar como programador.\nEste módulo te enseña a: - Descomponer problemas grandes en partes manejables - Reconocer patrones que se repiten en diferentes problemas - Diseñar algoritmos en pseudocódigo antes de tocar Python - Evaluar múltiples enfoques para elegir el mejor\n\nAnalogía del mundo real: Antes de construir una casa, un arquitecto diseña los planos. Antes de escribir código, un programador diseña el algoritmo.",
+    "text": "¿Por qué este módulo?\nMuchos cursos comienzan con “instala Python” y saltan directo a la sintaxis. Pero escribir código no es lo mismo que pensar como programador.\nEste módulo te enseña a:\n\nDescomponer problemas grandes en partes manejables\nReconocer patrones que se repiten en problemas diferentes\nDiseñar algoritmos en pseudocódigo antes de tocar Python\nEvaluar múltiples enfoques para elegir el mejor\n\n\nAnalogía del mundo real: Antes de construir una casa, un arquitecto diseña los planos. Antes de escribir código, un programador diseña el algoritmo.",
     "crumbs": [
       "Módulo 0: Pensamiento Computacional",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
@@ -256,7 +256,7 @@
     "href": "content/modulo-00/index.html#contenido-del-módulo",
     "title": "Módulo 0: Pensamiento Computacional",
     "section": "Contenido del Módulo",
-    "text": "Contenido del Módulo\n\n\n\nUnidad\nTema\nDuración\n\n\n\n\n0.1\n¿Qué es computación? De recetas a algoritmos\n45 min\n\n\n0.2\nDescomposición: dividir para conquistar\n45 min\n\n\n0.3\nPatrones y abstracción\n45 min\n\n\n0.4\nDiseño de algoritmos: pseudocódigo\n60 min\n\n\n0.5\nEvaluación de enfores\n45 min",
+    "text": "Contenido del Módulo\n\n\n\nUnidad\nTema\nDuración\n\n\n\n\n0.1\n¿Qué es computación?\n45 min\n\n\n0.2\nDescomposición\n45 min\n\n\n0.3\nPatrones y abstracción\n45 min\n\n\n0.4\nPseudocódigo\n60 min\n\n\n0.5\nEvaluación de enfores\n45 min",
     "crumbs": [
       "Módulo 0: Pensamiento Computacional",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
@@ -267,18 +267,7 @@
     "href": "content/modulo-00/index.html#el-ciclo-del-programador",
     "title": "Módulo 0: Pensamiento Computacional",
     "section": "El Ciclo del Programador",
-    "text": "El Ciclo del Programador\nTodo problema de programación sigue este ciclo:\n1. ENTENDER → ¿Qué me piden? ¿Qué datos tengo? ¿Qué debo producir?\n2. PLANIFICAR → ¿Cómo lo resuelvo? (pseudocódigo, diagrama)\n3. IMPLEMENTAR → Escribir el código en Python\n4. VERIFICAR → ¿Funciona? ¿Hay casos borde? ¿Se puede mejorar?\nEste módulo se enfoca en los pasos 1 y 2 — los que la mayoría salta.",
-    "crumbs": [
-      "Módulo 0: Pensamiento Computacional",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
-    ]
-  },
-  {
-    "objectID": "content/modulo-00/index.html#necesito-saber-python-para-este-módulo",
-    "href": "content/modulo-00/index.html#necesito-saber-python-para-este-módulo",
-    "title": "Módulo 0: Pensamiento Computacional",
-    "section": "¿Necesito saber Python para este módulo?",
-    "text": "¿Necesito saber Python para este módulo?\nNo. Este módulo usa pseudocódigo y ejercicios en papel. Es sobre pensar, no sobre sintaxis.\nCuando llegues al Módulo 1, ya tendrás la mentalidad correcta para aprender Python rápidamente.",
+    "text": "El Ciclo del Programador\nTodo problema de programación sigue este ciclo:\n1. ENTENDER   → ¿Qué me piden? ¿Qué datos tengo?\n2. PLANIFICAR → ¿Cómo lo resuelvo? (pseudocódigo)\n3. IMPLEMENTAR → Escribir el código en Python\n4. VERIFICAR  → ¿Funciona? ¿Hay casos borde?\nEste módulo se enfoca en los pasos 1 y 2 — los que la mayoría salta.",
     "crumbs": [
       "Módulo 0: Pensamiento Computacional",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
@@ -289,7 +278,7 @@
     "href": "content/modulo-00/index.html#al-final-de-este-módulo-podrás",
     "title": "Módulo 0: Pensamiento Computacional",
     "section": "Al final de este módulo podrás:",
-    "text": "Al final de este módulo podrás:\n✅ Explicar qué es un algoritmo con tus propias palabras ✅ Descomponer un problema complejo en 5+ sub-problemas simples ✅ Escribir pseudocódigo para problemas cotidianos ✅ Identificar cuándo un enfoque es mejor que otro ✅ Reconocer patrones en problemas aparentemente diferentes\n\n\nNota del instructor: “Este módulo es la base de todo lo que sigue. No lo saltes. Los mejores programadores no son los que más sintaxis conocen — son los que mejor piensan los problemas.” — Diego Saavedra, basado en MIT 6.0001\n\n\nUnidad 0.1: ¿Qué es computación? →",
+    "text": "Al final de este módulo podrás:\n✅ Explicar qué es un algoritmo con tus propias palabras\n✅ Descomponer un problema complejo en 5+ sub-problemas\nsimples\n✅ Escribir pseudocódigo para problemas cotidianos\n✅ Identificar cuándo un enfoque es mejor que otro\n✅ Reconocer patrones en problemas aparentemente\ndiferentes\n\n\nNota del instructor: “Este módulo es la base de todo lo que sigue. No lo saltes. Los mejores programadores no son los que más sintaxis conocen — son los que mejor piensan los problemas.” — Diego Saavedra, basado en MIT 6.0001\n\n\nUnidad 0.1: ¿Qué es computación? →",
     "crumbs": [
       "Módulo 0: Pensamiento Computacional",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
@@ -542,7 +531,7 @@
     "href": "content/modulo-00/03-patrones.html#ejemplo-contar-cosas",
     "title": "0.3 Patrones y abstracción",
     "section": "Ejemplo: “Contar cosas”",
-    "text": "Ejemplo: “Contar cosas”\n\nProblema A: Contar votos\nENTRADA: Lista de nombres votados [\"Ana\", \"Luis\", \"Ana\", \"Carlos\", \"Ana\", \"Luis\"]\nSALIDA: Conteo por persona {\"Ana\": 3, \"Luis\": 2, \"Carlos\": 1}\n\n\nProblema B: Contar palabras en un texto\nENTRADA: \"el gato y el perro y el raton\"\nSALIDA: {\"el\": 3, \"gato\": 1, \"y\": 2, \"perro\": 1, \"raton\": 1}\n\n\nProblema C: Frecuencia de notas\nENTRADA: [85, 90, 85, 78, 90, 85, 92]\nSALIDA: {85: 3, 90: 2, 78: 1, 92: 1}\n\n\nPATRÓN: ¡Todos son el mismo problema!\nALGORITMO \"CONTAR FRECUENCIA\":\n  1. Crear diccionario vacío\n  2. Para cada elemento en la lista:\n     3. Si ya está en diccionario: sumar 1\n     4. Si no está: crear con valor 1\n  5. Retornar diccionario\nUna solución, tres aplicaciones.",
+    "text": "Ejemplo: “Contar cosas”\n\nProblema A: Contar votos\nENTRADA: Lista de nombres votados [\"Ana\", \"Luis\", \"Ana\", \"Carlos\", \"Ana\",\n\"Luis\"]\nSALIDA: Conteo por persona {\"Ana\": 3, \"Luis\": 2, \"Carlos\": 1}\n\n\nProblema B: Contar palabras en un texto\nENTRADA: \"el gato y el perro y el raton\"\nSALIDA: {\"el\": 3, \"gato\": 1, \"y\": 2, \"perro\": 1, \"raton\": 1}\n\n\nProblema C: Frecuencia de notas\nENTRADA: [85, 90, 85, 78, 90, 85, 92]\nSALIDA: {85: 3, 90: 2, 78: 1, 92: 1}\n\n\nPATRÓN: ¡Todos son el mismo problema!\nALGORITMO \"CONTAR FRECUENCIA\":\n  1. Crear diccionario vacío\n  2. Para cada elemento en la lista:\n     3. Si ya está en diccionario: sumar 1\n     4. Si no está: crear con valor 1\n  5. Retornar diccionario\nUna solución, tres aplicaciones.",
     "crumbs": [
       "Módulo 0: Pensamiento Computacional",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>0.3 Patrones y abstracción</span>"
@@ -6064,7 +6053,7 @@
     "href": "content/modulo-05/05-tuplas.html#errores-comunes-con-tuplas",
     "title": "5.5 Tuplas: datos que no cambian",
     "section": "Errores comunes con tuplas",
-    "text": "Errores comunes con tuplas\n\n\nPYTHON\n\n# ❌ Intentar modificar una tupla\ncolores = (\"rojo\", \"verde\", \"azul\")\n1# colores[0] = \"amarillo\"\n\n# ✅ Crear una nueva tupla con el cambio\n2colores = (\"amarillo\",) + colores[1:]\nprint(colores)\n\n# ❌ Olvidar la coma en tupla de un elemento\n3# punto = (5)\n\n# ✅ La coma es obligatoria\n4punto = (5,)\n\n# ❌ Desempaquetar con número incorrecto de variables\ncoordenadas = (10, 20, 30)\n5# x, y = coordenadas\n\n# ✅ Mismo número de variables que elementos\n6x, y, z = coordenadas\n\n# ✅ O usar asterisco para capturar el resto\n7x, *resto = coordenadas\n\n\n1\n\nTypeError: 'tuple' object does not support item assignment. Las tuplas son inmutables.\n\n2\n\nPara “modificar” una tupla, crea una nueva combinando partes. ('amarillo',) + ('verde', 'azul') = ('amarillo', 'verde', 'azul').\n\n3\n\n(5) sin coma es solo el número 5 entre paréntesis, no una tupla.\n\n4\n\n(5,) con coma es una tupla de un elemento.\n\n5\n\nValueError: too many values to unpack. Hay 3 elementos pero solo 2 variables.\n\n6\n\nMismo número de variables que elementos: x=10, y=20, z=30.\n\n7\n\n*resto captura los elementos sobrantes: x=10, resto=[20, 30].",
+    "text": "Errores comunes con tuplas\n\n\nPYTHON\n\n# ❌ Intentar modificar una tupla\ncolores = (\"rojo\", \"verde\", \"azul\")\n1# colores[0] = \"amarillo\"\n\n# ✅ Crear una nueva tupla con el cambio\n2colores = (\"amarillo\",) + colores[1:]\nprint(colores)\n\n# ❌ Olvidar la coma en tupla de un elemento\n# punto = (5)\n\n# ✅ La coma es obligatoria\npunto = (5,)\n\n# ❌ Desempaquetar con número incorrecto de variables\ncoordenadas = (10, 20, 30)\n# x, y = coordenadas\n\n# ✅ Mismo número de variables que elementos\nx, y, z = coordenadas\n\n# ✅ O usar asterisco para capturar el resto\nx, *resto = coordenadas\n\n\n1\n\nTypeError: 'tuple' object does not support item assignment. Las tuplas son inmutables.\n\n2\n\nPara “modificar” una tupla, crea una nueva combinando partes. `(‘amarillo’,)\n\n\n\n(‘verde’, ‘azul’)=(‘amarillo’, ‘verde’, ‘azul’)`.\n\n\n(5) sin coma es solo el número 5 entre paréntesis, no una tupla.\n(5,) con coma es una tupla de un elemento.\nValueError: too many values to unpack. Hay 3 elementos pero solo 2 variables.\nMismo número de variables que elementos: x=10, y=20, z=30.\n*resto captura los elementos sobrantes: x=10, resto=[20, 30].",
     "crumbs": [
       "Módulo 5: Listas y Tuplas",
       "<span class='chapter-number'>81</span>  <span class='chapter-title'>5.5 Tuplas: datos que no cambian</span>"
@@ -6548,7 +6537,7 @@
     "href": "content/modulo-05/desafio-06-matriz-operaciones.html#criterios-de-éxito",
     "title": "Desafío 6: Operaciones con matrices",
     "section": "Criterios de éxito",
-    "text": "Criterios de éxito\n\nMuestra el tablero con formato visual\nCuenta correctamente cada tipo de unidad\nEncuentra la posición de la unidad más fuerte\nCalcula el poder total del ejército\n\n\n\nVer solución de referencia\n\n\n\n\n\n\n\nMatriz 5x5 representando el tablero del juego. Cada celda tiene un tipo de unidad o está vacía.\nDiccionario de poderes: cada tipo de unidad tiene un valor de poder asociado.\nRecorre cada fila del tablero para mostrarlo visualmente.\n'  '.join(fila) une los elementos de la fila con doble espacio: \"G  A  S  .  .\".\nDiccionario de conteo inicializado en 0 para cada tipo: {'G': 0, 'A': 0, 'S': 0, '.': 0}.\nBucle anidado recorre cada celda de la matriz y cuenta las unidades.\nMuestra el conteo de cada tipo de unidad con su nombre completo.\nVariables para rastrear el poder total y la unidad más fuerte encontrada.\nenumerate en ambos bucles da las coordenadas (i, j) de cada celda.\npoderes.get(celda, 0) obtiene el poder de la celda. Si no existe en el diccionario, devuelve 0.\nSi el poder actual es mayor que el máximo encontrado, actualiza el máximo y guarda la posición.\n\n\n\n← Desafío 5 | Desafío 7 →",
+    "text": "Criterios de éxito\n\nMuestra el tablero con formato visual\nCuenta correctamente cada tipo de unidad\nEncuentra la posición de la unidad más fuerte\nCalcula el poder total del ejército\n\n\n\nVer solución de referencia\n\n\n\n\n\n\n\nMatriz 5x5 representando el tablero del juego. Cada celda tiene un tipo de unidad o está vacía.\nDiccionario de poderes: cada tipo de unidad tiene un valor de poder asociado.\nRecorre cada fila del tablero para mostrarlo visualmente.\n' '.join(fila) une los elementos de la fila con doble espacio: \"G A S . .\".\nDiccionario de conteo inicializado en 0 para cada tipo: {'G': 0, 'A': 0, 'S': 0, '.': 0}.\nBucle anidado recorre cada celda de la matriz y cuenta las unidades.\nMuestra el conteo de cada tipo de unidad con su nombre completo.\nVariables para rastrear el poder total y la unidad más fuerte encontrada.\nenumerate en ambos bucles da las coordenadas (i, j) de cada celda.\npoderes.get(celda, 0) obtiene el poder de la celda. Si no existe en el diccionario, devuelve 0.\nSi el poder actual es mayor que el máximo encontrado, actualiza el máximo y guarda la posición.\n\n\n\n← Desafío 5 | Desafío 7 →",
     "crumbs": [
       "Módulo 5: Listas y Tuplas",
       "<span class='chapter-number'>89</span>  <span class='chapter-title'>Desafío 6: Operaciones con matrices</span>"
@@ -11751,7 +11740,7 @@
     "href": "content/modulo-10/06-presentacion-proyecto.html#autor",
     "title": "10.6 Presentar tu proyecto al mundo",
     "section": "👤 Autor",
-    "text": "👤 Autor\nTu Nombre — 2026\n\n## Docstrings profesionales\n\nCada función debe tener un docstring que explique **qué hace**, **qué recibe** y **qué retorna**:\n\n```python\ndef completar(self, id_tarea):\n    \"\"\"Marca una tarea como completada.\n\n    Args:\n        id_tarea: El identificador numérico de la tarea.\n\n    Returns:\n        True si la tarea se encontró y se completó,\n        False si el ID no existe.\n    \"\"\"\n    for tarea in self.tareas:\n        if tarea[\"id\"] == id_tarea:\n            tarea[\"completada\"] = True\n            self._guardar()\n            return True\n    return False\n\nExplicit is better than implicit. El docstring le dice al futuro programador exactamente qué esperar.",
+    "text": "👤 Autor\nTu Nombre — 2026\n\n## Docstrings profesionales\n\nCada función debe tener un docstring que explique **qué hace**, **qué recibe** y\n**qué retorna**:\n\n```python\ndef completar(self, id_tarea):\n    \"\"\"Marca una tarea como completada.\n\n    Args:\n        id_tarea: El identificador numérico de la tarea.\n\n    Returns:\n        True si la tarea se encontró y se completó,\n        False si el ID no existe.\n    \"\"\"\n    for tarea in self.tareas:\n        if tarea[\"id\"] == id_tarea:\n            tarea[\"completada\"] = True\n            self._guardar()\n            return True\n    return False\n\nExplicit is better than implicit. El docstring le dice al futuro programador exactamente qué esperar.",
     "crumbs": [
       "Módulo 10: Proyecto Integrador",
       "<span class='chapter-number'>157</span>  <span class='chapter-title'>10.6 Presentar tu proyecto al mundo</span>"

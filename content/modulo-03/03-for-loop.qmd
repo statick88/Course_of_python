@@ -14,9 +14,12 @@ execute:
 
 ## El bucle `for`: tu asistente incansable
 
-Imagina que tienes una **lista de tareas** y debes marcar cada una como completada. Puedes hacerlo una por una manualmente, o puedes decirle a un asistente: "recorre toda la lista y márcalas".
+Imagina que tienes una **lista de tareas** y debes marcar cada una como
+completada. Puedes hacerlo una por una manualmente, o puedes decirle a un
+asistente: "recorre toda la lista y márcalas".
 
-El `for` es ese asistente: **recorre cada elemento de una colección y ejecuta un bloque de código**.
+El `for` es ese asistente: **recorre cada elemento de una colección y ejecuta un
+bloque de código**.
 
 ```python
 # Lista de tareas pendientes
@@ -26,14 +29,18 @@ for tarea in tareas: # <1>
     print(f"✅ Completada: {tarea}") # <2>
 ```
 
-1. `for tarea in tareas:` significa: "para cada elemento en `tareas`, llámalo `tarea` y ejecuta el bloque". La variable `tarea` toma el valor de cada elemento, uno por uno.
-2. En cada iteración, `tarea` contiene un elemento diferente de la lista. Se ejecuta 4 veces, una por cada tarea.
+1. `for tarea in tareas:` significa: "para cada elemento en `tareas`, llámalo
+`tarea` y ejecuta el bloque". La variable `tarea` toma el valor de cada
+elemento, uno por uno.
+2. En cada iteración, `tarea` contiene un elemento diferente de la lista. Se
+ejecuta 4 veces, una por cada tarea.
 
 > **Readability counts.** El `for` en Python se lee casi como inglés: "para cada tarea en tareas, imprime...".
 
 ## Iterar sobre diferentes tipos
 
-El `for` no solo funciona con listas. Puede iterar sobre **cualquier cosa que sea iterable**.
+El `for` no solo funciona con listas. Puede iterar sobre **cualquier cosa que
+sea iterable**.
 
 ```python
 # Iterar sobre una cadena de texto
@@ -53,9 +60,12 @@ for fruta in precios: # <3>
     print(f"{fruta}: ${precios[fruta]}")
 ```
 
-1. Un string es iterable: cada carácter es un elemento. `letra` toma cada letra de "Python".
-2. Una tupla también es iterable. Funciona igual que una lista, pero es inmutable.
-3. Al iterar un diccionario directamente, obtienes las **claves**. Para obtener el valor, usas `precios[fruta]`.
+1. Un string es iterable: cada carácter es un elemento. `letra` toma cada letra
+de "Python".
+2. Una tupla también es iterable. Funciona igual que una lista, pero es
+inmutable.
+3. Al iterar un diccionario directamente, obtienes las **claves**. Para obtener
+el valor, usas `precios[fruta]`.
 
 ### Iterar diccionarios de formas diferentes
 
@@ -75,9 +85,11 @@ for fruta, precio in precios.items(): # <3>
     print(f"{fruta} cuesta ${precio}")
 ```
 
-1. Iterar directamente sobre el diccionario devuelve las claves: `"manzana"`, `"banana"`, `"cereza"`.
+1. Iterar directamente sobre el diccionario devuelve las claves: `"manzana"`,
+`"banana"`, `"cereza"`.
 2. `.values()` devuelve solo los valores: `1.50`, `0.75`, `2.00`.
-3. `.items()` devuelve pares `(clave, valor)`. La asignación múltiple `fruta, precio` desempaqueta cada par.
+3. `.items()` devuelve pares `(clave, valor)`. La asignación múltiple `fruta,
+precio` desempaqueta cada par.
 
 ## `range()`: generar secuencias numéricas
 
@@ -103,9 +115,12 @@ print("¡Despegue!")
 ```
 
 1. `range(5)` genera `[0, 1, 2, 3, 4]`. El número final (5) NO se incluye.
-2. `range(3, 8)` genera `[3, 4, 5, 6, 7]`. Empieza en 3 y termina en 7 (8 no se incluye).
-3. `range(0, 20, 5)` genera `[0, 5, 10, 15]`. El tercer argumento es el "paso" o incremento.
-4. `range(10, 0, -1)` genera `[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]`. Paso negativo para cuenta regresiva.
+2. `range(3, 8)` genera `[3, 4, 5, 6, 7]`. Empieza en 3 y termina en 7 (8 no se
+incluye).
+3. `range(0, 20, 5)` genera `[0, 5, 10, 15]`. El tercer argumento es el "paso" o
+incremento.
+4. `range(10, 0, -1)` genera `[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]`. Paso negativo
+para cuenta regresiva.
 
 ### Tabla de referencia: `range()`
 
@@ -119,7 +134,8 @@ print("¡Despegue!")
 
 ## El acumulador: patrón fundamental
 
-Un **acumulador** es una variable que va sumando (o acumulando) valores en cada iteración.
+Un **acumulador** es una variable que va sumando (o acumulando) valores en cada
+iteración.
 
 ```python
 # Calcular el total de una lista de precios
@@ -134,12 +150,14 @@ print(f"Total a pagar: ${total:.2f}") # <4>
 
 1. Inicializamos el acumulador en 0. Antes de empezar, no hemos sumado nada.
 2. Iteramos sobre cada precio de la lista.
-3. En cada iteración, sumamos el precio actual al total. `total = total + precio` es la clave del patrón.
+3. En cada iteración, sumamos el precio actual al total. `total = total +
+precio` es la clave del patrón.
 4. `:.2f` formatea el número con exactamente 2 decimales.
 
 ### Contador: otro patrón esencial
 
-Similar al acumulador, pero en vez de sumar valores, **cuenta cuántas veces** se cumple una condición.
+Similar al acumulador, pero en vez de sumar valores, **cuenta cuántas veces** se
+cumple una condición.
 
 ```python
 # Contar cuántos números son pares
@@ -154,7 +172,8 @@ print(f"Hay {pares} números pares")
 ```
 
 1. Inicializamos el contador en 0.
-2. Verificamos si el número es par usando el operador módulo (`%`). Si `numero % 2 == 0`, es par.
+2. Verificamos si el número es par usando el operador módulo (`%`). Si `numero %
+2 == 0`, es par.
 3. Si la condición se cumple, incrementamos el contador en 1.
 
 ## `enumerate()`: obtener el índice y el valor
@@ -168,7 +187,8 @@ for indice, fruta in enumerate(frutas): # <1>
     print(f"{indice + 1}. {fruta}")
 ```
 
-1. `enumerate()` devuelve pares `(índice, valor)`. El índice empieza en 0 por defecto.
+1. `enumerate()` devuelve pares `(índice, valor)`. El índice empieza en 0 por
+defecto.
 
 ```python
 # Empezar el índice desde 1
@@ -176,7 +196,8 @@ for posicion, fruta in enumerate(frutas, start=1): # <1>
     print(f"{posicion}. {fruta}")
 ```
 
-1. `start=1` hace que el índice comience en 1 en vez de 0. Más natural para listas numeradas.
+1. `start=1` hace que el índice comience en 1 en vez de 0. Más natural para
+listas numeradas.
 
 ## Errores comunes
 
@@ -210,7 +231,8 @@ for fruta in frutas:
     print(fruta)
 ```
 
-1. `range(len(frutas))` es un patrón de otros lenguajes. En Python, puedes iterar directamente sobre la lista.
+1. `range(len(frutas))` es un patrón de otros lenguajes. En Python, puedes
+iterar directamente sobre la lista.
 
 ### ❌ Olvidar que `range` no incluye el límite
 
@@ -245,4 +267,5 @@ for i in range(6):
 
 ---
 
-**Anterior:** [3.2 Decisiones anidadas](02-if-anidado.qmd) | **Siguiente:** [3.4 while loop](04-while-loop.qmd)
+**Anterior:** [3.2 Decisiones anidadas](02-if-anidado.qmd) | **Siguiente:** [3.4
+while loop](04-while-loop.qmd)

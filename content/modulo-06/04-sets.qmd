@@ -15,7 +15,9 @@ execute:
 
 ## ¿Qué es un set?
 
-Imagina un **club exclusivo** donde cada miembro es único. No puedes registrarte dos veces — el sistema te rechaza si ya estás dentro. Eso es un set: una colección donde **cada elemento aparece una sola vez**.
+Imagina un **club exclusivo** donde cada miembro es único. No puedes registrarte
+dos veces — el sistema te rechaza si ya estás dentro. Eso es un set: una
+colección donde **cada elemento aparece una sola vez**.
 
 ```python
 # Un set: elementos únicos, sin orden
@@ -26,7 +28,8 @@ print(colores)
 # Resultado: {'rojo', 'azul', 'verde'}
 ```
 
-1. Aunque escribimos `"rojo"` dos veces, el set lo guarda **una sola vez**. Los sets eliminan duplicados automáticamente.
+1. Aunque escribimos `"rojo"` dos veces, el set lo guarda **una sola vez**. Los
+sets eliminan duplicados automáticamente.
 
 > **Simple is better than complex.** Si necesitas eliminar duplicados de una lista, conviértela a set: `list(set(mi_lista))`.
 
@@ -46,9 +49,12 @@ vacio = set()  # <3>
 print(type(vacio))
 ```
 
-1. Las llaves `{}` sin dos puntos crean un set. Los duplicados se eliminan automáticamente.
-2. `set([1, 2, 3, 2, 1, 4, 3])` convierte una lista en set, eliminando duplicados. Resultado: `{1, 2, 3, 4}`.
-3. `set()` es la **única** forma de crear un set vacío. `{}` crea un diccionario vacío, no un set.
+1. Las llaves `{}` sin dos puntos crean un set. Los duplicados se eliminan
+automáticamente.
+2. `set([1, 2, 3, 2, 1, 4, 3])` convierte una lista en set, eliminando
+duplicados. Resultado: `{1, 2, 3, 4}`.
+3. `set()` es la **única** forma de crear un set vacío. `{}` crea un diccionario
+vacío, no un set.
 
 ## ⚠️ La trampa del set vacío
 
@@ -86,13 +92,16 @@ print(numeros)
 ```
 
 1. `.add(4)` agrega el `4` al set. Si ya existe, no hace nada.
-2. `.add(2)` no tiene efecto porque `2` ya está en el set. Los sets no permiten duplicados.
+2. `.add(2)` no tiene efecto porque `2` ya está en el set. Los sets no permiten
+duplicados.
 3. `.remove(3)` elimina el `3`. Si el elemento no existe, genera `KeyError`.
-4. `.discard(99)` intenta eliminar `99`. Si no existe, **no hace nada** — no genera error.
+4. `.discard(99)` intenta eliminar `99`. Si no existe, **no hace nada** — no
+genera error.
 
 ## Operaciones de conjuntos: el poder real
 
-Los sets brillan cuando trabajas con **múltiples colecciones**. Las operaciones de conjuntos son herramientas matemáticas que resuelven problemas comunes.
+Los sets brillan cuando trabajas con **múltiples colecciones**. Las operaciones
+de conjuntos son herramientas matemáticas que resuelven problemas comunes.
 
 ```python
 # Dos grupos de estudiantes
@@ -118,10 +127,14 @@ print(f"En uno u otro: {uno_u_otro}")
 
 1. `grupo_a` tiene 4 estudiantes.
 2. `grupo_b` tiene 4 estudiantes, con 2 en común con el grupo A.
-3. `|` (unión): combina todos los elementos sin duplicados. `{"Ana", "Carlos", "Diego", "Elena", "Fernando", "Gabriela"}`.
-4. `&` (intersección): solo los elementos que están en **ambos** sets. `{"Carlos", "Elena"}`.
-5. `-` (diferencia): elementos que están en `grupo_a` pero **no** en `grupo_b`. `{"Ana", "Diego"}`.
-6. `^` (diferencia simétrica): elementos que están en **uno solo** de los sets. `{"Ana", "Diego", "Fernando", "Gabriela"}`.
+3. `|` (unión): combina todos los elementos sin duplicados. `{"Ana", "Carlos",
+"Diego", "Elena", "Fernando", "Gabriela"}`.
+4. `&` (intersección): solo los elementos que están en **ambos** sets.
+`{"Carlos", "Elena"}`.
+5. `-` (diferencia): elementos que están en `grupo_a` pero **no** en `grupo_b`.
+`{"Ana", "Diego"}`.
+6. `^` (diferencia simétrica): elementos que están en **uno solo** de los sets.
+`{"Ana", "Diego", "Fernando", "Gabriela"}`.
 
 ## Tabla de operaciones de conjuntos
 
@@ -154,7 +167,8 @@ print(f"Originales: {len(emails)}")
 print(f"Únicos: {len(emails_unicos)}")
 ```
 
-1. `set(emails)` elimina duplicados. `list(...)` convierte de vuelta a lista. Nota: el orden original se pierde.
+1. `set(emails)` elimina duplicados. `list(...)` convierte de vuelta a lista.
+Nota: el orden original se pierde.
 
 ### Encontrar elementos comunes
 
@@ -172,8 +186,10 @@ solo_a = candidato_a - candidato_b  # <2>
 print(f"Solo candidato A: {solo_a}")
 ```
 
-1. La intersección `&` encuentra las tecnologías que ambos candidatos comparten: `{"Python", "SQL"}`.
-2. La diferencia `-` encuentra lo que solo sabe el candidato A: `{"JavaScript", "Docker"}`.
+1. La intersección `&` encuentra las tecnologías que ambos candidatos comparten:
+`{"Python", "SQL"}`.
+2. La diferencia `-` encuentra lo que solo sabe el candidato A: `{"JavaScript",
+"Docker"}`.
 
 ## Sets vs Listas: ¿cuándo usar cada uno?
 
@@ -199,8 +215,10 @@ if "spam" in palabras_prohibidas:  # O(1) — instantáneo
 ```
 
 1. La semana tiene un orden natural. Una lista es la elección correcta.
-2. Los usuarios activos no necesitan orden, pero sí unicidad. Un set es perfecto.
-3. Buscar en un set es **instantáneo** (O(1)), sin importar cuántos elementos tenga. En una lista grande, la búsqueda es lenta (O(n)).
+2. Los usuarios activos no necesitan orden, pero sí unicidad. Un set es
+perfecto.
+3. Buscar en un set es **instantáneo** (O(1)), sin importar cuántos elementos
+tenga. En una lista grande, la búsqueda es lenta (O(n)).
 
 > **Practicality beats purity.** Si necesitas búsqueda rápida y no te importa el orden, usa un set. Si necesitas orden, usa una lista.
 
@@ -226,4 +244,5 @@ if "spam" in palabras_prohibidas:  # O(1) — instantáneo
 
 ---
 
-**Anterior:** [6.3 Iterar sobre diccionarios](03-iterar-diccionarios.qmd) | **Siguiente:** [6.5 Diccionarios anidados](05-diccionarios-anidados.qmd)
+**Anterior:** [6.3 Iterar sobre diccionarios](03-iterar-diccionarios.qmd) |
+**Siguiente:** [6.5 Diccionarios anidados](05-diccionarios-anidados.qmd)

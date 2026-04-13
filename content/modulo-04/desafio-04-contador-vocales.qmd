@@ -6,7 +6,8 @@ estimated_time: "15 minutos"
 
 ## Situación
 
-Un profesor de lingüística necesita una herramienta que cuente las vocales en cualquier texto para analizar patrones fonéticos en sus investigaciones.
+Un profesor de lingüística necesita una herramienta que cuente las vocales en
+cualquier texto para analizar patrones fonéticos en sus investigaciones.
 
 ## Tu misión
 

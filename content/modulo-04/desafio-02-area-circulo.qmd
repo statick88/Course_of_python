@@ -6,7 +6,9 @@ estimated_time: "8 minutos"
 
 ## Situación
 
-Una tienda de pisos necesita calcular el área de pisos circulares para dar presupuestos a sus clientes. Necesitas una función que reciba el radio y devuelva el área.
+Una tienda de pisos necesita calcular el área de pisos circulares para dar
+presupuestos a sus clientes. Necesitas una función que reciba el radio y
+devuelva el área.
 
 ## Tu misión
 

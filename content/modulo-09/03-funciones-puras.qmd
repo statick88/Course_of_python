@@ -14,7 +14,10 @@ execute:
 
 ## ¿Qué es una función pura?
 
-Una función pura es como una **máquina expendedora de confianza**: metes la misma moneda, presionas el mismo botón, y siempre recibes el mismo producto. No importa si es lunes o viernes, si está lloviendo o haciendo sol — el resultado es predecible.
+Una función pura es como una **máquina expendedora de confianza**: metes la
+misma moneda, presionas el mismo botón, y siempre recibes el mismo producto. No
+importa si es lunes o viernes, si está lloviendo o haciendo sol — el resultado
+es predecible.
 
 Una función pura cumple **dos reglas**:
 
@@ -30,7 +33,9 @@ def calcular_area_rectangulo(base, altura):  # <1>
 # No importa cuándo, dónde o cuántas veces la llames
 ```
 
-1. Esta función es pura: solo depende de sus parámetros y no modifica nada externo. Si llamas `calcular_area_rectangulo(5, 3)` un millón de veces, siempre devolverá `15`.
+1. Esta función es pura: solo depende de sus parámetros y no modifica nada
+externo. Si llamas `calcular_area_rectangulo(5, 3)` un millón de veces, siempre
+devolverá `15`.
 
 ```python
 # ❌ Función impura: depende de algo externo
@@ -48,7 +53,8 @@ def incrementar():  # <2>
 ```
 
 1. `contador_global` es una variable externa que la función modifica.
-2. `incrementar()` es impura: depende de un estado externo y lo modifica. No puedes predecir su resultado sin saber el estado actual del contador.
+2. `incrementar()` es impura: depende de un estado externo y lo modifica. No
+puedes predecir su resultado sin saber el estado actual del contador.
 
 ## Los dos pecados de las funciones impuras
 
@@ -66,7 +72,8 @@ def calcular_precio_final(precio):
 ```
 
 1. `tasa_impuesto` es una variable global externa a la función.
-2. El resultado depende de algo que la función no controla. Si otro código cambia `tasa_impuesto`, la función devuelve valores diferentes.
+2. El resultado depende de algo que la función no controla. Si otro código
+cambia `tasa_impuesto`, la función devuelve valores diferentes.
 
 ```python
 # ✅ Pura: todo lo que necesita viene como parámetro
@@ -94,7 +101,8 @@ agregar_usuario(lista_original, "María")
 print(lista_original)  # ["Ana", "Pedro", "María"] — ¡se modificó!
 ```
 
-1. `append()` modifica la lista original. Este es un efecto secundario: la función cambia algo fuera de su alcance.
+1. `append()` modifica la lista original. Este es un efecto secundario: la
+función cambia algo fuera de su alcance.
 
 ```python
 # ✅ Pura: crea una nueva lista sin modificar la original
@@ -109,11 +117,14 @@ print(lista_original)  # ["Ana", "Pedro"] — intacta
 print(nueva_lista)     # ["Ana", "Pedro", "María"] — nueva lista
 ```
 
-1. El operador `+` crea una nueva lista sin modificar la original. No hay efecto secundario.
+1. El operador `+` crea una nueva lista sin modificar la original. No hay efecto
+secundario.
 
 ## Cuándo SÍ usar funciones impuras
 
-No todas las funciones pueden ser puras. Un programa que **no hace nada externo** es como un restaurante donde cocinan pero nunca sirven: técnicamente perfecto, pero inútil.
+No todas las funciones pueden ser puras. Un programa que **no hace nada
+externo** es como un restaurante donde cocinan pero nunca sirven: técnicamente
+perfecto, pero inútil.
 
 Las funciones impuras son necesarias para:
 
@@ -145,8 +156,10 @@ def aplicar_descuento_y_mostrar(precio, porcentaje):  # <2>
     return precio_final
 ```
 
-1. `calcular_descuento` es pura: puedes testearla sin archivos, sin red, sin nada.
-2. `aplicar_descuento_y_mostrar` es impura (usa `print`), pero delega la lógica a la función pura.
+1. `calcular_descuento` es pura: puedes testearla sin archivos, sin red, sin
+nada.
+2. `aplicar_descuento_y_mostrar` es impura (usa `print`), pero delega la lógica
+a la función pura.
 
 > **Simple is better than complex.** Mantén la mayor cantidad de lógica en funciones puras. Las funciones impuras deben ser simples coordinadoras.
 
@@ -179,8 +192,10 @@ resultado2 = multiplicar(4, 5) + sumar(2, 3)  # <2>
 # resultado1 == resultado2 == 25
 ```
 
-1. Ambas funciones son puras, así que el orden de ejecución no afecta el resultado.
-2. Mismo resultado, orden diferente. Las funciones puras son **conmutativas** en cuanto a efectos.
+1. Ambas funciones son puras, así que el orden de ejecución no afecta el
+resultado.
+2. Mismo resultado, orden diferente. Las funciones puras son **conmutativas** en
+cuanto a efectos.
 
 ```python
 # Beneficio 3: Fáciles de razonar
@@ -215,4 +230,5 @@ def calcular_total(pedido):
 
 ---
 
-**Anterior:** [9.2 Nombres descriptivos](02-nombres-descriptivos.qmd) | **Siguiente:** [9.4 Manejo de errores](04-manejo-errores.qmd)
+**Anterior:** [9.2 Nombres descriptivos](02-nombres-descriptivos.qmd) |
+**Siguiente:** [9.4 Manejo de errores](04-manejo-errores.qmd)

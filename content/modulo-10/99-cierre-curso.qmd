@@ -21,7 +21,8 @@ Recuerda la primera vez que montaste bicicleta. Al principio:
 - **Semana 4:** Ya ibas a la tienda solo
 - **Mes 6:** Ya no pensabas en cómo pedalear. Simplemente lo hacías
 
-**Este curso fue tu bicicleta con rueditas de entrenamiento.** Ya las quitaste. Ahora puedes pedalear solo.
+**Este curso fue tu bicicleta con rueditas de entrenamiento.** Ya las quitaste.
+Ahora puedes pedalear solo.
 
 > **Simple is better than complex.** Programar no es magia. Es práctica constante.
 
@@ -126,7 +127,8 @@ Cada vez que escribas código, pregúntate:
 import **this**  # <1>
 ```
 
-1. El **Zen de Python** no es solo poesía. Es una guía práctica para tomar decisiones de diseño.
+1. El **Zen de Python** no es solo poesía. Es una guía práctica para tomar
+decisiones de diseño.
 
 | Principio | Pregunta que debes hacerte |
 |-----------|---------------------------|
@@ -146,7 +148,8 @@ Si llegaste hasta aquí, ya no eres un principiante. Eres alguien que:
 - ✅ Puede construir aplicaciones completas desde cero
 - ✅ Sabe que la práctica constante es el camino
 
-**No necesitas ser un genio para programar.** Necesitas curiosidad, paciencia y ganas de resolver problemas.
+**No necesitas ser un genio para programar.** Necesitas curiosidad, paciencia y
+ganas de resolver problemas.
 
 Y eso, ya lo tienes.
 

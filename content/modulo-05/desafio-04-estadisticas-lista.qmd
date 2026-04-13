@@ -6,7 +6,8 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Eres el analista de datos de una tienda en línea. Necesitas generar un reporte estadístico de las ventas diarias de la última semana para presentar al gerente.
+Eres el analista de datos de una tienda en línea. Necesitas generar un reporte
+estadístico de las ventas diarias de la última semana para presentar al gerente.
 
 ## Tu misión
 
@@ -99,11 +100,16 @@ print(f"📉 Día con menos ventas: Día {dia_min} (${min_venta:,})")
 3. Promedio: `9550 / 7 = 1364.3`.
 4. `max(ventas)` encuentra el valor más alto: `2200`.
 5. `min(ventas)` encuentra el valor más bajo: `800`.
-6. `ventas.index(2200)` devuelve `4` (índice 0-based). Sumamos 1 para el número de día: `5`.
-7. `sorted(ventas)` crea una nueva lista ordenada: `[800, 950, 1100, 1200, 1500, 1800, 2200]`.
-8. `medio = 7 // 2 = 3`. El índice 3 es el elemento central en una lista de 7 elementos.
-9. Para listas con cantidad par de elementos, la mediana es el promedio de los dos centrales.
-10. Para listas impares, la mediana es el elemento central: `ventas_ordenadas[3] = 1200`.
+6. `ventas.index(2200)` devuelve `4` (índice 0-based). Sumamos 1 para el número
+de día: `5`.
+7. `sorted(ventas)` crea una nueva lista ordenada: `[800, 950, 1100, 1200, 1500,
+1800, 2200]`.
+8. `medio = 7 // 2 = 3`. El índice 3 es el elemento central en una lista de 7
+elementos.
+9. Para listas con cantidad par de elementos, la mediana es el promedio de los
+dos centrales.
+10. Para listas impares, la mediana es el elemento central: `ventas_ordenadas[3]
+= 1200`.
 11. `${total:,}` formatea el número con separador de miles: `$9,550`.
 
 </details>

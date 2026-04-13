@@ -4,7 +4,8 @@ title: "Quiz: Módulo 7 — Manejo de Archivos"
 
 ## Evaluación del Módulo 7
 
-Responde las siguientes preguntas para evaluar tu comprensión del manejo de archivos en Python.
+Responde las siguientes preguntas para evaluar tu comprensión del manejo de
+archivos en Python.
 
 ::: {.quizdown}
 
@@ -102,4 +103,5 @@ Responde las siguientes preguntas para evaluar tu comprensión del manejo de arc
 
 ---
 
-**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 7](../content/modulo-07/index.qmd)
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo
+7](../content/modulo-07/index.qmd)

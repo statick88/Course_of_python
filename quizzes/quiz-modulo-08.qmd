@@ -4,7 +4,8 @@ title: "Quiz: Módulo 8 — Módulos y Paquetes"
 
 ## Evaluación del Módulo 8
 
-Responde las siguientes preguntas para evaluar tu comprensión de módulos y paquetes en Python.
+Responde las siguientes preguntas para evaluar tu comprensión de módulos y
+paquetes en Python.
 
 ::: {.quizdown}
 
@@ -119,4 +120,5 @@ Responde las siguientes preguntas para evaluar tu comprensión de módulos y paq
 :::
 
 ---
-**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 8](../content/modulo-08/index.qmd)
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo
+8](../content/modulo-08/index.qmd)

@@ -14,9 +14,15 @@ execute:
 
 ## ¿Qué es la recursión?
 
-Imagina que estás buscando un libro en una **biblioteca gigante**. En vez de buscar en todos los estantes a la vez, decides: "voy a buscar en este pasillo, y si no está, le pido a otro bibliotecario que busque en el siguiente pasillo". Ese bibliotecario hace lo mismo: busca en su pasillo, y si no está, le pide a otro. Así hasta que alguien encuentra el libro.
+Imagina que estás buscando un libro en una **biblioteca gigante**. En vez de
+buscar en todos los estantes a la vez, decides: "voy a buscar en este pasillo, y
+si no está, le pido a otro bibliotecario que busque en el siguiente pasillo".
+Ese bibliotecario hace lo mismo: busca en su pasillo, y si no está, le pide a
+otro. Así hasta que alguien encuentra el libro.
 
-Una **función recursiva** es una función que **se llama a sí misma** para resolver un problema más pequeño, hasta llegar a un caso tan simple que puede resolverlo directamente.
+Una **función recursiva** es una función que **se llama a sí misma** para
+resolver un problema más pequeño, hasta llegar a un caso tan simple que puede
+resolverlo directamente.
 
 ```python
 # Contar hacia atrás de forma recursiva
@@ -33,9 +39,11 @@ cuenta_regresiva(5)
 ```
 
 1. La función recibe un número y decide qué hacer con él.
-2. **Caso base**: cuando `numero <= 0`, la función NO se llama a sí misma. Es el punto de parada. Sin esto, la recursión sería infinita.
+2. **Caso base**: cuando `numero <= 0`, la función NO se llama a sí misma. Es el
+punto de parada. Sin esto, la recursión sería infinita.
 3. Imprime el número actual.
-4. **Caso recursivo**: la función se llama a sí misma con `numero - 1`. Cada llamada trabaja con un problema más pequeño.
+4. **Caso recursivo**: la función se llama a sí misma con `numero - 1`. Cada
+llamada trabaja con un problema más pequeño.
 
 > **Simple is better than complex.** La recursión convierte problemas complejos en versiones más simples de sí mismos.
 
@@ -60,7 +68,8 @@ def funcion_recursiva(parametro):
 
 ## Factorial: el ejemplo clásico
 
-El factorial de un número `n` (escrito `n!`) es el producto de todos los números desde 1 hasta `n`.
+El factorial de un número `n` (escrito `n!`) es el producto de todos los números
+desde 1 hasta `n`.
 
 ```
 5! = 5 × 4 × 3 × 2 × 1 = 120
@@ -69,7 +78,8 @@ El factorial de un número `n` (escrito `n!`) es el producto de todos los númer
 0! = 1  (por definición)
 ```
 
-Pero nota algo interesante: `5! = 5 × 4!`. Y `4! = 4 × 3!`. Cada factorial se define en términos del factorial anterior.
+Pero nota algo interesante: `5! = 5 × 4!`. Y `4! = 4 × 3!`. Cada factorial se
+define en términos del factorial anterior.
 
 ```python
 def factorial(n):  # <1>
@@ -87,7 +97,8 @@ print(factorial(10))  # 3628800
 
 1. `factorial` calcula el factorial de `n`.
 2. **Caso base**: si `n` es 0 o 1, el resultado es 1. No necesita más cálculos.
-3. **Caso recursivo**: `n! = n × (n-1)!`. La función se llama a sí misma con un número menor.
+3. **Caso recursivo**: `n! = n × (n-1)!`. La función se llama a sí misma con un
+número menor.
 
 ### Visualización del factorial
 
@@ -106,7 +117,9 @@ factorial(5)
 
 ## Fibonacci: la secuencia de la naturaleza
 
-La secuencia de Fibonacci aparece en las espirales de las conchas, las ramas de los árboles y los pétalos de las flores. Cada número es la suma de los dos anteriores:
+La secuencia de Fibonacci aparece en las espirales de las conchas, las ramas de
+los árboles y los pétalos de las flores. Cada número es la suma de los dos
+anteriores:
 
 ```
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
@@ -130,7 +143,8 @@ for i in range(10):
 ```
 
 1. `fibonacci(n)` devuelve el n-ésimo número de la secuencia.
-2. **Dos casos base**: `fib(0) = 0` y `fib(1) = 1`. Son los cimientos de toda la secuencia.
+2. **Dos casos base**: `fib(0) = 0` y `fib(1) = 1`. Son los cimientos de toda la
+secuencia.
 3. **Caso recursivo**: cada número es la suma de los dos anteriores.
 
 ### ⚠️ El problema de Fibonacci recursivo
@@ -153,7 +167,8 @@ print(fibonacci_rapido(40))  # 102334155 — instantáneo
 
 1. La versión iterativa evita llamadas recursivas innecesarias.
 2. Itera desde 2 hasta `n`, calculando cada Fibonacci una sola vez.
-3. El intercambio simultáneo `anterior, actual = actual, anterior + actual` es elegante y eficiente.
+3. El intercambio simultáneo `anterior, actual = actual, anterior + actual` es
+elegante y eficiente.
 
 > **Practicality beats purity.** La recursión es elegante, pero la iteración es más práctica para Fibonacci. Usa la herramienta correcta para cada problema.
 
@@ -173,7 +188,8 @@ print(suma_lista([1, 2, 3, 4, 5]))  # 15
 
 1. Suma todos los elementos de una lista usando recursión.
 2. **Caso base**: una lista vacía tiene suma 0.
-3. **Caso recursivo**: el primer elemento más la suma del resto de la lista. `numeros[1:]` crea una nueva lista sin el primer elemento.
+3. **Caso recursivo**: el primer elemento más la suma del resto de la lista.
+`numeros[1:]` crea una nueva lista sin el primer elemento.
 
 ## Recursión vs Iteración: cuándo usar cada una
 
@@ -217,7 +233,8 @@ print(sys.getrecursionlimit())  # 1000 (por defecto)  # <1>
 ```
 
 1. Python limita la profundidad de recursión a 1000 llamadas por defecto.
-2. Puedes cambiarlo, pero si necesitas más de 1000 niveles, probablemente deberías usar iteración.
+2. Puedes cambiarlo, pero si necesitas más de 1000 niveles, probablemente
+deberías usar iteración.
 
 ## Errores comunes
 
@@ -281,4 +298,5 @@ def factorial_correcto(n):
 
 ---
 
-**Anterior:** [4.5 Funciones lambda](05-funciones-lambda.qmd) | **Siguiente:** [Resumen del Módulo 4](99-resumen.qmd)
+**Anterior:** [4.5 Funciones lambda](05-funciones-lambda.qmd) | **Siguiente:**
+[Resumen del Módulo 4](99-resumen.qmd)

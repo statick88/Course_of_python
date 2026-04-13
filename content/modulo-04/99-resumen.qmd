@@ -40,8 +40,10 @@ Deberías poder:
 - [ ] Implementar una función recursiva con caso base y caso recursivo
 - [ ] Identificar cuándo usar recursión y cuándo usar iteración
 
-Si puedes hacer todo esto, ¡estás listo para el **Módulo 5: Estructuras de Control**!
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 5: Estructuras de
+Control**!
 
 ---
 
-**Anterior:** [4.6 Funciones recursivas](06-funciones-recursivas.qmd) | **Siguiente:** [Módulo 5](../modulo-05/index.qmd)
+**Anterior:** [4.6 Funciones recursivas](06-funciones-recursivas.qmd) |
+**Siguiente:** [Módulo 5](../modulo-05/index.qmd)

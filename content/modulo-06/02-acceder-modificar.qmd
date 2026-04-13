@@ -15,7 +15,9 @@ execute:
 
 ## Acceder a valores: dos caminos
 
-Imagina que buscas un contacto en tu teléfono. Hay dos formas: **tocar directamente el nombre** (rápido, pero si no existe, error) o **usar la barra de búsqueda** (si no existe, te dice "no encontrado").
+Imagina que buscas un contacto en tu teléfono. Hay dos formas: **tocar
+directamente el nombre** (rápido, pero si no existe, error) o **usar la barra de
+búsqueda** (si no existe, te dice "no encontrado").
 
 ```python
 # Diccionario de ejemplo
@@ -39,10 +41,14 @@ categoria = producto.get("categoria")  # <4>
 print(categoria)
 ```
 
-1. `producto["nombre"]` accede directamente al valor. Si la clave existe, es rápido y limpio.
-2. `producto.get("precio")` hace lo mismo, pero es **seguro**: si la clave no existe, devuelve `None` en vez de lanzar un error.
-3. `producto["categoria"]` genera un `KeyError` porque la clave `"categoria"` no existe en el diccionario.
-4. `producto.get("categoria")` devuelve `None` silenciosamente. No rompe tu programa.
+1. `producto["nombre"]` accede directamente al valor. Si la clave existe, es
+rápido y limpio.
+2. `producto.get("precio")` hace lo mismo, pero es **seguro**: si la clave no
+existe, devuelve `None` en vez de lanzar un error.
+3. `producto["categoria"]` genera un `KeyError` porque la clave `"categoria"` no
+existe en el diccionario.
+4. `producto.get("categoria")` devuelve `None` silenciosamente. No rompe tu
+programa.
 
 > **Errors should never pass silently.** Usa `[]` cuando estés **seguro** de que la clave existe. Usa `.get()` cuando la clave pueda no existir.
 
@@ -58,12 +64,14 @@ etiqueta = producto.get("etiqueta")  # <2>
 print(f"Etiqueta: {etiqueta}")
 ```
 
-1. `producto.get("descuento", 0)` devuelve `0` porque `"descuento"` no existe. El segundo argumento es el **valor por defecto**.
+1. `producto.get("descuento", 0)` devuelve `0` porque `"descuento"` no existe.
+El segundo argumento es el **valor por defecto**.
 2. Sin segundo argumento, `.get()` devuelve `None` cuando la clave no existe.
 
 ## Modificar valores existentes
 
-Modificar un valor es tan simple como asignar un nuevo valor a una clave existente:
+Modificar un valor es tan simple como asignar un nuevo valor a una clave
+existente:
 
 ```python
 inventario = {
@@ -80,7 +88,8 @@ print(inventario)
 # {'manzanas': 45, 'peras': 30, 'uvas': 25}
 ```
 
-1. `inventario["manzanas"] = 45` **sobreescribe** el valor anterior (`50`) con el nuevo (`45`). Si la clave ya existe, se actualiza.
+1. `inventario["manzanas"] = 45` **sobreescribe** el valor anterior (`50`) con
+el nuevo (`45`). Si la clave ya existe, se actualiza.
 
 ## Agregar nuevos pares clave-valor
 
@@ -105,8 +114,10 @@ configuracion.update({
 print(configuracion)
 ```
 
-1. `configuracion["notificaciones"] = True` agrega un nuevo par clave-valor. Si la clave no existía, se crea.
-2. `.update()` permite agregar o actualizar **múltiples** pares de una vez. Es como fusionar dos diccionarios.
+1. `configuracion["notificaciones"] = True` agrega un nuevo par clave-valor. Si
+la clave no existía, se crea.
+2. `.update()` permite agregar o actualizar **múltiples** pares de una vez. Es
+como fusionar dos diccionarios.
 
 > **Simple is better than complex.** La misma sintaxis `diccionario[clave] = valor` sirve para crear y modificar. Python decide según si la clave ya existe.
 
@@ -136,9 +147,13 @@ ultimo = usuario.popitem()  # <3>
 print(f"Último elemento: {ultimo}")
 ```
 
-1. `del usuario["password"]` elimina el par clave-valor completamente. No devuelve nada. Si la clave no existe, genera `KeyError`.
-2. `usuario.pop("telefono")` elimina el par y **devuelve** el valor. Útil cuando necesitas el dato antes de borrarlo. También acepta un valor por defecto: `usuario.pop("fax", "no existe")`.
-3. `usuario.popitem()` elimina y devuelve el **último** par insertado (en Python 3.7+ los diccionarios mantienen el orden). Devuelve una tupla `(clave, valor)`.
+1. `del usuario["password"]` elimina el par clave-valor completamente. No
+devuelve nada. Si la clave no existe, genera `KeyError`.
+2. `usuario.pop("telefono")` elimina el par y **devuelve** el valor. Útil cuando
+necesitas el dato antes de borrarlo. También acepta un valor por defecto:
+`usuario.pop("fax", "no existe")`.
+3. `usuario.popitem()` elimina y devuelve el **último** par insertado (en Python
+3.7+ los diccionarios mantienen el orden). Devuelve una tupla `(clave, valor)`.
 
 ### Comparación de métodos de eliminación
 
@@ -166,8 +181,10 @@ print(datos.get("direccion", "No registrada"))  # <1>
 datos.pop("direccion", None)  # <2>
 ```
 
-1. `.get("direccion", "No registrada")` devuelve `"No registrada"` en vez de lanzar un error.
-2. `.pop("direccion", None)` no hace nada si la clave no existe. Es seguro y silencioso.
+1. `.get("direccion", "No registrada")` devuelve `"No registrada"` en vez de
+lanzar un error.
+2. `.pop("direccion", None)` no hace nada si la clave no existe. Es seguro y
+silencioso.
 
 ## Verificar si una clave existe
 
@@ -186,8 +203,10 @@ if "puerto" not in config:  # <2>
     print("Puerto no configurado, usando por defecto")
 ```
 
-1. `"debug" in config` devuelve `True` si la clave existe en el diccionario. Es la forma más rápida y legible de verificar.
-2. `"puerto" not in config` devuelve `True` si la clave **no** existe. Útil para configurar valores por defecto.
+1. `"debug" in config` devuelve `True` si la clave existe en el diccionario. Es
+la forma más rápida y legible de verificar.
+2. `"puerto" not in config` devuelve `True` si la clave **no** existe. Útil para
+configurar valores por defecto.
 
 ## `.setdefault()`: crear si no existe
 
@@ -204,8 +223,10 @@ print(compartidos)  # 0
 print(estadisticas)
 ```
 
-1. `"visitas"` ya existe, así que `setdefault()` devuelve `100` sin modificar nada.
-2. `"compartidos"` no existe, así que `setdefault()` lo crea con valor `0` y lo devuelve.
+1. `"visitas"` ya existe, así que `setdefault()` devuelve `100` sin modificar
+nada.
+2. `"compartidos"` no existe, así que `setdefault()` lo crea con valor `0` y lo
+devuelve.
 
 > **Practicality beats purity.** `setdefault()` es útil cuando quieres inicializar un valor solo si no existe, sin sobrescribir lo que ya hay.
 
@@ -232,4 +253,5 @@ print(estadisticas)
 
 ---
 
-**Anterior:** [6.1 Crear diccionarios](01-crear-diccionarios.qmd) | **Siguiente:** [6.3 Iterar sobre diccionarios](03-iterar-diccionarios.qmd)
+**Anterior:** [6.1 Crear diccionarios](01-crear-diccionarios.qmd) |
+**Siguiente:** [6.3 Iterar sobre diccionarios](03-iterar-diccionarios.qmd)

@@ -57,8 +57,10 @@ Deberías poder:
 
 ## ¿Estás listo para el Módulo 4?
 
-Si puedes hacer todo esto, ¡estás listo para el **Módulo 4: Funciones y Modularización**!
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 4: Funciones y
+Modularización**!
 
 ---
 
-**Anterior:** [3.6 Comprensión de listas](06-comprension-listas.qmd) | **Siguiente:** [Módulo 4: Funciones](../modulo-04/index.qmd)
+**Anterior:** [3.6 Comprensión de listas](06-comprension-listas.qmd) |
+**Siguiente:** [Módulo 4: Funciones](../modulo-04/index.qmd)

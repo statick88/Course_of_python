@@ -6,9 +6,12 @@ estimated_time: "25 minutos"
 
 ## Situación
 
-Has heredado un mini proyecto de gestión de inventario. El código funciona, pero es un desastre: no sigue PEP 8, los nombres son confusos, no hay documentación, las funciones tienen efectos secundarios y no hay manejo de errores.
+Has heredado un mini proyecto de gestión de inventario. El código funciona, pero
+es un desastre: no sigue PEP 8, los nombres son confusos, no hay documentación,
+las funciones tienen efectos secundarios y no hay manejo de errores.
 
-Tu misión es refactorizarlo completamente aplicando **todas** las buenas prácticas del Módulo 9.
+Tu misión es refactorizarlo completamente aplicando **todas** las buenas
+prácticas del Módulo 9.
 
 ## Tu misión
 

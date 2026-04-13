@@ -6,7 +6,9 @@ estimated_time: "15 minutos"
 
 ## Situación
 
-Una asociación de vecinos está realizando una votación para elegir el nombre del nuevo parque del barrio. Necesitas un programa que registre los votos, cuente los resultados y declare al ganador.
+Una asociación de vecinos está realizando una votación para elegir el nombre del
+nuevo parque del barrio. Necesitas un programa que registre los votos, cuente
+los resultados y declare al ganador.
 
 ## Tu misión
 

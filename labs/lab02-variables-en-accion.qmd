@@ -107,7 +107,8 @@ False
 True
 ```
 
-Si tu predicción fue diferente, analiza por qué. La diferencia entre `"5" + "3"` y `5 + 3` es el concepto más importante de este laboratorio.
+Si tu predicción fue diferente, analiza por qué. La diferencia entre `"5" + "3"`
+y `5 + 3` es el concepto más importante de este laboratorio.
 
 ## Preguntas de reflexión
 

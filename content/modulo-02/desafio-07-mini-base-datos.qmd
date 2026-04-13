@@ -6,7 +6,9 @@ estimated_time: "30 minutos"
 
 ## Situación
 
-Necesitas crear un sistema simple para registrar y consultar información de contactos. No puedes usar bases de datos aún, pero puedes simular una usando strings y operaciones de texto.
+Necesitas crear un sistema simple para registrar y consultar información de
+contactos. No puedes usar bases de datos aún, pero puedes simular una usando
+strings y operaciones de texto.
 
 ## Tu misión
 

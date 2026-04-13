@@ -6,7 +6,9 @@ estimated_time: "20 minutos"
 
 ## Situación
 
-Tu escritorio está lleno de archivos desorganizados: documentos, imágenes, scripts de Python y archivos de datos. Necesitas un programa que analice un directorio y te muestre un resumen organizado de su contenido.
+Tu escritorio está lleno de archivos desorganizados: documentos, imágenes,
+scripts de Python y archivos de datos. Necesitas un programa que analice un
+directorio y te muestre un resumen organizado de su contenido.
 
 ## Tu misión
 

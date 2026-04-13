@@ -64,4 +64,5 @@ Si puedes hacer todo esto, ¡estás listo para el **Módulo 9: Buenas Prácticas
 
 ---
 
-**Anterior:** [8.6 Entornos virtuales](06-entornos-virtuales.qmd) | **Siguiente:** [Módulo 9: Buenas Prácticas](../modulo-09/index.qmd)
+**Anterior:** [8.6 Entornos virtuales](06-entornos-virtuales.qmd) |
+**Siguiente:** [Módulo 9: Buenas Prácticas](../modulo-09/index.qmd)

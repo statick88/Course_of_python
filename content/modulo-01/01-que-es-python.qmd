@@ -27,9 +27,13 @@ Imagina que vas a armar un mueble. Necesitas:
 - **Martillo** para los clavos
 - **Nivel** para que quede derecho
 
-Eso son los lenguajes de programación especializados. C es como un destornillador profesional — hace UNA cosa extremadamente bien. Java es como una llave inglesa ajustable — versátil pero pesada.
+Eso son los lenguajes de programación especializados. C es como un
+destornillador profesional — hace UNA cosa extremadamente bien. Java es como una
+llave inglesa ajustable — versátil pero pesada.
 
-**Python es como un multiherramienta Swiss Army**. No es el mejor destornillador del mundo, pero puedes hacer el 90% del trabajo con una sola herramienta. Y eso lo hace increíblemente valioso.
+**Python es como un multiherramienta Swiss Army**. No es el mejor destornillador
+del mundo, pero puedes hacer el 90% del trabajo con una sola herramienta. Y eso
+lo hace increíblemente valioso.
 
 ## Historia rápida
 
@@ -80,22 +84,26 @@ Python está en todas partes. Literalmente.
 
 ## La filosofía de Python: El Zen
 
-Python tiene una filosofía escrita. Se llama **"El **Zen de Python****" y puedes leerla directamente en tu computadora:
+Python tiene una filosofía escrita. Se llama **"El **Zen de Python****" y puedes
+leerla directamente en tu computadora:
 
 ```python
 import this # <1>
 ```
 
-1. El módulo `**this**` contiene el Zen de Python. Al importarlo, se imprime en pantalla automáticamente.
+1. El módulo `**this**` contiene el Zen de Python. Al importarlo, se imprime en
+pantalla automáticamente.
 
 Los principios más importantes:
 
 1. **"Beautiful is better than ugly"** — El código bonito es mejor que el feo
 2. **"Simple is better than complex"** — Simple es mejor que complejo
 3. **"Readability counts"** — La legibilidad importa
-4. **"There should be one-- and preferably only one --obvious way to do it"** — Debe haber una forma obvia de hacer las cosas
+4. **"There should be one-- and preferably only one --obvious way to do it"** —
+Debe haber una forma obvia de hacer las cosas
 
-Esto significa que en Python, **escribimos código para que los humanos lo lean**, no las máquinas.
+Esto significa que en Python, **escribimos código para que los humanos lo
+lean**, no las máquinas.
 
 ## Python vs otros lenguajes — Comparación rápida
 
@@ -107,7 +115,8 @@ Esto significa que en Python, **escribimos código para que los humanos lo lean*
 print("Hola Mundo") # <1>
 ```
 
-1. En Python, una sola línea de código es suficiente para imprimir texto en pantalla.
+1. En Python, una sola línea de código es suficiente para imprimir texto en
+pantalla.
 
 **Java:**
 

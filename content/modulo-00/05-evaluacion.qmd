@@ -11,7 +11,8 @@ title: "0.5 Evaluación de enfores"
 
 ## No hay una sola respuesta correcta
 
-En programación, **casi siempre hay múltiples formas de resolver el mismo problema**.
+En programación, **casi siempre hay múltiples formas de resolver el mismo
+problema**.
 
 La pregunta no es "¿funciona?" sino **"¿cuál funciona MEJOR?"**
 
@@ -239,7 +240,8 @@ Ambos funcionan. Burbuja es más intuitivo. Selección hace menos intercambios.
 
 ## 🎉 ¡Módulo 0 completado!
 
-Ahora tienes las **herramientas de pensamiento** para aprender Python de forma efectiva.
+Ahora tienes las **herramientas de pensamiento** para aprender Python de forma
+efectiva.
 
 ### Resumen de lo aprendido
 

@@ -30,7 +30,8 @@ Abre tu terminal y ejecuta:
 python3 --version
 ```
 
-Deberías ver algo como `Python 3.12.1` o superior. Si ves un error, regresa a la lección de instalación.
+Deberías ver algo como `Python 3.12.1` o superior. Si ves un error, regresa a la
+lección de instalación.
 
 ## Paso 2: Crear un directorio de trabajo
 

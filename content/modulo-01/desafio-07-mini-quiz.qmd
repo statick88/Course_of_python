@@ -11,7 +11,9 @@ estimated_time: "25 minutos"
 > se te pedirá explicar cada paso en detalle durante la verificación.
 
 
-Necesitas crear un programa que evalúe los conocimientos básicos de Python de un estudiante. El quiz debe hacer preguntas, verificar respuestas, llevar un puntaje y dar retroalimentación al final.
+Necesitas crear un programa que evalúe los conocimientos básicos de Python de un
+estudiante. El quiz debe hacer preguntas, verificar respuestas, llevar un
+puntaje y dar retroalimentación al final.
 
 ## Tu misión
 

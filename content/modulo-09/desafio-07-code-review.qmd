@@ -6,7 +6,9 @@ estimated_time: "20 minutos"
 
 ## Situación
 
-Un desarrollador junior ha enviado un Pull Request con un módulo de gestión de estudiantes. Tu rol como desarrollador senior es hacer una **revisión de código completa**, identificando problemas y sugiriendo mejoras.
+Un desarrollador junior ha enviado un Pull Request con un módulo de gestión de
+estudiantes. Tu rol como desarrollador senior es hacer una **revisión de código
+completa**, identificando problemas y sugiriendo mejoras.
 
 ## Tu misión
 

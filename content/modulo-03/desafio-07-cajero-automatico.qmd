@@ -6,7 +6,9 @@ estimated_time: "40 minutos"
 
 ## Situación
 
-Vas a simular un cajero automático completo. Este es el desafío integrador del módulo: combina `if/else`, bucles, validación y lógica de negocio en un solo programa.
+Vas a simular un cajero automático completo. Este es el desafío integrador del
+módulo: combina `if/else`, bucles, validación y lógica de negocio en un solo
+programa.
 
 ## Tu misión
 

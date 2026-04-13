@@ -11,7 +11,9 @@ execute:
 
 ## 📋 Descripción del Proyecto
 
-Construye un sistema completo de tienda con inventario de productos, búsqueda por nombre y categoría, carrito de compras, y gestión de stock. El programa debe simular una experiencia de compra real desde la terminal.
+Construye un sistema completo de tienda con inventario de productos, búsqueda
+por nombre y categoría, carrito de compras, y gestión de stock. El programa debe
+simular una experiencia de compra real desde la terminal.
 
 > **La analogía:** Tu programa es como tener un pequeño supermercado en la terminal. El cliente busca productos, los agrega al carrito, y al final paga. El inventario se actualiza automáticamente.
 
@@ -85,7 +87,8 @@ tienda_productos/
 
 ## 💡 Tips para empezar
 
-1. **Empieza por el inventario.** Carga datos iniciales y haz que se muestren bien.
+1. **Empieza por el inventario.** Carga datos iniciales y haz que se muestren
+bien.
 2. **El carrito es independiente.** Prueba el carrito sin inventario primero.
 3. **La búsqueda es un filtro.** Usa list comprehension con `.lower()`.
 4. **El stock es crítico.** Nunca permitas stock negativo.
@@ -127,4 +130,5 @@ Presiona Enter para continuar...
 
 **Anterior:** [Proyecto 1: Gestor de Tareas](proyecto-01-gestor-tareas.qmd)
 
-**Siguiente:** [Proyecto 3: Analizador de Datos](proyecto-03-analizador-datos.qmd)
+**Siguiente:** [Proyecto 3: Analizador de
+Datos](proyecto-03-analizador-datos.qmd)

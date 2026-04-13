@@ -6,7 +6,10 @@ estimated_time: "15 minutos"
 
 ## Situación
 
-Estás desarrollando un módulo para un videojuego de estrategia. El tablero del juego es una matriz y necesitas implementar operaciones básicas: mostrar el tablero, contar unidades de un tipo, y encontrar la posición de la unidad más fuerte.
+Estás desarrollando un módulo para un videojuego de estrategia. El tablero del
+juego es una matriz y necesitas implementar operaciones básicas: mostrar el
+tablero, contar unidades de un tipo, y encontrar la posición de la unidad más
+fuerte.
 
 ## Tu misión
 
@@ -113,17 +116,22 @@ print(f"💪 Poder total del ejército: {poder_total}")
 print(f"🏆 Unidad más fuerte: {nombres[max_tipo]} en posición [{max_pos[0]}][{max_pos[1]}] con poder {max_poder}")
 ```
 
-1. Matriz 5x5 representando el tablero del juego. Cada celda tiene un tipo de unidad o está vacía.
+1. Matriz 5x5 representando el tablero del juego. Cada celda tiene un tipo de
+unidad o está vacía.
 2. Diccionario de poderes: cada tipo de unidad tiene un valor de poder asociado.
 3. Recorre cada fila del tablero para mostrarlo visualmente.
-4. `'  '.join(fila)` une los elementos de la fila con doble espacio: `"G  A  S  .  ."`.
-5. Diccionario de conteo inicializado en 0 para cada tipo: `{'G': 0, 'A': 0, 'S': 0, '.': 0}`.
+4. `' '.join(fila)` une los elementos de la fila con doble espacio: `"G A S .
+."`.
+5. Diccionario de conteo inicializado en 0 para cada tipo: `{'G': 0, 'A': 0,
+'S': 0, '.': 0}`.
 6. Bucle anidado recorre cada celda de la matriz y cuenta las unidades.
 7. Muestra el conteo de cada tipo de unidad con su nombre completo.
 8. Variables para rastrear el poder total y la unidad más fuerte encontrada.
 9. `enumerate` en ambos bucles da las coordenadas `(i, j)` de cada celda.
-10. `poderes.get(celda, 0)` obtiene el poder de la celda. Si no existe en el diccionario, devuelve 0.
-11. Si el poder actual es mayor que el máximo encontrado, actualiza el máximo y guarda la posición.
+10. `poderes.get(celda, 0)` obtiene el poder de la celda. Si no existe en el
+diccionario, devuelve 0.
+11. Si el poder actual es mayor que el máximo encontrado, actualiza el máximo y
+guarda la posición.
 
 </details>
 

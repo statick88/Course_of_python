@@ -15,7 +15,8 @@ execute:
 
 ## Tres formas de recorrer un diccionario
 
-Imagina que tienes un **inventario de una tienda**. Puedes mirarlo de tres formas:
+Imagina que tienes un **inventario de una tienda**. Puedes mirarlo de tres
+formas:
 
 1. **Solo los nombres** de los productos (las claves)
 2. **Solo los precios** de los productos (los valores)
@@ -42,9 +43,12 @@ for producto, cantidad in inventario.items():  # <3>
     print(f"{producto}: {cantidad} unidades")
 ```
 
-1. Iterar directamente sobre el diccionario (`for producto in inventario`) recorre las **claves**. Es equivalente a `inventario.keys()`.
-2. `.values()` devuelve solo los **valores**. Útil cuando solo te importan los datos, no las claves.
-3. `.items()` devuelve **pares (clave, valor)**. Es la forma más completa y la más usada en la práctica.
+1. Iterar directamente sobre el diccionario (`for producto in inventario`)
+recorre las **claves**. Es equivalente a `inventario.keys()`.
+2. `.values()` devuelve solo los **valores**. Útil cuando solo te importan los
+datos, no las claves.
+3. `.items()` devuelve **pares (clave, valor)**. Es la forma más completa y la
+más usada en la práctica.
 
 > **Readability counts.** `.items()` es la forma más expresiva: ves la clave y el valor juntos, como una etiqueta y su contenido.
 
@@ -71,9 +75,12 @@ todas_las_claves = list(configuracion.keys())  # <3>
 print(todas_las_claves)
 ```
 
-1. `.keys()` devuelve una vista de todas las claves. En la práctica, `for clave in diccionario` hace lo mismo sin llamar al método.
-2. `"puerto" in configuracion.keys()` funciona, pero `"puerto" in configuracion` es más directo y Pythonic.
-3. `list(configuracion.keys())` convierte las claves en una lista. Útil cuando necesitas ordenarlas o indexarlas.
+1. `.keys()` devuelve una vista de todas las claves. En la práctica, `for clave
+in diccionario` hace lo mismo sin llamar al método.
+2. `"puerto" in configuracion.keys()` funciona, pero `"puerto" in configuracion`
+es más directo y Pythonic.
+3. `list(configuracion.keys())` convierte las claves en una lista. Útil cuando
+necesitas ordenarlas o indexarlas.
 
 ## `.values()`: trabajar con los valores
 
@@ -98,9 +105,11 @@ aprobados = sum(1 for nota in notas.values() if nota >= 7)  # <3>
 print(f"Aprobados: {aprobados}")
 ```
 
-1. `sum(notas.values())` suma todos los valores del diccionario. `9.5 + 7.8 + 8.2 + 9.1 = 34.6`.
+1. `sum(notas.values())` suma todos los valores del diccionario. `9.5 + 7.8 +
+8.2 + 9.1 = 34.6`.
 2. `max(notas.values())` encuentra el valor más alto. `9.5` es la mejor nota.
-3. La expresión generadora `sum(1 for nota in notas.values() if nota >= 7)` cuenta cuántas notas son mayores o iguales a 7.
+3. La expresión generadora `sum(1 for nota in notas.values() if nota >= 7)`
+cuenta cuántas notas son mayores o iguales a 7.
 
 ## `.items()`: la forma más poderosa
 
@@ -122,8 +131,10 @@ for mes, monto in ventas.items():
         print(f"📈 {mes}: ${monto} — ¡Excelente mes!")
 ```
 
-1. `.items()` devuelve tuplas `(clave, valor)`. El `for mes, monto` desempaquetamiento automático de cada tupla.
-2. Puedes filtrar, transformar o tomar decisiones mientras iteras. Es la forma más flexible de trabajar con diccionarios.
+1. `.items()` devuelve tuplas `(clave, valor)`. El `for mes, monto`
+desempaquetamiento automático de cada tupla.
+2. Puedes filtrar, transformar o tomar decisiones mientras iteras. Es la forma
+más flexible de trabajar con diccionarios.
 
 ## Modificar un diccionario mientras iteras
 
@@ -149,7 +160,8 @@ for producto in list(precios.keys()):  # <1>
 print(precios)
 ```
 
-1. `list(precios.keys())` crea una **copia** de las claves. Iteras sobre la copia, pero modificas el diccionario original. Esto evita el error.
+1. `list(precios.keys())` crea una **copia** de las claves. Iteras sobre la
+copia, pero modificas el diccionario original. Esto evita el error.
 
 ## Comprensión de diccionarios: crear diccionarios al vuelo
 
@@ -170,9 +182,12 @@ precios_eur = {producto: precio * 0.85 for producto, precio in precios_usd.items
 print(precios_eur)
 ```
 
-1. `{x: x**2 for x in range(1, 6)}` crea `{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}`. La sintaxis es `{clave: valor for elemento in iterable}`.
-2. La comprensión con filtro `{x: x**2 for x in range(1, 11) if x % 2 == 0}` crea `{2: 4, 4: 16, 6: 36, 8: 64, 10: 100}`.
-3. Transformar un diccionario existente es común: aquí convertimos precios de USD a EUR multiplicando por 0.85.
+1. `{x: x**2 for x in range(1, 6)}` crea `{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}`. La
+sintaxis es `{clave: valor for elemento in iterable}`.
+2. La comprensión con filtro `{x: x**2 for x in range(1, 11) if x % 2 == 0}`
+crea `{2: 4, 4: 16, 6: 36, 8: 64, 10: 100}`.
+3. Transformar un diccionario existente es común: aquí convertimos precios de
+USD a EUR multiplicando por 0.85.
 
 > **Beautiful is better than ugly.** La comprensión de diccionarios es más legible y eficiente que un bucle `for` con asignaciones manuales.
 
@@ -194,4 +209,5 @@ print(precios_eur)
 
 ---
 
-**Anterior:** [6.2 Acceder y modificar](02-acceder-modificar.qmd) | **Siguiente:** [6.4 Sets](04-sets.qmd)
+**Anterior:** [6.2 Acceder y modificar](02-acceder-modificar.qmd) |
+**Siguiente:** [6.4 Sets](04-sets.qmd)

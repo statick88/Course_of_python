@@ -18,17 +18,23 @@ execute:
 
 Imagina que necesitas encontrar el número de **María García** en tu teléfono.
 
-**Escenario A — Lista desordenada:** Lees nombre por nombre desde el principio. Si tienes 100 contactos, en el peor caso lees los 100. Si tienes 1 millón... lees 1 millón. 🤦
+**Escenario A — Lista desordenada:** Lees nombre por nombre desde el principio.
+Si tienes 100 contactos, en el peor caso lees los 100. Si tienes 1 millón...
+lees 1 millón. 🤦
 
-**Escenario B — Lista alfabética:** Vas directo a la "G", luego buscas "García", luego "María". Con 1 millón de contactos, encuentras a María en ~20 pasos.
+**Escenario B — Lista alfabética:** Vas directo a la "G", luego buscas "García",
+luego "María". Con 1 millón de contactos, encuentras a María en ~20 pasos.
 
-**Ambos encuentran a María.** Pero uno tarda 0.1 segundos y el otro 3 horas. Eso es lo que mide **Big-O**: cómo crece el tiempo de ejecución cuando crecen los datos.
+**Ambos encuentran a María.** Pero uno tarda 0.1 segundos y el otro 3 horas. Eso
+es lo que mide **Big-O**: cómo crece el tiempo de ejecución cuando crecen los
+datos.
 
 > **Big-O no mide segundos. Mide CRECIMIENTO.** No te dice "esto tarda 5 segundos". Te dice "si duplicas los datos, ¿se tarda el doble, el cuádruple, o lo mismo?"
 
 ## ¿Qué es Big-O? (sin matemáticas)
 
-Big-O describe **cuántas operaciones** hace tu código en relación con la cantidad de datos de entrada (`n`).
+Big-O describe **cuántas operaciones** hace tu código en relación con la
+cantidad de datos de entrada (`n`).
 
 ```
 n = cantidad de datos (elementos en una lista, filas en un archivo, etc.)
@@ -53,7 +59,8 @@ O(2ⁿ)    → Crece explosivamente (n+1 = doble tiempo)
 
 ## O(1) — Tiempo constante
 
-**Siempre tarda lo mismo.** No importa si la lista tiene 10 elementos o 10 millones.
+**Siempre tarda lo mismo.** No importa si la lista tiene 10 elementos o 10
+millones.
 
 ```python
 # Acceder a un elemento por índice — O(1)
@@ -64,7 +71,8 @@ ultimo = colores[-1]    # <1> — instantáneo
 tercero = colores[2]    # <1> — instantáneo
 ```
 
-1. Python calcula la dirección de memoria directamente. No recorre la lista. Da igual que tenga 5 elementos o 5 millones.
+1. Python calcula la dirección de memoria directamente. No recorre la lista. Da
+igual que tenga 5 elementos o 5 millones.
 
 ```python
 # Obtener el tamaño de una lista — O(1)
@@ -75,7 +83,8 @@ colores.append("negro")  # <2> — siempre instantáneo
 ```
 
 1. Python guarda el tamaño de la lista internamente. `len()` solo lee ese valor.
-2. `append()` generalmente es O(1). Muy ocasionalmente necesita redimensionar la lista (O(n)), pero en promedio es constante.
+2. `append()` generalmente es O(1). Muy ocasionalmente necesita redimensionar la
+lista (O(n)), pero en promedio es constante.
 
 **Ejemplos de O(1):**
 - Acceder por índice: `lista[i]`
@@ -85,7 +94,8 @@ colores.append("negro")  # <2> — siempre instantáneo
 
 ## O(n) — Tiempo lineal
 
-**Proporcional a los datos.** Si hay 10 elementos, haces ~10 operaciones. Si hay 1 millón, haces ~1 millón.
+**Proporcional a los datos.** Si hay 10 elementos, haces ~10 operaciones. Si hay
+1 millón, haces ~1 millón.
 
 ```python
 # Búsqueda lineal — O(n)
@@ -102,7 +112,8 @@ print(f"Encontrado en la posición: {posicion}")  # 4
 ```
 
 1. La función recibe una lista y el valor que buscamos.
-2. Recorre **cada elemento** uno por uno. En el peor caso (no está o está al final), visita los `n` elementos.
+2. Recorre **cada elemento** uno por uno. En el peor caso (no está o está al
+final), visita los `n` elementos.
 3. Si lo encuentra, devuelve la posición inmediatamente.
 4. Si recorre toda la lista sin encontrarlo, retorna -1.
 
@@ -122,7 +133,8 @@ print(f"Encontrado en la posición: {posicion}")  # 4
 
 ## O(log n) — Tiempo logarítmico
 
-**Muy eficiente.** Cada paso reduce el problema a la **mitad**. Con 1 millón de datos, solo necesitas ~20 pasos.
+**Muy eficiente.** Cada paso reduce el problema a la **mitad**. Con 1 millón de
+datos, solo necesitas ~20 pasos.
 
 La búsqueda binaria es el ejemplo clásico:
 
@@ -152,12 +164,15 @@ posicion = busqueda_binaria(numeros_ordenados, 15)
 print(f"Encontrado en la posición: {posicion}")  # 9
 ```
 
-1. **Requisito clave:** la lista debe estar ordenada. Si no lo está, la búsqueda binaria no funciona.
+1. **Requisito clave:** la lista debe estar ordenada. Si no lo está, la búsqueda
+binaria no funciona.
 2. El ciclo sigue mientras haya espacio donde buscar.
 3. Calcula el índice del elemento central.
 4. Si el valor del medio es el que buscamos, ¡encontrado!
-5. Si el valor del medio es menor que el objetivo, el objetivo está en la mitad derecha. Descartamos la mitad izquierda.
-6. Si el valor del medio es mayor, el objetivo está en la mitad izquierda. Descartamos la mitad derecha.
+5. Si el valor del medio es menor que el objetivo, el objetivo está en la mitad
+derecha. Descartamos la mitad izquierda.
+6. Si el valor del medio es mayor, el objetivo está en la mitad izquierda.
+Descartamos la mitad derecha.
 7. Si el ciclo termina sin encontrar, el elemento no está.
 
 **¿Por qué es tan rápido?**
@@ -196,7 +211,8 @@ La búsqueda binaria es 52,631x más rápida
 
 ## O(n²) — Tiempo cuadrático
 
-**Peligroso.** Dos bucles anidados sobre los mismos datos. Si duplicas los datos, el tiempo se **cuadruplica**.
+**Peligroso.** Dos bucles anidados sobre los mismos datos. Si duplicas los
+datos, el tiempo se **cuadruplica**.
 
 ```python
 # Dos bucles anidados — O(n²)
@@ -216,7 +232,8 @@ print(pares)  # [(1,2), (1,3), (1,4), (2,3), (2,4), (3,4)]
 
 1. Para cada elemento, lo combinamos con todos los demás.
 2. El primer bucle recorre los `n` elementos.
-3. El segundo bucle recorre desde `i+1` hasta `n`. En total: n × (n-1) / 2 pares ≈ n²/2.
+3. El segundo bucle recorre desde `i+1` hasta `n`. En total: n × (n-1) / 2 pares
+≈ n²/2.
 4. En Big-O ignoramos constantes: n²/2 = **O(n²)**.
 
 **Otro ejemplo clásico: ordenamiento burbuja**
@@ -256,7 +273,8 @@ print(ordenado)  # [11, 12, 22, 25, 34, 64, 90]
 
 ## O(2ⁿ) — Tiempo exponencial
 
-**Imposible en la práctica.** Cada elemento adicional **duplica** el trabajo. Solo funciona con datos muy pequeños.
+**Imposible en la práctica.** Cada elemento adicional **duplica** el trabajo.
+Solo funciona con datos muy pequeños.
 
 El ejemplo clásico: **Fibonacci recursivo ingenuo**.
 
@@ -273,8 +291,10 @@ print(fibonacci_recursivo(30))  # 832040 — tarda unos segundos 😐
 # print(fibonacci_recursivo(50))  # 💀 NO EJECUTES ESTO (tardaría horas)
 ```
 
-1. La definición matemática de Fibonacci: F(n) = F(n-1) + F(n-2). Se ve simple... pero es una trampa.
-2. Cada llamada genera **dos llamadas más**. Esto crea un árbol exponencial de llamadas.
+1. La definición matemática de Fibonacci: F(n) = F(n-1) + F(n-2). Se ve
+simple... pero es una trampa.
+2. Cada llamada genera **dos llamadas más**. Esto crea un árbol exponencial de
+llamadas.
 
 **¿Por qué es tan lento? Mira el árbol de llamadas para fibonacci(5):**
 
@@ -296,7 +316,8 @@ fib(5)
     └── fib(1)
 ```
 
-Observa: `fib(2)` se calcula **3 veces**, `fib(1)` se calcula **5 veces**, `fib(0)` **3 veces**. ¡Mucho trabajo repetido!
+Observa: `fib(2)` se calcula **3 veces**, `fib(1)` se calcula **5 veces**,
+`fib(0)` **3 veces**. ¡Mucho trabajo repetido!
 
 ```python
 # Versión eficiente: O(n) con programación dinámica
@@ -318,7 +339,8 @@ print(fibonacci_eficiente(100))  # ¡30 dígitos! — instantáneo ✅
 
 1. En vez de recalcular, guardamos solo los dos últimos valores.
 2. Un solo bucle: n-1 iteraciones = O(n).
-3. Python permite asignación múltiple: calculamos el nuevo valor y actualizamos en una sola línea.
+3. Python permite asignación múltiple: calculamos el nuevo valor y actualizamos
+en una sola línea.
 
 **Comparación brutal:**
 
@@ -334,7 +356,8 @@ print(fibonacci_eficiente(100))  # ¡30 dígitos! — instantáneo ✅
 
 ## Medir con timeit: los números no mienten
 
-No adivines rendimiento. **Mídelo.** El módulo `timeit` de Python ejecuta tu código miles de veces y te da el tiempo promedio.
+No adivines rendimiento. **Mídelo.** El módulo `timeit` de Python ejecuta tu
+código miles de veces y te da el tiempo promedio.
 
 ```python
 import timeit  # <1>
@@ -345,7 +368,8 @@ print(f"10 000 ejecuciones: {tiempo:.4f} segundos")
 print(f"Promedio por ejecución: {tiempo/10000*1000:.4f} ms")
 ```
 
-1. `timeit` desactiva el garbage collector durante las mediciones para dar resultados consistentes.
+1. `timeit` desactiva el garbage collector durante las mediciones para dar
+resultados consistentes.
 2. `number=10000` ejecuta el código 10 000 veces y devuelve el tiempo total.
 
 ### Comparación: búsqueda lineal vs búsqueda binaria
@@ -396,9 +420,11 @@ print(f"Búsqueda binaria: {tiempo_binaria:.4f} seg (1000 ejecuciones)")
 print(f"La binaria es {tiempo_lineal / tiempo_binaria:.0f}x más rápida")
 ```
 
-1. `sorted(range(100_000))` crea una lista ordenada. La búsqueda binaria necesita esto.
+1. `sorted(range(100_000))` crea una lista ordenada. La búsqueda binaria
+necesita esto.
 2. Elegimos un objetivo aleatorio para que el benchmark sea representativo.
-3. `globals=globals()` permite que `timeit` acceda a las funciones y variables definidas fuera.
+3. `globals=globals()` permite que `timeit` acceda a las funciones y variables
+definidas fuera.
 
 ```
 Búsqueda lineal:  3.7214 seg (1000 ejecuciones)
@@ -463,7 +489,8 @@ join() es 3x más rápido
 
 ### Desafío 1: Identifica la complejidad
 
-Para cada fragmento de código, identifica su complejidad Big-O y explica por qué:
+Para cada fragmento de código, identifica su complejidad Big-O y explica por
+qué:
 
 ```python
 # A
@@ -568,4 +595,5 @@ Escribe ambas versiones de búsqueda y compáralas con `timeit`:
 
 ---
 
-**Anterior:** [8.6 Entornos virtuales](06-entornos-virtuales.qmd) | **Siguiente:** [Resumen del Módulo 8](99-resumen.qmd)
+**Anterior:** [8.6 Entornos virtuales](06-entornos-virtuales.qmd) |
+**Siguiente:** [Resumen del Módulo 8](99-resumen.qmd)

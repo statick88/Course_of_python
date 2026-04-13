@@ -45,7 +45,8 @@ else:
     print("👴 Adulto mayor")
 ```
 
-**Tu misión:** Modifica el programa para que también muestre si la persona es mayor de edad para votar (>= 18 en Ecuador).
+**Tu misión:** Modifica el programa para que también muestre si la persona es
+mayor de edad para votar (>= 18 en Ecuador).
 
 ### Paso 2: Tabla de Multiplicar con For (10 min)
 
@@ -57,7 +58,8 @@ for i in range(1, 11):
     print(f"{numero} x {i} = {resultado}")
 ```
 
-**Tu misión:** Haz que el usuario elija hasta qué número multiplicar (no solo 10).
+**Tu misión:** Haz que el usuario elija hasta qué número multiplicar (no solo
+10).
 
 ### Paso 3: FizzBuzz Clásico (15 min)
 
@@ -123,7 +125,8 @@ print(f"Cuadrados: {cuadrados}")
 
 ## Conclusión
 
-Has dominado las estructuras de control de flujo, fundamentales para cualquier programa Python.
+Has dominado las estructuras de control de flujo, fundamentales para cualquier
+programa Python.
 
 ## Checklist de Aceptación
 

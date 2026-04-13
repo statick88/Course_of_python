@@ -6,7 +6,9 @@ estimated_time: "20 minutos"
 
 ## Situación
 
-Una aplicación de viajes necesita mostrar el clima actual de diferentes ciudades. Tu tarea es crear un programa que consulte una API pública del clima y muestre la información de forma clara.
+Una aplicación de viajes necesita mostrar el clima actual de diferentes
+ciudades. Tu tarea es crear un programa que consulte una API pública del clima y
+muestre la información de forma clara.
 
 ## Tu misión
 

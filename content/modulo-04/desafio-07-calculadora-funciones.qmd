@@ -6,7 +6,9 @@ estimated_time: "25 minutos"
 
 ## Situación
 
-Necesitas construir una calculadora modular donde cada operación sea una función independiente. Esto permitirá agregar nuevas operaciones en el futuro sin modificar el código existente.
+Necesitas construir una calculadora modular donde cada operación sea una función
+independiente. Esto permitirá agregar nuevas operaciones en el futuro sin
+modificar el código existente.
 
 ## Tu misión
 
@@ -16,7 +18,8 @@ Crea un programa con las siguientes funciones:
 2. `restar(a, b)` — Devuelve la resta
 3. `multiplicar(a, b)` — Devuelve la multiplicación
 4. `dividir(a, b)` — Devuelve la división, o un mensaje de error si `b` es 0
-5. `calculadora(operacion, a, b)` — Recibe el nombre de la operación y los dos números, y delega a la función correspondiente
+5. `calculadora(operacion, a, b)` — Recibe el nombre de la operación y los dos
+números, y delega a la función correspondiente
 
 ## Ejemplo de ejecución
 

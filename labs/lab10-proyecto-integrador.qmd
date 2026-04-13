@@ -210,7 +210,8 @@ class GestorTareas:
 
 ## Conclusión
 
-Este proyecto integra todo lo aprendido: funciones, estructuras de datos, archivos, módulos, buenas prácticas.
+Este proyecto integra todo lo aprendido: funciones, estructuras de datos,
+archivos, módulos, buenas prácticas.
 
 ## Checklist de Aceptación
 

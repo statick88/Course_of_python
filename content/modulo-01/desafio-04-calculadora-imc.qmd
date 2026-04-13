@@ -11,7 +11,9 @@ estimated_time: "12 minutos"
 > se te pedirá explicar cada paso en detalle durante la verificación.
 
 
-Un centro de bienestar necesita una calculadora de Índice de Masa Corporal (IMC). El IMC se calcula dividiendo el peso en kilogramos entre el cuadrado de la estatura en metros. El programa debe además clasificar el resultado.
+Un centro de bienestar necesita una calculadora de Índice de Masa Corporal
+(IMC). El IMC se calcula dividiendo el peso en kilogramos entre el cuadrado de
+la estatura en metros. El programa debe además clasificar el resultado.
 
 ## Tu misión
 

@@ -14,7 +14,9 @@ execute:
 
 ## Strings como cadenas de eslabones
 
-Imagina que un string es como una **cadena de eslabones**. Cada eslabón es un carácter, y puedes acceder a cualquiera de ellos individualmente, cortarlos, unirlos o transformarlos.
+Imagina que un string es como una **cadena de eslabones**. Cada eslabón es un
+carácter, y puedes acceder a cualquiera de ellos individualmente, cortarlos,
+unirlos o transformarlos.
 
 ```python
 # Los strings son secuencias de caracteres
@@ -31,12 +33,16 @@ desde = mensaje[7:]      # <5>
 invertido = mensaje[::-1] # <6>
 ```
 
-1. `mensaje[0]` accede al primer carácter. En Python, los índices empiezan en 0. `"Python es genial"[0]` = `"P"`.
-2. `mensaje[-1]` accede al **último** carácter. Los índices negativos cuentan desde el final. `"l"`.
+1. `mensaje[0]` accede al primer carácter. En Python, los índices empiezan en 0.
+`"Python es genial"[0]` = `"P"`.
+2. `mensaje[-1]` accede al **último** carácter. Los índices negativos cuentan
+desde el final. `"l"`.
 3. `mensaje[2]` accede al tercer carácter (índice 2). `"t"`.
-4. `mensaje[0:6]` extrae desde el índice 0 hasta el 5 (el 6 no se incluye). `"Python"`.
+4. `mensaje[0:6]` extrae desde el índice 0 hasta el 5 (el 6 no se incluye).
+`"Python"`.
 5. `mensaje[7:]` extrae desde el índice 7 hasta el final. `"es genial"`.
-6. `mensaje[::-1]` invierte el string completo. El paso `-1` recorre de atrás hacia adelante. `"laing se nohtyP"`.
+6. `mensaje[::-1]` invierte el string completo. El paso `-1` recorre de atrás
+hacia adelante. `"laing se nohtyP"`.
 
 ## Métodos esenciales de strings
 
@@ -53,11 +59,16 @@ print(frase.capitalize())   # <4> — "Hola mundo, soy python"
 print(frase.swapcase())     # <5> — "HOLA mundo, SOY pYTHON"
 ```
 
-1. `.upper()` convierte TODO a mayúsculas. Útil para comparaciones insensibles a mayúsculas.
-2. `.lower()` convierte todo a minúsculas. El método más usado para normalizar texto.
-3. `.title()` pone la primera letra de **cada palabra** en mayúscula. Ideal para nombres propios y títulos.
-4. `.capitalize()` pone solo la primera letra de la **primera palabra** en mayúscula.
-5. `.swapcase()` invierte mayúsculas y minúsculas. Las mayúsculas pasan a minúsculas y viceversa.
+1. `.upper()` convierte TODO a mayúsculas. Útil para comparaciones insensibles a
+mayúsculas.
+2. `.lower()` convierte todo a minúsculas. El método más usado para normalizar
+texto.
+3. `.title()` pone la primera letra de **cada palabra** en mayúscula. Ideal para
+nombres propios y títulos.
+4. `.capitalize()` pone solo la primera letra de la **primera palabra** en
+mayúscula.
+5. `.swapcase()` invierte mayúsculas y minúsculas. Las mayúsculas pasan a
+minúsculas y viceversa.
 
 ### Limpieza de texto
 
@@ -74,10 +85,12 @@ url = "www.ejemplo.com"
 print(url.strip("w."))  # <4> — "ejemplo.com"
 ```
 
-1. `.strip()` elimina espacios, tabulaciones y saltos de línea **al inicio y al final**. El contenido central no se toca.
+1. `.strip()` elimina espacios, tabulaciones y saltos de línea **al inicio y al
+final**. El contenido central no se toca.
 2. `.lstrip()` (left strip) elimina solo por la **izquierda**.
 3. `.rstrip()` (right strip) elimina solo por la **derecha**.
-4. `.strip("w.")` elimina los caracteres `w` y `.` del inicio y final. `"www.ejemplo.com"` → `"ejemplo.com"`.
+4. `.strip("w.")` elimina los caracteres `w` y `.` del inicio y final.
+`"www.ejemplo.com"` → `"ejemplo.com"`.
 
 ### Búsqueda y reemplazo
 
@@ -98,10 +111,13 @@ print(frase.startswith("Python"))  # <5> — True
 print(frase.endswith("divertido")) # <6> — True
 ```
 
-1. `.find("Python")` devuelve el índice de la primera aparición. `0` significa que empieza en la posición 0.
-2. `.rfind("Python")` busca desde el final (right find). Devuelve `20`, la posición de la segunda aparición.
+1. `.find("Python")` devuelve el índice de la primera aparición. `0` significa
+que empieza en la posición 0.
+2. `.rfind("Python")` busca desde el final (right find). Devuelve `20`, la
+posición de la segunda aparición.
 3. `.count("Python")` cuenta cuántas veces aparece la subcadena. `2`.
-4. `.replace("Python", "JavaScript")` reemplaza **todas** las apariciones. No modifica el string original (los strings son inmutables).
+4. `.replace("Python", "JavaScript")` reemplaza **todas** las apariciones. No
+modifica el string original (los strings son inmutables).
 5. `.startswith("Python")` devuelve `True` si el string comienza con ese texto.
 6. `.endswith("divertido")` devuelve `True` si el string termina con ese texto.
 
@@ -129,10 +145,14 @@ texto = "\n".join(lineas)  # <4>
 print(texto)
 ```
 
-1. `.split(",")` divide el string usando la coma como separador. Devuelve una **lista** de strings.
-2. `.split()` sin argumentos divide por espacios en blanco (uno o más). Es el uso más común.
-3. `", ".join(nombres)` une los elementos de la lista usando `", "` como separador. Es el **inverso** de `.split()`.
-4. `"\n".join(lineas)` une con saltos de línea. Perfecto para generar texto multilinea.
+1. `.split(",")` divide el string usando la coma como separador. Devuelve una
+**lista** de strings.
+2. `.split()` sin argumentos divide por espacios en blanco (uno o más). Es el
+uso más común.
+3. `", ".join(nombres)` une los elementos de la lista usando `", "` como
+separador. Es el **inverso** de `.split()`.
+4. `"\n".join(lineas)` une con saltos de línea. Perfecto para generar texto
+multilinea.
 
 ## f-strings avanzados — más que solo insertar variables
 
@@ -161,14 +181,20 @@ print(f"El doble de {edad} es {edad * 2}")  # <8>
 print(f"¿Es mayor? {edad >= 18}")            # <9>
 ```
 
-1. `{nombre:<10}` alinea a la **izquierda** (`<`) en un campo de 10 caracteres. Rellena con espacios a la derecha.
-2. `{nombre:>10}` alinea a la **derecha** (`>`) en 10 caracteres. Rellena con espacios a la izquierda.
-3. `{nombre:^10}` **centra** (`^`) en 10 caracteres. Rellena con espacios a ambos lados.
-4. `{saldo:.2f}` formatea como número de punto fijo con **2 decimales**. Redondea automáticamente.
+1. `{nombre:<10}` alinea a la **izquierda** (`<`) en un campo de 10 caracteres.
+Rellena con espacios a la derecha.
+2. `{nombre:>10}` alinea a la **derecha** (`>`) en 10 caracteres. Rellena con
+espacios a la izquierda.
+3. `{nombre:^10}` **centra** (`^`) en 10 caracteres. Rellena con espacios a
+ambos lados.
+4. `{saldo:.2f}` formatea como número de punto fijo con **2 decimales**.
+Redondea automáticamente.
 5. `{nota:.1f}` formatea con **1 decimal**. `8.5` se muestra como `8.5`.
 6. `{0.85:.1%}` formatea como **porcentaje** con 1 decimal. `0.85` → `85.0%`.
-7. `{poblacion:,}` agrega **separadores de miles** con comas. Más legible para números grandes.
-8. Puedes poner **expresiones** dentro de las llaves. `edad * 2` se evalúa y se inserta el resultado.
+7. `{poblacion:,}` agrega **separadores de miles** con comas. Más legible para
+números grandes.
+8. Puedes poner **expresiones** dentro de las llaves. `edad * 2` se evalúa y se
+inserta el resultado.
 9. Las **comparaciones** también funcionan. `edad >= 18` → `True`.
 
 ## Métodos de validación — ¿qué tipo de texto tengo?
@@ -186,7 +212,8 @@ print("HOLA".isupper())    # <7> — True: todo mayúsculas
 
 1. `.isdigit()` devuelve `True` si todos los caracteres son dígitos (0-9).
 2. `.isalpha()` devuelve `True` si todos los caracteres son letras (a-z, A-Z).
-3. `.isalnum()` devuelve `True` si son letras y/o números (sin espacios ni símbolos).
+3. `.isalnum()` devuelve `True` si son letras y/o números (sin espacios ni
+símbolos).
 4. `.isspace()` devuelve `True` si solo hay espacios en blanco.
 5. `.istitle()` devuelve `True` si cada palabra empieza con mayúscula.
 6. `.islower()` devuelve `True` si todas las letras son minúsculas.
@@ -207,7 +234,8 @@ nueva_frase = frase.replace("H", "h")  # <1>
 print(nueva_frase)  # "hola Mundo"
 ```
 
-1. Los strings en Python **no se pueden modificar**. Cada método devuelve un **nuevo** string. Debes asignarlo a una variable.
+1. Los strings en Python **no se pueden modificar**. Cada método devuelve un
+**nuevo** string. Debes asignarlo a una variable.
 
 ### ❌ Olvidar que find() devuelve -1 si no encuentra
 
@@ -225,8 +253,10 @@ else:
     print("No encontrado")
 ```
 
-1. `.find()` devuelve `-1` cuando no encuentra la subcadena. Si usas ese `-1` como índice, accederás al último carácter.
-2. El operador `in` es más claro para verificar existencia. `"Python" in texto` devuelve `True` o `False`.
+1. `.find()` devuelve `-1` cuando no encuentra la subcadena. Si usas ese `-1`
+como índice, accederás al último carácter.
+2. El operador `in` es más claro para verificar existencia. `"Python" in texto`
+devuelve `True` o `False`.
 
 ### ❌ Confundir replace() con modificación in-place
 
@@ -242,8 +272,10 @@ texto = texto.replace("Mundo", "Python")  # <2>
 print(texto)  # "Hola Python"
 ```
 
-1. `.replace()` devuelve un **nuevo** string. Si no lo asignas, el resultado se pierde.
-2. Asignar el resultado a la misma variable es el patrón correcto para "modificar" strings.
+1. `.replace()` devuelve un **nuevo** string. Si no lo asignas, el resultado se
+pierde.
+2. Asignar el resultado a la misma variable es el patrón correcto para
+"modificar" strings.
 
 ## Zen de Python aplicado
 
@@ -270,4 +302,5 @@ print(texto)  # "Hola Python"
 
 ---
 
-**Anterior:** [2.4 Casting avanzado](04-casting-avanzado.qmd) | **Siguiente:** [Resumen del Módulo 2](99-resumen.qmd)
+**Anterior:** [2.4 Casting avanzado](04-casting-avanzado.qmd) | **Siguiente:**
+[Resumen del Módulo 2](99-resumen.qmd)

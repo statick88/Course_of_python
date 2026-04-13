@@ -6,7 +6,8 @@ estimated_time: "20 minutos"
 
 ## Situación
 
-Vas a crear un juego clásico: la computadora piensa un número aleatorio y el jugador debe adivinarlo recibiendo pistas de "más alto" o "más bajo".
+Vas a crear un juego clásico: la computadora piensa un número aleatorio y el
+jugador debe adivinarlo recibiendo pistas de "más alto" o "más bajo".
 
 ## Tu misión
 

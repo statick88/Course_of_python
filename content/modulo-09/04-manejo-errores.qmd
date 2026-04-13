@@ -14,9 +14,12 @@ execute:
 
 ## Los errores son tu amigo
 
-Imagina que eres un **paramédico**. Cuando un paciente llega con síntomas, no los ignoras esperando que se arreglen solos. Los diagnosticas, los tratas y previenes que empeoren.
+Imagina que eres un **paramédico**. Cuando un paciente llega con síntomas, no
+los ignoras esperando que se arreglen solos. Los diagnosticas, los tratas y
+previenes que empeoren.
 
-Los errores en Python funcionan igual: si los ignoras, el programa muere. Si los manejas, tu aplicación sobrevive y se recupera.
+Los errores en Python funcionan igual: si los ignoras, el programa muere. Si los
+manejas, tu aplicación sobrevive y se recupera.
 
 ```python
 # ❌ Sin manejo de errores — el programa muere
@@ -29,7 +32,8 @@ print(f"El próximo año tendrás {edad_numero + 1} años")
 # 💀 El programa se detiene abruptamente
 ```
 
-1. `int()` lanza un `ValueError` si el texto no es un número válido. Sin manejo de errores, el programa se detiene.
+1. `int()` lanza un `ValueError` si el texto no es un número válido. Sin manejo
+de errores, el programa se detiene.
 
 ```python
 # ✅ Con manejo de errores — el programa sobrevive
@@ -71,16 +75,21 @@ finally:  # <6>
     print("Proceso de lectura completado.")
 ```
 
-1. Este código puede fallar de varias formas: archivo no encontrado, contenido no numérico, etc.
+1. Este código puede fallar de varias formas: archivo no encontrado, contenido
+no numérico, etc.
 2. `FileNotFoundError`: se ejecuta solo si el archivo no existe.
 3. `ValueError`: se ejecuta solo si el contenido no se puede convertir a número.
-4. `Exception`: captura **cualquier otro error** no contemplado. Úsalo como red de seguridad.
-5. `else`: se ejecuta **solo si no hubo errores**. Ideal para código que depende del éxito del `try`.
-6. `finally`: se ejecuta **siempre**, haya error o no. Ideal para limpieza (cerrar archivos, conexiones).
+4. `Exception`: captura **cualquier otro error** no contemplado. Úsalo como red
+de seguridad.
+5. `else`: se ejecuta **solo si no hubo errores**. Ideal para código que depende
+del éxito del `try`.
+6. `finally`: se ejecuta **siempre**, haya error o no. Ideal para limpieza
+(cerrar archivos, conexiones).
 
 ## Jerarquía de excepciones
 
-Python organiza los errores en una **jerarquía familiar**. Capturar un padre captura a todos sus hijos:
+Python organiza los errores en una **jerarquía familiar**. Capturar un padre
+captura a todos sus hijos:
 
 ```
 BaseException
@@ -116,7 +125,8 @@ dividir_seguro(10, "a")  # → "Ambos argumentos deben ser números."
 ```
 
 1. `ZeroDivisionError` es más específico que `Exception`. Se captura primero.
-2. `TypeError` captura cuando los tipos no son compatibles (ej. dividir por un string).
+2. `TypeError` captura cuando los tipos no son compatibles (ej. dividir por un
+string).
 
 ```python
 # ❌ Capturar Exception es como usar una red para atrair mosquitos
@@ -126,7 +136,8 @@ except Exception:  # <1>
     print("Algo salió mal")  # ¿Qué salió mal? ¿Por qué?
 ```
 
-1. Capturar `Exception` genérico oculta el tipo real del error. No sabes si fue división por cero, tipo incorrecto, o cualquier otra cosa.
+1. Capturar `Exception` genérico oculta el tipo real del error. No sabes si fue
+división por cero, tipo incorrecto, o cualquier otra cosa.
 
 > **Explicit is better than implicit.** Captura excepciones específicas. Así sabes exactamente qué falló y puedes actuar en consecuencia.
 
@@ -155,8 +166,10 @@ def obtener_valor_seguro_eafp(diccionario, clave):
         return None
 ```
 
-1. LBYL: verifica primero si la clave existe. Funciona, pero hace dos operaciones (verificar + acceder).
-2. EAFP: intenta acceder directamente. Si falla, lo maneja. Más Pythonico y más rápido.
+1. LBYL: verifica primero si la clave existe. Funciona, pero hace dos
+operaciones (verificar + acceder).
+2. EAFP: intenta acceder directamente. Si falla, lo maneja. Más Pythonico y más
+rápido.
 
 ```python
 # ✅ EAFP es el estilo preferido en Python
@@ -172,11 +185,13 @@ def leer_archivo_seguro(ruta):
         return None
 ```
 
-1. Intenta abrir el archivo directamente. Si no existe o no hay permisos, lo maneja con elegancia.
+1. Intenta abrir el archivo directamente. Si no existe o no hay permisos, lo
+maneja con elegancia.
 
 ## Excepciones personalizadas
 
-Cuando tu aplicación tiene errores específicos del dominio, crea tus propias excepciones:
+Cuando tu aplicación tiene errores específicos del dominio, crea tus propias
+excepciones:
 
 ```python
 # ✅ Excepciones personalizadas para tu dominio
@@ -206,8 +221,10 @@ except SaldoInsuficiente as e:
     print(f"Transacción rechazada: {e}")  # <4>
 ```
 
-1. `ErrorDeValidacion` hereda de `Exception`. Es tu excepción base para validaciones.
-2. `SaldoInsuficiente` incluye información adicional (saldo y monto) para un mensaje de error detallado.
+1. `ErrorDeValidacion` hereda de `Exception`. Es tu excepción base para
+validaciones.
+2. `SaldoInsuficiente` incluye información adicional (saldo y monto) para un
+mensaje de error detallado.
 3. `raise` lanza la excepción cuando se detecta la condición de error.
 4. El mensaje incluye toda la información necesaria para entender el problema.
 
@@ -234,4 +251,5 @@ except SaldoInsuficiente as e:
 
 ---
 
-**Anterior:** [9.3 Funciones puras](03-funciones-puras.qmd) | **Siguiente:** [9.5 Documentación](05-documentacion.qmd)
+**Anterior:** [9.3 Funciones puras](03-funciones-puras.qmd) | **Siguiente:**
+[9.5 Documentación](05-documentacion.qmd)

@@ -14,9 +14,12 @@ execute:
 
 ## ¿Qué es pip?
 
-Si la **biblioteca estándar** es la caja de herramientas que viene con Python, **pip** es la **ferretería** donde compras herramientas especializadas.
+Si la **biblioteca estándar** es la caja de herramientas que viene con Python,
+**pip** es la **ferretería** donde compras herramientas especializadas.
 
-Python tiene una comunidad de más de **400,000 paquetes** publicados en **PyPI** (Python Package Index). pip es el programa que te permite descargar e instalar cualquiera de ellos.
+Python tiene una comunidad de más de **400,000 paquetes** publicados en **PyPI**
+(Python Package Index). pip es el programa que te permite descargar e instalar
+cualquiera de ellos.
 
 ```bash
 # pip viene instalado con Python 3.4+
@@ -28,7 +31,8 @@ pip install requests # Instala el paquete "requests"
 
 ## Instalar tu primer paquete
 
-El paquete `requests` es el más popular para hacer peticiones HTTP. Vamos a instalarlo:
+El paquete `requests` es el más popular para hacer peticiones HTTP. Vamos a
+instalarlo:
 
 ```bash
 # Instalar un paquete
@@ -38,8 +42,11 @@ pip install requests  # <1>
 pip show requests  # <2>
 ```
 
-1. `pip install requests` descarga el paquete desde PyPI y lo instala en tu Python. Automáticamente instala también sus dependencias (otros paquetes que necesita).
-2. `pip show requests` muestra información del paquete: versión, ubicación, dependencias y autor.
+1. `pip install requests` descarga el paquete desde PyPI y lo instala en tu
+Python. Automáticamente instala también sus dependencias (otros paquetes que
+necesita).
+2. `pip show requests` muestra información del paquete: versión, ubicación,
+dependencias y autor.
 
 Ahora puedes usarlo en tu código:
 
@@ -53,9 +60,11 @@ print(respuesta.json())       # Los datos en formato diccionario <4>
 ```
 
 1. Ahora `import requests` funciona porque pip lo instaló.
-2. `requests.get()` hace una petición HTTP GET a la URL. Es como abrir una página en el navegador, pero desde código.
+2. `requests.get()` hace una petición HTTP GET a la URL. Es como abrir una
+página en el navegador, pero desde código.
 3. `status_code` 200 significa que la petición fue exitosa.
-4. `.json()` convierte la respuesta JSON a un diccionario Python automáticamente.
+4. `.json()` convierte la respuesta JSON a un diccionario Python
+automáticamente.
 
 ## Comandos esenciales de pip
 
@@ -82,13 +91,16 @@ pip install "django>=4.0,<5.0"  # <2>
 pip install "requests>=2.28"  # <3>
 ```
 
-1. `==` instala exactamente esa versión. Útil cuando necesitas compatibilidad exacta.
-2. `>=4.0,<5.0` instala cualquier versión 4.x. Es más flexible y permite actualizaciones de seguridad.
+1. `==` instala exactamente esa versión. Útil cuando necesitas compatibilidad
+exacta.
+2. `>=4.0,<5.0` instala cualquier versión 4.x. Es más flexible y permite
+actualizaciones de seguridad.
 3. `>=2.28` instala la versión más reciente que sea al menos 2.28.
 
 ## requirements.txt — La receta de tu proyecto
 
-Cuando compartes tu proyecto, necesitas que otros sepan qué paquetes instalar. El archivo `requirements.txt` es esa **lista de ingredientes**:
+Cuando compartes tu proyecto, necesitas que otros sepan qué paquetes instalar.
+El archivo `requirements.txt` es esa **lista de ingredientes**:
 
 ```
 # requirements.txt
@@ -100,9 +112,11 @@ pandas>=1.5,<2.0      # <3> — rango de versiones
 numpy                 # <4> — cualquier versión
 ```
 
-1. `requests==2.31.0` — versión exacta. Garantiza que todos usen la misma versión.
+1. `requests==2.31.0` — versión exacta. Garantiza que todos usen la misma
+versión.
 2. `flask>=2.3.0` — al menos esta versión. Permite actualizaciones compatibles.
-3. `pandas>=1.5,<2.0` — entre 1.5 y 1.99. Evita la versión 2.0 que podría romper cosas.
+3. `pandas>=1.5,<2.0` — entre 1.5 y 1.99. Evita la versión 2.0 que podría romper
+cosas.
 4. `numpy` — sin restricción. Instala la última disponible.
 
 ### Generar requirements.txt automáticamente
@@ -115,8 +129,10 @@ pip freeze > requirements.txt  # <1>
 pip install -r requirements.txt  # <2>
 ```
 
-1. `pip freeze` lista todos los paquetes con sus versiones exactas. El `>` guarda la salida en el archivo.
-2. `-r requirements.txt` lee el archivo e instala todo lo que falta. Un comando y tu proyecto funciona.
+1. `pip freeze` lista todos los paquetes con sus versiones exactas. El `>`
+guarda la salida en el archivo.
+2. `-r requirements.txt` lee el archivo e instala todo lo que falta. Un comando
+y tu proyecto funciona.
 
 ## Paquetes populares que debes conocer
 
@@ -174,7 +190,8 @@ pip install paquete-a  # necesita requests==2.28
 pip install paquete-b  # necesita requests==2.31
 ```
 
-**Solución:** Los entornos virtuales aíslan cada proyecto para evitar estos conflictos.
+**Solución:** Los entornos virtuales aíslan cada proyecto para evitar estos
+conflictos.
 
 ### ❌ Error: pip desactualizado
 
@@ -183,7 +200,8 @@ pip install paquete-b  # necesita requests==2.31
 pip install --upgrade pip  # <1> — actualiza pip mismo
 ```
 
-1. Mantener pip actualizado es importante para seguridad y compatibilidad con paquetes nuevos.
+1. Mantener pip actualizado es importante para seguridad y compatibilidad con
+paquetes nuevos.
 
 ## Resumen
 
@@ -203,4 +221,5 @@ pip install --upgrade pip  # <1> — actualiza pip mismo
 
 ---
 
-**Anterior:** [8.4 Paquetes](04-paquetes.qmd) | **Siguiente:** [8.6 Entornos virtuales](06-entornos-virtuales.qmd)
+**Anterior:** [8.4 Paquetes](04-paquetes.qmd) | **Siguiente:** [8.6 Entornos
+virtuales](06-entornos-virtuales.qmd)

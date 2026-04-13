@@ -26,9 +26,11 @@ edad_numero = int(edad) # <3>
 print(f"El próximo año tendrás {edad_numero + 1}")
 ```
 
-1. `input()` siempre devuelve una cadena de texto (`str`), incluso si el usuario escribe un número.
+1. `input()` siempre devuelve una cadena de texto (`str`), incluso si el usuario
+escribe un número.
 2. `type(edad)` confirma que es `<class 'str'>`. Esto es fundamental entenderlo.
-3. `int(edad)` convierte el texto a número entero. Sin esta conversión, no podrías hacer operaciones matemáticas.
+3. `int(edad)` convierte el texto a número entero. Sin esta conversión, no
+podrías hacer operaciones matemáticas.
 
 ## `input()`: la puerta de entrada
 
@@ -42,7 +44,8 @@ nombre = input("Ingresa tu nombre: ") # <1>
 print(f"Hola, {nombre}") # <2>
 ```
 
-1. `input()` muestra el mensaje "Ingresa tu nombre: " y espera a que el usuario escriba algo. Lo que escriba se almacena en la variable `nombre`.
+1. `input()` muestra el mensaje "Ingresa tu nombre: " y espera a que el usuario
+escriba algo. Lo que escriba se almacena en la variable `nombre`.
 2. El f-string inserta el valor de `nombre` en el mensaje de saludo.
 
 ### El problema del tipo: todo es texto
@@ -63,10 +66,14 @@ else:
     print("Por favor, ingresa un número válido")
 ```
 
-1. `input()` siempre devuelve texto. Si el usuario escribe "veinte", `edad` será `"veinte"`, no `20`.
-2. `"veinte" + 5` genera un `TypeError` porque no se puede sumar texto con números.
-3. Primero almacenamos la entrada en una variable llamada `entrada` para validarla antes de convertirla.
-4. `.isdigit()` verifica si la cadena contiene solo dígitos. `"20".isdigit()` es `True`, pero `"veinte".isdigit()` es `False`.
+1. `input()` siempre devuelve texto. Si el usuario escribe "veinte", `edad` será
+`"veinte"`, no `20`.
+2. `"veinte" + 5` genera un `TypeError` porque no se puede sumar texto con
+números.
+3. Primero almacenamos la entrada en una variable llamada `entrada` para
+validarla antes de convertirla.
+4. `.isdigit()` verifica si la cadena contiene solo dígitos. `"20".isdigit()` es
+`True`, pero `"veinte".isdigit()` es `False`.
 
 > **Errors should never pass silently.** Si el usuario ingresa algo inesperado, tu programa debe responder con claridad, no crashear.
 
@@ -86,8 +93,10 @@ print("... ", end="")
 print("listo!")
 ```
 
-1. `sep=" | "` cambia el separador predeterminado (espacio) por `" | "`. Resultado: `Python | 3.14 | Fundamentos`.
-2. `end=""` elimina el salto de línea al final, permitiendo que el siguiente `print()` continúe en la misma línea.
+1. `sep=" | "` cambia el separador predeterminado (espacio) por `" | "`.
+Resultado: `Python | 3.14 | Fundamentos`.
+2. `end=""` elimina el salto de línea al final, permitiendo que el siguiente
+`print()` continúe en la misma línea.
 
 ### Tablas alineadas
 
@@ -100,8 +109,10 @@ print(f"{'Mouse':<15} {12.50:>8.2f} {89:>6}")
 print(f"{'Monitor':<15} {199.99:>8.2f} {23:>6}")
 ```
 
-1. `:<15` alinea el texto a la izquierda con 15 caracteres de ancho. `:>8` alinea a la derecha con 8 caracteres.
-2. `:>8.2f` alinea a la derecha con 8 caracteres de ancho y 2 decimales. El `f` indica que es un número flotante.
+1. `:<15` alinea el texto a la izquierda con 15 caracteres de ancho. `:>8`
+alinea a la derecha con 8 caracteres.
+2. `:>8.2f` alinea a la derecha con 8 caracteres de ancho y 2 decimales. El `f`
+indica que es un número flotante.
 
 **Salida:**
 ```
@@ -158,11 +169,14 @@ while True: # <1>
 print(f"Edad registrada: {edad}")
 ```
 
-1. `while True` crea un bucle infinito que solo se rompe cuando el dato es válido.
-2. `int(entrada)` puede generar un `ValueError` si el texto no es un número válido.
+1. `while True` crea un bucle infinito que solo se rompe cuando el dato es
+válido.
+2. `int(entrada)` puede generar un `ValueError` si el texto no es un número
+válido.
 3. Validamos que la edad esté en un rango razonable (0-150 años).
 4. `break` sale del bucle cuando el dato es válido.
-5. `except ValueError` captura el error cuando `int()` no puede convertir el texto.
+5. `except ValueError` captura el error cuando `int()` no puede convertir el
+texto.
 
 > **There should be one obvious way to do it.** Este patrón `while True + try/except` es la forma estándar en Python de validar entrada numérica.
 
@@ -207,7 +221,8 @@ print("-" * 40)
 print("¡Registro exitoso!")
 ```
 
-1. `"=" * 40` crea una línea de 40 caracteres iguales para separar secciones visualmente.
+1. `"=" * 40` crea una línea de 40 caracteres iguales para separar secciones
+visualmente.
 2. `.strip()` elimina los espacios al inicio y al final del texto ingresado.
 3. Los f-strings formatean la salida de manera legible y alineada.
 
@@ -234,4 +249,5 @@ print("¡Registro exitoso!")
 
 ---
 
-**Siguiente:** [Desafío 1: Saludo personalizado](desafio-01-saludo-personalizado.qmd)
+**Siguiente:** [Desafío 1: Saludo
+personalizado](desafio-01-saludo-personalizado.qmd)

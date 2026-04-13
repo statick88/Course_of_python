@@ -5,7 +5,10 @@ subtitle: "Validación final del curso de Python"
 
 ## 🏁 Objetivo de Esta Fase
 
-Esta fase final verifica que el curso de Python cumple con todos los estándares de calidad, contenido educativo, y sistemas de soporte para estudiantes. Es inspirada en las prácticas de verification de agentes autónomos y el enfoque de mejora continua.
+Esta fase final verifica que el curso de Python cumple con todos los estándares
+de calidad, contenido educativo, y sistemas de soporte para estudiantes. Es
+inspirada en las prácticas de verification de agentes autónomos y el enfoque de
+mejora continua.
 
 ---
 
@@ -190,4 +193,5 @@ Esta fase final verifica que el curso de Python cumple con todos los estándares
 *¡Gracias por completar el curso! 🎉*
 
 ---
-**Volver al índice:** [Inicio](../index.qmd) | **Anterior:** [Apéndice B](02-mcp-para-python.qmd)
+**Volver al índice:** [Inicio](../index.qmd) | **Anterior:** [Apéndice
+B](02-mcp-para-python.qmd)

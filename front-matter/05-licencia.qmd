@@ -10,7 +10,8 @@ title: "Licencia CC BY-NC-SA 4.0"
 
 \vspace{1cm}
 
-{\large Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional}
+{\large Creative Commons Atribución-NoComercial-CompartirIgual 4.0
+Internacional}
 
 \vspace{1cm}
 
@@ -18,7 +19,9 @@ title: "Licencia CC BY-NC-SA 4.0"
 
 \vspace{1cm}
 
-**Esta obra está bajo una licencia** [**Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es)
+**Esta obra está bajo una licencia** [**Creative Commons
+Atribución-NoComercial-CompartirIgual 4.0
+Internacional**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es)
 
 \vspace{1.5cm}
 

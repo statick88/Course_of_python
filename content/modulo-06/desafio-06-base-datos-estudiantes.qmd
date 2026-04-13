@@ -6,14 +6,17 @@ estimated_time: "25 minutos"
 
 ## Situación
 
-Una universidad necesita un sistema básico para gestionar estudiantes. Cada estudiante tiene múltiples datos personales y académicos. El sistema debe permitir registrar estudiantes, consultar información y generar reportes.
+Una universidad necesita un sistema básico para gestionar estudiantes. Cada
+estudiante tiene múltiples datos personales y académicos. El sistema debe
+permitir registrar estudiantes, consultar información y generar reportes.
 
 ## Tu misión
 
 Crea un programa que:
 
 1. Use una estructura de diccionarios anidados para almacenar estudiantes
-2. Cada estudiante debe tener: nombre, edad, carrera, y un diccionario de calificaciones
+2. Cada estudiante debe tener: nombre, edad, carrera, y un diccionario de
+calificaciones
 3. Implemente un menú con las siguientes opciones:
    - **Registrar**: agrega un nuevo estudiante con sus datos
    - **Consultar**: busca un estudiante por ID y muestra toda su información

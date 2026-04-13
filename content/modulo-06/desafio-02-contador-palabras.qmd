@@ -6,7 +6,9 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Un profesor de lenguaje necesita una herramienta que cuente cuántas veces aparece cada palabra en un texto. Quiere identificar las palabras más repetidas para analizar patrones de escritura.
+Un profesor de lenguaje necesita una herramienta que cuente cuántas veces
+aparece cada palabra en un texto. Quiere identificar las palabras más repetidas
+para analizar patrones de escritura.
 
 ## Tu misión
 

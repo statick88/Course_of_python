@@ -15,7 +15,9 @@ execute:
 
 ## ¿Qué es una lista anidada?
 
-Una **lista anidada** es una lista que contiene otras listas como elementos. Es la forma más simple de representar datos en **dos dimensiones**, como una tabla o una matriz.
+Una **lista anidada** es una lista que contiene otras listas como elementos. Es
+la forma más simple de representar datos en **dos dimensiones**, como una tabla
+o una matriz.
 
 ```python
 # Piensa en un edificio con pisos y apartamentos
@@ -33,12 +35,15 @@ edificio = [ # <1>
 print(edificio[1][2]) # <2>
 ```
 
-1. `edificio` es una lista de 3 elementos, donde cada elemento es otra lista (un piso).
-2. `edificio[1][2]` primero accede al piso 1 (`["Apt 101", "Apt 102", "Apt 103"]`), luego al elemento 2 de ese piso: `"Apt 103"`.
+1. `edificio` es una lista de 3 elementos, donde cada elemento es otra lista (un
+piso).
+2. `edificio[1][2]` primero accede al piso 1 (`["Apt 101", "Apt 102", "Apt
+103"]`), luego al elemento 2 de ese piso: `"Apt 103"`.
 
 ## Matrices: tablas de números
 
-El uso más común de listas anidadas son las **matrices** — tablas de números con filas y columnas:
+El uso más común de listas anidadas son las **matrices** — tablas de números con
+filas y columnas:
 
 ```python
 # Matriz 3x3 (3 filas, 3 columnas)
@@ -65,7 +70,8 @@ print(matriz[1])  # <5>
 
 ## Recorrer matrices con bucles anidados
 
-Para visitar cada elemento de una matriz, necesitas **dos bucles `for`** — uno para las filas y otro para las columnas:
+Para visitar cada elemento de una matriz, necesitas **dos bucles `for`** — uno
+para las filas y otro para las columnas:
 
 ```python
 tablero = [ # <1>
@@ -112,8 +118,10 @@ print(identidad)
 tabla = [[i * j for j in range(1, 6)] for i in range(1, 6)] # <3>
 ```
 
-1. `[[0] * 4 for _ in range(3)]` crea 3 listas independientes de 4 ceros cada una. El `_` indica que no usamos la variable del loop.
-2. La matriz identidad tiene 1 en la diagonal principal y 0 en el resto. Usa una list comprehension anidada con condición.
+1. `[[0] * 4 for _ in range(3)]` crea 3 listas independientes de 4 ceros cada
+una. El `_` indica que no usamos la variable del loop.
+2. La matriz identidad tiene 1 en la diagonal principal y 0 en el resto. Usa una
+list comprehension anidada con condición.
 3. Tabla de multiplicar: cada celda `[i][j]` contiene `i * j`.
 
 ## ⚠️ El error más común: referencias compartidas
@@ -136,10 +144,13 @@ print(matriz_bien) # <6>
 ```
 
 1. Creas una sola lista `fila`.
-2. Pones la MISMA referencia tres veces. No hay tres listas — hay una lista referenciada tres veces.
+2. Pones la MISMA referencia tres veces. No hay tres listas — hay una lista
+referenciada tres veces.
 3. Al cambiar `matriz_mal[0][0]`, cambias la única lista que existe.
-4. Resultado: `[[99, 0, 0], [99, 0, 0], [99, 0, 0]]`. ¡Todas las filas cambiaron!
-5. `[[0, 0, 0] for _ in range(3)]` crea 3 listas INDEPENDIENTES. Cada iteración del `for` crea una nueva lista.
+4. Resultado: `[[99, 0, 0], [99, 0, 0], [99, 0, 0]]`. ¡Todas las filas
+cambiaron!
+5. `[[0, 0, 0] for _ in range(3)]` crea 3 listas INDEPENDIENTES. Cada iteración
+del `for` crea una nueva lista.
 6. Resultado: `[[99, 0, 0], [0, 0, 0], [0, 0, 0]]`. Solo la primera fila cambió.
 
 > **Errors should never pass silently.** Este error no genera excepción — Python hace exactamente lo que le pediste. El problema es que pediste algo que no querías. Siempre usa list comprehensions para crear matrices.
@@ -174,7 +185,8 @@ print(total)
 2. Suma elemento por elemento: `[[6, 8], [10, 12]]`.
 3. Matriz 2x3 (2 filas, 3 columnas).
 4. La transpuesta convierte filas en columnas: `[[1, 4], [2, 5], [3, 6]]`.
-5. `sum(fila)` suma cada fila, y `sum(...)` suma todos los resultados. Total: `21`.
+5. `sum(fila)` suma cada fila, y `sum(...)` suma todos los resultados. Total:
+`21`.
 
 ## Resumen
 
@@ -189,4 +201,5 @@ print(total)
 
 ---
 
-**Anterior:** [5.5 Tuplas](05-tuplas.qmd) | **Siguiente:** [Resumen del Módulo 5](99-resumen.qmd)
+**Anterior:** [5.5 Tuplas](05-tuplas.qmd) | **Siguiente:** [Resumen del Módulo
+5](99-resumen.qmd)

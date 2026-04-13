@@ -53,4 +53,5 @@ Si puedes hacer todo esto, ¡estás listo para el **Módulo 10: Proyecto Final**
 
 ---
 
-**Anterior:** [9.6 Testing básico](06-testing-basico.qmd) | **Siguiente:** [Módulo 10: Proyecto Final](../modulo-10/index.qmd)
+**Anterior:** [9.6 Testing básico](06-testing-basico.qmd) | **Siguiente:**
+[Módulo 10: Proyecto Final](../modulo-10/index.qmd)

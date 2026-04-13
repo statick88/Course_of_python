@@ -5,7 +5,11 @@ subtitle: "Cómo usar herramientas de IA para mejorar tu productividad"
 
 ## Introducción
 
-Este apéndice explora cómo las herramientas de inteligencia artificial pueden辅助 (ayudarte) en tu viaje de aprendizaje de Python. Inspirado en концепции (conceptos) del desarrollo impulsado por IA y la filosofía de Iron Man, te mostraremos cómo convertirte en un "programador con armadura" - alguien que usa la tecnología para amplify (amplificar) sus habilidades.
+Este apéndice explora cómo las herramientas de inteligencia artificial pueden辅助
+(ayudarte) en tu viaje de aprendizaje de Python. Inspirado en концепции
+(conceptos) del desarrollo impulsado por IA y la filosofía de Iron Man, te
+mostraremos cómo convertirte en un "programador con armadura" - alguien que usa
+la tecnología para amplify (amplificar) sus habilidades.
 
 > ⚠️ **Nota sobre el uso de IA en este curso**: Este apéndice te enseña a USAR la IA como ferramenta (herramienta) de productividad, NO para evitar aprender. Las actividades principales del curso están diseñadas para que las completes sin asistencia de IA.
 
@@ -13,11 +17,15 @@ Este apéndice explora cómo las herramientas de inteligencia artificial pueden�
 
 ## ¿Qué es el Desarrollo Impulsado por IA?
 
-El desarrollo impulsado por IA (AI-Driven Development) es un enfoque donde usas modelos de lenguaje y agentes de IA como collaborators (colaboradores) en tu flujo de trabajo de programación. No se trata de remplacer (reemplazar) tu cerebro, sino de augment (aumentar) tus capacidades.
+El desarrollo impulsado por IA (AI-Driven Development) es un enfoque donde usas
+modelos de lenguaje y agentes de IA como collaborators (colaboradores) en tu
+flujo de trabajo de programación. No se trata de remplacer (reemplazar) tu
+cerebro, sino de augment (aumentar) tus capacidades.
 
 ### Analogía: El Jarvis de Iron Man
 
-Imagina a JARVIS (Just A Rather Very Intelligent System) assisting (asistiendo) a Tony Stark. JARVIS no escribe el código por él, pero:
+Imagina a JARVIS (Just A Rather Very Intelligent System) assisting (asistiendo)
+a Tony Stark. JARVIS no escribe el código por él, pero:
 
 - Análisis de código más rápido
 - Sugerencias de optimización
@@ -74,7 +82,8 @@ class TestCalculadora(unittest.TestCase):
 
 ### Nivel 3: Arquitecto de IA
 
-Aquí es donde creas sistemas que themselves (ellos mismos) usan IA para tomar decisiones.
+Aquí es donde creas sistemas que themselves (ellos mismos) usan IA para tomar
+decisiones.
 
 ---
 
@@ -97,7 +106,8 @@ Aquí es donde creas sistemas que themselves (ellos mismos) usan IA para tomar d
 
 ### 3. Model Context Protocol (MCP)
 
-MCP es un protocolo que permite a tus scripts Python conectar con servicios de IA externos.
+MCP es un protocolo que permite a tus scripts Python conectar con servicios de
+IA externos.
 
 ```python
 # Ejemplo de conexión MCP
@@ -154,7 +164,8 @@ print(result.suggestions)
 
 ## Gamificación: Tu Sistema de Logros
 
-Como en los cursos con niveles de Iron Man, aquí tienes un sistema de progresión:
+Como en los cursos con niveles de Iron Man, aquí tienes un sistema de
+progresión:
 
 ### Progression Levels
 
@@ -196,7 +207,9 @@ Como en los cursos con niveles de Iron Man, aquí tienes un sistema de progresi�
 
 ---
 
-*Este apéndice está inspirada en conceptos de desarrollo con IA, gamificación y mejores prácticas pedagógicas. ¡Tu viaje apenas comienza!*
+*Este apéndice está inspirada en conceptos de desarrollo con IA, gamificación y
+mejores prácticas pedagógicas. ¡Tu viaje apenas comienza!*
 
 ---
-**Volver al índice:** [Inicio](../index.qmd) | **Anterior:** [Módulo 10](../content/modulo-10/index.qmd)
+**Volver al índice:** [Inicio](../index.qmd) | **Anterior:** [Módulo
+10](../content/modulo-10/index.qmd)

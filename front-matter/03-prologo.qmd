@@ -6,7 +6,8 @@ title: "Prólogo: Por qué este curso es diferente"
 
 ## Por qué este curso es diferente
 
-Si has intentado aprender Python antes y te frustraste, este curso fue diseñado para ti.
+Si has intentado aprender Python antes y te frustraste, este curso fue diseñado
+para ti.
 
 La mayoría de cursos com así:
 
@@ -22,7 +23,9 @@ Este curso se basa en 3 pilares:
 
 ### 1. Pensamiento computacional primero
 
-Antes de escribir una línea de código, aprendes a **descomponer problemas**, **reconocer patrones** y **diseñar algoritmos**. Esto es lo que diferencia a un programador de alguien que solo copia código.
+Antes de escribir una línea de código, aprendes a **descomponer problemas**,
+**reconocer patrones** y **diseñar algoritmos**. Esto es lo que diferencia a un
+programador de alguien que solo copia código.
 
 > **Inspirado en MIT 6.0001**: El curso introductorio de MIT no empieza con Python — empieza con computación.
 
@@ -35,7 +38,9 @@ Cada concepto se enseña con un problema del mundo real:
 
 ### 3. Código limpio desde el día uno
 
-No esperas al Módulo 9 para aprender buenas prácticas. Desde el primer `print()`, aprendes que **el código es comunicación** — para ti mismo en 6 meses y para otros desarrolladores.
+No esperas al Módulo 9 para aprender buenas prácticas. Desde el primer
+`print()`, aprendes que **el código es comunicación** — para ti mismo en 6 meses
+y para otros desarrolladores.
 
 ---
 

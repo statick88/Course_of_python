@@ -6,7 +6,8 @@ estimated_time: "15 minutos"
 
 ## Situación
 
-Un sistema de criptografía necesita verificar si un número es primo para generar claves de seguridad. Los números primos son la base de la encriptación moderna.
+Un sistema de criptografía necesita verificar si un número es primo para generar
+claves de seguridad. Los números primos son la base de la encriptación moderna.
 
 ## Tu misión
 
@@ -16,7 +17,8 @@ Crea una función llamada `es_primo` que:
 2. Devuelva `True` si el número es primo, `False` si no lo es
 3. Maneja casos especiales: números menores a 2 no son primos
 
-**¿Qué es un número primo?** Un número mayor que 1 que solo es divisible entre 1 y sí mismo.
+**¿Qué es un número primo?** Un número mayor que 1 que solo es divisible entre 1
+y sí mismo.
 
 ```
 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, ...

@@ -44,4 +44,5 @@ Al completar este módulo, serás capaz de:
 
 ---
 
-**Anterior:** [Módulo 4](../modulo-04/index.qmd) | **Siguiente:** [5.1 Crear listas](01-crear-listas.qmd)
+**Anterior:** [Módulo 4](../modulo-04/index.qmd) | **Siguiente:** [5.1 Crear
+listas](01-crear-listas.qmd)

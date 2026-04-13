@@ -6,7 +6,9 @@ estimated_time: "30 minutos"
 
 ## Situación
 
-Necesitas crear un sistema completo de gestión de contactos que permita agregar, buscar, listar y eliminar contactos. Los datos deben persistir en un archivo CSV para que no se pierdan al cerrar el programa.
+Necesitas crear un sistema completo de gestión de contactos que permita agregar,
+buscar, listar y eliminar contactos. Los datos deben persistir en un archivo CSV
+para que no se pierdan al cerrar el programa.
 
 ## Tu misión
 

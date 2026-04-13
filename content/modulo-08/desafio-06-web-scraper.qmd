@@ -6,7 +6,9 @@ estimated_time: "30 minutos"
 
 ## Situación
 
-Necesitas extraer información de una página web para un análisis de datos. Tu tarea es crear un programa que descargue una página web y extraiga datos específicos de su contenido HTML.
+Necesitas extraer información de una página web para un análisis de datos. Tu
+tarea es crear un programa que descargue una página web y extraiga datos
+específicos de su contenido HTML.
 
 ## Tu misión
 

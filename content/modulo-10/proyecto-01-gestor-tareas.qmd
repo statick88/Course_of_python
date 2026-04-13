@@ -11,7 +11,9 @@ execute:
 
 ## 📋 Descripción del Proyecto
 
-Construye una aplicación de consola que permita gestionar tareas personales. El programa debe permitir crear, listar, completar y eliminar tareas, guardando todo en un archivo JSON para que no se pierdan al cerrar el programa.
+Construye una aplicación de consola que permita gestionar tareas personales. El
+programa debe permitir crear, listar, completar y eliminar tareas, guardando
+todo en un archivo JSON para que no se pierdan al cerrar el programa.
 
 > **La analogía:** Tu programa es como una libreta de tareas inteligente. A diferencia de una libreta real, esta puede buscar, filtrar y darte estadísticas de tu productividad.
 
@@ -77,8 +79,10 @@ gestor_tareas/
 
 ## 💡 Tips para empezar
 
-1. **Empieza por los datos.** Define cómo se ve una tarea antes de escribir funciones.
-2. **Primero en memoria.** Haz que funcione sin archivos JSON, luego agrega persistencia.
+1. **Empieza por los datos.** Define cómo se ve una tarea antes de escribir
+funciones.
+2. **Primero en memoria.** Haz que funcione sin archivos JSON, luego agrega
+persistencia.
 3. **Una función a la vez.** No intentes hacer todo el menú de una vez.
 4. **Prueba constantemente.** Ejecuta después de cada función nueva.
 
@@ -118,4 +122,5 @@ Presiona Enter para continuar...
 
 **Anterior:** [Módulo 10: Inicio](index.qmd)
 
-**Siguiente:** [Proyecto 2: Tienda de Productos](proyecto-02-tienda-productos.qmd)
+**Siguiente:** [Proyecto 2: Tienda de
+Productos](proyecto-02-tienda-productos.qmd)

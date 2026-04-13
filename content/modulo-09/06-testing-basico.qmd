@@ -14,9 +14,12 @@ execute:
 
 ## ¿Por qué testear?
 
-Imagina que construyes un **puente**. Antes de dejar que los autos pasen, ¿verificas que aguante el peso? Claro que sí. Los tests son esa verificación para tu código.
+Imagina que construyes un **puente**. Antes de dejar que los autos pasen,
+¿verificas que aguante el peso? Claro que sí. Los tests son esa verificación
+para tu código.
 
-Sin tests, cada cambio que haces es como cruzar un puente sin saber si las vigas aguantan. Puede que funcione hoy... pero ¿y mañana?
+Sin tests, cada cambio que haces es como cruzar un puente sin saber si las vigas
+aguantan. Puede que funcione hoy... pero ¿y mañana?
 
 ```python
 # Sin tests: ¿funciona? ¿Quién sabe?
@@ -40,15 +43,18 @@ def test_calcular_descuento_cien():
     assert resultado == 100.0  # <3>
 ```
 
-1. `assert` verifica que el resultado sea el esperado. Si no lo es, el test falla.
+1. `assert` verifica que el resultado sea el esperado. Si no lo es, el test
+falla.
 2. Un descuento del 0% debe dar 0 como descuento (no cambia el precio).
-3. **¡BUG ENCONTRADO!** 100% de descuento sobre $100 debería dar $100 de descuento, no $0. El test revela el error.
+3. **¡BUG ENCONTRADO!** 100% de descuento sobre $100 debería dar $100 de
+descuento, no $0. El test revela el error.
 
 > **Errors should never pass silently.** Los tests hacen que los errores pasen ruidosamente — exactamente como deben.
 
 ## Tu primer test con pytest
 
-`pytest` es el framework de testing más popular de Python. Es simple, poderoso y no requiere boilerplate.
+`pytest` es el framework de testing más popular de Python. Es simple, poderoso y
+no requiere boilerplate.
 
 ```bash
 # Instalar pytest
@@ -84,7 +90,8 @@ def test_sumar_dos_positivos():
     assert resultado == esperado  # <1>
 ```
 
-1. Si `resultado` no es igual a `esperado`, pytest muestra un error detallado con ambos valores.
+1. Si `resultado` no es igual a `esperado`, pytest muestra un error detallado
+con ambos valores.
 
 ### Tests que fallan — y eso es BUENO
 
@@ -98,7 +105,8 @@ def test_dividir_por_cero():
     # Si llegamos aquí, el test falla porque no hubo error
 ```
 
-1. Este test fallará porque `dividir(10, 0)` lanza una excepción. ¡Pero eso es lo que queremos! Necesitamos verificar que se lance el error correcto:
+1. Este test fallará porque `dividir(10, 0)` lanza una excepción. ¡Pero eso es
+lo que queremos! Necesitamos verificar que se lance el error correcto:
 
 ```python
 def test_dividir_por_cero():
@@ -145,7 +153,8 @@ def test_es_palindromo(texto, esperado):
 6. Un solo carácter es palíndromo → True.
 7. String vacío es palíndromo → True.
 
-Pytest ejecutará **7 tests separados**, uno por cada fila. Si uno falla, sabrás exactamente cuál.
+Pytest ejecutará **7 tests separados**, uno por cada fila. Si uno falla, sabrás
+exactamente cuál.
 
 ## Organizar tests profesionalmente
 
@@ -184,7 +193,8 @@ def test_suma():
 
 ## Tests de integración: cuando las piezas se juntan
 
-Los tests unitarios verifican funciones individuales. Los tests de integración verifican que las funciones trabajen juntas:
+Los tests unitarios verifican funciones individuales. Los tests de integración
+verifican que las funciones trabajen juntas:
 
 ```python
 # Funciones individuales (ya testeadas unitariamente)
@@ -240,4 +250,5 @@ def test_flujo_completo_de_compra():
 
 ---
 
-**Anterior:** [9.5 Documentación](05-documentacion.qmd) | **Siguiente:** [Resumen del Módulo 9](99-resumen.qmd)
+**Anterior:** [9.5 Documentación](05-documentacion.qmd) | **Siguiente:**
+[Resumen del Módulo 9](99-resumen.qmd)

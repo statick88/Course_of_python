@@ -6,7 +6,9 @@ estimated_time: "5 minutos"
 
 ## Situación
 
-Eres el asistente de un profesor que necesita calcular el promedio de notas de sus estudiantes. Tiene las notas en una lista y necesita obtener el promedio de forma automática.
+Eres el asistente de un profesor que necesita calcular el promedio de notas de
+sus estudiantes. Tiene las notas en una lista y necesita obtener el promedio de
+forma automática.
 
 ## Tu misión
 
@@ -68,8 +70,10 @@ else:
     print("Resultado: ❌ REPROBADO")
 ```
 
-1. Lista de notas del estudiante. Puedes cambiar estos valores y el programa seguirá funcionando.
-2. `sum(notas)` suma todos los elementos de la lista: `8.5 + 9.0 + 7.5 + 6.0 + 8.0 = 39.0`.
+1. Lista de notas del estudiante. Puedes cambiar estos valores y el programa
+seguirá funcionando.
+2. `sum(notas)` suma todos los elementos de la lista: `8.5 + 9.0 + 7.5 + 6.0 +
+8.0 = 39.0`.
 3. `len(notas)` cuenta cuántas notas hay: `5`.
 4. El promedio se calcula dividiendo la suma entre la cantidad.
 5. `{promedio:.1f}` formatea el número con 1 decimal.

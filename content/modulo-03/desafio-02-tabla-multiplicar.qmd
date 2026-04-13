@@ -6,7 +6,9 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Una escuela primaria necesita un generador de tablas de multiplicar para que los estudiantes practiquen. Tu tarea es crear un programa que muestre la tabla completa de cualquier número.
+Una escuela primaria necesita un generador de tablas de multiplicar para que los
+estudiantes practiquen. Tu tarea es crear un programa que muestre la tabla
+completa de cualquier número.
 
 ## Tu misión
 

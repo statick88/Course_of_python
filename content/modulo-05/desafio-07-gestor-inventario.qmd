@@ -6,7 +6,9 @@ estimated_time: "20 minutos"
 
 ## Situación
 
-Eres el desarrollador de un sistema de inventario para una pequeña tienda. Necesitas crear un programa que gestione productos usando listas de tuplas, donde cada tupla contiene: `(nombre, precio, cantidad)`.
+Eres el desarrollador de un sistema de inventario para una pequeña tienda.
+Necesitas crear un programa que gestione productos usando listas de tuplas,
+donde cada tupla contiene: `(nombre, precio, cantidad)`.
 
 ## Tu misión
 
@@ -108,15 +110,22 @@ for i, (nombre, valor) in enumerate(por_valor_ordenado, 1): # <10>
     print(f"  {i}. {nombre:<10} — ${valor:,.2f}")
 ```
 
-1. El inventario es una lista de tuplas. Cada tupla tiene 3 elementos: nombre (`str`), precio (`float`), cantidad (`int`). Usamos tuplas porque los datos de cada producto no deben cambiar individualmente.
-2. `enumerate(inventario, 1)` numera desde 1. El desempaquetado `(nombre, precio, cantidad)` extrae los 3 valores de cada tupla.
+1. El inventario es una lista de tuplas. Cada tupla tiene 3 elementos: nombre
+(`str`), precio (`float`), cantidad (`int`). Usamos tuplas porque los datos de
+cada producto no deben cambiar individualmente.
+2. `enumerate(inventario, 1)` numera desde 1. El desempaquetado `(nombre,
+precio, cantidad)` extrae los 3 valores de cada tupla.
 3. El subtotal de cada producto es `precio × cantidad`.
-4. `{nombre:<12}` alinea el nombre a la izquierda con 12 caracteres de ancho. `{precio:<7.2f}` formatea el precio con 2 decimales.
+4. `{nombre:<12}` alinea el nombre a la izquierda con 12 caracteres de ancho.
+`{precio:<7.2f}` formatea el precio con 2 decimales.
 5. `len(inventario)` cuenta cuántos productos hay en el inventario.
-6. `sum(cantidad for _, _, cantidad in inventario)` suma solo las cantidades. El `_` ignora nombre y precio.
-7. `sum(precio * cantidad for ...)` calcula el valor total multiplicando precio por cantidad de cada producto.
+6. `sum(cantidad for _, _, cantidad in inventario)` suma solo las cantidades. El
+`_` ignora nombre y precio.
+7. `sum(precio * cantidad for ...)` calcula el valor total multiplicando precio
+por cantidad de cada producto.
 8. Crea una lista de pares `(nombre, valor_total)` para ordenar.
-9. `sorted(..., key=lambda x: x[1], reverse=True)` ordena por el valor (segundo elemento) de mayor a menor.
+9. `sorted(..., key=lambda x: x[1], reverse=True)` ordena por el valor (segundo
+elemento) de mayor a menor.
 10. Muestra el ranking de productos por su valor total en inventario.
 
 </details>

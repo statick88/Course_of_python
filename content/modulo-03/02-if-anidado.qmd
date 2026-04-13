@@ -14,7 +14,9 @@ execute:
 
 ## ¿Qué es anidar decisiones?
 
-Anidar significa **poner un `if` dentro de otro `if`**. Es como un sistema de seguridad con múltiples capas: primero verificas la tarjeta, luego la contraseña, luego la huella.
+Anidar significa **poner un `if` dentro de otro `if`**. Es como un sistema de
+seguridad con múltiples capas: primero verificas la tarjeta, luego la
+contraseña, luego la huella.
 
 ```python
 # Sistema de autenticación con múltiples capas
@@ -36,13 +38,15 @@ else:
 
 1. Primera capa: ¿el usuario existe? Si no, ni siquiera verificamos lo demás.
 2. Segunda capa: ¿la contraseña es correcta? Solo si el usuario es válido.
-3. Tercera capa: ¿el token de seguridad es válido? Solo si las dos capas anteriores pasaron.
+3. Tercera capa: ¿el token de seguridad es válido? Solo si las dos capas
+anteriores pasaron.
 
 > **Flat is better than nested.** Cada nivel de anidación agrega complejidad. Python recomienda no pasar de 3 niveles.
 
 ## La pirámide de la muerte
 
-Cuando anidas demasiados `if`, el código forma una **pirámide** que se vuelve imposible de leer:
+Cuando anidas demasiados `if`, el código forma una **pirámide** que se vuelve
+imposible de leer:
 
 ```python
 # ❌ Pirámide de la muerte — NO hagas esto
@@ -65,11 +69,13 @@ def procesar_pedido(producto, cantidad, usuario):
         print("Usuario no autenticado")
 ```
 
-Cada nivel de indentación es una **carga cognitiva** para quien lee el código. Hay una forma mejor.
+Cada nivel de indentación es una **carga cognitiva** para quien lee el código.
+Hay una forma mejor.
 
 ## Guard clauses: la solución elegante
 
-Un **guard clause** (cláusula de guarda) es un `if` que **rechaza un caso temprano** y sale. El resultado: código plano y legible.
+Un **guard clause** (cláusula de guarda) es un `if` que **rechaza un caso
+temprano** y sale. El resultado: código plano y legible.
 
 ```python
 # ✅ Guard clauses — código plano y claro
@@ -89,17 +95,20 @@ def procesar_pedido(producto, cantidad, usuario):
 ```
 
 1. **Guard 1**: Si no hay usuario, salimos inmediatamente. No seguimos leyendo.
-2. **Guard 2**: Si el usuario no está activo, salimos. Cada guard elimina un caso.
+2. **Guard 2**: Si el usuario no está activo, salimos. Cada guard elimina un
+caso.
 3. **Guard 3**: Si el producto no existe, salimos.
 4. **Guard 4**: Si no hay stock suficiente, salimos.
 5. **Guard 5**: Si no hay saldo, salimos.
-6. **Camino feliz**: Si llegamos aquí, todas las validaciones pasaron. ¡Procesamos el pedido!
+6. **Camino feliz**: Si llegamos aquí, todas las validaciones pasaron.
+¡Procesamos el pedido!
 
 > **Beautiful is better than ugly.** Los guard clauses transforman una pirámide en una lista plana de validaciones.
 
 ## Anidación útil: cuando SÍ tiene sentido
 
-No toda anidación es mala. A veces tiene sentido lógico agrupar condiciones relacionadas:
+No toda anidación es mala. A veces tiene sentido lógico agrupar condiciones
+relacionadas:
 
 ```python
 # ✅ Anidación con propósito: validar antes de operar
@@ -118,12 +127,14 @@ def calcular_descuento(edad, es_cliente_frecuente, total_compra):
     return total_compra * (1 - descuento)
 ```
 
-1. Primera decisión: ¿la compra califica para descuento? Si no, ni evaluamos las demás.
+1. Primera decisión: ¿la compra califica para descuento? Si no, ni evaluamos las
+demás.
 2. Dentro del grupo "compras mayores a $100", verificamos si es tercera edad.
 3. Si no es tercera edad, verificamos si es cliente frecuente.
 4. Si no califica para ningún descuento especial, no hay descuento.
 
-La anidación aquí tiene sentido porque **agrupa lógicamente** las condiciones de descuento bajo una condición general.
+La anidación aquí tiene sentido porque **agrupa lógicamente** las condiciones de
+descuento bajo una condición general.
 
 ## Combinar condiciones vs. anidar
 
@@ -143,7 +154,8 @@ if temperatura > 25 and humedad > 70: # <1>
     print("Clima caluroso y húmedo")
 ```
 
-1. `and` combina ambas condiciones en una sola línea. Más legible y sin indentación extra.
+1. `and` combina ambas condiciones en una sola línea. Más legible y sin
+indentación extra.
 
 ### Cuándo usar cada enfoque
 
@@ -198,8 +210,10 @@ def mostrar_resultado(edad): # <2>
         print(f"Edad {edad}: no autorizado")
 ```
 
-1. La función solo responde una pregunta: ¿es mayor de edad? Devuelve `True` o `False`.
-2. Esta función se encarga de mostrar el resultado. Separa la lógica de la presentación.
+1. La función solo responde una pregunta: ¿es mayor de edad? Devuelve `True` o
+`False`.
+2. Esta función se encarga de mostrar el resultado. Separa la lógica de la
+presentación.
 
 > **Readability counts.** Cada función debe hacer UNA cosa bien. Validar y mostrar son dos cosas diferentes.
 
@@ -219,7 +233,8 @@ if es_adulto and tiene_ingreso and es_solvencia: # <2>
     print("Aprobado")
 ```
 
-1. Python permite comparaciones encadenadas: `18 <= edad <= 65` es equivalente a `edad >= 18 and edad <= 65`.
+1. Python permite comparaciones encadenadas: `18 <= edad <= 65` es equivalente a
+`edad >= 18 and edad <= 65`.
 2. Las variables con nombre hacen que la condición se lea como una oración.
 
 ## Resumen
@@ -242,4 +257,5 @@ if es_adulto and tiene_ingreso and es_solvencia: # <2>
 
 ---
 
-**Anterior:** [3.1 if / else](01-if-else.qmd) | **Siguiente:** [3.3 for loop](03-for-loop.qmd)
+**Anterior:** [3.1 if / else](01-if-else.qmd) | **Siguiente:** [3.3 for
+loop](03-for-loop.qmd)

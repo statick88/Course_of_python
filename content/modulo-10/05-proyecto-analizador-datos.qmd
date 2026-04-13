@@ -14,14 +14,16 @@ execute:
 
 ## La analogía del chef analítico
 
-Imagina que eres un chef que recibe una caja con ingredientes variados. Tu trabajo no es solo cocinar, sino **analizar qué tienes**:
+Imagina que eres un chef que recibe una caja con ingredientes variados. Tu
+trabajo no es solo cocinar, sino **analizar qué tienes**:
 
 - ¿Cuántos ingredientes hay en total?
 - ¿Cuál es el más caro? ¿El más barato?
 - ¿Cuál es el precio promedio?
 - ¿Hay ingredientes repetidos?
 
-**El analizador de datos es ese chef.** Recibe datos crudos y te devuelve información útil para tomar decisiones.
+**El analizador de datos es ese chef.** Recibe datos crudos y te devuelve
+información útil para tomar decisiones.
 
 > **Readability counts.** Los datos bien presentados cuentan una historia. Los datos crudos solo cuentan números.
 
@@ -343,6 +345,8 @@ if __name__ == "__main__":
 
 ---
 
-**Anterior:** [10.4 Proyecto guiado: Tienda de Productos](04-proyecto-tienda-simple.qmd)
+**Anterior:** [10.4 Proyecto guiado: Tienda de
+Productos](04-proyecto-tienda-simple.qmd)
 
-**Siguiente:** [10.6 Presentar tu proyecto al mundo](06-presentacion-proyecto.qmd)
+**Siguiente:** [10.6 Presentar tu proyecto al
+mundo](06-presentacion-proyecto.qmd)

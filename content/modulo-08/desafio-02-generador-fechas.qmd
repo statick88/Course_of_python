@@ -6,7 +6,9 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Un sistema de gestión necesita generar reportes con fechas formateadas de diferentes maneras. Tu tarea es crear un programa que use el módulo `datetime` para mostrar información temporal útil.
+Un sistema de gestión necesita generar reportes con fechas formateadas de
+diferentes maneras. Tu tarea es crear un programa que use el módulo `datetime`
+para mostrar información temporal útil.
 
 ## Tu misión
 

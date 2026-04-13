@@ -6,11 +6,13 @@ estimated_time: "15 minutos"
 
 ## Situación
 
-Estás desarrollando un sistema de sorteos para una empresa. Necesitas generar resultados aleatorios que sean justos y reproducibles para auditorías.
+Estás desarrollando un sistema de sorteos para una empresa. Necesitas generar
+resultados aleatorios que sean justos y reproducibles para auditorías.
 
 ## Tu misión
 
-Crea un programa que simule un sistema de sorteos con las siguientes funcionalidades:
+Crea un programa que simule un sistema de sorteos con las siguientes
+funcionalidades:
 
 1. **Sorteo simple:** Elige un ganador al azar de una lista de participantes
 2. **Sorteo múltiple:** Elige 3 ganadores diferentes (sin repetir) de una lista

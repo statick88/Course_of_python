@@ -7,7 +7,8 @@
 
 ## Descripción
 
-Implementa el clásico FizzBuzz pero con reglas personalizadas. Este ejercicio evalúa tu dominio de condicionales y bucles.
+Implementa el clásico FizzBuzz pero con reglas personalizadas. Este ejercicio
+evalúa tu dominio de condicionales y bucles.
 
 ## Requisitos
 

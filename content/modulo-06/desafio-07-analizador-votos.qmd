@@ -6,13 +6,17 @@ estimated_time: "25 minutos"
 
 ## Situación
 
-Una empresa de encuestas necesita un analizador de datos de votaciones. Los datos vienen en formato de lista de diccionarios (cada voto es un diccionario con datos del votante y su elección). Necesitas procesar estos datos y generar un reporte completo.
+Una empresa de encuestas necesita un analizador de datos de votaciones. Los
+datos vienen en formato de lista de diccionarios (cada voto es un diccionario
+con datos del votante y su elección). Necesitas procesar estos datos y generar
+un reporte completo.
 
 ## Tu misión
 
 Crea un programa que:
 
-1. Tenga una lista de votos donde cada voto es un diccionario con: `votante`, `edad`, `ciudad`, `opcion`
+1. Tenga una lista de votos donde cada voto es un diccionario con: `votante`,
+`edad`, `ciudad`, `opcion`
 2. Cuente los votos por opción
 3. Analice los votos por ciudad (¿qué ciudad votó más por cada opción?)
 4. Detecte votantes duplicados (mismo nombre votó más de una vez)

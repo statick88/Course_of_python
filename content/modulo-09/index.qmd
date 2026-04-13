@@ -41,4 +41,5 @@ Al completar este módulo, serás capaz de:
 
 ---
 
-**Anterior:** [Módulo 8](../modulo-08/index.qmd) | **Siguiente:** [9.1 PEP 8: el estilo que une a la comunidad](01-pep8-estilo.qmd)
+**Anterior:** [Módulo 8](../modulo-08/index.qmd) | **Siguiente:** [9.1 PEP 8: el
+estilo que une a la comunidad](01-pep8-estilo.qmd)

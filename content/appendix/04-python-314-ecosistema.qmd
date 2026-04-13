@@ -13,7 +13,8 @@ subtitle: "Lo último en Python — T-strings, JIT, Free-Threading y más"
 
 ## Python 3.14: Lo que cambió (Octubre 2025)
 
-Python 3.14 es la versión estable actual (abril 2026). Trajo los cambios más significativos en años.
+Python 3.14 es la versión estable actual (abril 2026). Trajo los cambios más
+significativos en años.
 
 > **Nota del instructor**: Aunque este curso enseña conceptos que aplican a cualquier versión, es útil conocer lo último. Algunas de estas funciones cambiarán cómo escribes Python en el futuro cercano.
 
@@ -69,7 +70,8 @@ a, b = [1, 2, 3]
 
 ### El problema con f-strings
 
-Las f-strings son geniales pero **no puedes interceptar** los valores interpolados:
+Las f-strings son geniales pero **no puedes interceptar** los valores
+interpolados:
 
 ```python
 nombre = "' OR '1'='1"
@@ -220,7 +222,8 @@ print(hints)  # {'value': int, 'next': Node | None}
 
 ### El problema del GIL
 
-El **Global Interpreter Lock (GIL)** impide que múltiples threads ejecuten bytecode Python simultáneamente:
+El **Global Interpreter Lock (GIL)** impide que múltiples threads ejecuten
+bytecode Python simultáneamente:
 
 ```python
 import threading

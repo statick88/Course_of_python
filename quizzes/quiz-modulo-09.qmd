@@ -4,7 +4,8 @@ title: "Quiz: Módulo 9 — Buenas Prácticas y Testing"
 
 ## Evaluación del Módulo 9
 
-Responde las siguientes preguntas para evaluar tu comprensión de buenas prácticas de código y testing en Python.
+Responde las siguientes preguntas para evaluar tu comprensión de buenas
+prácticas de código y testing en Python.
 
 ::: {.quizdown}
 
@@ -130,4 +131,5 @@ Responde las siguientes preguntas para evaluar tu comprensión de buenas prácti
 :::
 
 ---
-**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 9](../content/modulo-09/index.qmd)
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo
+9](../content/modulo-09/index.qmd)

@@ -6,7 +6,9 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Trabajas en un sistema de gestión escolar. Tienes dos listas separadas: una con nombres de estudiantes y otra con sus calificaciones. Necesitas combinarlas y ordenarlas por calificación de mayor a menor para generar el ranking del curso.
+Trabajas en un sistema de gestión escolar. Tienes dos listas separadas: una con
+nombres de estudiantes y otra con sus calificaciones. Necesitas combinarlas y
+ordenarlas por calificación de mayor a menor para generar el ranking del curso.
 
 ## Tu misión
 
@@ -89,9 +91,11 @@ print(f"\nPromedio del curso: {promedio:.1f}")
 
 1. Dos listas separadas: nombres y notas, en el mismo orden.
 2. `zip(nombres, notas)` empareja cada nombre con su nota correspondiente.
-3. `sorted(zip(...), key=lambda x: x[1], reverse=True)` ordena los pares por la nota (índice 1) de mayor a menor.
+3. `sorted(zip(...), key=lambda x: x[1], reverse=True)` ordena los pares por la
+nota (índice 1) de mayor a menor.
 4. Lista de medallas para los 3 primeros puestos.
-5. `enumerate(ranking, 1)` numera desde 1. El desempaquetado `(nombre, nota)` extrae cada par.
+5. `enumerate(ranking, 1)` numera desde 1. El desempaquetado `(nombre, nota)`
+extrae cada par.
 6. Si está en los 3 primeros, muestra la medalla correspondiente.
 7. Promedio del curso calculado sobre la lista original de notas.
 

@@ -33,7 +33,8 @@ Deberías poder:
 - [ ] Validar que la entrada del usuario es del tipo correcto
 - [ ] Nombrar variables siguiendo la convención snake_case
 
-Si puedes hacer todo esto, ¡estás listo para el **Módulo 2: Tipos de Datos y Variables**!
+Si puedes hacer todo esto, ¡estás listo para el **Módulo 2: Tipos de Datos y
+Variables**!
 
 ---
 

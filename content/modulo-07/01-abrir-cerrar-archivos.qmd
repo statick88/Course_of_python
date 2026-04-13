@@ -22,11 +22,14 @@ Imagina que tienes un **archivador gigante** en tu oficina:
 - **Agregar una hoja nueva** es escribir en el archivo
 - **Cerrar la carpeta** es cerrar el archivo — si no la cierras, alguien más no puede usarla
 
-En Python, trabajar con archivos es exactamente eso: **abrir, hacer algo, cerrar**. La diferencia es que Python tiene una forma **elegante** de hacerlo que te obliga a cerrar siempre.
+En Python, trabajar con archivos es exactamente eso: **abrir, hacer algo,
+cerrar**. La diferencia es que Python tiene una forma **elegante** de hacerlo
+que te obliga a cerrar siempre.
 
 ## `open()`: la puerta de entrada
 
-La función `open()` es tu llave para acceder a cualquier archivo. Necesitas dos cosas:
+La función `open()` es tu llave para acceder a cualquier archivo. Necesitas dos
+cosas:
 
 1. **La ruta del archivo** — dónde está
 2. **El modo** — qué quieres hacer con él
@@ -43,9 +46,12 @@ print(contenido)
 archivo.close() # <3>
 ```
 
-1. `open("datos.txt", "r")` abre el archivo `datos.txt` en modo lectura (`r`). Si el archivo no existe, Python genera un `FileNotFoundError`.
-2. `.read()` lee **todo** el contenido del archivo de una vez y lo devuelve como una cadena de texto.
-3. `.close()` cierra el archivo y libera los recursos del sistema. **Siempre debes cerrar tus archivos**.
+1. `open("datos.txt", "r")` abre el archivo `datos.txt` en modo lectura (`r`).
+Si el archivo no existe, Python genera un `FileNotFoundError`.
+2. `.read()` lee **todo** el contenido del archivo de una vez y lo devuelve como
+una cadena de texto.
+3. `.close()` cierra el archivo y libera los recursos del sistema. **Siempre
+debes cerrar tus archivos**.
 
 ## Los modos de apertura
 
@@ -73,13 +79,15 @@ resultado = int("no es un numero")  # ValueError!
 archivo.close()  # <1>
 ```
 
-1. Esta línea **nunca se ejecuta** porque el `ValueError` interrumpe el programa. El archivo queda abierto, consumiendo recursos del sistema operativo.
+1. Esta línea **nunca se ejecuta** porque el `ValueError` interrumpe el
+programa. El archivo queda abierto, consumiendo recursos del sistema operativo.
 
 > **Errors should never pass silently.** Pero aquí el error no solo pasa silenciosamente — deja un archivo abierto que puede corromper datos.
 
 ## La solución: el contexto `with`
 
-Python tiene una forma **mucho mejor** de manejar archivos. Se llama **gestor de contexto** y usa la palabra `with`:
+Python tiene una forma **mucho mejor** de manejar archivos. Se llama **gestor de
+contexto** y usa la palabra `with`:
 
 ```python
 # ✅ Seguro: el archivo se cierra AUTOMÁTICAMENTE, incluso si hay errores
@@ -89,9 +97,12 @@ with open("datos.txt", "r") as archivo: # <1>
 # <3>
 ```
 
-1. `with open(...) as archivo:` abre el archivo y lo asigna a la variable `archivo`. Python **garantiza** que el archivo se cerrará al salir del bloque.
-2. Dentro del bloque `with`, puedes leer, escribir o manipular el archivo normalmente.
-3. Al salir del bloque (incluso si hubo un error), Python cierra el archivo automáticamente. No necesitas llamar a `.close()`.
+1. `with open(...) as archivo:` abre el archivo y lo asigna a la variable
+`archivo`. Python **garantiza** que el archivo se cerrará al salir del bloque.
+2. Dentro del bloque `with`, puedes leer, escribir o manipular el archivo
+normalmente.
+3. Al salir del bloque (incluso si hubo un error), Python cierra el archivo
+automáticamente. No necesitas llamar a `.close()`.
 
 ### ¿Cómo funciona por dentro?
 
@@ -125,9 +136,12 @@ except Exception as e: # <4>
     print(f"Error inesperado: {e}")
 ```
 
-1. El `with` abre el archivo y garantiza su cierre. Si el archivo no existe, el error se captura en el `except`.
-2. `FileNotFoundError` se lanza cuando el archivo no existe en la ruta especificada.
-3. `PermissionError` se lanza cuando no tienes permisos de lectura sobre el archivo.
+1. El `with` abre el archivo y garantiza su cierre. Si el archivo no existe, el
+error se captura en el `except`.
+2. `FileNotFoundError` se lanza cuando el archivo no existe en la ruta
+especificada.
+3. `PermissionError` se lanza cuando no tienes permisos de lectura sobre el
+archivo.
 4. `Exception` captura cualquier otro error no previsto.
 
 ## Verificar si un archivo existe antes de abrirlo
@@ -147,9 +161,12 @@ else:
     print(f"El archivo '{ruta}' no existe") # <3>
 ```
 
-1. El módulo `os` proporciona funciones para interactuar con el sistema operativo.
-2. `os.path.exists()` devuelve `True` si el archivo o directorio existe, `False` en caso contrario.
-3. Este enfoque es útil cuando quieres manejar la ausencia del archivo de forma proactiva.
+1. El módulo `os` proporciona funciones para interactuar con el sistema
+operativo.
+2. `os.path.exists()` devuelve `True` si el archivo o directorio existe, `False`
+en caso contrario.
+3. Este enfoque es útil cuando quieres manejar la ausencia del archivo de forma
+proactiva.
 
 ## Múltiples archivos al mismo tiempo
 
@@ -163,7 +180,8 @@ with open("origen.txt", "r") as origen, open("copia.txt", "w") as destino: # <1>
     print("Archivo copiado exitosamente")
 ```
 
-1. Puedes abrir múltiples archivos separándolos con comas. Ambos se cierran automáticamente al salir del bloque.
+1. Puedes abrir múltiples archivos separándolos con comas. Ambos se cierran
+automáticamente al salir del bloque.
 2. Lee todo el contenido del archivo origen.
 3. Escribe el contenido en el archivo destino.
 
@@ -188,4 +206,5 @@ with open("origen.txt", "r") as origen, open("copia.txt", "w") as destino: # <1>
 
 ---
 
-**Anterior:** [Módulo 7: Inicio](index.qmd) | **Siguiente:** [7.2 Leer archivos](02-leer-archivos.qmd)
+**Anterior:** [Módulo 7: Inicio](index.qmd) | **Siguiente:** [7.2 Leer
+archivos](02-leer-archivos.qmd)

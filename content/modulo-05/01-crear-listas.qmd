@@ -14,7 +14,10 @@ execute:
 
 ## ¿Qué es una lista?
 
-Imagina que tienes una **lista de compras** en tu teléfono. No es un solo producto — es una **colección ordenada** de cosas que necesitas. En Python, las listas hacen exactamente eso: guardan múltiples valores en un solo lugar, manteniendo el orden en que los pusiste.
+Imagina que tienes una **lista de compras** en tu teléfono. No es un solo
+producto — es una **colección ordenada** de cosas que necesitas. En Python, las
+listas hacen exactamente eso: guardan múltiples valores en un solo lugar,
+manteniendo el orden en que los pusiste.
 
 ```python
 # Una variable normal guarda UN solo valor
@@ -24,8 +27,10 @@ producto = "leche" # <1>
 compras = ["leche", "pan", "huevos", "café"] # <2>
 ```
 
-1. Una variable simple solo puede tener un valor a la vez. Si asignas otro, el anterior se pierde.
-2. Una lista puede contener muchos valores, y todos se mantienen accesibles por su posición.
+1. Una variable simple solo puede tener un valor a la vez. Si asignas otro, el
+anterior se pierde.
+2. Una lista puede contener muchos valores, y todos se mantienen accesibles por
+su posición.
 
 > **There should be one obvious way to do it.** Si necesitas guardar varios valores relacionados, la lista es tu primera opción en Python.
 
@@ -33,7 +38,8 @@ compras = ["leche", "pan", "huevos", "café"] # <2>
 
 ## Tu primera lista
 
-Crear una lista es tan simple como poner valores entre corchetes `[]`, separados por comas:
+Crear una lista es tan simple como poner valores entre corchetes `[]`, separados
+por comas:
 
 ```python
 # Lista de lenguajes de programación
@@ -50,15 +56,19 @@ print(len(lenguajes)) # <4>
 print(len(pendientes)) # <5>
 ```
 
-1. Los corchetes `[]` crean una lista. Cada valor entre comas es un **elemento** de la lista.
-2. Las listas pueden contener cualquier tipo de dato. Esta lista tiene números decimales (`float`).
-3. `[]` es una lista vacía. Es como tener una caja sin nada adentro — lista para usar.
+1. Los corchetes `[]` crean una lista. Cada valor entre comas es un **elemento**
+de la lista.
+2. Las listas pueden contener cualquier tipo de dato. Esta lista tiene números
+decimales (`float`).
+3. `[]` es una lista vacía. Es como tener una caja sin nada adentro — lista para
+usar.
 4. `len(lenguajes)` devuelve `4` porque hay 4 elementos en la lista.
 5. `len(pendientes)` devuelve `0` porque la lista está vacía.
 
 ## Listas mixtas: diferentes tipos en un solo lugar
 
-A diferencia de otros lenguajes, Python te permite mezclar tipos en la misma lista. No es lo más común, pero es posible:
+A diferencia de otros lenguajes, Python te permite mezclar tipos en la misma
+lista. No es lo más común, pero es posible:
 
 ```python
 # ✅ Python permite mezclar tipos
@@ -71,7 +81,8 @@ print(type(perfil[2])) # <4>
 print(type(perfil[3])) # <5>
 ```
 
-1. `perfil` contiene un `str`, un `int`, un `bool` y un `float` — todos en la misma lista.
+1. `perfil` contiene un `str`, un `int`, un `bool` y un `float` — todos en la
+misma lista.
 2. `perfil[0]` es `"Ana"` — tipo `str`.
 3. `perfil[1]` es `28` — tipo `int`.
 4. `perfil[2]` es `True` — tipo `bool`.
@@ -100,14 +111,18 @@ print(desde_tupla)
 ```
 
 1. Un `str` es una secuencia de caracteres. Python puede tratarlo como tal.
-2. `list("Python")` crea `['P', 'y', 't', 'h', 'o', 'n']` — cada carácter es un elemento.
-3. `range(5)` genera números del 0 al 4. `list()` los convierte en `[0, 1, 2, 3, 4]`.
-4. Una tupla es como una lista pero inmutable (no se puede modificar). La veremos en detalle después.
+2. `list("Python")` crea `['P', 'y', 't', 'h', 'o', 'n']` — cada carácter es un
+elemento.
+3. `range(5)` genera números del 0 al 4. `list()` los convierte en `[0, 1, 2, 3,
+4]`.
+4. Una tupla es como una lista pero inmutable (no se puede modificar). La
+veremos en detalle después.
 5. `list((1, 2, 3))` crea `[1, 2, 3]` — la tupla se convierte en lista mutable.
 
 ## range(): generar secuencias numéricas
 
-`range()` es tu aliado cuando necesitas secuencias de números. No crea una lista directamente — crea un **objeto rango** que genera números bajo demanda:
+`range()` es tu aliado cuando necesitas secuencias de números. No crea una lista
+directamente — crea un **objeto rango** que genera números bajo demanda:
 
 ```python
 # range(stop) — del 0 hasta stop-1
@@ -135,8 +150,10 @@ for i in range(10, 0, -2): # <4>
 
 1. `range(5)` genera: 0, 1, 2, 3, 4. El 5 NO se incluye.
 2. `range(3, 8)` genera: 3, 4, 5, 6, 7. Empieza en 3, termina antes de 8.
-3. `range(0, 20, 4)` genera: 0, 4, 8, 12, 16. El `4` es el paso (salta de 4 en 4).
-4. `range(10, 0, -2)` genera: 10, 8, 6, 4, 2. El paso negativo cuenta hacia atrás.
+3. `range(0, 20, 4)` genera: 0, 4, 8, 12, 16. El `4` es el paso (salta de 4 en
+4).
+4. `range(10, 0, -2)` genera: 10, 8, 6, 4, 2. El paso negativo cuenta hacia
+atrás.
 
 ## ¿Cuándo usar una lista?
 
@@ -173,11 +190,15 @@ mi_lista = [1, 2, 3] # <4>
 items = ["a", "b", "c"] # <6>
 ```
 
-1. Sin comas, Python concatena los strings: `"rojo" "verde" "azul"` se convierte en `"rojoverdeazul"`. No es un error de sintaxis, pero probablemente no es lo que querías.
+1. Sin comas, Python concatena los strings: `"rojo" "verde" "azul"` se convierte
+en `"rojoverdeazul"`. No es un error de sintaxis, pero probablemente no es lo
+que querías.
 2. Con comas, cada color es un elemento separado: `['rojo', 'verde', 'azul']`.
-3. Los paréntesis `()` crean una **tupla**, no una lista. Las tuplas son inmutables.
+3. Los paréntesis `()` crean una **tupla**, no una lista. Las tuplas son
+inmutables.
 4. Los corchetes `[]` crean una **lista** mutable que puedes modificar.
-5. Python busca variables llamadas `a`, `b`, `c`. Si no existen, obtienes `NameError`.
+5. Python busca variables llamadas `a`, `b`, `c`. Si no existen, obtienes
+`NameError`.
 6. Las comillas indican que son strings, no variables.
 
 ## Resumen
@@ -192,4 +213,5 @@ items = ["a", "b", "c"] # <6>
 
 ---
 
-**Anterior:** [Módulo 4](../modulo-04/index.qmd) | **Siguiente:** [5.2 Indexar y slicing](02-indexar-slicing.qmd)
+**Anterior:** [Módulo 4](../modulo-04/index.qmd) | **Siguiente:** [5.2 Indexar y
+slicing](02-indexar-slicing.qmd)

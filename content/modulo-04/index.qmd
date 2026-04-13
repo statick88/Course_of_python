@@ -44,4 +44,5 @@ Al completar este módulo, serás capaz de:
 
 ---
 
-**Anterior:** [Módulo 3](../modulo-03/index.qmd) | **Siguiente:** [4.1 Definir funciones](01-definir-funciones.qmd)
+**Anterior:** [Módulo 3](../modulo-03/index.qmd) | **Siguiente:** [4.1 Definir
+funciones](01-definir-funciones.qmd)

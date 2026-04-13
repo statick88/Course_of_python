@@ -11,7 +11,9 @@ estimated_time: "5 minutos"
 > se te pedirá explicar cada paso en detalle durante la verificación.
 
 
-Eres el desarrollador de un sistema de bienvenida para una empresa. Necesitas crear un programa que salude al usuario por su nombre y le dé información personalizada.
+Eres el desarrollador de un sistema de bienvenida para una empresa. Necesitas
+crear un programa que salude al usuario por su nombre y le dé información
+personalizada.
 
 ## Tu misión
 

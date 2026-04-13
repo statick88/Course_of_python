@@ -14,9 +14,11 @@ execute:
 
 ## La analogía de la vitrina
 
-Imagina que construyes el mueble más hermoso del mundo, pero lo guardas en un sótano oscuro. Nadie lo verá. Nadie sabrá lo que hiciste.
+Imagina que construyes el mueble más hermoso del mundo, pero lo guardas en un
+sótano oscuro. Nadie lo verá. Nadie sabrá lo que hiciste.
 
-**Tu código es ese mueble.** El README, la documentación y la presentación son la vitrina que lo muestra al mundo.
+**Tu código es ese mueble.** El README, la documentación y la presentación son
+la vitrina que lo muestra al mundo.
 
 > **Beautiful is better than ugly.** Un proyecto bien presentado es tan importante como un proyecto bien codeado.
 
@@ -91,7 +93,8 @@ Tu Nombre — 2026
 
 ## Docstrings profesionales
 
-Cada función debe tener un docstring que explique **qué hace**, **qué recibe** y **qué retorna**:
+Cada función debe tener un docstring que explique **qué hace**, **qué recibe** y
+**qué retorna**:
 
 ```python
 def completar(self, id_tarea):
@@ -171,6 +174,7 @@ Usa esta estructura de 3 minutos:
 
 ---
 
-**Anterior:** [10.5 Proyecto guiado: Analizador de Datos](05-proyecto-analizador-datos.qmd)
+**Anterior:** [10.5 Proyecto guiado: Analizador de
+Datos](05-proyecto-analizador-datos.qmd)
 
 **Siguiente:** [Cierre del curso](99-cierre-curso.qmd)

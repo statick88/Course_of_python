@@ -6,7 +6,9 @@ estimated_time: "40 minutos"
 
 ## Situación
 
-Tu equipo necesita construir una aplicación de gestión de tareas. El proyecto debe estar bien organizado en módulos y paquetes para que varios desarrolladores puedan trabajar simultáneamente sin conflictos.
+Tu equipo necesita construir una aplicación de gestión de tareas. El proyecto
+debe estar bien organizado en módulos y paquetes para que varios desarrolladores
+puedan trabajar simultáneamente sin conflictos.
 
 ## Tu misión
 

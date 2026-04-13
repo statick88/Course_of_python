@@ -14,9 +14,13 @@ execute:
 
 ## ¿Qué es el scope?
 
-Imagina un **edificio de apartamentos**. Cada apartamento tiene sus propias cosas: su cocina, su sofá, su televisor. Si estás en el apartamento 3A, no puedes usar la tele del 5B. Pero todos los apartamentos comparten cosas del edificio: la entrada principal, el ascensor, la lavandería del sótano.
+Imagina un **edificio de apartamentos**. Cada apartamento tiene sus propias
+cosas: su cocina, su sofá, su televisor. Si estás en el apartamento 3A, no
+puedes usar la tele del 5B. Pero todos los apartamentos comparten cosas del
+edificio: la entrada principal, el ascensor, la lavandería del sótano.
 
-El **scope** es exactamente eso: **qué variables puede ver tu código dependiendo de dónde esté**.
+El **scope** es exactamente eso: **qué variables puede ver tu código dependiendo
+de dónde esté**.
 
 ```python
 # Variable global: todos los apartamentos la ven
@@ -36,15 +40,18 @@ apartamento_5b()  # En el Torre Python hay un Sofá azul
 # print(mueble)  # ❌ NameError: ¿cuál mueble? ¿el rojo o el azul?
 ```
 
-1. `edificio` es **global**: se definió fuera de cualquier función. Todas las funciones pueden leerla.
+1. `edificio` es **global**: se definió fuera de cualquier función. Todas las
+funciones pueden leerla.
 2. `mueble` es **local** de `apartamento_3a`: solo existe dentro de esa función.
-3. Este `mueble` es **otro** mueble: es local de `apartamento_5b`. No tiene nada que ver con el del 3A.
+3. Este `mueble` es **otro** mueble: es local de `apartamento_5b`. No tiene nada
+que ver con el del 3A.
 
 > **Explicit is better than implicit.** El scope hace explícito dónde vive cada variable. No hay ambigüedad.
 
 ## Scope local: la variable que nace y muere dentro de la función
 
-Las variables creadas dentro de una función **solo existen mientras la función se ejecuta**:
+Las variables creadas dentro de una función **solo existen mientras la función
+se ejecuta**:
 
 ```python
 def calcular_descuento(precio):  # <1>
@@ -61,11 +68,13 @@ print(resultado)  # 85.0
 1. `precio` es un parámetro: también es local a la función.
 2. `tasa` se crea dentro de la función. Es local.
 3. `descuento` se crea dentro de la función. Es local.
-4. Al terminar la función, `tasa` y `descuento` desaparecen. Solo `resultado` sobrevive.
+4. Al terminar la función, `tasa` y `descuento` desaparecen. Solo `resultado`
+sobrevive.
 
 ## Scope global: la variable que todos ven
 
-Las variables definidas fuera de funciones son globales. Se pueden **leer** desde cualquier función:
+Las variables definidas fuera de funciones son globales. Se pueden **leer**
+desde cualquier función:
 
 ```python
 # Variables globales
@@ -81,8 +90,10 @@ print(calcular_precio_final(100))  # 115.00 USD
 print(f"Impuesto configurado: {impuesto_base}")  # 0.15
 ```
 
-1. `impuesto_base` y `moneda` son globales. Se definen fuera de cualquier función.
-2. La función puede leer `impuesto_base` sin problemas. No necesita hacer nada especial.
+1. `impuesto_base` y `moneda` son globales. Se definen fuera de cualquier
+función.
+2. La función puede leer `impuesto_base` sin problemas. No necesita hacer nada
+especial.
 
 ### ⚠️ Pero no puedes MODIFICAR una global sin `global`
 
@@ -104,7 +115,8 @@ incrementar()
 print(contador)  # 2
 ```
 
-1. `global contador` le dice a Python: "no crees una variable nueva, usa la que está afuera".
+1. `global contador` le dice a Python: "no crees una variable nueva, usa la que
+está afuera".
 
 > **Simple is better than complex.** Evita `global` siempre que puedas. Si necesitas compartir estado, pasa valores como parámetros y devuélvelos con `return`.
 
@@ -147,7 +159,8 @@ print(nueva_config["tema"]) # claro — la nueva sí
 
 ## Scope anidado: funciones dentro de funciones
 
-Puedes definir funciones dentro de otras funciones. Las variables del nivel exterior son visibles desde el interior:
+Puedes definir funciones dentro de otras funciones. Las variables del nivel
+exterior son visibles desde el interior:
 
 ```python
 def fabrica_de_saludos(idioma):  # <1>
@@ -173,7 +186,8 @@ print(saludar("Ana"))  # ¡Hola, Ana!
 
 ## `nonlocal`: modificar variables del scope exterior
 
-Si necesitas modificar una variable del scope padre (no global, sino de la función que te contiene), usa `nonlocal`:
+Si necesitas modificar una variable del scope padre (no global, sino de la
+función que te contiene), usa `nonlocal`:
 
 ```python
 def crear_contador():  # <1>
@@ -192,7 +206,8 @@ print(contador())  # 2
 print(contador())  # 3
 ```
 
-1. `cuenta` es local de `crear_contador`, pero para `incrementar` es del scope exterior.
+1. `cuenta` es local de `crear_contador`, pero para `incrementar` es del scope
+exterior.
 2. `nonlocal cuenta` permite modificar `cuenta` desde la función anidada.
 3. Cada llamada a `contador()` incrementa la misma variable `cuenta`.
 
@@ -288,4 +303,5 @@ print(len("hola"))  # 4 — funciona
 
 ---
 
-**Anterior:** [4.3 Return: el resultado que vuelve](03-return.qmd) | **Siguiente:** [4.5 Funciones lambda](05-funciones-lambda.qmd)
+**Anterior:** [4.3 Return: el resultado que vuelve](03-return.qmd) |
+**Siguiente:** [4.5 Funciones lambda](05-funciones-lambda.qmd)

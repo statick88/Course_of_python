@@ -7,7 +7,8 @@
 
 ## Descripción
 
-Construye una calculadora que use funciones separadas para cada operación, aplicando el principio de responsabilidad única.
+Construye una calculadora que use funciones separadas para cada operación,
+aplicando el principio de responsabilidad única.
 
 ## Requisitos
 

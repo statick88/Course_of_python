@@ -14,9 +14,15 @@ execute:
 
 ## ¿Qué es PEP 8?
 
-Imagina que cada programador escribiera código con su propio estilo: unos con tabs, otros con 2 espacios, otros con 4, algunos con llaves, otros sin. Sería como entrar a una **cafetería donde cada barista prepara el café a su manera**: uno con taza grande, otro con vaso, otro sin asa. El resultado funciona, pero nadie sabe qué esperar.
+Imagina que cada programador escribiera código con su propio estilo: unos con
+tabs, otros con 2 espacios, otros con 4, algunos con llaves, otros sin. Sería
+como entrar a una **cafetería donde cada barista prepara el café a su manera**:
+uno con taza grande, otro con vaso, otro sin asa. El resultado funciona, pero
+nadie sabe qué esperar.
 
-PEP 8 es la **receta estándar** que toda la comunidad Python acordó seguir. No es una ley — es un acuerdo de caballeros para que cualquier persona pueda leer tu código y sentirse en casa.
+PEP 8 es la **receta estándar** que toda la comunidad Python acordó seguir. No
+es una ley — es un acuerdo de caballeros para que cualquier persona pueda leer
+tu código y sentirse en casa.
 
 ```python
 # ✅ Código PEP 8 — limpio y legible
@@ -35,7 +41,8 @@ def calcular_promedio(notas):
 
 ## Indentación: 4 espacios, siempre
 
-Python usa la indentación para definir bloques de código. La regla es simple: **4 espacios por nivel**. No tabs, no 2 espacios, no 8. Cuatro.
+Python usa la indentación para definir bloques de código. La regla es simple:
+**4 espacios por nivel**. No tabs, no 2 espacios, no 8. Cuatro.
 
 ```python
 # ✅ 4 espacios por nivel
@@ -61,13 +68,16 @@ def procesar_datos(datos):
 ```
 
 1. Usa un tab (8 espacios visuales) en vez de 4 espacios.
-2. Usa 4 espacios. Python no permite mezclar tabs y espacios — genera `IndentationError`.
+2. Usa 4 espacios. Python no permite mezclar tabs y espacios — genera
+`IndentationError`.
 
 > **Explicit is better than implicit.** Configura tu editor para que el tab inserte 4 espacios. Así nunca tendrás este problema.
 
 ## Líneas de máximo 79 caracteres
 
-PEP 8 recomienda que ninguna línea supere los **79 caracteres**. Esto viene de los terminales antiguos, pero sigue siendo útil: permite ver dos archivos lado a lado sin scroll horizontal.
+PEP 8 recomienda que ninguna línea supere los **79 caracteres**. Esto viene de
+los terminales antiguos, pero sigue siendo útil: permite ver dos archivos lado a
+lado sin scroll horizontal.
 
 ```python
 # ❌ Línea demasiado larga — hay que hacer scroll
@@ -84,7 +94,8 @@ resultado = (
 
 ### Truco: paréntesis para dividir líneas
 
-Python permite dividir líneas dentro de paréntesis `()`, corchetes `[]` o llaves `{}` sin necesidad de caracteres especiales:
+Python permite dividir líneas dentro de paréntesis `()`, corchetes `[]` o llaves
+`{}` sin necesidad de caracteres especiales:
 
 ```python
 # ✅ División natural con paréntesis
@@ -105,7 +116,8 @@ colores_favoritos = [
 
 ## Espacios en blanco: la respiración del código
 
-Los espacios en blanco son como las **pausas en una conversación**: sin ellas, todo se vuelve un galimatías. Con las pausas correctas, el mensaje es claro.
+Los espacios en blanco son como las **pausas en una conversación**: sin ellas,
+todo se vuelve un galimatías. Con las pausas correctas, el mensaje es claro.
 
 ### Espacios alrededor de operadores
 
@@ -192,7 +204,8 @@ from mi_proyecto.servicios import enviar_email
 2. **Grupo 2:** Librerías externas (`requests`, `flask`).
 3. **Grupo 3:** Módulos propios del proyecto.
 
-Cada grupo separado por una línea en blanco. Dentro de cada grupo, orden alfabético.
+Cada grupo separado por una línea en blanco. Dentro de cada grupo, orden
+alfabético.
 
 ```python
 # ❌ Imports desordenados y mezclados
@@ -214,7 +227,8 @@ import json
 import os, sys, json  # <1>
 ```
 
-1. PEP 8 recomienda un import por línea para mayor claridad y facilitar la lectura de diffs en control de versiones.
+1. PEP 8 recomienda un import por línea para mayor claridad y facilitar la
+lectura de diffs en control de versiones.
 
 ## Nombres: la convención de Python
 
@@ -246,7 +260,8 @@ class ProcesadorArchivos:  # <2>
 
 ## Herramientas automáticas: no memorices, automatiza
 
-Nadie memoriza todas las reglas de PEP 8. Los profesionales usan herramientas que revisan el código automáticamente:
+Nadie memoriza todas las reglas de PEP 8. Los profesionales usan herramientas
+que revisan el código automáticamente:
 
 ```bash
 # Instalar herramientas de verificación
@@ -259,7 +274,8 @@ ruff check mi_archivo.py  # <2>
 ruff check --fix mi_archivo.py  # <3>
 ```
 
-1. `ruff` es un linter ultrarrápido escrito en Rust. Reemplaza a `flake8`, `isort` y otros.
+1. `ruff` es un linter ultrarrápido escrito en Rust. Reemplaza a `flake8`,
+`isort` y otros.
 2. Muestra todos los errores de estilo encontrados.
 3. Corrige automáticamente errores simples (espacios, imports, etc.).
 
@@ -286,4 +302,5 @@ ruff check --fix mi_archivo.py  # <3>
 
 ---
 
-**Anterior:** [Índice del Módulo 9](index.qmd) | **Siguiente:** [9.2 Nombres descriptivos](02-nombres-descriptivos.qmd)
+**Anterior:** [Índice del Módulo 9](index.qmd) | **Siguiente:** [9.2 Nombres
+descriptivos](02-nombres-descriptivos.qmd)

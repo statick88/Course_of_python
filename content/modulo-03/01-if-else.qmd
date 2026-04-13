@@ -20,7 +20,8 @@ Imagina que estás en un **semáforo**. Tu acción depende del color:
 - 🟡 **Amarillo** → te preparas
 - 🟢 **Verde** → avanzas
 
-Tu programa funciona igual: **evalúa una condición y ejecuta un camino diferente** según el resultado.
+Tu programa funciona igual: **evalúa una condición y ejecuta un camino
+diferente** según el resultado.
 
 ```python
 # El semáforo en código
@@ -35,9 +36,11 @@ else: # <4>
 ```
 
 1. `color` es la variable que contiene el estado actual del semáforo.
-2. `if` evalúa la primera condición. Si es `True`, ejecuta su bloque y **salta todo lo demás**.
+2. `if` evalúa la primera condición. Si es `True`, ejecuta su bloque y **salta
+todo lo demás**.
 3. `elif` (else + if) evalúa otra condición solo si la anterior fue `False`.
-4. `else` es el "camino por defecto": se ejecuta si **ninguna** condición anterior fue verdadera.
+4. `else` es el "camino por defecto": se ejecuta si **ninguna** condición
+anterior fue verdadera.
 
 > **Simple is better than complex.** Un `if` claro es mejor que una maraña de condiciones confusas.
 
@@ -92,7 +95,8 @@ if edad == 18:  # <1>
 
 ## El camino feliz: estructura recomendada
 
-En programación, el **"camino feliz"** es el escenario donde todo sale bien. La buena práctica es:
+En programación, el **"camino feliz"** es el escenario donde todo sale bien. La
+buena práctica es:
 
 1. Validar los casos de error primero
 2. Dejar el caso exitoso para el final (o para el `else`)
@@ -125,7 +129,8 @@ def verificar_acceso(edad):
 1. Primero validamos el caso más restrictivo: menor de 18.
 2. Si pasó el primer filtro, verificamos el siguiente: menor de 21.
 3. Luego el caso especial: 65 o más años.
-4. Si ninguna condición anterior se cumplió, es el camino feliz: acceso completo.
+4. Si ninguna condición anterior se cumplió, es el camino feliz: acceso
+completo.
 
 > **Readability counts.** El código se lee de arriba a abajo como una lista de filtros. Cada `if` elimina un caso especial.
 
@@ -161,8 +166,10 @@ if not esta_prohibido: # <3>
     print("La entrada está permitida")
 ```
 
-1. `and` requiere que AMBAS condiciones sean `True`. `edad >= 18` es `False`, así que todo el `if` es `False`.
-2. `or` basta con que UNA condición sea `True`. `es_vip` es `False`, pero si `edad >= 18` fuera `True`, entraría.
+1. `and` requiere que AMBAS condiciones sean `True`. `edad >= 18` es `False`,
+así que todo el `if` es `False`.
+2. `or` basta con que UNA condición sea `True`. `es_vip` es `False`, pero si
+`edad >= 18` fuera `True`, entraría.
 3. `not` invierte el valor. `not False` = `True`, así que entra al bloque.
 
 ### Tabla de verdad rápida
@@ -179,7 +186,8 @@ if not esta_prohibido: # <3>
 
 ## El operador ternario: if en una línea
 
-Python tiene una forma compacta de escribir un `if/else` simple en una sola línea.
+Python tiene una forma compacta de escribir un `if/else` simple en una sola
+línea.
 
 ```python
 # Forma larga
@@ -194,7 +202,8 @@ edad = 20
 estado = "mayor" if edad >= 18 else "menor" # <1>
 ```
 
-1. La sintaxis es: `valor_si_true if condicion else valor_si_false`. Útil para asignaciones simples.
+1. La sintaxis es: `valor_si_true if condicion else valor_si_false`. Útil para
+asignaciones simples.
 
 > **Beautiful is better than ugly.** El operador ternario es elegante cuando la lógica es simple. Si necesitas más de una condición, usa `if/else` normal.
 
@@ -265,4 +274,5 @@ if es_activo:
 
 ---
 
-**Anterior:** [Índice del Módulo 3](index.qmd) | **Siguiente:** [3.2 Decisiones anidadas](02-if-anidado.qmd)
+**Anterior:** [Índice del Módulo 3](index.qmd) | **Siguiente:** [3.2 Decisiones
+anidadas](02-if-anidado.qmd)

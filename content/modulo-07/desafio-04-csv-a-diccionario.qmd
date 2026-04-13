@@ -6,7 +6,9 @@ estimated_time: "20 minutos"
 
 ## Situación
 
-Tienes un archivo CSV con datos de estudiantes y necesitas convertirlo en una estructura de datos de Python (lista de diccionarios) para poder hacer consultas y análisis.
+Tienes un archivo CSV con datos de estudiantes y necesitas convertirlo en una
+estructura de datos de Python (lista de diccionarios) para poder hacer consultas
+y análisis.
 
 ## Tu misión
 

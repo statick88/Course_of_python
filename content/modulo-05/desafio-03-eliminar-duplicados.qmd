@@ -6,7 +6,9 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Estás limpiando datos de una encuesta. Varios participantes enviaron respuestas duplicadas y necesitas eliminar los repetidos manteniendo el orden original de las respuestas únicas.
+Estás limpiando datos de una encuesta. Varios participantes enviaron respuestas
+duplicadas y necesitas eliminar los repetidos manteniendo el orden original de
+las respuestas únicas.
 
 ## Tu misión
 
@@ -63,12 +65,16 @@ print(f"Lista limpia:    {limpia}")
 print(f"Duplicados eliminados: {duplicados}")
 ```
 
-1. Lista original con elementos repetidos: `"rojo"` aparece 3 veces, `"azul"` 2 veces.
+1. Lista original con elementos repetidos: `"rojo"` aparece 3 veces, `"azul"` 2
+veces.
 2. `limpia` empieza vacía — aquí iremos agregando solo los elementos únicos.
 3. Recorremos cada elemento de la lista original en orden.
-4. `if elemento not in limpia:` verifica si ya lo agregamos. Solo lo agregamos la primera vez.
-5. `append()` agrega el elemento a la lista limpia. Como solo se agrega si no existe, no hay duplicados.
-6. La diferencia entre el tamaño original y el limpio es la cantidad de duplicados eliminados: `7 - 4 = 3`.
+4. `if elemento not in limpia:` verifica si ya lo agregamos. Solo lo agregamos
+la primera vez.
+5. `append()` agrega el elemento a la lista limpia. Como solo se agrega si no
+existe, no hay duplicados.
+6. La diferencia entre el tamaño original y el limpio es la cantidad de
+duplicados eliminados: `7 - 4 = 3`.
 
 </details>
 

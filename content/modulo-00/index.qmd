@@ -4,23 +4,32 @@ title: "Módulo 0: Pensamiento Computacional"
 
 # Módulo 0: Pensamiento Computacional
 
-> **Duración**: 4 horas
-> **Objetivo**: Aprender a pensar como programador antes de escribir código
-> **Inspirado en**: MIT 6.0001 Lecture 1 - Introduction to Computation and Programming
+> **Duración**: 4 horas  
+> **Objetivo**: Aprender a pensar como programador  
+> antes de escribir código  
+> **Inspirado en**: MIT 6.0001 Lecture 1 —  
+> Introduction to Computation and Programming
 
 ---
 
 ## ¿Por qué este módulo?
 
-Muchos cursos comienzan con "instala Python" y saltan directo a la sintaxis. Pero **escribir código no es lo mismo que pensar como programador**.
+Muchos cursos comienzan con "instala Python" y saltan
+directo a la sintaxis. Pero **escribir código no es lo
+mismo que pensar como programador**.
 
 Este módulo te enseña a:
+
 - **Descomponer** problemas grandes en partes manejables
-- **Reconocer patrones** que se repiten en diferentes problemas
-- **Diseñar algoritmos** en pseudocódigo antes de tocar Python
+- **Reconocer patrones** que se repiten en problemas
+  diferentes
+- **Diseñar algoritmos** en pseudocódigo antes de tocar
+  Python
 - **Evaluar múltiples enfoques** para elegir el mejor
 
-> **Analogía del mundo real**: Antes de construir una casa, un arquitecto diseña los planos. Antes de escribir código, un programador diseña el algoritmo.
+> **Analogía del mundo real**: Antes de construir una
+> casa, un arquitecto diseña los planos. Antes de escribir
+> código, un programador diseña el algoritmo.
 
 ---
 
@@ -28,10 +37,10 @@ Este módulo te enseña a:
 
 | Unidad | Tema | Duración |
 |--------|------|----------|
-| 0.1 | ¿Qué es computación? De recetas a algoritmos | 45 min |
-| 0.2 | Descomposición: dividir para conquistar | 45 min |
+| 0.1 | ¿Qué es computación? | 45 min |
+| 0.2 | Descomposición | 45 min |
 | 0.3 | Patrones y abstracción | 45 min |
-| 0.4 | Diseño de algoritmos: pseudocódigo | 60 min |
+| 0.4 | Pseudocódigo | 60 min |
 | 0.5 | Evaluación de enfores | 45 min |
 
 ---
@@ -41,35 +50,33 @@ Este módulo te enseña a:
 Todo problema de programación sigue este ciclo:
 
 ```
-1. ENTENDER → ¿Qué me piden? ¿Qué datos tengo? ¿Qué debo producir?
-2. PLANIFICAR → ¿Cómo lo resuelvo? (pseudocódigo, diagrama)
+1. ENTENDER   → ¿Qué me piden? ¿Qué datos tengo?
+2. PLANIFICAR → ¿Cómo lo resuelvo? (pseudocódigo)
 3. IMPLEMENTAR → Escribir el código en Python
-4. VERIFICAR → ¿Funciona? ¿Hay casos borde? ¿Se puede mejorar?
+4. VERIFICAR  → ¿Funciona? ¿Hay casos borde?
 ```
 
-**Este módulo se enfoca en los pasos 1 y 2** — los que la mayoría salta.
-
----
-
-## ¿Necesito saber Python para este módulo?
-
-**No.** Este módulo usa pseudocódigo y ejercicios en papel. Es sobre **pensar**, no sobre **sintaxis**.
-
-Cuando llegues al Módulo 1, ya tendrás la mentalidad correcta para aprender Python rápidamente.
+**Este módulo se enfoca en los pasos 1 y 2** — los que la
+mayoría salta.
 
 ---
 
 ## Al final de este módulo podrás:
 
-✅ Explicar qué es un algoritmo con tus propias palabras
-✅ Descomponer un problema complejo en 5+ sub-problemas simples
-✅ Escribir pseudocódigo para problemas cotidianos
-✅ Identificar cuándo un enfoque es mejor que otro
-✅ Reconocer patrones en problemas aparentemente diferentes
+✅ Explicar qué es un algoritmo con tus propias palabras  
+✅ Descomponer un problema complejo en 5+ sub-problemas  
+  simples  
+✅ Escribir pseudocódigo para problemas cotidianos  
+✅ Identificar cuándo un enfoque es mejor que otro  
+✅ Reconocer patrones en problemas aparentemente  
+  diferentes  
 
 ---
 
-> **Nota del instructor**: "Este módulo es la base de todo lo que sigue. No lo saltes. Los mejores programadores no son los que más sintaxis conocen — son los que mejor piensan los problemas."
+> **Nota del instructor**: "Este módulo es la base de todo
+> lo que sigue. No lo saltes. Los mejores programadores no
+> son los que más sintaxis conocen — son los que mejor
+> piensan los problemas."
 > — Diego Saavedra, basado en MIT 6.0001
 
 ---

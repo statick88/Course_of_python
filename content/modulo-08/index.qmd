@@ -41,4 +41,5 @@ Al completar este módulo, serás capaz de:
 
 ---
 
-**Anterior:** [Módulo 7](../modulo-07/index.qmd) | **Siguiente:** [8.1 Importar módulos](01-importar-modulos.qmd)
+**Anterior:** [Módulo 7](../modulo-07/index.qmd) | **Siguiente:** [8.1 Importar
+módulos](01-importar-modulos.qmd)

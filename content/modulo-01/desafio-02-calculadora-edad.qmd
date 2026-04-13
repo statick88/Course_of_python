@@ -11,7 +11,9 @@ estimated_time: "8 minutos"
 > se te pedirá explicar cada paso en detalle durante la verificación.
 
 
-Un hospital necesita un programa rápido para calcular la edad de los pacientes y determinar si son mayores de edad. El programa debe ser claro y evitar errores con datos inválidos.
+Un hospital necesita un programa rápido para calcular la edad de los pacientes y
+determinar si son mayores de edad. El programa debe ser claro y evitar errores
+con datos inválidos.
 
 ## Tu misión
 

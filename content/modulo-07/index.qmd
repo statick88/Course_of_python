@@ -44,4 +44,5 @@ Al completar este módulo, serás capaz de:
 
 ---
 
-**Anterior:** [Módulo 6](../modulo-06/index.qmd) | **Siguiente:** [7.1 Abrir y cerrar archivos](01-abrir-cerrar-archivos.qmd)
+**Anterior:** [Módulo 6](../modulo-06/index.qmd) | **Siguiente:** [7.1 Abrir y
+cerrar archivos](01-abrir-cerrar-archivos.qmd)

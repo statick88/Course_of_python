@@ -6,7 +6,9 @@ estimated_time: "8 minutos"
 
 ## Situación
 
-Un compañero de equipo te envía este código para que lo revises. Funciona, pero es difícil de leer y mantener. Tu misión es refactorizarlo siguiendo las buenas prácticas de Python.
+Un compañero de equipo te envía este código para que lo revises. Funciona, pero
+es difícil de leer y mantener. Tu misión es refactorizarlo siguiendo las buenas
+prácticas de Python.
 
 ## Tu misión
 

@@ -4,7 +4,8 @@ title: "Quiz: Módulo 10 — Proyecto Final y Buenas Prácticas de Desarrollo"
 
 ## Evaluación del Módulo 10
 
-Responde las siguientes preguntas para evaluar tu comprensión del desarrollo de proyectos completos y buenas prácticas de desarrollo en Python.
+Responde las siguientes preguntas para evaluar tu comprensión del desarrollo de
+proyectos completos y buenas prácticas de desarrollo en Python.
 
 ::: {.quizdown}
 
@@ -135,4 +136,5 @@ Responde las siguientes preguntas para evaluar tu comprensión del desarrollo de
 :::
 
 ---
-**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo 10](../content/modulo-10/index.qmd)
+**Volver a Quizzes:** [README](README.qmd) | **Anterior:** [Módulo
+10](../content/modulo-10/index.qmd)

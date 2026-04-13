@@ -25,7 +25,8 @@ La solución: **descomponer**.
 
 > **Descomposición** es dividir un problema complejo en sub-problemas más simples que puedes resolver individualmente.
 
-**Analogía**: No construyes una casa empezando por el techo. Construyes: cimientos → paredes → techo → acabados.
+**Analogía**: No construyes una casa empezando por el techo. Construyes:
+cimientos → paredes → techo → acabados.
 
 ---
 
@@ -96,7 +97,8 @@ Vas a organizar un viaje de 5 días a la playa para tu familia de 4 personas.
 
 ### Tu misión
 
-Descompón el problema en al menos 4 categorías principales, y cada una en 3+ sub-tareas:
+Descompón el problema en al menos 4 categorías principales, y cada una en 3+
+sub-tareas:
 
 ```
 ORGANIZAR VIAJE
@@ -173,7 +175,8 @@ Cada sub-problema se convierte en **una función** en Python.
 
 > **Si un sub-problema sigue siendo complejo, descompónlo más.**
 
-**Regla práctica**: Cada sub-problema debe poder resolverse en **5-15 líneas de código** o menos.
+**Regla práctica**: Cada sub-problema debe poder resolverse en **5-15 líneas de
+código** o menos.
 
 ---
 
@@ -197,6 +200,7 @@ Cada sub-problema se convierte en **una función** en Python.
 
 ---
 
-**Ahora** que sabes dividir problemas, aprenderás a **reconocer patrones** que se repiten.
+**Ahora** que sabes dividir problemas, aprenderás a **reconocer patrones** que
+se repiten.
 
 [← 0.1 Computación](01-que-es-computacion.qmd) | [0.3 Patrones →](03-patrones.qmd)

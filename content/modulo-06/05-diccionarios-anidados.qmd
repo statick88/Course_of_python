@@ -1,6 +1,7 @@
 ---
 title: "6.5 Diccionarios anidados y JSON"
-subtitle: "Estructuras complejas — del diccionario al formato universal de datos"
+subtitle: "Estructuras complejas — del diccionario al formato universal de
+datos"
 execute:
   eval: false
 ---
@@ -15,7 +16,10 @@ execute:
 
 ## ¿Qué es un diccionario anidado?
 
-Imagina un **archivador de oficina**. Cada cajón tiene una etiqueta (la clave), y dentro de cada cajón hay carpetas. Cada carpeta también tiene etiquetas, y dentro de cada carpeta hay documentos. Eso es un diccionario anidado: diccionarios dentro de diccionarios.
+Imagina un **archivador de oficina**. Cada cajón tiene una etiqueta (la clave),
+y dentro de cada cajón hay carpetas. Cada carpeta también tiene etiquetas, y
+dentro de cada carpeta hay documentos. Eso es un diccionario anidado:
+diccionarios dentro de diccionarios.
 
 ```python
 # Un diccionario anidado: estudiantes con sus datos completos
@@ -41,7 +45,9 @@ estudiantes = {
 }  # <1>
 ```
 
-1. `estudiantes` es un diccionario donde cada clave es un código de estudiante, y cada valor es **otro diccionario** con los datos del estudiante. Dentro de cada estudiante hay un diccionario de `materias` con sus calificaciones.
+1. `estudiantes` es un diccionario donde cada clave es un código de estudiante,
+y cada valor es **otro diccionario** con los datos del estudiante. Dentro de
+cada estudiante hay un diccionario de `materias` con sus calificaciones.
 
 ## Acceder a valores anidados
 
@@ -61,9 +67,12 @@ materias = estudiantes["EST002"]["materias"]  # <3>
 print(materias)
 ```
 
-1. `estudiantes["EST001"]["nombre"]` sigue el camino: primero busca `"EST001"`, luego dentro de ese diccionario busca `"nombre"`. Resultado: `"Ana García"`.
-2. `estudiantes["EST001"]["materias"]["programacion"]` sigue tres niveles: estudiante → materias → programación. Resultado: `9.8`.
-3. `estudiantes["EST002"]["materias"]` devuelve el diccionario completo de materias del segundo estudiante.
+1. `estudiantes["EST001"]["nombre"]` sigue el camino: primero busca `"EST001"`,
+luego dentro de ese diccionario busca `"nombre"`. Resultado: `"Ana García"`.
+2. `estudiantes["EST001"]["materias"]["programacion"]` sigue tres niveles:
+estudiante → materias → programación. Resultado: `9.8`.
+3. `estudiantes["EST002"]["materias"]` devuelve el diccionario completo de
+materias del segundo estudiante.
 
 ## Modificar valores anidados
 
@@ -81,7 +90,8 @@ print(estudiantes["EST001"])
 ```
 
 1. Sobreescribe la calificación de matemáticas de `9.5` a `9.7`.
-2. Agrega una nueva materia `"quimica"` con calificación `8.0` al diccionario de materias.
+2. Agrega una nueva materia `"quimica"` con calificación `8.0` al diccionario de
+materias.
 3. Agrega un nuevo campo `"email"` directamente al diccionario del estudiante.
 
 > **Simple is better than complex.** La misma sintaxis `dic[clave] = valor` funciona a cualquier nivel de anidamiento.
@@ -98,7 +108,8 @@ for codigo, datos in estudiantes.items():  # <1>
 ```
 
 1. El primer `for` recorre cada estudiante, obteniendo su código y sus datos.
-2. El segundo `for` (anidado) recorre las materias de cada estudiante. Es un bucle dentro de otro bucle.
+2. El segundo `for` (anidado) recorre las materias de cada estudiante. Es un
+bucle dentro de otro bucle.
 
 ## Construir diccionarios anidados paso a paso
 
@@ -129,13 +140,16 @@ for isbn, libro in biblioteca.items():
 ```
 
 1. Empezamos con un diccionario vacío. Es el archivador vacío.
-2. Agregamos el primer libro con su ISBN como clave. El valor es un diccionario con los detalles del libro.
+2. Agregamos el primer libro con su ISBN como clave. El valor es un diccionario
+con los detalles del libro.
 3. Agregamos un segundo libro de la misma forma.
 4. Recorremos la biblioteca buscando libros de un autor específico.
 
 ## Diccionarios y JSON: el formato universal
 
-JSON (JavaScript Object Notation) es el formato más usado para intercambiar datos en la web. La buena noticia: **un diccionario Python es casi idéntico a un objeto JSON**.
+JSON (JavaScript Object Notation) es el formato más usado para intercambiar
+datos en la web. La buena noticia: **un diccionario Python es casi idéntico a un
+objeto JSON**.
 
 ```python
 import json
@@ -158,8 +172,10 @@ datos = json.loads(json_string)  # <3>
 print(datos["nombre"])
 ```
 
-1. Este diccionario Python tiene tipos que JSON entiende: strings, números, booleanos, listas y `None`.
-2. `json.dumps()` convierte el diccionario a un string JSON. `indent=2` le da formato legible con sangría de 2 espacios.
+1. Este diccionario Python tiene tipos que JSON entiende: strings, números,
+booleanos, listas y `None`.
+2. `json.dumps()` convierte el diccionario a un string JSON. `indent=2` le da
+formato legible con sangría de 2 espacios.
 3. `json.loads()` convierte un string JSON de vuelta a un diccionario Python.
 
 ### Conversión de tipos Python ↔ JSON
@@ -198,10 +214,13 @@ with open("datos.json", "r") as archivo:  # <3>
 print(datos_leidos)
 ```
 
-1. `open("datos.json", "w")` abre el archivo en modo escritura. El `with` asegura que se cierre automáticamente.
-2. `json.dump(datos, archivo, indent=2)` escribe el diccionario directamente al archivo.
+1. `open("datos.json", "w")` abre el archivo en modo escritura. El `with`
+asegura que se cierre automáticamente.
+2. `json.dump(datos, archivo, indent=2)` escribe el diccionario directamente al
+archivo.
 3. `open("datos.json", "r")` abre el archivo en modo lectura.
-4. `json.load(archivo)` lee el archivo JSON y lo convierte en un diccionario Python.
+4. `json.load(archivo)` lee el archivo JSON y lo convierte en un diccionario
+Python.
 
 ## ⚠️ Errores comunes
 
@@ -230,8 +249,11 @@ except json.JSONDecodeError:  # <2>
     print("El texto no es un JSON válido")
 ```
 
-1. `.get("usuario", {}).get("email", "No disponible")` es seguro: si `"usuario"` no existe, devuelve `{}`, y luego `.get("email", ...)` sobre ese diccionario vacío devuelve `"No disponible"`.
-2. `json.JSONDecodeError` se lanza cuando el texto no es JSON válido. Usar `try/except` maneja el error con elegancia.
+1. `.get("usuario", {}).get("email", "No disponible")` es seguro: si `"usuario"`
+no existe, devuelve `{}`, y luego `.get("email", ...)` sobre ese diccionario
+vacío devuelve `"No disponible"`.
+2. `json.JSONDecodeError` se lanza cuando el texto no es JSON válido. Usar
+`try/except` maneja el error con elegancia.
 
 ## Resumen
 
@@ -252,4 +274,5 @@ except json.JSONDecodeError:  # <2>
 
 ---
 
-**Anterior:** [6.4 Sets](04-sets.qmd) | **Siguiente:** [Resumen del Módulo 6](99-resumen.qmd)
+**Anterior:** [6.4 Sets](04-sets.qmd) | **Siguiente:** [Resumen del Módulo
+6](99-resumen.qmd)

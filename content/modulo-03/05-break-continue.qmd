@@ -14,7 +14,8 @@ execute:
 
 ## El control remoto de tus bucles
 
-Hasta ahora, tus bucles tenían un ritmo fijo: empezaban, iteraban hasta el final, y terminaban. Pero en la vida real a veces necesitas **cambiar el plan**:
+Hasta ahora, tus bucles tenían un ritmo fijo: empezaban, iteraban hasta el
+final, y terminaban. Pero en la vida real a veces necesitas **cambiar el plan**:
 
 - 🛑 **`break`**: "Para todo, sal del bucle AHORA"
 - ⏭️ **`continue`**: "Salta esta vuelta y ve a la siguiente"
@@ -27,7 +28,8 @@ Piensa en un bucle como una **cinta transportadora** en una fábrica:
 
 ## `break`: la salida de emergencia
 
-`break` **termina el bucle inmediatamente**. Todo lo que queda por iterar se ignora.
+`break` **termina el bucle inmediatamente**. Todo lo que queda por iterar se
+ignora.
 
 ```python
 # Buscar un número en una lista
@@ -45,8 +47,10 @@ else: # <4>
 
 1. Recorremos cada número de la lista, uno por uno.
 2. Comparamos el número actual con el que buscamos.
-3. `break` sale del bucle inmediatamente. Los números `23` y `42` nunca se revisan — ¡ahorro de tiempo!
-4. El `else` del `for` se ejecuta **solo si el bucle terminó sin `break`**. Si encontró el número y ejecutó `break`, este `else` se salta.
+3. `break` sale del bucle inmediatamente. Los números `23` y `42` nunca se
+revisan — ¡ahorro de tiempo!
+4. El `else` del `for` se ejecuta **solo si el bucle terminó sin `break`**. Si
+encontró el número y ejecutó `break`, este `else` se salta.
 
 ### break con `while`: el patrón más común
 
@@ -72,14 +76,17 @@ while True: # <1>
         print("Opción no válida. Intenta de nuevo.")
 ```
 
-1. `while True` crea un bucle infinito. Es el patrón estándar para menús interactivos.
-2. `break` es la única salida del bucle. Cuando el usuario elige "3", el programa sale del bucle.
+1. `while True` crea un bucle infinito. Es el patrón estándar para menús
+interactivos.
+2. `break` es la única salida del bucle. Cuando el usuario elige "3", el
+programa sale del bucle.
 
 > **Practicality beats purity.** `while True` con `break` es más legible que intentar poner toda la lógica en la condición del `while`.
 
 ## `continue`: saltar al siguiente
 
-`continue` **salta el resto de la iteración actual** y pasa directamente a la siguiente.
+`continue` **salta el resto de la iteración actual** y pasa directamente a la
+siguiente.
 
 ```python
 # Filtrar números impares de una lista
@@ -92,8 +99,10 @@ for numero in numeros:
 ```
 
 1. Si el número es impar (`numero % 2 != 0`), entramos al `if`.
-2. `continue` salta directamente al siguiente número de la lista. El `print` de abajo NO se ejecuta.
-3. Esta línea solo se ejecuta para números pares, porque los impares ya fueron "saltados" por `continue`.
+2. `continue` salta directamente al siguiente número de la lista. El `print` de
+abajo NO se ejecuta.
+3. Esta línea solo se ejecuta para números pares, porque los impares ya fueron
+"saltados" por `continue`.
 
 ### Ejemplo práctico: procesar archivos válidos
 
@@ -111,8 +120,10 @@ for archivo in archivos:
     # Aquí iría la lógica de procesamiento
 ```
 
-1. `.endswith(".txt")` verifica si el nombre del archivo termina con `.txt`. `not` invierte: si NO termina en `.txt`, entramos al `if`.
-2. `continue` salta al siguiente archivo. La lógica de procesamiento (abajo) solo se ejecuta para `.txt`.
+1. `.endswith(".txt")` verifica si el nombre del archivo termina con `.txt`.
+`not` invierte: si NO termina en `.txt`, entramos al `if`.
+2. `continue` salta al siguiente archivo. La lógica de procesamiento (abajo)
+solo se ejecuta para `.txt`.
 
 ## Combinar `break` y `continue`
 
@@ -158,15 +169,18 @@ print(f"Valores ignorados: {contador_ignorados}")
 print(f"Total acumulado: {total}")
 ```
 
-1. `float()` intenta convertir el texto a número decimal. Si el texto no es un número válido, genera un `ValueError`.
-2. `except ValueError` captura el error cuando `float()` falla. Esto evita que el programa se cierre.
+1. `float()` intenta convertir el texto a número decimal. Si el texto no es un
+número válido, genera un `ValueError`.
+2. `except ValueError` captura el error cuando `float()` falla. Esto evita que
+el programa se cierre.
 3. `continue` vuelve al inicio del bucle para pedir otro número.
 4. Si el número es 0, salimos del bucle con `break`.
 5. Si el número es negativo, lo ignoramos con `continue` y volvemos al inicio.
 
 ## El `else` de los bucles: el secreto de Python
 
-Python tiene una característica única: los bucles `for` y `while` pueden tener un bloque `else`.
+Python tiene una característica única: los bucles `for` y `while` pueden tener
+un bloque `else`.
 
 ```python
 # for con else
@@ -190,8 +204,10 @@ else:
     print("🔒 Cuenta bloqueada. Demasiados intentos fallidos.") # <2>
 ```
 
-1. El `else` del `for` se ejecuta porque el bucle terminó normalmente (sin `break`).
-2. El `else` del `while` se ejecuta porque la condición se volvió `False` (sin `break`).
+1. El `else` del `for` se ejecuta porque el bucle terminó normalmente (sin
+`break`).
+2. El `else` del `while` se ejecuta porque la condición se volvió `False` (sin
+`break`).
 
 ### Regla mnemotécnica
 
@@ -278,4 +294,5 @@ while i < 10:
 
 ---
 
-**Anterior:** [3.4 while loop](04-while-loop.qmd) | **Siguiente:** [3.6 Comprensión de listas](06-comprension-listas.qmd)
+**Anterior:** [3.4 while loop](04-while-loop.qmd) | **Siguiente:** [3.6
+Comprensión de listas](06-comprension-listas.qmd)

@@ -14,9 +14,12 @@ execute:
 
 ## ¿Qué es un paquete?
 
-Si un **módulo** es un archivo `.py`, un **paquete** es una **carpeta** que contiene módulos y un archivo especial llamado `__init__.py`.
+Si un **módulo** es un archivo `.py`, un **paquete** es una **carpeta** que
+contiene módulos y un archivo especial llamado `__init__.py`.
 
-Piensa en la diferencia entre tener **hojas sueltas** en tu escritorio (módulos) y tener un **archivero con cajones etiquetados** (paquetes). El archivero organiza todo y hace que encontrar cosas sea fácil.
+Piensa en la diferencia entre tener **hojas sueltas** en tu escritorio (módulos)
+y tener un **archivero con cajones etiquetados** (paquetes). El archivero
+organiza todo y hace que encontrar cosas sea fácil.
 
 ```
 mi_proyecto/
@@ -30,7 +33,8 @@ mi_proyecto/
         └── mensual.py   # Módulo de reportes mensuales
 ```
 
-1. `__init__.py` le dice a Python: "esta carpeta es un paquete, no una carpeta cualquiera". Puede estar vacío o contener código de inicialización.
+1. `__init__.py` le dice a Python: "esta carpeta es un paquete, no una carpeta
+cualquiera". Puede estar vacío o contener código de inicialización.
 
 > **Flat is better than nested, but readability counts.** Organiza en paquetes cuando tengas más de 5 módulos relacionados.
 
@@ -50,7 +54,8 @@ biblioteca/
 
 ### Paso 2: El archivo `__init__.py`
 
-Este archivo es la **puerta de entrada** del paquete. Define qué se exporta cuando alguien importa el paquete:
+Este archivo es la **puerta de entrada** del paquete. Define qué se exporta
+cuando alguien importa el paquete:
 
 ```python
 # utils/__init__.py
@@ -70,10 +75,13 @@ __all__ = [  # <4>
 ]
 ```
 
-1. El punto (`.`) significa "desde este paquete". `from .texto` importa desde `texto.py` que está en la misma carpeta.
-2. Importa las funciones de `numeros.py` y las hace disponibles en el nivel del paquete.
+1. El punto (`.`) significa "desde este paquete". `from .texto` importa desde
+`texto.py` que está en la misma carpeta.
+2. Importa las funciones de `numeros.py` y las hace disponibles en el nivel del
+paquete.
 3. Importa las funciones de `archivos.py` también.
-4. `__all__` define qué nombres se exportan con `from utils import *`. Es una lista blanca explícita.
+4. `__all__` define qué nombres se exportan con `from utils import *`. Es una
+lista blanca explícita.
 
 ### Paso 3: Los módulos del paquete
 
@@ -128,9 +136,12 @@ texto_limpio = utils.limpiar_texto("  Python  ")
 print(texto_limpio)  # "python"
 ```
 
-1. Gracias al `__init__.py`, puedes importar funciones directamente desde `utils`, sin pasar por `utils.texto`.
-2. También puedes importar submódulos individuales si necesitas acceso a todas sus funciones.
-3. `import utils` importa todo el paquete. Accedes a las funciones con `utils.funcion()`.
+1. Gracias al `__init__.py`, puedes importar funciones directamente desde
+`utils`, sin pasar por `utils.texto`.
+2. También puedes importar submódulos individuales si necesitas acceso a todas
+sus funciones.
+3. `import utils` importa todo el paquete. Accedes a las funciones con
+`utils.funcion()`.
 
 ## Importaciones relativas vs absolutas
 
@@ -148,10 +159,13 @@ from utils.texto import limpiar_texto  # <3> — ruta completa desde la raíz
 from utils.numeros import calcular_promedio  # <4> — ruta completa desde la raíz
 ```
 
-1. `..` significa "sube un nivel en la jerarquía de paquetes". Desde `reportes/`, sube a `utils/` y busca `texto.py`.
+1. `..` significa "sube un nivel en la jerarquía de paquetes". Desde
+`reportes/`, sube a `utils/` y busca `texto.py`.
 2. Otro ejemplo de importación relativa con `..`.
-3. La importación absoluta usa la ruta completa desde la raíz del proyecto. Es más explícita.
-4. Las importaciones absolutas son **preferibles** en código profesional porque son más claras.
+3. La importación absoluta usa la ruta completa desde la raíz del proyecto. Es
+más explícita.
+4. Las importaciones absolutas son **preferibles** en código profesional porque
+son más claras.
 
 ### Guía de puntos en importaciones relativas
 
@@ -216,7 +230,8 @@ mi_proyecto/
 from utils import texto  # ❌ ModuleNotFoundError
 ```
 
-**Solución:** Crea un archivo `__init__.py` (puede estar vacío) en cada carpeta que quieras que sea un paquete.
+**Solución:** Crea un archivo `__init__.py` (puede estar vacío) en cada carpeta
+que quieras que sea un paquete.
 
 ### ❌ Error: Importación circular
 
@@ -238,7 +253,8 @@ def funcion_b():
 
 1. `modulo_a` necesita `modulo_b` para funcionar.
 2. `modulo_b` necesita `modulo_a` para funcionar.
-3. **Resultado:** `ImportError: cannot import name`. Python no sabe cuál cargar primero.
+3. **Resultado:** `ImportError: cannot import name`. Python no sabe cuál cargar
+primero.
 
 **Solución:** Rompe el ciclo creando un tercer módulo compartido:
 
@@ -282,4 +298,5 @@ python -m utils.texto  # Ejecuta como módulo del paquete
 
 ---
 
-**Anterior:** [8.3 Crear tus propios módulos](03-crear-modulos.qmd) | **Siguiente:** [8.5 pip: gestor de paquetes](05-pip-paquetes.qmd)
+**Anterior:** [8.3 Crear tus propios módulos](03-crear-modulos.qmd) |
+**Siguiente:** [8.5 pip: gestor de paquetes](05-pip-paquetes.qmd)

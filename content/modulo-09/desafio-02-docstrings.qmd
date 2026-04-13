@@ -6,7 +6,9 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Tu equipo ha heredado un módulo con funciones matemáticas útiles, pero ninguna tiene documentación. Necesitas documentarlas para que otros programadores puedan usarlas sin tener que leer el código.
+Tu equipo ha heredado un módulo con funciones matemáticas útiles, pero ninguna
+tiene documentación. Necesitas documentarlas para que otros programadores puedan
+usarlas sin tener que leer el código.
 
 ## Tu misión
 

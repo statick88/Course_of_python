@@ -6,7 +6,9 @@ estimated_time: "15 minutos"
 
 ## Situación
 
-Estás construyendo un formulario de registro para una aplicación. Necesitas validar que los datos del usuario sean correctos antes de guardarlos en la base de datos. Un dato inválido podría causar errores en toda la aplicación.
+Estás construyendo un formulario de registro para una aplicación. Necesitas
+validar que los datos del usuario sean correctos antes de guardarlos en la base
+de datos. Un dato inválido podría causar errores en toda la aplicación.
 
 ## Tu misión
 

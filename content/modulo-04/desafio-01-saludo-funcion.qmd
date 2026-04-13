@@ -6,14 +6,17 @@ estimated_time: "5 minutos"
 
 ## Situación
 
-Estás construyendo el sistema de bienvenida para una aplicación. En vez de repetir el código de saludo cada vez que un usuario entra, decides crear una función reutilizable.
+Estás construyendo el sistema de bienvenida para una aplicación. En vez de
+repetir el código de saludo cada vez que un usuario entra, decides crear una
+función reutilizable.
 
 ## Tu misión
 
 Crea una función llamada `saludar` que:
 
 1. Reciba el nombre de una persona como parámetro
-2. Devuelva un saludo personalizado con el formato: `"¡Hola, {nombre}! Bienvenido al curso."`
+2. Devuelva un saludo personalizado con el formato: `"¡Hola, {nombre}!
+Bienvenido al curso."`
 3. Prueba la función con al menos 3 nombres diferentes
 
 ## Ejemplo de ejecución

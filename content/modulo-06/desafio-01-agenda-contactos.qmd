@@ -6,7 +6,9 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Eres el desarrollador de una pequeña aplicación de agenda personal. Necesitas crear un programa que permita al usuario gestionar contactos básicos usando diccionarios.
+Eres el desarrollador de una pequeña aplicación de agenda personal. Necesitas
+crear un programa que permita al usuario gestionar contactos básicos usando
+diccionarios.
 
 ## Tu misión
 
@@ -14,7 +16,8 @@ Crea un programa que:
 
 1. Cree un diccionario vacío para la agenda
 2. Pida al usuario que ingrese 3 contactos (nombre y teléfono)
-3. Almacene cada contacto en el diccionario (nombre como clave, teléfono como valor)
+3. Almacene cada contacto en el diccionario (nombre como clave, teléfono como
+valor)
 4. Muestre la agenda completa
 5. Permita buscar un contacto por nombre
 

@@ -11,7 +11,10 @@ execute:
 
 ## 📋 Descripción del Proyecto
 
-Construye una aplicación que lea archivos CSV (como hojas de cálculo), calcule estadísticas (media, mediana, moda, desviación estándar) y genere reportes profesionales. El programa debe manejar datos reales, incluyendo valores faltantes y errores de formato.
+Construye una aplicación que lea archivos CSV (como hojas de cálculo), calcule
+estadísticas (media, mediana, moda, desviación estándar) y genere reportes
+profesionales. El programa debe manejar datos reales, incluyendo valores
+faltantes y errores de formato.
 
 > **La analogía:** Tu programa es como un analista financiero. Recibe una montaña de números y te devuelve respuestas claras: ¿cuánto se vendió en promedio? ¿Cuál fue el mejor mes? ¿Hay tendencias?
 
@@ -151,6 +154,7 @@ moda = max(frecuencias, key=frecuencias.get)
 
 ---
 
-**Anterior:** [Proyecto 2: Tienda de Productos](proyecto-02-tienda-productos.qmd)
+**Anterior:** [Proyecto 2: Tienda de
+Productos](proyecto-02-tienda-productos.qmd)
 
 **Siguiente:** [10.6 Presentar tu proyecto](06-presentacion-proyecto.qmd)

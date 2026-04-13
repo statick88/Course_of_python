@@ -6,7 +6,8 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Necesitas crear una herramienta simple que copie el contenido de un archivo a otro. Es como el comando `cp` de Linux, pero hecho en Python.
+Necesitas crear una herramienta simple que copie el contenido de un archivo a
+otro. Es como el comando `cp` de Linux, pero hecho en Python.
 
 ## Tu misión
 

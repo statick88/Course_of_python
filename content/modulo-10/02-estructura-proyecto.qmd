@@ -14,7 +14,8 @@ execute:
 
 ## La analogía de la biblioteca
 
-Imagina una biblioteca donde todos los libros están amontonados en el piso. ¿Podrías encontrar algo? Probablemente no.
+Imagina una biblioteca donde todos los libros están amontonados en el piso.
+¿Podrías encontrar algo? Probablemente no.
 
 Ahora imagina una biblioteca organizada:
 
@@ -22,7 +23,8 @@ Ahora imagina una biblioteca organizada:
 - **Índice** que te dice dónde está cada libro
 - **Mostrador** donde pides y devuelves libros
 
-**Tu proyecto Python es esa biblioteca.** Si tiras todo en un solo archivo, nadie (incluyéndote en 2 semanas) va a encontrar nada.
+**Tu proyecto Python es esa biblioteca.** Si tiras todo en un solo archivo,
+nadie (incluyéndote en 2 semanas) va a encontrar nada.
 
 > **Beautiful is better than ugly.** Un proyecto bien organizado es hermoso de navegar.
 
@@ -41,10 +43,13 @@ mi_proyecto/
 └── requisitos.txt         # <5>
 ```
 
-1. `README.md`: La portada de tu proyecto. Explica qué es, cómo se usa y cómo se instala.
-2. `main.py`: El punto de entrada. Es el archivo que ejecutas con `python main.py`.
+1. `README.md`: La portada de tu proyecto. Explica qué es, cómo se usa y cómo se
+instala.
+2. `main.py`: El punto de entrada. Es el archivo que ejecutas con `python
+main.py`.
 3. `datos/`: Donde se guardan los archivos de datos (JSON, CSV, etc.).
-4. `modulos/`: Tu código organizado en módulos. Cada archivo tiene una responsabilidad.
+4. `modulos/`: Tu código organizado en módulos. Cada archivo tiene una
+responsabilidad.
 5. `requisitos.txt`: Lista de dependencias externas (si las hay).
 
 > **Readability counts.** Cualquier programador que vea esta estructura sabe exactamente dónde buscar.
@@ -108,7 +113,8 @@ if __name__ == "__main__":  # <6>
 3. `main()` es el punto de entrada. Solo orquesta, no implementa lógica.
 4. Creamos el gestor pasándole la ruta del archivo de datos.
 5. `ejecutar()` inicia el ciclo principal del programa.
-6. `if __name__ == "__main__"` asegura que `main()` solo se ejecute al correr el archivo directamente.
+6. `if __name__ == "__main__"` asegura que `main()` solo se ejecute al correr el
+archivo directamente.
 
 > **Simple is better than complex.** `main.py` no hace magia. Solo conecta las piezas.
 
@@ -183,7 +189,8 @@ class GestorTareas:  # <1>
                 break
 ```
 
-1. La clase `GestorTareas` encapsula toda la lógica. Es el "cerebro" del programa.
+1. La clase `GestorTareas` encapsula toda la lógica. Es el "cerebro" del
+programa.
 2. `__init__` recibe la ruta del archivo y carga los datos existentes.
 3. `_cargar` (con guión bajo = método privado) lee el archivo JSON si existe.
 4. `_guardar` escribe las tareas actuales al archivo JSON.
@@ -250,4 +257,5 @@ def confirmar(mensaje):  # <3>
 
 **Anterior:** [10.1 Planificar tu proyecto](01-planificar-proyecto.qmd)
 
-**Siguiente:** [10.3 Proyecto guiado: Gestor de Tareas](03-proyecto-gestor-tareas.qmd)
+**Siguiente:** [10.3 Proyecto guiado: Gestor de
+Tareas](03-proyecto-gestor-tareas.qmd)

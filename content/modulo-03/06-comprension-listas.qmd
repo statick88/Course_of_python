@@ -14,7 +14,8 @@ execute:
 
 ## El atajo elegante
 
-Imagina que necesitas crear una lista con los cuadrados de los números del 1 al 10. La forma tradicional requiere 3 líneas:
+Imagina que necesitas crear una lista con los cuadrados de los números del 1 al
+10. La forma tradicional requiere 3 líneas:
 
 ```python
 # Forma tradicional con bucle for
@@ -26,7 +27,8 @@ print(cuadrados)
 # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 ```
 
-1. Creamos una lista vacía. Es el "contenedor" donde iremos poniendo los resultados.
+1. Creamos una lista vacía. Es el "contenedor" donde iremos poniendo los
+resultados.
 2. Iteramos del 1 al 10 (el 11 no se incluye).
 3. Calculamos el cuadrado (`i ** 2`) y lo agregamos a la lista con `.append()`.
 
@@ -40,7 +42,9 @@ print(cuadrados)
 # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 ```
 
-1. La sintaxis es: `[expresion for variable in iterable]`. Lee de derecha a izquierda: "para cada `i` en `range(1, 11)`, calcula `i ** 2` y ponlo en la lista".
+1. La sintaxis es: `[expresion for variable in iterable]`. Lee de derecha a
+izquierda: "para cada `i` en `range(1, 11)`, calcula `i ** 2` y ponlo en la
+lista".
 
 > **Beautiful is better than ugly.** La comprensión de listas es más compacta, más rápida y más legible que el bucle equivalente.
 
@@ -101,7 +105,8 @@ caros = [precio for precio in precios if precio >= 10] # <1>
 # [12.5, 15.0, 20.0]
 ```
 
-1. El `if` al final actúa como filtro: solo incluye los elementos que cumplen la condición.
+1. El `if` al final actúa como filtro: solo incluye los elementos que cumplen la
+condición.
 
 ### Ejemplo 3: transformar Y filtrar
 
@@ -156,7 +161,8 @@ primeras_letras = {p[0] for p in palabras} # <2>
 ```
 
 1. Usa llaves `{}` con formato `clave: valor` para crear un diccionario.
-2. Usa llaves `{}` sin `:` para crear un conjunto (set). Los conjuntos eliminan duplicados automáticamente.
+2. Usa llaves `{}` sin `:` para crear un conjunto (set). Los conjuntos eliminan
+duplicados automáticamente.
 
 ## Cuándo NO usar comprensión de listas
 
@@ -212,7 +218,8 @@ cuadrados_pares = [i ** 2 for i in range(10) if i % 2 == 0]
 cuadrados_o_cero = [i ** 2 if i % 2 == 0 else 0 for i in range(10)] # <1>
 ```
 
-1. La diferencia es sutil pero importante: `if condicion` al final es un filtro. `x if cond else y` antes del `for` es un operador ternario.
+1. La diferencia es sutil pero importante: `if condicion` al final es un filtro.
+`x if cond else y` antes del `for` es un operador ternario.
 
 ### ❌ Crear listas enormes en memoria
 
@@ -245,4 +252,5 @@ cuadrados_o_cero = [i ** 2 if i % 2 == 0 else 0 for i in range(10)] # <1>
 
 ---
 
-**Anterior:** [3.5 break y continue](05-break-continue.qmd) | **Siguiente:** [Resumen del Módulo 3](99-resumen.qmd)
+**Anterior:** [3.5 break y continue](05-break-continue.qmd) | **Siguiente:**
+[Resumen del Módulo 3](99-resumen.qmd)

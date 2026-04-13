@@ -6,7 +6,10 @@ estimated_time: "15 minutos"
 
 ## Situación
 
-Dos departamentos de una empresa tienen listas de empleados con diferentes datos. El departamento de RRHH tiene nombres y cargos, mientras que el departamento de TI tiene emails y departamentos técnicos. Necesitas fusionar esta información en un solo registro por empleado.
+Dos departamentos de una empresa tienen listas de empleados con diferentes
+datos. El departamento de RRHH tiene nombres y cargos, mientras que el
+departamento de TI tiene emails y departamentos técnicos. Necesitas fusionar
+esta información en un solo registro por empleado.
 
 ## Tu misión
 
@@ -15,7 +18,8 @@ Crea un programa que:
 1. Tenga dos diccionarios con datos de empleados (misma clave, datos diferentes)
 2. Fusione los diccionarios en uno solo
 3. Muestre el resultado de la fusión
-4. Detecte si hay conflictos (misma clave con valores diferentes en un campo compartido)
+4. Detecte si hay conflictos (misma clave con valores diferentes en un campo
+compartido)
 
 ## Ejemplo de ejecución
 

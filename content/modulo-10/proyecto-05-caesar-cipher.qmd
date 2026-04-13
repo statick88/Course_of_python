@@ -1,6 +1,7 @@
 ---
 title: "Proyecto 5: Cifrado César y Criptoanálisis"
-subtitle: "⭐⭐⭐⭐ Dificultad Avanzada — Cifrado, descifrado, criptoanálisis por fuerza bruta, procesamiento de texto"
+subtitle: "⭐⭐⭐⭐ Dificultad Avanzada — Cifrado, descifrado, criptoanálisis por
+fuerza bruta, procesamiento de texto"
 execute:
   eval: false
 ---
@@ -11,11 +12,14 @@ execute:
 
 ## 📋 Descripción del Proyecto
 
-Implementa el **Cifrado César** — uno de los métodos de encriptación más antiguos de la historia — y luego construye un sistema que **rompa automáticamente** mensajes cifrados sin conocer la clave.
+Implementa el **Cifrado César** — uno de los métodos de encriptación más
+antiguos de la historia — y luego construye un sistema que **rompa
+automáticamente** mensajes cifrados sin conocer la clave.
 
 > **La analogía:** El cifrado César es como un disco de letras (como los que usaban los espías). Giras el alfabeto N posiciones y cada letra se transforma. El truco: solo hay 26 posiciones posibles. Un atacante puede probarlas todas en segundos.
 
-Este proyecto está inspirado en los **Problem Sets 3 y 4 de MIT 6.0001**, donde se implementa cifrado César con criptoanálisis automático.
+Este proyecto está inspirado en los **Problem Sets 3 y 4 de MIT 6.0001**, donde
+se implementa cifrado César con criptoanálisis automático.
 
 ## 🎯 Requisitos mínimos
 
@@ -150,7 +154,8 @@ def descifrar(texto_cifrado, desplazamiento):
     pass
 ```
 
-1. `isalpha()` verifica si es una letra del abecedario. Retorna `False` para espacios, números, puntuación.
+1. `isalpha()` verifica si es una letra del abecedario. Retorna `False` para
+espacios, números, puntuación.
 2. Los caracteres no alfabéticos se agregan tal cual al resultado.
 
 **Checklist del Nivel 1:**
@@ -162,7 +167,8 @@ def descifrar(texto_cifrado, desplazamiento):
 
 ### Nivel 2: Cifrar y descifrar mensajes completos
 
-Extiende el funcionamiento para textos con múltiples líneas, párrafos y caracteres especiales.
+Extiende el funcionamiento para textos con múltiples líneas, párrafos y
+caracteres especiales.
 
 ```python
 def cargar_mensaje_desde_archivo(ruta_archivo):
@@ -194,7 +200,9 @@ Ls dsqz qzw kza dsqz.
 
 ### Nivel 3: Criptoanálisis — romper el cifrado
 
-**Esta es la parte crítica del proyecto.** Construye una función que pruebe los 26 desplazamientos posibles y detecte automáticamente cuál produce texto legible.
+**Esta es la parte crítica del proyecto.** Construye una función que pruebe los
+26 desplazamientos posibles y detecte automáticamente cuál produce texto
+legible.
 
 ```python
 def cargar_palabras_validas(ruta_archivo):
@@ -273,10 +281,15 @@ def criptoanalizar(texto_cifrado, ruta_words="words.txt"):
     return _mejor_intento(todos_los_intentos, palabras_validas)
 ```
 
-1. Prueba cada desplazamiento de 0 a 25. Son solo 26 posibilidades — instantáneo para una computadora.
-2. En cuanto encuentra un texto que parece lenguaje real (≥50% palabras válidas), lo retorna.
+1. Prueba cada desplazamiento de 0 a 25. Son solo 26 posibilidades — instantáneo
+para una computadora.
+2. En cuanto encuentra un texto que parece lenguaje real (≥50% palabras
+válidas), lo retorna.
 
-**¿Por qué funciona?** De los 26 desplazamientos posibles, solo **uno** produce texto legible en español. Los otros 25 producen basura como `"XJQF MZKW YTPR"`. Al verificar cuántas palabras existen en el diccionario, el texto correcto se destaca inmediatamente.
+**¿Por qué funciona?** De los 26 desplazamientos posibles, solo **uno** produce
+texto legible en español. Los otros 25 producen basura como `"XJQF MZKW YTPR"`.
+Al verificar cuántas palabras existen en el diccionario, el texto correcto se
+destaca inmediatamente.
 
 ```python
 def _mejor_intento(intentos, palabras_validas):
@@ -303,7 +316,8 @@ def _mejor_intento(intentos, palabras_validas):
 
 ### Nivel 4: Criptoanálisis de texto multi-párrafo
 
-Maneja mensajes largos con saltos de línea, puntuación compleja y palabras acentuadas.
+Maneja mensajes largos con saltos de línea, puntuación compleja y palabras
+acentuadas.
 
 ```python
 def criptoanalizar_avanzado(texto_cifrado, ruta_words="words.txt"):
@@ -326,7 +340,9 @@ def criptoanalizar_avanzado(texto_cifrado, ruta_words="words.txt"):
 
 ## 🔐 Conexión con criptografía del mundo real
 
-El Cifrado César fue usado por **Julio César** hace más de 2000 años para comunicarse con sus generales. Aunque parece sofisticado en su época, hoy cualquier computadora lo rompe en milisegundos.
+El Cifrado César fue usado por **Julio César** hace más de 2000 años para
+comunicarse con sus generales. Aunque parece sofisticado en su época, hoy
+cualquier computadora lo rompe en milisegundos.
 
 **¿Qué nos enseña?**
 
@@ -409,11 +425,17 @@ Ingresa el texto cifrado: Sph wzqz qzw sfyqafy lqjw sp wzkd.
 
 ## 💡 Tips para empezar
 
-1. **Primero haz que `apply_shift` funcione.** Prueba con ejemplos manuales antes de pasar al criptoanálisis.
-2. **El truco del módulo 26 es la clave.** `(x + shift) % 26` resuelve el problema de envolver el alfabeto automáticamente.
-3. **Prueba el criptoanálisis con mensajes largos.** Con 2-3 palabras, varios desplazamientos pueden parecer válidos por casualidad. Con 8+ palabras, solo el correcto funciona.
-4. **Usa `words.txt` con palabras en español.** El archivo debe contener palabras comunes del idioma del mensaje.
-5. **Separa cifrado de criptoanálisis.** Son módulos independientes. El criptoanálisis usa `descifrar()` como herramienta.
+1. **Primero haz que `apply_shift` funcione.** Prueba con ejemplos manuales
+antes de pasar al criptoanálisis.
+2. **El truco del módulo 26 es la clave.** `(x + shift) % 26` resuelve el
+problema de envolver el alfabeto automáticamente.
+3. **Prueba el criptoanálisis con mensajes largos.** Con 2-3 palabras, varios
+desplazamientos pueden parecer válidos por casualidad. Con 8+ palabras, solo el
+correcto funciona.
+4. **Usa `words.txt` con palabras en español.** El archivo debe contener
+palabras comunes del idioma del mensaje.
+5. **Separa cifrado de criptoanálisis.** Son módulos independientes. El
+criptoanálisis usa `descifrar()` como herramienta.
 
 ## 📝 Funciones de referencia
 
@@ -466,4 +488,5 @@ for shift in range(26):
 
 **Anterior:** [Proyecto 4: Juego del Ahorcado](proyecto-04-hangman.qmd)
 
-**Siguiente:** [10.6 Presentar tu proyecto](06-presentacion-proyecto.qmd) | [Cierre del curso](99-cierre-curso.qmd)
+**Siguiente:** [10.6 Presentar tu proyecto](06-presentacion-proyecto.qmd) |
+[Cierre del curso](99-cierre-curso.qmd)

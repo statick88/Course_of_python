@@ -6,7 +6,9 @@ estimated_time: "15 minutos"
 
 ## Situación
 
-En varios países, el Documento Nacional de Identidad (DNI) tiene un dígito verificador que se calcula a partir del número. Este dígito ayuda a detectar errores de escritura.
+En varios países, el Documento Nacional de Identidad (DNI) tiene un dígito
+verificador que se calcula a partir del número. Este dígito ayuda a detectar
+errores de escritura.
 
 ## Tu misión
 

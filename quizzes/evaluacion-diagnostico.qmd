@@ -15,9 +15,11 @@ execute:
 
 ## Instrucciones
 
-Responde **todas** las preguntas con honestidad. No busques respuestas en Google.
+Responde **todas** las preguntas con honestidad. No busques respuestas en
+Google.
 
-Si no sabes algo, marca **"No lo sé"** — ¡es completamente válido! Esto nos ayuda a saber dónde enfocarnos.
+Si no sabes algo, marca **"No lo sé"** — ¡es completamente válido! Esto nos
+ayuda a saber dónde enfocarnos.
 
 ---
 
@@ -91,7 +93,8 @@ IMPRIMIR contador
 
 ### 7. Descompón este problema en al menos 3 pasos:
 
-**Problema**: Crear un programa que ordene una lista de nombres alfabéticamente y guarde el resultado en un archivo.
+**Problema**: Crear un programa que ordene una lista de nombres alfabéticamente
+y guarde el resultado en un archivo.
 
 **Tus pasos:**
 

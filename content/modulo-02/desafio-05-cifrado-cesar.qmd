@@ -6,7 +6,9 @@ estimated_time: "20 minutos"
 
 ## Situación
 
-Julio César usaba un cifrado simple para enviar mensajes secretos a sus generales: desplazaba cada letra del alfabeto un número fijo de posiciones. Hoy tú vas a recrear este sistema.
+Julio César usaba un cifrado simple para enviar mensajes secretos a sus
+generales: desplazaba cada letra del alfabeto un número fijo de posiciones. Hoy
+tú vas a recrear este sistema.
 
 ## Tu misión
 
@@ -14,7 +16,8 @@ Crea un programa que:
 
 1. Pida un mensaje de texto al usuario
 2. Pida un número de desplazamiento (clave)
-3. Cifre el mensaje desplazando cada letra ese número de posiciones en el alfabeto
+3. Cifre el mensaje desplazando cada letra ese número de posiciones en el
+alfabeto
 4. Muestre el mensaje cifrado
 5. También descifre el mensaje para verificar que funciona
 

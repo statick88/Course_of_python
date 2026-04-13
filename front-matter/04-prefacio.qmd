@@ -29,20 +29,26 @@ title: ""
 ### Para estudiantes
 
 1. **No saltes el Módulo 0** — pensamiento computacional es la base de todo
-2. **Haz los desafíos ANTES de ver las soluciones** — la lucha es parte del aprendizaje
-3. **Usa los labs como práctica guiada** — son tu espacio seguro para experimentar
-4. **Toma los quizzes como autoevaluación** — no hay penalización por intentar múltiples veces
+2. **Haz los desafíos ANTES de ver las soluciones** — la lucha es parte del
+aprendizaje
+3. **Usa los labs como práctica guiada** — son tu espacio seguro para
+experimentar
+4. **Toma los quizzes como autoevaluación** — no hay penalización por intentar
+múltiples veces
 5. **Elige UN proyecto integrador** y termínalo antes de empezar otro
 
 <br>
 
 ### Para instructores
 
-1. **Cada módulo tiene guía de instructor** en `instructor/` con planes de sesión
+1. **Cada módulo tiene guía de instructor** en `instructor/` con planes de
+sesión
 2. **Los desafíos tienen soluciones** en las guías de instructor
-3. **Los quizzes son listos para usar** — no necesitas crear evaluaciones adicionales
+3. **Los quizzes son listos para usar** — no necesitas crear evaluaciones
+adicionales
 4. **Los labs son progresivos** — cada uno construye sobre el anterior
-5. **Los proyectos integradores tienen rúbrica** en `instructor/rubrica-proyectos-integradores.md`
+5. **Los proyectos integradores tienen rúbrica** en
+`instructor/rubrica-proyectos-integradores.md`
 
 <br>
 

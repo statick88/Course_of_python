@@ -6,7 +6,9 @@ estimated_time: "10 minutos"
 
 ## Situación
 
-Quieres crear un diario personal digital donde puedas registrar tus pensamientos del día. Cada entrada debe guardarse con la fecha y hora actual, y las entradas anteriores deben conservarse.
+Quieres crear un diario personal digital donde puedas registrar tus pensamientos
+del día. Cada entrada debe guardarse con la fecha y hora actual, y las entradas
+anteriores deben conservarse.
 
 ## Tu misión
 

@@ -11,7 +11,8 @@ estimated_time: "15 minutos"
 > se te pedirá explicar cada paso en detalle durante la verificación.
 
 
-Quieres crear una mini aventura de texto donde el usuario es el protagonista. El programa le pide datos personales y los integra en una historia coherente.
+Quieres crear una mini aventura de texto donde el usuario es el protagonista. El
+programa le pide datos personales y los integra en una historia coherente.
 
 ## Tu misión
 

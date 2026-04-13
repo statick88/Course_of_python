@@ -6,7 +6,8 @@ estimated_time: "25 minutos"
 
 ## Situación
 
-El juego clásico de piedra, papel o tijera contra la computadora. Necesitas implementar la lógica completa del juego con puntuación.
+El juego clásico de piedra, papel o tijera contra la computadora. Necesitas
+implementar la lógica completa del juego con puntuación.
 
 ## Tu misión
 

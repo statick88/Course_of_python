@@ -24,7 +24,8 @@ Cada técnica tiene su momento. Veamos cuál usar y cuándo.
 
 ## `.read()`: todo de una vez
 
-El método `.read()` lee **todo** el contenido del archivo y lo devuelve como una sola cadena de texto.
+El método `.read()` lee **todo** el contenido del archivo y lo devuelve como una
+sola cadena de texto.
 
 ```python
 # Leer todo el archivo de una vez
@@ -33,7 +34,9 @@ with open("poema.txt", "r") as archivo:
     print(contenido)
 ```
 
-1. `.read()` carga **todo** el archivo en memoria. Para archivos pequeños (menos de 10MB) esto es perfecto. Para archivos grandes, puede consumir mucha memoria RAM.
+1. `.read()` carga **todo** el archivo en memoria. Para archivos pequeños (menos
+de 10MB) esto es perfecto. Para archivos grandes, puede consumir mucha memoria
+RAM.
 
 **Ejemplo con un archivo real:**
 
@@ -49,14 +52,18 @@ with open("notas.txt", "r") as archivo:
     print(repr(texto)) # <2>
 ```
 
-1. `type(texto)` devuelve `<class 'str'>` — `.read()` siempre devuelve una cadena de texto.
-2. `repr(texto)` muestra los caracteres especiales como `\n` (saltos de línea). Resultado: `'Hola desde Python\nEsta es la segunda línea\nY esta es la tercera\n'`.
+1. `type(texto)` devuelve `<class 'str'>` — `.read()` siempre devuelve una
+cadena de texto.
+2. `repr(texto)` muestra los caracteres especiales como `\n` (saltos de línea).
+Resultado: `'Hola desde Python\nEsta es la segunda línea\nY esta es la
+tercera\n'`.
 
 > **Readability counts.** `.read()` es ideal cuando necesitas procesar el contenido completo como una unidad, como un archivo de configuración o un JSON.
 
 ## `.readline()`: línea por línea
 
-El método `.readline()` lee **una sola línea** cada vez que lo llamas. Incluye el salto de línea `\n` al final.
+El método `.readline()` lee **una sola línea** cada vez que lo llamas. Incluye
+el salto de línea `\n` al final.
 
 ```python
 with open("notas.txt", "r") as archivo:
@@ -85,11 +92,13 @@ with open("notas.txt", "r") as archivo:
     print(f"Línea 4: '{linea4}'")
 ```
 
-1. Cuando llegas al final del archivo, `.readline()` devuelve una **cadena vacía** `""`. No genera error, simplemente devuelve nada.
+1. Cuando llegas al final del archivo, `.readline()` devuelve una **cadena
+vacía** `""`. No genera error, simplemente devuelve nada.
 
 ## Iterar directamente sobre el archivo: la forma Pythonica
 
-La forma **más eficiente** y recomendada de leer un archivo línea por línea es iterar directamente sobre él:
+La forma **más eficiente** y recomendada de leer un archivo línea por línea es
+iterar directamente sobre él:
 
 ```python
 # ✅ La forma Pythonica: iterar directamente
@@ -98,14 +107,18 @@ with open("notas.txt", "r") as archivo:
         print(f"Línea {numero}: {linea.strip()}") # <2>
 ```
 
-1. `enumerate(archivo, start=1)` itera sobre cada línea del archivo y te da el número de línea empezando desde 1. Python maneja la lectura internamente de forma eficiente.
-2. `.strip()` elimina el salto de línea `\n` y cualquier espacio extra al inicio y final.
+1. `enumerate(archivo, start=1)` itera sobre cada línea del archivo y te da el
+número de línea empezando desde 1. Python maneja la lectura internamente de
+forma eficiente.
+2. `.strip()` elimina el salto de línea `\n` y cualquier espacio extra al inicio
+y final.
 
 > **Beautiful is better than ugly.** Iterar directamente sobre el archivo es más limpio, más eficiente y más legible que usar `.readline()` en un bucle `while`.
 
 ## `.readlines()`: todas las líneas como lista
 
-El método `.readlines()` lee **todas** las líneas y las devuelve como una **lista de strings**.
+El método `.readlines()` lee **todas** las líneas y las devuelve como una
+**lista de strings**.
 
 ```python
 with open("notas.txt", "r") as archivo:
@@ -114,9 +127,11 @@ with open("notas.txt", "r") as archivo:
     print(lineas) # <3>
 ```
 
-1. `.readlines()` lee todo el archivo y devuelve una lista donde cada elemento es una línea.
+1. `.readlines()` lee todo el archivo y devuelve una lista donde cada elemento
+es una línea.
 2. `type(lineas)` devuelve `<class 'list'>`.
-3. Resultado: `['Hola desde Python\n', 'Esta es la segunda línea\n', 'Y esta es la tercera\n']`.
+3. Resultado: `['Hola desde Python\n', 'Esta es la segunda línea\n', 'Y esta es
+la tercera\n']`.
 
 ### Procesar las líneas
 
@@ -138,8 +153,10 @@ with open("notas.txt", "r") as archivo:
 ```
 
 1. `len(lineas)` cuenta cuántas líneas tiene el archivo.
-2. List comprehension que filtra solo las líneas que contienen la palabra "Python".
-3. `lineas[-1]` accede al último elemento de la lista (la última línea del archivo).
+2. List comprehension que filtra solo las líneas que contienen la palabra
+"Python".
+3. `lineas[-1]` accede al último elemento de la lista (la última línea del
+archivo).
 
 > **Simple is better than complex.** Si necesitas acceder a líneas específicas por índice o hacer operaciones de lista, `.readlines()` es tu mejor opción.
 
@@ -175,8 +192,10 @@ with open(ruta, "r") as archivo:
 
 1. Leemos todas las líneas del archivo como una lista.
 2. `len(lineas)` cuenta el número total de líneas.
-3. `sum(len(l) for l in lineas)` suma la longitud de cada línea para obtener el total de caracteres.
-4. `l.split()` divide cada línea en palabras (separadas por espacios), y `len()` cuenta cuántas hay.
+3. `sum(len(l) for l in lineas)` suma la longitud de cada línea para obtener el
+total de caracteres.
+4. `l.split()` divide cada línea en palabras (separadas por espacios), y `len()`
+cuenta cuántas hay.
 
 ## Resumen
 
@@ -197,4 +216,5 @@ with open(ruta, "r") as archivo:
 
 ---
 
-**Anterior:** [7.1 Abrir y cerrar archivos](01-abrir-cerrar-archivos.qmd) | **Siguiente:** [7.3 Escribir archivos](03-escribir-archivos.qmd)
+**Anterior:** [7.1 Abrir y cerrar archivos](01-abrir-cerrar-archivos.qmd) |
+**Siguiente:** [7.3 Escribir archivos](03-escribir-archivos.qmd)

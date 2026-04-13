@@ -6,7 +6,9 @@ estimated_time: "5 minutos"
 
 ## Situación
 
-Estás construyendo un reproductor de música y necesitas una función que invierta el orden de reproducción de una playlist. El usuario quiere escuchar las canciones en orden inverso.
+Estás construyendo un reproductor de música y necesitas una función que invierta
+el orden de reproducción de una playlist. El usuario quiere escuchar las
+canciones en orden inverso.
 
 ## Tu misión
 

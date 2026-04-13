@@ -11,7 +11,9 @@ estimated_time: "10 minutos"
 > se te pedirá explicar cada paso en detalle durante la verificación.
 
 
-Trabajas en una casa de cambio y necesitas un programa que convierta entre dólares estadounidenses (USD) y euros (EUR). El programa debe mostrar el resultado con 2 decimales, como se hace en finanzas.
+Trabajas en una casa de cambio y necesitas un programa que convierta entre
+dólares estadounidenses (USD) y euros (EUR). El programa debe mostrar el
+resultado con 2 decimales, como se hace en finanzas.
 
 ## Tu misión
 

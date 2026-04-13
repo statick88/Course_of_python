@@ -6,7 +6,9 @@ estimated_time: "12 minutos"
 
 ## Situación
 
-Estás desarrollando una aplicación de clima que necesita convertir temperaturas entre Fahrenheit y Celsius. Los usuarios de Estados Unidos usan Fahrenheit, mientras que el resto del mundo usa Celsius.
+Estás desarrollando una aplicación de clima que necesita convertir temperaturas
+entre Fahrenheit y Celsius. Los usuarios de Estados Unidos usan Fahrenheit,
+mientras que el resto del mundo usa Celsius.
 
 ## Tu misión
 

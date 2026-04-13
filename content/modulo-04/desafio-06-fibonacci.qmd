@@ -6,7 +6,9 @@ estimated_time: "20 minutos"
 
 ## Situación
 
-Estás analizando patrones en la naturaleza para un proyecto de biología computacional. La secuencia de Fibonacci aparece en las espirales de los girasoles, las conchas de los caracoles y las ramas de los árboles.
+Estás analizando patrones en la naturaleza para un proyecto de biología
+computacional. La secuencia de Fibonacci aparece en las espirales de los
+girasoles, las conchas de los caracoles y las ramas de los árboles.
 
 ## Tu misión
 

@@ -13,7 +13,8 @@ title: "0.4 Diseño de algoritmos: pseudocódigo antes que Python"
 
 > **Pseudocódigo** es una descripción de un algoritmo en lenguaje natural estructurado, sin las reglas de un lenguaje de programación.
 
-**Problema**: Muchos estudiantes intentan escribir Python directamente. El resultado: código que no funciona, frustración, y horas perdiendo tiempo.
+**Problema**: Muchos estudiantes intentan escribir Python directamente. El
+resultado: código que no funciona, frustración, y horas perdiendo tiempo.
 
 **Solución**: Primero piensa en español. Después traduce a Python.
 
@@ -301,6 +302,7 @@ FIN
 
 ---
 
-**Última unidad**: Aprenderás a **elegir entre múltiples enfoques** para el mismo problema.
+**Última unidad**: Aprenderás a **elegir entre múltiples enfoques** para el
+mismo problema.
 
 [← 0.3 Patrones](03-patrones.qmd) | [0.5 Evaluación de enfoques →](05-evaluacion.qmd)

@@ -42,4 +42,5 @@ Al completar este módulo, serás capaz de:
 
 ---
 
-**Anterior:** [Módulo 5: Listas y Tuplas](../modulo-05/index.qmd) | **Siguiente:** [6.1 Crear diccionarios](01-crear-diccionarios.qmd)
+**Anterior:** [Módulo 5: Listas y Tuplas](../modulo-05/index.qmd) |
+**Siguiente:** [6.1 Crear diccionarios](01-crear-diccionarios.qmd)

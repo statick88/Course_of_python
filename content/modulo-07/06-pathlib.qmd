@@ -39,7 +39,8 @@ directorio = ruta.parent
 
 ## `Path`: el objeto ruta
 
-`Path` es la clase principal de `pathlib`. Representa una ruta del sistema de archivos como un objeto con métodos útiles.
+`Path` es la clase principal de `pathlib`. Representa una ruta del sistema de
+archivos como un objeto con métodos útiles.
 
 ```python
 from pathlib import Path
@@ -55,7 +56,8 @@ print(ruta.parent)      # documentos — directorio padre
 print(ruta.is_absolute()) # False — es una ruta relativa
 ```
 
-1. `Path()` crea un objeto ruta. No verifica si el archivo existe — solo representa la ruta.
+1. `Path()` crea un objeto ruta. No verifica si el archivo existe — solo
+representa la ruta.
 
 ## Unir rutas con el operador `/`
 
@@ -114,7 +116,8 @@ for elemento in directorio.iterdir(): # <1>
     print(f"{tipo} {elemento.name}")
 ```
 
-1. `.iterdir()` itera sobre todos los elementos directos del directorio (no recursivo).
+1. `.iterdir()` itera sobre todos los elementos directos del directorio (no
+recursivo).
 
 ### Buscar archivos con patrones: `.glob()`
 
@@ -135,8 +138,10 @@ archivos_txt = list(proyecto.glob("*.txt")) # <2>
 print(f"Archivos TXT: {archivos_txt}")
 ```
 
-1. `"**/*.py"` busca archivos `.py` en el directorio actual **y todos los subdirectorios**. El `**` significa "recursivo".
-2. `"*.txt"` busca archivos `.txt` solo en el directorio especificado (no recursivo).
+1. `"**/*.py"` busca archivos `.py` en el directorio actual **y todos los
+subdirectorios**. El `**` significa "recursivo".
+2. `"*.txt"` busca archivos `.txt` solo en el directorio especificado (no
+recursivo).
 
 ## Crear directorios y archivos
 
@@ -160,8 +165,10 @@ contenido = archivo.read_text() # <4>
 print(contenido)
 ```
 
-1. `mkdir(parents=True, exist_ok=True)` crea el directorio y todos los directorios intermedios. `exist_ok=True` evita error si ya existe.
-2. `.touch()` crea un archivo vacío o actualiza su fecha de modificación si ya existe.
+1. `mkdir(parents=True, exist_ok=True)` crea el directorio y todos los
+directorios intermedios. `exist_ok=True` evita error si ya existe.
+2. `.touch()` crea un archivo vacío o actualiza su fecha de modificación si ya
+existe.
 3. `.write_text()` escribe texto en el archivo (lo crea si no existe).
 4. `.read_text()` lee todo el contenido del archivo como texto.
 
@@ -238,8 +245,10 @@ organizar_descargas("mi_carpeta_descargas")
 ```
 
 1. `.is_file()` asegura que solo procesamos archivos, no directorios.
-2. `.suffix` obtiene la extensión del archivo (ej: `.pdf`). `.lower()` la convierte a minúsculas.
-3. `.get(extension)` busca la carpeta destino en el diccionario. Si la extensión no está mapeada, devuelve `None`.
+2. `.suffix` obtiene la extensión del archivo (ej: `.pdf`). `.lower()` la
+convierte a minúsculas.
+3. `.get(extension)` busca la carpeta destino en el diccionario. Si la extensión
+no está mapeada, devuelve `None`.
 4. `mkdir(exist_ok=True)` crea la carpeta si no existe, sin error si ya existe.
 5. `.rename()` mueve el archivo a la carpeta destino.
 
@@ -286,4 +295,5 @@ organizar_descargas("mi_carpeta_descargas")
 
 ---
 
-**Anterior:** [7.5 Manejo de JSON](05-manejo-json.qmd) | **Siguiente:** [Resumen del Módulo 7](99-resumen.qmd)
+**Anterior:** [7.5 Manejo de JSON](05-manejo-json.qmd) | **Siguiente:** [Resumen
+del Módulo 7](99-resumen.qmd)

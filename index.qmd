@@ -13,7 +13,9 @@ execute:
 
 ## 🐍 Bienvenido al Curso
 
-Este curso te lleva desde **cero conocimiento de programación** hasta escribir tus propios programas en Python. No necesitas experiencia previa — solo curiosidad y ganas de aprender.
+Este curso te lleva desde **cero conocimiento de programación** hasta escribir
+tus propios programas en Python. No necesitas experiencia previa — solo
+curiosidad y ganas de aprender.
 
 ### ¿Qué vas a aprender?
 
@@ -60,4 +62,5 @@ Usa el sidebar izquierdo para ir a cualquier módulo. Cada módulo tiene:
 
 ---
 
-*Curso desarrollado por **Diego Saavedra** para **Abacom Capacitación y Servicios***
+*Curso desarrollado por **Diego Saavedra** para **Abacom Capacitación y
+Servicios***

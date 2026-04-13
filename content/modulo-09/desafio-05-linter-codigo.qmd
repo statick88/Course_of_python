@@ -6,11 +6,14 @@ estimated_time: "12 minutos"
 
 ## Situación
 
-Ejecutaste `ruff check` sobre un archivo de tu proyecto y obtuviste una lista de errores. Tu misión es corregir todos los problemas reportados para que el código pase la verificación de estilo.
+Ejecutaste `ruff check` sobre un archivo de tu proyecto y obtuviste una lista de
+errores. Tu misión es corregir todos los problemas reportados para que el código
+pase la verificación de estilo.
 
 ## Tu misión
 
-El siguiente código tiene **múltiples violaciones de PEP 8**. Identifícalas y corrígelas:
+El siguiente código tiene **múltiples violaciones de PEP 8**. Identifícalas y
+corrígelas:
 
 ```python
 import os,sys,json

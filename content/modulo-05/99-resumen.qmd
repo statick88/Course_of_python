@@ -7,7 +7,8 @@ execute:
 
 ## 📋 Resumen del Módulo
 
-En este módulo dominaste las dos estructuras de datos más fundamentales de Python. Veamos todo lo que cubrimos:
+En este módulo dominaste las dos estructuras de datos más fundamentales de
+Python. Veamos todo lo que cubrimos:
 
 ### Listas: tu colección ordenada
 
@@ -83,12 +84,16 @@ print(matriz)
 <summary>Ver respuestas</summary>
 
 1. `"dátil"` — `append()` agrega al final y `[-1]` accede al último elemento.
-2. `sort()` modifica la lista original y devuelve `None`. `sorted()` crea una NUEVA lista ordenada y deja la original intacta.
+2. `sort()` modifica la lista original y devuelve `None`. `sorted()` crea una
+NUEVA lista ordenada y deja la original intacta.
 3. `[2, 4]` — empieza en índice 1 (valor 2), termina antes de 4, paso de 2.
-4. `(5)` sin coma es solo el número 5 entre paréntesis. Se corrige con `(5,)` — la coma es lo que crea la tupla.
-5. `[[1, 0], [1, 0], [1, 0]]` — `* 3` crea 3 referencias a la MISMA lista. Cambiar una cambia todas.
+4. `(5)` sin coma es solo el número 5 entre paréntesis. Se corrige con `(5,)` —
+la coma es lo que crea la tupla.
+5. `[[1, 0], [1, 0], [1, 0]]` — `* 3` crea 3 referencias a la MISMA lista.
+Cambiar una cambia todas.
 6. `[2, 4, 6]` — empieza en 2, termina antes de 8, paso de 2.
-7. `remove(x)` elimina por valor (la primera aparición) y no devuelve nada. `pop(i)` elimina por índice y devuelve el valor eliminado.
+7. `remove(x)` elimina por valor (la primera aparición) y no devuelve nada.
+`pop(i)` elimina por índice y devuelve el valor eliminado.
 
 </details>
 
@@ -105,4 +110,5 @@ print(matriz)
 
 ---
 
-**Anterior:** [5.6 Listas anidadas](06-listas-anidadas.qmd) | **Siguiente:** [Módulo 6: Diccionarios y Sets](../modulo-06/index.qmd)
+**Anterior:** [5.6 Listas anidadas](06-listas-anidadas.qmd) | **Siguiente:**
+[Módulo 6: Diccionarios y Sets](../modulo-06/index.qmd)

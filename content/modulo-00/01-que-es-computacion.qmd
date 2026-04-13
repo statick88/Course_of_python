@@ -11,7 +11,8 @@ title: "0.1 ¿Qué es computación? De recetas a algoritmos"
 
 ## La idea fundamental
 
-**Computación** no es sobre computadoras. Es sobre **resolver problemas de forma sistemática**.
+**Computación** no es sobre computadoras. Es sobre **resolver problemas de forma
+sistemática**.
 
 > **Definición**: Un **algoritmo** es una secuencia finita de pasos bien definidos que transforma una entrada en una salida.
 
@@ -209,6 +210,7 @@ Marca las que puedas hacer:
 
 ---
 
-**¡Felicidades!** Ya entendiste la base de toda computación. Ahora aprenderás a **dividir problemas grandes** en la siguiente unidad.
+**¡Felicidades!** Ya entendiste la base de toda computación. Ahora aprenderás a
+**dividir problemas grandes** en la siguiente unidad.
 
 [← Índice del Módulo](index.qmd) | [0.2 Descomposición →](02-descomposicion.qmd)

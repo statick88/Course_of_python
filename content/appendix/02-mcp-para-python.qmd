@@ -5,7 +5,10 @@ subtitle: "Conecta tus scripts con herramientas de IA"
 
 ## ¿Qué es MCP?
 
-El **Model Context Protocol (MCP)** es un protocolo abierto que permite a las aplicaciones Python conectar con servicios de inteligencia artificial de manera estandarizada. Es como un "USB para aplicaciones de IA" - define cómo tu código puede comunicarse con modelos de lenguaje.
+El **Model Context Protocol (MCP)** es un protocolo abierto que permite a las
+aplicaciones Python conectar con servicios de inteligencia artificial de manera
+estandarizada. Es como un "USB para aplicaciones de IA" - define cómo tu código
+puede comunicarse con modelos de lenguaje.
 
 > 🔧 **Analogía**: Si Python es el lenguaje que hablas, MCP es el protocolo que permite que tu Python "hable" con servicios externos de IA.
 
@@ -320,7 +323,9 @@ client = MCPClient(
 
 ---
 
-*Aprende más sobre IA y desarrollo en el Apéndice A: Integración de IA en el Desarrollo Python*
+*Aprende más sobre IA y desarrollo en el Apéndice A: Integración de IA en el
+Desarrollo Python*
 
 ---
-**Volver al índice:** [Inicio](../index.qmd) | **Anterior:** [Apéndice A](01-ia-en-python.qmd)
+**Volver al índice:** [Inicio](../index.qmd) | **Anterior:** [Apéndice
+A](01-ia-en-python.qmd)
