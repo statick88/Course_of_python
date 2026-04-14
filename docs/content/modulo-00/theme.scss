@@ -1,0 +1,169 @@
+/*
+ * Python Fundamentos - Custom Theme
+ * Basado en Solar dark theme con mejoras visuales para curso educativo
+ * Sigue el patrón ABACOM: Ethical Hacking + Linux Servers
+ */
+
+/*-- scss:defaults --*/
+
+$primary: #b58900;  /* Solar: yellow/gold */
+$link-color: #268bd2;  /* Solar: blue */
+
+/*-- scss:rules --*/
+
+/* Cover image shadow */
+img.quarto-cover-image {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+/* Sidebar improvements */
+.sidebar-title {
+  color: #93a1a1;
+  font-weight: 600;
+}
+
+div.sidebar-item-container .active {
+  font-weight: bold;
+  color: #b58900 !important;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active {
+  font-weight: bold;
+  border-left: 3px solid #b58900;
+  padding-left: 10px;
+}
+
+/* Navigation improvements */
+.nav-link.active {
+  background-color: #073642 !important;
+  border-left: 3px solid #b58900;
+}
+
+.nav-link:hover {
+  background-color: #002b36 !important;
+}
+
+/* Code blocks - improve readability */
+pre {
+  background-color: #002b36 !important;
+  border-radius: 6px;
+  border: 1px solid #073642;
+}
+
+code {
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
+  font-size: 0.9em;
+}
+
+/* Callout improvements */
+.callout {
+  border-radius: 8px;
+}
+
+.callout.callout-style-default > .callout-header {
+  background-color: #073642;
+}
+
+/* Table improvements */
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+table thead {
+  background-color: #073642;
+  color: #93a1a1;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #002b36;
+}
+
+table tbody tr:hover {
+  background-color: #073642;
+}
+
+/* Challenge/Difficulty badges */
+.difficulty-easy::before {
+  content: "⭐";
+}
+
+.difficulty-medium::before {
+  content: "⭐⭐";
+}
+
+.difficulty-hard::before {
+  content: "⭐⭐⭐";
+}
+
+/* Details/Summary improvements */
+details {
+  background-color: #073642;
+  border: 1px solid #0a4a5e;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #268bd2;
+  padding: 0.5rem 0;
+}
+
+details summary:hover {
+  color: #b58900;
+}
+
+/* Blockquote styling */
+blockquote {
+  border-left: 4px solid #859900;
+  padding-left: 1rem;
+  color: #93a1a1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #002b36;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #073642;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0a4a5e;
+}
+
+/* Print adjustments */
+@media print {
+  .sidebar, .navbar, .nav-footer {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  pre, code {
+    background-color: #f5f5f5 !important;
+    color: #000 !important;
+    border: 1px solid #ccc;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}
