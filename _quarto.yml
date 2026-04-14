@@ -306,6 +306,11 @@ book:
         - labs/lab09-buenas-practicas.qmd
         - labs/lab10-proyecto-integrador.qmd
   
+    - part: "Presentaciones (Reveal.js)"
+      chapters:
+        - presentaciones/modulo-0-pensamiento-computacional.qmd
+        - presentaciones/modulo-1-intro-python.qmd
+
     - part: "Evaluación: Quizzes"
       chapters:
         - quizzes/evaluacion-diagnostico.qmd

@@ -1,0 +1,191 @@
+---
+title: "Módulo 0: Pensamiento Computacional"
+subtitle: "Aprender a pensar antes de codificar"
+author: "Diego Saavedra — ABACOM"
+date: "2026"
+format:
+  revealjs:
+    theme: white
+    transition: slide
+    slide-number: true
+    progress: true
+    controls: true
+    width: 1280
+    height: 720
+---
+
+## Módulo 0: Pensamiento Computacional
+
+### Aprender a pensar antes de codificar
+
+**Diego Saavedra · ABACOM · 2026**
+
+---
+
+## ¿Por qué este módulo?
+
+> "Los mejores programadores no son los que más sintaxis conocen — son los que mejor piensan los problemas."
+
+---
+
+## El problema de empezar con código
+
+::: {.fragment}
+❌ **La mayoría de cursos:**
+"Instala Python → escribe print('Hola')"
+
+✅ **Nosotros:**
+"Piensa como programador → luego escribe código"
+:::
+
+---
+
+## El Ciclo del Programador
+
+1. **ENTENDER** → ¿Qué me piden? ¿Qué datos tengo?
+2. **PLANIFICAR** → ¿Cómo lo resuelvo? (pseudocódigo)
+3. **IMPLEMENTAR** → Escribir el código en Python
+4. **VERIFICAR** → ¿Funciona? ¿Hay casos borde?
+
+::: {.fragment}
+**Este módulo se enfoca en los pasos 1 y 2**
+:::
+
+---
+
+## ¿Qué es un Algoritmo?
+
+::: {.fragment}
+**Definición:** Secuencia finita de pasos bien definidos que transforma una entrada en una salida.
+:::
+
+---
+
+## Ejemplo del Mundo Real: Una Receta
+
+```
+ENTRADA:
+  - Arroz (1 taza)
+  - Agua (2 tazas)
+  - Sal (1 cucharadita)
+
+ALGORITMO:
+  1. Hervir agua con sal
+  2. Agregar arroz
+  3. Cocinar 15 minutos
+  4. Servir
+
+SALIDA: Arroz listo para comer
+```
+
+::: {.fragment}
+**¿Ves la estructura?** Entrada → Proceso → Salida = Computación
+:::
+
+---
+
+## Descomposición: Dividir para Conquistar
+
+**Problema grande:** "Crear una tienda online"
+
+::: {.fragment}
+```
+TIENDA ONLINE
+├── Catálogo de productos
+├── Carrito de compras
+├── Procesar pagos
+└── Gestión de usuarios
+```
+:::
+
+::: {.fragment}
+**Regla práctica:** Cada sub-problema debe resolverse en 5-15 líneas de código.
+:::
+
+---
+
+## Patrones: Reconocer lo que se Repite
+
+| Problema | Patrón |
+|----------|--------|
+| Contar votos | **Contar frecuencia** |
+| Contar palabras | **Contar frecuencia** |
+| Frecuencia de notas | **Contar frecuencia**
+
+::: {.fragment}
+**Una solución, tres aplicaciones.**
+:::
+
+---
+
+## Pseudocódigo: Diseñar Antes de Codificar
+
+```
+ALGORITMO fizzbuzz
+ENTRADA: ninguno
+SALIDA: secuencia impresa
+
+INICIO
+    PARA i DESDE 1 HASTA 50 HACER
+        SI i divisible por 3 Y 5 → "FizzBuzz"
+        SI_NO SI divisible por 3 → "Fizz"
+        SI_NO SI divisible por 5 → "Buzz"
+        SI_NO → IMPRIMIR i
+    FIN_PARA
+FIN
+```
+
+---
+
+## Evaluación de Enfoques
+
+Cuando tengas múltiples soluciones:
+
+1. ¿Funcionan ambos? → Siguiente
+2. ¿Cuál es más legible? → Si hay empate
+3. ¿Cuál es más eficiente? → Si hay empate
+4. ¿Cuál es más fácil de mantener?
+
+::: {.fragment}
+**Regla de oro:** Legibilidad > Eficiencia (en cursos)
+:::
+
+---
+
+## Lo que Aprendiste
+
+| Unidad | Lo clave |
+|--------|----------|
+| 0.1 | Todo programa es: Entrada → Proceso → Salida |
+| 0.2 | Divide problemas grandes en piezas pequeñas |
+| 0.3 | Reconoce patrones para reutilizar soluciones |
+| 0.4 | Escribe pseudocódigo antes que Python |
+| 0.5 | Compara enfoques y elige el mejor |
+
+---
+
+## Próximo Paso
+
+### Módulo 1: Introducción a Python
+
+- Instalar Python
+- Escribir tu primer programa
+- Variables y tipos de datos
+
+**¡Ahora sí, a codificar!**
+
+---
+
+## Recursos
+
+- [Contenido del Módulo 0](../content/modulo-00/index.qmd)
+- [Ejercicios en Exercism](https://exercism.org/tracks/python)
+- [HackerRank Python Basic](https://www.hackerrank.com/domains/python)
+
+---
+
+## ¿Preguntas?
+
+**Diego Saavedra**
+📧 dsaavedra88@gmail.com
+🌐 statick88.github.io

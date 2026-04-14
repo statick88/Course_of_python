@@ -1,0 +1,228 @@
+---
+title: "Programación Python Fundamentos"
+subtitle: "De cero a programador en 50 horas"
+author: "Diego Saavedra — Abacom Capacitación y Servicios"
+date: "2026"
+format:
+  pdf:
+    documentclass: article
+    geometry: margin=1.5cm
+    mainfontoffset: 0
+    header-includes: |
+      \usepackage{xcolor}
+      \usepackage{graphicx}
+      \definecolor{pythonblue}{HTML}{306998}
+      \definecolor{pythonyellow}{HTML}{FFD43B}
+---
+
+\begin{center}
+\vspace{2cm}
+
+{\Huge\color{pythonblue}\textbf{Programación Python Fundamentos}}
+
+\vspace{0.5cm}
+
+{\Large\color{pythonyellow}De cero a programador en 50 horas}
+
+\vspace{1cm}
+
+{\large Diego Saavedra}
+
+\vspace{0.3cm}
+
+{\small Abacom Capacitación y Servicios}
+
+\vspace{2cm}
+
+\includegraphics[width=0.4\textwidth]{images/python-logo.png}
+
+\vfill
+
+{\small \textbf{Licencia:} CC BY-NC-SA 4.0 — Creative Commons}
+
+{\small \textbf{Contacto:} dsaavedra88@gmail.com}
+
+{\small \textbf{GitHub:} github.com/statick88/Course\_of\_python}
+
+\vspace{1cm}
+\end{center}
+
+\newpage
+
+## ¿Qué es este curso?
+
+Un curso completo de **Python para principiantes** diseñado con la metodología de ABACOM e inspirado en el curso MIT 6.0001. Transforma a estudiantes sin experiencia previa en programadores competentes mediante **70+ desafíos prácticos**, 10 laboratorios guiados, 12 evaluaciones y 5 proyectos integradores.
+
+---
+
+## ¿Para quién es?
+
+| Perfil | ¿Te identifica? |
+|--------|----------------|
+| **Principiante absoluto** | Nunca has escrito código pero quieres aprender |
+| **Autodidacta frustrado** | Intentaste aprender por tu cuenta y te perdiste |
+| **Cambio de carrera** | Quieres entrar al mundo tecnológico desde cero |
+| **Estudiante universitario** | Necesitas reforzar tus bases de programación |
+
+---
+
+## Contenido del Curso
+
+| Módulo | Tema | Horas | Desafíos |
+|--------|------|-------|----------|
+| 0 | Pensamiento Computacional | 4h | — |
+| 1 | Introducción a Python | 5h | 7 |
+| 2 | Tipos de Datos y Variables | 4h | 7 |
+| 3 | Estructuras de Control | 6h | 7 |
+| 4 | Funciones | 6h | 7 |
+| 5 | Listas y Tuplas | 4h | 7 |
+| 6 | Diccionarios y Sets | 4h | 7 |
+| 7 | Manejo de Archivos | 6h | 7 |
+| 8 | Módulos y Paquetes | 6h | 7 |
+| 9 | Buenas Prácticas | 5h | 7 |
+| 10 | Proyecto Integrador | 4h | 5 proyectos |
+
+**Total**: 54 horas · 11 módulos · 158 archivos de contenido
+
+---
+
+## ¿Qué Aprenderás?
+
+### Fundamentos
+- ✅ Instalar Python y configurar tu entorno de desarrollo
+- ✅ Variables, tipos de datos y operaciones
+- ✅ Condicionales (if/elif/else) y bucles (for/while)
+- ✅ Funciones reutilizables con parámetros y retorno
+
+### Intermedio
+- ✅ Listas, tuplas, diccionarios y sets
+- ✅ Leer y escribir archivos de texto, CSV y JSON
+- ✅ Importar módulos y crear paquetes propios
+- ✅ Manejo de errores con try/except
+
+### Avanzado
+- ✅ Código limpio siguiendo PEP 8
+- ✅ Testing básico con assert
+- ✅ Funciones lambda y recursión
+- ✅ Eficiencia algorítmica (Big-O)
+- ✅ Proyectos integradores del mundo real
+
+---
+
+## Metodología de Enseñanza
+
+### Aprender Haciendo
+Cada concepto se enseña con un **problema del mundo real**:
+- No "escribe un bucle for" sino "crea un validador de contraseñas"
+- No "aprende diccionarios" sino "construye una agenda de contactos"
+- No "estudia funciones" sino "haz una calculadora modular"
+
+### Progresión Gradual
+```
+Teoría (15 min) → Demo (10 min) → Desafío (20 min) → Lab (30 min) → Quiz (15 min)
+```
+
+### Pensamiento Computacional Primero
+Antes de escribir código, aprendes a **descomponer problemas**, **reconocer patrones** y **diseñar algoritmos** — inspirado en MIT 6.0001.
+
+---
+
+## Proyectos Integradores
+
+Al final del curso, eliges UNO de estos proyectos:
+
+| Proyecto | Descripción | Dificultad |
+|----------|-------------|------------|
+| **Gestor de Tareas** | CRUD con prioridades, fechas y persistencia JSON | ⭐⭐⭐ |
+| **Tienda de Productos** | Catálogo, carrito y facturación CSV | ⭐⭐⭐ |
+| **Analizador de Datos** | Lectura CSV, estadísticas y reportes | ⭐⭐⭐ |
+| **Juego del Ahorcado** *(MIT-inspired)* | Carga de palabras, tracking, ASCII art | ⭐⭐⭐⭐ |
+| **Cifrado César** *(MIT-inspired)* | Encriptar/desencriptar + criptoanálisis | ⭐⭐⭐⭐ |
+
+---
+
+## Recursos Incluidos
+
+| Recurso | Cantidad |
+|---------|----------|
+| Módulos teóricos | 11 |
+| Desafíos prácticos | 63 |
+| Laboratorios guiados | 10 |
+| Quizzes de evaluación | 12 |
+| Proyectos integradores | 5 |
+| Guía del instructor | 1 (11 secciones) |
+| Glosario de términos | 60+ entradas |
+| Apéndices especializados | 5 |
+
+---
+
+## Sobre el Instructor
+
+**Diego Saavedra**
+
+- **10+ años** desarrollando en Python
+- **6+ años** enseñando en 6 universidades (ESPE, U. Internacional, Juan Montalvo, Codings Academy, U. Zulia, ABACOM)
+- **100+ estudiantes** mentoreados
+- **15+ aplicaciones** en producción
+- **Master** en Ciencias de la Computación (UTPL)
+- **Master** en Ciberseguridad (UCM, en curso)
+
+---
+
+## Información Técnica
+
+| Detalle | Valor |
+|---------|-------|
+| **Duración total** | 54 horas (~12 semanas) |
+| **Requisitos** | Computadora con internet, sin experiencia previa |
+| **Plataforma** | Quarto (libro interactivo HTML) |
+| **Formatos disponibles** | HTML, PDF, EPUB |
+| **Licencia** | CC BY-NC-SA 4.0 |
+| **Código fuente** | GitHub: statick88/Course\_of\_python |
+| **URL del curso** | https://statick88.github.io/Course\_of\_python/ |
+
+---
+
+## Testimonios
+
+> "Este curso me dio las bases que ningún tutorial de YouTube me pudo dar. Los desafíos son reales, no ejercicios inventados."
+> — Estudiante de ABACOM, 2025
+
+> "Por fin un curso que no empieza con 'Python es un lenguaje...' sino con 'vamos a resolver un problema'."
+> — Instructor de ESPE, 2025
+
+---
+
+## ¿Cómo Inscribirse?
+
+1. Visita: **https://statick88.github.io/Course\_of\_python/**
+2. Lee el **Inicio Rápido** (5 minutos)
+3. Toma la **Evaluación de Diagnóstico** (20 minutos)
+4. Comienza el **Módulo 0** o salta al que corresponda
+
+---
+
+\begin{center}
+\vspace{2cm}
+
+{\Large\color{pythonblue}\textbf{¿Listo para empezar?}}
+
+\vspace{0.5cm}
+
+{\large El mejor momento para aprender a programar fue hace 10 años.}
+
+{\large El segundo mejor momento es ahora.}
+
+\vspace{1cm}
+
+{\small dsaavedra88@gmail.com}
+
+{\small github.com/statick88/Course\_of\_python}
+
+\vspace{1cm}
+
+{\tiny \textcopyright{} 2026 Diego Saavedra. Licencia CC BY-NC-SA 4.0.}
+
+{\tiny Material desarrollado para ABACOM Capacitación y Servicios.}
+
+\end{center}

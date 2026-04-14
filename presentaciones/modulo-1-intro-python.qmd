@@ -1,0 +1,248 @@
+---
+title: "Módulo 1: Introducción a Python"
+subtitle: "De cero a tu primer programa"
+author: "Diego Saavedra — ABACOM"
+date: "2026"
+format:
+  revealjs:
+    theme: white
+    transition: slide
+    slide-number: true
+    progress: true
+    controls: true
+    width: 1280
+    height: 720
+---
+
+## Módulo 1: Introducción a Python
+
+### De cero a tu primer programa
+
+**Diego Saavedra · ABACOM · 2026**
+
+---
+
+## ¿Qué es Python?
+
+::: {.fragment}
+Un lenguaje de programación **interpretado, de alto nivel y propósito general**.
+:::
+
+::: {.fragment}
+Creado por **Guido van Rossum** en 1991. Nombrado así por *Monty Python*, no la serpiente.
+:::
+
+---
+
+## ¿Por qué Python?
+
+| Razón | Detalle |
+|-------|---------|
+| **Fácil de leer** | Sintaxis limpia, como pseudocódigo |
+| **Versátil** | Web, datos, IA, automatización, scripting |
+| **Gran comunidad** | 10M+ desarrolladores, 400K+ paquetes |
+| **Alta demanda** | Top 3 en ofertas laborales de tech |
+
+---
+
+## Python vs Otros Lenguajes
+
+**Imprimir "Hola" en cada uno:**
+
+::: {.fragment}
+```python
+# Python
+print("Hola")
+```
+:::
+
+::: {.fragment}
+```java
+// Java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hola");
+    }
+}
+```
+:::
+
+::: {.fragment}
+```c
+// C
+#include <stdio.h>
+int main() { printf("Hola\n"); return 0; }
+```
+:::
+
+---
+
+## Filosofía Zen de Python
+
+```python
+>>> import this
+```
+
+::: {.fragment}
+- Bello es mejor que feo
+- Explícito es mejor que implícito
+- Simple es mejor que complejo
+- Legible cuenta
+:::
+
+---
+
+## Instalación Rápida
+
+```bash
+# Verificar si ya está instalado
+python3 --version
+
+# Si no: python.org/downloads
+# macOS: brew install python
+# Linux: sudo apt install python3
+```
+
+::: {.fragment}
+**IMPORTANTE:** Python 3.9 o superior. NO usar Python 2.
+:::
+
+---
+
+## Tu Primer Programa
+
+```python
+# saludo.py
+nombre = input("¿Cómo te llamas? ")
+print(f"Hola, {nombre}. ¡Bienvenido a Python!")
+```
+
+::: {.fragment}
+```bash
+python3 saludo.py
+```
+:::
+
+---
+
+## Variables: Cajas Etiquetadas
+
+```python
+nombre = "Ana"       # str (texto)
+edad = 25            # int (entero)
+altura = 1.68        # float (decimal)
+es_estudiante = True # bool (verdadero/falso)
+```
+
+::: {.fragment}
+Python infiere el tipo automáticamente → **tipado dinámico**
+:::
+
+---
+
+## Tipos de Datos Básicos
+
+| Tipo | Ejemplo | Función |
+|------|---------|---------|
+| `int` | `42` | `int("42")` |
+| `float` | `3.14` | `float("3.14")` |
+| `str` | `"Hola"` | `str(42)` |
+| `bool` | `True` | `bool(1)` |
+
+---
+
+## Conversión de Tipos (Casting)
+
+```python
+edad_texto = input("Tu edad: ")    # "25"
+edad = int(edad_texto)              # 25
+print(f"El próximo año tendrás {edad + 1} años")
+```
+
+::: {.fragment}
+⚠️ `int("hola")` → **Error!** Solo convierte textos numéricos.
+:::
+
+---
+
+## f-strings: Formato Elegante
+
+```python
+nombre = "Ana"
+edad = 25
+
+# Forma antigua (no usar)
+print("Hola, " + nombre + ". Tienes " + str(edad) + " años.")
+
+# f-string (usar siempre)
+print(f"Hola, {nombre}. Tienes {edad} años.")
+```
+
+::: {.fragment}
+Puedes incluir expresiones: `f"Doble: {edad * 2}"`
+:::
+
+---
+
+## Errores Comunes
+
+| Error | Causa | Solución |
+|-------|-------|----------|
+| `NameError` | Variable no definida | Revisa el nombre |
+| `TypeError` | Operación con tipo incorrecto | Convierte con `int()`, `str()` |
+| `SyntaxError` | Error de escritura | Revisa paréntesis, comillas |
+
+---
+
+## Lo que Aprendiste
+
+| Unidad | Concepto |
+|--------|----------|
+| 1.1 | Qué es Python y por qué importa |
+| 1.2 | Instalación y configuración |
+| 1.3 | Primer programa con `print()` |
+| 1.4 | Variables y nombres descriptivos |
+| 1.5 | Tipos: int, float, str, bool |
+| 1.6 | Input/Output con f-strings |
+
+---
+
+## Práctica: 7 Desafíos
+
+| Desafío | Qué construyes |
+|---------|---------------|
+| 1 | Saludo personalizado |
+| 2 | Calculadora de edad |
+| 3 | Conversor de moneda |
+| 4 | Calculadora de IMC |
+| 5 | Historia interactiva |
+| 6 | Formulario de contacto |
+| 7 | Mini quiz |
+
+---
+
+## Próximos Pasos
+
+### Módulo 2: Tipos de Datos y Variables
+
+- Operadores aritméticos
+- Operadores de comparación
+- Strings avanzados
+- Casting avanzado
+
+---
+
+## Recursos
+
+- [Contenido del Módulo 1](../content/modulo-01/index.qmd)
+- [Lab 1: Primer Programa](../labs/lab01-primer-programa.qmd)
+- [Lab 2: Variables](../labs/lab02-variables-en-accion.qmd)
+- [Documentación Python](https://docs.python.org/3/)
+
+---
+
+## ¿Preguntas?
+
+**Diego Saavedra**
+📧 dsaavedra88@gmail.com
+🌐 statick88.github.io
