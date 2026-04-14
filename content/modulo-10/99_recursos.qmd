@@ -1,0 +1,74 @@
+---
+title: "Recursos del Módulo 10"
+---
+
+# Recursos del Módulo 10: Proyecto Integrador
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-planificar-proyecto.qmd](01-planificar-proyecto.qmd) | Planificar tu proyecto: del problema a la solución |
+| [02-estructura-proyecto.qmd](02-estructura-proyecto.qmd) | Estructura profesional de un proyecto Python |
+| [03-proyecto-gestor-tareas.qmd](03-proyecto-gestor-tareas.qmd) | Proyecto guiado: Gestor de Tareas |
+| [04-proyecto-tienda-simple.qmd](04-proyecto-tienda-simple.qmd) | Proyecto guiado: Tienda de Productos |
+| [05-proyecto-analizador-datos.qmd](05-proyecto-analizador-datos.qmd) | Proyecto guiado: Analizador de Datos |
+| [06-presentacion-proyecto.qmd](06-presentacion-proyecto.qmd) | Presentar tu proyecto al mundo |
+| [proyecto-01-gestor-tareas.qmd](proyecto-01-gestor-tareas.qmd) | Proyecto: Gestor de Tareas Personal |
+| [proyecto-02-tienda-productos.qmd](proyecto-02-tienda-productos.qmd) | Proyecto: Tienda de Productos |
+| [proyecto-03-analizador-datos.qmd](proyecto-03-analizador-datos.qmd) | Proyecto: Analizador de Datos CSV |
+| [proyecto-04-hangman.qmd](proyecto-04-hangman.qmd) | Proyecto: Hangman (Ahorcado) |
+| [proyecto-05-caesar-cipher.qmd](proyecto-05-caesar-cipher.qmd) | Proyecto: Caesar Cipher |
+| [99-cierre-curso.qmd](99-cierre-curso.qmd) | Cierre del curso y próximos pasos |
+
+---
+
+## Laboratorio
+
+| Recurso | Enlace |
+|---------|--------|
+| **Lab 10: Proyecto Integrador** | [../../labs/lab10-proyecto-integrador.qmd](../../labs/lab10-proyecto-integrador.qmd) |
+
+---
+
+## Evaluación
+
+| Recurso | Enlace |
+|---------|--------|
+| **Quiz del Módulo 10** | [../../quizzes/quiz-modulo-10.qmd](../../quizzes/quiz-modulo-10.qmd) |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [Python Packaging Guide](https://packaging.python.org/)
+- [Python Project Structure](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python](https://www.hackerrank.com/domains/python)
+
+### Herramientas
+- [GitHub — Host your projects](https://github.com/)
+- [README — Documentation generator](https://readme.so/)
+- [Poetry — Python dependency management](https://python-poetry.org/)
+
+---
+
+## Lectura Complementaria
+
+- [Real Python Tutorials](https://realpython.com/)
+- [Build a Command-Line Interface with Python](https://realpython.com/command-line-interfaces-python-argparse/)
+- [Python Morsels](https://www.pythonmorsels.com/)
+- [The Hitchhiker's Guide to Python](https://docs.python-guide.org/)
+
+---
+
+[← Volver al Índice](../../index.qmd)

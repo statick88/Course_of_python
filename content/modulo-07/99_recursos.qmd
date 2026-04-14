@@ -1,0 +1,72 @@
+---
+title: "Recursos del Módulo 7"
+---
+
+# Recursos del Módulo 7: Manejo de Archivos
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-abrir-cerrar-archivos.qmd](01-abrir-cerrar-archivos.qmd) | Abrir y cerrar archivos — el contexto `with` |
+| [02-leer-archivos.qmd](02-leer-archivos.qmd) | Leer archivos — modos y técnicas |
+| [03-escribir-archivos.qmd](03-escribir-archivos.qmd) | Escribir archivos — crear y modificar |
+| [04-manejo-csv.qmd](04-manejo-csv.qmd) | Manejo de archivos CSV |
+| [05-manejo-json.qmd](05-manejo-json.qmd) | Manejo de archivos JSON |
+| [06-pathlib.qmd](06-pathlib.qmd) | pathlib — rutas modernas |
+| [desafio-01-diario-personal.qmd](desafio-01-diario-personal.qmd) | Desafío: Diario personal |
+| [desafio-02-copiar-archivo.qmd](desafio-02-copiar-archivo.qmd) | Desafío: Copiar archivo |
+| [desafio-03-log-analyzer.qmd](desafio-03-log-analyzer.qmd) | Desafío: Log Analyzer |
+| [desafio-04-csv-a-diccionario.qmd](desafio-04-csv-a-diccionario.qmd) | Desafío: CSV a diccionario |
+| [desafio-05-configurador-json.qmd](desafio-05-configurador-json.qmd) | Desafío: Configurador JSON |
+| [desafio-06-buscador-archivos.qmd](desafio-06-buscador-archivos.qmd) | Desafío: Buscador de archivos |
+| [desafio-07-gestor-contactos-csv.qmd](desafio-07-gestor-contactos-csv.qmd) | Desafío: Gestor de contactos CSV |
+| [99-resumen.qmd](99-resumen.qmd) | Resumen del módulo |
+
+---
+
+## Laboratorio
+
+| Recurso | Enlace |
+|---------|--------|
+| **Lab 7: Manejo de Archivos** | [../../labs/lab07-manejo-archivos.qmd](../../labs/lab07-manejo-archivos.qmd) |
+
+---
+
+## Evaluación
+
+| Recurso | Enlace |
+|---------|--------|
+| **Quiz del Módulo 7** | [../../quizzes/quiz-modulo-07.qmd](../../quizzes/quiz-modulo-07.qmd) |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [Input and Output — Reading and writing files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [csv — CSV file reading and writing](https://docs.python.org/3/library/csv.html)
+- [json — JSON encoder and decoder](https://docs.python.org/3/library/json.html)
+- [pathlib — Object-oriented filesystem paths](https://docs.python.org/3/library/pathlib.html)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python](https://www.hackerrank.com/domains/python)
+
+---
+
+## Lectura Complementaria
+
+- [Real Python Tutorials — Working With Files in Python](https://realpython.com/working-with-files-in-python/)
+- [Real Python — Python CSV Module](https://realpython.com/python-csv/)
+- [Python Morsels](https://www.pythonmorsels.com/)
+
+---
+
+[← Volver al Índice](../../index.qmd) | [Siguiente Módulo →](../modulo-08/index.qmd)

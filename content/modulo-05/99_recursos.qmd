@@ -1,0 +1,69 @@
+---
+title: "Recursos del Módulo 5"
+---
+
+# Recursos del Módulo 5: Listas y Tuplas
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-crear-listas.qmd](01-crear-listas.qmd) | Crear listas: tu primera colección ordenada |
+| [02-indexar-slicing.qmd](02-indexar-slicing.qmd) | Indexar y slicing: encontrar lo que necesitas |
+| [03-metodos-listas.qmd](03-metodos-listas.qmd) | Métodos de listas: la navaja suiza |
+| [04-iterar-listas.qmd](04-iterar-listas.qmd) | Iterar listas: recorrer colecciones |
+| [05-tuplas.qmd](05-tuplas.qmd) | Tuplas: datos que no cambian |
+| [06-listas-anidadas.qmd](06-listas-anidadas.qmd) | Listas anidadas: más allá de una dimensión |
+| [desafio-01-promedio-notas.qmd](desafio-01-promedio-notas.qmd) | Desafío: Promedio de notas |
+| [desafio-02-invertir-lista.qmd](desafio-02-invertir-lista.qmd) | Desafío: Invertir una lista |
+| [desafio-03-eliminar-duplicados.qmd](desafio-03-eliminar-duplicados.qmd) | Desafío: Eliminar duplicados |
+| [desafio-04-estadisticas-lista.qmd](desafio-04-estadisticas-lista.qmd) | Desafío: Estadísticas de una lista |
+| [desafio-05-combinar-listas.qmd](desafio-05-combinar-listas.qmd) | Desafío: Combinar listas ordenadas |
+| [desafio-06-matriz-operaciones.qmd](desafio-06-matriz-operaciones.qmd) | Desafío: Operaciones con matrices |
+| [desafio-07-gestor-inventario.qmd](desafio-07-gestor-inventario.qmd) | Desafío: Gestor de inventario |
+| [99-resumen.qmd](99-resumen.qmd) | Resumen del módulo |
+
+---
+
+## Laboratorio
+
+| Recurso | Enlace |
+|---------|--------|
+| **Lab 5: Listas y Tuplas** | [../../labs/lab05-listas-tuplas.qmd](../../labs/lab05-listas-tuplas.qmd) |
+
+---
+
+## Evaluación
+
+| Recurso | Enlace |
+|---------|--------|
+| **Quiz del Módulo 5** | [../../quizzes/quiz-modulo-05.qmd](../../quizzes/quiz-modulo-05.qmd) |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [Mutable sequence types — list](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
+- [Sequence types — tuple](https://docs.python.org/3/library/stdtypes.html#typesseq)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python — Lists](https://www.hackerrank.com/domains/python)
+
+---
+
+## Lectura Complementaria
+
+- [Real Python Tutorials — Lists and Tuples in Python](https://realpython.com/python-lists-tuples/)
+- [Python Morsels](https://www.pythonmorsels.com/)
+
+---
+
+[← Volver al Índice](../../index.qmd) | [Siguiente Módulo →](../modulo-06/index.qmd)

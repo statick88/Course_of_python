@@ -1,0 +1,49 @@
+---
+title: "Recursos del Módulo 0"
+---
+
+# Recursos del Módulo 0: Pensamiento Computacional
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-que-es-computacion.qmd](01-que-es-computacion.qmd) | ¿Qué es computación? |
+| [02-descomposicion.qmd](02-descomposicion.qmd) | Descomposición de problemas |
+| [03-patrones.qmd](03-patrones.qmd) | Patrones y abstracción |
+| [04-pseudocodigo.qmd](04-pseudocodigo.qmd) | Pseudocódigo |
+| [05-evaluacion.qmd](05-evaluacion.qmd) | Evaluación de enfoques |
+| [99-resumen.qmd](99-resumen.qmd) | Resumen del módulo |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [Python Tutorial](https://docs.python.org/3/tutorial/)
+
+### Pensamiento Computacional
+- [MIT 6.0001 — Introduction to Computation and Programming](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/)
+- [CS50 — Computational Thinking](https://cs50.harvard.edu/x/)
+- [Computational Thinking — BBC](https://www.bbc.co.uk/bitesize/guides/zp92mp3/revision/1)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python](https://www.hackerrank.com/domains/python)
+
+---
+
+## Lectura Complementaria
+
+- [Think Python — How to Think Like a Computer Scientist](https://greenteapress.com/wp/think-python-2e/)
+- [Real Python Tutorials](https://realpython.com/)
+
+---
+
+[← Volver al Índice](../../index.qmd) | [Siguiente Módulo →](../modulo-01/index.qmd)

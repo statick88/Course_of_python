@@ -1,0 +1,70 @@
+---
+title: "Recursos del Módulo 4"
+---
+
+# Recursos del Módulo 4: Funciones
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-definir-funciones.qmd](01-definir-funciones.qmd) | Definir funciones: tu primera multiherramienta |
+| [02-parametros-argumentos.qmd](02-parametros-argumentos.qmd) | Parámetros y argumentos: la receta flexible |
+| [03-return.qmd](03-return.qmd) | Return: el resultado que vuelve |
+| [04-scope-variables.qmd](04-scope-variables.qmd) | Scope de variables: quién ve qué |
+| [05-funciones-lambda.qmd](05-funciones-lambda.qmd) | Funciones lambda: el atajo elegante |
+| [06-funciones-recursivas.qmd](06-funciones-recursivas.qmd) | Funciones recursivas: la función que se llama a sí misma |
+| [desafio-01-saludo-funcion.qmd](desafio-01-saludo-funcion.qmd) | Desafío: Saludo con función |
+| [desafio-02-area-circulo.qmd](desafio-02-area-circulo.qmd) | Desafío: Área del círculo |
+| [desafio-03-fahrenheit-celsius.qmd](desafio-03-fahrenheit-celsius.qmd) | Desafío: Conversor Fahrenheit ↔ Celsius |
+| [desafio-04-contador-vocales.qmd](desafio-04-contador-vocales.qmd) | Desafío: Contador de vocales |
+| [desafio-05-numero-primo.qmd](desafio-05-numero-primo.qmd) | Desafío: Verificar número primo |
+| [desafio-06-fibonacci.qmd](desafio-06-fibonacci.qmd) | Desafío: Secuencia de Fibonacci |
+| [desafio-07-calculadora-funciones.qmd](desafio-07-calculadora-funciones.qmd) | Desafío: Calculadora con funciones |
+| [99-resumen.qmd](99-resumen.qmd) | Resumen del módulo |
+
+---
+
+## Laboratorio
+
+| Recurso | Enlace |
+|---------|--------|
+| **Lab 4: Funciones** | [../../labs/lab04-funciones.qmd](../../labs/lab04-funciones.qmd) |
+
+---
+
+## Evaluación
+
+| Recurso | Enlace |
+|---------|--------|
+| **Quiz del Módulo 4** | [../../quizzes/quiz-modulo-04.qmd](../../quizzes/quiz-modulo-04.qmd) |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [Defining functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+- [lambda expressions](https://docs.python.org/3/reference/expressions.html#lambda)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python — Functions](https://www.hackerrank.com/domains/python)
+
+---
+
+## Lectura Complementaria
+
+- [Real Python Tutorials — Defining Your Own Python Function](https://realpython.com/defining-your-own-python-function/)
+- [Real Python — Python Lambda Functions](https://realpython.com/python-lambda/)
+- [Python Morsels](https://www.pythonmorsels.com/)
+
+---
+
+[← Volver al Índice](../../index.qmd) | [Siguiente Módulo →](../modulo-05/index.qmd)

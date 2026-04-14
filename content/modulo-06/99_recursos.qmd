@@ -1,0 +1,69 @@
+---
+title: "Recursos del Módulo 6"
+---
+
+# Recursos del Módulo 6: Diccionarios y Sets
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-crear-diccionarios.qmd](01-crear-diccionarios.qmd) | Crear diccionarios: la agenda del programador |
+| [02-acceder-modificar.qmd](02-acceder-modificar.qmd) | Acceder y modificar datos |
+| [03-iterar-diccionarios.qmd](03-iterar-diccionarios.qmd) | Iterar sobre diccionarios |
+| [04-sets.qmd](04-sets.qmd) | Sets: colecciones sin duplicados |
+| [05-diccionarios-anidados.qmd](05-diccionarios-anidados.qmd) | Diccionarios anidados y JSON |
+| [desafio-01-agenda-contactos.qmd](desafio-01-agenda-contactos.qmd) | Desafío: Agenda de contactos |
+| [desafio-02-contador-palabras.qmd](desafio-02-contador-palabras.qmd) | Desafío: Contador de palabras |
+| [desafio-03-inventario-tienda.qmd](desafio-03-inventario-tienda.qmd) | Desafío: Inventario de tienda |
+| [desafio-04-fusionar-diccionarios.qmd](desafio-04-fusionar-diccionarios.qmd) | Desafío: Fusionar diccionarios |
+| [desafio-05-votaciones.qmd](desafio-05-votaciones.qmd) | Desafío: Sistema de votaciones |
+| [desafio-06-base-datos-estudiantes.qmd](desafio-06-base-datos-estudiantes.qmd) | Desafío: Base de datos de estudiantes |
+| [desafio-07-analizador-votos.qmd](desafio-07-analizador-votos.qmd) | Desafío: Analizador de votos |
+| [99-resumen.qmd](99-resumen.qmd) | Resumen del módulo |
+
+---
+
+## Laboratorio
+
+| Recurso | Enlace |
+|---------|--------|
+| **Lab 6: Diccionarios y Sets** | [../../labs/lab06-diccionarios-sets.qmd](../../labs/lab06-diccionarios-sets.qmd) |
+
+---
+
+## Evaluación
+
+| Recurso | Enlace |
+|---------|--------|
+| **Quiz del Módulo 6** | [../../quizzes/quiz-modulo-06.qmd](../../quizzes/quiz-modulo-06.qmd) |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [Mapping types — dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
+- [Set types](https://docs.python.org/3/library/stdtypes.html#set-types-frozenset)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python](https://www.hackerrank.com/domains/python)
+
+---
+
+## Lectura Complementaria
+
+- [Real Python Tutorials — Dictionaries in Python](https://realpython.com/python-dicts/)
+- [Real Python — Sets in Python](https://realpython.com/python-sets/)
+- [Python Morsels](https://www.pythonmorsels.com/)
+
+---
+
+[← Volver al Índice](../../index.qmd) | [Siguiente Módulo →](../modulo-07/index.qmd)

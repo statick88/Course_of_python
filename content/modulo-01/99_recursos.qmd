@@ -1,0 +1,72 @@
+---
+title: "Recursos del Módulo 1"
+---
+
+# Recursos del Módulo 1: Introducción a Python
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-que-es-python.qmd](01-que-es-python.qmd) | ¿Qué es Python? Historia y filosofía |
+| [02-instalacion.qmd](02-instalacion.qmd) | Instalación y configuración del entorno |
+| [03-hola-mundo.qmd](03-hola-mundo.qmd) | Tu primer programa: Hola Mundo |
+| [04-variables.qmd](04-variables.qmd) | Variables: las cajas de la memoria |
+| [05-tipos-basicos.qmd](05-tipos-basicos.qmd) | Tipos de datos básicos |
+| [06-input-output.qmd](06-input-output.qmd) | Entrada y salida de datos |
+| [desafio-01-saludo-personalizado.qmd](desafio-01-saludo-personalizado.qmd) | Desafío: Saludo personalizado |
+| [desafio-02-calculadora-edad.qmd](desafio-02-calculadora-edad.qmd) | Desafío: Calculadora de edad |
+| [desafio-03-conversor-moneda.qmd](desafio-03-conversor-moneda.qmd) | Desafío: Conversor de moneda |
+| [desafio-04-calculadora-imc.qmd](desafio-04-calculadora-imc.qmd) | Desafío: Calculadora de IMC |
+| [desafio-05-historia-interactiva.qmd](desafio-05-historia-interactiva.qmd) | Desafío: Historia interactiva |
+| [desafio-06-formulario-contacto.qmd](desafio-06-formulario-contacto.qmd) | Desafío: Formulario de contacto |
+| [desafio-07-mini-quiz.qmd](desafio-07-mini-quiz.qmd) | Desafío: Mini quiz de conocimientos |
+| [99-resumen.qmd](99-resumen.qmd) | Resumen del módulo |
+
+---
+
+## Laboratorio
+
+| Recurso | Enlace |
+|---------|--------|
+| **Lab 1: Primer Programa** | [../../labs/lab01-primer-programa.qmd](../../labs/lab01-primer-programa.qmd) |
+| **Lab 2: Variables en Acción** | [../../labs/lab02-variables-en-accion.qmd](../../labs/lab02-variables-en-accion.qmd) |
+
+---
+
+## Evaluación
+
+| Recurso | Enlace |
+|---------|--------|
+| **Quiz del Módulo 1** | [../../quizzes/quiz-modulo-01.qmd](../../quizzes/quiz-modulo-01.qmd) |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [Python Tutorial](https://docs.python.org/3/tutorial/)
+- [Python Installation Guide](https://docs.python.org/3/using/index.html)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python](https://www.hackerrank.com/domains/python)
+- [Codecademy Learn Python 3](https://www.codecademy.com/learn/learn-python-3)
+
+---
+
+## Lectura Complementaria
+
+- [Real Python Tutorials](https://realpython.com/)
+- [Python Morsels](https://www.pythonmorsels.com/)
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+
+---
+
+[← Volver al Índice](../../index.qmd) | [Siguiente Módulo →](../modulo-02/index.qmd)

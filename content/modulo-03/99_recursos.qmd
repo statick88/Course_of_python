@@ -1,0 +1,70 @@
+---
+title: "Recursos del Módulo 3"
+---
+
+# Recursos del Módulo 3: Estructuras de Control
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-if-else.qmd](01-if-else.qmd) | if / else: el semáforo del código |
+| [02-if-anidado.qmd](02-if-anidado.qmd) | Decisiones anidadas: capas de lógica |
+| [03-for-loop.qmd](03-for-loop.qmd) | for: el bucle que cuenta por ti |
+| [04-while-loop.qmd](04-while-loop.qmd) | while: repetir mientras se cumpla |
+| [05-break-continue.qmd](05-break-continue.qmd) | break y continue: control total |
+| [06-comprension-listas.qmd](06-comprension-listas.qmd) | Comprensión de listas: elegancia Python |
+| [desafio-01-par-o-impar.qmd](desafio-01-par-o-impar.qmd) | Desafío: Par o impar |
+| [desafio-02-tabla-multiplicar.qmd](desafio-02-tabla-multiplicar.qmd) | Desafío: Tabla de multiplicar |
+| [desafio-03-fizzbuzz.qmd](desafio-03-fizzbuzz.qmd) | Desafío: FizzBuzz clásico |
+| [desafio-04-adivina-numero.qmd](desafio-04-adivina-numero.qmd) | Desafío: Adivina el número |
+| [desafio-05-piedra-papel-tijera.qmd](desafio-05-piedra-papel-tijera.qmd) | Desafío: Piedra, papel o tijera |
+| [desafio-06-generador-contrasenas.qmd](desafio-06-generador-contrasenas.qmd) | Desafío: Generador de contraseñas |
+| [desafio-07-cajero-automatico.qmd](desafio-07-cajero-automatico.qmd) | Desafío: Cajero automático |
+| [99-resumen.qmd](99-resumen.qmd) | Resumen del módulo |
+
+---
+
+## Laboratorio
+
+| Recurso | Enlace |
+|---------|--------|
+| **Lab 3: Estructuras de Control** | [../../labs/lab03-estructuras-control.qmd](../../labs/lab03-estructuras-control.qmd) |
+
+---
+
+## Evaluación
+
+| Recurso | Enlace |
+|---------|--------|
+| **Quiz del Módulo 3** | [../../quizzes/quiz-modulo-03.qmd](../../quizzes/quiz-modulo-03.qmd) |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [Compound statements — if, for, while](https://docs.python.org/3/reference/compound_stmts.html)
+- [Data model — Truth value testing](https://docs.python.org/3/library/stdtypes.html#truth-value-testing)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python — Loops + Conditionals](https://www.hackerrank.com/domains/python)
+
+---
+
+## Lectura Complementaria
+
+- [Real Python Tutorials](https://realpython.com/)
+- [Python Morsels](https://www.pythonmorsels.com/)
+- [Think Python — Iteration](https://greenteapress.com/wp/think-python-2e/)
+
+---
+
+[← Volver al Índice](../../index.qmd) | [Siguiente Módulo →](../modulo-04/index.qmd)

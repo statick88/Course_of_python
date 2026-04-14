@@ -1,0 +1,70 @@
+---
+title: "Recursos del Módulo 2"
+---
+
+# Recursos del Módulo 2: Tipos de Datos y Variables
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-operadores-aritmeticos.qmd](01-operadores-aritmeticos.qmd) | Operadores aritméticos: la calculadora de Python |
+| [02-operadores-comparacion.qmd](02-operadores-comparacion.qmd) | Operadores de comparación: el juez de Python |
+| [03-operadores-logicos.qmd](03-operadores-logicos.qmd) | Operadores lógicos: el cerebro de Python |
+| [04-casting-avanzado.qmd](04-casting-avanzado.qmd) | Casting avanzado: transformar datos |
+| [05-strings-avanzado.qmd](05-strings-avanzado.qmd) | Strings avanzado: el taller de texto |
+| [desafio-01-calculadora-propinas.qmd](desafio-01-calculadora-propinas.qmd) | Desafío: Calculadora de propinas |
+| [desafio-02-conversor-unidades.qmd](desafio-02-conversor-unidades.qmd) | Desafío: Conversor de unidades |
+| [desafio-03-validador-edad.qmd](desafio-03-validador-edad.qmd) | Desafío: Validador de edad |
+| [desafio-04-generador-dni.qmd](desafio-04-generador-dni.qmd) | Desafío: Generador de DNI |
+| [desafio-05-cifrado-cesar.qmd](desafio-05-cifrado-cesar.qmd) | Desafío: Cifrado César |
+| [desafio-06-analizador-texto.qmd](desafio-06-analizador-texto.qmd) | Desafío: Analizador de texto |
+| [desafio-07-mini-base-datos.qmd](desafio-07-mini-base-datos.qmd) | Desafío: Mini base de datos |
+| [99-resumen.qmd](99-resumen.qmd) | Resumen del módulo |
+
+---
+
+## Laboratorio
+
+| Recurso | Enlace |
+|---------|--------|
+| **Lab del Módulo 2** | [../../labs/lab02-variables-en-accion.qmd](../../labs/lab02-variables-en-accion.qmd) |
+
+---
+
+## Evaluación
+
+| Recurso | Enlace |
+|---------|--------|
+| **Quiz del Módulo 2** | [../../quizzes/quiz-modulo-02.qmd](../../quizzes/quiz-modulo-02.qmd) |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [Python Tutorial](https://docs.python.org/3/tutorial/)
+- [Built-in Types — str methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Built-in Types — Numeric types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python](https://www.hackerrank.com/domains/python)
+
+---
+
+## Lectura Complementaria
+
+- [Real Python Tutorials](https://realpython.com/)
+- [Python Morsels](https://www.pythonmorsels.com/)
+- [Python String Formatting Guide](https://realpython.com/python-f-strings/)
+
+---
+
+[← Volver al Índice](../../index.qmd) | [Siguiente Módulo →](../modulo-03/index.qmd)

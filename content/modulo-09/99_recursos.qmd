@@ -1,0 +1,77 @@
+---
+title: "Recursos del Módulo 9"
+---
+
+# Recursos del Módulo 9: Buenas Prácticas en Python
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-pep8-estilo.qmd](01-pep8-estilo.qmd) | PEP 8: el estilo que une a la comunidad |
+| [02-nombres-descriptivos.qmd](02-nombres-descriptivos.qmd) | Nombres descriptivos: código que habla |
+| [03-funciones-puras.qmd](03-funciones-puras.qmd) | Funciones puras: predecibles y testeables |
+| [04-manejo-errores.qmd](04-manejo-errores.qmd) | Manejo de errores: falla con elegancia |
+| [05-documentacion.qmd](05-documentacion.qmd) | Documentación: tu yo del futuro te lo agradecerá |
+| [06-testing-basico.qmd](06-testing-basico.qmd) | Testing básico: confianza en tu código |
+| [desafio-01-refactorizar-codigo.qmd](desafio-01-refactorizar-codigo.qmd) | Desafío: Refactorizar código desordenado |
+| [desafio-02-docstrings.qmd](desafio-02-docstrings.qmd) | Desafío: Documentar funciones con docstrings |
+| [desafio-03-validador-robusto.qmd](desafio-03-validador-robusto.qmd) | Desafío: Crear un validador de datos robusto |
+| [desafio-04-test-calculadora.qmd](desafio-04-test-calculadora.qmd) | Desafío: Escribir tests para una calculadora |
+| [desafio-05-linter-codigo.qmd](desafio-05-linter-codigo.qmd) | Desafío: Corregir errores de un linter |
+| [desafio-06-refactorizar-proyecto.qmd](desafio-06-refactorizar-proyecto.qmd) | Desafío: Refactorizar un mini proyecto completo |
+| [desafio-07-code-review.qmd](desafio-07-code-review.qmd) | Desafío: Revisar código de otro programador |
+| [99-resumen.qmd](99-resumen.qmd) | Resumen del módulo |
+
+---
+
+## Laboratorio
+
+| Recurso | Enlace |
+|---------|--------|
+| **Lab 9: Buenas Prácticas** | [../../labs/lab09-buenas-practicas.qmd](../../labs/lab09-buenas-practicas.qmd) |
+
+---
+
+## Evaluación
+
+| Recurso | Enlace |
+|---------|--------|
+| **Quiz del Módulo 9** | [../../quizzes/quiz-modulo-09.qmd](../../quizzes/quiz-modulo-09.qmd) |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [PEP 8 — Style Guide for Python Code](https://peps.python.org/pep-0008/)
+- [PEP 257 — Docstring Conventions](https://peps.python.org/pep-0257/)
+- [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)
+- [pytest — Testing framework](https://docs.pytest.org/)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python](https://www.hackerrank.com/domains/python)
+
+### Herramientas
+- [ruff — Fast Python linter](https://docs.astral.sh/ruff/)
+- [black — Code formatter](https://black.readthedocs.io/)
+- [flake8 — Style guide enforcement](https://flake8.pyc.org/)
+
+---
+
+## Lectura Complementaria
+
+- [Real Python Tutorials — PEP 8](https://realpython.com/python-pep8/)
+- [Clean Code in Python](https://www.oreilly.com/library/view/clean-code-in-python/9781800566002/)
+- [Python Morsels](https://www.pythonmorsels.com/)
+
+---
+
+[← Volver al Índice](../../index.qmd) | [Siguiente Módulo →](../modulo-10/index.qmd)

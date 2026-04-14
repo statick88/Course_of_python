@@ -1,0 +1,74 @@
+---
+title: "Recursos del Módulo 8"
+---
+
+# Recursos del Módulo 8: Módulos y Paquetes
+
+> Enlaces a materiales complementarios, prácticas adicionales y referencias.
+
+---
+
+## Contenido del Módulo
+
+| Archivo | Propósito |
+|---------|-----------|
+| [index.qmd](index.qmd) | Introducción y objetivos del módulo |
+| [01-importar-modulos.qmd](01-importar-modulos.qmd) | Importar módulos: tu caja de herramientas |
+| [02-modulos-estandar.qmd](02-modulos-estandar.qmd) | La biblioteca estándar: módulos que ya tienes |
+| [03-crear-modulos.qmd](03-crear-modulos.qmd) | Crear tus propios módulos |
+| [04-paquetes.qmd](04-paquetes.qmd) | Paquetes: organizar código profesionalmente |
+| [05-pip-paquetes.qmd](05-pip-paquetes.qmd) | pip: el gestor de paquetes de Python |
+| [06-entornos-virtuales.qmd](06-entornos-virtuales.qmd) | Entornos virtuales: aislamiento seguro |
+| [07-eficiencia-big-o.qmd](07-eficiencia-big-o.qmd) | Eficiencia algorítmica y Big O |
+| [desafio-01-mi-primer-modulo.qmd](desafio-01-mi-primer-modulo.qmd) | Desafío: Mi primer módulo |
+| [desafio-02-generador-fechas.qmd](desafio-02-generador-fechas.qmd) | Desafío: Generador de fechas |
+| [desafio-03-aleatorios-avanzados.qmd](desafio-03-aleatorios-avanzados.qmd) | Desafío: Aleatorios avanzados |
+| [desafio-04-organizador-archivos.qmd](desafio-04-organizador-archivos.qmd) | Desafío: Organizador de archivos |
+| [desafio-05-api-clima.qmd](desafio-05-api-clima.qmd) | Desafío: API del clima |
+| [desafio-06-web-scraper.qmd](desafio-06-web-scraper.qmd) | Desafío: Web scraper |
+| [desafio-07-proyecto-modular.qmd](desafio-07-proyecto-modular.qmd) | Desafío: Proyecto modular completo |
+| [99-resumen.qmd](99-resumen.qmd) | Resumen del módulo |
+
+---
+
+## Laboratorio
+
+| Recurso | Enlace |
+|---------|--------|
+| **Lab 8: Módulos y Paquetes** | [../../labs/lab08-modulos-paquetes.qmd](../../labs/lab08-modulos-paquetes.qmd) |
+
+---
+
+## Evaluación
+
+| Recurso | Enlace |
+|---------|--------|
+| **Quiz del Módulo 8** | [../../quizzes/quiz-modulo-08.qmd](../../quizzes/quiz-modulo-08.qmd) |
+
+---
+
+## Recursos Externos
+
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [The Python Standard Library](https://docs.python.org/3/library/)
+- [Modules — Packaging your code](https://docs.python.org/3/tutorial/modules.html)
+- [pip — The package installer](https://pip.pypa.io/en/stable/)
+- [venv — Virtual environments](https://docs.python.org/3/library/venv.html)
+
+### Práctica
+- [Exercism Python Track](https://exercism.org/tracks/python)
+- [HackerRank Python](https://www.hackerrank.com/domains/python)
+- [PyPI — Python Package Index](https://pypi.org/)
+
+---
+
+## Lectura Complementaria
+
+- [Real Python Tutorials — Python Modules and Packages](https://realpython.com/python-modules-packages/)
+- [Real Python — Python venv](https://realpython.com/python-virtual-environments-a-primer/)
+- [Python Morsels](https://www.pythonmorsels.com/)
+
+---
+
+[← Volver al Índice](../../index.qmd) | [Siguiente Módulo →](../modulo-09/index.qmd)

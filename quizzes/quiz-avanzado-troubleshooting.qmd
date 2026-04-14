@@ -1,0 +1,182 @@
+---
+title: "Quiz Avanzado: Troubleshooting y Escenarios Reales"
+---
+
+## Quiz Avanzado: Troubleshooting y Escenarios Reales
+
+> **Nivel**: Intermedio-Avanzado  
+> **Formato**: Escenario → Decisión → Justificación  
+> **Duración**: 30 minutos
+
+---
+
+### Escenario 1: El programa no inicia
+
+Tu estudiante ejecuta `python3 main.py` y recibe este error:
+
+```
+Traceback (most recent call last):
+  File "main.py", line 3, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+```
+
+**¿Cuál es la causa más probable y la solución?**
+
+- [ ] El archivo main.py tiene un error de sintaxis
+- [x] El módulo `requests` no está instalado. Solución: `pip install requests`
+- [ ] Python está desactualizado
+- [ ] El archivo no existe en el directorio
+
+> **Explicación**: `ModuleNotFoundError` indica que Python no encuentra un módulo externo. La solución es instalarlo con pip.
+
+---
+
+### Escenario 2: Bucle infinito
+
+Un estudiante escribió este código y el programa nunca termina:
+
+```python
+contador = 0
+while contador < 10:
+    print(f"Iteración {contador}")
+```
+
+**¿Qué falta?**
+
+- [ ] Un `break` al inicio del bucle
+- [ ] Cambiar `while` por `for`
+- [x] Incrementar `contador` dentro del bucle: `contador += 1`
+- [ ] Cambiar `<` por `>`
+
+> **Explicación**: Sin `contador += 1`, la variable nunca cambia de valor y la condición `contador < 10` siempre es True.
+
+---
+
+### Escenario 3: Resultado inesperado en división
+
+Un programa calcula el promedio de notas pero el resultado siempre es un número entero:
+
+```python
+notas = [8, 9, 7]
+promedio = sum(notas) // len(notas)
+print(promedio)  # Imprime 8 en vez de 8.0
+```
+
+**¿Cuál es el problema?**
+
+- [x] Usa `//` (división entera) en vez de `/` (división normal)
+- [ ] La función `sum()` no funciona con listas
+- [ ] `len()` retorna un string
+- [ ] Las notas deberían ser floats
+
+> **Explicación**: `//` es floor division (división entera). Para obtener un float, usar `/`.
+
+---
+
+### Escenario 4: Datos que se pierden
+
+Un programa escribe en un archivo pero al abrirlo está vacío:
+
+```python
+f = open("datos.txt", "w")
+f.write("Hola Mundo")
+# El programa termina sin cerrar el archivo
+```
+
+**¿Por qué el archivo está vacío?**
+
+- [ ] El modo `"w"` no permite escribir
+- [x] El archivo no se cerró. Los datos se quedan en buffer. Usar `with open()` o `f.close()`
+- [ ] `write()` no funciona con strings
+- [ ] El archivo no existe
+
+> **Explicación**: Sin cerrar el archivo (con `close()` o `with`), los datos pueden quedarse en buffer y no escribirse al disco.
+
+---
+
+### Escenario 5: Error de tipo inesperado
+
+```python
+edad = input("Ingresa tu edad: ")
+if edad >= 18:
+    print("Eres mayor de edad")
+```
+
+Error: `TypeError: '>=' not supported between instances of 'str' and 'int'`
+
+**¿Cómo se corrige?**
+
+- [ ] Cambiar `>=` por `==`
+- [ ] Usar `str(18)` en la comparación
+- [x] Convertir la entrada: `edad = int(input(...))`
+- [ ] Usar `float()` en vez de `int()`
+
+> **Explicación**: `input()` siempre retorna string. Para comparar con un número, convertir con `int()`.
+
+---
+
+### Escenario 6: Función que retorna None
+
+```python
+def saludar(nombre):
+    print(f"Hola, {nombre}")
+
+resultado = saludar("Ana")
+print(resultado)  # Imprime None
+```
+
+**¿Por qué retorna None?**
+
+- [x] La función usa `print()` pero no tiene `return`
+- [ ] El parámetro `nombre` no está definido
+- [ ] `saludar()` no es una función válida
+- [ ] Python tiene un bug con funciones simples
+
+> **Explicación**: Toda función sin `return` explícito retorna `None` por defecto. `print()` muestra en pantalla pero no retorna.
+
+---
+
+### Escenario 7: Lista que se modifica sola
+
+```python
+original = [1, 2, 3]
+copia = original
+copia.append(4)
+print(original)  # [1, 2, 3, 4]
+```
+
+**¿Por qué `original` también cambió?**
+
+- [ ] Python tiene un bug con listas
+- [x] `copia = original` no copia, solo crea otra referencia al mismo objeto
+- [ ] `append()` modifica todas las listas
+- [ ] Las listas son inmutables
+
+> **Explicación**: En Python, la asignación `copia = original` crea una referencia, no una copia. Para copiar: `copia = original.copy()` o `copia = original[:]`.
+
+---
+
+### Escenario 8: JSON que no carga
+
+```python
+import json
+
+with open("config.json") as f:
+    datos = json.load(f)
+```
+
+Error: `json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes`
+
+**¿Cuál es la causa más probable?**
+
+- [ ] El archivo no existe
+- [x] El JSON usa comillas simples `'` en vez de dobles `"` (JSON requiere dobles)
+- [ ] `json.load()` no funciona con archivos
+- [ ] Falta importar `os`
+
+> **Explicación**: JSON requiere comillas dobles para claves y strings. Python acepta ambas, pero JSON solo dobles.
+
+---
+
+[← Volver a Quizzes](README.qmd) | [← Módulo 10](../content/modulo-10/index.qmd)
