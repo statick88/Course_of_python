@@ -12818,7 +12818,7 @@
     "href": "labs/lab03-estructuras-control.html#pasos-del-laboratorio",
     "title": "Laboratorio 3: Estructuras de Control",
     "section": "Pasos del Laboratorio",
-    "text": "Pasos del Laboratorio\n\nPaso 1: Clasificador de Edades (15 min)\nCrea un programa que clasifique una edad en categorías:\n\n\nPYTHON\n\nedad = int(input(\"Ingresa tu edad: \"))\n\nif edad &lt; 0:\n    print(\"❌ Edad no válida\")\nelif edad &lt; 13:\n    print(\"👶 Niño\")\nelif edad &lt; 18:\n    print(\"🧑 Adolescente\")\nelif edad &lt; 65:\n    print(\"👨 Adulto\")\nelse:\n    print(\"👴 Adulto mayor\")\n\nTu misión: Modifica el programa para que también muestre si la persona es mayor de edad para votar (&gt;= 18 en Ecuador).\n\n\nPaso 2: Tabla de Multiplicar con For (10 min)\n\n\nPYTHON\n\nnumero = int(input(\"Tabla del número: \"))\n\nfor i in range(1, 11):\n    resultado = numero * i\n    print(f\"{numero} x {i} = {resultado}\")\n\nTu misión: Haz que el usuario elija hasta qué número multiplicar (no solo 10).\n\n\nPaso 3: FizzBuzz Clásico (15 min)\nImplementa FizzBuzz: - Números del 1 al 50 - Múltiplos de 3 → “Fizz” - Múltiplos de 5 → “Buzz” - Múltiplos de 3 y 5 → “FizzBuzz”\n\n\nPYTHON\n\nfor i in range(1, 51):\n    if i % 3 == 0 and i % 5 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else:\n        print(i)\n\n\n\nPaso 4: Validador de Contraseña con While (10 min)\n\n\nPYTHON\n\nPASSWORD_SECRETA = \"Python2026\"\nintentos = 0\nmax_intentos = 3\n\nwhile intentos &lt; max_intentos:\n    intento = input(\"Ingresa la contraseña: \")\n    if intento == PASSWORD_SECRETA:\n        print(\"✅ Acceso concedido\")\n        break\n    else:\n        intentos += 1\n        print(f\"❌ Incorrecta. Intentos restantes: {max_intentos - intentos}\")\nelse:\n    print(\"🔒 Cuenta bloqueada\")\n\n\n\nPaso 5: List Comprehension - Filtrar Pares (10 min)\n\n\nPYTHON\n\nnumeros = list(range(1, 21))\n\n# Usando list comprehension\npares = [n for n in numeros if n % 2 == 0]\nprint(f\"Pares: {pares}\")\n\n# Cuadrados\ncuadrados = [n**2 for n in numeros]\nprint(f\"Cuadrados: {cuadrados}\")",
+    "text": "Pasos del Laboratorio\n\nPaso 1: Clasificador de Edades (15 min)\nCrea un programa que clasifique una edad en categorías:\n\n\nPYTHON\n\nedad = int(input(\"Ingresa tu edad: \"))\n\nif edad &lt; 0:\n    print(\"❌ Edad no válida\")\nelif edad &lt; 13:\n    print(\"👶 Niño\")\nelif edad &lt; 18:\n    print(\"🧑 Adolescente\")\nelif edad &lt; 65:\n    print(\"👨 Adulto\")\nelse:\n    print(\"👴 Adulto mayor\")\n\nTu misión: Modifica el programa para que también muestre si la persona es mayor de edad para votar (&gt;= 18 en Ecuador).\n\n\nPaso 2: Tabla de Multiplicar con For (10 min)\n\n\nPYTHON\n\nnumero = int(input(\"Tabla del número: \"))\n\nfor i in range(1, 11):\n    resultado = numero * i\n    print(f\"{numero} x {i} = {resultado}\")\n\nTu misión: Haz que el usuario elija hasta qué número multiplicar (no solo 10).\n\n\nPaso 3: FizzBuzz Clásico (15 min)\nImplementa FizzBuzz: - Números del 1 al 50 - Múltiplos de 3 → “Fizz” - Múltiplos de 5 → “Buzz” - Múltiplos de 3 y 5 → “FizzBuzz”\n\n\nPYTHON\n\nfor i in range(1, 51):\n    if i % 3 == 0 and i % 5 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else:\n        print(i)\n\n\n\nPaso 4: Validador de Contraseña con While (10 min)\n\n\nPYTHON\n\nimport os\n\n# ⚠️ NUNCA hardcodees contraseñas en código real.\n# Para demos educativas, usa input() o variables de entorno.\nPASSWORD_SECRETA = os.environ.get(\"DEMO_PASSWORD\") or input(\n    \"Ingresa la contraseña del sistema: \"\n)\nintentos = 0\nmax_intentos = 3\n\nwhile intentos &lt; max_intentos:\n    intento = input(\"Ingresa la contraseña: \")\n    if intento == PASSWORD_SECRETA:\n        print(\"✅ Acceso concedido\")\n        break\n    else:\n        intentos += 1\n        print(f\"❌ Incorrecta. Intentos restantes: {max_intentos - intentos}\")\nelse:\n    print(\"🔒 Cuenta bloqueada\")\n\n\n\nPaso 5: List Comprehension - Filtrar Pares (10 min)\n\n\nPYTHON\n\nnumeros = list(range(1, 21))\n\n# Usando list comprehension\npares = [n for n in numeros if n % 2 == 0]\nprint(f\"Pares: {pares}\")\n\n# Cuadrados\ncuadrados = [n**2 for n in numeros]\nprint(f\"Cuadrados: {cuadrados}\")",
     "crumbs": [
       "Laboratorios Prácticos",
       "<span class='chapter-number'>167</span>  <span class='chapter-title'>Laboratorio 3: Estructuras de Control</span>"
@@ -13771,325 +13771,6 @@
     ]
   },
   {
-    "objectID": "q10/tarea-01-configuracion-entorno.html",
-    "href": "q10/tarea-01-configuracion-entorno.html",
-    "title": "Tarea 1: Configuración del Entorno de Desarrollo",
-    "section": "",
-    "text": "Descripción\nMódulo de referencia: Módulo 1 - Introducción a Python Unidad: 1.2 Instalación Dificultad: ⭐ Fácil Tiempo estimado: 30 minutos\nConfigura tu entorno de desarrollo local para trabajar con Python. Esta tarea es fundamental para todo el curso.",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Tarea 1: Configuración del Entorno de Desarrollo</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-01-configuracion-entorno.html#pasos",
-    "href": "q10/tarea-01-configuracion-entorno.html#pasos",
-    "title": "Tarea 1: Configuración del Entorno de Desarrollo",
-    "section": "Pasos",
-    "text": "Pasos\n\nInstala Python 3.9 o superior\n\nDescarga desde python.org\nVerifica con python3 --version\n\nInstala VS Code\n\nDescarga desde code.visualstudio.com\nInstala la extensión “Python” de Microsoft\n\nCrea tu primer proyecto\n\nCrea una carpeta mi-primer-programa\nDentro, crea un archivo main.py\nEscribe: print(\"¡Hola, Python!\")\nEjecuta con python3 main.py\n\nVerifica tu instalación\n\nEjecuta python3 -c \"import sys; print(sys.version)\"\nDebe mostrar Python 3.9+",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Tarea 1: Configuración del Entorno de Desarrollo</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-01-configuracion-entorno.html#criterios-de-éxito",
-    "href": "q10/tarea-01-configuracion-entorno.html#criterios-de-éxito",
-    "title": "Tarea 1: Configuración del Entorno de Desarrollo",
-    "section": "Criterios de Éxito",
-    "text": "Criterios de Éxito\n\nPython 3.9+ instalado y funcionando\nVS Code con extensión Python instalada\nPrimer programa ejecutado exitosamente\nPuedes abrir la terminal integrada en VS Code",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Tarea 1: Configuración del Entorno de Desarrollo</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-01-configuracion-entorno.html#recursos",
-    "href": "q10/tarea-01-configuracion-entorno.html#recursos",
-    "title": "Tarea 1: Configuración del Entorno de Desarrollo",
-    "section": "Recursos",
-    "text": "Recursos\n\nGuía de instalación del curso\nDocumentación oficial de Python\n\n\nEntrega: Captura de pantalla de tu terminal mostrando ¡Hola, Python! Fecha límite: Semana 1",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Tarea 1: Configuración del Entorno de Desarrollo</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-02-calculadora-propinas.html",
-    "href": "q10/tarea-02-calculadora-propinas.html",
-    "title": "Tarea 2: Calculadora de Propinas",
-    "section": "",
-    "text": "Descripción\nMódulo de referencia: Módulo 2 - Tipos de Datos y Variables Unidad: 2.1 Operadores Aritméticos Dificultad: ⭐ Fácil Tiempo estimado: 45 minutos\nCrea una calculadora de propinas que ayude a los usuarios a calcular cuánto dejar de propina en un restaurante.",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Tarea 2: Calculadora de Propinas</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-02-calculadora-propinas.html#requisitos",
-    "href": "q10/tarea-02-calculadora-propinas.html#requisitos",
-    "title": "Tarea 2: Calculadora de Propinas",
-    "section": "Requisitos",
-    "text": "Requisitos\n\nPide el total de la cuenta al usuario\nPide el porcentaje de propina deseado (10%, 15%, 20%)\nCalcula:\n\nMonto de la propina\nTotal a pagar (cuenta + propina)\n\nMuestra el resultado formateado",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Tarea 2: Calculadora de Propinas</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-02-calculadora-propinas.html#ejemplo-de-ejecución",
-    "href": "q10/tarea-02-calculadora-propinas.html#ejemplo-de-ejecución",
-    "title": "Tarea 2: Calculadora de Propinas",
-    "section": "Ejemplo de Ejecución",
-    "text": "Ejemplo de Ejecución\n=== Calculadora de Propinas ===\n\nTotal de la cuenta: $150.00\nPorcentaje de propina (10/15/20): 15\n\n--- Resumen ---\nCuenta: $150.00\nPropina (15%): $22.50\nTotal a pagar: $172.50",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Tarea 2: Calculadora de Propinas</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-02-calculadora-propinas.html#criterios-de-éxito",
-    "href": "q10/tarea-02-calculadora-propinas.html#criterios-de-éxito",
-    "title": "Tarea 2: Calculadora de Propinas",
-    "section": "Criterios de Éxito",
-    "text": "Criterios de Éxito\n\nEl programa pide cuenta y porcentaje correctamente\nCalcula la propina con la fórmula: propina = cuenta * (porcentaje / 100)\nMuestra el total formateado con 2 decimales\nManeja entradas inválidas (números negativos, texto)",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Tarea 2: Calculadora de Propinas</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-02-calculadora-propinas.html#recursos",
-    "href": "q10/tarea-02-calculadora-propinas.html#recursos",
-    "title": "Tarea 2: Calculadora de Propinas",
-    "section": "Recursos",
-    "text": "Recursos\n\nMódulo 2: Tipos de Datos\nDesafío 2: Conversor de Unidades\n\n\nEntrega: Archivo calculadora-propinas.py funcionando Fecha límite: Semana 2",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Tarea 2: Calculadora de Propinas</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-03-fizzbuzz-avanzado.html",
-    "href": "q10/tarea-03-fizzbuzz-avanzado.html",
-    "title": "Tarea 3: FizzBuzz Avanzado",
-    "section": "",
-    "text": "Descripción\nMódulo de referencia: Módulo 3 - Estructuras de Control Unidad: 3.3 For Loop Dificultad: ⭐⭐ Intermedio Tiempo estimado: 60 minutos\nImplementa el clásico FizzBuzz pero con reglas personalizadas. Este ejercicio evalúa tu dominio de condicionales y bucles.",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Tarea 3: FizzBuzz Avanzado</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-03-fizzbuzz-avanzado.html#requisitos",
-    "href": "q10/tarea-03-fizzbuzz-avanzado.html#requisitos",
-    "title": "Tarea 3: FizzBuzz Avanzado",
-    "section": "Requisitos",
-    "text": "Requisitos\n\nEl usuario ingresa un número límite (ej: 50)\nEl programa recorre números del 1 al límite\nPara cada número:\n\nSi es divisible por 3 → imprime “Fizz”\nSi es divisible por 5 → imprime “Buzz”\nSi es divisible por 3 Y 5 → imprime “FizzBuzz”\nSi no → imprime el número\n\nAl final, muestra estadísticas:\n\nCuántos “Fizz” hubo\nCuántos “Buzz” hubo\nCuántos “FizzBuzz” hubo\nCuántos números normales",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Tarea 3: FizzBuzz Avanzado</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-03-fizzbuzz-avanzado.html#ejemplo-de-ejecución",
-    "href": "q10/tarea-03-fizzbuzz-avanzado.html#ejemplo-de-ejecución",
-    "title": "Tarea 3: FizzBuzz Avanzado",
-    "section": "Ejemplo de Ejecución",
-    "text": "Ejemplo de Ejecución\n=== FizzBuzz Avanzado ===\n\nNúmero límite: 20\n\n1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n16\n17\nFizz\n19\nBuzz\n\n--- Estadísticas ---\nFizz: 5\nBuzz: 3\nFizzBuzz: 1\nNormales: 11",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Tarea 3: FizzBuzz Avanzado</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-03-fizzbuzz-avanzado.html#criterios-de-éxito",
-    "href": "q10/tarea-03-fizzbuzz-avanzado.html#criterios-de-éxito",
-    "title": "Tarea 3: FizzBuzz Avanzado",
-    "section": "Criterios de Éxito",
-    "text": "Criterios de Éxito\n\nBucle for recorre del 1 al límite\nCondicionales anidados correctamente\nEstadísticas calculadas con precisión\nCódigo legible y bien indentado",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Tarea 3: FizzBuzz Avanzado</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-03-fizzbuzz-avanzado.html#recursos",
-    "href": "q10/tarea-03-fizzbuzz-avanzado.html#recursos",
-    "title": "Tarea 3: FizzBuzz Avanzado",
-    "section": "Recursos",
-    "text": "Recursos\n\nMódulo 3: Estructuras de Control\nDesafío 3: FizzBuzz\nLab 3: Estructuras de Control\n\n\nEntrega: Archivo fizzbuzz-avanzado.py funcionando Fecha límite: Semana 3",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Tarea 3: FizzBuzz Avanzado</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-04-calculadora-funciones.html",
-    "href": "q10/tarea-04-calculadora-funciones.html",
-    "title": "Tarea 4: Calculadora Modular con Funciones",
-    "section": "",
-    "text": "Descripción\nMódulo de referencia: Módulo 4 - Funciones Unidad: 4.1 Definir Funciones Dificultad: ⭐⭐ Intermedio Tiempo estimado: 60 minutos\nConstruye una calculadora que use funciones separadas para cada operación, aplicando el principio de responsabilidad única.",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Tarea 4: Calculadora Modular con Funciones</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-04-calculadora-funciones.html#requisitos",
-    "href": "q10/tarea-04-calculadora-funciones.html#requisitos",
-    "title": "Tarea 4: Calculadora Modular con Funciones",
-    "section": "Requisitos",
-    "text": "Requisitos\n\nCrea las siguientes funciones:\n\n\nPYTHON\n\ndef sumar(a, b): ...\ndef restar(a, b): ...\ndef multiplicar(a, b): ...\ndef dividir(a, b): ...\ndef potencia(base, exponente): ...\ndef raiz_cuadrada(numero): ...\n\nMenú interactivo que permita elegir operación\nCada función debe incluir validación:\n\nNo dividir por cero\nNo raíz cuadrada de negativos\n\nEl programa se repite hasta que el usuario quiera salir",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Tarea 4: Calculadora Modular con Funciones</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-04-calculadora-funciones.html#criterios-de-éxito",
-    "href": "q10/tarea-04-calculadora-funciones.html#criterios-de-éxito",
-    "title": "Tarea 4: Calculadora Modular con Funciones",
-    "section": "Criterios de Éxito",
-    "text": "Criterios de Éxito\n\nCada operación es una función separada\nValidación de errores en cada función\nMenú claro y funcional\nDocstrings en todas las funciones",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Tarea 4: Calculadora Modular con Funciones</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-04-calculadora-funciones.html#recursos",
-    "href": "q10/tarea-04-calculadora-funciones.html#recursos",
-    "title": "Tarea 4: Calculadora Modular con Funciones",
-    "section": "Recursos",
-    "text": "Recursos\n\nMódulo 4: Funciones\nDesafío 7: Calculadora Funciones\nLab 4: Funciones\n\n\nEntrega: Archivo calculadora-modular.py Fecha límite: Semana 4",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Tarea 4: Calculadora Modular con Funciones</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-05-gestor-inventario.html",
-    "href": "q10/tarea-05-gestor-inventario.html",
-    "title": "Tarea 5: Gestor de Inventario con Listas",
-    "section": "",
-    "text": "Descripción\nMódulo de referencia: Módulo 5 - Listas y Tuplas Unidad: 5.1 Crear Listas Dificultad: ⭐⭐ Intermedio Tiempo estimado: 75 minutos\nCrea un sistema de inventario para una tienda pequeña usando listas y tuplas.",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>191</span>  <span class='chapter-title'>Tarea 5: Gestor de Inventario con Listas</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-05-gestor-inventario.html#requisitos",
-    "href": "q10/tarea-05-gestor-inventario.html#requisitos",
-    "title": "Tarea 5: Gestor de Inventario con Listas",
-    "section": "Requisitos",
-    "text": "Requisitos\n\nCada producto es una tupla: (nombre, precio, stock)\nFuncionalidades:\n\nAgregar producto\nEliminar producto por nombre\nActualizar stock\nMostrar inventario completo\nCalcular valor total del inventario (precio × stock)\n\nEl inventario se almacena en una lista",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>191</span>  <span class='chapter-title'>Tarea 5: Gestor de Inventario con Listas</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-05-gestor-inventario.html#ejemplo",
-    "href": "q10/tarea-05-gestor-inventario.html#ejemplo",
-    "title": "Tarea 5: Gestor de Inventario con Listas",
-    "section": "Ejemplo",
-    "text": "Ejemplo\n\n\nPYTHON\n\n# Estructura interna\ninventario = [\n    (\"Laptop\", 999, 5),\n    (\"Mouse\", 25, 50),\n    (\"Teclado\", 45, 30)\n]\n\n# Valor total: (999*5) + (25*50) + (45*30) = $7,495",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>191</span>  <span class='chapter-title'>Tarea 5: Gestor de Inventario con Listas</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-05-gestor-inventario.html#criterios-de-éxito",
-    "href": "q10/tarea-05-gestor-inventario.html#criterios-de-éxito",
-    "title": "Tarea 5: Gestor de Inventario con Listas",
-    "section": "Criterios de Éxito",
-    "text": "Criterios de Éxito\n\nProductos como tuplas dentro de lista\nCRUD completo (Crear, Leer, Actualizar, Eliminar)\nCálculo de valor total correcto\nCódigo limpio y documentado",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>191</span>  <span class='chapter-title'>Tarea 5: Gestor de Inventario con Listas</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tarea-05-gestor-inventario.html#recursos",
-    "href": "q10/tarea-05-gestor-inventario.html#recursos",
-    "title": "Tarea 5: Gestor de Inventario con Listas",
-    "section": "Recursos",
-    "text": "Recursos\n\nMódulo 5: Listas y Tuplas\nDesafío 7: Gestor Inventario\nLab 5: Listas y Tuplas\n\n\nEntrega: Archivo gestor-inventario.py Fecha límite: Semana 5",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>191</span>  <span class='chapter-title'>Tarea 5: Gestor de Inventario con Listas</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tareas-06-a-10.html",
-    "href": "q10/tareas-06-a-10.html",
-    "title": "Tareas 6-10: Proyectos Intermedios y Finales",
-    "section": "",
-    "text": "Tarea 6: Agenda de Contactos con Diccionarios (Semana 6)\nMódulo: 6 - Diccionarios y Sets Dificultad: ⭐⭐ Intermedio\nCrea una agenda de contactos donde cada contacto es un diccionario con nombre, teléfono, email y dirección. Debe permitir buscar, agregar, editar y eliminar contactos.\nEntrega: agenda-contactos.py",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>192</span>  <span class='chapter-title'>Tareas 6-10: Proyectos Intermedios y Finales</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tareas-06-a-10.html#tarea-7-diario-personal-con-archivos-semana-7",
-    "href": "q10/tareas-06-a-10.html#tarea-7-diario-personal-con-archivos-semana-7",
-    "title": "Tareas 6-10: Proyectos Intermedios y Finales",
-    "section": "Tarea 7: Diario Personal con Archivos (Semana 7)",
-    "text": "Tarea 7: Diario Personal con Archivos (Semana 7)\nMódulo: 7 - Manejo de Archivos Dificultad: ⭐⭐ Intermedio\nConstruye un diario personal que guarde entradas con fecha y hora en un archivo de texto. Debe permitir escribir nuevas entradas y leer todas las anteriores.\nEntrega: diario-personal.py",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>192</span>  <span class='chapter-title'>Tareas 6-10: Proyectos Intermedios y Finales</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tareas-06-a-10.html#tarea-8-api-del-clima-con-módulos-externos-semana-8",
-    "href": "q10/tareas-06-a-10.html#tarea-8-api-del-clima-con-módulos-externos-semana-8",
-    "title": "Tareas 6-10: Proyectos Intermedios y Finales",
-    "section": "Tarea 8: API del Clima con Módulos Externos (Semana 8)",
-    "text": "Tarea 8: API del Clima con Módulos Externos (Semana 8)\nMódulo: 8 - Módulos y Paquetes Dificultad: ⭐⭐⭐ Avanzado\nUsa el módulo requests para consumir una API del clima (OpenWeatherMap). El usuario ingresa una ciudad y se muestra el clima actual con temperatura, humedad y descripción.\nEntrega: api-clima.py",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>192</span>  <span class='chapter-title'>Tareas 6-10: Proyectos Intermedios y Finales</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tareas-06-a-10.html#tarea-9-refactorización-de-código-semana-9",
-    "href": "q10/tareas-06-a-10.html#tarea-9-refactorización-de-código-semana-9",
-    "title": "Tareas 6-10: Proyectos Intermedios y Finales",
-    "section": "Tarea 9: Refactorización de Código (Semana 9)",
-    "text": "Tarea 9: Refactorización de Código (Semana 9)\nMódulo: 9 - Buenas Prácticas Dificultad: ⭐⭐⭐ Avanzado\nTe proporcionamos un archivo de código “sucio” (sin docstrings, nombres crípticos, sin manejo de errores). Tu misión es refactorizarlo siguiendo PEP 8, con nombres descriptivos, docstrings y manejo de errores.\nEntrega: Código original + refactorizado con explicación de cambios",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>192</span>  <span class='chapter-title'>Tareas 6-10: Proyectos Intermedios y Finales</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tareas-06-a-10.html#tarea-10-proyecto-integrador-final-semana-10-12",
-    "href": "q10/tareas-06-a-10.html#tarea-10-proyecto-integrador-final-semana-10-12",
-    "title": "Tareas 6-10: Proyectos Intermedios y Finales",
-    "section": "Tarea 10: Proyecto Integrador Final (Semana 10-12)",
-    "text": "Tarea 10: Proyecto Integrador Final (Semana 10-12)\nMódulo: 10 - Proyecto Integrador Dificultad: ⭐⭐⭐⭐ Integrador Tiempo: 4-6 horas\nElige UNO de los siguientes proyectos:\n\nOpción A: Gestor de Tareas Completo\n\nCRUD de tareas con prioridades, fechas y estados\nPersistencia en JSON\nEstadísticas y reportes\nMenú interactivo\n\n\n\nOpción B: Juego del Ahorcado (MIT-inspired)\n\nCarga palabras desde archivo\nTracking de letras adivinadas\nLímite de intentos\nVisualización ASCII del ahorcado\n\n\n\nOpción C: Cifrado César y Criptoanálisis (MIT-inspired)\n\nFunciones de encriptar/desencriptar\nFuerza bruta para crackear mensajes\nDetección automática de texto válido\n\n\n\nOpción D: Analizador de Datos CSV\n\nLectura de archivos CSV\nEstadísticas (media, mediana, moda)\nFiltrado y agrupación\nReporte en texto formateado\n\nEntrega: - [ ] Código fuente completo - [ ] README con instrucciones - [ ] Tests básicos - [ ] Capturas de ejecución - [ ] Reflexión de 1 párrafo\nFecha límite: Semana 12",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>192</span>  <span class='chapter-title'>Tareas 6-10: Proyectos Intermedios y Finales</span>"
-    ]
-  },
-  {
-    "objectID": "q10/tareas-06-a-10.html#rúbrica-general-de-evaluación",
-    "href": "q10/tareas-06-a-10.html#rúbrica-general-de-evaluación",
-    "title": "Tareas 6-10: Proyectos Intermedios y Finales",
-    "section": "Rúbrica General de Evaluación",
-    "text": "Rúbrica General de Evaluación\n\n\n\nCriterio\nPeso\nDescripción\n\n\n\n\nFuncionalidad\n30%\nEl código funciona completamente\n\n\nEstructura\n20%\nCódigo limpio, funciones separadas\n\n\nDocumentación\n15%\nDocstrings, comentarios claros\n\n\nManejo de errores\n15%\nExcepciones capturadas\n\n\nCreatividad\n10%\nFuncionalidades adicionales\n\n\nEntrega completa\n10%\nTodos los archivos requeridos",
-    "crumbs": [
-      "Tareas para Plataforma Q10",
-      "<span class='chapter-number'>192</span>  <span class='chapter-title'>Tareas 6-10: Proyectos Intermedios y Finales</span>"
-    ]
-  },
-  {
     "objectID": "content/appendix/01-ia-en-python.html",
     "href": "content/appendix/01-ia-en-python.html",
     "title": "Apéndice A: Integración de IA en el Desarrollo Python",
@@ -14097,7 +13778,7 @@
     "text": "Introducción\nEste apéndice explora cómo las herramientas de inteligencia artificial pueden辅助 (ayudarte) en tu viaje de aprendizaje de Python. Inspirado en концепции (conceptos) del desarrollo impulsado por IA y la filosofía de Iron Man, te mostraremos cómo convertirte en un “programador con armadura” - alguien que usa la tecnología para amplify (amplificar) sus habilidades.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -14108,7 +13789,7 @@
     "text": "⚠️ Nota sobre el uso de IA en este curso: Este apéndice te enseña a USAR la IA como ferramenta (herramienta) de productividad, NO para evitar aprender. Las actividades principales del curso están diseñadas para que las completes sin asistencia de IA.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -14119,7 +13800,7 @@
     "text": "¿Qué es el Desarrollo Impulsado por IA?\nEl desarrollo impulsado por IA (AI-Driven Development) es un enfoque donde usas modelos de lenguaje y agentes de IA como collaborators (colaboradores) en tu flujo de trabajo de programación. No se trata de remplacer (reemplazar) tu cerebro, sino de augment (aumentar) tus capacidades.\n\nAnalogía: El Jarvis de Iron Man\nImagina a JARVIS (Just A Rather Very Intelligent System) assisting (asistiendo) a Tony Stark. JARVIS no escribe el código por él, pero:\n\nAnálisis de código más rápido\nSugerencias de optimización\nDetección de problemas potenciales\nAutomatización de tareas repetitivas\n\nTú puedes tener tu propio “JARVIS” usando herramientas de IA como:\n\nCopilot / Cursor: Autocompletado inteligente\nChatGPT / Claude: Resolución de dudas\nNotebookLM: Investigación y organización",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -14130,7 +13811,7 @@
     "text": "Niveles de Uso de IA en Python\n\nNivel 1: Asistente de Código\n\n\nPYTHON\n\n# Antes de IA: Escribir todo manualmente\ndef calcular_area_circulo(radio):\n    pi = 3.14159\n    area = pi * radio ** 2\n    return area\n\n# Con IA:Sugerencias automáticas\ndef calcular_area_circulo(radio: float) -&gt; float:\n    \"\"\"Calcula el área de un círculo dado su radio.\n    \n    Args:\n        radio: El radio del círculo\n        \n    Returns:\n        El área del círculo\n    \"\"\"\n    import math\n    return math.pi * radio ** 2\n\n\n\nNivel 2: Constructor de Código\n\n\nPYTHON\n\n# Ejemplo: Generación de tests con IA\n# Prompt: \"Genera tests unitarios para esta función\"\nimport unittest\n\nclass TestCalculadora(unittest.TestCase):\n    def test_suma_basica(self):\n        self.assertEqual(1 + 1, 2)\n    \n    def test_suma_negativos(self):\n        self.assertEqual(-1 + 1, 0)\n\n\n\nNivel 3: Arquitecto de IA\nAquí es donde creas sistemas que themselves (ellos mismos) usan IA para tomar decisiones.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -14141,7 +13822,7 @@
     "text": "Herramientas Específicas para Python\n\n1. GitHub Copilot\n\n\n\nCaracterística\nDescripción\n\n\n\n\nAutocompletado\nSugiere código mientras escribes\n\n\nExplicación\nExplica código seleccionado\n\n\nGeneración\nCrea código desde comentarios\n\n\n\n\n\n2. Jupyter con IA\n\n\nPYTHON\n\n# Magic commands para IA\n%ai  # Activa modo de asistencia IA\n\n\n\n3. Model Context Protocol (MCP)\nMCP es un protocolo que permite a tus scripts Python conectar con servicios de IA externos.\n\n\nPYTHON\n\n# Ejemplo de conexión MCP\nfrom mcp import Client\n\nclient = Client(\"mi-servidor-mcp\")\nresult = client.analyze_code(\"\"\"\ndef hola_mundo():\n    print(\"¡Hola, mundo!\")\n\"\"\")\nprint(result.suggestions)",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -14152,7 +13833,7 @@
     "text": "Mejores Prácticas\n\n✅ Hacer\n\nUsar IA para debug: “Why does this error occur?”\nPedir explicaciones: “¿Cómo funciona este código?”\nExplorar opciones: “¿Cuál es la mejor forma de hacer esto?”\nAprender conceptos: “Explícame qué es una closure”\n\n\n\n❌ No Hacer\n\nCopiar sin entender: El código debe ser TÚ código\nEvitar el esfuerzo: Los ejercicios son para practicar\nIgnorar errores: La IA puede equivocarse\nDepender siempre: Aprende a resolver solo",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -14163,7 +13844,7 @@
     "text": "El Prompt Engineering para Python\n\nEstructura de Prompts Efectivos\n[Contexto]: Soy estudiante aprendiendo Python básico\n[Tarea]: Explica cómo funcionan las listas por comprensión\n[Formato]: Con ejemplos de código y analogía del mundo real\n[Restricción]: En español, nivel principiante\n\n\nEjemplos de Prompts Buenos vs. Malos\n\n\n\n\n\n\n\n❌ Malo\n✅ Bueno\n\n\n\n\n“Hazme una calculadora”\n“Crea una calculadora en Python con funciones para suma, resta, multiplicación y división. Incluye manejo de errores para división por cero. Explica cada parte del código.”\n\n\n“Why Python?”\n“Explícame por qué Python es buen lenguaje para principiantes, comparándolo con Java y C++”\n\n\n“Help”\n“Tengo un error ‘IndexError: list index out of range’ en mi código. ¿Qué significa y cómo lo soluciono?”",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -14174,7 +13855,7 @@
     "text": "Gamificación: Tu Sistema de Logros\nComo en los cursos con niveles de Iron Man, aquí tienes un sistema de progresión:\n\nProgression Levels\n\n\n\nNivel\nTítulo\nRequisitos\n\n\n\n\n🌱 Novato\nPrimera línea de código\nCompletar Módulo 1\n\n\n🔧 Constructor\nFunciones y lógica\nCompletar Módulos 1-4\n\n\n🛡️ Arquitec\nEstructuras de datos\nCompletar Módulos 1-6\n\n\n⚡ Experto\nProyectos completos\nCompletar Módulos 1-10\n\n\n🦾 Iron Coder\nMaestro Python\nTodos los módulos + 3 proyectos\n\n\n\n\n\nAchievements (Logros)\n\n“Hello World”: Tu primer programa\n“Variable Master”: 100% en Quiz Módulo 2\n“Loop Legend”: Completar todos los ejercicios de bucles\n“Bug Hunter”: Encontrar y corregir 10 errores en tus proyectos\n“Teacher’s Pet”: Explicar un concepto a otro estudiante",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -14185,7 +13866,7 @@
     "text": "Próximos Pasos\n\nPractica sin IA: Completa los ejercicios principales tú solo\nExperimenta con herramientas: Copilot, ChatGPT, etc.\nComparte tu conocimiento: Enseña a otros lo que has aprendido\nConstruye proyectos: Aplica lo aprendido en proyectos reales\n\n\n“No soy aquí para caerles bien. Soy aquí para hacerlos aprender.” — Diego Saavedra",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -14196,7 +13877,7 @@
     "text": "Recursos Adicionales\n\n📚 Documentación oficial de Python\n🎯 Real Python\n💬 Comunidad Python Ecuador\n🤖 Planet Code\n\n\nEste apéndice está inspirada en conceptos de desarrollo con IA, gamificación y mejores prácticas pedagógicas. ¡Tu viaje apenas comienza!\n\nVolver al índice: Inicio | Anterior: Módulo 10",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>187</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -14207,7 +13888,7 @@
     "text": "¿Qué es MCP?\nEl Model Context Protocol (MCP) es un protocolo abierto que permite a las aplicaciones Python conectar con servicios de inteligencia artificial de manera estandarizada. Es como un “USB para aplicaciones de IA” - define cómo tu código puede comunicarse con modelos de lenguaje.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14218,7 +13899,7 @@
     "text": "🔧 Analogía: Si Python es el lenguaje que hablas, MCP es el protocolo que permite que tu Python “hable” con servicios externos de IA.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14229,7 +13910,7 @@
     "text": "¿Por qué usar MCP en Python?\n\nSin MCP (Complicado)\n\n\nPYTHON\n\n# Cada servicio tiene su propia API\nimport openai  # API de OpenAI\nimport anthropic  # API de Anthropic\nimport google.generativeai  # API de Google\n\n# Debes aprender 3 APIs diferentes\nresponse = openai.ChatCompletion.create(...)\nresponse = anthropic.Message.create(...)\nresponse = genai.generate_content(...)\n\n\n\nCon MCP (Estandarizado)\n\n\nPYTHON\n\n# Una API unificada\nfrom mcp import MCPClient\n\nclient = MCPClient(\"mi-servidor\")  # Todas las IA usan el mismo formato\nresponse = client.chat(\"¿Qué es Python?\")",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14240,7 +13921,7 @@
     "text": "Instalación de MCP\n\n\nBASH\n\n# Instalación básica\npip install mcp\n\n# Para servidores específicos\npip install mcp-server-openai\npip install mcp-server-anthropic",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14251,7 +13932,7 @@
     "text": "Tu Primer Script con MCP\n\nPaso 1: Conectar a un servidor\n\n\nPYTHON\n\nfrom mcp import Client\n\n# Conectar a un servidor MCP\nclient = MCPClient(\"http://localhost:3000\")\n\n# Verificar conexión\nif client.is_connected():\n    print(\"✅ Conectado al servidor MCP\")\n\n\n\nPaso 2: Enviar prompts\n\n\nPYTHON\n\n# Chat básico\nresponse = client.chat(\"¿Cómo declaro una variable en Python?\")\nprint(response.content)\n\n\n\nPaso 3: Análisis de código\n\n\nPYTHON\n\n# Analizar código Python\ncode_analysis = client.analyze_code(\"\"\"\ndef suma(a, b):\n    return a + b\n\"\"\")\n\nprint(f\"Recomendaciones: {code_analysis.suggestions}\")\nprint(f\"Complejidad: {code_analysis.complexity}\")\nprint(f\"Mejoras: {code_analysis.suggestions}\")",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14262,7 +13943,7 @@
     "text": "Casos de Uso Prácticos\n\n1. Asistente de Debug\n\n\nPYTHON\n\ndef debug_con_mcp(codigo_error):\n    client = MCPClient(\"http://localhost:3000\")\n    \n    prompt = f\"\"\"\n    Este código genera un error. Analízalo y sugiere correcciones.\n    \n    Código con error:\n    {codigo_error}\n    \n    Formato de respuesta:\n    1. Posible causa del error\n    2. Solución sugerida\n    3. Código corregido\n    \"\"\"\n    \n    respuesta = client.chat(prompt)\n    return respuesta.content\n\n\n\n2. Generador de Documentación\n\n\nPYTHON\n\ndef documentar_funcion(funcion_codigo):\n    client = MCPClient(\"http://localhost:3000\")\n    \n    prompt = f\"\"\"\n    Genera documentación en formato Google Docstring para esta función:\n    \n    {funcion_codigo}\n    \n    Incluye:\n    - Descripción breve\n    - Args (parámetros)\n    - Returns (retorno)\n    - Raises (excepciones)\n    - Ejemplo de uso\n    \"\"\"\n    \n    return client.chat(prompt)\n\n\n\n3. Revisor de Código\n\n\nPYTHON\n\ndef revisar_codigo(codigo_fuente):\n    client = MCPClient(\"http://localhost:3000\")\n    \n    prompt = f\"\"\"\n    Revisa este código Python según las mejores prácticas:\n    \n    1. PEP 8 compliance\n    2. Performance\n    3. Seguridad\n    4. Legibilidad\n    \n    Código:\n    {codigo_fuente}\n    \n    Responde en JSON:\n    {{\n        \"issues\": [...],\n        \"score\": 0-100,\n        \"recommendations\": [...]\n    }}\n    \"\"\"\n    \n    return client.chat_json(prompt)",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14273,7 +13954,7 @@
     "text": "Configuración de Servidores MCP\n\nServidor Local\n\n\nPYTHON\n\n# server.py - Tu propio servidor MCP\nfrom mcp.server import MCPServer\n\nserver = MCPServer(\n    name=\"mi-servidor-python\",\n    description=\"Mi servidor personalizado\",\n    version=\"1.0.0\"\n)\n\n@server.tool()\ndef analizar_sintaxis(codigo):\n    \"\"\"Analiza la sintaxis de código Python\"\"\"\n    import ast\n    try:\n        ast.parse(codigo)\n        return {\"status\": \"válido\", \"errores\": []}\n    except SyntaxError as e:\n        return {\"status\": \"inválido\", \"errores\": [str(e)]}\n\n@server.tool()\ndef explicar_error(codigo, error):\n    \"\"\"Explica un error de Python\"\"\"\n    # Lógica para analizar errores\n    return {\"explicacion\": \"...\"}\n\nif __name__ == \"__main__\":\n    server.run(port=3000)\n\n\n\nConectar a Servicios Externos\n\n\nBASH\n\n# Iniciar servidor con OpenAI\nmcp-server-openai --api-key $OPENAI_API_KEY\n\n# Iniciar servidor con Anthropic  \nmcp-server-anthropic --api-key $ANTHROPIC_API_KEY",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14284,7 +13965,7 @@
     "text": "Mejores Prácticas con MCP\n\n✅ Recomendado\n\nUsar para aprendizaje: “Explícame este concepto”\nDebugging: “¿Por qué este error?”\nRevisión de código: “Mejora este código”\nDocumentación: “Genera docstrings”\n\n\n\n⚠️ Con Precaución\n\nCódigo crítico: Siempre revisa lo que genera la IA\nDatos sensibles: No enviar código con credenciales\nProducción: Testea exhaustivamente antes de deployar\n\n\n\n❌ Evitar\n\nEjercicios del curso: Los来完成 (debes completar) sin IA\nEvaluaciones: Trampa = aprendizaje perdido\nCopiar y pegar sin entender: Tu conocimiento = tu herramienta",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14295,7 +13976,7 @@
     "text": "Solución de Problemas\n\nError: “Connection refused”\n❌ MCPConnectionError: Could not connect to server\nSolución:\n\n\nBASH\n\n# Verificar que el servidor está corriendo\ncurl http://localhost:3000/health\n\n# Iniciar servidor\npython server.py\n\n\n\nError: “API key inválida”\n❌ MCPAuthError: Invalid API key\nSolución:\n\n\nPYTHON\n\n# Verificar clave\nimport os\nprint(os.environ.get(\"OPENAI_API_KEY\"))\n\n# Configurar correctamente\nclient = MCPClient(\n    \"http://localhost:3000\",\n    api_key=\"sk-...\"  # Tu clave\n)",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14306,7 +13987,7 @@
     "text": "Recursos MCP\n\n\n\nRecurso\nURL\n\n\n\n\nDocumentación MCP\nhttps://modelcontextprotocol.io\n\n\nServidores MCP\nhttps://github.com/modelcontextprotocol/servers\n\n\nPython SDK\nhttps://pypi.org/project/mcp/",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14317,7 +13998,7 @@
     "text": "Ejercicios de Práctica\n\nEjercicio 1: Hola MCP\n\n\nPYTHON\n\n# Conecta a un servidor MCP y haz tu primera pregunta\n# Respuesta esperada: Saludo en español\n\n\n\nEjercicio 2: Analizador de Código\n\n\nPYTHON\n\n# Crea una función que use MCP para analizar código\n# Debe retornar: suggestions, complexity, improvements\n\n\n\nEjercicio 3: Generador de Tests\n\n\nPYTHON\n\n# Crea un generador de tests usando MCP\n# Input: función Python\n# Output: tests unitarios",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14328,7 +14009,7 @@
     "text": "Resumen\n\n\n\nConcepto\nDescripción\n\n\n\n\nMCP\nProtocolo para conectar Python con servicios de IA\n\n\nCliente\nTu script Python que usa MCP\n\n\nServidor\nServicio que procesa requests de IA\n\n\nTools\nFunciones específicas disponibles via MCP\n\n\n\n\n🦾 Recuerda: MCP es una herramienta poderosa, pero tu cerebro sigue siendo el mejor procesador. Úsalo para amplify (amplificar) tu aprendizaje, no para reemplazarlo.\n\n\nAprende más sobre IA y desarrollo en el Apéndice A: Integración de IA en el Desarrollo Python\n\nVolver al índice: Inicio | Anterior: Apéndice A",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -14339,7 +14020,7 @@
     "text": "🏁 Objetivo de Esta Fase\nEsta fase final verifica que el curso de Python cumple con todos los estándares de calidad, contenido educativo, y sistemas de soporte para estudiantes. Es inspirada en las prácticas de verification de agentes autónomos y el enfoque de mejora continua.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -14350,7 +14031,7 @@
     "text": "📋 Checklist de Verificación\n\n✅ Contenido Principal\n\n\n\n\n\n\n\n\nRequisito\nEstado\nNotas\n\n\n\n\n10 módulos completos\n✅\nContenido con analogías, comentarios numerados, Zen de Python\n\n\n70+ desafíos progresivos\n✅\n7 por módulo (63+ desafíos)\n\n\n10 quizzes con explicaciones\n✅\nMódulos 1-10 completos\n\n\nImágenes SVG originales\n✅\n9 diagramas sin copyright\n\n\nHojas de cheat sheets\n✅\nPor cada módulo\n\n\nLaboratorios prácticos\n✅\n2 laboratorios con anti-AI warnings\n\n\n\n\n\n✅ Sistemas de Aprendizaje\n\n\n\nSistema\nEstado\nDescripción\n\n\n\n\nAnti-AI para Labs\n✅\nAdvertencias en Laboratorios 1 y 2\n\n\nRetroalimentación\n✅\nGitHub Issues para feedback y bugs\n\n\nMonitoreo de CI\n✅\nAlertas automáticas en fallos\n\n\nValidación de enlaces\n✅\n0 enlaces rotos encontrados\n\n\n\n\n\n✅ Infraestructura\n\n\n\nComponente\nEstado\nNotas\n\n\n\n\nGitHub Pages\n✅\nhttps://statick88.github.io/Course_of_python/\n\n\nGitHub Actions\n✅\nAuto-deploy con Quarto\n\n\n_quarto.yml\n✅\nConfiguración válida\n\n\nQuizdown\n✅\nFiltro para quizzes",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -14361,7 +14042,7 @@
     "text": "🔍 Pruebas de Calidad Realizadas\n\n1. Validación de YAML\n\n\nBASH\n\n✅ yamllint .github/workflows/quarto-publish.yml\n   ✔ YAML Lint successful.\n\n✅ python3 -c \"import yaml; yaml.safe_load(open('_quarto.yml'))\"\n   YAML is valid\n\n\n\n2. Verificación de Quarto\n\n\nBASH\n\n✅ quarto check\n   [✓] Checking environment information...\n   [✓] Checking versions of quarto binary dependencies\n   [✓] Checking Quarto installation\n   [✓] Checking Python 3 installation\n   [✓] Checking Jupyter engine render\n\n\n\n3. Validación de Enlaces\n\n\nBASH\n\n✅ Total external links checked: 4-6 per file\n   Broken links found: 0\n   All links are valid!\n\n\n\n4. Renderizado Local\n\n\nBASH\n\n✅ quarto render content/modulo-06/ --no-execute --to html\n   [✓] 7/7 files rendered successfully\n   \n✅ quarto render content/modulo-09/ --no-execute --to html\n   [✓] 8/8 files rendered successfully",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -14372,7 +14053,7 @@
     "text": "📊 Estadísticas del Curso\n📚 Contenido:\n   - Módulos: 10\n   - Lecciones: 60+\n   - Desafíos: 70+\n   - Quizzes: 10 (10 preguntas cada uno)\n   - Imágenes SVG: 9\n   - Archivos QMD: 150+\n\n📈 Progreso por Módulo:\n   - Módulo 1: Introducción a Python\n   - Módulo 2: Tipos de Datos y Variables\n   - Módulo 3: Estructuras de Control\n   - Módulo 4: Funciones\n   - Módulo 5: Listas y Tuplas\n   - Módulo 6: Diccionarios y Sets\n   - Módulo 7: Manejo de Archivos\n   - Módulo 8: Módulos y Paquetes\n   - Módulo 9: Buenas Prácticas\n   - Módulo 10: Proyecto Integrador",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -14383,7 +14064,7 @@
     "text": "🎯 Niveles de Gamificación\n\n\n\nNivel\nTítulo\nPuntos\nRequisitos\n\n\n\n\n🌱 Novato\nPython Starter\n0-100\nCompletar Módulo 1\n\n\n🔧 Constructor\nCode Builder\n101-300\nCompletar Módulos 1-4\n\n\n🛡️ Arquitec\nData Master\n301-600\nCompletar Módulos 1-6\n\n\n⚡ Experto\nPython Pro\n601-900\nCompletar Módulos 1-10\n\n\n🦾 Iron Coder\nFull Stack Dev\n901+\nProyectos completados",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -14394,7 +14075,7 @@
     "text": "🏆 Logros (Achievements)\n\n\n\n\n\n\n\n\nLogro\nDescripción\nCómo obtener\n\n\n\n\n🌟 “Hello World”\nTu primer programa\nCompletar Desafío 1\n\n\n📚 “Scholar”\n100% en quiz\nPerfect score en cualquier quiz\n\n\n🐛 “Bug Hunter”\nCorrector de errores\nResolver 10 errores en proyectos\n\n\n🎯 “Sharpshooter”\nTodos los desafíos\nCompletar 70+ desafíos\n\n\n📖 “Bibliotecario”\nDocumentador\nCrear docs para 3 proyectos\n\n\n🤝 “Teacher”\nExplicador\nEnseñar a otro estudiante\n\n\n🔒 “Security First”\nCódigo seguro\nAplicar best practices en proyectos",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -14405,7 +14086,7 @@
     "text": "🚀 Próximas Mejoras Sugeridas\n\nPara Estudiantes\n\nProyectos adicionales: Añadir más proyectos del mundo real\nVideos explicativos: Integrar contenido en video\nCertificados: Generar certificados deCompletion\nForo de estudiantes: Espacio para preguntas entre pares\n\n\n\nPara el Instructor\n\nAnalytics: Métricas de uso del curso\nA/B Testing: Probar diferentes enfoques pedagógicos\nActualizaciones automáticas: Sincronizar con documentación Python\nMulti-idioma: Traducir a inglés y otros idiomas",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -14416,7 +14097,7 @@
     "text": "📝 Declaración de Calidad\n\nEste curso de Python ha sido diseñado siguiendo los principios de: - Enseñanza por analogías: Conceptos primero, código después - Aprendizaje progresivo: Dificultad creciente en cada módulo - Práctica intensiva: 70+ desafíos para dominar habilidades - Retroalimentación continua: Sistema de feedback estudiantil - Calidad automatizada: CI/CD con validación de contenido",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -14427,7 +14108,7 @@
     "text": "🎓 Mensaje Final\n\n“La programación no es solo escribir código. Es pensar lógicamente, resolver problemas creativamente, y comunica tus ideas a través de la lógica.\nEste curso te ha dado las herramientas. Ahora, construye algo increíble.”\n— Diego Saavedra",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -14438,7 +14119,7 @@
     "text": "📚 Recursos del Curso\n\n\n\nRecurso\nEnlace\n\n\n\n\nRepositorio GitHub\nhttps://github.com/statick88/Course_of_python\n\n\nGitHub Pages\nhttps://statick88.github.io/Course_of_python/\n\n\nDocumentación Python\nhttps://docs.python.org/es/3/\n\n\nComunidad Python Ecuador\nhttps://discord.gg/python-ec\n\n\n\n\n¡Gracias por completar el curso! 🎉\n\nVolver al índice: Inicio | Anterior: Apéndice B",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -14449,7 +14130,7 @@
     "text": "Apéndice C: Python 3.14 y el Ecosistema 2026",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14460,7 +14141,7 @@
     "text": "Python 3.14: Lo que cambió (Octubre 2025)\nPython 3.14 es la versión estable actual (abril 2026). Trajo los cambios más significativos en años.\n\nNota del instructor: Aunque este curso enseña conceptos que aplican a cualquier versión, es útil conocer lo último. Algunas de estas funciones cambiarán cómo escribes Python en el futuro cercano.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14471,7 +14152,7 @@
     "text": "1. Mensajes de Error Inteligentes\nAntes (Python 3.12 y anterior):\n\n\nPYTHON\n\n&gt;&gt;&gt; forr i in range(5):\nSyntaxError: invalid syntax\n\nAhora (Python 3.14):\n\n\nPYTHON\n\n&gt;&gt;&gt; forr i in range(5):\nSyntaxError: invalid syntax. Did you mean 'for'?\n\n\n¿Por qué importa?\nPython ahora detecta errores comunes y sugiere correcciones:\n\n\n\nTu error\nSugerencia de Python\n\n\n\n\nforr\nDid you mean for?\n\n\npritn(x)\nDid you mean print?\n\n\na, b = [1, 2, 3]\ntoo many values to unpack (expected 2, got 3)\n\n\nlista.apend(x)\nDid you mean lista.append?\n\n\n\n\n\nDesafío: Prueba los errores\nAbre tu terminal y prueba estos errores. Observa las sugerencias:\n\n\nPYTHON\n\n# Error 1: Keyword typo\nwhlie True:\n    pass\n\n# Error 2: Method typo\n[].apend(1)\n\n# Error 3: Unpacking\na, b = [1, 2, 3]\n\n# Error 4: Undefined method\n\"hello\".uppr()",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14482,7 +14163,7 @@
     "text": "2. T-Strings (Template Strings) — PEP 750\n\nEl problema con f-strings\nLas f-strings son geniales pero no puedes interceptar los valores interpolados:\n\n\nPYTHON\n\nnombre = \"' OR '1'='1\"\nquery = f\"SELECT * FROM users WHERE name = '{nombre}'\"\n# ¡SQL Injection! La f-string no te protege\n\n\n\nLa solución: T-Strings\n\n\nPYTHON\n\nfrom string.templatelib import Template\n\ndef safe_query(name: str) -&gt; Template:\n    return t\"SELECT * FROM users WHERE name = {name}\"\n\n# Retorna un objeto Template, NO un string\ntpl = safe_query(\"' OR '1'='1\")\n# Un procesador puede escapar o parametrizar automáticamente\n\n\n\n¿Qué son exactamente?\nLas t-strings separan el texto estático de los valores interpolados:\n\n\nPYTHON\n\nfrom string.templatelib import Template\n\ndef html_escape(value):\n    return str(value).replace(\"&lt;\", \"&lt;\").replace(\"&gt;\", \"&gt;\")\n\ndef safe_html(name: str) -&gt; str:\n    # El procesador recibe partes separadas\n    # y puede escapar valores automáticamente\n    return html_escape(name)\n\n# Uso futuro con custom processors\ngreeting = t\"&lt;h1&gt;Hola, {nombre}!&lt;/h1&gt;\"\n# El processor escapa &lt;script&gt; tags automáticamente\n\n\n\nAnalogía del mundo real\n\nf-string: Mezclar ingredientes y hornear → no puedes separarlos después\nt-string: Receta con ingredientes separados → puedes modificar antes de mezclar",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14493,7 +14174,7 @@
     "text": "3. Anotaciones Diferidas — PEP 649\n\nEl problema anterior\n\n\nPYTHON\n\n# Python 3.13 y anterior\nclass Node:\n    def connect(self, other: Node):  # NameError! Node no está definida aún\n        pass\n\n# Workaround necesario:\nclass Node:\n    def connect(self, other: \"Node\"):  # Strings como workaround\n        pass\n\n# O:\nfrom __future__ import annotations  # Import mágico\n\n\n\nAhora (Python 3.14)\n\n\nPYTHON\n\n# Funciona NATIVAMENTE sin quotes ni imports\nclass Node:\n    def connect(self, other: Node):  # ✅ Sin error\n        pass\n\nclass LinkedList:\n    head: Node  # ✅ Forward reference funciona\n\nclass Node:\n    value: int\n    next: Node | None = None\n\n\n\n¿Cómo funciona?\nLas anotaciones ahora son lazy (evaluación perezosa):\n\n\nPYTHON\n\nimport annotationlib\n\n# Las anotaciones NO se evalúan al definir la clase\n# Se evalúan SOLO cuando las pides:\nhints = annotationlib.get_annotations(Node, format=annotationlib.Format.FORWARDREF)\nprint(hints)  # {'value': int, 'next': Node | None}\n\n\n\n¿Por qué importa?\n\n\n\nBeneficio\nImpacto\n\n\n\n\nSin NameError por forward references\nCódigo más limpio\n\n\nSin from __future__ import annotations\nMenos imports mágicos\n\n\nMejor rendimiento al importar\nNo evalúa expresiones pesadas\n\n\nType checkers funcionan mejor\nAcceso programático a tipos",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14504,7 +14185,7 @@
     "text": "4. REPL Mejorado\n\nLo que tenía Python antes\n\n\nPYTHON\n\n&gt;&gt;&gt; def calculate_total(items):\n...     total = 0\n...     for item in items:\n...         total += item.price\n...     return total\n&gt;&gt;&gt; # Todo en blanco y negro, sin autocompletado\n\n\n\nLo que tiene ahora (Python 3.14)\n\n\nPYTHON\n\n&gt;&gt;&gt; # Syntax highlighting en tiempo real:\n&gt;&gt;&gt; # def se ve en morado, nombres en azul, tipos en verde\n&gt;&gt;&gt; import dat  # TAB → autocompleta a dataclasses, datetime, etc.\n\n\n\nFeatures nuevas\n\n\n\n\n\n\n\nFeature\nDescripción\n\n\n\n\nSyntax highlighting\nColores configurables con temas ANSI\n\n\nAutocompletado con TAB\nimport + TAB muestra módulos disponibles\n\n\nHistorial persistente\nLas sesiones anteriores se recuerdan\n\n\nMultiline editing\nEditar múltiples líneas más fácilmente\n\n\n\n\n\nComparación con shells externos\n\n\n\nShell\nSyntax Highlighting\nAutocomplete\nBuilt-in\n\n\n\n\nPython 3.13 REPL\n❌\n❌\n✅\n\n\nIPython\n✅\n✅\n❌ (pip install)\n\n\nPython 3.14 REPL\n✅\n✅\n✅",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14515,7 +14196,7 @@
     "text": "5. Subinterpreters — Paralelismo Real\n\nEl problema del GIL\nEl Global Interpreter Lock (GIL) impide que múltiples threads ejecuten bytecode Python simultáneamente:\n\n\nPYTHON\n\nimport threading\n\ndef cpu_task():\n    return sum(i*i for i in range(10_000_000))\n\n# En Python con GIL: threads NO son paralelos realmente\nthreads = [threading.Thread(target=cpu_task) for _ in range(4)]\nfor t in threads: t.start()  # Se turnan, NO corren juntos\n\n\n\nLa solución: Subinterpreters\n\n\nPYTHON\n\nfrom concurrent.futures import InterpreterPoolExecutor\n\ndef cpu_task(n):\n    return sum(i * i for i in range(n))\n\n# Cada subinterpreter tiene su PROPIO GIL\nwith InterpreterPoolExecutor(max_workers=4) as pool:\n    results = list(pool.map(cpu_task, [5_000_000] * 4))\n    # ¡PARALELO REAL! 4x más rápido en CPU multi-core\n\n\n\nComparación de opciones de paralelismo\n\n\n\nEnfoque\nOverhead\nAislamiento\nParalelismo real\n\n\n\n\nthreading\nBajo\nNinguno\n❌ (GIL)\n\n\nmultiprocessing\nAlto\nTotal\n✅\n\n\nSubinterpreters\nMedio\nAlto\n✅",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14526,7 +14207,7 @@
     "text": "6. Rendimiento: GC Incremental + JIT Experimental\n\nGarbage Collector Incremental\nAntes: GC detenía todo el programa para detectar ciclos → “micro-pausas”\nAhora: GC distribuye el trabajo en pasos pequeños → sin pausas notables\n\n\nPYTHON\n\n# NO necesitas cambiar código\n# Funciona automáticamente\nclass Node:\n    def __init__(self):\n        self.next = None  # Referencia circular potencial\n\n# GC incremental detecta ciclos sin pausar tu app\n\n\n\nJIT Compiler Experimental\n\n\nBASH\n\n# Activar JIT (experimental)\nPYTHON_JIT=1 python mi_script.py\n\n# O con flag\npython --enable-jit mi_script.py\n\n\n\nPYTHON\n\n# Verificar si JIT está activo\nimport sys\ntry:\n    from sys import _jit\n    print(f\"JIT available: {_jit.is_available()}\")\n    print(f\"JIT active: {_jit.is_active()}\")\nexcept ImportError:\n    print(\"JIT no está compilado en esta versión\")\n\n\n\nBenchmarks (Python 3.14 vs 3.12)\n\n\n\nOperación\nPython 3.12\nPython 3.14\nMejora\n\n\n\n\nImportar módulos\n1.0x\n1.15x\n+15%\n\n\nString concat\n1.0x\n1.08x\n+8%\n\n\nGC latency\nPausas 10ms\n&lt;1ms\n10x\n\n\nThreading (GIL off)\n1x\n3.5x\n3.5x",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14537,7 +14218,7 @@
     "text": "7. Free-Threading Python — Sin GIL\n\n¿Qué es?\nPython ahora se puede compilar sin el GIL:\n\n\nBASH\n\n# Compilar sin GIL\n./configure --disable-gil\nmake\n\n\n\n¿Qué cambia?\n\n\nPYTHON\n\nimport threading\nimport time\n\ndef process_data(chunk):\n    time.sleep(0.01)\n    return sum(chunk)\n\n# Sin GIL: threads corren en PARALELO REAL\nwith threading.ThreadPoolExecutor(max_workers=4) as executor:\n    results = list(executor.map(process_data, chunks))\n    # 4x más rápido en CPU de 4+ cores\n\n\n\n¿Deberías usarlo?\n\n\n\nEscenario\nSin GIL\nCon GIL\n\n\n\n\nCPU-bound multithread\n✅ 3-4x más rápido\n❌ Sin ganancia\n\n\nSingle-threaded\n⚠️ 5-10% más lento\n✅ Óptimo\n\n\nI/O-bound\n✅ Similar\n✅ Similar\n\n\nCompatibilidad libs\n⚠️ Algunos no ready\n✅ Todos funcionan",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14548,7 +14229,7 @@
     "text": "8. Debugger Remoto — PEP 768\n\nAntes\n\n\nPYTHON\n\nimport pdb; pdb.set_trace()  # Hardcodeado en el código\n# Necesitas reiniciar la app\n\n\n\nAhora\n\n\nBASH\n\n# Adjuntar a proceso en ejecución\npython -m pdb -p 12345  # PID del proceso\n\n# Debug remoto\n# Server:\npython -m pdb --remote localhost:5000 mi_app.py\n\n# Cliente:\npython -m pdb --connect localhost:5000",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14559,7 +14240,7 @@
     "text": "9. Compresión Zstandard Nativa\n\n\nPYTHON\n\n# Antes: pip install zstandard\n# Ahora: built-in\n\nimport compression.zstd\n\n# Comprimir\ncompressor = compression.zstd.ZstdCompressor()\ncompressed = compressor.compress(b\"Datos grandes aquí...\")\n\n# Descomprimir\ndecompressor = compression.zstd.ZstdDecompressor()\noriginal = decompressor.decompress(compressed)\n\n# vs gzip: 20% más rápido en descompresión",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14570,7 +14251,7 @@
     "text": "10. UUID v6, v7, v8\n\n\nPYTHON\n\nimport uuid\n\n# UUID v7: time-ordered, ideal para bases de datos\nuuid_v7 = uuid.uuid7()  # Nuevo en 3.14\nprint(uuid_v7)  # 01933b2e-...\n\n# UUID v6: alternative ordering\nuuid_v6 = uuid.uuid6()\n\n# v7 es mejor que v4 para índices de DB\n# - Time-ordered → inserts más rápidos en B-trees\n# - Mejor distribución que v1",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14581,7 +14262,7 @@
     "text": "Ecosistema Python 2026: Tendencias\n\nLo que está de moda\nTecnología | Qué es | Por qué importa |\n|———–|——–|—————-|| | FastAPI | Web framework async | Reemplazó a Flask/Django en APIs nuevas | | Pydantic v3 | Validación de datos | Estándar para APIs Python | | Ruff | Linter/formatter | 100x más rápido que flake8 + black | | uv | Package manager | Reemplazo de pip/venv, escrito en Rust | | MCP | Model Context Protocol | Conecta Python con herramientas IA | | Mojo | Superset de Python | 35,000x más rápido en ML, compatible con Python | | PyScript | Python en browser | Ejecuta Python directamente en HTML |\n\n\nStack recomendado para principiantes (2026)\nEditor: VS Code + extensión Python\nPackage manager: uv (reemplaza pip + venv)\nLinter: ruff (reemplaza flake8 + black + isort)\nTesting: pytest\nWeb framework: FastAPI\nData: pandas + polars (más rápido que pandas)\nAI: OpenAI SDK + MCP server\n\n\nHerramientas de IA para Python\n\n\n\nHerramienta\nQué hace\nIntegración\n\n\n\n\nGitHub Copilot\nAutocompletado IA\nVS Code\n\n\nClaude Code\nAgente de código\nTerminal\n\n\nQwen Code\nCLI assistant\nTerminal\n\n\nMCP Servers\nConecta Python con IA\nProtocolo estándar\n\n\nCursor\nEditor IA-first\nFork de VS Code",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14592,7 +14273,7 @@
     "text": "Desafío: Tu Código en Python 3.14\n\nMisión\nReescribe este código de Python 3.12 usando features de 3.14:\n\n\nPYTHON\n\n# Python 3.12\nfrom __future__ import annotations\n\nclass TreeNode:\n    def __init__(self, val: int):\n        self.val = val\n        self.left: \"TreeNode\" = None\n        self.right: \"TreeNode\" = None\n    \n    def insert(self, val: int) -&gt; \"TreeNode\":\n        if val &lt; self.val:\n            if self.left is None:\n                self.left = TreeNode(val)\n            else:\n                self.left.insert(val)\n        return self\n\ndef format_query(table: str, conditions: dict) -&gt; str:\n    parts = [f\"SELECT * FROM {table}\"]\n    if conditions:\n        where = \" AND \".join(f\"{k} = '{v}'\" for k, v in conditions.items())\n        parts.append(f\"WHERE {where}\")\n    return \" \".join(parts)\n\n\n\nVer solución en Python 3.14\n\n\n\nPYTHON\n\n# Python 3.14: Sin __future__, forward refs nativas\nclass TreeNode:\n    def __init__(self, val: int):\n        self.val = val\n        self.left: TreeNode = None   # ✅ Sin quotes\n        self.right: TreeNode = None  # ✅ Sin quotes\n    \n    def insert(self, val: int) -&gt; TreeNode:\n        if val &lt; self.val:\n            if self.left is None:\n                self.left = TreeNode(val)\n            else:\n                self.left.insert(val)\n        return self\n\n# T-strings para queries seguras (futuro)\nfrom string.templatelib import Template\n\ndef safe_query(table: str, conditions: dict) -&gt; Template:\n    # t-string separa estructura de valores\n    # Un processor puede parametrizar automáticamente\n    return t\"SELECT * FROM {table} WHERE {conditions}\"",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14603,7 +14284,7 @@
     "text": "Línea de Tiempo de Versiones Python\n\n\n\n\n\n\n\n\nVersión\nFecha\nFeatures clave\n\n\n\n\n3.12\nOct 2023\nf-string mejorados, errores mejores\n\n\n3.13\nOct 2024\nFree-threading (experimental), JIT\n\n\n3.14\nOct 2025\nT-strings, deferred annotations, REPL mejorado, subinterpreters\n\n\n3.15\nOct 2026\n(planeado) Pattern matching mejorado\n\n\n3.16\nOct 2027\n(planeado) Más mejoras de rendimiento\n\n\n\n\nDato: Python lanza una versión mayor cada octubre desde 2020.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -14614,7 +14295,7 @@
     "text": "Recursos Oficiales\n\n\n\nRecurso\nURL\n\n\n\n\nDocumentación oficial\nhttps://docs.python.org/3.14/\n\n\nWhat’s New in 3.14\nhttps://docs.python.org/3.14/whatsnew/3.14.html\n\n\nRealPython 3.14 Guide\nhttps://realpython.com/python314-new-features/\n\n\nPython Morsels 3.14\nhttps://www.pythonmorsels.com/python314/\n\n\nPEP 750 (T-Strings)\nhttps://peps.python.org/pep-0750/\n\n\nPEP 649 (Deferred Annotations)\nhttps://peps.python.org/pep-0649/\n\n\nPEP 768 (Debugger)\nhttps://peps.python.org/pep-0768/\n\n\n\n\n\nNota final: Este curso enseña fundamentos que aplican a cualquier versión de Python. Las features de 3.14 son complementarias — no reemplazan lo que aprendiste aquí.\n\n← Apéndice A: IA en Python | ← Apéndice B: MCP | Fase Final →",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   }
 ]

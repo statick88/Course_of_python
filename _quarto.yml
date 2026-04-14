@@ -310,12 +310,11 @@ book:
 
     - part: "Tareas para Plataforma Q10"
       chapters:
-        - q10/tarea-01-configuracion-entorno.md
-        - q10/tarea-02-calculadora-propinas.md
-        - q10/tarea-03-fizzbuzz-avanzado.md
-        - q10/tarea-04-calculadora-funciones.md
-        - q10/tarea-05-gestor-inventario.md
-        - q10/tareas-06-a-10.md
+        - q10/unidades/unidad-01-pensamiento-computacional.html
+        - q10/unidades/unidad-02-intro-python.html
+        - q10/unidades/unidad-03-estructuras-control.html
+        - q10/unidades/unidad-04-funciones.html
+        - q10/unidades/unidad-05-manejo-archivos.html
 
     - part: "Apéndices"
       chapters:
