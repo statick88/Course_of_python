@@ -1,0 +1,46 @@
+/* Anti-AI Copy Protection for ABACOM Python Course */
+
+/* Prevent text selection on code blocks */
+pre > code,
+.sourceCode,
+div.cell-output pre {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Allow selection on regular text */
+body, p, li, h1, h2, h3, h4, h5, h6 {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Anti-copy warning banner */
+.anti-ai-warning {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #856404;
+}
+
+/* Watermark effect on code */
+.sourceCode {
+  position: relative;
+}
+
+.sourceCode::after {
+  content: "Teclea el código, no lo copies";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 0.7em;
+  color: rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1;
+}

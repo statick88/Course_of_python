@@ -82,9 +82,24 @@ Crea un programa que:
 # Desafío 5: API del clima
 # Solución de referencia
 
+import os
 import requests
+from dotenv import load_dotenv
 
-API_KEY = "TU_API_KEY_AQUI"  # Reemplaza con tu API key de OpenWeatherMap
+# Cargar variables de entorno desde .env
+load_dotenv()
+
+# ⚠️ NUNCA hardcodees API keys en tu código.
+# Usa variables de entorno para mantenerlas seguras.
+API_KEY = os.environ.get("OPENWEATHER_API_KEY")
+
+if not API_KEY:
+    print("⚠️  Configura tu API key de OpenWeatherMap:")
+    print("   1. Crea un archivo .env en el mismo directorio")
+    print("   2. Agrega: OPENWEATHER_API_KEY=tu_api_key_aqui")
+    print("   3. Regístrate gratis en openweathermap.org/api")
+    exit()
+
 URL_BASE = "https://api.openweathermap.org/data/2.5/weather"
 
 def consultar_clima(ciudad):

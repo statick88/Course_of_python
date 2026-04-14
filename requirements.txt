@@ -1,15 +1,16 @@
-# Dependencias esenciales para el curso de Programación Python Fundamentos
-# Versiones pre-compiladas para evitar problemas de instalación
+# Dependencias para el curso de Programación Python Fundamentos
+# Versiones mínimas — se permiten actualizaciones automáticas de seguridad
 
-# Para desarrollo y testing básicos
-pytest==7.4.0
+# Core testing
+pytest>=8.0
+pip-audit>=2.7  # Security vulnerability scanner
 
-# Bibliotecas de terceros básicas para ejemplos y ejercicios (versiones con ruedas pre-compiladas)
-requests==2.31.0
-beautifulsoup4==4.12.2
+# HTTP and web scraping
+requests>=2.32
+beautifulsoup4>=4.12
 
-# Para proyectos web simples (opcional)
-flask==3.0.0
+# Web framework (proyectos opcionales)
+flask>=3.1
 
-# Comentario: pandas y numpy excluidos temporalmente debido a problemas de compilación
-# Se pueden instalar posteriormente con: pip install pandas numpy
+# Environment and security
+python-dotenv>=1.0

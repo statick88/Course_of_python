@@ -49,6 +49,9 @@ _quarto/
 *.epub
 output/
 
+# Quarto execution cache
+*.quarto_ipynb*
+
 # Logs
 *.log
 

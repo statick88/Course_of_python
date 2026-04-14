@@ -3,6 +3,8 @@ name: Deploy Curso con Quarto
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:

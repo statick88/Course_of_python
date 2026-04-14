@@ -1,9 +1,9 @@
 # Spec: Programación Python Fundamentos con Quarto
 
-> **Versión**: 2.0 (SDD-enhanced)  
+> **Versión**: 3.0 (SDD-enhanced + Security/Marketing Audit)  
 > **Fecha**: 2026-04-13  
-> **Estado**: Contenido 100% implementado, QA pendiente  
-> **Related Prior Specs**: Ethical_Hacking course spec (openspec/changes/2026-03-06-desarrollo-contenido-curso/spec.md) - lesson patterns, challenge structure
+> **Estado**: Contenido 100% implementado, QA pendiente, security audit completado  
+> **Related Prior Specs**: Ethical_Hacking course spec (openspec/changes/2026-03-06-desarrollo-contenido-curso/spec.md) + Developer Security Marketing Audit (design/developer-security-marketing-audit.md)
 
 ## Overview
 
@@ -14,12 +14,98 @@ Especificación SDD del curso de Programación Python Fundamentos que utiliza Qu
 - **Ethical_Hacking Course Spec** (Ethical_Hacking/openspec/): Course structure follows same 10-module pattern with challenges + labs
 - **ABACOM Course Framework**: Quarto-based delivery, instructor guides, quiz system
 - **Q10 Platform Patterns**: Task generation for learning platforms (5 tasks created for administracion-servidores-linux)
+- **Developer Security Marketing Audit** (design/developer-security-marketing-audit.md): 3 security findings, 5 dev findings, 5 marketing findings
 
 **Key Learnings from Prior Specs**:
 - Challenge difficulty progression: basic → intermediate → applied → integrative
 - Each module MUST have: theory units (6-8), challenges (7), summary (1), instructor guide (1), quiz (1), lab (1+)
 - Quarto navigation MUST register ALL content files in _quarto.yml
 - Labs directory pattern: labs/labNN-{topic}.qmd with executable code blocks
+- **Security**: No hardcoded credentials even in educational examples
+- **Marketing**: Landing page MUST convert visitors, not just inform
+
+---
+
+## ADDED Requirements (from Security/Marketing Audit)
+
+### Requirement: Security-Aware Code Examples
+
+The course **SHALL** use secure coding practices in ALL example code. No hardcoded passwords, API keys, or secrets SHALL appear in any code block — even in educational examples.
+
+#### Scenario: Password example uses environment variable
+
+- GIVEN a challenge that requires authentication
+- WHEN the example code is displayed
+- THEN it uses `os.environ.get("PASSWORD")` or `input()`
+- AND it includes a comment explaining why hardcoding is bad practice
+
+#### Scenario: API key example uses .env file
+
+- GIVEN a challenge that requires an API key (e.g., OpenWeatherMap)
+- WHEN the example code references credentials
+- THEN it loads from `.env` using `python-dotenv`
+- AND the `.env` file is listed in `.gitignore`
+- AND an `.env.example` template is provided
+
+### Requirement: Analytics and Conversion Tracking
+
+The course site **MUST** include visitor analytics to measure engagement and conversion rates.
+
+#### Scenario: Visitor tracking enabled
+
+- GIVEN a student visits the course landing page
+- WHEN the page loads
+- THEN an analytics script is executed (Plausible or Google Analytics)
+- AND the visitor's session is tracked anonymously
+- AND no PII is collected
+
+### Requirement: Sales Landing Page
+
+The course **SHALL** have a dedicated landing page that converts visitors into enrolled students with clear value proposition, testimonials, and call-to-action.
+
+#### Scenario: Landing page conversion
+
+- GIVEN a visitor arrives at the course URL
+- WHEN they view the landing page
+- THEN they see: hero section, course benefits, syllabus overview, testimonials, instructor bio, pricing, CTA button
+- AND the page loads in under 2 seconds
+- AND it is mobile-responsive
+
+---
+
+## MODIFIED Requirements (from Security/Marketing Audit)
+
+### Requirement: Requirements Currency (MODIFIED)
+
+**Original Spec**: "requirements.txt with specific versions (requests==2.31.0, flask==3.0.0)"
+
+**New Description**: `requirements.txt` **MUST** use minimum version constraints (`>=`) and be updated at least quarterly. It **SHALL** include `safety` or `pip-audit` for vulnerability scanning.
+
+**Previously**: Pinned versions from 2023. Now: flexible versions with security scanning.
+
+#### Scenario: Dependency vulnerability check
+
+- GIVEN a student runs `pip install -r requirements.txt`
+- WHEN the installation completes
+- THEN `pip-audit` or `safety check` runs automatically
+- AND any known CVEs are reported before installation
+- AND patched versions are suggested
+
+### Requirement: PDF Generation (MODIFIED)
+
+**Original Spec**: "PDF export is configured in _quarto.yml format.pdf section"
+
+**New Description**: PDF generation **SHALL** either be fixed or replaced with an alternative printable format (browser print-to-PDF guide). If Quarto PDF fails after 3 diagnostic attempts, the course **MUST** provide a documented workaround.
+
+**Previously**: Only configured, untested. Now: MUST have working solution or documented workaround.
+
+---
+
+## REMOVED Requirements (from Security/Marketing Audit)
+
+### Requirement: "output/ in .gitignore" (REMOVED)
+
+**Reason**: `output/` is now used for NotebookLM-generated content (study guides, quizzes, flashcards) that should be tracked. Replaced with `output/generated/` exclusion pattern.
 
 ---
 

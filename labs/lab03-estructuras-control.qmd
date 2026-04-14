@@ -84,7 +84,13 @@ for i in range(1, 51):
 ### Paso 4: Validador de Contraseña con While (10 min)
 
 ```python
-PASSWORD_SECRETA = "Python2026"
+import os
+
+# ⚠️ NUNCA hardcodees contraseñas en código real.
+# Para demos educativas, usa input() o variables de entorno.
+PASSWORD_SECRETA = os.environ.get("DEMO_PASSWORD") or input(
+    "Ingresa la contraseña del sistema: "
+)
 intentos = 0
 max_intentos = 3
 
