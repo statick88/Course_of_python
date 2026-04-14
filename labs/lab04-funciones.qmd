@@ -5,6 +5,14 @@ execute:
   eval: false
 ---
 
+## Información del Laboratorio
+
+| Campo | Valor |
+|-------|-------|
+| **Módulo:** | 4 - Funciones |
+| **Duración Estimada:** | 75 minutos |
+| **Dificultad:** | Intermedio |
+
 # Laboratorio 4: Funciones
 
 **Módulo:** 4 - Funciones
@@ -160,14 +168,14 @@ for _ in range(5):
     print(f"  {contador_local()}")
 ```
 
-## Troubleshooting
+## 🔧 Tabla de Troubleshooting
 
-| Problema | Solución |
-|----------|----------|
-| `NameError: name 'x' is not defined` | Variable fuera de scope |
-| Función retorna `None` | Falta `return` o expresión incorrecta |
-| `RecursionError: maximum recursion depth exceeded` | Falta caso base |
-| Lambda no funciona | Lambda solo permite una expresión |
+| Problema | Causa Probable | Solución |
+|----------|---------------|----------|
+| `NameError: name 'x' is not defined` | Variable fuera de scope | Declarar variable como `global` o pasarla como parámetro |
+| Función retorna `None` | Falta `return` o expresión incorrecta | Verificar que `return` retorna el valor esperado |
+| `RecursionError: maximum recursion depth exceeded` | Falta caso base en recursión | Agregar condición de parada |
+| Lambda no funciona | Lambda solo permite una expresión | Usar `def` para lógica compleja |
 
 ## Conclusión
 
@@ -180,3 +188,16 @@ Dominas funciones: definición, parámetros, retorno, scope, lambda y recursión
 - [ ] Factorial recursivo funciona del 0! al 7!
 - [ ] Lambda + map/filter transforman listas correctamente
 - [ ] Diferencia entre scope global y local demostrada
+
+## 🔑 Conceptos Clave
+
+| Concepto | Descripción |
+|----------|-------------|
+| `def` | Keyword para definir funciones con nombre |
+| Parámetros y argumentos | Valores de entrada que la función recibe y utiliza |
+| `return` | Retorna valores (puede ser múltiple con tuplas/dicts) |
+| Scope (alcance) | Variables locales vs globales |
+| Lambda | Funciones anónimas de una sola expresión |
+| `map()` | Aplica una función a cada elemento de un iterable |
+| `filter()` | Filtra elementos de un iterable según condición |
+| Recursión | Función que se llama a sí misma con caso base |

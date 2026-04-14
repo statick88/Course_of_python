@@ -1,0 +1,157 @@
+---
+title: "Glosario — Programación Python Fundamentos"
+format:
+  html:
+    page-layout: full
+---
+
+# Glosario de Términos
+
+> **Propósito**: Referencia rápida de conceptos clave del curso. Organizado por categoría.
+
+---
+
+## A
+
+| Término | Definición |
+|---------|-----------|
+| **Algoritmo** | Secuencia finita de pasos bien definidos para resolver un problema |
+| **API** | Interfaz que permite que dos programas se comuniquen entre sí |
+| **Argumento** | Valor concreto que se pasa a una función cuando se llama |
+| **Asignación** | Operación de dar un valor a una variable con `=` |
+
+## B
+
+| Término | Definición |
+|---------|-----------|
+| **Booleano** | Tipo de dato con solo dos valores: `True` o `False` |
+| **Break** | Sentencia que sale inmediatamente de un bucle |
+| **Bucle** | Estructura que repite un bloque de código (`for`, `while`) |
+| **Bug** | Error en el código que causa comportamiento inesperado |
+
+## C
+
+| Término | Definición |
+|---------|-----------|
+| **Casting** | Conversión de un tipo de dato a otro (`int()`, `str()`, `float()`) |
+| **Clase** | Plantilla para crear objetos con atributos y métodos (POO) |
+| **Comentario** | Texto en el código que Python ignora, empieza con `#` |
+| **Comprensión de listas** | Sintaxis compacta: `[expr for item in lista if cond]` |
+| **Continue** | Sentencia que salta a la siguiente iteración del bucle |
+
+## D
+
+| Término | Definición |
+|---------|-----------|
+| **Debugging** | Proceso de encontrar y corregir errores en el código |
+| **Diccionario** | Colección de pares clave-valor: `{"nombre": "Ana", "edad": 25}` |
+| **Docstring** | Cadena de documentación al inicio de una función con `"""texto"""` |
+
+## E
+
+| Término | Definición |
+|---------|-----------|
+| **Entorno virtual** | Aislamiento de dependencias Python (`python3 -m venv venv`) |
+| **Excepción** | Error que ocurre durante la ejecución, manejable con `try/except` |
+
+## F
+
+| Término | Definición |
+|---------|-----------|
+| **f-string** | Formato de strings con variables: `f"Hola, {nombre}"` |
+| **Función** | Bloque de código reutilizable definido con `def` |
+| **Función pura** | Función que siempre retorna lo mismo para los mismos inputs, sin efectos secundarios |
+
+## I
+
+| Término | Definición |
+|---------|-----------|
+| **Import** | Sentencia para cargar módulos externos: `import math` |
+| **Indentación** | Espacios al inicio de una línea que definen bloques de código en Python (4 espacios) |
+| **Input** | Función que lee datos del usuario: `input("Texto: ")` |
+| **Iteración** | Una sola ejecución de un bucle |
+
+## L
+
+| Término | Definición |
+|---------|-----------|
+| **Lambda** | Función anónima de una línea: `lambda x: x * 2` |
+| **Librería** | Conjunto de módulos predefinidos (`math`, `random`, `os`) |
+| **Lista** | Colección ordenada y mutable de elementos: `[1, 2, 3]` |
+
+## M
+
+| Término | Definición |
+|---------|-----------|
+| **Módulo** | Archivo `.py` con funciones y variables reutilizables |
+| **Método** | Función que pertenece a un objeto: `lista.append(x)` |
+
+## O
+
+| Término | Definición |
+|---------|-----------|
+| **Operador** | Símbolo que realiza una operación: `+`, `-`, `==`, `and` |
+
+## P
+
+| Término | Definición |
+|---------|-----------|
+| **Paquete** | Directorio con múltiples módulos y `__init__.py` |
+| **Parámetro** | Variable definida en la firma de una función |
+| **PEP 8** | Guía de estilo oficial para código Python |
+| **Print** | Función que muestra texto en pantalla: `print("Hola")` |
+| **Pseudocódigo** | Descripción de un algoritmo en lenguaje natural, no código real |
+
+## R
+
+| Término | Definición |
+|---------|-----------|
+| **Recursión** | Función que se llama a sí misma con un caso base |
+| **Refactorización** | Mejorar código sin cambiar su comportamiento externo |
+| **Return** | Sentencia que retorna un valor desde una función |
+
+## S
+
+| Término | Definición |
+|---------|-----------|
+| **Scope** | Alcance de una variable: local (dentro de función) o global (fuera) |
+| **Set** | Colección de elementos únicos no ordenados: `{1, 2, 3}` |
+| **Sintaxis** | Reglas de escritura del lenguaje Python |
+| **Slice** | Porción de una lista con `[inicio:fin:paso]` |
+
+## T
+
+| Término | Definición |
+|---------|-----------|
+| **Tipado dinámico** | Python infiere el tipo de dato automáticamente |
+| **Tupla** | Colección ordenada e inmutable: `(1, 2, 3)` |
+
+## V
+
+| Término | Definición |
+|---------|-----------|
+| **Variable** | Espacio en memoria que almacena un valor con un nombre |
+| **Variable global** | Variable definida fuera de funciones, accesible desde cualquier parte |
+| **Variable local** | Variable definida dentro de una función, solo accesible ahí |
+
+---
+
+## Categorías por Módulo
+
+| Módulo | Términos Clave |
+|--------|---------------|
+| **0. Pensamiento Computacional** | Algoritmo, Pseudocódigo, Descomposición, Patrón |
+| **1. Introducción** | Variable, Input, Print, f-string, Tipo de dato |
+| **2. Tipos de Datos** | Casting, Operador, Booleano, String, Int, Float |
+| **3. Estructuras de Control** | Bucle, If/Else, For, While, Break, Continue, Comprensión |
+| **4. Funciones** | Función, Parámetro, Argumento, Return, Lambda, Recursión, Docstring |
+| **5. Listas y Tuplas** | Lista, Tupla, Slice, Método, Iteración |
+| **6. Diccionarios y Sets** | Diccionario, Set, Clave-valor, Iterar |
+| **7. Archivos** | Open, With, CSV, JSON, Path, Excepción |
+| **8. Módulos** | Import, Módulo, Paquete, pip, Entorno virtual |
+| **9. Buenas Prácticas** | PEP 8, Refactorización, Función pura, Debugging, Scope |
+| **10. Proyecto** | (todos los anteriores integrados) |
+
+---
+
+*Glosario del curso Programación Python Fundamentos — ABACOM 2026*

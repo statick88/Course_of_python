@@ -5,6 +5,14 @@ execute:
   eval: false
 ---
 
+## Información del Laboratorio
+
+| Campo | Valor |
+|-------|-------|
+| **Módulo:** | 3 - Estructuras de Control |
+| **Duración Estimada:** | 60 minutos |
+| **Dificultad:** | Principiante-Intermedio |
+
 # Laboratorio 3: Estructuras de Control
 
 **Módulo:** 3 - Estructuras de Control
@@ -120,24 +128,36 @@ cuadrados = [n**2 for n in numeros]
 print(f"Cuadrados: {cuadrados}")
 ```
 
-## Troubleshooting
+## 🔧 Tabla de Troubleshooting
 
-| Problema | Solución |
-|----------|----------|
-| `SyntaxError: invalid syntax` en `elif` | Verificar indentación (4 espacios) |
-| Bucle infinito | Agregar `break` o condición de salida |
-| `range()` no incluye el último número | Usar `range(inicio, fin+1)` |
-| List comprehension no filtra bien | Verificar condición después de `if` |
+| Problema | Causa Probable | Solución |
+|----------|---------------|----------|
+| `SyntaxError: invalid syntax` en `elif` | Indentación incorrecta o falta `:` | Verificar 4 espacios y dos puntos al final |
+| Bucle infinito | Falta condición de salida o `break` | Agregar variable de control o `break` |
+| `range()` no incluye el último número | `range(start, stop)` excluye `stop` | Usar `range(inicio, fin+1)` |
+| List comprehension no filtra bien | Condición `if` mal ubicada o lógica invertida | Verificar que `if` va después del `for` |
 
 ## Conclusión
 
 Has dominado las estructuras de control de flujo, fundamentales para cualquier
 programa Python.
 
-## Checklist de Aceptación
+## ✅ Checklist de Aceptación
 
 - [ ] El clasificador de edades funciona con categorías personalizadas
 - [ ] La tabla de multiplicar permite elegir el rango
 - [ ] FizzBuzz produce salida correcta del 1 al 50
 - [ ] El validador de contraseña bloquea después de 3 intentos
 - [ ] Los list comprehensions filtran y transforman correctamente
+
+## 🔑 Conceptos Clave
+
+| Concepto | Descripción |
+|----------|-------------|
+| `if/elif/else` | Estructura condicional para ejecutar código según condiciones |
+| `for` con `range()` | Bucle que itera sobre una secuencia de números |
+| `while` | Bucle que se repite mientras una condición sea verdadera |
+| `break` | Sale inmediatamente del bucle más interno |
+| `continue` | Salta a la siguiente iteración del bucle |
+| List comprehension | Sintaxis compacta `[expr for item in iterable if condition]` |
+| Bucle `else` | Se ejecuta si el `while`/`for` termina sin `break` |

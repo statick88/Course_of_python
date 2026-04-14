@@ -88,8 +88,10 @@ book:
     - front-matter/04-prefacio.qmd
     - front-matter/05-licencia.qmd
     - front-matter/06-agradecimientos.qmd
+    - INICIO_RAPIDO.md
     - index.qmd
     - about.qmd
+    - glosario.qmd
     - license.qmd
 
     - part: "Módulo 0: Pensamiento Computacional"

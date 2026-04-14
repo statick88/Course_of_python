@@ -5,6 +5,14 @@ execute:
   eval: false
 ---
 
+## Información del Laboratorio
+
+| Campo | Valor |
+|-------|-------|
+| **Módulo:** | 8 - Módulos y Paquetes |
+| **Duración Estimada:** | 75 minutos |
+| **Dificultad:** | Intermedio-Avanzado |
+
 # Laboratorio 8: Módulos y Paquetes
 
 **Módulo:** 8 - Módulos y Paquetes
@@ -181,14 +189,14 @@ print(saludar("Diego"))
 print(es_email_valido("test@example.com"))
 ```
 
-## Troubleshooting
+## 🔧 Tabla de Troubleshooting
 
-| Problema | Solución |
-|----------|----------|
-| `ModuleNotFoundError` | Verificar que archivo está en mismo directorio o en PYTHONPATH |
-| `venv` no se activa | Usar ruta correcta: `source venv/bin/activate` |
-| `pip` no encuentra paquete | Verificar nombre exacto en PyPI |
-| `ImportError: cannot import` | Revisar `__init__.py` y nombres de módulos |
+| Problema | Causa Probable | Solución |
+|----------|---------------|----------|
+| `ModuleNotFoundError` | Archivo no en mismo directorio o PYTHONPATH | Verificar que el módulo está accesible o ajustar `sys.path` |
+| `venv` no se activa | Ruta de activación incorrecta | Usar `source venv/bin/activate` (macOS/Linux) o `.bat` (Windows) |
+| `pip` no encuentra paquete | Nombre incorrecto en PyPI | Verificar nombre exacto en pypi.org |
+| `ImportError: cannot import` | `__init__.py` mal configurado o typo | Revisar imports relativos y `__all__` |
 
 ## Conclusión
 
@@ -201,3 +209,17 @@ Dominas importación, creación de módulos, venv y paquetes pip.
 - [ ] Entorno virtual creado y activado
 - [ ] requests instalado y hace GET exitoso
 - [ ] Paquete propio con __init__.py funciona
+
+## 🔑 Conceptos Clave
+
+| Concepto | Descripción |
+|----------|-------------|
+| `import` | Importar módulos estándar o personalizados |
+| `from ... import ...` | Importar funciones específicas de un módulo |
+| `if __name__ == "__main__"` | Bloque de ejecución directa del módulo |
+| `venv` | Entorno virtual aislado para dependencias |
+| `pip` | Gestor de paquetes de Python |
+| `__init__.py` | Archivo que convierte directorio en paquete |
+| Import relativo | `from .modulo import funcion` dentro de paquetes |
+| `__all__` | Lista de exports públicos del paquete |
+| `requests` | Librería HTTP para hacer peticiones web |

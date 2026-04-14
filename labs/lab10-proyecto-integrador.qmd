@@ -5,6 +5,14 @@ execute:
   eval: false
 ---
 
+## Información del Laboratorio
+
+| Campo | Valor |
+|-------|-------|
+| **Módulo:** | 10 - Proyecto Integrador |
+| **Duración Estimada:** | 120 minutos |
+| **Dificultad:** | Avanzado |
+
 # Laboratorio 10: Proyecto Integrador
 
 **Módulo:** 10 - Proyecto Integrador
@@ -199,14 +207,14 @@ class GestorTareas:
 | Creatividad | 10% | Funcionalidades adicionales |
 | Presentación | 10% | Código ejecuta y se demuestra |
 
-## Troubleshooting
+## 🔧 Tabla de Troubleshooting
 
-| Problema | Solución |
-|----------|----------|
-| `ModuleNotFoundError` | Verificar `__init__.py` y rutas de import |
-| JSON no serializa | Usar `default=str` en `json.dump` |
-| Menú se cierra | Usar `while True` con opción de salida |
-| Tests no pasan | Verificar `assert` y valores esperados |
+| Problema | Causa Probable | Solución |
+|----------|---------------|----------|
+| `ModuleNotFoundError` | Falta `__init__.py` o rutas de import incorrectas | Crear `__init__.py` vacíos y verificar imports |
+| JSON no serializa | `datetime` u objetos no serializables en datos | Usar `default=str` en `json.dump` |
+| Menú se cierra | Falta bucle `while True` con opción de salida | Envolver menú en `while True` con `break` en salir |
+| Tests no pasan | Valores esperados incorrectos en `assert` | Verificar resultados manualmente primero |
 
 ## Conclusión
 
@@ -223,3 +231,17 @@ archivos, módulos, buenas prácticas.
 - [ ] Tests básicos con assert
 - [ ] README con instrucciones
 - [ ] Código ejecuta sin errores
+
+## 🔑 Conceptos Clave
+
+| Concepto | Descripción |
+|----------|-------------|
+| Arquitectura modular | Organizar código en módulos y paquetes separados |
+| Persistencia | Guardar y cargar datos en JSON/CSV entre sesiones |
+| CRUD | Create, Read, Update, Delete — operaciones básicas de datos |
+| Clase Python | Molde para crear objetos con atributos y métodos |
+| Docstrings | Documentación obligatoria en funciones y clases públicas |
+| Testing con assert | Verificación rápida de funcionalidades |
+| Menú interactivo | Interface de consola con bucle y validación |
+| Manejo de errores | Capturar excepciones en operaciones críticas |
+| Reflexión | Evaluar lo aprendido y áreas de mejora |

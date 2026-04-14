@@ -5,6 +5,14 @@ execute:
   eval: false
 ---
 
+## Información del Laboratorio
+
+| Campo | Valor |
+|-------|-------|
+| **Módulo:** | 9 - Buenas Prácticas |
+| **Duración Estimada:** | 60 minutos |
+| **Dificultad:** | Intermedio-Avanzado |
+
 # Laboratorio 9: Buenas Prácticas
 
 **Módulo:** 9 - Buenas Prácticas
@@ -179,14 +187,14 @@ print(f"Pares: {pares}")
 print(f"Pares doblados: {pares_doblados}")
 ```
 
-## Troubleshooting
+## 🔧 Tabla de Troubleshooting
 
-| Problema | Solución |
-|----------|----------|
-| PEP 8 violations | Usar extension Pylint/Flake8 en VS Code |
-| `assert` no ejecuta | Ejecutar con `python -O` desactiva asserts |
-| Docstring no muestra | Usar `help(funcion)` para ver docstring |
-| Función no es pura | Eliminar dependencias globales |
+| Problema | Causa Probable | Solución |
+|----------|---------------|----------|
+| PEP 8 violations | Nombres incorrectos, falta espacios | Instalar Flake8/Pylint en VS Code y ejecutar |
+| `assert` no ejecuta | Python ejecutado con flag `-O` | Ejecutar sin `-O`: `python archivo.py` |
+| Docstring no muestra | No usar `help()` correctamente | Usar `help(funcion)` o `funcion.__doc__` |
+| Función no es pura | Depende de variables globales | Eliminar `global`, pasar todo como parámetros |
 
 ## Conclusión
 
@@ -200,3 +208,16 @@ errores.
 - [ ] Manejo de errores captura ValueError, ZeroDivisionError, TypeError
 - [ ] Tests con assert verifican comportamiento correcto
 - [ ] Docstrings incluyen Args, Returns, Example
+
+## 🔑 Conceptos Clave
+
+| Concepto | Descripción |
+|----------|-------------|
+| PEP 8 | Guía de estilo oficial para código Python |
+| Docstring | Documentación entre comillas triples en funciones/módulos |
+| Función pura | Solo depende de sus argumentos, sin efectos secundarios |
+| Closure | Función que captura variables de su entorno externo |
+| `assert` | Verificación rápida para tests y precondiciones |
+| Type hints | Anotaciones `tipo: int` para documentar tipos esperados |
+| Manejo de errores | `try/except` para capturar excepciones específicas |
+| Linter | Herramienta que analiza código para encontrar errores |

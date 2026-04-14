@@ -9,6 +9,16 @@ execute:
 > Los comandos deben **TECLEARSE**, no copiarse y pegarse. Si utilizas IA para generar las respuestas,
 > se te pedirá explicar cada paso en detalle durante la verificación.
 
+## Información del Laboratorio
+
+| Campo | Valor |
+|-------|-------|
+| **Módulo:** | 1 - Introducción a Python |
+| **Duración Estimada:** | 45 minutos |
+| **Dificultad:** | Principiante |
+
+---
+
 ## Objetivos del laboratorio
 
 - Verificar que Python está instalado y funciona
@@ -22,7 +32,7 @@ execute:
 - Una terminal abierta
 - Un editor de texto (VS Code, nano, o el que prefieras)
 
-## Paso 1: Verificar Python
+## Paso 1: Verificar Python (5 min)
 
 Abre tu terminal y ejecuta:
 
@@ -33,14 +43,14 @@ python3 --version
 Deberías ver algo como `Python 3.12.1` o superior. Si ves un error, regresa a la
 lección de instalación.
 
-## Paso 2: Crear un directorio de trabajo
+## Paso 2: Crear un directorio de trabajo (5 min)
 
 ```bash
 mkdir -p ~/python-basico/laboratorio-1
 cd ~/python-basico/laboratorio-1
 ```
 
-## Paso 3: Crear tu primer archivo
+## Paso 3: Crear tu primer archivo (10 min)
 
 Abre tu editor y crea un archivo llamado `saludo.py` con este contenido:
 
@@ -52,7 +62,7 @@ print(f"Hola, {nombre}. ¡Bienvenido a Python!")
 
 Guárdalo en el directorio que creaste.
 
-## Paso 4: Ejecutar el programa
+## Paso 4: Ejecutar el programa (5 min)
 
 En la terminal, ejecuta:
 
@@ -62,7 +72,7 @@ python3 saludo.py
 
 El programa te pedirá tu nombre. Escribe algo y presiona Enter.
 
-## Paso 5: Modificar y experimentar
+## Paso 5: Modificar y experimentar (15 min)
 
 Ahora modifica `saludo.py` para que:
 
@@ -90,6 +100,41 @@ Hola, Ana de Quito. ¡Bienvenido a Python!
 1. ¿Qué pasa si no escribes nada y solo presionas Enter?
 2. ¿Qué tipo de dato devuelve `input()`? ¿Cómo lo verificarías?
 3. ¿Por qué usamos `f"..."` en vez de `"..." + nombre + "..."`?
+
+---
+
+## 🔧 Tabla de Troubleshooting
+
+| Problema | Causa Probable | Solución |
+|----------|---------------|----------|
+| `python3: command not found` | Python no está instalado o no está en PATH | Instala Python desde python.org, reinicia terminal |
+| `IndentationError` | Espacios/tabulaciones inconsistentes | Usa solo 4 espacios (no tabs) para indentar |
+| `SyntaxError: unterminated string` | Falta cerrar comillas en `print()` o `input()` | Revisa que cada `"` o `'` tenga su par |
+| El programa no pide el nombre | Ejecutaste sin el archivo `.py` | Usa `python3 saludo.py`, no solo `python3` |
+| No aparece el output | Error de sintaxis en la línea anterior | Revisa la línea justo antes del error |
+
+---
+
+## ✅ Checklist de Aceptación
+
+- [ ] Python 3.8+ instalado y funcionando (`python3 --version`)
+- [ ] Directorio de trabajo creado
+- [ ] Archivo `saludo.py` creado y ejecutado exitosamente
+- [ ] Programa modificado para incluir ciudad y separador visual
+- [ ] Salida formateada correctamente al ejecutar
+- [ ] Respondidas las 3 preguntas de reflexión
+
+---
+
+## 🔑 Conceptos Clave
+
+| Concepto | Descripción |
+|----------|-------------|
+| `input()` | Lee texto del usuario por terminal |
+| `print()` | Muestra texto en pantalla |
+| f-string `f"..."` | Inserta variables dentro de texto con `{variable}` |
+| `.py` | Extensión de archivos Python |
+| `python3 archivo.py` | Comando para ejecutar un script Python |
 
 ---
 

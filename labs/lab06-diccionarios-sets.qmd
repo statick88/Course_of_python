@@ -5,6 +5,14 @@ execute:
   eval: false
 ---
 
+## Información del Laboratorio
+
+| Campo | Valor |
+|-------|-------|
+| **Módulo:** | 6 - Diccionarios y Sets |
+| **Duración Estimada:** | 60 minutos |
+| **Dificultad:** | Intermedio |
+
 # Laboratorio 6: Diccionarios y Sets
 
 **Módulo:** 6 - Diccionarios y Sets
@@ -131,14 +139,14 @@ print(f"\nOriginales: {nombres}")
 print(f"Únicos: {unicos}")
 ```
 
-## Troubleshooting
+## 🔧 Tabla de Troubleshooting
 
-| Problema | Solución |
-|----------|----------|
-| `KeyError: 'clave'` | Usar `.get(clave, default)` |
-| Diccionario no actualiza | Verificar nombre de clave |
-| Set no mantiene orden | Sets son no ordenados por diseño |
-| `.items()` no funciona | Usar `for k, v in dict.items()` |
+| Problema | Causa Probable | Solución |
+|----------|---------------|----------|
+| `KeyError: 'clave'` | Acceder a clave que no existe | Usar `.get(clave, default)` en lugar de `dict[clave]` |
+| Diccionario no actualiza | Nombre de clave incorrecto o typo | Verificar exactitud de las claves |
+| Set no mantiene orden | Sets son no ordenados por diseño | Usar lista si se necesita orden |
+| `.items()` no funciona | Sintaxis incorrecta en desempaquetado | Usar `for k, v in dict.items()` |
 
 ## Conclusión
 
@@ -150,3 +158,17 @@ Dominas diccionarios, sets y operaciones de conjuntos.
 - [ ] Contador de palabras usa `.get()` correctamente
 - [ ] Inventario calcula valor total con comprensión
 - [ ] Sets realizan intersección, unión, diferencia
+
+## 🔑 Conceptos Clave
+
+| Concepto | Descripción |
+|----------|-------------|
+| Diccionario | Colección de pares clave-valor |
+| `.get()` | Acceso seguro a claves con valor por defecto |
+| `.items()` / `.keys()` / `.values()` | Métodos para iterar diccionarios |
+| Diccionario anidado | Diccionarios dentro de diccionarios |
+| Set | Colección no ordenada de elementos únicos |
+| Unión `\|` | Combina todos los elementos de dos sets |
+| Intersección `&` | Elementos comunes a dos sets |
+| Diferencia `-` | Elementos en A pero no en B |
+| Eliminar duplicados | `list(set(lista))` remueve repetidos |

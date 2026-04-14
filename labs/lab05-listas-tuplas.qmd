@@ -5,6 +5,14 @@ execute:
   eval: false
 ---
 
+## Información del Laboratorio
+
+| Campo | Valor |
+|-------|-------|
+| **Módulo:** | 5 - Listas y Tuplas |
+| **Duración Estimada:** | 60 minutos |
+| **Dificultad:** | Intermedio |
+
 # Laboratorio 5: Listas y Tuplas
 
 **Módulo:** 5 - Listas y Tuplas
@@ -127,14 +135,14 @@ q, r = dividir_con_residuo(17, 5)
 print(f"17 ÷ 5 = {q} residuo {r}")
 ```
 
-## Troubleshooting
+## 🔧 Tabla de Troubleshooting
 
-| Problema | Solución |
-|----------|----------|
-| `IndexError: list index out of range` | Verificar longitud antes de acceder |
-| `pop()` elimina elemento equivocado | Usar índice correcto (base 0) |
-| Tupla no se puede modificar | Es inmutable por diseño, crear nueva |
-| Matriz comparte filas | Usar `[[0]*n for _ in range(m)]` |
+| Problema | Causa Probable | Solución |
+|----------|---------------|----------|
+| `IndexError: list index out of range` | Índice fuera de los límites de la lista | Verificar longitud con `len()` antes de acceder |
+| `pop()` elimina elemento equivocado | Confusión entre índice y valor | Recordar que los índices son base 0 |
+| Tupla no se puede modificar | Tuplas son inmutables por diseño | Crear nueva tupla o usar lista |
+| Matriz comparte filas | `[[0]*n]*m` crea referencias compartidas | Usar `[[0]*n for _ in range(m)]` |
 
 ## Conclusión
 
@@ -146,3 +154,16 @@ Dominas listas, tuplas, slicing, métodos y matrices.
 - [ ] Slicing extrae porciones específicas
 - [ ] Matriz 3x3 se muestra, suma diagonal y transpone
 - [ ] Tuplas se desempaquetan y retornan múltiples valores
+
+## 🔑 Conceptos Clave
+
+| Concepto | Descripción |
+|----------|-------------|
+| Lista | Colección ordenada y mutable de elementos |
+| Slicing | Extraer porciones con `[start:stop:step]` |
+| `append()` / `pop()` | Agregar/eliminar elementos por índice |
+| `enumerate()` | Iterar con índice y valor simultáneamente |
+| `zip()` | Combinar múltiples iterables en tuplas |
+| Tupla | Colección ordenada e inmutable |
+| Desempaquetado | Asignar elementos de tupla a variables individuales |
+| Matriz | Lista de listas, acceso con `[fila][columna]` |

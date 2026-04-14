@@ -5,6 +5,14 @@ execute:
   eval: false
 ---
 
+## Información del Laboratorio
+
+| Campo | Valor |
+|-------|-------|
+| **Módulo:** | 7 - Manejo de Archivos |
+| **Duración Estimada:** | 75 minutos |
+| **Dificultad:** | Intermedio-Avanzado |
+
 # Laboratorio 7: Manejo de Archivos
 
 **Módulo:** 7 - Manejo de Archivos
@@ -154,14 +162,14 @@ finally:
     print("🏁 Operación completada")
 ```
 
-## Troubleshooting
+## 🔧 Tabla de Troubleshooting
 
-| Problema | Solución |
-|----------|----------|
-| `FileNotFoundError` | Verificar ruta, usar `Path.exists()` |
-| `UnicodeDecodeError` | Especificar `encoding="utf-8"` |
-| CSV no guarda columnas | Usar `DictWriter` con `writeheader()` |
-| JSON no serializable | Convertir objetos a tipos básicos |
+| Problema | Causa Probable | Solución |
+|----------|---------------|----------|
+| `FileNotFoundError` | Ruta incorrecta o archivo no existe | Verificar con `Path.exists()` antes de abrir |
+| `UnicodeDecodeError` | Encoding no especificado o incompatible | Agregar `encoding="utf-8"` en `open()` |
+| CSV no guarda columnas | Falta `writeheader()` en DictWriter | Llamar `writer.writeheader()` antes de escribir filas |
+| JSON no serializable | Objeto personalizado no convertible | Usar `default=str` o convertir a tipos básicos |
 
 ## Conclusión
 
@@ -174,3 +182,17 @@ Dominas lectura/escritura de archivos de texto, CSV, JSON y pathlib.
 - [ ] JSON guarda configuración anidada con indentación
 - [ ] Pathlib crea estructura de directorios y lista archivos
 - [ ] Excepciones I/O manejan FileNotFoundError
+
+## 🔑 Conceptos Clave
+
+| Concepto | Descripción |
+|----------|-------------|
+| `open()` | Abre archivo en modo lectura/escritura/agregado |
+| Contexto `with` | Cierra archivo automáticamente al salir del bloque |
+| CSV | Formato de valores separados por comas, módulo `csv` |
+| `DictWriter` / `DictReader` | Leer/escribir CSV con diccionarios |
+| JSON | Formato de intercambio de datos, módulo `json` |
+| `json.dump()` / `json.load()` | Serializar/deserializar objetos Python |
+| `pathlib` | Módulo moderno para operaciones de rutas y archivos |
+| `FileNotFoundError` | Excepción cuando archivo no existe |
+| `try/except/else/finally` | Manejo completo de excepciones en I/O |
