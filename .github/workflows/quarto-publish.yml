@@ -44,9 +44,9 @@ jobs:
 
       - name: Set environment variables for Quarto
         run: |
-          # Set environment variables to avoid MissingEnvVarsError
-          echo "OPENWEATHER_API_KEY=" >> $GITHUB_ENV
-          echo "DEMO_PASSWORD=" >> $GITHUB_ENV
+          # Set dummy non-empty environment variables to avoid Quarto error
+          echo "OPENWEATHER_API_KEY=demo_key_not_used" >> $GITHUB_ENV
+          echo "DEMO_PASSWORD=demo_password_not_used" >> $GITHUB_ENV
         shell: bash
 
       - name: Verify Quarto project
