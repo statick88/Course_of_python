@@ -470,61 +470,6 @@
     ]
   },
   {
-    "objectID": "content/modulo-00/index.html",
-    "href": "content/modulo-00/index.html",
-    "title": "Módulo 0: Pensamiento Computacional",
-    "section": "",
-    "text": "Módulo 0: Pensamiento Computacional",
-    "crumbs": [
-      "Módulo 0: Pensamiento Computacional",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
-    ]
-  },
-  {
-    "objectID": "content/modulo-00/index.html#por-qué-este-módulo",
-    "href": "content/modulo-00/index.html#por-qué-este-módulo",
-    "title": "Módulo 0: Pensamiento Computacional",
-    "section": "¿Por qué este módulo?",
-    "text": "¿Por qué este módulo?\nMuchos cursos comienzan con “instala Python” y saltan directo a la sintaxis. Pero escribir código no es lo mismo que pensar como programador.\nEste módulo te enseña a:\n\nDescomponer problemas grandes en partes manejables\nReconocer patrones que se repiten en problemas diferentes\nDiseñar algoritmos en pseudocódigo antes de tocar Python\nEvaluar múltiples enfoques para elegir el mejor\n\n\nAnalogía del mundo real: Antes de construir una casa, un arquitecto diseña los planos. Antes de escribir código, un programador diseña el algoritmo.",
-    "crumbs": [
-      "Módulo 0: Pensamiento Computacional",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
-    ]
-  },
-  {
-    "objectID": "content/modulo-00/index.html#contenido-del-módulo",
-    "href": "content/modulo-00/index.html#contenido-del-módulo",
-    "title": "Módulo 0: Pensamiento Computacional",
-    "section": "Contenido del Módulo",
-    "text": "Contenido del Módulo\n\n\n\nUnidad\nTema\nDuración\n\n\n\n\n0.1\n¿Qué es computación?\n45 min\n\n\n0.2\nDescomposición\n45 min\n\n\n0.3\nPatrones y abstracción\n45 min\n\n\n0.4\nPseudocódigo\n60 min\n\n\n0.5\nEvaluación de enfores\n45 min",
-    "crumbs": [
-      "Módulo 0: Pensamiento Computacional",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
-    ]
-  },
-  {
-    "objectID": "content/modulo-00/index.html#el-ciclo-del-programador",
-    "href": "content/modulo-00/index.html#el-ciclo-del-programador",
-    "title": "Módulo 0: Pensamiento Computacional",
-    "section": "El Ciclo del Programador",
-    "text": "El Ciclo del Programador\nTodo problema de programación sigue este ciclo:\n1. ENTENDER   → ¿Qué me piden? ¿Qué datos tengo?\n2. PLANIFICAR → ¿Cómo lo resuelvo? (pseudocódigo)\n3. IMPLEMENTAR → Escribir el código en Python\n4. VERIFICAR  → ¿Funciona? ¿Hay casos borde?\nEste módulo se enfoca en los pasos 1 y 2 — los que la mayoría salta.",
-    "crumbs": [
-      "Módulo 0: Pensamiento Computacional",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
-    ]
-  },
-  {
-    "objectID": "content/modulo-00/index.html#al-final-de-este-módulo-podrás",
-    "href": "content/modulo-00/index.html#al-final-de-este-módulo-podrás",
-    "title": "Módulo 0: Pensamiento Computacional",
-    "section": "Al final de este módulo podrás:",
-    "text": "Al final de este módulo podrás:\n✅ Explicar qué es un algoritmo con tus propias palabras\n✅ Descomponer un problema complejo en 5+ sub-problemas\nsimples\n✅ Escribir pseudocódigo para problemas cotidianos\n✅ Identificar cuándo un enfoque es mejor que otro\n✅ Reconocer patrones en problemas aparentemente\ndiferentes\n\n\nNota del instructor: “Este módulo es la base de todo lo que sigue. No lo saltes. Los mejores programadores no son los que más sintaxis conocen — son los que mejor piensan los problemas.” — Diego Saavedra, basado en MIT 6.0001\n\n\nUnidad 0.1: ¿Qué es computación? →",
-    "crumbs": [
-      "Módulo 0: Pensamiento Computacional",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
-    ]
-  },
-  {
     "objectID": "content/modulo-00/01-que-es-computacion.html",
     "href": "content/modulo-00/01-que-es-computacion.html",
     "title": "0.1 ¿Qué es computación? De recetas a algoritmos",
@@ -14649,6 +14594,369 @@
     ]
   },
   {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "",
+    "text": "Módulo 0: Pensamiento Computacional",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#módulo-0-pensamiento-computacional",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#módulo-0-pensamiento-computacional",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "",
+    "text": "Aprender a pensar antes de codificar\nDiego Saavedra · ABACOM · 2026",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#por-qué-este-módulo",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#por-qué-este-módulo",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "¿Por qué este módulo?",
+    "text": "¿Por qué este módulo?\n\n“Los mejores programadores no son los que más sintaxis conocen — son los que mejor piensan los problemas.”",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#el-problema-de-empezar-con-código",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#el-problema-de-empezar-con-código",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "El problema de empezar con código",
+    "text": "El problema de empezar con código\n\n❌ La mayoría de cursos: “Instala Python → escribe print(‘Hola’)”\n✅ Nosotros: “Piensa como programador → luego escribe código”",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#el-ciclo-del-programador",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#el-ciclo-del-programador",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "El Ciclo del Programador",
+    "text": "El Ciclo del Programador\n\nENTENDER → ¿Qué me piden? ¿Qué datos tengo?\nPLANIFICAR → ¿Cómo lo resuelvo? (pseudocódigo)\nIMPLEMENTAR → Escribir el código en Python\nVERIFICAR → ¿Funciona? ¿Hay casos borde?\n\n\nEste módulo se enfoca en los pasos 1 y 2",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#qué-es-un-algoritmo",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#qué-es-un-algoritmo",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "¿Qué es un Algoritmo?",
+    "text": "¿Qué es un Algoritmo?\n\nDefinición: Secuencia finita de pasos bien definidos que transforma una entrada en una salida.",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#ejemplo-del-mundo-real-una-receta",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#ejemplo-del-mundo-real-una-receta",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "Ejemplo del Mundo Real: Una Receta",
+    "text": "Ejemplo del Mundo Real: Una Receta\nENTRADA:\n  - Arroz (1 taza)\n  - Agua (2 tazas)\n  - Sal (1 cucharadita)\n\nALGORITMO:\n  1. Hervir agua con sal\n  2. Agregar arroz\n  3. Cocinar 15 minutos\n  4. Servir\n\nSALIDA: Arroz listo para comer\n\n¿Ves la estructura? Entrada → Proceso → Salida = Computación",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#descomposición-dividir-para-conquistar",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#descomposición-dividir-para-conquistar",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "Descomposición: Dividir para Conquistar",
+    "text": "Descomposición: Dividir para Conquistar\nProblema grande: “Crear una tienda online”\n\nTIENDA ONLINE\n├── Catálogo de productos\n├── Carrito de compras\n├── Procesar pagos\n└── Gestión de usuarios\n\n\nRegla práctica: Cada sub-problema debe resolverse en 5-15 líneas de código.",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#patrones-reconocer-lo-que-se-repite",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#patrones-reconocer-lo-que-se-repite",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "Patrones: Reconocer lo que se Repite",
+    "text": "Patrones: Reconocer lo que se Repite\n\n\n\nProblema\nPatrón\n\n\n\n\nContar votos\nContar frecuencia\n\n\nContar palabras\nContar frecuencia\n\n\nFrecuencia de notas\nContar frecuencia\n\n\n\n\nUna solución, tres aplicaciones.",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#pseudocódigo-diseñar-antes-de-codificar",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#pseudocódigo-diseñar-antes-de-codificar",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "Pseudocódigo: Diseñar Antes de Codificar",
+    "text": "Pseudocódigo: Diseñar Antes de Codificar\nALGORITMO fizzbuzz\nENTRADA: ninguno\nSALIDA: secuencia impresa\n\nINICIO\n    PARA i DESDE 1 HASTA 50 HACER\n        SI i divisible por 3 Y 5 → \"FizzBuzz\"\n        SI_NO SI divisible por 3 → \"Fizz\"\n        SI_NO SI divisible por 5 → \"Buzz\"\n        SI_NO → IMPRIMIR i\n    FIN_PARA\nFIN",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#evaluación-de-enfoques",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#evaluación-de-enfoques",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "Evaluación de Enfoques",
+    "text": "Evaluación de Enfoques\nCuando tengas múltiples soluciones:\n\n¿Funcionan ambos? → Siguiente\n¿Cuál es más legible? → Si hay empate\n¿Cuál es más eficiente? → Si hay empate\n¿Cuál es más fácil de mantener?\n\n\nRegla de oro: Legibilidad &gt; Eficiencia (en cursos)",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#lo-que-aprendiste",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#lo-que-aprendiste",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "Lo que Aprendiste",
+    "text": "Lo que Aprendiste\n\n\n\nUnidad\nLo clave\n\n\n\n\n0.1\nTodo programa es: Entrada → Proceso → Salida\n\n\n0.2\nDivide problemas grandes en piezas pequeñas\n\n\n0.3\nReconoce patrones para reutilizar soluciones\n\n\n0.4\nEscribe pseudocódigo antes que Python\n\n\n0.5\nCompara enfoques y elige el mejor",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#próximo-paso",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#próximo-paso",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "Próximo Paso",
+    "text": "Próximo Paso\n\nMódulo 1: Introducción a Python\n\nInstalar Python\nEscribir tu primer programa\nVariables y tipos de datos\n\n¡Ahora sí, a codificar!",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#recursos",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#recursos",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "Recursos",
+    "text": "Recursos\n\nContenido del Módulo 0\nEjercicios en Exercism\nHackerRank Python Basic",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-0-pensamiento-computacional.html#preguntas",
+    "href": "presentaciones/modulo-0-pensamiento-computacional.html#preguntas",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "¿Preguntas?",
+    "text": "¿Preguntas?\nDiego Saavedra 📧 dsaavedra88@gmail.com 🌐 statick88.github.io",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html",
+    "href": "presentaciones/modulo-1-intro-python.html",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "",
+    "text": "Módulo 1: Introducción a Python",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#módulo-1-introducción-a-python",
+    "href": "presentaciones/modulo-1-intro-python.html#módulo-1-introducción-a-python",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "",
+    "text": "De cero a tu primer programa\nDiego Saavedra · ABACOM · 2026",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#qué-es-python",
+    "href": "presentaciones/modulo-1-intro-python.html#qué-es-python",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "¿Qué es Python?",
+    "text": "¿Qué es Python?\n\nUn lenguaje de programación interpretado, de alto nivel y propósito general.\n\n\nCreado por Guido van Rossum en 1991. Nombrado así por Monty Python, no la serpiente.",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#por-qué-python",
+    "href": "presentaciones/modulo-1-intro-python.html#por-qué-python",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "¿Por qué Python?",
+    "text": "¿Por qué Python?\n\n\n\nRazón\nDetalle\n\n\n\n\nFácil de leer\nSintaxis limpia, como pseudocódigo\n\n\nVersátil\nWeb, datos, IA, automatización, scripting\n\n\nGran comunidad\n10M+ desarrolladores, 400K+ paquetes\n\n\nAlta demanda\nTop 3 en ofertas laborales de tech",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#python-vs-otros-lenguajes",
+    "href": "presentaciones/modulo-1-intro-python.html#python-vs-otros-lenguajes",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Python vs Otros Lenguajes",
+    "text": "Python vs Otros Lenguajes\nImprimir “Hola” en cada uno:\n\n\n\nPYTHON\n\n# Python\nprint(\"Hola\")\n\n\n\n\n\nJAVA\n\n// Java\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hola\");\n    }\n}\n\n\n\n\n\nC\n\n// C\n#include &lt;stdio.h&gt;\nint main() { printf(\"Hola\\n\"); return 0; }",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#filosofía-zen-de-python",
+    "href": "presentaciones/modulo-1-intro-python.html#filosofía-zen-de-python",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Filosofía Zen de Python",
+    "text": "Filosofía Zen de Python\n\n\nPYTHON\n\n&gt;&gt;&gt; import this\n\n\n\nBello es mejor que feo\nExplícito es mejor que implícito\nSimple es mejor que complejo\nLegible cuenta",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#instalación-rápida",
+    "href": "presentaciones/modulo-1-intro-python.html#instalación-rápida",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Instalación Rápida",
+    "text": "Instalación Rápida\n\n\nBASH\n\n# Verificar si ya está instalado\npython3 --version\n\n# Si no: python.org/downloads\n# macOS: brew install python\n# Linux: sudo apt install python3\n\n\nIMPORTANTE: Python 3.9 o superior. NO usar Python 2.",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#tu-primer-programa",
+    "href": "presentaciones/modulo-1-intro-python.html#tu-primer-programa",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Tu Primer Programa",
+    "text": "Tu Primer Programa\n\n\nPYTHON\n\n# saludo.py\nnombre = input(\"¿Cómo te llamas? \")\nprint(f\"Hola, {nombre}. ¡Bienvenido a Python!\")\n\n\n\n\nBASH\n\npython3 saludo.py",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#variables-cajas-etiquetadas",
+    "href": "presentaciones/modulo-1-intro-python.html#variables-cajas-etiquetadas",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Variables: Cajas Etiquetadas",
+    "text": "Variables: Cajas Etiquetadas\n\n\nPYTHON\n\nnombre = \"Ana\"       # str (texto)\nedad = 25            # int (entero)\naltura = 1.68        # float (decimal)\nes_estudiante = True # bool (verdadero/falso)\n\n\nPython infiere el tipo automáticamente → tipado dinámico",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#tipos-de-datos-básicos",
+    "href": "presentaciones/modulo-1-intro-python.html#tipos-de-datos-básicos",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Tipos de Datos Básicos",
+    "text": "Tipos de Datos Básicos\n\n\n\nTipo\nEjemplo\nFunción\n\n\n\n\nint\n42\nint(\"42\")\n\n\nfloat\n3.14\nfloat(\"3.14\")\n\n\nstr\n\"Hola\"\nstr(42)\n\n\nbool\nTrue\nbool(1)",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#conversión-de-tipos-casting",
+    "href": "presentaciones/modulo-1-intro-python.html#conversión-de-tipos-casting",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Conversión de Tipos (Casting)",
+    "text": "Conversión de Tipos (Casting)\n\n\nPYTHON\n\nedad_texto = input(\"Tu edad: \")    # \"25\"\nedad = int(edad_texto)              # 25\nprint(f\"El próximo año tendrás {edad + 1} años\")\n\n\n⚠️ int(\"hola\") → Error! Solo convierte textos numéricos.",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#f-strings-formato-elegante",
+    "href": "presentaciones/modulo-1-intro-python.html#f-strings-formato-elegante",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "f-strings: Formato Elegante",
+    "text": "f-strings: Formato Elegante\n\n\nPYTHON\n\nnombre = \"Ana\"\nedad = 25\n\n# Forma antigua (no usar)\nprint(\"Hola, \" + nombre + \". Tienes \" + str(edad) + \" años.\")\n\n# f-string (usar siempre)\nprint(f\"Hola, {nombre}. Tienes {edad} años.\")\n\n\nPuedes incluir expresiones: f\"Doble: {edad * 2}\"",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#errores-comunes",
+    "href": "presentaciones/modulo-1-intro-python.html#errores-comunes",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Errores Comunes",
+    "text": "Errores Comunes\n\n\n\n\n\n\n\n\nError\nCausa\nSolución\n\n\n\n\nNameError\nVariable no definida\nRevisa el nombre\n\n\nTypeError\nOperación con tipo incorrecto\nConvierte con int(), str()\n\n\nSyntaxError\nError de escritura\nRevisa paréntesis, comillas",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#lo-que-aprendiste",
+    "href": "presentaciones/modulo-1-intro-python.html#lo-que-aprendiste",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Lo que Aprendiste",
+    "text": "Lo que Aprendiste\n\n\n\nUnidad\nConcepto\n\n\n\n\n1.1\nQué es Python y por qué importa\n\n\n1.2\nInstalación y configuración\n\n\n1.3\nPrimer programa con print()\n\n\n1.4\nVariables y nombres descriptivos\n\n\n1.5\nTipos: int, float, str, bool\n\n\n1.6\nInput/Output con f-strings",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#práctica-7-desafíos",
+    "href": "presentaciones/modulo-1-intro-python.html#práctica-7-desafíos",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Práctica: 7 Desafíos",
+    "text": "Práctica: 7 Desafíos\n\n\n\nDesafío\nQué construyes\n\n\n\n\n1\nSaludo personalizado\n\n\n2\nCalculadora de edad\n\n\n3\nConversor de moneda\n\n\n4\nCalculadora de IMC\n\n\n5\nHistoria interactiva\n\n\n6\nFormulario de contacto\n\n\n7\nMini quiz",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#próximos-pasos",
+    "href": "presentaciones/modulo-1-intro-python.html#próximos-pasos",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Próximos Pasos",
+    "text": "Próximos Pasos\n\nMódulo 2: Tipos de Datos y Variables\n\nOperadores aritméticos\nOperadores de comparación\nStrings avanzados\nCasting avanzado",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#recursos",
+    "href": "presentaciones/modulo-1-intro-python.html#recursos",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "Recursos",
+    "text": "Recursos\n\nContenido del Módulo 1\nLab 1: Primer Programa\nLab 2: Variables\nDocumentación Python",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "presentaciones/modulo-1-intro-python.html#preguntas",
+    "href": "presentaciones/modulo-1-intro-python.html#preguntas",
+    "title": "Módulo 1: Introducción a Python",
+    "section": "¿Preguntas?",
+    "text": "¿Preguntas?\nDiego Saavedra 📧 dsaavedra88@gmail.com 🌐 statick88.github.io",
+    "crumbs": [
+      "Presentaciones (Reveal.js)",
+      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Módulo 1: Introducción a Python</span>"
+    ]
+  },
+  {
     "objectID": "quizzes/evaluacion-diagnostico.html",
     "href": "quizzes/evaluacion-diagnostico.html",
     "title": "Evaluación de Diagnóstico",
@@ -14656,7 +14964,7 @@
     "text": "Evaluación de Diagnóstico",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
     ]
   },
   {
@@ -14667,7 +14975,7 @@
     "text": "Instrucciones\nResponde todas las preguntas con honestidad. No busques respuestas en Google.\nSi no sabes algo, marca “No lo sé” — ¡es completamente válido! Esto nos ayuda a saber dónde enfocarnos.",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
     ]
   },
   {
@@ -14678,7 +14986,7 @@
     "text": "Sección 1: Conocimientos Previos\n\n1. ¿Has programado antes?\n\nNunca he escrito código\nHe hecho tutoriales básicos (Codecademy, freeCodeCamp, etc.)\nHe creado proyectos pequeños por mi cuenta\nTengo experiencia profesional (1+ años)\n\n\n\n2. ¿Qué lenguajes conoces? (marca todos los que apliquen)\n\nNinguno\nPython (básico)\nPython (intermedio/avanzado)\nJavaScript/TypeScript\nJava\nC/C++\nOtro: _______________\n\n\n\n3. ¿Qué es una variable en programación?\n\nNo lo sé\nEs algo que cambia constantemente\nEs un espacio en memoria que almacena un valor\nEs una función que retorna datos\n\n\n\n4. ¿Qué hace este código?\n\n\nPYTHON\n\nx = 10\ny = 3\nresultado = x // y\nprint(resultado)\n\n\nNo lo sé\nImprime 3.333\nImprime 3\nImprime 30\nDa un error",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
     ]
   },
   {
@@ -14689,7 +14997,7 @@
     "text": "Sección 2: Lógica y Pensamiento Computacional\n\n5. Tienes una lista de 100 números y necesitas encontrar el mayor. ¿Cómo lo harías?\n\nNo lo sé\nReviso cada número uno por uno, guardando el más grande que encuentro\nLos ordeno de mayor a menor y tomo el primero\nPido ayuda a alguien\n\n\n\n6. ¿Cuál es el resultado de este pseudocódigo?\ncontador = 0\nPARA i DESDE 1 HASTA 5 HACER\n    contador = contador + i\nFIN_PARA\nIMPRIMIR contador\n\nNo lo sé\n5\n10\n15\nError\n\n\n\n7. Descompón este problema en al menos 3 pasos:\nProblema: Crear un programa que ordene una lista de nombres alfabéticamente y guarde el resultado en un archivo.\nTus pasos:",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
     ]
   },
   {
@@ -14700,7 +15008,7 @@
     "text": "Sección 3: Conceptos Técnicos\n\n8. ¿Qué es un algoritmo?\n\nNo lo sé\nUn tipo de robot\nUna secuencia finita de pasos para resolver un problema\nUn programa de computadora\n\n\n\n9. ¿Qué diferencia hay entre = y == en Python?\n\nNo lo sé\nSon lo mismo\n= asigna un valor, == compara valores\n= compara, == asigna\n\n\n\n10. ¿Qué imprime este código?\n\n\nPYTHON\n\nnumeros = [1, 2, 3, 4, 5]\nprint(numeros[-1])\n\n\nNo lo sé\n1\n5\nError\n\n\n\n11. ¿Qué es una función?\n\nNo lo sé\nUn archivo de código\nUn bloque de código reutilizable que realiza una tarea específica\nUna variable especial\n\n\n\n12. ¿Para qué sirve import en Python?\n\nNo lo sé\nPara traer datos de internet\nPara usar código de otros módulos/bibliotecas\nPara crear variables",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
     ]
   },
   {
@@ -14711,7 +15019,7 @@
     "text": "Sección 4: Expectativas\n\n13. ¿Qué esperas lograr con este curso? (marca todas las que apliquen)\n\nAprender Python desde cero\nMejorar mis habilidades actuales\nConstruir proyectos propios\nPrepararme para entrevistas técnicas\nCambiar de carrera\nOtro: _______________\n\n\n\n14. ¿Cuántas horas por semana puedes dedicar al curso?\n\nMenos de 3 horas\n3-5 horas\n6-10 horas\nMás de 10 horas\n\n\n\n15. ¿Cómo prefieres aprender?\n\nLeyendo teoría primero\nViendo código y experimentando\nResolviendo problemas directamente\nCon explicaciones paso a paso",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
     ]
   },
   {
@@ -14722,7 +15030,7 @@
     "text": "Evaluación (Para el Instructor)\n\nCálculo de Nivel\n\n\n\nSección\nPuntos\nInterpretación\n\n\n\n\nSección 1 (1-4)\n0-4 pts\nConocimientos previos\n\n\nSección 2 (5-7)\n0-3 pts\nPensamiento lógico\n\n\nSección 3 (8-12)\n0-5 pts\nConceptos técnicos\n\n\nTotal\n0-12 pts\n\n\n\n\n\n\nClasificación\n\n\n\n\n\n\n\n\nPuntaje\nNivel\nRecomendación\n\n\n\n\n0-3\nPrincipiante absoluto\nEmpezar desde Módulo 0. Ir despacio.\n\n\n4-6\nPrincipiante con nociones\nMódulo 0 rápido, luego normal.\n\n\n7-9\nIntermedio bajo\nPuede saltar Módulo 0 si quiere.\n\n\n10-12\nIntermedio\nEnfocarse en desafíos y proyectos.\n\n\n\n\nComenzar el curso →",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>188</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
+      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Evaluación de Diagnóstico</span>"
     ]
   },
   {
@@ -14733,7 +15041,7 @@
     "text": "Quizzes Disponibles",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Quizzes Interactivos</span>"
+      "<span class='chapter-number'>191</span>  <span class='chapter-title'>Quizzes Interactivos</span>"
     ]
   },
   {
@@ -14744,7 +15052,7 @@
     "text": "Quiz\nMódulo\nPreguntas\n\n\n\n\nQuiz Módulo 1\nIntroducción a Python\n10\n\n\nQuiz Módulo 2\nTipos de Datos y Variables\n10\n\n\nQuiz Módulo 3\nEstructuras de Control\n10\n\n\nQuiz Módulo 4\nFunciones\n10\n\n\nQuiz Módulo 5\nListas y Tuplas\n10\n\n\nQuiz Módulo 6\nDiccionarios y Sets\n10\n\n\nQuiz Módulo 7\nManejo de Archivos\n10\n\n\nQuiz Módulo 8\nMódulos y Paquetes\n10\n\n\nQuiz Módulo 9\nBuenas Prácticas y Testing\n10\n\n\nQuiz Módulo 10\nProyecto Final y Buenas Prácticas de Desarrollo\n10",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Quizzes Interactivos</span>"
+      "<span class='chapter-number'>191</span>  <span class='chapter-title'>Quizzes Interactivos</span>"
     ]
   },
   {
@@ -14755,7 +15063,7 @@
     "text": "Instrucciones\n\nCada quiz tiene preguntas de opción múltiple\nPuedes intentar cada quiz tantas veces como necesites\nEl resultado se muestra inmediatamente al finalizar\nUsa los quizzes para autoevaluar tu progreso después de completar cada módulo\n\n\nVolver al índice: Inicio",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>189</span>  <span class='chapter-title'>Quizzes Interactivos</span>"
+      "<span class='chapter-number'>191</span>  <span class='chapter-title'>Quizzes Interactivos</span>"
     ]
   },
   {
@@ -14766,7 +15074,7 @@
     "text": "Evaluación del Módulo 1\nResponde las siguientes preguntas para evaluar tu comprensión de los conceptos fundamentales de Python.\nVolver a Quizzes: README | Anterior: Módulo 1",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Quiz: Módulo 1 — Introducción a Python</span>"
+      "<span class='chapter-number'>192</span>  <span class='chapter-title'>Quiz: Módulo 1 — Introducción a Python</span>"
     ]
   },
   {
@@ -14777,7 +15085,7 @@
     "text": "¿Qué función se usa para mostrar texto en pantalla?\n\ninput()\nprint()\nshow()\ndisplay()\n\n\nExplicación: print() es la función incorporada de Python que envía texto a la salida estándar (pantalla).\n\n\n\n\n¿Qué tipo de dato es 3.14?\n\nint\nstr\nfloat\nbool\n\n\nExplicación: Los números con decimales son de tipo float en Python.\n\n\n\n\n¿Qué devuelve siempre la función input()?\n\nUn número entero\nUn texto (str)\nUn booleano\nUna lista\n\n\nExplicación: input() siempre devuelve una cadena de texto (str), incluso si el usuario escribe un número.\n\n\n\n\n¿Cuál es la convención correcta para nombrar variables en Python?\n\ncamelCase\nsnake_case\nPascalCase\nkebab-case\n\n\nExplicación: Python usa snake_case por convención (PEP 8): nombre_usuario, edad_maxima.\n\n\n\n\n¿Qué hace \"hola\" * 3?\n\nDa un error\nProduce \"holaholahola\"\nProduce \"hola 3\"\nProduce [\"hola\", \"hola\", \"hola\"]\n\n\nExplicación: El operador * con texto repite la cadena el número de veces indicado.\n\n\n\n\n¿Cuál es el resultado de 10 // 3?\n\n3.33\n3\n1\n10\n\n\nExplicación: // es la división entera, que descarta los decimales y devuelve solo la parte entera.\n\n\n\n\n¿Qué palabra reservada se usa para definir una función?\n\nfunction\ndef\nfunc\ndefine\n\n\nExplicación: En Python, las funciones se definen con def nombre_funcion():.\n\n\n\n\n¿Cuál es el resultado de bool(0)?\n\nTrue\nFalse\nError\nNone\n\n\nExplicación: En Python, 0, \"\", [], {}, y None se evalúan como False. Todo lo demás es True.\n\n\n\n\n¿Qué hace el método .strip() en un string?\n\nDivide el texto en palabras\nElimina espacios al inicio y final\nConvierte a mayúsculas\nReemplaza caracteres\n\n\nExplicación: \"  hola  \".strip() devuelve \"hola\".\n\n\n\n\n¿Qué principio del Zen de Python dice “El código se lee más veces de las que se escribe”?\n\nBeautiful is better than ugly\nSimple is better than complex\nReadability counts\nExplicit is better than implicit\n\n\nExplicación: “Readability counts” enfatiza que el código debe ser legible porque se lee mucho más de lo que se escribe.",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>190</span>  <span class='chapter-title'>Quiz: Módulo 1 — Introducción a Python</span>"
+      "<span class='chapter-number'>192</span>  <span class='chapter-title'>Quiz: Módulo 1 — Introducción a Python</span>"
     ]
   },
   {
@@ -14788,7 +15096,7 @@
     "text": "Evaluación del Módulo 2\nResponde las siguientes preguntas para evaluar tu comprensión de los tipos de datos y variables en Python.\nVolver a Quizzes: README | Anterior: Módulo 2",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>191</span>  <span class='chapter-title'>Quiz: Módulo 2 — Tipos de Datos y Variables</span>"
+      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Quiz: Módulo 2 — Tipos de Datos y Variables</span>"
     ]
   },
   {
@@ -14799,7 +15107,7 @@
     "text": "¿Cuál es el resultado de type(5)?\n\nint\n&lt;class ‘int’&gt;\n“int”\nint()\n\n\nExplicación: La función type() retorna el objeto de tipo, no una cadena. Por eso muestra &lt;class 'int'&gt;.\n\n\n\n\n¿Qué ocurre al ejecutar numero = 10; numero = \"dieciocho\"; type(numero)?\n\nDa error por reasignar tipos\nDevuelve &lt;class 'str'&gt;\nDevuelve &lt;class 'int'&gt;\nDevuelve ambos tipos\n\n\nExplicación: Python permite reasignar variables a diferentes tipos. El tipo actual es el último asignado.\n\n\n\n\n¿Cómo se representa el número 1000 en notación científica en Python?\n\n1e3\n1e3 o 1.0e3\n10^3\n10**3\n\n\nExplicación: En notación científica, se usa e para indicar “veces 10 elevado a”. Tanto 1e3 como 1.0e3 representan 1000.\n\n\n\n\n¿Cuál de las siguientes es una forma válida de crear un complejo en Python?\n\ncomplex(3, 4)\n3 + 4j\nAmbos son válidos\nNinguno es válido\n\n\nExplicación: Python permite crear complejos tanto con complex(real, imag) como usando el sufijo j para la parte imaginaria.\n\n\n\n\n¿Qué devuelve bool(\"\")?\n\nTrue\nFalse\nError\nNone\n\n\nExplicación: Las cadenas vacías se evalúan como False en contexto booleano.\n\n\n\n\n¿Cuál es la diferencia entre = y == en Python?\n\n= compara, == asigna\n= asigna, == compara\nAmbos hacen lo mismo\n= es para números, == para texto\n\n\nExplicación: El operador = es de asignación, mientras que == es de comparación de igualdad.\n\n\n\n\n¿Qué tipo de dato resulta de 10 / 3?\n\nint\nfloat\ncomplex\nDepende de la versión\n\n\nExplicación: En Python 3, la división / siempre retorna un float, incluso si el resultado es un número entero.\n\n\n\n\n¿Cómo se escribe un número binario en Python?\n\n0b1010\n0b1010\nb1010\n1010b\n\n\nExplicación: Los números binarios se prefijan con 0b seguido de los dígitos binarios (0 y 1).\n\n\n\n\n¿Qué hace el código a, b = b, a?\n\nIntercambia los valores de a y b\nAsigna b a ambas variables\nDa error de sintaxis\nDuplica el valor de b\n\n\nExplicación: Esta es la forma pythonica de intercambiar variables sin necesidad de una temporal.\n\n\n\n\n¿Cuál es el resultado de bool([])?\n\nTrue\nFalse\nError\nNone\n\n\nExplicación: Las listas vacías se evalúan como False en contexto booleano, al igual que otros contenedores vacíos.",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>191</span>  <span class='chapter-title'>Quiz: Módulo 2 — Tipos de Datos y Variables</span>"
+      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Quiz: Módulo 2 — Tipos de Datos y Variables</span>"
     ]
   },
   {
@@ -14810,7 +15118,7 @@
     "text": "Evaluación del Módulo 3\nResponde las siguientes preguntas para evaluar tu comprensión de las estructuras de control en Python.\nVolver a Quizzes: README | Anterior: Módulo 3",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>192</span>  <span class='chapter-title'>Quiz: Módulo 3 — Estructuras de Control</span>"
+      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Quiz: Módulo 3 — Estructuras de Control</span>"
     ]
   },
   {
@@ -14821,7 +15129,7 @@
     "text": "¿Qué palabra reservada se usa para iniciar una condicional en Python?\n\nif\nif\ncuando\nsi\n\n\nExplicación: En Python, se usa if para iniciar una estructura condicional.\n\n\n\n\n¿Cuál es el operador lógico que representa “Y” en Python?\n\n&\nand\n&&\nAND\n\n\nExplicación: En Python, el operador lógico AND se escribe como and en minúsculas.\n\n\n\n\n¿Qué hace la instrucción break dentro de un bucle?\n\nSalta a la siguiente iteración\nSale completamente del bucle\nReinicia el bucle desde el principio\nDetiene el programa\n\n\nExplicación: break termina inmediatamente el bucle más interno en el que se encuentra.\n\n\n\n\n¿Qué hace la instrucción continue dentro de un bucle?\n\nSalta a la siguiente iteración\nSale completamente del bucle\nReinicia el bucle desde el principio\nDetiene el programa\n\n\nExplicación: continue omite el resto de la iteración actual y pasa directamente a la siguiente.\n\n\n\n\n¿Cuál es el resultado de range(5)?\n\n[0, 1, 2, 3, 4, 5]\nrange(0, 5)\n[1, 2, 3, 4, 5]\nError\n\n\nExplicación: range(5) crea un objeto range que representa los números del 0 al 4. Para ver la lista, necesitas convertirlo con list(range(5)).\n\n\n\n\n¿Cómo se escribe un bucle que se ejecuta exactamente 10 veces?\n\nfor i in range(10):\nfor i in range(10):\nfor i in range(1, 10):\nfor i in range(0, 10):\n\n\nExplicación: range(10) genera números del 0 al 9 (10 elementos en total). Todas las opciones excepto la tercera ejecutan 10 veces, pero la primera es la más convencional.\n\n\n\n\n¿Qué imprime el siguiente código?\n\n\nPYTHON\n\nfor i in range(1, 6):\n    if i == 3:\n        continue\n    print(i)\n\n\n1 2 3 4 5\n1 2 4 5\n1 2 3 5\n1 2 4\n\n\nExplicación: Cuando i es 3, continue salta el print, por eso no se imprime el 3.\n\n\n\n\n¿Cuál es la diferencia entre while y for en Python?\n\nwhile es para listas, for para números\nwhile se ejecuta mientras una condición sea verdadera, for itera sobre una secuencia\nSon idénticos\nfor solo funciona con strings\n\n\nExplicación: while continúa mientras su condición sea verdadera. for itera sobre cada elemento de una secuencia (lista, rango, etc.).\n\n\n\n\n¿Qué hace el siguiente código?\n\n\nPYTHON\n\ncontador = 0\nwhile contador &lt; 5:\n    print(contador)\n    contador += 1\n\n\nImprime 0 1 2 3 4 5\nImprime 0 1 2 3 4\nImprime 1 2 3 4 5\nImprime 5 4 3 2 1 0\n\n\nExplicación: El bucle se ejecuta mientras contador sea menor que 5, imprimiendo 0, 1, 2, 3, 4.\n\n\n\n\n¿Cuál es el resultado de 10 % 3?\n\n3\n1\n0.33\n10\n\n\nExplic: El operador % (módulo) devuelve el resto de la división. 10 dividido por 3 es 3 con resto 1.",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>192</span>  <span class='chapter-title'>Quiz: Módulo 3 — Estructuras de Control</span>"
+      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Quiz: Módulo 3 — Estructuras de Control</span>"
     ]
   },
   {
@@ -14832,7 +15140,7 @@
     "text": "Evaluación del Módulo 4\nResponde las siguientes preguntas para evaluar tu comprensión de las funciones en Python.\nVolver a Quizzes: README | Anterior: Módulo 4",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Quiz: Módulo 4 — Funciones</span>"
+      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Quiz: Módulo 4 — Funciones</span>"
     ]
   },
   {
@@ -14843,7 +15151,7 @@
     "text": "¿Cómo se define una función en Python?\n\nfunction mi_funcion():\ndef mi_funcion():\ndef mi_funcion\ncreate mi_funcion():\n\n\nExplicación: En Python, las funciones se definen con la palabra clave def seguida del nombre y paréntesis.\n\n\n\n\n¿Qué palabra reservada se usa para devolver un valor desde una función?\n\nreturn\nreturn\ngive\noutput\n\n\nExplicación: La palabra clave return se usa para devolver un valor desde una función y terminar su ejecución.\n\n\n\n\n¿Qué ocurre si una función no tiene una instrucción return?\n\nDevuelve 0\nDevuelve None\nDa error\nDevuelve False\n\n\nExplicación: Todas las funciones en Python devuelven un valor. Si no hay return, devuelven None por defecto.\n\n\n\n\n¿Cómo se llaman los valores que se pasan a una función?\n\nVariables\nArgumentos\nParámetros\nAmbos B y C son correctos\n\n\nExplicación: Los parámetros son las variables en la definición de la función. Los argumentos son los valores reales que se pasan al llamarla.\n\n\n\n\n¿Qué es el scope (alcance) de una variable?\n\nEl tipo de dato de la variable\nLa región del programa donde la variable es accesible\nEl valor de la variable\nEl nombre de la variable\n\n\nExplicación: El scope determina dónde en el código una variable puede ser accedida. Python tiene scope local y global.\n\n\n\n\n¿Qué palabra reservada se usa para acceder a una variable global desde dentro de una función?\n\nglobal\nglobal\nworldwide\ninternacional\n\n\nExplicación: Para modificar una variable global dentro de una función, se debe declarar como global dentro de la función.\n\n\n\n\n¿Qué es una función lambda en Python?\n\nUna función que no devuelve nada\nUna función anónima definida en una sola línea\nUna función que solo acepta un argumento\nUna función recursiva\n\n\nExplicación: Las funciones lambda son funciones pequeñas y anónimas definidas con lambda argumentos: expresión.\n\n\n\n\n¿Cuál es la sintaxis correcta de una función lambda que suma dos números?\n\nlambda x, y: x + y\nlambda x, y: x + y\nlambda(x, y) { return x + y }\nfunction(x, y) { x + y }\n\n\nExplicación: La sintaxis de lambda es lambda parámetros: expresión. No necesita return explícito.\n\n\n\n\n¿Qué significa que una función sea “pura”?\n\nQue no tiene parámetros\nQue siempre devuelve el mismo output para el mismo input y no tiene efectos secundarios\nQue está escrita en un solo línea\nQue solo usa funciones incorporadas\n\n\nExplicación: Una función pura es determinista (mismo input = mismo output) y no modifica nada fuera de su scope.\n\n\n\n\n¿Cuál es la diferencia entre args y kwargs en Python?\n\nargs es para textos, kwargs para números\nargs captura argumentos posicionales, kwargs captura argumentos con nombre\nSon sinónimos\nargs es antiguo, kwargs es nuevo\n\n\nExplicación: *args permite pasar un número variable de argumentos posicionales. **kwargs permite pasar un número variable de argumentos con nombre (diccionario).",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>193</span>  <span class='chapter-title'>Quiz: Módulo 4 — Funciones</span>"
+      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Quiz: Módulo 4 — Funciones</span>"
     ]
   },
   {
@@ -14854,7 +15162,7 @@
     "text": "Evaluación del Módulo 5\nResponde las siguientes preguntas para evaluar tu comprensión de listas y tuplas en Python.\nVolver a Quizzes: README | Anterior: Módulo 5",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Quiz: Módulo 5 — Listas y Tuplas</span>"
+      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Quiz: Módulo 5 — Listas y Tuplas</span>"
     ]
   },
   {
@@ -14865,7 +15173,7 @@
     "text": "¿Cuál es la diferencia principal entre listas y tuplas en Python?\n\nLas listas son más rápidas\nLas listas son mutables, las tuplas son inmutables\nLas tuplas pueden tener más elementos\nLas listas solo almacenan números\n\n\nExplicación: Las listas pueden modificarse después de su creación (mutables), mientras que las tuplas no pueden cambiarse (inmutables).\n\n\n\n\n¿Cómo se crea una lista vacía en Python?\n\nlista = ()\nlista = []\nlista = {}\nlista = list\n\n\nExplicación: Las listas se crean con corchetes [] . Los paréntesis () son para tuplas y las llaves {} para diccionarios.\n\n\n\n\n¿Qué método se usa para agregar un elemento al final de una lista?\n\nadd()\nappend()\ninsert()\npush()\n\n\nExplicación: El método append() agrega un elemento al final de la lista. insert() permite especificar la posición.\n\n\n\n\n¿Cuál es el resultado de lista = [1, 2, 3]; lista[1] = 99; lista?\n\n[1, 2, 3]\n[1, 99, 3]\n[1, 99, 3]\nError\n\n\nExplicación: Las listas son mutables, por lo que podemos cambiar el valor en cualquier posición usando el índice.\n\n\n\n\n¿Cómo se accede al último elemento de una lista llamada mi_lista?\n\nmi_lista[length]\nmi_lista[-1]\nmi_lista[length-1]\nmi_lista[last]\n\n\nExplicación: En Python, los índices negativos cuentan desde el final: -1 es el último elemento, -2 el penúltimo, etc.\n\n\n\n\n¿Qué hace el método pop() en una lista?\n\nAgrega un elemento al final\nElimina y retorna el último elemento\nOrdena la lista\nInvierte la lista\n\n\nExplicación: pop() elimina el último elemento de la lista y lo retorna. Si se pasa un índice, elimina ese elemento específico.\n\n\n\n\n¿Cuál es el resultado de [1, 2, 3] + [4, 5]?\n\n[1, 2, 3, 4, 5]\n[1, 2, 3, 4, 5]\nError\n[[1, 2, 3], [4, 5]]\n\n\nExplicación: El operador + con listas las concatena (une) en una nueva lista.\n\n\n\n\n¿Cómo se crea una tupla con un solo elemento?\n\ntupla = (1)\ntupla = (1,)\ntupla = [1]\ntupla = 1,\n\n\nExplicación: Para crear una tupla de un solo elemento, necesitamos la coma: (1,). Sin la coma, Python interpreta (1) como el número 1 entre paréntesis.\n\n\n\n\n¿Qué método se usa para contar cuántas veces aparece un elemento en una lista?\n\ncount()\ncount()\nfrequency()\nocurrences()\n\n\nExplicación: El método count() retorna el número de veces que aparece un elemento específico en la lista.\n\n\n\n\n¿Cuál es el resultado de list(\"hola\")?\n\n[“h”, “o”, “l”, “a”]\n[‘h’, ‘o’, ‘l’, ‘a’]\nError\n“hola”\n\n\nExplicación: Al convertir una string a lista, cada carácter se convierte en un elemento separado de la lista.",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>194</span>  <span class='chapter-title'>Quiz: Módulo 5 — Listas y Tuplas</span>"
+      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Quiz: Módulo 5 — Listas y Tuplas</span>"
     ]
   },
   {
@@ -14876,7 +15184,7 @@
     "text": "Evaluación del Módulo 6\nResponde las siguientes preguntas para evaluar tu comprensión de diccionarios y sets en Python.\nVolver a Quizzes: README | Anterior: Módulo 6",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Quiz: Módulo 6 — Diccionarios y Sets</span>"
+      "<span class='chapter-number'>197</span>  <span class='chapter-title'>Quiz: Módulo 6 — Diccionarios y Sets</span>"
     ]
   },
   {
@@ -14887,7 +15195,7 @@
     "text": "¿Cómo se crea un diccionario vacío en Python?\n\ndict = {}\ndict = {}\ndict = []\ndict = ()\n\n\nExplicación: Los diccionarios se crean con llaves {}. Los corchetes [] son para listas y los paréntesis () para tuplas.\n\n\n\n¿Cuál es la forma correcta de acceder al valor asociado a una clave en un diccionario?\n\ndict.clave\ndict[“clave”]\ndict-&gt;clave\ndict.clave()\n\n\nExplicación: En Python, se accede a los valores de un diccionario usando corchetes con la clave como string: dict[“clave”].\n\n\n\n¿Qué ocurre si intentamos acceder a una clave que no existe en un diccionario?\n\nDevuelve None\nLanza un KeyError\nDevuelve False\nCrea automáticamente la clave\n\n\nExplicación: Acceder a una clave inexistente lanza una excepción KeyError. Para evitarlo, usar dict.get(“clave”, valor_por_defecto).\n\n\n\n¿Qué método se usa para obtener todas las claves de un diccionario?\n\ndict.keys\ndict.keys()\ndict.get_keys()\ndict.claves()\n\n\nExplicación: El método keys() retorna una vista de todas las claves del diccionario. Para obtener una lista, usar list(dict.keys()).\n\n\n\n¿Qué es un set (conjunto) en Python?\n\nUna lista ordenada\nUna colección desordenada de elementos únicos\nUn diccionario sin valores\nUna tupla mutable\n\n\nExplic: Un set es una colección que no permite duplicados y no mantiene orden de inserción (en versiones anteriores a 3.7, a partir de 3.7 mantiene orden de inserción como implementación de CPython, pero no se debe confiar en ello).\n\n\n\n¿Cómo se crea un set en Python?\n\nset = {}\nset = {1, 2, 3}\nset = []\nset = ()\n\n\nExplicación: Los sets se crean con llaves y comas separados: {1, 2, 3}. Nota: {} crea un diccionario vacío, no un set vacío.\n\n\n\n¿Cómo se crea un set vacío en Python?\n\nset = {}\nset = set()\nset = []\nset = ()\n\n\nExplicación: Para crear un set vacío, debemos usar set() porque {} crea un diccionario vacío.\n\n\n\n¿Qué operación elimina duplicados de una lista usando sets?\n\nlista.set()\nlist(set(lista))\nlista.unique()\nset.lista()\n\n\nExplicación: Al convertir una lista a set, se eliminan automáticamente los duplicados. Luego podemos convertir de vuelta a lista si necesitamos esa estructura.\n\n\n\n¿Qué método se usa para agregar un elemento a un set?\n\nadd()\nadd()\nappend()\npush()\n\n\nExplicación: El método add() agrega un elemento al set. Si el elemento ya existe, no hace nada (no duplica).\n\n\n\n¿Cuál es el resultado de {1, 2, 3} & {2, 3, 4}?\n\n{1, 2, 3, 4}\n{2, 3}\n{1, 4}\nError\n\n\nExplic: El operador & entre sets realiza la intersección: elementos que están en ambos sets. En este caso, solo 2 y 3 están en ambos.",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>195</span>  <span class='chapter-title'>Quiz: Módulo 6 — Diccionarios y Sets</span>"
+      "<span class='chapter-number'>197</span>  <span class='chapter-title'>Quiz: Módulo 6 — Diccionarios y Sets</span>"
     ]
   },
   {
@@ -14898,7 +15206,7 @@
     "text": "Evaluación del Módulo 7\nResponde las siguientes preguntas para evaluar tu comprensión del manejo de archivos en Python.\nVolver a Quizzes: README | Anterior: Módulo 7",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Quiz: Módulo 7 — Manejo de Archivos</span>"
+      "<span class='chapter-number'>198</span>  <span class='chapter-title'>Quiz: Módulo 7 — Manejo de Archivos</span>"
     ]
   },
   {
@@ -14909,7 +15217,7 @@
     "text": "¿Cuál es la forma correcta de abrir un archivo para lectura en Python?\n\nopen(“archivo.txt”, “w”)\nopen(“archivo.txt”, “r”)\nopen(“archivo.txt”, “rw”)\nopen(“archivo.txt”, “read”)\n\n\nExplicación: El modo “r” es para lectura (read). Es el modo por defecto si no se especifica.\n\n\n\n¿Qué palabra reservada se usa para asegurar que un archivo se cierre correctamente incluso si ocurre un error?\n\nfinally\nwith\nauto\nclose\n\n\nExplicación: La sentencia with crea un contexto que asegura que el archivo se cierre automáticamente al salir del bloque, incluso si ocurre una excepción.\n\n\n\n¿Qué método se usa para leer todo el contenido de un archivo de una vez?\n\nreadline()\nread()\nreadlines()\nload()\n\n\nExplicación: El método read() lee todo el contenido del archivo y lo retorna como un string. readline() lee una línea y readlines() lee todas las líneas en una lista.\n\n\n\n¿Cuál es la diferencia entre read() y readline()?\n\nread() lee una línea, readline() lee todo\nread() lee todo el archivo, readline() lee una línea a la vez\nSon idénticos\nread() requiere un número de bytes\n\n\nExplicación: read() retorna todo el contenido como un string. readline() retorna una sola línea (incluyendo el salto de línea al final).\n\n\n\n¿Qué hace el método seek() en un archivo?\n\nBusca texto dentro del archivo\nCambia la posición actual de lectura/escritura\nCierra el archivo\nGuarda cambios en disco\n\n\nExplicación: seek() permite mover el puntero de archivo a una posición específica para leer o escribir desde ahí.\n\n\n\n¿Cuál es la codificación por defecto al abrir un archivo en Python 3?\n\nASCII\nUTF-8\nISO-8859-1\nDepende del sistema\n\n\nExplicación: En Python 3, la codificación por defecto es UTF-8, lo que permite manejar correctamente caracteres internacionales.\n\n\n\n¿Cómo se abre un archivo para escritura que sobrescribe el contenido existente?\n\nopen(“archivo.txt”, “r”)\nopen(“archivo.txt”, “w”)\nopen(“archivo.txt”, “a”)\nopen(“archivo.txt”, “rw+”)\n\n\nExplicación: El modo “w” es para escritura (write) y sobrescribe el contenido existente. El modo “a” es para append (añadir al final).\n\n\n\n¿Qué método se usa para escribir una línea en un archivo?\n\nwrite_line()\nwrite()\nput()\ninsert()\n\n\nExplicación: El método write() escribe una string en el archivo. No agrega automáticamente un salto de línea; hay que incluirlo explícitamente si se quiere.\n\n\n\n¿Para qué se usa el módulo csv en Python?\n\nPara comprimir archivos\nPara leer y escribir archivos CSV (Valores Separados por Comas)\nPara convertir imágenes\nPara encriptar datos\n\n\nExplicación: El módulo csv proporciona funcionalidad para leer y escribir datos en formato CSV, manejando correctamente comas, comillas y saltos de línea dentro de los campos.\n\n\n\n¿Qué clase del módulo pathlib se usa para representar rutas de archivos?\n\nFilePath\nPath\nFile\nDirectory\n\n\nExplicación: El módulo pathlib proporciona una orientación objetorientada para manejar rutas de archivos. La clase principal es Path, que representa tanto archivos como directorios.",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>196</span>  <span class='chapter-title'>Quiz: Módulo 7 — Manejo de Archivos</span>"
+      "<span class='chapter-number'>198</span>  <span class='chapter-title'>Quiz: Módulo 7 — Manejo de Archivos</span>"
     ]
   },
   {
@@ -14920,7 +15228,7 @@
     "text": "Evaluación del Módulo 8\nResponde las siguientes preguntas para evaluar tu comprensión de módulos y paquetes en Python.\nVolver a Quizzes: README | Anterior: Módulo 8",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>197</span>  <span class='chapter-title'>Quiz: Módulo 8 — Módulos y Paquetes</span>"
+      "<span class='chapter-number'>199</span>  <span class='chapter-title'>Quiz: Módulo 8 — Módulos y Paquetes</span>"
     ]
   },
   {
@@ -14931,7 +15239,7 @@
     "text": "¿Cuál es la forma correcta de importar el módulo math en Python?\n\nimport math as\nimport math\ninclude math\nrequire math\n\n\nExplicación: La sintaxis correcta para importar un módulo en Python es import nombre_modulo. El módulo math proporciona funciones matemáticas como sqrt(), sin(), cos(), etc.\n\n\n\n\n¿Qué archivo special se necesita para que un directorio se considere un paquete en Python?\n\npackage.json\nmain.py\ninit.py\nsetup.py\n\n\nExplicación: El archivo __init__.py (que puede estar vacío) le indica a Python que el directorio debe ser tratado como un paquete. Esto permite importar módulos desde ese directorio usando notación de punto.\n\n\n\n\n¿Cuál de las siguientes es una forma válida de importar una función específica de un módulo?\n\nimport math.sqrt\nfrom math import sqrt\ninclude sqrt from math\nimport sqrt(math)\n\n\nExplicación: La sintaxis from modulo import funcion permite importar específicamente una función de un módulo, evitando tener que usar el prefijo del módulo cada vez que se usa.\n\n\n\n\n¿Qué hace el comando pip list?\n\nInstala nuevos paquetes\nMuestra los paquetes instalados actualmente\nActualiza todos los paquetes\nElimina paquetes no utilizados\n\n\nExplicación: pip list muestra todos los paquetes de Python instalados en el entorno actual junto con sus versiones. Es útil para verificar qué dependencias tienes disponibles.\n\n\n\n\n¿Cuál es el propósito de un entorno virtual en Python?\n\nAumentar la velocidad de ejecución\nAislar las dependencias de un proyecto de otras\nCompilar código Python a máquina\nTraducir Python a otros lenguajes\n\n\nExplicación: Un entorno virtual crea un espacio aislado donde puedes instalar paquetes sin afectar la instalación global de Python. Esto evita conflictos entre versiones de paquetes de diferentes proyectos.\n\n\n\n\n¿Cómo se activa un entorno virtual creado con venv en Linux/macOS?\n\nstart venv\nsource venv/bin/activate\nactivate venv\nrun venv\n\n\nExplicación: En Linux y macOS, se activa un entorno virtual con source ruta/al/entorno/bin/activate. En Windows, sería ruta\\al\\entorno\\Scripts\\activate.\n\n\n\n\n¿Qué hace el archivo requirements.txt en un proyecto Python?\n\nDefine la estructura del proyecto\nLista las dependencias y sus versiones necesarias\nContiene el código principal de la aplicación\nAlmacena la documentación del proyecto\n\n\nExplicación: El archivo requirements.txt lista todos los paquetes de Python necesarios para que un proyecto funcione correctamente, incluyendo sus versiones específicas. Permite reproducir fácilmente el entorno con pip install -r requirements.txt.\n\n\n\n\n¿Cuál es la diferencia entre import numpy y import numpy as np?\n\nNo hay diferencia\nEl segundo crea un alias np para numpy\nEl primero es más rápido\nEl segundo importa menos funcionalidades\n\n\nExplicación: Usar as crea un alias (nombre alternativo) para el módulo importado. import numpy as np permite referirse a numpy como np en todo el código, lo que es más conveniente y es una convención común.\n\n\n\n\n¿Qué módulo de la biblioteca estándar se usa para trabajar con fechas y horas?\n\ntime\ncalendar\ndatetime\ndate\n\n\nExplicación: El módulo datetime proporciona clases para manipular fechas y horas de manera tanto simple como compleja. Incluye funcionalidades para aritmética de fechas, zonas horarias y formateo.\n\n\n\n\n¿Cuál de las siguientes afirmaciones sobre los paquetes es correcta?\n\nLos paquetes solo pueden contener un módulo\nLos paquetes pueden contener submódulos y subpaquetes\nLos paquetes no pueden tener un init.py\nLos paquetes son exclusivos de Python 3\n\n\nExplicación: Los paquetes en Python pueden estar jerarquicamente organizados, conteniendo submódulos (archivos .py) y subpaquetes (directorios con su propio init.py). Esto permite una organización lógica y escalable del código.",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>197</span>  <span class='chapter-title'>Quiz: Módulo 8 — Módulos y Paquetes</span>"
+      "<span class='chapter-number'>199</span>  <span class='chapter-title'>Quiz: Módulo 8 — Módulos y Paquetes</span>"
     ]
   },
   {
@@ -14942,7 +15250,7 @@
     "text": "Evaluación del Módulo 9\nResponde las siguientes preguntas para evaluar tu comprensión de buenas prácticas de código y testing en Python.\nVolver a Quizzes: README | Anterior: Módulo 9",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>198</span>  <span class='chapter-title'>Quiz: Módulo 9 — Buenas Prácticas y Testing</span>"
+      "<span class='chapter-number'>200</span>  <span class='chapter-title'>Quiz: Módulo 9 — Buenas Prácticas y Testing</span>"
     ]
   },
   {
@@ -14953,7 +15261,7 @@
     "text": "¿Qué significa PEP 8 en Python?\n\nPython Enhancement Proposal 8\nPython Enhancement Proposal 8 (Estilo de Código)\nPython Error Protocol 8\nPython Execution Process 8\n\n\nExplicación: PEP 8 es la guía de estilo de código para Python. Proporciona convenciones sobre cómo formatear el código para máxima legibilidad, incluyendo reglas de indentación, longitud de líneas, nombres de variables, etc.\n\n\n\n\n¿Cuál es la longitud máxima recomendada de línea según PEP 8?\n\n60 caracteres\n80 caracteres\n79 caracteres\n100 caracteres\n\n\nExplicación: PEP 8 recomienda limitar las líneas a 79 caracteres máximo para facilitar la lectura en dispositivos con pantallas más pequeñas y permitir tener dos archivos lado a lado en editores con salto de línea.\n\n\n\n\n¿Cómo se nombran las constantes en Python según PEP 8?\n\ncamelCase\nsnake_case\nUPPER_SNAKE_CASE\nPascalCase\n\n\nExplicación: Según PEP 8, las constantes deben nombrarse usando mayúsculas con guiones bajos (UPPER_SNAKE_CASE), como MAX_CONNECTIONS = 100 o PI = 3.14159.\n\n\n\n\n¿Qué es una función pura en programación funcional?\n\nUna función que no tiene parámetros\nUna función que siempre retorna el mismo output para el mismo input y no tiene efectos secundarios\nUna función que solo trabaja con números puros\nUna función escrita en C\n\n\nExplicación: Una función pura tiene dos propiedades: 1) Dados los mismos_inputs, siempre retorna el mismo_output, y 2) No tiene efectos secundarios (no modifica estado externo, no hace I/O, etc.). Esto las hace predecibles y fáciles de testear.\n\n\n\n\n¿Cuál de los siguientes es un buen nombre para una variable que almacena el total de precios?\n\nt\ntotal\ntotal_precio\ntmp\n\n\nExplicación: Los nombres de variables deben ser descriptivos y indicar claramente su propósito. total_precio es mucho más claro que t o tmp, y mejor que total porque especifica qué tipo de total es.\n\n\n\n\n¿Qué bloque se ejecuta siempre en una estructura try-except, independientemente de si ocurre una excepción o no?\n\ntry\nexcept\nfinally\nelse\n\n\nExplicación: El bloque finally se ejecuta siempre después de los bloques try y except, ya sea que ocurriera una excepción o no. Es útil para limpiar recursos como cerrar archivos o liberar conexiones.\n\n\n\n\n¿Qué hace el bloque else en una estructura try-except-else?\n\nSe ejecuta si ocurre una excepción\nSe ejecuta si no ocurre ninguna excepción\nSe ejecuta siempre\nNunca se ejecuta\n\n\nExplicación: El bloque else en try-except-else se ejecuta solo si no ocurre ninguna excepción en el bloque try. Si ocurre una excepción, se salta directamente al bloque except correspondiente.\n\n\n\n\n¿Cuál es el propósito principal de los docstrings en Python?\n\nComentar código complejo\nDocumentar funciones, clases y módulos\nAlmacenar datos de configuración\nCrear multilíneas de texto\n\n\nExplicación: Los docstrings son cadenas de texto que aparecen como primera instrucción en una función, clase o módulo. Se usan para documentar qué hace el código, sus parámetros, retorno, y ejemplos de uso. Pueden ser accedidos en tiempo de ejecución con __doc__.\n\n\n\n\n¿Qué marco de testing viene incluido con la instalación estándar de Python?\n\npytest\nunittest\nnose\ndoctest\n\n\nExplicación: El marco unittest viene incluido con la instalación estándar de Python. Está inspirado en JUnit de Java y proporciona una forma estructurada de escribir y ejecutar pruebas.\n\n\n\n\n¿Qué hace el decorador @property en Python?\n\nHace que un método sea estático\nPermite acceder a un método como si fuera un atributo\nHace que un método sea privado\nCachea el resultado de un método\n\n\nExplicación: El decorador @property permite definir un método que se puede acceder como un atributo (sin paréntesis). Esto es útil para encapsular lógica de cómputo mientras se mantiene una interfaz simple de atributo.\n\n\n\n\n¿Cuál de los siguientes es un buen práctica para manejar errores en Python?\n\nIgnorar todas las excepciones con except: pass\nCapturar excepciones específicas en lugar de usar except:\nNunca usar try-except\nSiempre lanzar excepciones genéricas\n\n\nExplicación: Es una buena práctica capturar excepciones específicas (como ValueError, FileNotFoundError) en lugar de usar un except: genérico que atrapa TODO. Esto permite manejar diferentes tipos de errores de manera apropiada y no ocultar problemas inesperados.",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>198</span>  <span class='chapter-title'>Quiz: Módulo 9 — Buenas Prácticas y Testing</span>"
+      "<span class='chapter-number'>200</span>  <span class='chapter-title'>Quiz: Módulo 9 — Buenas Prácticas y Testing</span>"
     ]
   },
   {
@@ -14964,7 +15272,7 @@
     "text": "Evaluación del Módulo 10\nResponde las siguientes preguntas para evaluar tu comprensión del desarrollo de proyectos completos y buenas prácticas de desarrollo en Python.\nVolver a Quizzes: README | Anterior: Módulo 10",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>199</span>  <span class='chapter-title'>Quiz: Módulo 10 — Proyecto Final y Buenas Prácticas de Desarrollo</span>"
+      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Quiz: Módulo 10 — Proyecto Final y Buenas Prácticas de Desarrollo</span>"
     ]
   },
   {
@@ -14975,7 +15283,7 @@
     "text": "¿Cuál es el primer paso recomendado antes de comenzar a programar un proyecto?\n\nEscribir el código principal\nPlanificar y definir los requisitos del proyecto\nConfigurar la base de datos\nElegir el framework más popular\n\n\nExplicación: Antes de escribir una sola línea de código, es fundamental planificar el proyecto: definir objetivos, requisitos funcionales y no funcionales, identificar usuarios y casos de uso. Esto evita retrabajo y asegura que el proyecto resuelva el problema correcto.\n\n\n\n\n¿Qué principio sugiere dividir un proyecto en componentes independientes y reutilizables?\n\nPrincipio de Responsabilidad Única\nPrincipio de Modularidad\nPrincipio de Menor Sorpresa\nPrincipio de Código Abierto\n\n\nExplic: El principio de modularidad sugiere dividir un sistema en componentes independientes que puedan desarrollarse, probarse y mantenerse por separado. Cada módulo debe tener una responsabilidad bien definida y comunicarse con otros a través de interfaces claras.\n\n\n\n\n¿Cuál de las siguientes es una buena práctica para nombrar funciones en Python?\n\nUsar nombres cortos como f(), proc(), calc()\nUsar nombres descriptivos en snake_case que indiquen qué hace la función\nUsar nombres en camelCase como en JavaScript\nNunca usar guiones bajos en nombres de funciones\n\n\nExplicación: Los nombres de funciones deben ser descriptivos y seguir la convención snake_case de Python. Un buen nombre como calcular_total_con_impuestos() es mucho más claro que calc() o process().\n\n\n\n\n¿Qué es el refactorización de código?\n\nEscribir código desde cero\nMejorar la estructura del código existente sin cambiar su comportamiento externo\nAgregar nuevas funcionalidades al código\nEliminar comentarios del código\n\n\nExplicación: La refactorización es el proceso de reestructurar código existente para mejorar su legibilidad, mantenibilidad o rendimiento, sin cambiar su comportamiento externo. Incluye acciones como extraer métodos, renombrar variables, simplificar conditionals, etc.\n\n\n\n\n¿Cuál de los siguientes NO es un beneficio de escribir tests antes o durante el desarrollo?\n\nDetectar errores temprano\nDocumentar el comportamiento esperado\nEliminar la necesidad de documentación\nFacilitar cambios futuros con confianza\n\n\nExplicación: Los tests ayudan a detectar errores temprano, documentan el comportamiento esperado y facilitan cambios futuros, pero NO eliminan la necesidad de documentación. La documentación explicativa (qué hace el código, por qué se diseñó así) sigue siendo esencial junto con los tests (que verifican que hace).\n\n\n\n\n¿Qué significa el acrónimo SOLID en diseño de software?\n\nSolo Desarrolladores Ingeniosos Logran Dominar\nPrincipios de diseño: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion\nSistema Operativo Ligero y Dinámico\nServicio Online de Integración y Deploy\n\n\nExplicación: SOLID es un acrónimo para cinco principios de diseño de software que ayudan a crear sistemas mantenibles y escalables: - S: Single Responsibility Principle - O: Open/Closed Principle - L: Liskov Substitution Principle - I: Interface Segregation Principle - D: Dependency Inversion Principle\n\n\n\n\n¿Cuál es el propósito de un README.md en un proyecto de GitHub?\n\nAlmacenar configuraciones sensibles\nProporcionar información esencial sobre el proyecto\nCompilar el código automáticamente\nReemplazar la necesidad de comentarios en el código\n\n\nExplicación: El archivo README.md es la primera página que ven los visitantes de tu repositorio. Debe incluir: descripción del proyecto, cómo instalarlo, cómo usarlo, ejemplos, licencia, y cómo contribuir. Es esencial para que otros entiendan y usen tu proyecto.\n\n\n\n\n¿Qué hace el archivo .gitignore en un repositorio de Git?\n\nIgnora todos los archivos del repositorio\nEspecifica qué archivos o patrones no deben ser trackeados por Git\nConvierte el repositorio en privado\nAcelera las operaciones de Git\n\n\nExplicación: El archivo .gitignore le dice a Git qué archivos o directorios ignorar (no trackear). Es útil para excluir archivos temporales, dependencias, archivos de build, datos sensibles, etc., que no deben estar en el repositorio.\n\n\n\n\n¿Cuál de los siguientes es un buen práctica para manejar credenciales y datos sensibles en Python?\n\nIncluirlos directamente en el código fuente\nUsar variables de entorno o archivos de configuración externos\nAlmacenarlos en comentarios del código\nEnviarlos por correo electrónico al equipo\n\n\nExplicación: Las credenciales (API keys, passwords, tokens) nunca deben hardcodearse en el fuente. Las buenas prácticas incluyen: variables de entorno, archivos de configuración externos (no versionados), o servicios especializados de gestión de secrets.\n\n\n\n\n¿Qué significa que un proyecto sea “deployable”?\n\nQue tenga una interfaz gráfica bonita\nQue pueda ser desplegado y ejecutado en un entorno de producción con mínima configuración\nQue esté escrito solo con funciones puras\nQue tenga el 100% de cobertura de tests\n\n\nExplicación: Un proyecto deployable tiene todo lo necesario para pasar de desarrollo a producción: dependencias bien definidas, configuración externa, scripts de inicio, manejo de errores apropiado, y documentación clara de cómo ponerlo en marcha.\n\n\n\n\n¿Cuál de las siguientes describe mejor el enfoque iterativo de desarrollo?\n\nEscribir todo el código de una vez y luego testear\nDesarrollar en pequeños incrementos, testeando y recibiendo feedback frecuentemente\nNunca cambiar los requisitos una vez que empezamos\nDesarrollar la interfaz antes que la lógica\n\n\nExplicación: El desarrollo iterativo implica construir el proyecto en pequeños incrementos funcionales. Después de cada incremento, se testa, se revisa y se ajusta basado en feedback. Esto permite adaptarse a cambios, detectar problemas temprano, y entregar valor continuamente.",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>199</span>  <span class='chapter-title'>Quiz: Módulo 10 — Proyecto Final y Buenas Prácticas de Desarrollo</span>"
+      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Quiz: Módulo 10 — Proyecto Final y Buenas Prácticas de Desarrollo</span>"
     ]
   },
   {
@@ -14986,7 +15294,7 @@
     "text": "Quiz Avanzado: Troubleshooting y Escenarios Reales",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>200</span>  <span class='chapter-title'>Quiz Avanzado: Troubleshooting y Escenarios Reales</span>"
+      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Quiz Avanzado: Troubleshooting y Escenarios Reales</span>"
     ]
   },
   {
@@ -14997,7 +15305,7 @@
     "text": "Nivel: Intermedio-Avanzado\nFormato: Escenario → Decisión → Justificación\nDuración: 30 minutos\n\n\n\nEscenario 1: El programa no inicia\nTu estudiante ejecuta python3 main.py y recibe este error:\nTraceback (most recent call last):\n  File \"main.py\", line 3, in &lt;module&gt;\n    import requests\nModuleNotFoundError: No module named 'requests'\n¿Cuál es la causa más probable y la solución?\n\nEl archivo main.py tiene un error de sintaxis\nEl módulo requests no está instalado. Solución: pip install requests\nPython está desactualizado\nEl archivo no existe en el directorio\n\n\nExplicación: ModuleNotFoundError indica que Python no encuentra un módulo externo. La solución es instalarlo con pip.\n\n\n\n\nEscenario 2: Bucle infinito\nUn estudiante escribió este código y el programa nunca termina:\n\n\nPYTHON\n\ncontador = 0\nwhile contador &lt; 10:\n    print(f\"Iteración {contador}\")\n\n¿Qué falta?\n\nUn break al inicio del bucle\nCambiar while por for\nIncrementar contador dentro del bucle: contador += 1\nCambiar &lt; por &gt;\n\n\nExplicación: Sin contador += 1, la variable nunca cambia de valor y la condición contador &lt; 10 siempre es True.\n\n\n\n\nEscenario 3: Resultado inesperado en división\nUn programa calcula el promedio de notas pero el resultado siempre es un número entero:\n\n\nPYTHON\n\nnotas = [8, 9, 7]\npromedio = sum(notas) // len(notas)\nprint(promedio)  # Imprime 8 en vez de 8.0\n\n¿Cuál es el problema?\n\nUsa // (división entera) en vez de / (división normal)\nLa función sum() no funciona con listas\nlen() retorna un string\nLas notas deberían ser floats\n\n\nExplicación: // es floor division (división entera). Para obtener un float, usar /.\n\n\n\n\nEscenario 4: Datos que se pierden\nUn programa escribe en un archivo pero al abrirlo está vacío:\n\n\nPYTHON\n\nf = open(\"datos.txt\", \"w\")\nf.write(\"Hola Mundo\")\n# El programa termina sin cerrar el archivo\n\n¿Por qué el archivo está vacío?\n\nEl modo \"w\" no permite escribir\nEl archivo no se cerró. Los datos se quedan en buffer. Usar with open() o f.close()\nwrite() no funciona con strings\nEl archivo no existe\n\n\nExplicación: Sin cerrar el archivo (con close() o with), los datos pueden quedarse en buffer y no escribirse al disco.\n\n\n\n\nEscenario 5: Error de tipo inesperado\n\n\nPYTHON\n\nedad = input(\"Ingresa tu edad: \")\nif edad &gt;= 18:\n    print(\"Eres mayor de edad\")\n\nError: TypeError: '&gt;=' not supported between instances of 'str' and 'int'\n¿Cómo se corrige?\n\nCambiar &gt;= por ==\nUsar str(18) en la comparación\nConvertir la entrada: edad = int(input(...))\nUsar float() en vez de int()\n\n\nExplicación: input() siempre retorna string. Para comparar con un número, convertir con int().\n\n\n\n\nEscenario 6: Función que retorna None\n\n\nPYTHON\n\ndef saludar(nombre):\n    print(f\"Hola, {nombre}\")\n\nresultado = saludar(\"Ana\")\nprint(resultado)  # Imprime None\n\n¿Por qué retorna None?\n\nLa función usa print() pero no tiene return\nEl parámetro nombre no está definido\nsaludar() no es una función válida\nPython tiene un bug con funciones simples\n\n\nExplicación: Toda función sin return explícito retorna None por defecto. print() muestra en pantalla pero no retorna.\n\n\n\n\nEscenario 7: Lista que se modifica sola\n\n\nPYTHON\n\noriginal = [1, 2, 3]\ncopia = original\ncopia.append(4)\nprint(original)  # [1, 2, 3, 4]\n\n¿Por qué original también cambió?\n\nPython tiene un bug con listas\ncopia = original no copia, solo crea otra referencia al mismo objeto\nappend() modifica todas las listas\nLas listas son inmutables\n\n\nExplicación: En Python, la asignación copia = original crea una referencia, no una copia. Para copiar: copia = original.copy() o copia = original[:].\n\n\n\n\nEscenario 8: JSON que no carga\n\n\nPYTHON\n\nimport json\n\nwith open(\"config.json\") as f:\n    datos = json.load(f)\n\nError: json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes\n¿Cuál es la causa más probable?\n\nEl archivo no existe\nEl JSON usa comillas simples ' en vez de dobles \" (JSON requiere dobles)\njson.load() no funciona con archivos\nFalta importar os\n\n\nExplicación: JSON requiere comillas dobles para claves y strings. Python acepta ambas, pero JSON solo dobles.\n\n\n← Volver a Quizzes | ← Módulo 10",
     "crumbs": [
       "Evaluación: Quizzes",
-      "<span class='chapter-number'>200</span>  <span class='chapter-title'>Quiz Avanzado: Troubleshooting y Escenarios Reales</span>"
+      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Quiz Avanzado: Troubleshooting y Escenarios Reales</span>"
     ]
   },
   {
@@ -15008,7 +15316,7 @@
     "text": "Introducción\nEste apéndice explora cómo las herramientas de inteligencia artificial pueden辅助 (ayudarte) en tu viaje de aprendizaje de Python. Inspirado en концепции (conceptos) del desarrollo impulsado por IA y la filosofía de Iron Man, te mostraremos cómo convertirte en un “programador con armadura” - alguien que usa la tecnología para amplify (amplificar) sus habilidades.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -15019,7 +15327,7 @@
     "text": "⚠️ Nota sobre el uso de IA en este curso: Este apéndice te enseña a USAR la IA como ferramenta (herramienta) de productividad, NO para evitar aprender. Las actividades principales del curso están diseñadas para que las completes sin asistencia de IA.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -15030,7 +15338,7 @@
     "text": "¿Qué es el Desarrollo Impulsado por IA?\nEl desarrollo impulsado por IA (AI-Driven Development) es un enfoque donde usas modelos de lenguaje y agentes de IA como collaborators (colaboradores) en tu flujo de trabajo de programación. No se trata de remplacer (reemplazar) tu cerebro, sino de augment (aumentar) tus capacidades.\n\nAnalogía: El Jarvis de Iron Man\nImagina a JARVIS (Just A Rather Very Intelligent System) assisting (asistiendo) a Tony Stark. JARVIS no escribe el código por él, pero:\n\nAnálisis de código más rápido\nSugerencias de optimización\nDetección de problemas potenciales\nAutomatización de tareas repetitivas\n\nTú puedes tener tu propio “JARVIS” usando herramientas de IA como:\n\nCopilot / Cursor: Autocompletado inteligente\nChatGPT / Claude: Resolución de dudas\nNotebookLM: Investigación y organización",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -15041,7 +15349,7 @@
     "text": "Niveles de Uso de IA en Python\n\nNivel 1: Asistente de Código\n\n\nPYTHON\n\n# Antes de IA: Escribir todo manualmente\ndef calcular_area_circulo(radio):\n    pi = 3.14159\n    area = pi * radio ** 2\n    return area\n\n# Con IA:Sugerencias automáticas\ndef calcular_area_circulo(radio: float) -&gt; float:\n    \"\"\"Calcula el área de un círculo dado su radio.\n    \n    Args:\n        radio: El radio del círculo\n        \n    Returns:\n        El área del círculo\n    \"\"\"\n    import math\n    return math.pi * radio ** 2\n\n\n\nNivel 2: Constructor de Código\n\n\nPYTHON\n\n# Ejemplo: Generación de tests con IA\n# Prompt: \"Genera tests unitarios para esta función\"\nimport unittest\n\nclass TestCalculadora(unittest.TestCase):\n    def test_suma_basica(self):\n        self.assertEqual(1 + 1, 2)\n    \n    def test_suma_negativos(self):\n        self.assertEqual(-1 + 1, 0)\n\n\n\nNivel 3: Arquitecto de IA\nAquí es donde creas sistemas que themselves (ellos mismos) usan IA para tomar decisiones.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -15052,7 +15360,7 @@
     "text": "Herramientas Específicas para Python\n\n1. GitHub Copilot\n\n\n\nCaracterística\nDescripción\n\n\n\n\nAutocompletado\nSugiere código mientras escribes\n\n\nExplicación\nExplica código seleccionado\n\n\nGeneración\nCrea código desde comentarios\n\n\n\n\n\n2. Jupyter con IA\n\n\nPYTHON\n\n# Magic commands para IA\n%ai  # Activa modo de asistencia IA\n\n\n\n3. Model Context Protocol (MCP)\nMCP es un protocolo que permite a tus scripts Python conectar con servicios de IA externos.\n\n\nPYTHON\n\n# Ejemplo de conexión MCP\nfrom mcp import Client\n\nclient = Client(\"mi-servidor-mcp\")\nresult = client.analyze_code(\"\"\"\ndef hola_mundo():\n    print(\"¡Hola, mundo!\")\n\"\"\")\nprint(result.suggestions)",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -15063,7 +15371,7 @@
     "text": "Mejores Prácticas\n\n✅ Hacer\n\nUsar IA para debug: “Why does this error occur?”\nPedir explicaciones: “¿Cómo funciona este código?”\nExplorar opciones: “¿Cuál es la mejor forma de hacer esto?”\nAprender conceptos: “Explícame qué es una closure”\n\n\n\n❌ No Hacer\n\nCopiar sin entender: El código debe ser TÚ código\nEvitar el esfuerzo: Los ejercicios son para practicar\nIgnorar errores: La IA puede equivocarse\nDepender siempre: Aprende a resolver solo",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -15074,7 +15382,7 @@
     "text": "El Prompt Engineering para Python\n\nEstructura de Prompts Efectivos\n[Contexto]: Soy estudiante aprendiendo Python básico\n[Tarea]: Explica cómo funcionan las listas por comprensión\n[Formato]: Con ejemplos de código y analogía del mundo real\n[Restricción]: En español, nivel principiante\n\n\nEjemplos de Prompts Buenos vs. Malos\n\n\n\n\n\n\n\n❌ Malo\n✅ Bueno\n\n\n\n\n“Hazme una calculadora”\n“Crea una calculadora en Python con funciones para suma, resta, multiplicación y división. Incluye manejo de errores para división por cero. Explica cada parte del código.”\n\n\n“Why Python?”\n“Explícame por qué Python es buen lenguaje para principiantes, comparándolo con Java y C++”\n\n\n“Help”\n“Tengo un error ‘IndexError: list index out of range’ en mi código. ¿Qué significa y cómo lo soluciono?”",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -15085,7 +15393,7 @@
     "text": "Gamificación: Tu Sistema de Logros\nComo en los cursos con niveles de Iron Man, aquí tienes un sistema de progresión:\n\nProgression Levels\n\n\n\nNivel\nTítulo\nRequisitos\n\n\n\n\n🌱 Novato\nPrimera línea de código\nCompletar Módulo 1\n\n\n🔧 Constructor\nFunciones y lógica\nCompletar Módulos 1-4\n\n\n🛡️ Arquitec\nEstructuras de datos\nCompletar Módulos 1-6\n\n\n⚡ Experto\nProyectos completos\nCompletar Módulos 1-10\n\n\n🦾 Iron Coder\nMaestro Python\nTodos los módulos + 3 proyectos\n\n\n\n\n\nAchievements (Logros)\n\n“Hello World”: Tu primer programa\n“Variable Master”: 100% en Quiz Módulo 2\n“Loop Legend”: Completar todos los ejercicios de bucles\n“Bug Hunter”: Encontrar y corregir 10 errores en tus proyectos\n“Teacher’s Pet”: Explicar un concepto a otro estudiante",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -15096,7 +15404,7 @@
     "text": "Próximos Pasos\n\nPractica sin IA: Completa los ejercicios principales tú solo\nExperimenta con herramientas: Copilot, ChatGPT, etc.\nComparte tu conocimiento: Enseña a otros lo que has aprendido\nConstruye proyectos: Aplica lo aprendido en proyectos reales\n\n\n“No soy aquí para caerles bien. Soy aquí para hacerlos aprender.” — Diego Saavedra",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -15107,7 +15415,7 @@
     "text": "Recursos Adicionales\n\n📚 Documentación oficial de Python\n🎯 Real Python\n💬 Comunidad Python Ecuador\n🤖 Planet Code\n\n\nEste apéndice está inspirada en conceptos de desarrollo con IA, gamificación y mejores prácticas pedagógicas. ¡Tu viaje apenas comienza!\n\nVolver al índice: Inicio | Anterior: Módulo 10",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>201</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
+      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Apéndice A: Integración de IA en el Desarrollo Python</span>"
     ]
   },
   {
@@ -15118,7 +15426,7 @@
     "text": "¿Qué es MCP?\nEl Model Context Protocol (MCP) es un protocolo abierto que permite a las aplicaciones Python conectar con servicios de inteligencia artificial de manera estandarizada. Es como un “USB para aplicaciones de IA” - define cómo tu código puede comunicarse con modelos de lenguaje.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15129,7 +15437,7 @@
     "text": "🔧 Analogía: Si Python es el lenguaje que hablas, MCP es el protocolo que permite que tu Python “hable” con servicios externos de IA.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15140,7 +15448,7 @@
     "text": "¿Por qué usar MCP en Python?\n\nSin MCP (Complicado)\n\n\nPYTHON\n\n# Cada servicio tiene su propia API\nimport openai  # API de OpenAI\nimport anthropic  # API de Anthropic\nimport google.generativeai  # API de Google\n\n# Debes aprender 3 APIs diferentes\nresponse = openai.ChatCompletion.create(...)\nresponse = anthropic.Message.create(...)\nresponse = genai.generate_content(...)\n\n\n\nCon MCP (Estandarizado)\n\n\nPYTHON\n\n# Una API unificada\nfrom mcp import MCPClient\n\nclient = MCPClient(\"mi-servidor\")  # Todas las IA usan el mismo formato\nresponse = client.chat(\"¿Qué es Python?\")",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15151,7 +15459,7 @@
     "text": "Instalación de MCP\n\n\nBASH\n\n# Instalación básica\npip install mcp\n\n# Para servidores específicos\npip install mcp-server-openai\npip install mcp-server-anthropic",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15162,7 +15470,7 @@
     "text": "Tu Primer Script con MCP\n\nPaso 1: Conectar a un servidor\n\n\nPYTHON\n\nfrom mcp import Client\n\n# Conectar a un servidor MCP\nclient = MCPClient(\"http://localhost:3000\")\n\n# Verificar conexión\nif client.is_connected():\n    print(\"✅ Conectado al servidor MCP\")\n\n\n\nPaso 2: Enviar prompts\n\n\nPYTHON\n\n# Chat básico\nresponse = client.chat(\"¿Cómo declaro una variable en Python?\")\nprint(response.content)\n\n\n\nPaso 3: Análisis de código\n\n\nPYTHON\n\n# Analizar código Python\ncode_analysis = client.analyze_code(\"\"\"\ndef suma(a, b):\n    return a + b\n\"\"\")\n\nprint(f\"Recomendaciones: {code_analysis.suggestions}\")\nprint(f\"Complejidad: {code_analysis.complexity}\")\nprint(f\"Mejoras: {code_analysis.suggestions}\")",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15173,7 +15481,7 @@
     "text": "Casos de Uso Prácticos\n\n1. Asistente de Debug\n\n\nPYTHON\n\ndef debug_con_mcp(codigo_error):\n    client = MCPClient(\"http://localhost:3000\")\n    \n    prompt = f\"\"\"\n    Este código genera un error. Analízalo y sugiere correcciones.\n    \n    Código con error:\n    {codigo_error}\n    \n    Formato de respuesta:\n    1. Posible causa del error\n    2. Solución sugerida\n    3. Código corregido\n    \"\"\"\n    \n    respuesta = client.chat(prompt)\n    return respuesta.content\n\n\n\n2. Generador de Documentación\n\n\nPYTHON\n\ndef documentar_funcion(funcion_codigo):\n    client = MCPClient(\"http://localhost:3000\")\n    \n    prompt = f\"\"\"\n    Genera documentación en formato Google Docstring para esta función:\n    \n    {funcion_codigo}\n    \n    Incluye:\n    - Descripción breve\n    - Args (parámetros)\n    - Returns (retorno)\n    - Raises (excepciones)\n    - Ejemplo de uso\n    \"\"\"\n    \n    return client.chat(prompt)\n\n\n\n3. Revisor de Código\n\n\nPYTHON\n\ndef revisar_codigo(codigo_fuente):\n    client = MCPClient(\"http://localhost:3000\")\n    \n    prompt = f\"\"\"\n    Revisa este código Python según las mejores prácticas:\n    \n    1. PEP 8 compliance\n    2. Performance\n    3. Seguridad\n    4. Legibilidad\n    \n    Código:\n    {codigo_fuente}\n    \n    Responde en JSON:\n    {{\n        \"issues\": [...],\n        \"score\": 0-100,\n        \"recommendations\": [...]\n    }}\n    \"\"\"\n    \n    return client.chat_json(prompt)",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15184,7 +15492,7 @@
     "text": "Configuración de Servidores MCP\n\nServidor Local\n\n\nPYTHON\n\n# server.py - Tu propio servidor MCP\nfrom mcp.server import MCPServer\n\nserver = MCPServer(\n    name=\"mi-servidor-python\",\n    description=\"Mi servidor personalizado\",\n    version=\"1.0.0\"\n)\n\n@server.tool()\ndef analizar_sintaxis(codigo):\n    \"\"\"Analiza la sintaxis de código Python\"\"\"\n    import ast\n    try:\n        ast.parse(codigo)\n        return {\"status\": \"válido\", \"errores\": []}\n    except SyntaxError as e:\n        return {\"status\": \"inválido\", \"errores\": [str(e)]}\n\n@server.tool()\ndef explicar_error(codigo, error):\n    \"\"\"Explica un error de Python\"\"\"\n    # Lógica para analizar errores\n    return {\"explicacion\": \"...\"}\n\nif __name__ == \"__main__\":\n    server.run(port=3000)\n\n\n\nConectar a Servicios Externos\n\n\nBASH\n\n# Iniciar servidor con OpenAI\nmcp-server-openai --api-key $OPENAI_API_KEY\n\n# Iniciar servidor con Anthropic  \nmcp-server-anthropic --api-key $ANTHROPIC_API_KEY",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15195,7 +15503,7 @@
     "text": "Mejores Prácticas con MCP\n\n✅ Recomendado\n\nUsar para aprendizaje: “Explícame este concepto”\nDebugging: “¿Por qué este error?”\nRevisión de código: “Mejora este código”\nDocumentación: “Genera docstrings”\n\n\n\n⚠️ Con Precaución\n\nCódigo crítico: Siempre revisa lo que genera la IA\nDatos sensibles: No enviar código con credenciales\nProducción: Testea exhaustivamente antes de deployar\n\n\n\n❌ Evitar\n\nEjercicios del curso: Los来完成 (debes completar) sin IA\nEvaluaciones: Trampa = aprendizaje perdido\nCopiar y pegar sin entender: Tu conocimiento = tu herramienta",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15206,7 +15514,7 @@
     "text": "Solución de Problemas\n\nError: “Connection refused”\n❌ MCPConnectionError: Could not connect to server\nSolución:\n\n\nBASH\n\n# Verificar que el servidor está corriendo\ncurl http://localhost:3000/health\n\n# Iniciar servidor\npython server.py\n\n\n\nError: “API key inválida”\n❌ MCPAuthError: Invalid API key\nSolución:\n\n\nPYTHON\n\n# Verificar clave\nimport os\nprint(os.environ.get(\"OPENAI_API_KEY\"))\n\n# Configurar correctamente\nclient = MCPClient(\n    \"http://localhost:3000\",\n    api_key=\"sk-...\"  # Tu clave\n)",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15217,7 +15525,7 @@
     "text": "Recursos MCP\n\n\n\nRecurso\nURL\n\n\n\n\nDocumentación MCP\nhttps://modelcontextprotocol.io\n\n\nServidores MCP\nhttps://github.com/modelcontextprotocol/servers\n\n\nPython SDK\nhttps://pypi.org/project/mcp/",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15228,7 +15536,7 @@
     "text": "Ejercicios de Práctica\n\nEjercicio 1: Hola MCP\n\n\nPYTHON\n\n# Conecta a un servidor MCP y haz tu primera pregunta\n# Respuesta esperada: Saludo en español\n\n\n\nEjercicio 2: Analizador de Código\n\n\nPYTHON\n\n# Crea una función que use MCP para analizar código\n# Debe retornar: suggestions, complexity, improvements\n\n\n\nEjercicio 3: Generador de Tests\n\n\nPYTHON\n\n# Crea un generador de tests usando MCP\n# Input: función Python\n# Output: tests unitarios",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15239,7 +15547,7 @@
     "text": "Resumen\n\n\n\nConcepto\nDescripción\n\n\n\n\nMCP\nProtocolo para conectar Python con servicios de IA\n\n\nCliente\nTu script Python que usa MCP\n\n\nServidor\nServicio que procesa requests de IA\n\n\nTools\nFunciones específicas disponibles via MCP\n\n\n\n\n🦾 Recuerda: MCP es una herramienta poderosa, pero tu cerebro sigue siendo el mejor procesador. Úsalo para amplify (amplificar) tu aprendizaje, no para reemplazarlo.\n\n\nAprende más sobre IA y desarrollo en el Apéndice A: Integración de IA en el Desarrollo Python\n\nVolver al índice: Inicio | Anterior: Apéndice A",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>202</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
+      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice B: Model Context Protocol (MCP) para Python</span>"
     ]
   },
   {
@@ -15250,7 +15558,7 @@
     "text": "🏁 Objetivo de Esta Fase\nEsta fase final verifica que el curso de Python cumple con todos los estándares de calidad, contenido educativo, y sistemas de soporte para estudiantes. Es inspirada en las prácticas de verification de agentes autónomos y el enfoque de mejora continua.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>205</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -15261,7 +15569,7 @@
     "text": "📋 Checklist de Verificación\n\n✅ Contenido Principal\n\n\n\n\n\n\n\n\nRequisito\nEstado\nNotas\n\n\n\n\n10 módulos completos\n✅\nContenido con analogías, comentarios numerados, Zen de Python\n\n\n70+ desafíos progresivos\n✅\n7 por módulo (63+ desafíos)\n\n\n10 quizzes con explicaciones\n✅\nMódulos 1-10 completos\n\n\nImágenes SVG originales\n✅\n9 diagramas sin copyright\n\n\nHojas de cheat sheets\n✅\nPor cada módulo\n\n\nLaboratorios prácticos\n✅\n2 laboratorios con anti-AI warnings\n\n\n\n\n\n✅ Sistemas de Aprendizaje\n\n\n\nSistema\nEstado\nDescripción\n\n\n\n\nAnti-AI para Labs\n✅\nAdvertencias en Laboratorios 1 y 2\n\n\nRetroalimentación\n✅\nGitHub Issues para feedback y bugs\n\n\nMonitoreo de CI\n✅\nAlertas automáticas en fallos\n\n\nValidación de enlaces\n✅\n0 enlaces rotos encontrados\n\n\n\n\n\n✅ Infraestructura\n\n\n\nComponente\nEstado\nNotas\n\n\n\n\nGitHub Pages\n✅\nhttps://statick88.github.io/Course_of_python/\n\n\nGitHub Actions\n✅\nAuto-deploy con Quarto\n\n\n_quarto.yml\n✅\nConfiguración válida\n\n\nQuizdown\n✅\nFiltro para quizzes",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>205</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -15272,7 +15580,7 @@
     "text": "🔍 Pruebas de Calidad Realizadas\n\n1. Validación de YAML\n\n\nBASH\n\n✅ yamllint .github/workflows/quarto-publish.yml\n   ✔ YAML Lint successful.\n\n✅ python3 -c \"import yaml; yaml.safe_load(open('_quarto.yml'))\"\n   YAML is valid\n\n\n\n2. Verificación de Quarto\n\n\nBASH\n\n✅ quarto check\n   [✓] Checking environment information...\n   [✓] Checking versions of quarto binary dependencies\n   [✓] Checking Quarto installation\n   [✓] Checking Python 3 installation\n   [✓] Checking Jupyter engine render\n\n\n\n3. Validación de Enlaces\n\n\nBASH\n\n✅ Total external links checked: 4-6 per file\n   Broken links found: 0\n   All links are valid!\n\n\n\n4. Renderizado Local\n\n\nBASH\n\n✅ quarto render content/modulo-06/ --no-execute --to html\n   [✓] 7/7 files rendered successfully\n   \n✅ quarto render content/modulo-09/ --no-execute --to html\n   [✓] 8/8 files rendered successfully",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>205</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -15283,7 +15591,7 @@
     "text": "📊 Estadísticas del Curso\n📚 Contenido:\n   - Módulos: 10\n   - Lecciones: 60+\n   - Desafíos: 70+\n   - Quizzes: 10 (10 preguntas cada uno)\n   - Imágenes SVG: 9\n   - Archivos QMD: 150+\n\n📈 Progreso por Módulo:\n   - Módulo 1: Introducción a Python\n   - Módulo 2: Tipos de Datos y Variables\n   - Módulo 3: Estructuras de Control\n   - Módulo 4: Funciones\n   - Módulo 5: Listas y Tuplas\n   - Módulo 6: Diccionarios y Sets\n   - Módulo 7: Manejo de Archivos\n   - Módulo 8: Módulos y Paquetes\n   - Módulo 9: Buenas Prácticas\n   - Módulo 10: Proyecto Integrador",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>205</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -15294,7 +15602,7 @@
     "text": "🎯 Niveles de Gamificación\n\n\n\nNivel\nTítulo\nPuntos\nRequisitos\n\n\n\n\n🌱 Novato\nPython Starter\n0-100\nCompletar Módulo 1\n\n\n🔧 Constructor\nCode Builder\n101-300\nCompletar Módulos 1-4\n\n\n🛡️ Arquitec\nData Master\n301-600\nCompletar Módulos 1-6\n\n\n⚡ Experto\nPython Pro\n601-900\nCompletar Módulos 1-10\n\n\n🦾 Iron Coder\nFull Stack Dev\n901+\nProyectos completados",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>205</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -15305,7 +15613,7 @@
     "text": "🏆 Logros (Achievements)\n\n\n\n\n\n\n\n\nLogro\nDescripción\nCómo obtener\n\n\n\n\n🌟 “Hello World”\nTu primer programa\nCompletar Desafío 1\n\n\n📚 “Scholar”\n100% en quiz\nPerfect score en cualquier quiz\n\n\n🐛 “Bug Hunter”\nCorrector de errores\nResolver 10 errores en proyectos\n\n\n🎯 “Sharpshooter”\nTodos los desafíos\nCompletar 70+ desafíos\n\n\n📖 “Bibliotecario”\nDocumentador\nCrear docs para 3 proyectos\n\n\n🤝 “Teacher”\nExplicador\nEnseñar a otro estudiante\n\n\n🔒 “Security First”\nCódigo seguro\nAplicar best practices en proyectos",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>205</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -15316,7 +15624,7 @@
     "text": "🚀 Próximas Mejoras Sugeridas\n\nPara Estudiantes\n\nProyectos adicionales: Añadir más proyectos del mundo real\nVideos explicativos: Integrar contenido en video\nCertificados: Generar certificados deCompletion\nForo de estudiantes: Espacio para preguntas entre pares\n\n\n\nPara el Instructor\n\nAnalytics: Métricas de uso del curso\nA/B Testing: Probar diferentes enfoques pedagógicos\nActualizaciones automáticas: Sincronizar con documentación Python\nMulti-idioma: Traducir a inglés y otros idiomas",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>205</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -15327,7 +15635,7 @@
     "text": "📝 Declaración de Calidad\n\nEste curso de Python ha sido diseñado siguiendo los principios de: - Enseñanza por analogías: Conceptos primero, código después - Aprendizaje progresivo: Dificultad creciente en cada módulo - Práctica intensiva: 70+ desafíos para dominar habilidades - Retroalimentación continua: Sistema de feedback estudiantil - Calidad automatizada: CI/CD con validación de contenido",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>205</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -15338,7 +15646,7 @@
     "text": "🎓 Mensaje Final\n\n“La programación no es solo escribir código. Es pensar lógicamente, resolver problemas creativamente, y comunica tus ideas a través de la lógica.\nEste curso te ha dado las herramientas. Ahora, construye algo increíble.”\n— Diego Saavedra",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>205</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -15349,7 +15657,7 @@
     "text": "📚 Recursos del Curso\n\n\n\nRecurso\nEnlace\n\n\n\n\nRepositorio GitHub\nhttps://github.com/statick88/Course_of_python\n\n\nGitHub Pages\nhttps://statick88.github.io/Course_of_python/\n\n\nDocumentación Python\nhttps://docs.python.org/es/3/\n\n\nComunidad Python Ecuador\nhttps://discord.gg/python-ec\n\n\n\n\n¡Gracias por completar el curso! 🎉\n\nVolver al índice: Inicio | Anterior: Apéndice B",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>203</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
+      "<span class='chapter-number'>205</span>  <span class='chapter-title'>Fase Final: Verificación y Checklist de Completitud</span>"
     ]
   },
   {
@@ -15360,7 +15668,7 @@
     "text": "Apéndice C: Python 3.14 y el Ecosistema 2026",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15371,7 +15679,7 @@
     "text": "Python 3.14: Lo que cambió (Octubre 2025)\nPython 3.14 es la versión estable actual (abril 2026). Trajo los cambios más significativos en años.\n\nNota del instructor: Aunque este curso enseña conceptos que aplican a cualquier versión, es útil conocer lo último. Algunas de estas funciones cambiarán cómo escribes Python en el futuro cercano.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15382,7 +15690,7 @@
     "text": "1. Mensajes de Error Inteligentes\nAntes (Python 3.12 y anterior):\n\n\nPYTHON\n\n&gt;&gt;&gt; forr i in range(5):\nSyntaxError: invalid syntax\n\nAhora (Python 3.14):\n\n\nPYTHON\n\n&gt;&gt;&gt; forr i in range(5):\nSyntaxError: invalid syntax. Did you mean 'for'?\n\n\n¿Por qué importa?\nPython ahora detecta errores comunes y sugiere correcciones:\n\n\n\nTu error\nSugerencia de Python\n\n\n\n\nforr\nDid you mean for?\n\n\npritn(x)\nDid you mean print?\n\n\na, b = [1, 2, 3]\ntoo many values to unpack (expected 2, got 3)\n\n\nlista.apend(x)\nDid you mean lista.append?\n\n\n\n\n\nDesafío: Prueba los errores\nAbre tu terminal y prueba estos errores. Observa las sugerencias:\n\n\nPYTHON\n\n# Error 1: Keyword typo\nwhlie True:\n    pass\n\n# Error 2: Method typo\n[].apend(1)\n\n# Error 3: Unpacking\na, b = [1, 2, 3]\n\n# Error 4: Undefined method\n\"hello\".uppr()",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15393,7 +15701,7 @@
     "text": "2. T-Strings (Template Strings) — PEP 750\n\nEl problema con f-strings\nLas f-strings son geniales pero no puedes interceptar los valores interpolados:\n\n\nPYTHON\n\nnombre = \"' OR '1'='1\"\nquery = f\"SELECT * FROM users WHERE name = '{nombre}'\"\n# ¡SQL Injection! La f-string no te protege\n\n\n\nLa solución: T-Strings\n\n\nPYTHON\n\nfrom string.templatelib import Template\n\ndef safe_query(name: str) -&gt; Template:\n    return t\"SELECT * FROM users WHERE name = {name}\"\n\n# Retorna un objeto Template, NO un string\ntpl = safe_query(\"' OR '1'='1\")\n# Un procesador puede escapar o parametrizar automáticamente\n\n\n\n¿Qué son exactamente?\nLas t-strings separan el texto estático de los valores interpolados:\n\n\nPYTHON\n\nfrom string.templatelib import Template\n\ndef html_escape(value):\n    return str(value).replace(\"&lt;\", \"&lt;\").replace(\"&gt;\", \"&gt;\")\n\ndef safe_html(name: str) -&gt; str:\n    # El procesador recibe partes separadas\n    # y puede escapar valores automáticamente\n    return html_escape(name)\n\n# Uso futuro con custom processors\ngreeting = t\"&lt;h1&gt;Hola, {nombre}!&lt;/h1&gt;\"\n# El processor escapa &lt;script&gt; tags automáticamente\n\n\n\nAnalogía del mundo real\n\nf-string: Mezclar ingredientes y hornear → no puedes separarlos después\nt-string: Receta con ingredientes separados → puedes modificar antes de mezclar",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15404,7 +15712,7 @@
     "text": "3. Anotaciones Diferidas — PEP 649\n\nEl problema anterior\n\n\nPYTHON\n\n# Python 3.13 y anterior\nclass Node:\n    def connect(self, other: Node):  # NameError! Node no está definida aún\n        pass\n\n# Workaround necesario:\nclass Node:\n    def connect(self, other: \"Node\"):  # Strings como workaround\n        pass\n\n# O:\nfrom __future__ import annotations  # Import mágico\n\n\n\nAhora (Python 3.14)\n\n\nPYTHON\n\n# Funciona NATIVAMENTE sin quotes ni imports\nclass Node:\n    def connect(self, other: Node):  # ✅ Sin error\n        pass\n\nclass LinkedList:\n    head: Node  # ✅ Forward reference funciona\n\nclass Node:\n    value: int\n    next: Node | None = None\n\n\n\n¿Cómo funciona?\nLas anotaciones ahora son lazy (evaluación perezosa):\n\n\nPYTHON\n\nimport annotationlib\n\n# Las anotaciones NO se evalúan al definir la clase\n# Se evalúan SOLO cuando las pides:\nhints = annotationlib.get_annotations(Node, format=annotationlib.Format.FORWARDREF)\nprint(hints)  # {'value': int, 'next': Node | None}\n\n\n\n¿Por qué importa?\n\n\n\nBeneficio\nImpacto\n\n\n\n\nSin NameError por forward references\nCódigo más limpio\n\n\nSin from __future__ import annotations\nMenos imports mágicos\n\n\nMejor rendimiento al importar\nNo evalúa expresiones pesadas\n\n\nType checkers funcionan mejor\nAcceso programático a tipos",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15415,7 +15723,7 @@
     "text": "4. REPL Mejorado\n\nLo que tenía Python antes\n\n\nPYTHON\n\n&gt;&gt;&gt; def calculate_total(items):\n...     total = 0\n...     for item in items:\n...         total += item.price\n...     return total\n&gt;&gt;&gt; # Todo en blanco y negro, sin autocompletado\n\n\n\nLo que tiene ahora (Python 3.14)\n\n\nPYTHON\n\n&gt;&gt;&gt; # Syntax highlighting en tiempo real:\n&gt;&gt;&gt; # def se ve en morado, nombres en azul, tipos en verde\n&gt;&gt;&gt; import dat  # TAB → autocompleta a dataclasses, datetime, etc.\n\n\n\nFeatures nuevas\n\n\n\n\n\n\n\nFeature\nDescripción\n\n\n\n\nSyntax highlighting\nColores configurables con temas ANSI\n\n\nAutocompletado con TAB\nimport + TAB muestra módulos disponibles\n\n\nHistorial persistente\nLas sesiones anteriores se recuerdan\n\n\nMultiline editing\nEditar múltiples líneas más fácilmente\n\n\n\n\n\nComparación con shells externos\n\n\n\nShell\nSyntax Highlighting\nAutocomplete\nBuilt-in\n\n\n\n\nPython 3.13 REPL\n❌\n❌\n✅\n\n\nIPython\n✅\n✅\n❌ (pip install)\n\n\nPython 3.14 REPL\n✅\n✅\n✅",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15426,7 +15734,7 @@
     "text": "5. Subinterpreters — Paralelismo Real\n\nEl problema del GIL\nEl Global Interpreter Lock (GIL) impide que múltiples threads ejecuten bytecode Python simultáneamente:\n\n\nPYTHON\n\nimport threading\n\ndef cpu_task():\n    return sum(i*i for i in range(10_000_000))\n\n# En Python con GIL: threads NO son paralelos realmente\nthreads = [threading.Thread(target=cpu_task) for _ in range(4)]\nfor t in threads: t.start()  # Se turnan, NO corren juntos\n\n\n\nLa solución: Subinterpreters\n\n\nPYTHON\n\nfrom concurrent.futures import InterpreterPoolExecutor\n\ndef cpu_task(n):\n    return sum(i * i for i in range(n))\n\n# Cada subinterpreter tiene su PROPIO GIL\nwith InterpreterPoolExecutor(max_workers=4) as pool:\n    results = list(pool.map(cpu_task, [5_000_000] * 4))\n    # ¡PARALELO REAL! 4x más rápido en CPU multi-core\n\n\n\nComparación de opciones de paralelismo\n\n\n\nEnfoque\nOverhead\nAislamiento\nParalelismo real\n\n\n\n\nthreading\nBajo\nNinguno\n❌ (GIL)\n\n\nmultiprocessing\nAlto\nTotal\n✅\n\n\nSubinterpreters\nMedio\nAlto\n✅",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15437,7 +15745,7 @@
     "text": "6. Rendimiento: GC Incremental + JIT Experimental\n\nGarbage Collector Incremental\nAntes: GC detenía todo el programa para detectar ciclos → “micro-pausas”\nAhora: GC distribuye el trabajo en pasos pequeños → sin pausas notables\n\n\nPYTHON\n\n# NO necesitas cambiar código\n# Funciona automáticamente\nclass Node:\n    def __init__(self):\n        self.next = None  # Referencia circular potencial\n\n# GC incremental detecta ciclos sin pausar tu app\n\n\n\nJIT Compiler Experimental\n\n\nBASH\n\n# Activar JIT (experimental)\nPYTHON_JIT=1 python mi_script.py\n\n# O con flag\npython --enable-jit mi_script.py\n\n\n\nPYTHON\n\n# Verificar si JIT está activo\nimport sys\ntry:\n    from sys import _jit\n    print(f\"JIT available: {_jit.is_available()}\")\n    print(f\"JIT active: {_jit.is_active()}\")\nexcept ImportError:\n    print(\"JIT no está compilado en esta versión\")\n\n\n\nBenchmarks (Python 3.14 vs 3.12)\n\n\n\nOperación\nPython 3.12\nPython 3.14\nMejora\n\n\n\n\nImportar módulos\n1.0x\n1.15x\n+15%\n\n\nString concat\n1.0x\n1.08x\n+8%\n\n\nGC latency\nPausas 10ms\n&lt;1ms\n10x\n\n\nThreading (GIL off)\n1x\n3.5x\n3.5x",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15448,7 +15756,7 @@
     "text": "7. Free-Threading Python — Sin GIL\n\n¿Qué es?\nPython ahora se puede compilar sin el GIL:\n\n\nBASH\n\n# Compilar sin GIL\n./configure --disable-gil\nmake\n\n\n\n¿Qué cambia?\n\n\nPYTHON\n\nimport threading\nimport time\n\ndef process_data(chunk):\n    time.sleep(0.01)\n    return sum(chunk)\n\n# Sin GIL: threads corren en PARALELO REAL\nwith threading.ThreadPoolExecutor(max_workers=4) as executor:\n    results = list(executor.map(process_data, chunks))\n    # 4x más rápido en CPU de 4+ cores\n\n\n\n¿Deberías usarlo?\n\n\n\nEscenario\nSin GIL\nCon GIL\n\n\n\n\nCPU-bound multithread\n✅ 3-4x más rápido\n❌ Sin ganancia\n\n\nSingle-threaded\n⚠️ 5-10% más lento\n✅ Óptimo\n\n\nI/O-bound\n✅ Similar\n✅ Similar\n\n\nCompatibilidad libs\n⚠️ Algunos no ready\n✅ Todos funcionan",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15459,7 +15767,7 @@
     "text": "8. Debugger Remoto — PEP 768\n\nAntes\n\n\nPYTHON\n\nimport pdb; pdb.set_trace()  # Hardcodeado en el código\n# Necesitas reiniciar la app\n\n\n\nAhora\n\n\nBASH\n\n# Adjuntar a proceso en ejecución\npython -m pdb -p 12345  # PID del proceso\n\n# Debug remoto\n# Server:\npython -m pdb --remote localhost:5000 mi_app.py\n\n# Cliente:\npython -m pdb --connect localhost:5000",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15470,7 +15778,7 @@
     "text": "9. Compresión Zstandard Nativa\n\n\nPYTHON\n\n# Antes: pip install zstandard\n# Ahora: built-in\n\nimport compression.zstd\n\n# Comprimir\ncompressor = compression.zstd.ZstdCompressor()\ncompressed = compressor.compress(b\"Datos grandes aquí...\")\n\n# Descomprimir\ndecompressor = compression.zstd.ZstdDecompressor()\noriginal = decompressor.decompress(compressed)\n\n# vs gzip: 20% más rápido en descompresión",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15481,7 +15789,7 @@
     "text": "10. UUID v6, v7, v8\n\n\nPYTHON\n\nimport uuid\n\n# UUID v7: time-ordered, ideal para bases de datos\nuuid_v7 = uuid.uuid7()  # Nuevo en 3.14\nprint(uuid_v7)  # 01933b2e-...\n\n# UUID v6: alternative ordering\nuuid_v6 = uuid.uuid6()\n\n# v7 es mejor que v4 para índices de DB\n# - Time-ordered → inserts más rápidos en B-trees\n# - Mejor distribución que v1",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15492,7 +15800,7 @@
     "text": "Ecosistema Python 2026: Tendencias\n\nLo que está de moda\nTecnología | Qué es | Por qué importa |\n|———–|——–|—————-|| | FastAPI | Web framework async | Reemplazó a Flask/Django en APIs nuevas | | Pydantic v3 | Validación de datos | Estándar para APIs Python | | Ruff | Linter/formatter | 100x más rápido que flake8 + black | | uv | Package manager | Reemplazo de pip/venv, escrito en Rust | | MCP | Model Context Protocol | Conecta Python con herramientas IA | | Mojo | Superset de Python | 35,000x más rápido en ML, compatible con Python | | PyScript | Python en browser | Ejecuta Python directamente en HTML |\n\n\nStack recomendado para principiantes (2026)\nEditor: VS Code + extensión Python\nPackage manager: uv (reemplaza pip + venv)\nLinter: ruff (reemplaza flake8 + black + isort)\nTesting: pytest\nWeb framework: FastAPI\nData: pandas + polars (más rápido que pandas)\nAI: OpenAI SDK + MCP server\n\n\nHerramientas de IA para Python\n\n\n\nHerramienta\nQué hace\nIntegración\n\n\n\n\nGitHub Copilot\nAutocompletado IA\nVS Code\n\n\nClaude Code\nAgente de código\nTerminal\n\n\nQwen Code\nCLI assistant\nTerminal\n\n\nMCP Servers\nConecta Python con IA\nProtocolo estándar\n\n\nCursor\nEditor IA-first\nFork de VS Code",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15503,7 +15811,7 @@
     "text": "Desafío: Tu Código en Python 3.14\n\nMisión\nReescribe este código de Python 3.12 usando features de 3.14:\n\n\nPYTHON\n\n# Python 3.12\nfrom __future__ import annotations\n\nclass TreeNode:\n    def __init__(self, val: int):\n        self.val = val\n        self.left: \"TreeNode\" = None\n        self.right: \"TreeNode\" = None\n    \n    def insert(self, val: int) -&gt; \"TreeNode\":\n        if val &lt; self.val:\n            if self.left is None:\n                self.left = TreeNode(val)\n            else:\n                self.left.insert(val)\n        return self\n\ndef format_query(table: str, conditions: dict) -&gt; str:\n    parts = [f\"SELECT * FROM {table}\"]\n    if conditions:\n        where = \" AND \".join(f\"{k} = '{v}'\" for k, v in conditions.items())\n        parts.append(f\"WHERE {where}\")\n    return \" \".join(parts)\n\n\n\nVer solución en Python 3.14\n\n\n\nPYTHON\n\n# Python 3.14: Sin __future__, forward refs nativas\nclass TreeNode:\n    def __init__(self, val: int):\n        self.val = val\n        self.left: TreeNode = None   # ✅ Sin quotes\n        self.right: TreeNode = None  # ✅ Sin quotes\n    \n    def insert(self, val: int) -&gt; TreeNode:\n        if val &lt; self.val:\n            if self.left is None:\n                self.left = TreeNode(val)\n            else:\n                self.left.insert(val)\n        return self\n\n# T-strings para queries seguras (futuro)\nfrom string.templatelib import Template\n\ndef safe_query(table: str, conditions: dict) -&gt; Template:\n    # t-string separa estructura de valores\n    # Un processor puede parametrizar automáticamente\n    return t\"SELECT * FROM {table} WHERE {conditions}\"",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15514,7 +15822,7 @@
     "text": "Línea de Tiempo de Versiones Python\n\n\n\n\n\n\n\n\nVersión\nFecha\nFeatures clave\n\n\n\n\n3.12\nOct 2023\nf-string mejorados, errores mejores\n\n\n3.13\nOct 2024\nFree-threading (experimental), JIT\n\n\n3.14\nOct 2025\nT-strings, deferred annotations, REPL mejorado, subinterpreters\n\n\n3.15\nOct 2026\n(planeado) Pattern matching mejorado\n\n\n3.16\nOct 2027\n(planeado) Más mejoras de rendimiento\n\n\n\n\nDato: Python lanza una versión mayor cada octubre desde 2020.",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   },
   {
@@ -15525,7 +15833,7 @@
     "text": "Recursos Oficiales\n\n\n\nRecurso\nURL\n\n\n\n\nDocumentación oficial\nhttps://docs.python.org/3.14/\n\n\nWhat’s New in 3.14\nhttps://docs.python.org/3.14/whatsnew/3.14.html\n\n\nRealPython 3.14 Guide\nhttps://realpython.com/python314-new-features/\n\n\nPython Morsels 3.14\nhttps://www.pythonmorsels.com/python314/\n\n\nPEP 750 (T-Strings)\nhttps://peps.python.org/pep-0750/\n\n\nPEP 649 (Deferred Annotations)\nhttps://peps.python.org/pep-0649/\n\n\nPEP 768 (Debugger)\nhttps://peps.python.org/pep-0768/\n\n\n\n\n\nNota final: Este curso enseña fundamentos que aplican a cualquier versión de Python. Las features de 3.14 son complementarias — no reemplazan lo que aprendiste aquí.\n\n← Apéndice A: IA en Python | ← Apéndice B: MCP | Fase Final →",
     "crumbs": [
       "Apéndices",
-      "<span class='chapter-number'>204</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
+      "<span class='chapter-number'>206</span>  <span class='chapter-title'>Apéndice C: Python 3.14 y el Ecosistema 2026</span>"
     ]
   }
 ]
