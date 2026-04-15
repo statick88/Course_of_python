@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#f8fafc" font-family="system-ui" font-size="18" font-weight="bold">Módulos y Paquetes</text>
+  
+  <!-- Main program box -->
+  <rect x="40" y="70" width="120" height="50" rx="8" fill="#3b82f6"/>
+  <text x="100" y="92" text-anchor="middle" fill="white" font-family="monospace" font-size="13" font-weight="bold">main.py</text>
+  <text x="100" y="110" text-anchor="middle" fill="#dbeafe" font-family="system-ui" font-size="10">import utils</text>
+  
+  <!-- Arrow -->
+  <path d="M160 95 L220 95" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="225,95 215,90 215,100" fill="#94a3b8"/>
+  
+  <!-- Module box -->
+  <rect x="225" y="70" width="120" height="50" rx="8" fill="#8b5cf6"/>
+  <text x="285" y="92" text-anchor="middle" fill="white" font-family="monospace" font-size="13" font-weight="bold">utils.py</text>
+  <text x="285" y="110" text-anchor="middle" fill="#ede9fe" font-family="system-ui" font-size="10">def helper():</text>
+  
+  <!-- Standard library -->
+  <rect x="20" y="150" width="170" height="60" rx="10" fill="#334155"/>
+  <text x="105" y="172" text-anchor="middle" fill="#f8fafc" font-family="system-ui" font-size="12" font-weight="bold">📦 Biblioteca Estándar</text>
+  <text x="105" y="192" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">os · sys · math · json · datetime</text>
+  
+  <!-- External packages -->
+  <rect x="210" y="150" width="170" height="60" rx="10" fill="#334155"/>
+  <text x="295" y="172" text-anchor="middle" fill="#f8fafc" font-family="system-ui" font-size="12" font-weight="bold">🌐 Paquetes Externos</text>
+  <text x="295" y="192" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">requests · flask · pandas</text>
+  
+  <!-- pip install -->
+  <rect x="40" y="230" width="320" height="40" rx="8" fill="#10b981"/>
+  <text x="200" y="255" text-anchor="middle" fill="white" font-family="monospace" font-size="13">pip install nombre_paquete</text>
+  
+  <!-- Bottom note -->
+  <text x="200" y="290" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">import · from ... import · pip · __init__.py · venv</text>
+</svg>
