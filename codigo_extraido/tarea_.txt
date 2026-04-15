@@ -1,0 +1,20 @@
+        <pre style="background: #f6f8fa; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 13px; border: 1px solid #e1e4e8; line-height: 1.5;" isolated=""><code isolated="">import csv, json
+from pathlib import Path
+
+# Definir rutas usando pathlib
+ruta_csv = Path("datos.csv")
+ruta_json = Path("salida.json")
+
+try:
+    # Verificar que el archivo CSV existe
+    if not ruta_csv.exists():
+        raise FileNotFoundError(f"El archivo {ruta_csv} no se encontró")
+    
+    # Leer CSV y convertir a diccionario
+    with open(ruta_csv) as f:
+        lector = csv.DictReader(f)
+        datos = [dict(fila) for fila in lector]
+
+    # Escribir JSON con formato legible
+    with open(ruta_json, "w") as f:
+        json.dump(datos, f, indent=2, ensure_ascii=False)

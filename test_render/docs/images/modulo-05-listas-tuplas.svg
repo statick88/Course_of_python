@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#f8fafc" font-family="system-ui" font-size="18" font-weight="bold">Listas y Tuplas</text>
+  
+  <!-- List representation -->
+  <text x="60" y="80" fill="#3b82f6" font-family="monospace" font-size="14" font-weight="bold">lista = [ ]</text>
+  
+  <!-- List items -->
+  <rect x="60" y="95" width="60" height="35" rx="6" fill="#3b82f6"/>
+  <text x="90" y="117" text-anchor="middle" fill="white" font-family="monospace" font-size="12">"a"</text>
+  
+  <rect x="125" y="95" width="60" height="35" rx="6" fill="#3b82f6"/>
+  <text x="155" y="117" text-anchor="middle" fill="white" font-family="monospace" font-size="12">"b"</text>
+  
+  <rect x="190" y="95" width="60" height="35" rx="6" fill="#3b82f6"/>
+  <text x="220" y="117" text-anchor="middle" fill="white" font-family="monospace" font-size="12">"c"</text>
+  
+  <rect x="255" y="95" width="60" height="35" rx="6" fill="#3b82f6"/>
+  <text x="285" y="117" text-anchor="middle" fill="white" font-family="monospace" font-size="12">"d"</text>
+  
+  <!-- Index labels -->
+  <text x="90" y="148" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="10">[0]</text>
+  <text x="155" y="148" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="10">[1]</text>
+  <text x="220" y="148" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="10">[2]</text>
+  <text x="285" y="148" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="10">[3]</text>
+  
+  <!-- Negative index labels -->
+  <text x="90" y="168" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="10">[-4]</text>
+  <text x="155" y="168" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="10">[-3]</text>
+  <text x="220" y="168" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="10">[-2]</text>
+  <text x="285" y="168" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="10">[-1]</text>
+  
+  <!-- Tuple representation -->
+  <text x="80" y="210" fill="#10b981" font-family="monospace" font-size="14" font-weight="bold">tupla = ( )</text>
+  <rect x="60" y="225" width="120" height="35" rx="6" fill="#10b981"/>
+  <text x="120" y="247" text-anchor="middle" fill="white" font-family="monospace" font-size="12">inmutable</text>
+  
+  <rect x="220" y="225" width="120" height="35" rx="6" fill="#ef4444"/>
+  <text x="280" y="247" text-anchor="middle" fill="white" font-family="monospace" font-size="12">mutable ✓</text>
+  
+  <!-- Bottom note -->
+  <text x="200" y="290" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">append() · pop() · slice() · len() · index()</text>
+</svg>

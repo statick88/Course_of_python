@@ -1,0 +1,57 @@
+[
+  {
+    "objectID": "content/modulo-00/index.html",
+    "href": "content/modulo-00/index.html",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "",
+    "text": "Módulo 0: Pensamiento Computacional",
+    "crumbs": [
+      "Módulo 0: Pensamiento Computacional",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-00/index.html#por-qué-este-módulo",
+    "href": "content/modulo-00/index.html#por-qué-este-módulo",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "¿Por qué este módulo?",
+    "text": "¿Por qué este módulo?\nMuchos cursos comienzan con “instala Python” y saltan directo a la sintaxis. Pero escribir código no es lo mismo que pensar como programador.\nEste módulo te enseña a:\n\nDescomponer problemas grandes en partes manejables\nReconocer patrones que se repiten en problemas diferentes\nDiseñar algoritmos en pseudocódigo antes de tocar Python\nEvaluar múltiples enfoques para elegir el mejor\n\n\nAnalogía del mundo real: Antes de construir una casa, un arquitecto diseña los planos. Antes de escribir código, un programador diseña el algoritmo.",
+    "crumbs": [
+      "Módulo 0: Pensamiento Computacional",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-00/index.html#contenido-del-módulo",
+    "href": "content/modulo-00/index.html#contenido-del-módulo",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "Contenido del Módulo",
+    "text": "Contenido del Módulo\n\n\n\nUnidad\nTema\nDuración\n\n\n\n\n0.1\n¿Qué es computación?\n45 min\n\n\n0.2\nDescomposición\n45 min\n\n\n0.3\nPatrones y abstracción\n45 min\n\n\n0.4\nPseudocódigo\n60 min\n\n\n0.5\nEvaluación de enfores\n45 min",
+    "crumbs": [
+      "Módulo 0: Pensamiento Computacional",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-00/index.html#el-ciclo-del-programador",
+    "href": "content/modulo-00/index.html#el-ciclo-del-programador",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "El Ciclo del Programador",
+    "text": "El Ciclo del Programador\nTodo problema de programación sigue este ciclo:\n1. ENTENDER   → ¿Qué me piden? ¿Qué datos tengo?\n2. PLANIFICAR → ¿Cómo lo resuelvo? (pseudocódigo)\n3. IMPLEMENTAR → Escribir el código en Python\n4. VERIFICAR  → ¿Funciona? ¿Hay casos borde?\nEste módulo se enfoca en los pasos 1 y 2 — los que la mayoría salta.",
+    "crumbs": [
+      "Módulo 0: Pensamiento Computacional",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  },
+  {
+    "objectID": "content/modulo-00/index.html#al-final-de-este-módulo-podrás",
+    "href": "content/modulo-00/index.html#al-final-de-este-módulo-podrás",
+    "title": "Módulo 0: Pensamiento Computacional",
+    "section": "Al final de este módulo podrás:",
+    "text": "Al final de este módulo podrás:\n✅ Explicar qué es un algoritmo con tus propias palabras\n✅ Descomponer un problema complejo en 5+ sub-problemas\nsimples\n✅ Escribir pseudocódigo para problemas cotidianos\n✅ Identificar cuándo un enfoque es mejor que otro\n✅ Reconocer patrones en problemas aparentemente\ndiferentes\n\n\nNota del instructor: “Este módulo es la base de todo lo que sigue. No lo saltes. Los mejores programadores no son los que más sintaxis conocen — son los que mejor piensan los problemas.” — Diego Saavedra, basado en MIT 6.0001\n\n\nUnidad 0.1: ¿Qué es computación? →",
+    "crumbs": [
+      "Módulo 0: Pensamiento Computacional",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Módulo 0: Pensamiento Computacional</span>"
+    ]
+  }
+]
