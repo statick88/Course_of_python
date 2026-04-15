@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Curso completo de programación Python para principiantes — 70+ desafíos prácticos, laboratorios interactivos y proyectos reales">
+
+<title>Módulo 0: Pensamiento Computacional – Programación Python Fundamentos</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../content/modulo-00/01-que-es-computacion.html" rel="next">
+<link href="../../license.html" rel="prev">
+<link href="../../images/python-logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c6d6d1558f1b0dcfa0c28b4a5a6e4807.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-1d3b7fb97cf7df63d6fb138be9b6dd25.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/quizdown-0.6.0/quizdown.js"></script>
+<script src="../../site_libs/quarto-contrib/quizdown-0.6.0/quizdownKatex.js"></script>
+<script src="../../site_libs/quarto-contrib/quizdown-0.6.0/quizdownHighlight.js"></script>
+<script src="../../site_libs/quarto-contrib/quizdown-0.6.0/quizdown-init.js"></script>
+<link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
+<script src="../../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
+<link href="../../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<link rel="stylesheet" href="../../theme.scss">
+<link rel="stylesheet" href="../../css/styles.css">
+<meta property="og:title" content="Programación Python Fundamentos">
+<meta property="og:description" content="Curso completo de Python para principiantes con 70+ desafíos prácticos">
+<meta property="og:image" content="images/portada-python.svg">
+<meta property="og:site_name" content="Programación Python Fundamentos">
+<meta property="og:image:alt" content="Programación Python Fundamentos">
+<meta name="twitter:title" content="Programación Python Fundamentos">
+<meta name="twitter:description" content="Curso completo de Python para principiantes">
+<meta name="twitter:image" content="images/portada-python.svg">
+<meta name="twitter:image:alt" content="Programación Python Fundamentos">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/modulo-00/index.html">Módulo 0: Pensamiento Computacional</a></li><li class="breadcrumb-item"><a href="../../content/modulo-00/index.html"><span class="chapter-title">Módulo 0: Pensamiento Computacional</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/python-logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../../images/python-logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Programación Python Fundamentos</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/statick88/course_of_python" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../../programacion_python_fundamentos.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../../programacion_python_fundamentos.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/01-cover.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Python Fundamentos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/02-dedicatoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Dedicatoria</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/03-prologo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Prólogo: Por qué este curso es diferente</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/04-prefacio.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PREFACIO DEL INSTRUCTOR</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/05-licencia.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Licencia CC BY-NC-SA 4.0</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/06-agradecimientos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AGRADECIMIENTOS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../INICIO_RAPIDO.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Inicio Rápido — Programación Python Fundamentos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Python Fundamentos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sobre el Instructor</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../glosario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Glosario — Programación Python Fundamentos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../license.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Licencia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Módulo 0: Pensamiento Computacional</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Módulo 0: Pensamiento Computacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/01-que-es-computacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">0.1 ¿Qué es computación? De recetas a algoritmos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/02-descomposicion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">0.2 Descomposición: dividir para conquistar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/03-patrones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">0.3 Patrones y abstracción</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/04-pseudocodigo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">0.4 Diseño de algoritmos: pseudocódigo antes que Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/05-evaluacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">0.5 Evaluación de enfores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 0: Pensamiento Computacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 0</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 1: Introducción a Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 1: Introducción a Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/01-que-es-python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 ¿Qué es Python?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/02-instalacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.2 Instalación y configuración del entorno</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/03-hola-mundo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.3 Tu primer programa: Hola Mundo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/04-variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.4 Variables: las cajas de la memoria</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/05-tipos-basicos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.5 Tipos de datos básicos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/06-input-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.6 Entrada y salida de datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-01-saludo-personalizado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Saludo personalizado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-02-calculadora-edad.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Calculadora de edad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-03-conversor-moneda.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Conversor de moneda</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-04-calculadora-imc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Calculadora de IMC</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-05-historia-interactiva.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Historia interactiva</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-06-formulario-contacto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Formulario de contacto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-07-mini-quiz.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Mini quiz de conocimientos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 2: Tipos de Datos y Variables</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 2: Tipos de Datos y Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/01-operadores-aritmeticos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Operadores aritméticos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/02-operadores-comparacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Operadores de comparación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/03-operadores-logicos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.3 Operadores lógicos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/04-casting-avanzado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Casting avanzado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/05-strings-avanzado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.5 Strings avanzado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-01-calculadora-propinas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Calculadora de propinas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-02-conversor-unidades.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Conversor de unidades</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-03-validador-edad.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Validador de edad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-04-generador-dni.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Generador de DNI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-05-cifrado-cesar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Cifrado César</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-06-analizador-texto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Analizador de texto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-07-mini-base-datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Mini base de datos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 3: Estructuras de Control</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 3: Estructuras de Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/01-if-else.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.1 if / else: el semáforo del código</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/02-if-anidado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.2 Decisiones anidadas: capas de lógica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/03-for-loop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.3 for: el bucle que cuenta por ti</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/04-while-loop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.4 while: repetir mientras se cumpla</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/05-break-continue.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.5 break y continue: control total del flujo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/06-comprension-listas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.6 Comprensión de listas: elegancia Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-01-par-o-impar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Par o impar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-02-tabla-multiplicar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Tabla de multiplicar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-03-fizzbuzz.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: FizzBuzz clásico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-04-adivina-numero.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Adivina el número</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-05-piedra-papel-tijera.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Piedra, papel o tijera</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-06-generador-contrasenas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Generador de contraseñas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-07-cajero-automatico.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Cajero automático</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 4: Funciones</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 4: Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/01-definir-funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.1 Definir funciones: tu primera multiherramienta</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/02-parametros-argumentos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.2 Parámetros y argumentos: la receta flexible</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/03-return.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.3 Return: el resultado que vuelve</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/04-scope-variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.4 Scope de variables: quién ve qué</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/05-funciones-lambda.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.5 Funciones lambda: el atajo elegante</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/06-funciones-recursivas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.6 Funciones recursivas: la función que se llama a sí misma</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 4: Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-01-saludo-funcion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Saludo con función</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-02-area-circulo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Área del círculo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-03-fahrenheit-celsius.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Conversor Fahrenheit ↔︎ Celsius</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-04-contador-vocales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Contador de vocales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-05-numero-primo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Verificar número primo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-06-fibonacci.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Secuencia de Fibonacci</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-07-calculadora-funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Calculadora con funciones</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 5: Listas y Tuplas</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 5: Listas y Tuplas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/01-crear-listas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.1 Crear listas: tu primera colección ordenada</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/02-indexar-slicing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.2 Indexar y slicing: encontrar lo que necesitas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/03-metodos-listas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.3 Métodos de listas: la navaja suiza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/04-iterar-listas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.4 Iterar listas: recorrer colecciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/05-tuplas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.5 Tuplas: datos que no cambian</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/06-listas-anidadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.6 Listas anidadas: más allá de una dimensión</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 5: Resumen y autoevaluación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-01-promedio-notas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Promedio de notas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-02-invertir-lista.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Invertir una lista</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-03-eliminar-duplicados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Eliminar duplicados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-04-estadisticas-lista.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Estadísticas de una lista</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-05-combinar-listas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Combinar listas ordenadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-06-matriz-operaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Operaciones con matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-07-gestor-inventario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Gestor de inventario</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 6: Diccionarios y Sets</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 6: Diccionarios y Sets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/01-crear-diccionarios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.1 Crear diccionarios: la agenda del programador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/02-acceder-modificar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.2 Acceder y modificar diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/03-iterar-diccionarios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.3 Iterar sobre diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/04-sets.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.4 Sets: colecciones sin duplicados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/05-diccionarios-anidados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.5 Diccionarios anidados y JSON</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-01-agenda-contactos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Agenda de contactos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-02-contador-palabras.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Contador de palabras</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-03-inventario-tienda.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Inventario de tienda</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-04-fusionar-diccionarios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Fusionar diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-05-votaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Sistema de votaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-06-base-datos-estudiantes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Base de datos de estudiantes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-07-analizador-votos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Analizador de votos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 7: Manejo de Archivos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 7: Manejo de Archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/01-abrir-cerrar-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.1 Abrir y cerrar archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/02-leer-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.2 Leer archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/03-escribir-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.3 Escribir archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/04-manejo-csv.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.4 Manejo de archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/05-manejo-json.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.5 Manejo de archivos JSON</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/06-pathlib.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.6 pathlib — Rutas modernas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-01-diario-personal.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Diario personal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-02-copiar-archivo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Copiar archivo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-03-log-analyzer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Log Analyzer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-04-csv-a-diccionario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: CSV a diccionario</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-05-configurador-json.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Configurador JSON</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-06-buscador-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Buscador de archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-07-gestor-contactos-csv.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Gestor de contactos CSV</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 8: Módulos y Paquetes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 8: Módulos y Paquetes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/01-importar-modulos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.1 Importar módulos: tu caja de herramientas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/02-modulos-estandar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.2 La biblioteca estándar: módulos que ya tienes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/03-crear-modulos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.3 Crear tus propios módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/04-paquetes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.4 Paquetes: organizar código profesionalmente</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/05-pip-paquetes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.5 pip: el gestor de paquetes de Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/06-entornos-virtuales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.6 Entornos virtuales: aislamiento seguro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/07-eficiencia-big-o.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.7 Eficiencia: ¿tu código escala?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-01-mi-primer-modulo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Mi primer módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-02-generador-fechas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Generador de fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-03-aleatorios-avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Aleatorios avanzados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-04-organizador-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Organizador de archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-05-api-clima.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: API del clima</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-06-web-scraper.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Web scraper</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-07-proyecto-modular.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Proyecto modular completo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 9: Buenas Prácticas</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 9: Buenas Prácticas en Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/01-pep8-estilo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.1 PEP 8: el estilo que une a la comunidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/02-nombres-descriptivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.2 Nombres descriptivos: código que habla</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/03-funciones-puras.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.3 Funciones puras: predecibles y testeables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/04-manejo-errores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.4 Manejo de errores: falla con elegancia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/05-documentacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.5 Documentación: tu yo del futuro te lo agradecerá</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/06-testing-basico.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.6 Testing básico: confianza en tu código</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-01-refactorizar-codigo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Refactorizar código desordenado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-02-docstrings.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Documentar funciones con docstrings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-03-validador-robusto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Crear un validador de datos robusto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-04-test-calculadora.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Escribir tests para una calculadora</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-05-linter-codigo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Corregir errores de un linter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-06-refactorizar-proyecto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Refactorizar un mini proyecto completo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-07-code-review.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Revisión de código (Code Review)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 10: Proyecto Integrador</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 10: Proyecto Integrador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/01-planificar-proyecto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.1 Planificar tu proyecto: del problema a la solución</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/02-estructura-proyecto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.2 Estructura profesional de un proyecto Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/03-proyecto-gestor-tareas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.3 Proyecto guiado: Gestor de Tareas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/04-proyecto-tienda-simple.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.4 Proyecto guiado: Tienda de Productos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/05-proyecto-analizador-datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.5 Proyecto guiado: Analizador de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/06-presentacion-proyecto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.6 Presentar tu proyecto al mundo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/99-cierre-curso.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎓 Cierre del Curso: De Cero a Programador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-01-gestor-tareas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto 1: Gestor de Tareas Personal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-02-tienda-productos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto 2: Tienda de Productos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-03-analizador-datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto 3: Analizador de Datos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-04-hangman.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto 4: Juego del Ahorcado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-05-caesar-cipher.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto 5: Cifrado César y Criptoanálisis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Laboratorios Prácticos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorios Prácticos - Programación Python Fundamentos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab01-primer-programa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1: Tu primer programa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab02-variables-en-accion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2: Variables en acción</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab03-estructuras-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3: Estructuras de Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab04-funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 4: Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab05-listas-tuplas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 5: Listas y Tuplas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab06-diccionarios-sets.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 6: Diccionarios y Sets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab07-manejo-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 7: Manejo de Archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab08-modulos-paquetes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 8: Módulos y Paquetes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab09-buenas-practicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 9: Buenas Prácticas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab10-proyecto-integrador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 10: Proyecto Integrador</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Presentaciones (Reveal.js)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../presentaciones/modulo-0-pensamiento-computacional.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 0: Pensamiento Computacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../presentaciones/modulo-1-intro-python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 1: Introducción a Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Evaluación: Quizzes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/evaluacion-diagnostico.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación de Diagnóstico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quizzes Interactivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 1 — Introducción a Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 2 — Tipos de Datos y Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 3 — Estructuras de Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 4 — Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 5 — Listas y Tuplas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 6 — Diccionarios y Sets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 7 — Manejo de Archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 8 — Módulos y Paquetes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 9 — Buenas Prácticas y Testing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 10 — Proyecto Final y Buenas Prácticas de Desarrollo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-avanzado-troubleshooting.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz Avanzado: Troubleshooting y Escenarios Reales</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Tareas para Plataforma Q10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/01-ia-en-python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice A: Integración de IA en el Desarrollo Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/02-mcp-para-python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice B: Model Context Protocol (MCP) para Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/03-phase-final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase Final: Verificación y Checklist de Completitud</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/04-python-314-ecosistema.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice C: Python 3.14 y el Ecosistema 2026</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#módulo-0-pensamiento-computacional" id="toc-módulo-0-pensamiento-computacional" class="nav-link active" data-scroll-target="#módulo-0-pensamiento-computacional">Módulo 0: Pensamiento Computacional</a>
+  <ul class="collapse">
+  <li><a href="#por-qué-este-módulo" id="toc-por-qué-este-módulo" class="nav-link" data-scroll-target="#por-qué-este-módulo">¿Por qué este módulo?</a></li>
+  <li><a href="#contenido-del-módulo" id="toc-contenido-del-módulo" class="nav-link" data-scroll-target="#contenido-del-módulo">Contenido del Módulo</a></li>
+  <li><a href="#el-ciclo-del-programador" id="toc-el-ciclo-del-programador" class="nav-link" data-scroll-target="#el-ciclo-del-programador">El Ciclo del Programador</a></li>
+  <li><a href="#al-final-de-este-módulo-podrás" id="toc-al-final-de-este-módulo-podrás" class="nav-link" data-scroll-target="#al-final-de-este-módulo-podrás">Al final de este módulo podrás:</a></li>
+  </ul></li>
+  <li>Code Appendix</li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/statick88/course_of_python/edit/main/content/modulo-00/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/modulo-00/index.html">Módulo 0: Pensamiento Computacional</a></li><li class="breadcrumb-item"><a href="../../content/modulo-00/index.html"><span class="chapter-title">Módulo 0: Pensamiento Computacional</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Módulo 0: Pensamiento Computacional</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="módulo-0-pensamiento-computacional" class="level1">
+<h1>Módulo 0: Pensamiento Computacional</h1>
+<blockquote class="blockquote">
+<p><strong>Duración</strong>: 4 horas<br>
+<strong>Objetivo</strong>: Aprender a pensar como programador<br>
+antes de escribir código<br>
+<strong>Inspirado en</strong>: MIT 6.0001 Lecture 1 —<br>
+Introduction to Computation and Programming</p>
+</blockquote>
+<hr>
+<section id="por-qué-este-módulo" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-este-módulo">¿Por qué este módulo?</h2>
+<p>Muchos cursos comienzan con “instala Python” y saltan directo a la sintaxis. Pero <strong>escribir código no es lo mismo que pensar como programador</strong>.</p>
+<p>Este módulo te enseña a:</p>
+<ul>
+<li><strong>Descomponer</strong> problemas grandes en partes manejables</li>
+<li><strong>Reconocer patrones</strong> que se repiten en problemas diferentes</li>
+<li><strong>Diseñar algoritmos</strong> en pseudocódigo antes de tocar Python</li>
+<li><strong>Evaluar múltiples enfoques</strong> para elegir el mejor</li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>Analogía del mundo real</strong>: Antes de construir una casa, un arquitecto diseña los planos. Antes de escribir código, un programador diseña el algoritmo.</p>
+</blockquote>
+<hr>
+</section>
+<section id="contenido-del-módulo" class="level2">
+<h2 class="anchored" data-anchor-id="contenido-del-módulo">Contenido del Módulo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Unidad</th>
+<th>Tema</th>
+<th>Duración</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.1</td>
+<td>¿Qué es computación?</td>
+<td>45 min</td>
+</tr>
+<tr class="even">
+<td>0.2</td>
+<td>Descomposición</td>
+<td>45 min</td>
+</tr>
+<tr class="odd">
+<td>0.3</td>
+<td>Patrones y abstracción</td>
+<td>45 min</td>
+</tr>
+<tr class="even">
+<td>0.4</td>
+<td>Pseudocódigo</td>
+<td>60 min</td>
+</tr>
+<tr class="odd">
+<td>0.5</td>
+<td>Evaluación de enfores</td>
+<td>45 min</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="el-ciclo-del-programador" class="level2">
+<h2 class="anchored" data-anchor-id="el-ciclo-del-programador">El Ciclo del Programador</h2>
+<p>Todo problema de programación sigue este ciclo:</p>
+<pre data-code-line-numbers=""><code>1. ENTENDER   → ¿Qué me piden? ¿Qué datos tengo?
+2. PLANIFICAR → ¿Cómo lo resuelvo? (pseudocódigo)
+3. IMPLEMENTAR → Escribir el código en Python
+4. VERIFICAR  → ¿Funciona? ¿Hay casos borde?</code></pre>
+<p><strong>Este módulo se enfoca en los pasos 1 y 2</strong> — los que la mayoría salta.</p>
+<hr>
+</section>
+<section id="al-final-de-este-módulo-podrás" class="level2">
+<h2 class="anchored" data-anchor-id="al-final-de-este-módulo-podrás">Al final de este módulo podrás:</h2>
+<p>✅ Explicar qué es un algoritmo con tus propias palabras<br>
+✅ Descomponer un problema complejo en 5+ sub-problemas<br>
+simples<br>
+✅ Escribir pseudocódigo para problemas cotidianos<br>
+✅ Identificar cuándo un enfoque es mejor que otro<br>
+✅ Reconocer patrones en problemas aparentemente<br>
+diferentes</p>
+<hr>
+<blockquote class="blockquote">
+<p><strong>Nota del instructor</strong>: “Este módulo es la base de todo lo que sigue. No lo saltes. Los mejores programadores no son los que más sintaxis conocen — son los que mejor piensan los problemas.” — Diego Saavedra, basado en MIT 6.0001</p>
+</blockquote>
+<hr>
+<p><a href="../../content/modulo-00/01-que-es-computacion.html">Unidad 0.1: ¿Qué es computación? →</a></p>
+
+
+</section>
+</section>
+<section class="level1">
+<h1>Code Appendix</h1>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../license.html" class="pagination-link" aria-label="Licencia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Licencia</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../content/modulo-00/01-que-es-computacion.html" class="pagination-link" aria-label="0.1 ¿Qué es computación? De recetas a algoritmos">
+        <span class="nav-page-text"><span class="chapter-title">0.1 ¿Qué es computación? De recetas a algoritmos</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 <strong>Diego Saavedra</strong>. Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p>Material educativo para <strong>Abacom Capacitación y Servicios</strong></p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/statick88/course_of_python/edit/main/content/modulo-00/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
+</body></html>

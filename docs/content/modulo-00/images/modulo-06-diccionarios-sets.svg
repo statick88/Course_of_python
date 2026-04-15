@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#f8fafc" font-family="system-ui" font-size="18" font-weight="bold">Diccionarios y Sets</text>
+  
+  <!-- Dictionary representation -->
+  <text x="60" y="80" fill="#f59e0b" font-family="monospace" font-size="14" font-weight="bold">dict = { clave: valor }</text>
+  
+  <!-- Dict entries -->
+  <rect x="40" y="95" width="140" height="35" rx="6" fill="#f59e0b"/>
+  <text x="110" y="117" text-anchor="middle" fill="white" font-family="monospace" font-size="11">"nombre": "Ana"</text>
+  
+  <rect x="40" y="140" width="140" height="35" rx="6" fill="#f59e0b"/>
+  <text x="110" y="162" text-anchor="middle" fill="white" font-family="monospace" font-size="11">"edad": 25</text>
+  
+  <rect x="40" y="185" width="140" height="35" rx="6" fill="#f59e0b"/>
+  <text x="110" y="207" text-anchor="middle" fill="white" font-family="monospace" font-size="11">"ciudad": "Quito"</text>
+  
+  <!-- Arrow -->
+  <path d="M180 162 L220 162" stroke="#64748b" stroke-width="2"/>
+  <polygon points="225,162 215,157 215,167" fill="#64748b"/>
+  
+  <!-- Set representation -->
+  <text x="250" y="80" fill="#10b981" font-family="monospace" font-size="14" font-weight="bold">set = { }</text>
+  
+  <!-- Set circles -->
+  <circle cx="280" cy="140" r="40" fill="#10b981" opacity="0.3" stroke="#10b981" stroke-width="2"/>
+  <text x="280" y="135" text-anchor="middle" fill="white" font-family="monospace" font-size="10">"a"</text>
+  <text x="280" y="150" text-anchor="middle" fill="white" font-family="monospace" font-size="10">"b"</text>
+  <text x="280" y="165" text-anchor="middle" fill="white" font-family="monospace" font-size="10">"c"</text>
+  
+  <!-- Set properties -->
+  <rect x="240" y="200" width="140" height="30" rx="6" fill="#334155"/>
+  <text x="310" y="220" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">Sin duplicados</text>
+  
+  <rect x="240" y="240" width="140" height="30" rx="6" fill="#334155"/>
+  <text x="310" y="260" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">Búsqueda O(1)</text>
+  
+  <!-- Bottom note -->
+  <text x="200" y="290" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">.get() · .keys() · .values() · .items() · union() · intersection()</text>
+</svg>
