@@ -42,11 +42,12 @@ jobs:
           python -m pip install jupyter jupyter_client
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Create env file for demo variables
+      - name: Set environment variables for Quarto
         run: |
-          # Create .env file with empty values to avoid MissingEnvVarsError
-          echo "OPENWEATHER_API_KEY=" >> .env
-          echo "DEMO_PASSWORD=" >> .env
+          # Set environment variables to avoid MissingEnvVarsError
+          echo "OPENWEATHER_API_KEY=" >> $GITHUB_ENV
+          echo "DEMO_PASSWORD=" >> $GITHUB_ENV
+        shell: bash
 
       - name: Verify Quarto project
         run: |
