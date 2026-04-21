@@ -1,0 +1,129 @@
+---
+title: "Laboratorio 11: Git y GitHub con Python"
+subtitle: "Flujo real: rama, Pull Request y release"
+execute:
+  eval: false
+---
+
+## Información del Laboratorio
+
+| Campo | Valor |
+|-------|-------|
+| **Anexo:** | Git y GitHub con Python |
+| **Duración estimada:** | 60 minutos |
+| **Dificultad:** | Intermedio |
+
+## Objetivos
+
+- Aplicar un flujo de trabajo Git profesional sobre un proyecto Python.
+- Crear y publicar una rama de feature en GitHub.
+- Abrir un Pull Request con descripción técnica clara.
+- Etiquetar una versión del proyecto con SemVer.
+
+## Escenario
+
+Tu equipo mantiene una calculadora en Python y debes añadir validación de división segura sin romper `main`.
+
+## Paso 1: Preparar repositorio
+
+```bash
+mkdir calculadora-git-lab
+cd calculadora-git-lab
+git init
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+```
+
+Crea `.gitignore`:
+
+```gitignore
+venv/
+__pycache__/
+*.pyc
+.env
+```
+
+## Paso 2: Commit base
+
+Crea `calculadora.py`:
+
+```python
+def sumar(a: float, b: float) -> float:
+    return a + b
+```
+
+```bash
+git add .
+git commit -m "feat: crea estructura inicial de calculadora"
+```
+
+## Paso 3: Trabajo en rama
+
+```bash
+git checkout -b feature/division-segura
+```
+
+Actualiza `calculadora.py`:
+
+```python
+def sumar(a: float, b: float) -> float:
+    return a + b
+
+
+def dividir(a: float, b: float) -> float:
+    if b == 0:
+        raise ValueError("No se puede dividir para cero")
+    return a / b
+```
+
+```bash
+git add calculadora.py
+git commit -m "feat: agrega validacion para division segura"
+```
+
+## Paso 4: Publicar en GitHub y abrir PR
+
+```bash
+git remote add origin https://github.com/USUARIO/calculadora-git-lab.git
+git push -u origin main
+git push -u origin feature/division-segura
+```
+
+Abre un Pull Request con:
+
+1. **Qué cambia:** nueva función `dividir` con validación.
+2. **Cómo probar:** ejecutar pruebas manuales con `b = 0` y `b != 0`.
+3. **Riesgo:** bajo; no altera comportamiento de `sumar`.
+
+## Paso 5: Merge y release
+
+Luego del merge:
+
+```bash
+git checkout main
+git pull origin main
+git tag -a v1.1.0 -m "release: division segura"
+git push origin v1.1.0
+```
+
+## Evidencias requeridas
+
+- Captura de `git log --oneline --graph --decorate -n 8`
+- URL del Pull Request
+- Captura del tag `v1.1.0` en GitHub Releases/Tags
+
+## Troubleshooting
+
+| Problema | Causa | Solución |
+|---|---|---|
+| `rejected (non-fast-forward)` | Rama desactualizada | `git pull --rebase origin main` y vuelve a push |
+| Conflicto de merge | Ediciones en mismas líneas | Resolver conflicto, `git add`, `git commit` |
+| `fatal: remote origin already exists` | Ya existe remoto | `git remote set-url origin <url>` |
+
+## Checklist de aceptación
+
+- [ ] El proyecto tiene `.gitignore` correcto para Python.
+- [ ] Se creó rama `feature/division-segura`.
+- [ ] El commit usa mensaje descriptivo.
+- [ ] Se abrió Pull Request y se hizo merge.
+- [ ] Se publicó tag `v1.1.0`.

@@ -305,6 +305,7 @@ book:
         - labs/lab08-modulos-paquetes.qmd
         - labs/lab09-buenas-practicas.qmd
         - labs/lab10-proyecto-integrador.qmd
+        - labs/lab11-git-github-python.qmd
   
     - part: "Presentaciones (Reveal.js)"
       chapters:
@@ -325,6 +326,7 @@ book:
         - quizzes/quiz-modulo-08.qmd
         - quizzes/quiz-modulo-09.qmd
         - quizzes/quiz-modulo-10.qmd
+        - quizzes/quiz-anexo-git-github.qmd
         - quizzes/quiz-avanzado-troubleshooting.qmd
 
     - part: "Tareas para Plataforma Q10"
@@ -341,6 +343,7 @@ book:
         - content/appendix/02-mcp-para-python.qmd
         - content/appendix/03-phase-final.qmd
         - content/appendix/04-python-314-ecosistema.qmd
+        - content/appendix/05-git-github-con-python.qmd
 
 bibliography: references.bib
 biblio-style: apalike

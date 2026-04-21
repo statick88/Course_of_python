@@ -1,0 +1,98 @@
+---
+title: "Quiz: Anexo — Git y GitHub con Python"
+---
+
+## Evaluación del anexo Git y GitHub
+
+::: {.quizdown}
+
+### ¿Cuál es el comando para crear y cambiar a una nueva rama?
+
+- [x] `git checkout -b feature/nueva-funcion`
+- [ ] `git branch --switch feature/nueva-funcion`
+- [ ] `git create feature/nueva-funcion`
+- [ ] `git new-branch feature/nueva-funcion`
+
+> **Explicación:** `git checkout -b` crea la rama y te mueve a ella en un solo paso.
+
+---
+
+### ¿Qué archivo evita subir el entorno virtual a GitHub?
+
+- [ ] `README.md`
+- [x] `.gitignore`
+- [ ] `requirements.txt`
+- [ ] `.gitattributes`
+
+> **Explicación:** `.gitignore` define qué rutas Git debe ignorar, como `venv/`.
+
+---
+
+### ¿Qué comando muestra el estado actual de archivos?
+
+- [ ] `git files`
+- [ ] `git review`
+- [x] `git status`
+- [ ] `git inspect`
+
+> **Explicación:** `git status` muestra archivos nuevos, modificados y listos para commit.
+
+---
+
+### ¿Qué práctica es correcta para colaborar en GitHub?
+
+- [ ] Hacer todos los cambios directo en `main`
+- [x] Trabajar en rama y abrir Pull Request
+- [ ] Subir `.env` para que el equipo tenga claves
+- [ ] Evitar commits pequeños
+
+> **Explicación:** El flujo recomendado es rama por tarea + Pull Request para revisión.
+
+---
+
+### ¿Qué significa `v1.2.3` en SemVer?
+
+- [x] MAJOR.MINOR.PATCH
+- [ ] PATCH.MINOR.MAJOR
+- [ ] FEATURE.FIX.HOTFIX
+- [ ] ITERATION.SPRINT.BUILD
+
+> **Explicación:** SemVer usa `MAJOR.MINOR.PATCH` para versionar cambios.
+
+---
+
+### ¿Qué comando publica un tag en remoto?
+
+- [ ] `git publish tag v1.0.0`
+- [ ] `git tag push v1.0.0`
+- [x] `git push origin v1.0.0`
+- [ ] `git upload-tag v1.0.0`
+
+> **Explicación:** Primero creas el tag local y luego lo publicas con `git push origin <tag>`.
+
+---
+
+### ¿Qué debes incluir en una descripción de Pull Request?
+
+- [ ] Solo "arreglos varios"
+- [ ] El código completo pegado
+- [x] Qué cambia, cómo probar y riesgos
+- [ ] Solo emojis
+
+> **Explicación:** Un buen PR facilita revisión técnica y reduce errores en merge.
+
+---
+
+### Si recibes `non-fast-forward`, ¿qué suele faltar?
+
+- [ ] Borrar el repositorio y empezar de cero
+- [x] Actualizar tu rama local antes de push
+- [ ] Crear otro usuario de GitHub
+- [ ] Reinstalar Git
+
+> **Explicación:** Debes sincronizar cambios remotos (`pull --rebase` o `pull`) antes de push.
+
+:::
+
+---
+**Volver a Quizzes:** [README](README.qmd) | **Relacionado:** [Anexo Git y GitHub](../content/appendix/05-git-github-con-python.qmd)

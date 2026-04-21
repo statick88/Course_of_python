@@ -1,0 +1,218 @@
+---
+title: "Apéndice D: MiniCurso de Git y GitHub con Python"
+subtitle: "Control de versiones profesional para tus proyectos Python"
+---
+
+## Objetivo del mini-curso
+
+Este anexo te enseña un flujo real de **Git + GitHub** aplicado a proyectos Python: versionar, colaborar y publicar de forma segura.
+
+Al finalizar podrás:
+
+1. Inicializar y estructurar un repositorio Python.
+2. Trabajar con ramas y Pull Requests.
+3. Publicar releases y automatizar validaciones básicas.
+
+---
+
+## Módulo 1: Fundamentos de Git para Python
+
+### ¿Qué problema resuelve Git?
+
+Git te permite:
+
+- Guardar historial de cambios.
+- Volver a versiones anteriores.
+- Trabajar en paralelo sin sobrescribir código.
+
+### Configuración inicial (una sola vez)
+
+```bash
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu-correo@ejemplo.com"
+git config --global init.defaultBranch main
+```
+
+### Crear repositorio para proyecto Python
+
+```bash
+mkdir mi_proyecto_python
+cd mi_proyecto_python
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+git init
+```
+
+### `.gitignore` mínimo recomendado
+
+```gitignore
+__pycache__/
+*.pyc
+venv/
+.env
+.DS_Store
+```
+
+> Nunca subas claves API, contraseñas o archivos `.env` a GitHub.
+
+---
+
+## Módulo 2: Commits útiles y trazables
+
+### Flujo básico diario
+
+```bash
+git status
+git add .
+git commit -m "feat: agrega validador de entrada para edad"
+```
+
+### Buen mensaje de commit
+
+Usa verbo + cambio concreto:
+
+- `feat: agrega lectura de archivo CSV`
+- `fix: corrige división por cero en calculadora`
+- `docs: actualiza guía de instalación`
+
+### Ejercicio rápido
+
+1. Crea `main.py` con `print("Hola Git")`.
+2. Haz tu primer commit.
+3. Cambia el texto a `print("Hola GitHub")`.
+4. Haz segundo commit y revisa historial:
+
+```bash
+git log --oneline
+```
+
+---
+
+## Módulo 3: Ramas para trabajar sin romper `main`
+
+### Crear y usar una rama
+
+```bash
+git checkout -b feature/menu-cli
+```
+
+Realiza cambios y confirma:
+
+```bash
+git add .
+git commit -m "feat: agrega menu CLI para operaciones"
+```
+
+Regresa a `main`:
+
+```bash
+git checkout main
+```
+
+Combina cambios cuando estén listos:
+
+```bash
+git merge feature/menu-cli
+```
+
+---
+
+## Módulo 4: GitHub y Pull Requests
+
+### Subir proyecto a GitHub
+
+```bash
+git remote add origin https://github.com/usuario/mi_proyecto_python.git
+git push -u origin main
+```
+
+### Flujo recomendado de colaboración
+
+1. Crea rama por tarea (`feature/*`, `fix/*`).
+2. Sube rama a GitHub (`git push -u origin <rama>`).
+3. Abre Pull Request.
+4. Revisa comentarios.
+5. Haz merge cuando CI y revisión estén correctas.
+
+### Plantilla mínima de Pull Request
+
+- **Qué cambia**: resumen breve del objetivo.
+- **Cómo probar**: pasos concretos.
+- **Riesgos**: posibles impactos.
+
+---
+
+## Módulo 5: Versionado y release de tu app Python
+
+### Etiquetar versiones
+
+```bash
+git tag -a v1.0.0 -m "release: version estable inicial"
+git push origin v1.0.0
+```
+
+### Convención semántica (SemVer)
+
+- `MAJOR`: cambios incompatibles.
+- `MINOR`: nuevas funcionalidades compatibles.
+- `PATCH`: correcciones sin romper API.
+
+Ejemplo: `v2.3.1`.
+
+---
+
+## Laboratorio guiado: de cero a PR
+
+### Escenario
+
+Vas a mejorar una calculadora Python colaborando como en un equipo real.
+
+### Paso a paso
+
+1. Crea rama `feature/validaciones`.
+2. Agrega función:
+
+```python
+def dividir(a: float, b: float) -> float:
+    if b == 0:
+        raise ValueError("No se puede dividir para cero")
+    return a / b
+```
+
+3. Crea commit: `feat: agrega validacion para division segura`.
+4. Sube rama a GitHub.
+5. Abre Pull Request con descripción clara.
+6. Haz merge y crea tag `v1.1.0`.
+
+---
+
+## Errores comunes y solución rápida
+
+| Problema | Causa frecuente | Solución |
+|---|---|---|
+| `fatal: not a git repository` | Estás fuera del proyecto | Entra a la carpeta correcta o ejecuta `git init` |
+| `rejected (non-fast-forward)` | Tu rama local está desactualizada | `git pull --rebase origin main` y luego `git push` |
+| Conflicto de merge | Dos cambios sobre mismas líneas | Resolver manualmente, `git add`, `git commit` |
+
+---
+
+## Checklist final del mini-curso
+
+- [ ] Creaste repositorio Python con `.gitignore`.
+- [ ] Realizaste commits claros.
+- [ ] Trabajaste en rama de feature.
+- [ ] Publicaste cambios en GitHub.
+- [ ] Abriste al menos un Pull Request.
+- [ ] Creaste un tag de release.
+
+---
+
+## Recursos recomendados
+
+- [Git: documentación oficial](https://git-scm.com/doc)
+- [GitHub Docs](https://docs.github.com/es)
+- [Conventional Commits](https://www.conventionalcommits.org/es/v1.0.0/)
+
+---
+
+[← Apéndice C: Python 3.14 y ecosistema](04-python-314-ecosistema.qmd)
