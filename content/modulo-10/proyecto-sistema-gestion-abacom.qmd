@@ -1,0 +1,294 @@
+---
+title: "Proyecto: Sistema de Gestión Educativa ABACOM"
+jupyter: python3
+---
+
+# Sistema de Gestión Educativa ABACOM
+
+En este proyecto desarrollarás un sistema completo de gestión para el Instituto ABACOM utilizando Python y SQLite3, aplicando la metodología **Spec-Driven Development (SDD)**.
+
+## Objetivos del Proyecto
+
+- Aplicar todos los conceptos aprendidos en el curso
+- Implementar un sistema real con base de datos
+- Practicar programación funcional que evoluciona a POO
+- Crear una aplicación usable desde consola
+
+## Descripción del Sistema
+
+El sistema de gestión educativa ABACOM permite:
+
+- **Gestión de Estudiantes**: Registro con validación de cédula Ecuador
+- **Gestión de Cursos**: Creación de cursos con período académico 2026
+- **Inscripciones**: Registro de estudiantes en cursos con requisitos
+- **Certificaciones**: Generación de certificados con aval del Ministerio del Trabajo
+- **Notificaciones**: Recordatorios 30 minutos antes de cada clase
+
+## Estructura del Proyecto
+
+```
+abacom-gestion/
+├── config.py              # Configuración global
+├── specs/
+│   └── test_reglas_negocio.py   # 20 pruebas (pytest)
+├── database/
+│   ├── schema.sql        # DDL de SQLite3
+│   └── abacom.db        # Base de datos
+├── models/
+│   └── database.py     # Conexión y consultas
+├── services/
+│   └── servicios.py     # Lógica de negocio
+└── console/
+    └── app.py           # Interfaz de consola
+```
+
+## Fase 1: Esquema de Base de Datos
+
+El sistema utiliza SQLite3 con las siguientes entidades:
+
+### Tablas Principales
+
+- **estudiantes**: Información de estudiantes (cédula, nombres, contacto)
+- **cursos**: Catálogo de cursos (código, nombre, fechas, horario)
+- **docentes**: Información de facilitadores
+- **inscripciones**: Relación estudiante-curso con requisitos
+- **certificaciones**: Certificados emitidos con aval oficial
+- **notificaciones**: Registro de alertas enviadas
+- **aulas_virtuales**: Links de Meet y grupos de WhatsApp
+
+### Diagrama de Entidades
+
+```
+┌─────────────┐       ┌───────────────┐       ┌─────────────┐
+│  ESTUDIANTE │──────<│ INSCRIPCIÓN  │>──────│   CURSO    │
+└─────────────┘       └───────────────┘       └─────────────┘
+                           │                      │
+                           │                      │
+                    ┌──────┴──────┐        ┌──────┴──────┐
+                    │CERTIFICACIÓN│        │  DOCENTE   │
+                    └─────────────┘        └─────────────┘
+```
+
+## Fase 2: Reglas de Negocio (Specs)
+
+A continuación, las especificaciones que debes implementar:
+
+### 2.1 Validación de Cédula Ecuador
+
+La cédula debe tener exactamente 10 dígitos y el código de provincia debe estar entre 01 y 24.
+
+```{python}
+#| echo: true
+def validar_cedula_ecuador(cedula: str) -> bool:
+    """Valida que la cédula tenga formato válido para Ecuador."""
+    if not cedula or not isinstance(cedula, str):
+        return False
+    
+    cedula_limpia = cedula.replace(" ", "").replace("-", "")
+    
+    if len(cedula_limpia) != 10 or not cedula_limpia.isdigit():
+        return False
+    
+    provincia = int(cedula_limpia[:2])
+    return 1 <= provincia <= 24
+
+# Pruebas
+print(f"1712345678 -> {validar_cedula_ecuador('1712345678')}")  # True
+print(f"0012345678 -> {validar_cedula_ecuador('0012345678')}")  # False
+print(f"17123456 -> {validar_cedula_ecuador('17123456')}")    # False
+```
+
+### 2.2 Sistema de Notificaciones
+
+Política: Las notificaciones se envían exactamente 30 minutos antes de la hora de inicio de la clase.
+
+```{python}
+#| echo: true
+from datetime import datetime, timedelta
+
+def calcular_hora_notificacion(hora_inicio: str) -> str:
+    """Calcula la hora de notificación (30 min antes)."""
+    hora_obj = datetime.strptime(hora_inicio, "%H:%M")
+    hora_notificacion = hora_obj - timedelta(minutes=30)
+    return hora_notificacion.strftime("%H:%M")
+
+# Ejemplos
+print(f"Clase 19:00 -> Notificación a las {calcular_hora_notificacion('19:00')}")
+print(f"Clase 22:00 -> Notificación a las {calcular_hora_notificacion('22:00')}")
+```
+
+### 2.3 Certificados con Aval
+
+Los certificados de aprobación incluyen el aval del Ministerio del Trabajo.
+
+```{python}
+#| echo: true
+def generar_certificado(nombre_estudiante: str, calificacion: float) -> dict:
+    """Genera certificado con aval del Ministerio."""
+    if calificacion >= 70:
+        return {
+            "estado": "APROBACIÓN",
+            "aval": "Ministerio del Trabajo - Ecuador"
+        }
+    else:
+        return {
+            "estado": "REPROBADO",
+            "aval": None
+        }
+
+# Pruebas
+print(generar_certificado("Juan Pérez", 85.0))
+print(generar_certificado("María García", 60.0))
+```
+
+## Fase 3: Implementación
+
+### 3.1 Conexión a Base de Datos
+
+```{python}
+#| echo: true
+import sqlite3
+from pathlib import Path
+
+# Crear directorio de base de datos
+Path("abacom-gestion/database").mkdir(parents=True, exist_ok=True)
+
+# Conectar a SQLite
+conn = sqlite3.connect("abacom-gestion/database/abacom.db")
+cursor = conn.cursor()
+
+# Crear tabla estudiantes
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS estudiantes (
+        id_estudiante INTEGER PRIMARY KEY AUTOINCREMENT,
+        identificacion TEXT NOT NULL UNIQUE,
+        nombres_completos TEXT NOT NULL,
+        telefono_fijo TEXT,
+        celular TEXT NOT NULL,
+        correo_electronico TEXT NOT NULL UNIQUE,
+        estado TEXT DEFAULT 'activo'
+    )
+""")
+
+conn.commit()
+print("✅ Tabla estudiantes creada")
+
+conn.close()
+```
+
+### 3.2 Registro de Estudiantes
+
+```{python}
+#| echo: true
+import sqlite3
+
+def registrar_estudiante(identificacion, nombres, celular, correo, db_path="abacom-gestion/database/abacom.db"):
+    """Registra un nuevo estudiante."""
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute("""
+            INSERT INTO estudiantes (identificacion, nombres_completos, celular, correo_electronico)
+            VALUES (?, ?, ?, ?)
+        """, (identificacion, nombres, celular, correo))
+        
+        conn.commit()
+        print(f"✅ Estudiante registrado: {nombres}")
+        return cursor.lastrowid
+    except sqlite3.IntegrityError as e:
+        print(f"❌ Error: Estudiante ya existe o datos duplicados")
+        return None
+    finally:
+        conn.close()
+
+# Ejemplo de uso
+registrar_estudiante("1712345678", "Juan Pérez", "0991234567", "juan@email.com")
+```
+
+### 3.3 Consulta de Estudiantes
+
+```{python}
+#| echo: true
+def listar_estudiantes(db_path="abacom-gestion/database/abacom.db"):
+    """Lista todos los estudiantes activos."""
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT * FROM estudiantes WHERE estado = 'activo'")
+    estudiantes = cursor.fetchall()
+    
+    print(f"{'ID':<4} | {'Nombres':<25} | {'Cédula':<12} | {'Celular':<12}")
+    print("-" * 60)
+    
+    for est in estudiantes:
+        print(f"{est[0]:<4} | {est[2][:25]:<25} | {est[1]:<12} | {est[4]:<12}")
+    
+    conn.close()
+
+listar_estudiantes()
+```
+
+## Ejercicios Propuestos
+
+### Ejercicio 1: Completar el Registro de Cursos
+
+Implementa la función `registrar_curso()` que cree cursos con:
+- Código único
+- Fechas de inicio y fin
+- Horario (inicio - fin)
+- Días de la semana
+- Inversión (precio)
+
+### Ejercicio 2: Sistema de Inscripciones
+
+Crea el sistema de inscripción que valide:
+- Cédula del estudiante (válida)
+- Curso existe y tiene cupos
+- Requisitos: PDF de cédula + comprobante de pago
+
+### Ejercicio 3: Generador de Certificados
+
+Implementa la generación de certificados que incluya:
+- Número de certificado único
+- Aval del Ministerio del Trabajo
+- Estado: APROBACIÓN o REPROBADO
+
+### Ejercicio 4: Notificaciones Automáticas
+
+Crea un sistema de notificaciones que:
+- Calcule la hora de notificación (30 min antes)
+- Genere mensajes para cada curso
+- Envíe recordatorios a los estudiantes inscritos
+
+## Soluciones
+
+Las soluciones a estos ejercicios están disponibles en el directorio `abacom-gestion/`.
+
+## Recursos Adicionales
+
+- [SQLite Documentation](https://sqlite.org/docs.html)
+- [Python sqlite3 Module](https://docs.python.org/3/library/sqlite3.html)
+- [pytest Documentation](https://docs.pytest.org/)
+
+---
+
+**Nota**: Este proyecto integra todos los conceptos del curso: tipos de datos, funciones, listas, diccionarios, archivos, módulos, pruebas y buena prácticas de código.
+
+::: {.callout-note}
+## Continuar con el Proyecto
+
+Para ejecutar el sistema completo:
+
+```bash
+cd abacom-gestion/console
+python3 app.py
+```
+
+Esto abrirá el menú de consola donde podrás:
+1. Gestionar estudiantes
+2. Gestionar cursos
+3. Gestionar inscripciones
+4. Generar certificados
+5. Ver reportes
+:::

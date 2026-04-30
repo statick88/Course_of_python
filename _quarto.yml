@@ -278,6 +278,7 @@ book:
     - part: "Módulo 10: Proyecto Integrador"
       chapters:
         - content/modulo-10/index.qmd
+        - content/modulo-10/proyecto-sistema-gestion-abacom.qmd
         - content/modulo-10/01-planificar-proyecto.qmd
         - content/modulo-10/02-estructura-proyecto.qmd
         - content/modulo-10/03-proyecto-gestor-tareas.qmd
