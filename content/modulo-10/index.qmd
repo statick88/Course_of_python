@@ -36,6 +36,15 @@ ambición:
 | [Proyecto 2](proyecto-02-tienda-productos.qmd) | Tienda de Productos | ⭐⭐⭐ Difícil | Todo lo anterior + diccionarios + búsqueda |
 | [Proyecto 3](proyecto-03-analizador-datos.qmd) | Analizador de Datos CSV | ⭐⭐⭐ Difícil | Todo lo anterior + estadísticas + reportes |
 
+## 🎓 Proyecto Especial: Sistema de Gestión ABACOM
+
+Este es el **proyecto oficial del curso** — una aplicación completa de gestión educativa desarrollada con metodologías profesionales.
+
+| Recurso | Descripción |
+|---------|-------------|
+| [Sistema ABACOM](proyecto-sistema-gestion-abacom.qmd) | Documentación completa del proyecto |
+| [Repositorio](https://github.com/statick88/abacom-gestion) | Código fuente en GitHub |
+
 ## 🗺️ El Camino del Héroe
 
 ::: {.callout-tip}
