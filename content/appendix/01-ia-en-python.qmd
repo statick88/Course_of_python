@@ -5,26 +5,26 @@ subtitle: "Cómo usar herramientas de IA para mejorar tu productividad"
 
 ## Introducción
 
-Este apéndice explora cómo las herramientas de inteligencia artificial pueden辅助
-(ayudarte) en tu viaje de aprendizaje de Python. Inspirado en концепции
-(conceptos) del desarrollo impulsado por IA y la filosofía de Iron Man, te
+Este apéndice explora cómo las herramientas de inteligencia artificial pueden
+ayudarte en tu viaje de aprendizaje de Python. Inspirado en conceptos
+del desarrollo impulsado por IA y la filosofía de Iron Man, te
 mostraremos cómo convertirte en un "programador con armadura" - alguien que usa
-la tecnología para amplify (amplificar) sus habilidades.
+la tecnología para amplificar sus habilidades.
 
-> ⚠️ **Nota sobre el uso de IA en este curso**: Este apéndice te enseña a USAR la IA como ferramenta (herramienta) de productividad, NO para evitar aprender. Las actividades principales del curso están diseñadas para que las completes sin asistencia de IA.
+> ⚠️ **Nota sobre el uso de IA en este curso**: Este apéndice te enseña a USAR la IA como herramienta de productividad, NO para evitar aprender. Las actividades principales del curso están diseñadas para que las completes sin asistencia de IA.
 
 ---
 
 ## ¿Qué es el Desarrollo Impulsado por IA?
 
 El desarrollo impulsado por IA (AI-Driven Development) es un enfoque donde usas
-modelos de lenguaje y agentes de IA como collaborators (colaboradores) en tu
-flujo de trabajo de programación. No se trata de remplacer (reemplazar) tu
-cerebro, sino de augment (aumentar) tus capacidades.
+modelos de lenguaje y agentes de IA como colaboradores en tu
+flujo de trabajo de programación. No se trata de reemplazar tu
+cerebro, sino de aumentar tus capacidades.
 
 ### Analogía: El Jarvis de Iron Man
 
-Imagina a JARVIS (Just A Rather Very Intelligent System) assisting (asistiendo)
+Imagina a JARVIS (Just A Rather Very Intelligent System) asistiendo
 a Tony Stark. JARVIS no escribe el código por él, pero:
 
 - Análisis de código más rápido
@@ -82,7 +82,7 @@ class TestCalculadora(unittest.TestCase):
 
 ### Nivel 3: Arquitecto de IA
 
-Aquí es donde creas sistemas que themselves (ellos mismos) usan IA para tomar
+Aquí es donde creas sistemas que ellos mismos usan IA para tomar
 decisiones.
 
 ---
@@ -203,7 +203,7 @@ progresión:
 - 📚 [Documentación oficial de Python](https://docs.python.org/es/3/)
 - 🎯 [Real Python](https://realpython.com/)
 - 💬 [Comunidad Python Ecuador](https://discord.gg/python-ec)
-- 🤖 [Planet Code](https://planet码.dev)
+- 🤖 [Planet Code](https://planetcode.dev)
 
 ---
 

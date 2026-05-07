@@ -319,7 +319,7 @@ client = MCPClient(
 | **Servidor** | Servicio que procesa requests de IA |
 | **Tools** | Funciones específicas disponibles via MCP |
 
-> 🦾 **Recuerda**: MCP es una herramienta poderosa, pero tu cerebro sigue siendo el mejor procesador. Úsalo para amplify (amplificar) tu aprendizaje, no para reemplazarlo.
+> 🦾 **Recuerda**: MCP es una herramienta poderosa, pero tu cerebro sigue siendo el mejor procesador. Úsalo para amplificar tu aprendizaje, no para reemplazarlo.
 
 ---
 

@@ -345,6 +345,7 @@ book:
         - content/appendix/03-phase-final.qmd
         - content/appendix/04-python-314-ecosistema.qmd
         - content/appendix/05-git-github-con-python.qmd
+        - content/appendix/05-python-dev-vs-security.qmd
 
 bibliography: references.bib
 biblio-style: apalike

