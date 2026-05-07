@@ -1,0 +1,492 @@
+---
+title: "Apéndice F: IA en 2026 — OpenCode, Agentes y SDD"
+subtitle: "La nueva era del desarrollo impulsado por inteligencia artificial"
+---
+
+## Introducción
+
+El panorama de la inteligencia artificial en 2026 ha evolucionado dramáticamente. Ya no se trata solo de modelos de lenguaje aislados, sino de ecosistemas completos de agentes especializados que trabajan en conjunto. Este apéndice te introduce a estos conceptos y herramientas que están redefiniendo cómo escribimos software.
+
+---
+
+## 1. Modelos de Lenguaje y Herramientas de IA en 2026
+
+### 1.1 Principales Modelos (LLMs)
+
+| Modelo | Empresa | Características | Mejor uso |
+|--------|---------|-----------------|-----------|
+| **GPT-4o** | OpenAI | Multimodal, razonamiento avanzado | General, código, análisis |
+| **Claude Opus 4** | Anthropic | Escritura superior, contexto largo | Documentación, código limpio |
+| **Gemini 2.5** | Google | Nativo multimodal, Google ecosystem | Integración con GCP |
+| **Minimax** | Minimax | Código abierto chino, eficiente | alternativa económica |
+| **Kimi** | Moonshot AI | Contexto largo (200K tokens) | Documentos extensos |
+| **GLM-4** | Zhipu/ChatGLM | Código abierto chino | Investigación |
+| **DeepSeek** | DeepSeek | Código especializado | Ingeniería de software |
+| **Qwen 2.5** | Alibaba | Multilingüe | Proyectos internacionales |
+
+### 1.2 Modelos Locales (Offline)
+
+| Herramienta | Tipo | Requisitos | Uso |
+|-------------|------|------------|-----|
+| **Ollama** | Servidor local | 4GB+ RAM | Ejecutar LLMs localmente |
+| **LM Studio** | GUI + servidor | GPU dedicada | Experiments locales |
+| **Llama.cpp** | Biblioteca | CPU optimized | Integración en apps |
+| **GPT4All** | Suite completa | Mínimo | Uso offline básico |
+
+### 1.3 IDEs y Asistentes de Código con IA
+
+| Herramienta | Tipo | Características |
+|-------------|------|----------------|
+| **Cursor** | IDE basado en VS Code | Completado inteligente, refactoring |
+| **GitHub Copilot** | Plugin IDE | Suggestions contextuales |
+| **GitHub Copilot Voice** | Voz | Programación por voz |
+| **Codex** | CLI + API | Automatización de tareas |
+| **Kiro Code** | IDE IA nativo | Proyecto completo desde prompt |
+| **Kilo Code** | Kiro Code Lite | Versión gratuita |
+| **AMP (AI Mode)** | JetBrains | Integrado en IDEs JetBrains |
+| **Pi Code** | IDE específico Python | Enfoque Python nativo |
+| **Claude Code** | CLI de Anthropic | Desarrollo Autonomous |
+| **OpenCode** | IDE del proyecto | Agentes especializados |
+
+---
+
+## 2. Arquitectura OpenCode: Perfiles → Agentes → Subagentes → MCP → Skills
+
+### 2.1 Jerarquía de Componentes
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        OPENCODE                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌─────────────┐     ┌─────────────┐     ┌─────────────┐       │
+│  │  PERFIL 1   │     │  PERFIL 2   │     │  PERFIL N   │       │
+│  │ (Developer) │     │ (Researcher)│     │ (Security)  │       │
+│  └──────┬──────┘     └──────┬──────┘     └──────┬──────┘       │
+│         │                   │                   │              │
+│  ┌──────▼──────┐     ┌──────▼──────┐     ┌──────▼──────┐       │
+│  │   AGENTE    │     │   AGENTE    │     │   AGENTE    │       │
+│  │ (sdd-apply) │     │(scientific) │     │(pentest)    │       │
+│  └──────┬──────┘     └──────┬──────┘     └──────┬──────┘       │
+│         │                   │                   │              │
+│  ┌──────▼──────┐     ┌──────▼──────┐     ┌──────▼──────┐       │
+│  │ SUBAGENTE 1 │     │ SUBAGENTE 1 │     │ SUBAGENTE 1 │       │
+│  │ (code-review)│     │ (search)   │     │ (scanner)   │       │
+│  └──────┬──────┘     └──────┬──────┘     └──────┬──────┘       │
+│         │                   │                   │              │
+│  ┌──────▼──────┐     ┌──────▼──────┐     ┌──────▼──────┐       │
+│  │    MCP     │     │    MCP     │     │    MCP     │       │
+│  │ (context7) │     │ (notebooklm)│     │(cyber-intel)│       │
+│  └──────┬──────┘     └──────┬──────┘     └──────┬──────┘       │
+│         │                   │                   │              │
+│  ┌──────▼──────┐     ┌──────▼──────┐     ┌──────▼──────┐       │
+│  │   SKILLS   │     │   SKILLS   │     │   SKILLS   │       │
+│  │ (react-19) │     │ (research) │     │ (pentest)  │       │
+│  └─────────────┘     └─────────────┘     └─────────────┘       │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 2.2 Definición de Cada Componente
+
+#### Perfil
+Un **Perfil** es una configuración de alto nivel que define el contexto, objetivos y restricciones de trabajo. Cada perfil tiene su propia configuración de AGENTS.md.
+
+**Ejemplos de Perfiles:**
+- **statick**: Senior Architect & Technical Mentor - Architecture, SDD, patterns
+- **developer**: FullStack Developer - React, Flutter, Python, Mobile
+- **facilitator**: Course creation, teaching, mentoring
+- **researcher**: Scientific papers, IEEE/ACM, academic writing
+- **hacker**: Security research, Pentesting, CTF, Bug Bounty
+- **student**: Learning, Master UCM, Cryptography
+
+#### Agente
+Un **Agente** es un trabajador especializado que ejecuta tareas específicas. Los agentes heredan configuración del perfil y tienen capacidades definidas.
+
+**Agentes principales del proyecto:**
+- `sdd-apply`: Implementa código desde specs
+- `sdd-design`: Crea documentos técnicos
+- `sdd-spec`: Escribe especificaciones
+- `sdd-verify`: Valida implementación
+- `cientifico`: Investigación científica
+- `pentest-methodology`: Pentesting sistemático
+
+#### Subagente
+Los **Subagentes** son agentes especializados que trabajan bajo la dirección de un agente padre. Cada subagente tiene un dominio específico.
+
+**Ejemplos de subagentes:**
+- `code-review`: Revisión de código
+- `security-scan`: Escaneo de vulnerabilidades
+- `research-workflow`: Workflow de investigación
+- `sdd-tasks`: Descomposición de tareas
+- `explore`: Exploración del codebase
+
+#### MCP (Model Context Protocol)
+MCP es el protocolo que permite a los agentes conectar con herramientas externas, bases de datos y servicios.
+
+**MCPs disponibles en el proyecto:**
+- `context7`: Documentación de librerías
+- `notebooklm`: Investigación con NotebookLM
+- `playwright`: Automatización de browser
+- `lexis`: Análisis de código
+- `engram`: Memoria persistente
+- `paypal`: Operaciones PayPal
+
+#### Skills
+Los **Skills** son instrucciones especializadas que definen workflows para tareas específicas. Se cargan dinámicamente según la necesidad.
+
+---
+
+## 3. Gentle-AI: Metodología de Desarrollo con IA
+
+### 3.1 ¿Qué es Gentle-AI?
+
+Gentle-AI es una metodología que combina desarrollo guiado por especificaciones (SDD) con asistencia de inteligencia artificial, manteniendo al humano como director del proceso.
+
+### 3.2 Principios Fundamentales
+
+1. **El humano es el director**: La IA ejecuta, el humano valida
+2. **Specs primero**: Siempre desarrollar la especificación antes del código
+3. **Gates de calidad**: Cada fase pasa por QA, Security y Design gates
+4. **Commits como unidades de trabajo**: Commits atómicos con tests incluidos
+
+### 3.3 Flujo de Trabajo Gentle-AI
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    GENTLE-AI WORKFLOW                           │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  HU (Historia de Usuario) ──► [Refine HU] ──► [Close Decisions]│
+│         │                      │                   │            │
+│         ▼                      ▼                   ▼            │
+│  High Level Technical Contract ─► [HITL APPROVAL]              │
+│                                      │                         │
+│                                      ▼                         │
+│  Tasks ──► sdd-apply ──► [QA + SECURITY + DESIGN] ──► sdd-verify│
+│              │                         │                        │
+│              ▼                         ▼                        │
+│         Emulator Test ──► [Final Score] ─► Archive             │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 4. Engram: Memoria Persistente del Proyecto
+
+### 4.1 Sistema de Memoria
+
+Engram es un sistema de memoria persistente que permite al agente recordar decisiones, patrones y aprendizajes a través de las sesiones.
+
+### 4.2 Funciones Principales
+
+| Función | Uso |
+|---------|-----|
+| `mem_save` | Guardar observaciones importantes |
+| `mem_search` | Buscar en memoria pasada |
+| `mem_context` | Obtener contexto de sesiones recientes |
+| `mem_session_summary` | Resumen de sesión al cerrar |
+
+### 4.3 Cuándo Usar Engram
+
+- Después de completar un bug fix
+- Después de decisiones de arquitectura
+- Después de descubrimientos importantes
+- Al final de cada sesión de trabajo
+
+### 4.4 Ejemplo de Uso
+
+```python
+# Después de una decisión de arquitectura
+mem_save(
+    title="JWT auth middleware",
+    type="decision",
+    content="**What**: Replaced express-session with jsonwebtoken for auth\n"
+            "**Why**: Session storage doesn't scale across multiple instances\n"
+            "**Where**: src/middleware/auth.ts, src/routes/login.ts\n"
+            "**Learned**: Must set httpOnly and secure flags on the cookie"
+)
+```
+
+---
+
+## 5. Spec-Driven Development (SDD)
+
+### 5.1 Metodología SDD
+
+SDD es una metodología que transforma al programador de "picador de código" en arquitecto y director del proceso.
+
+### 5.2 Fases SDD
+
+| Fase | Agente | Output | Gate |
+|------|--------|--------|------|
+| **HU** | explore | user story | - |
+| **Refine** | sdd-spec | spec detallada | - |
+| **Close Decisions** | pm-hu | Decision list | - |
+| **Design** | sdd-design | contrato técnico | HITL |
+| **Apply** | developer | código | - |
+| **Code Review** | guardian-angel | review | - |
+| **QA Gate** | qa-engineer | tests, linting | QA |
+| **Security Gate** | security-reviewer | vulnerabilidades | SECURITY |
+| **Design Gate** | design-reviewer | UI/UX, Apple HIG | DESIGN |
+| **Emulator Test** | developer | iOS + Android test | FINAL |
+| **Score** | system | developer score (1-10) | - |
+
+### 5.3 Gates de Calidad
+
+Cada User Story (HU) debe pasar TODOS los gates antes de archivarse:
+- ✅ QA Gate: Unit tests, linting, typecheck
+- ✅ Security Gate: No secrets, no SQL injection, auth correcta
+- ✅ Design Gate: Apple HIG compliance, glassmorphism
+- ✅ Emulator Test: iOS + Android funcionando
+
+---
+
+## 6. Configuración de Agentes
+
+### 6.1 Estructura de AGENTS.md
+
+El archivo `AGENTS.md` (o `.agents/` para configuración avanzada) define el comportamiento de los agentes.
+
+```markdown
+# AGENTS.md — Proyecto Python
+
+## Perfiles
+
+### statick
+- **Rol**: Senior Architect & Technical Mentor
+- **Especialidad**: Architecture, SDD, patterns
+- **Skills**: smart-dispatcher, course-creation-triad, learning-integrity-anti-ai
+
+### developer
+- **Rol**: FullStack Developer
+- **Especialidad**: React Native, Flutter, Next.js, Python
+- **Skills**: react-19, flutter, python, sdd-apply
+
+## Subagentes Disponibles
+
+| Subagente | Descripción | Especialidad |
+|-----------|-------------|--------------|
+| explore | Exploración del codebase | Búsqueda de patrones |
+| sdd-spec | Spec Writer | Requirements, scenarios |
+| sdd-design | Technical Design | Arquitectura, contracts |
+| sdd-apply | Implementador | Código según specs |
+| sdd-verify | Verificador | Validación línea a línea |
+```
+
+---
+
+## 7. Instalación y Configuración de Skills
+
+### 7.1 ¿Qué son los Skills?
+
+Los Skills son archivos de configuración que contienen instrucciones especializadas para tareas específicas. Se almacenan en `~/.claude/skills/` o `~/.config/opencode/skills/`.
+
+### 7.2 Estructura de un Skill
+
+```
+~/.claude/skills/
+├── python/
+│   ├── SKILL.md          # Instrucciones del skill
+│   ├── scripts/          # Scripts auxiliares
+│   └── templates/       # Plantillas
+├── react-native/
+│   ├── SKILL.md
+│   └── ...
+└── pentest-methodology/
+    ├── SKILL.md
+    └── workflows/
+```
+
+### 7.3 Instalación de Skills
+
+```bash
+# Los skills se cargan automáticamente cuando se necesitan
+# Solo necesitas invocarlos cuando la tarea lo requiera
+
+# Ejemplo: Cuando escribes "escribir tests", se carga pytest skill
+# Ejemplo: Cuando mencionas "pentesting", se carga pentest-methodology
+```
+
+### 7.4 Skills por Rol
+
+#### Skills de Diseño
+- `ui-ux-pro-max`: UI/UX para web y mobile
+- `apple-mobile-design`: Apple Design System
+- `awesome-design-md`: Patrones de diseño de brands conocidos
+
+#### Skills de Seguridad
+- `pentest-core`: Pentesting base
+- `pentest-web`: Web application security
+- `pentest-mobile`: Mobile security
+- `pentest-ad`: Active Directory
+- `pentest-cloud`: Cloud security
+
+#### Skills de QA/Testing
+- `pytest`: Testing en Python
+- `playwright`: E2E testing
+- `react-native-qa-workflow`: QA para RN
+- `tdd`: Test-driven development
+
+#### Skills de Desarrollo
+- `react-19`: React 19 patterns
+- `flutter`: Flutter patterns
+- `python`: Python best practices
+- `typescript`: TypeScript strict
+
+#### Skills de Investigación
+- `busqueda_cientifica`: Búsqueda en bases de datos científicas
+- `cientifico`: Orquestador de investigación
+- `redaccion_cientifica`: Redacción académica
+
+---
+
+## 8. Agentes Personalizados
+
+### 8.1 Estructura de Agentes
+
+Los agentes personalizados se definen en el directorio `agentes/`.
+
+```
+agentes/
+├── agente_personalizado_1/
+│   ├── SKILL.md
+│   └── config.yaml
+└── agente_personalizado_2/
+    ├── SKILL.md
+    └── config.yaml
+```
+
+### 8.2 Ejemplo: Agente Educativo (agente_profesor)
+
+```yaml
+# agentes/agente_profesor/config.yaml
+name: agente_profesor
+description: Agente especializado en enseñanza de programación
+profile: facilitator
+capabilities:
+  - teaching
+  - course-creation
+  - mentoring
+  - anti-ai-integrity
+skills:
+  - abacom-cursos
+  - course-creation-triad
+  - learning-integrity-anti-ai
+  - gentle-teaching
+constraints:
+  - student_writes_code  # El estudiante debe escribir, no copiar
+  - manual_commands      # Comandos tecleados, no copiados
+  - anti-plagiarism      # Verificar originalidad
+```
+
+### 8.3 Ejemplo: Agente de Seguridad (agente_security)
+
+```yaml
+# agentes/agente_security/config.yaml
+name: agente_security
+description: Agente especializado en ciberseguridad
+profile: hacker
+capabilities:
+  - vulnerability-research
+  - pentesting
+  - code-audit
+  - secure-coding
+skills:
+  - pentest-methodology
+  - pentest-web
+  - pentest-core
+  - software-security
+  - dependency-scan
+  - secrets-scan
+tools:
+  - burp
+  - nmap
+  - sqlmap
+  - metasploit
+constraints:
+  - authorized_only  # Solo en entornos autorizados
+  - scope_bounded   # Dentro del alcance acordado
+```
+
+---
+
+## 9. MCPs Disponibles en el Proyecto
+
+### 9.1 MCPs de Desarrollo
+
+| MCP | Descripción | Uso |
+|-----|-------------|-----|
+| `context7` | Documentación de librerías | Resolver dudas de APIs |
+| `lexis` | Análisis de código | Encontrar referencias, entender arquitectura |
+| `playwright` | Automatización de browser | Testing E2E, web scraping |
+
+### 9.2 MCPs de Investigación
+
+| MCP | Descripción | Uso |
+|-----|-------------|-----|
+| `notebooklm` | Investigación con IA | Papers, resúmenes |
+| `busqueda_cientifica` | Búsqueda académica | IEEE, ACM, arXiv |
+| `scientific-research` | Papers Q1/Q2 | Revistas de alto impacto |
+
+### 9.3 MCPs de Memoria
+
+| MCP | Descripción | Uso |
+|-----|-------------|-----|
+| `engram` | Memoria persistente | Recordar decisiones entre sesiones |
+
+---
+
+## 10. Resumen: Ecosistema Completo
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    ECOSISTEMA IA 2026                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌─────────────────┐    ┌─────────────────┐                    │
+│  │  MODELOS LLM    │    │  IDEs CON IA   │                    │
+│  │  - GPT-4o      │    │  - Cursor       │                    │
+│  │  - Claude 4    │    │  - OpenCode     │                    │
+│  │  - Gemini 2    │    │  - Copilot      │                    │
+│  │  - DeepSeek    │    │  - Kiro Code    │                    │
+│  └─────────────────┘    └─────────────────┘                    │
+│           │                      │                             │
+│           └──────────┬───────────┘                             │
+│                      ▼                                          │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │              OPENCODE: Perfiles → Agentes → Subagentes  │   │
+│  │                      ↓                                   │   │
+│  │                 MCPs (Context Protocol)                 │   │
+│  │                      ↓                                   │   │
+│  │              Skills (Instrucciones Especializadas)       │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│                      │                                          │
+│                      ▼                                          │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │              METODOLOGÍA: Gentle-AI + SDD                │   │
+│  │   • Human as Director    • Specs First                  │   │
+│  │   • Quality Gates        • Engram Memory                │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Recursos
+
+- 📚 [Documentación OpenCode](https://opencode.ai)
+- 🤖 [Anthropic Claude](https://anthropic.com)
+- 🐙 [GitHub Copilot](https://github.com/features/copilot)
+- 📖 [Ollama](https://ollama.com)
+- 🔬 [LM Studio](https://lmstudio.ai)
+
+---
+
+**Volver al índice:** [Inicio](../index.qmd) | **Anterior:** [Apéndice E](05-python-dev-vs-security.qmd)
+
+---
+
+*Este apéndice cubre el ecosistema de IA en 2026 y cómo integrar agentes especializados en tu flujo de desarrollo.*

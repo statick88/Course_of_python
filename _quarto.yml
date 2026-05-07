@@ -346,6 +346,7 @@ book:
         - content/appendix/04-python-314-ecosistema.qmd
         - content/appendix/05-git-github-con-python.qmd
         - content/appendix/05-python-dev-vs-security.qmd
+        - content/appendix/06-ia-2026-opencode-agentes.qmd
 
 bibliography: references.bib
 biblio-style: apalike
