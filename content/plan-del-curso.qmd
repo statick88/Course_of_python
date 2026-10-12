@@ -1,0 +1,156 @@
+---
+title: "Plan del curso: Python orientado a proyecto"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+# Decisión curricular
+
+Curso **intermedio** para personas que ya usan Python básico, Git y terminal. En 15
+jornadas de 180 minutos (tres semanas, 3 h/día) cada estudiante construye
+**Inventario Local**: dominio puro, SQLite y GUI Tkinter. El núcleo evaluado desarrolla
+competencia verificable; la ruta avanzada es complementaria, con tiempo propio, y no
+promete dominio productivo de todos sus temas.
+
+::: {.callout-important}
+## Alcance honesto
+
+Los materiales bajo `content/sesiones/` y `content/ruta-complementaria/` están
+**programados**, no entregados: T1 documenta cobertura y calendario; T2--T3 producirán
+las guías. Esta distinción también aplica a las herramientas que aún requieren comprobar
+compatibilidad con Python 3.15.0.
+:::
+
+## Entrada y remediación
+
+Se requiere escribir funciones, condicionales, bucles, listas y diccionarios; usar
+`git status`, `add`, `commit`, ramas locales y CLI básica. En D1, el diagnóstico individual
+(25 min) pide crear un repositorio, ejecutar un script, convertir un dato, corregir una
+regla y escribir una prueba básica con `unittest`.
+
+Quien resuelva menos de 3 de 5 evidencias con explicación propia sigue una ruta de
+**remediación** con [variables y tipos](modulo-01/04-variables.qmd),
+[control de flujo](modulo-03/01-if-else.qmd), [funciones](modulo-04/01-definir-funciones.qmd),
+[colecciones](modulo-05/01-crear-listas.qmd), [archivos](modulo-07/01-abrir-cerrar-archivos.qmd)
+y [entornos virtuales](modulo-08/06-entornos-virtuales.qmd), tutoría y reentrega antes de
+D4. Es un criterio pedagógico propuesto, no una decisión institucional de aprobación.
+
+## Objetivos O1--O7 y evidencia verificable
+
+| Objetivo de la propuesta (p. 8) | Evidencia obligatoria | Días |
+|---|---|---:|
+| O1. Escribir especificaciones verificables antes del código | `SPEC-001.md` revisada por pares antes del primer cambio | 1, 5, 13--15 |
+| O2. Distinguir cobertura de línea de confianza real | Propuesta-L03: bug visible con 100 % de cobertura | 6--8 |
+| O3. Detectar errores en código generado por IA | Seis defectos Propuesta-L01--L06, con herramienta y conclusión | 2, 6--10 |
+| O4. Estructurar por capas y probar sin dependencias | dominio aislado e `import-linter` verde | 3--5, 14 |
+| O5. Usar versiones como evidencia auditable | historial Git por unidad y recibos de comandos/resultados | 1--15 |
+| O6. Dirigir ciclo SDD completo con agente | spec → plan/tareas → código → verificación en el proyecto | 13--15 |
+| O7. Evaluar críticamente una salida de agente | revisión crítica independiente: acepta/rechaza una propuesta y justifica un hallazgo confirmado | 13--15 |
+
+## Carga y estructura de cada clase
+
+| Componente | Síncrono | Autónomo realista |
+|---|---:|---:|
+| 15 sesiones x 180 min | 45 h | -- |
+| Lecturas, preparación y bitácora | -- | 12--15 h |
+| Seis laboratorios, correcciones y recibos | incluidos | 12--18 h |
+| Proyecto, informe y defensa | incluidos en hitos | 10--14 h |
+| **Total** | **45 h** | **34--47 h adicionales obligatorias** |
+
+Cada clase conserva la secuencia: **conceptos 35 min + ejemplos 25 min + práctica guiada
+45 min + pausa 10 min + laboratorio/taller 55 min + cierre 10 min = 180 min**. La tarea
+no se esconde dentro de las 45 h síncronas.
+
+El proyecto evoluciona como `inventario_local/`: `domain/` (reglas y entidades),
+`application/` (casos de uso), `infrastructure/` (SQLite, JSON) y `ui/` (Tkinter). Parte
+de precedentes existentes: [gestor de inventario](modulo-05/desafio-07-gestor-inventario.qmd),
+[inventario de tienda](modulo-06/desafio-03-inventario-tienda.qmd),
+[agenda](modulo-06/desafio-01-agenda-contactos.qmd) y
+[manejo JSON](modulo-07/05-manejo-json.qmd).
+
+## Calendario de 15 días
+
+| Día | Conceptos y ejemplos | Práctica/laboratorio | Hito, tarea y retroalimentación |
+|---:|---|---|---|
+| 1 | Diagnóstico; spec, criterios, Git auditable y `venv` | repo, recibo y `SPEC-001.md`; appGame-F01 | spec antes de D2; revisión D2 |
+| 2 | reglas con `if`, bucles y excepciones; bordes | **Propuesta-L04** como ejercicio inicial de 30/30, sin segunda calificación | matriz antes de D3; pares D3 |
+| 3 | paquetes, `Protocol`, inyección, capas e `import-linter` | gate de arquitectura: dominio no importa infraestructura/UI | informe verde antes de D4; revisión D4 |
+| 4 | estructuras e invariantes | appGame-F04: frecuencias; catálogo y búsquedas | ADR + tests antes de D5 |
+| 5 | entidades, value objects, composición y dataclasses | dominio puro; O1/O4 | **M1** y revisión D6 |
+| 6 | `pytest`, mutación y cobertura frente a confianza | **Propuesta-L01** y **L03** | mutantes/bug antes de D7 |
+| 7 | Hypothesis, propiedades y contratos de errores | **Propuesta-L02** y **L05** | contraejemplo y contrato antes de D8 |
+| 8 | parametrización y casos límite | **Propuesta-L04 evaluado**; no duplica la actividad diagnóstica D2 | tabla parametrizada; revisión D9 |
+| 9 | SQLite, Repository, SQL ligado y transacciones | persistencia real; preparación **Propuesta-L06** | prueba con comilla antes de D10 |
+| 10 | `pathlib`, JSON, rollback e integración real | **Propuesta-L06** | **M2** SQLite; revisión D11 |
+| 11 | estados, eventos, layout y accesibilidad básica | contrato de pantalla Tkinter | contrato antes de D12 |
+| 12 | Tkinter, validación, mensajes y separación UI/dominio | alta/consulta; checklist | demostración antes de D13 |
+| 13 | PEP 8/257, README, Git y revisión de salida de agente | O7: revisión crítica independiente confirmada | paquete/justificación antes de D14 |
+| 14 | SDD dirigido por agente, integración y postmortem | O6: ciclo completo; repetir `import-linter` | **M3**; revisión final |
+| 15 | reproducción, evaluación y defensa individual | demo y auditoría de evidencia O1--O7 | entrega; rúbrica en 5 días hábiles |
+
+## Laboratorios obligatorios de la propuesta
+
+`pytest`, Hypothesis y mutmut son requisitos del núcleo evaluado. `unittest` sirve para el
+diagnóstico y ejemplos básicos, no sustituye esas herramientas. La instalación y las
+versiones adaptadas para Python 3.15.0 se comprobarán antes de la ejecución; si existe una
+incompatibilidad se documentará una adaptación equivalente sin retirar el requisito de
+mutación, propiedades o evidencia.
+
+| Código | Tema | Evidencia evaluada |
+|---|---|---|
+| Propuesta-L01 | pytest + mutación: suite verde que no detecta | mutantes detectados |
+| Propuesta-L02 | Hypothesis: propiedad y contraejemplo | propiedad, fallo y decisión |
+| Propuesta-L03 | cobertura 100 % que no prueba corrección | assertion que revela el bug |
+| Propuesta-L04 | `pytest.mark.parametrize`, bordes y off-by-one | caso exacto 30/30; ejercicio D2, evaluación D8 |
+| Propuesta-L05 | excepciones como contrato | jerarquía y pruebas |
+| Propuesta-L06 | SQLite real, SQL parametrizado e integración | consulta ligada y prueba contra motor |
+
+El gate de arquitectura obligatorio es `import-linter` verde en D3 y D14. El objetivo
+obligatorio de calidad de mutación es **mutation score >= 80 %**, interpretado junto con
+la calidad de assertions y no como sustituto del juicio técnico.
+
+## Evaluación y aprobación propuesta
+
+| Componente | Peso | Evidencia O1--O7 |
+|---|---:|---|
+| Laboratorios (seis entregas) | 40 % | O2, O3; `pytest`, Hypothesis, mutmut, SQLite y recibos |
+| Proyecto final | 30 % | O1, O4, O5, O6; spec, capas, `import-linter`, historial y reproducción |
+| Lecturas críticas | 15 % | O2 y O7; análisis de una spec/PEP y revisión de agente |
+| Participación y revisiones de código | 15 % | O1, O5, O7; comentarios y defensa de decisión |
+| **Total** | **100 %** | |
+
+La tarea de casa es evidencia dentro de estas categorías; no crea ni duplica ponderación.
+La aprobación propuesta exige los seis laboratorios, proyecto y defensa individual, al
+menos 60/100 y 50 % mínimo tanto en laboratorios como en proyecto. Incumplimientos críticos
+siguen una ruta de **remediación** con alcance acordado, tutoría, reentrega y segunda
+defensa; la decisión formal corresponde a la institución.
+
+## Ruta complementaria avanzada
+
+La ampliación se publica separada de las 45 h síncronas y de las 34--47 h obligatorias:
+funcional/generadores (3--4 h), POO/logging avanzado (3--4 h), ORM/APIs (5--6 h),
+microservicios/DevOps/eventos/SRE (8--10 h), ML/datos/seguridad/capstone (9--12 h).
+Son estimaciones introductorias opcionales, no promesas de maestría productiva. Sus
+destinos `content/ruta-complementaria/` están programados y aún no existen.
+
+## Estándares, compatibilidad y trazabilidad
+
+- [Tutorial Python 3.15](https://docs.python.org/3.15/tutorial/) y
+  [Python 3.15.0](https://www.python.org/downloads/release/python-3150/), publicada el
+  9 de octubre de 2026. La versión base prevista es Python 3.15.0; no se afirma que esté
+  instalado ni comprobado. La observación del entorno padre fue Python 3.9.6.
+- [PEP 8](https://peps.python.org/pep-0008/), [PEP 257](https://peps.python.org/pep-0257/),
+  [sqlite3](https://docs.python.org/3/library/sqlite3.html),
+  [pathlib](https://docs.python.org/3/library/pathlib.html),
+  [json](https://docs.python.org/3/library/json.html),
+  [venv](https://docs.python.org/3/library/venv.html),
+  [tkinter](https://docs.python.org/3/library/tkinter.html),
+  [unittest](https://docs.python.org/3/library/unittest.html) y
+  [Quarto Python](https://quarto.org/docs/computations/python.html).
+- `propuesta-v4.pdf`: unidades I--II pp. 9--10; III--VII p. 11; VIII--X p. 12;
+  Propuesta-L01 p. 13, L02--L03 p. 14, L04--L05 p. 15, L06 pp. 15--16; pesos p. 17;
+  O1--O7 p. 8.

@@ -1,0 +1,148 @@
+---
+title: "Mapa de cobertura y trazabilidad curricular"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+# Lectura del mapa
+
+**Núcleo evaluado** tiene día y evidencia obligatoria. **Referencia/nivelación** remite a
+la biblioteca existente para recuperar prerrequisitos. **Complementario programado** tiene
+un destino futuro, tiempo opcional separado y no implica maestría productiva. Ningún
+destino programado se enlaza como archivo existente.
+
+## Prefijos e inventario de fuentes
+
+Para conservar rutas exactas sin repetirlas en cada fila, `AG` significa
+`/Users/statick/dev/appGame/assets/course_content`; `CQ` significa
+`/Users/statick/dev/appGame/docs/content-quarantine`. Son entradas de sólo lectura.
+
+| Grupo | Cantidad | Ruta exacta |
+|---|---:|---|
+| Unidades fundamentales activas | 9 | `AG/python-fundamentos-2026/units/` (01--08, 10) |
+| Unidades avanzadas activas | 16 | `AG/python-avanzado-2026/units/` (01--16) |
+| Laboratorios fundamentales | 8 | `AG/python-fundamentos-2026/labs/` |
+| Laboratorios avanzados | 2 | `AG/python-avanzado-2026/labs/` |
+| Mazos activos | 5 | `AG/*/flashcards/` |
+| README avanzados | 3 | `AG/python-avanzado-2026/{units,labs,flashcards}/README.md` |
+| Cuarentena | 1 unidad + 7 mazos | `CQ/{units,flashcards}/` |
+
+El seeder deja el avanzado sin sembrar: sus archivos son fuente, no garantía de
+visibilidad para estudiantes. La unidad fundamental 09 no existe como contenido aprobado.
+
+## Propuesta v4, diez unidades y objetivos
+
+| Unidad/página | Cobertura de núcleo | Evidencia O1--O7 |
+|---|---|---|
+| I, pp. 9--10 | spec, aceptación, entorno reproducible, Git | O1 spec previa; O5 historial/recibos |
+| II, pp. 9--10 | reglas con condicionales, bucles, excepciones y bordes | O2/O3 con Propuesta-L04 |
+| III, p. 11 | módulos, paquetes, `__init__`, Protocolos, inyección, capas | O4 `import-linter` verde |
+| IV, p. 11 | colecciones, TypedDict, invariantes y contratos | modelo tipado + tests |
+| V, p. 11 | entidades, value objects, composición/herencia, encapsulación | O1/O4 dominio aislado |
+| VI, p. 11 | cobertura, mutación, propiedades, contratos, integración | O2/O3; mutación >= 80 % |
+| VII, p. 11 | Repository, SQL parametrizado, transacciones, migraciones, motor real | O3 integración SQLite |
+| VIII, p. 12 | estados UI, eventos, WCAG y layout | componente y checklist |
+| IX, p. 12 | orquestación, contexto y evaluación de agentes | O6 ciclo SDD; O7 revisión crítica |
+| X, p. 12 | reproducción, postmortem, documentación, defensa | O5/O6/O7 defensa |
+
+| Objetivo, p. 8 | Lugar y evidencia verificable |
+|---|---|
+| O1 spec antes del código | D1, D5, D13--15; spec revisada por pares antes de cambio |
+| O2 cobertura frente a confianza | Propuesta-L03; bug con 100 % de cobertura |
+| O3 detectar errores de IA | Propuesta-L01--L06; herramienta, defecto y conclusión |
+| O4 capas comprobables | D3/D14; `import-linter` verde y dominio sin infraestructura |
+| O5 historial auditable | D1--15; historial Git y recibos observados |
+| O6 ciclo SDD con agente | D13--15; spec → plan/tareas → código → verificación |
+| O7 crítica de salida de agente | D13--15; aceptación/rechazo justificado y hallazgo confirmado independiente |
+
+## Laboratorios de propuesta (no confundir con appGame)
+
+| Código/página | Tema | Día y evidencia |
+|---|---|---|
+| Propuesta-L01, p. 13 | pytest y mutantes sobrevivientes | D6; tests que los detectan |
+| Propuesta-L02, p. 14 | Hypothesis, greedy y supuesto falso | D7; propiedad y contraejemplo |
+| Propuesta-L03, p. 14 | cobertura 100 % sin corrección | D6; assertion que descubre bug |
+| Propuesta-L04, p. 15 | parametrización y límite 30/30 | D2 ejercicio inicial; D8 evaluación única |
+| Propuesta-L05, p. 15 | jerarquía de excepciones/contratos | D7; tipos y pruebas |
+| Propuesta-L06, pp. 15--16 | SQLite, comillas e inyección | D9--10; SQL ligado y motor real |
+
+La tabla de ponderación 40/30/15/15 está en la p. 17; su encabezado comienza en la p. 16.
+
+## Fuentes fundamentales: partición de subtemas
+
+| Fuente exacta | Núcleo evaluado | Referencia/nivelación | Complementario programado |
+|---|---|---|---|
+| `AG/python-fundamentos-2026/units/unit-01-fundamentos-python.md` | variables, conversiones, condicionales, bucles, funciones (D1--2) | -- | -- |
+| `.../unit-02-control-flujo.md` | if/elif/else, ternario, match, range, enumerate, zip, else de bucle, excepciones, comprehensions (D2) | -- | `continue` y `pass` no están en este archivo: se conservan desde `AG/python-fundamentos-2026/flashcards/unit-02-control-flujo.json` |
+| `.../unit-03-funciones-modulos.md` | keyword-only, args/kwargs, paquetes, imports, `__init__`, docstrings, hints (D3) | lambda, LEGB, closures | decoradores y `functools` → `ruta-complementaria/funcional.qmd` programado |
+| `.../unit-04-estructuras-datos.md` | list/dict/set/tuple, strings, f-strings, mutabilidad/copias, búsqueda/ordenamiento (D4) | -- | -- |
+| `.../unit-05-poo.md` | clases, atributos, composición, property, dataclass/field, SOLID (D5) | herencia/super/MRO | descriptores, dunder, context manager, Singleton/Factory/Strategy/Observer → `ruta-complementaria/poo.qmd` programado |
+| `.../unit-06-testing-profundo.md` | pytest, Hypothesis, mutmut, cobertura y CI (D6--8) | fixtures y mocks básicos | Pact/schema, APIs/WebSocket, pre-commit y Locust → `ruta-complementaria/testing.qmd` programado |
+| `.../unit-07-persistencia-testing.md` | Repository, SQL parametrizado, transacción y SQLite real (D9--10) | -- | SQLAlchemy, savepoint/aislamiento, Alembic, Testcontainers/migraciones → `ruta-complementaria/persistencia.qmd` programado |
+| `.../unit-08-ui-como-especificacion.md` | contratos, estados, WCAG, teclado, contraste, formularios y navegación (D11--12) | -- | Storybook, Chromatic/Percy, visual regression, axe-core/Playwright → `ruta-complementaria/ui.qmd` programado |
+| `.../unit-10-ci-cd-release.md` | Git/reproducibilidad y recibos como apoyo O5 | -- | Actions/Fastlane, flags, analytics, Sentry/Crashlytics, logging, rendimiento, alertas, SemVer, changelog, rollout, health → `ruta-complementaria/release.qmd` programado |
+
+## Fuentes avanzadas: cada subtema retenido
+
+| Fuente exacta | Núcleo/refresco | Complementario programado y evidencia introductoria |
+|---|---|---|
+| `AG/python-avanzado-2026/units/unit-01-configuracion-entorno.md` | `venv` D1 | pip, requirements, PEP 621, VS Code, Black/Ruff/mypy/pytest → `entorno.qmd`; entorno documentado |
+| `.../unit-02-fundamentos-modernos.md` | hints, union/Optional/Literal/Final, match/guards, f-strings, dict merge, dataclass slots (D2--5) | walrus y alternativas `or/get` → `moderno.qmd`; ejemplo tipado |
+| `.../unit-03-funcional-generadores.md` | -- | map/filter/reduce, comprehensions perezosas, partial/cache/singledispatch, yield/yield from/infinito, itertools, compose/pipe → `funcional.qmd`; ejercicio perezoso |
+| `.../unit-04-poo-avanzada.md` | Protocol, ABC y composición como refresco D3--5 | C3/MRO/super, properties, descriptores, metaclases/Singleton → `poo.qmd`; justificación |
+| `.../unit-05-errores-logging.md` | excepciones y context manager D2/5 | notes/groups, logging/structlog, pdb/ipdb/VS Code/remoto, try/finally → `errores.qmd`; contrato de error |
+| `.../unit-06-testing-avanzado.md` | pytest, mocks, Hypothesis, coverage D6--8 | factory/dinámica, spies/property/context/dict/module, xdist/timeout/randomly → `testing.qmd`; suite anotada |
+| `.../unit-07-bases-datos-orm.md` | Repository/transacción D9--10 | Engine/Session sync/async, declarativos, relaciones, select/eager/subquery, locks/UoW, Alembic, memoria/rollback → `orm.qmd`; modelo relacional |
+| `.../unit-08-apis-fastapi.md` | -- | routing, Pydantic, DI, JWT/OAuth2/roles, WebSocket, BackgroundTasks, TestClient/httpx/mock, OpenAPI → `apis.qmd`; contrato de endpoint |
+| `.../unit-09-microservicios.md` | -- | DDD, REST/gRPC, RabbitMQ/Kafka, gateway, resiliencia, discovery/LB, OpenTelemetry/Prometheus/log → `microservicios.qmd`; diagrama |
+| `.../unit-10-devops-deployment.md` | -- | Docker/Compose, K8s, CI, Vault/SOPS/Sealed/ESO, observabilidad, blue-green/ArgoCD/Kustomize → `devops.qmd`; manifiesto comentado |
+| `.../unit-11-ml-produccion.md` | -- | MLflow, Feast, serving, drift, A/B, Kubeflow/Airflow, alertas → `mlops.qmd`; ciclo ML |
+| `.../unit-12-data-engineering.md` | -- | Airflow, Spark/Delta, time travel/CDF/merge, quality, lineage, Kafka/Flink → `datos.qmd`; DAG |
+| `.../unit-13-seguridad-avanzada.md` | -- | OAuth/OIDC, mTLS/SPIFFE/mesh, SOC2/GDPR, rotación, SBOM/SLSA, hardening → `seguridad.qmd`; amenaza |
+| `.../unit-14-event-driven.md` | -- | event store/aggregate, CQRS/projections, saga, outbox/Debezium, DLQ/exactly-once, snapshots → `eventos.qmd`; secuencia |
+| `.../unit-15-observabilidad-sre.md` | -- | SLI/SLO/SLA, chaos, capacidad, incidentes/runbooks, postmortem, on-call → `sre.qmd`; SLO |
+| `.../unit-16-capstone.md` | -- | servicios PythonMart, eventos/ML, observabilidad, CI/K8s, seguridad, tests/go-live → `capstone.qmd`; arquitectura |
+
+Cada bloque complementario está separado de 45 h y de 34--47 h obligatorias: funcional 3--4 h; POO/errores 3--4 h; ORM/APIs 5--6 h; microservicios/DevOps/eventos/SRE 8--10 h; ML/datos/seguridad/capstone 9--12 h. Son introducciones opcionales, no dominio de producción.
+
+## Laboratorios, mazos y catálogos appGame
+
+| Fuente exacta | Cobertura |
+|---|---|
+| `AG/python-fundamentos-2026/labs/lab-01-error-de-tipos.md` (appGame-F01) | D1: input, type, conversión y descuento |
+| `.../lab-02-validador-contrasenas.md` (appGame-F02) | D2: reglas acumuladas, regex, lista negra |
+| `.../lab-03-decorador-reintentos.md` (appGame-F03) | Complementario: wraps, backoff, jitter, relanzar |
+| `.../lab-04-estructuras-datos.md` (appGame-F04) | D4: frecuencias, stop words, `heapq.nlargest`; distinto de Propuesta-L04 |
+| `.../lab-05-poo-avanzada.md` (appGame-F05) | Complementario: Observer, descriptores, plugins/hooks |
+| `.../lab-06-testing-profundo.md` (appGame-F06) | D6--8: mutmut, Hypothesis, Pact, TestClient, cobertura |
+| `.../lab-07-persistencia-testing.md` (appGame-F07) | D9--10: SQL; ORM/Testcontainers/Alembic complementarios |
+| `.../lab-08-ui-como-especificacion.md` (appGame-F08) | D11--12: contrato/a11y; herramientas visuales complementarias |
+| `AG/python-avanzado-2026/labs/lab-01-configuracion-entorno.md` (appGame-A01) | Complementario: venv, pip y herramientas |
+| `.../lab-02-fundamentos-modernos.md` (appGame-A02) | Complementario: tipos, match, dataclass |
+| `AG/python-fundamentos-2026/flashcards/unit-01.json` | D1: input, conversión, TypeError, tipo, función |
+| `.../unit-02-control-flujo.json` | D2: elif/range/enumerate/zip/match/break/continue/else/pass |
+| `.../unit-03-funciones-modulos.json` | D3: args/kwargs, lambda, closure, decorador, wraps, cache |
+| `.../unit-05-poo.json` | D5: herencia, property, dataclass/field/frozen, dunder, abstract/MRO/mixin |
+| `AG/python-avanzado-2026/flashcards/unit-01-02-basics.json` | Complementario: entorno y Python moderno |
+| `AG/python-avanzado-2026/units/README.md`, `labs/README.md`, `flashcards/README.md` | **Catálogos placeholder de una línea** para `ultimate-python-nicolas-2023`; no son contenido sustantivo |
+
+## Huecos y cuarentena
+
+`CQ/units/unit-09-flujo-datos-estado.md` es material Flutter/Dart en cuarentena, no un
+ejercicio aprobado de este curso. Los siete mazos malformados en `CQ/flashcards/`
+(`unit-01-fundamentos-python.json`, `unit-04-estructuras-datos.json`,
+`unit-06-testing-profundo.json`, `unit-07-persistencia-testing.json`,
+`unit-08-ui-como-especificacion.json`, `unit-09-flujo-datos-estado.json`,
+`unit-10-ci-cd-release.json`) no se califican. Los temas seguros se cubren desde las
+fuentes activas indicadas arriba, sin reparar ni usar esos artefactos.
+
+## Referencias de evidencia
+
+- `/Users/statick/Documents/Abacom/propuestas/curso_python/propuesta-v4.pdf`: O1--O7 p. 8; unidades pp. 9--12; laboratorios pp. 13--16; tabla de evaluación p. 17.
+- `AG` y `CQ`: rutas y estado de fuente enumerados arriba.
+- `CQ/README.md:1-15`: explica que cuarentena no es contenido de curso aprobado.
+- `/Users/statick/dev/appGame/odd/tasks/python-avanzado-2026-content.md:1-28`: define el catálogo avanzado; no valida su siembra.
