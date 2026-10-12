@@ -1,0 +1,180 @@
+---
+title: "Día 1: especificación, Git y entorno reproducible"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+## Propósito y preparación
+
+**Audiencia.** Personas que ya escriben Python básico, usan Git y trabajan desde la
+terminal. **Prerrequisitos.** Funciones, condicionales, listas, `git status`, ramas
+locales y ejecución de `python`. Esta jornada inicia *Inventario Local*: no se crea una
+aplicación completa; se acuerda primero una especificación comprobable.
+
+### Resultados de aprendizaje
+
+Al finalizar, cada estudiante podrá:
+
+1. Diagnosticar cinco evidencias de entrada con una explicación propia.
+2. Redactar criterios de aceptación verificables para una regla de inventario (O1).
+3. Crear un entorno virtual y registrar su versión de Python como evidencia reproducible.
+4. Construir un recibo Git que permita reconstruir qué se cambió y por qué (O5).
+
+### Agenda síncrona (180 min)
+
+| Bloque | Minutos | Producto observable |
+|---|---:|---|
+| Conceptos | 35 | Diferencia entre requisito, criterio y evidencia |
+| Ejemplos | 25 | Especificación y recibo pequeños |
+| Práctica guiada | 45 | Diagnóstico y `SPEC-001.md` |
+| Pausa | 10 | -- |
+| Laboratorio/taller | 55 | Repositorio, entorno y appGame-F01 adaptado |
+| Cierre | 10 | Autoevaluación y siguiente acción |
+
+## Conceptos esenciales
+
+Una **especificación** dice qué comportamiento se acepta; no dicta prematuramente la
+clase ni el algoritmo. Un criterio es verificable cuando nombra entrada, resultado y
+límite. Por ejemplo, “validar bien el stock” no permite decidir si una entrega es
+correcta. “Rechazar cantidades negativas con `ValueError` y aceptar cero” sí lo permite.
+
+Git aporta evidencia, no sustituto del razonamiento. Un commit útil vincula una decisión
+con sus archivos; el recibo anota el comando, la salida relevante y una interpretación.
+El entorno virtual evita confundir paquetes del sistema con los del proyecto. Hoy se
+registra, no se instala ninguna dependencia adicional.
+
+::: {.callout-important}
+## O1 antes del código
+
+`SPEC-001.md` debe ser revisada por un par antes del primer cambio de implementación.
+Una propuesta de agente puede sugerir texto, pero el estudiante conserva las decisiones,
+explica cada criterio y registra qué aceptó o rechazó.
+:::
+
+## Ejemplo trabajado: de regla ambigua a casos observables
+
+La regla “no permitir stock inválido” se convierte en una función pequeña y tres casos.
+
+```{python}
+def validate_quantity(quantity: int) -> int:
+    """Return a valid inventory quantity or raise ValueError."""
+    if quantity < 0:
+        raise ValueError("quantity cannot be negative")
+    return quantity
+
+assert validate_quantity(0) == 0
+assert validate_quantity(7) == 7
+try:
+    validate_quantity(-1)
+except ValueError as error:
+    assert str(error) == "quantity cannot be negative"
+else:
+    raise AssertionError("negative quantity must fail")
+print("3 acceptance checks passed")
+```
+
+**Salida esperada:** `3 acceptance checks passed`. El `else` del `try` convierte una
+excepción ausente en fallo: no basta con ejecutar el código; hay que comprobar el límite.
+
+Un recibo mínimo conserva contexto sin ocultar el trabajo:
+
+```text
+$ python --version
+Python 3.14.8
+$ git status --short
+?? SPEC-001.md
+Interpretación: la especificación aún no forma parte de una evidencia versionada.
+```
+
+## Práctica guiada: diagnóstico y especificación
+
+1. En parejas, resuelvan el diagnóstico individual: crear un repositorio, ejecutar un
+   script, convertir un dato, corregir una regla y escribir una prueba con `unittest`.
+2. Marquen cada evidencia como lograda/no lograda y expliquen oralmente una decisión.
+   Menos de tres de cinco activa la remediación indicada en el
+   [plan del curso](../plan-del-curso.qmd): no es una sanción institucional.
+3. Escriban `SPEC-001.md` para `add_item(name, quantity)` con estos mínimos:
+   nombre no vacío tras quitar espacios; cantidad entera no negativa; nombre y cantidad
+   devueltos o error explícito.
+4. Intercambien la spec. El par debe proponer un caso de borde que el autor no haya
+   escrito; actualicen el documento sin implementar todavía.
+
+**Punto de control.** El docente verifica que el archivo incluye al menos tres ejemplos
+`Dado/Cuando/Entonces`, uno de ellos de borde, y una firma propuesta.
+
+## Laboratorio: appGame-F01, tipos y descuento verificable
+
+**Objetivo.** Reproducir el razonamiento de appGame-F01 sin ejecutar su fuente: convertir
+una entrada local, rechazar un tipo inadecuado y calcular un descuento sintético.
+
+### Preparación y pasos
+
+1. Cree `inventario_local/`, inicialice Git y active su `venv` local.
+2. Registre `python --version` y `git status --short` en `RECIBO-D1.md`.
+3. Cree un archivo local `discount_check.py` con la variante **corregida** siguiente.
+
+```{python}
+def discounted_total(price: str, rate: float) -> float:
+    """Convert a price and apply a rate between zero and one."""
+    amount = float(price)
+    if not 0 <= rate <= 1:
+        raise ValueError("rate must be between zero and one")
+    return amount * (1 - rate)
+
+assert discounted_total("10.00", 0.20) == 8.0
+assert discounted_total("5", 0) == 5.0
+print("discount checks passed")
+```
+
+**Salida esperada:** `discount checks passed`.
+
+4. Describa en el recibo por qué `float("10.00")` es una conversión y por qué una tasa
+   fuera de rango debe fallar. No copie una respuesta de un agente sin defenderla.
+5. Añada `SPEC-001.md` y el recibo al índice, revise el diff y realice un commit local con
+   mensaje que describa la evidencia, no una afirmación de haber terminado el curso.
+
+::: {.callout-warning}
+## Variante defectuosa para discutir, no para entregar
+
+```{python}
+#| eval: false
+def discounted_total(price: str, rate: float) -> float:
+    return float(price) * (1 - rate)  # acepta -0.2 y 1.2 incorrectamente
+```
+
+Prediga qué ocurre con `rate=1.2`, escriba la expectativa como assertion y luego compárela
+con la variante corregida. La demostración debe ser local y explicada por el estudiante.
+:::
+
+### Entrega, evidencia y rúbrica (100 puntos)
+
+- `SPEC-001.md` revisada por pares antes del código: 30.
+- Recibo con versiones, comandos y lectura de salidas: 25.
+- Reglas y dos bordes comprobados localmente: 25.
+- Explicación oral y proceso (incluye una corrección): 20.
+
+Entregue una captura del terminal con reloj visible, la revisión del par y una bitácora
+breve de intentos. Estos artefactos evalúan proceso, no solo un resultado pulido.
+
+## Tarea separada (2 h estimadas)
+
+Amplíe la spec con dos criterios para renombrar un artículo y registre tres comandos Git
+con su interpretación. Adjunte `SPEC-001.md`, `RECIBO-D1.md` y una nota de 120 palabras:
+¿qué evidencia permitiría a otra persona reproducir su estado? Esta evidencia alimenta
+O1 y O5; no cuenta dentro de los 180 minutos.
+
+## Recapitulación y autoevaluación
+
+- ¿Puedo distinguir una condición de aceptación de una tarea técnica?
+- ¿Qué salida concreta demostraría que mi entorno es el que afirmo usar?
+- ¿Qué borde de `add_item` no quedaría cubierto por un ejemplo feliz?
+
+**Hito Inventario Local:** existe la especificación revisada y un repositorio con recibo;
+aún no se presupone estructura de aplicación ni persistencia.
+
+Consulte el [plan](../plan-del-curso.qmd) para O1/O5 y el
+[mapa de cobertura](../mapa-de-cobertura.qmd) para la procedencia appGame-F01.

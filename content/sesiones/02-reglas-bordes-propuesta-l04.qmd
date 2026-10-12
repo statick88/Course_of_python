@@ -1,0 +1,267 @@
+---
+title: "Día 2: reglas, bordes y Propuesta-L04"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+## Propósito y preparación
+
+**Audiencia.** Estudiantes con la spec y el recibo de D1. **Prerrequisitos.**
+Condicionales, bucles, conversión y excepciones básicas. Hoy se ejercitan reglas
+acumuladas y bordes; **Propuesta-L04 es exclusivamente diagnóstica**: no tiene
+nota, no aporta el 40 % de laboratorios ni genera crédito evaluativo. D8 es la única
+instancia que la califica.
+
+### Resultados de aprendizaje
+
+1. Explicar cómo una condición de borde cambia una regla de negocio.
+2. Implementar validación acumulada mediante `if`, bucles y excepciones.
+3. Diseñar una matriz de casos para un límite inclusivo 30/30.
+4. Diferenciar `break`, `continue` y `pass` en una lectura de código.
+
+### Agenda síncrona (180 min)
+
+| Bloque | Minutos | Producto observable |
+|---|---:|---|
+| Conceptos | 35 | Tabla de decisiones y límites |
+| Ejemplos | 25 | Validador con salida explicada |
+| Práctica guiada | 45 | Matriz Propuesta-L04 |
+| Pausa | 10 | -- |
+| Laboratorio/taller | 55 | Reglas del catálogo local |
+| Cierre | 10 | Corrección entre pares |
+
+## Conceptos esenciales
+
+Además de `if` y bucles, practique `elif`, ternario, `match`, `range`, `enumerate`,
+`zip`, el `else` de un bucle y comprehensions. Úselos cuando aclaren el contrato; no
+para comprimir reglas que requieren evidencia. `continue` y `pass` se retienen de las
+flashcards de control de flujo.
+
+Una regla compuesta separa condiciones que son distintas: tipo, rango y estado. El orden
+importa cuando una operación puede fallar; convierta antes de comparar y capture solo el
+error que puede explicar. Un bucle comunica intención: `break` termina la búsqueda,
+`continue` omite la iteración actual y `pass` reserva sintaxis sin producir una acción.
+
+El límite 30/30 significa que 30 es válido y 31 no. Probar 1 y 30 no demuestra el borde
+superior; se necesita el trío 29, 30 y 31. La parametrización formal llegará en D8, pero
+la matriz de hoy hace visible el diseño antes de automatizarlo.
+
+Las anotaciones modernas documentan contratos para el lector y el verificador estático:
+`Optional[T]` equivale a `T | None`; `Literal` limita los valores declarados; `Final`
+expresa que un nombre no debe reasignarse. No son guardas de ejecución: una función aún
+valida datos cuando cruza una frontera.
+
+## Ejemplo trabajado: decisiones y recorrido explícitos
+
+`elif` hace mutuamente excluyentes las categorías; el ternario sirve para una decisión
+simple ya validada; `match` selecciona casos conocidos. `range` genera posiciones,
+`enumerate` añade índice y `zip` empareja secuencias hasta la más corta. El `else` de un
+bucle se ejecuta solo si no hubo `break`; por eso expresa una búsqueda sin resultado.
+Una comprehension crea una colección cuando la transformación cabe en una regla legible.
+
+```{python}
+def classify_request(requested: int, available: int) -> str:
+    """Classify a request with ordered business rules."""
+    if requested < 0:
+        return "invalid"
+    elif requested == 0:
+        return "empty"
+    return "accepted" if requested <= available else "exceeds"
+
+
+def first_missing(names: list[str], quantities: list[int]) -> str | None:
+    """Return the first missing item or None after a complete search."""
+    for position, (name, quantity) in enumerate(zip(names, quantities), start=1):
+        match quantity:
+            case 0:
+                return f"{position}:{name}"
+            case _ if quantity < 0:
+                raise ValueError("quantity cannot be negative")
+            case _:
+                continue
+    else:
+        return None
+
+assert classify_request(0, 30) == "empty"
+assert classify_request(30, 30) == "accepted"
+assert classify_request(31, 30) == "exceeds"
+assert first_missing(["cable", "mouse"], [2, 0]) == "2:mouse"
+assert [number * 2 for number in range(3)] == [0, 2, 4]
+print("flow constructs passed")
+```
+
+**Salida esperada:** `flow constructs passed`. El ternario no reemplaza una cadena de
+reglas y el `else` del bucle no equivale al `else` de un `if`.
+
+## Ejemplo trabajado: tipos que documentan, validación que protege
+
+```{python}
+from typing import Final, Literal, Optional
+
+
+EMPTY_STATUS: Final = "empty"
+StockStatus = Literal["empty", "available"]
+
+
+def stock_status(quantity: int) -> StockStatus:
+    """Return a declared stock state after runtime validation."""
+    if isinstance(quantity, bool) or not isinstance(quantity, int):
+        raise TypeError("quantity must be an integer")
+    if quantity < 0:
+        raise ValueError("quantity cannot be negative")
+    return EMPTY_STATUS if quantity == 0 else "available"
+
+
+def find_label(labels: list[str], wanted: str) -> Optional[str]:
+    """Return the normalized label or None when it is absent."""
+    normalized = {label.strip().lower() for label in labels}
+    return wanted.strip().lower() if wanted.strip().lower() in normalized else None
+
+
+assert stock_status(0) == "empty"
+assert stock_status(2) == "available"
+assert find_label([" Cable "], "cable") == "cable"
+assert find_label(["Cable"], "mouse") is None
+try:
+    stock_status("2")  # type: ignore[arg-type]
+except TypeError:
+    pass
+else:
+    raise AssertionError("annotations alone must not accept a string")
+print("modern type contracts passed")
+```
+
+**Salida esperada:** `modern type contracts passed`. `Final` y `Literal` ayudan al
+análisis estático; la excepción demuestra que la protección de frontera sigue siendo
+explícita en ejecución.
+
+## Ejemplo trabajado: aceptar hasta el límite, no más
+
+```{python}
+def reserve_units(available: int, requested: int) -> int:
+    """Return remaining units after an allowed reservation."""
+    if requested < 0:
+        raise ValueError("requested units cannot be negative")
+    if requested > available:
+        raise ValueError("requested units exceed available stock")
+    return available - requested
+
+assert reserve_units(30, 29) == 1
+assert reserve_units(30, 30) == 0
+try:
+    reserve_units(30, 31)
+except ValueError as error:
+    assert "exceed" in str(error)
+else:
+    raise AssertionError("31 must be rejected")
+print("boundary matrix passed")
+```
+
+**Salida esperada:** `boundary matrix passed`. La regla no usa una negación ambigua;
+expresa directamente qué solicitud supera el stock.
+
+## Práctica guiada: Propuesta-L04 como diagnóstico
+
+Complete esta matriz antes de escribir pruebas automatizadas. La evidencia se conserva,
+pero D2 no añade una segunda calificación del laboratorio.
+
+| Disponible | Solicitado | Resultado esperado | Justificación |
+|---:|---:|---|---|
+| 30 | 29 | queda 1 | debajo del límite |
+| 30 | 30 | queda 0 | límite inclusivo |
+| 30 | 31 | `ValueError` | fuera del límite |
+| 0 | 0 | queda 0 | inventario vacío válido |
+
+1. En parejas, escriban una quinta fila que pruebe cantidad negativa o tipo no convertible.
+2. Con las listas `names = ["cable", "mouse"]` y `quantities = [2, 0]`, predigan la
+   salida de `first_missing`; cambien ambos valores a positivos y expliquen por qué se
+   ejecuta el `else` del bucle.
+3. Reescriban una clasificación de cuatro estados con `if`/`elif` y luego con `match`;
+   justifiquen cuál comunica mejor las reglas cerradas.
+4. Escriban una comprehension que conserve solo cantidades positivas de `range(-2, 3)`;
+   comparen su resultado con un bucle que usa `continue`.
+5. Declaren un resultado `str | None` y su forma equivalente `Optional[str]`; expliquen
+   qué respuesta debe producir una búsqueda ausente. Propongan un `Literal` de dos estados
+   y señalen por qué `Final` no impide una reasignación durante la ejecución.
+6. Escriban una predicción para el fragmento defectuoso y conviértanla en una assertion.
+7. Corrijan la condición sin cambiar los casos ya aprobados en la matriz.
+8. Hagan una revisión oral: el par debe señalar exactamente qué fila distingue `<` de `<=`.
+
+```{python}
+#| eval: false
+def reserve_units(available: int, requested: int) -> int:
+    if requested >= available:  # defecto: rechaza el límite válido 30/30
+        raise ValueError("not enough stock")
+    return available - requested
+
+assert reserve_units(30, 30) == 0  # falla: RED previsto antes de corregir
+```
+
+## Laboratorio: catálogo y reglas acumuladas
+
+**Objetivo.** Extender el dominio descrito en D1 con una validación local de nombre y
+cantidad, sin depender todavía de base de datos ni interfaz.
+
+1. Cree una función `validate_item(name, quantity)` que elimine espacios exteriores,
+   rechace nombre vacío y delegue el límite negativo a una regla explícita.
+2. Recorra una lista sintética de solicitudes con `enumerate` y `zip`. Use `continue`
+   para omitir una fila inválida y `break` al localizar el primer nombre buscado; explique
+   ambos efectos y el `else` de búsqueda en el recibo.
+3. Clasifique un estado cerrado con `match` y uno abierto con `if`/`elif`; documente por
+   qué la elección no cambia el contrato.
+4. Documente un `pass` en una excepción de interfaz futura, pero no lo use para silenciar
+   una regla del dominio.
+
+```{python}
+def valid_names(names: list[str]) -> list[str]:
+    """Return nonempty normalized item names."""
+    normalized: list[str] = []
+    for name in names:
+        clean_name = name.strip()
+        if not clean_name:
+            continue
+        normalized.append(clean_name)
+    return normalized
+
+assert valid_names([" cable ", "", "  ", "mouse"]) == ["cable", "mouse"]
+print("normalized names: ['cable', 'mouse']")
+```
+
+**Punto de control.** Muestre la matriz, una ejecución con `30/30` y un recibo que
+identifique un `continue` y un `break`. La fuente appGame-F02 sirve como procedencia de
+reglas acumuladas; no se ejecuta ni se entrega como solución.
+
+### Evidencia formativa (sin nota)
+
+Esta lista sirve para retroalimentación y para preparar D8; **no se suma, no cuenta
+como laboratorio y no concede crédito evaluativo**.
+
+| Verificación | Evidencia |
+|---|---|
+| Matriz con cinco casos y justificaciones | tabla propia |
+| Regla correcta y dos errores explicados | salida/assertions |
+| Uso razonado de flujo de control | bitácora y defensa |
+| Revisión de par y captura intermedia | comentario verificable |
+
+D8 aplicará la rúbrica evaluada de Propuesta-L04 una sola vez.
+
+## Tarea separada (2 h estimadas)
+
+Convierta dos filas de su matriz en pruebas `unittest` y agregue una regla de lista negra
+para un nombre decidido por usted. Registre un caso que inicialmente falló y cómo lo
+corrigió. Entregue el diff, la salida y 150 palabras sobre por qué una cobertura de líneas
+no sustituye los bordes; esta reflexión prepara O2/O3.
+
+## Recapitulación y autoevaluación
+
+- ¿Qué caso observaría una implementación que confunde `>` con `>=`?
+- ¿Por qué `pass` no es manejo de errores?
+- ¿Mi recibo permite identificar qué prueba fue diseñada antes de la corrección?
+
+**Hito Inventario Local:** el catálogo tiene reglas explícitas y una matriz de bordes;
+la arquitectura por capas se decide mañana. Consulte el [plan](../plan-del-curso.qmd) y
+el [mapa](../mapa-de-cobertura.qmd) para la separación entre diagnóstico D2 y evaluación D8.

@@ -80,7 +80,7 @@ La tabla de ponderación 40/30/15/15 está en la p. 17; su encabezado comienza e
 | `.../unit-02-control-flujo.md` | if/elif/else, ternario, match, range, enumerate, zip, else de bucle, excepciones, comprehensions (D2) | -- | `continue` y `pass` no están en este archivo: se conservan desde `AG/python-fundamentos-2026/flashcards/unit-02-control-flujo.json` |
 | `.../unit-03-funciones-modulos.md` | keyword-only, args/kwargs, paquetes, imports, `__init__`, docstrings, hints (D3) | lambda, LEGB, closures | decoradores y `functools` → `ruta-complementaria/funcional.qmd` programado |
 | `.../unit-04-estructuras-datos.md` | list/dict/set/tuple, strings, f-strings, mutabilidad/copias, búsqueda/ordenamiento (D4) | -- | -- |
-| `.../unit-05-poo.md` | clases, atributos, composición, property, dataclass/field, SOLID (D5) | herencia/super/MRO | descriptores, dunder, context manager, Singleton/Factory/Strategy/Observer → `ruta-complementaria/poo.qmd` programado |
+| `.../unit-05-poo.md` | clases, atributos, composición, `property`, `dataclass`/`field`/`frozen`/`slots`, SOLID (D5) | herencia, `super()` y MRO: reconocimiento con ejemplo corto, no diseño de jerarquías | descriptores, dunder, context manager, Singleton/Factory/Strategy/Observer → `ruta-complementaria/poo.qmd` programado |
 | `.../unit-06-testing-profundo.md` | pytest, Hypothesis, mutmut, cobertura y CI (D6--8) | fixtures y mocks básicos | Pact/schema, APIs/WebSocket, pre-commit y Locust → `ruta-complementaria/testing.qmd` programado |
 | `.../unit-07-persistencia-testing.md` | Repository, SQL parametrizado, transacción y SQLite real (D9--10) | -- | SQLAlchemy, savepoint/aislamiento, Alembic, Testcontainers/migraciones → `ruta-complementaria/persistencia.qmd` programado |
 | `.../unit-08-ui-como-especificacion.md` | contratos, estados, WCAG, teclado, contraste, formularios y navegación (D11--12) | -- | Storybook, Chromatic/Percy, visual regression, axe-core/Playwright → `ruta-complementaria/ui.qmd` programado |
@@ -93,7 +93,7 @@ La tabla de ponderación 40/30/15/15 está en la p. 17; su encabezado comienza e
 | `AG/python-avanzado-2026/units/unit-01-configuracion-entorno.md` | `venv` D1 | pip, requirements, PEP 621, VS Code, Black/Ruff/mypy/pytest → `entorno.qmd`; entorno documentado |
 | `.../unit-02-fundamentos-modernos.md` | hints, union/Optional/Literal/Final, match/guards, f-strings, dict merge, dataclass slots (D2--5) | walrus y alternativas `or/get` → `moderno.qmd`; ejemplo tipado |
 | `.../unit-03-funcional-generadores.md` | -- | map/filter/reduce, comprehensions perezosas, partial/cache/singledispatch, yield/yield from/infinito, itertools, compose/pipe → `funcional.qmd`; ejercicio perezoso |
-| `.../unit-04-poo-avanzada.md` | Protocol, ABC y composición como refresco D3--5 | C3/MRO/super, properties, descriptores, metaclases/Singleton → `poo.qmd`; justificación |
+| `.../unit-04-poo-avanzada.md` | `Protocol` y composición aplicados en D3; ABC como reconocimiento de contrato en D5 | `property` se aplica en D5; C3/MRO/super para producción, descriptores, metaclases/Singleton → `poo.qmd`; justificación |
 | `.../unit-05-errores-logging.md` | excepciones y context manager D2/5 | notes/groups, logging/structlog, pdb/ipdb/VS Code/remoto, try/finally → `errores.qmd`; contrato de error |
 | `.../unit-06-testing-avanzado.md` | pytest, mocks, Hypothesis, coverage D6--8 | factory/dinámica, spies/property/context/dict/module, xdist/timeout/randomly → `testing.qmd`; suite anotada |
 | `.../unit-07-bases-datos-orm.md` | Repository/transacción D9--10 | Engine/Session sync/async, declarativos, relaciones, select/eager/subquery, locks/UoW, Alembic, memoria/rollback → `orm.qmd`; modelo relacional |
@@ -126,7 +126,7 @@ Cada bloque complementario está separado de 45 h y de 34--47 h obligatorias: fu
 | `AG/python-fundamentos-2026/flashcards/unit-01.json` | D1: input, conversión, TypeError, tipo, función |
 | `.../unit-02-control-flujo.json` | D2: elif/range/enumerate/zip/match/break/continue/else/pass |
 | `.../unit-03-funciones-modulos.json` | D3: args/kwargs, lambda, closure, decorador, wraps, cache |
-| `.../unit-05-poo.json` | D5: herencia, property, dataclass/field/frozen, dunder, abstract/MRO/mixin |
+| `.../unit-05-poo.json` | D5 núcleo: `property`, `dataclass`/`field`/`frozen`/`slots`, composición y SOLID; referencia: herencia/`super()`/MRO y `abstract`/ABC (reconocer contrato); complementario: dunder y mixin → `ruta-complementaria/poo.qmd` |
 | `AG/python-avanzado-2026/flashcards/unit-01-02-basics.json` | Complementario: entorno y Python moderno |
 | `AG/python-avanzado-2026/units/README.md`, `labs/README.md`, `flashcards/README.md` | **Catálogos placeholder de una línea** para `ultimate-python-nicolas-2023`; no son contenido sustantivo |
 

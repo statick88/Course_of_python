@@ -1,0 +1,167 @@
+---
+title: "Día 4: estructuras, invariantes y frecuencias"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+## Propósito y preparación
+
+**Audiencia.** Estudiantes con reglas y un límite arquitectónico documentado.
+**Prerrequisitos.** Listas, diccionarios, conjuntos, tuplas y funciones. Se usan datos
+sintéticos para explorar catálogo, búsqueda y frecuencias de appGame-F04; no se ejecuta
+ningún material fuente externo.
+
+### Resultados de aprendizaje
+
+1. Elegir lista, diccionario, conjunto o tupla según la operación requerida.
+2. Formular una invariante de catálogo y comprobarla con assertions.
+3. Calcular frecuencias y una búsqueda determinista con datos sintéticos.
+4. Identificar cuándo una copia evita modificar accidentalmente una entrada compartida.
+
+### Agenda síncrona (180 min)
+
+| Bloque | Minutos | Producto observable |
+|---|---:|---|
+| Conceptos | 35 | Tabla estructura-operación |
+| Ejemplos | 25 | Frecuencias e invariantes |
+| Práctica guiada | 45 | Catálogo con búsquedas |
+| Pausa | 10 | -- |
+| Laboratorio/taller | 55 | appGame-F04 adaptado |
+| Cierre | 10 | ADR y autoevaluación |
+
+## Conceptos esenciales
+
+Una lista conserva orden y repeticiones; un diccionario accede por clave; un conjunto
+elimina duplicados; una tupla expresa una colección fija. La elección se justifica por el
+contrato, no por preferencia. Para un catálogo, la invariante “cada nombre normalizado es
+único” evita que dos entradas representen el mismo artículo de formas distintas.
+
+Las frecuencias convierten una secuencia en evidencia: primero se normaliza, luego se
+cuenta y al final se decide cómo desempatar. Si el empate no se define, dos ejecuciones o
+implementaciones pueden presentar resultados diferentes. Copiar datos antes de ordenar o
+modificar también hace visible si una función conserva su entrada.
+
+## Ejemplo trabajado: frecuencia, stopwords y top-k determinista
+
+```{python}
+from heapq import nlargest
+
+
+def top_names(names: list[str], k: int, stopwords: set[str]) -> list[tuple[str, int]]:
+    """Return up to k normalized frequencies, excluding stopwords deterministically."""
+    counts: dict[str, int] = {}
+    for name in names:
+        normalized = name.strip().lower()
+        if normalized and normalized not in stopwords:
+            counts[normalized] = counts.get(normalized, 0) + 1
+    alphabetical = sorted(counts.items())
+    return nlargest(k, alphabetical, key=lambda pair: pair[1])
+
+
+names = ["Cable", "mouse", " cable ", "Mouse", "el", "EL", "teclado"]
+assert top_names(names, 2, {"el"}) == [("cable", 2), ("mouse", 2)]
+assert top_names(["mouse", "cable"], 2, set()) == [("cable", 1), ("mouse", 1)]
+print("top items: cable (2), mouse (2)")
+```
+
+**Salida esperada:** `top items: cable (2), mouse (2)`. Se filtran las *stopwords*
+antes de contar y se declara el desempate. Para un catálogo pequeño o cuando se necesita
+la lista completa, `sorted(counts.items(), key=lambda pair: (-pair[1], pair[0]))` suele
+ser más legible; `heapq.nlargest` expresa que solo se requieren los mejores `k`.
+
+## Práctica guiada: diseñar el catálogo
+
+1. Complete la tabla y defienda cada elección ante un par.
+
+| Necesidad | Estructura inicial | Razón verificable |
+|---|---|---|
+| Orden de recepción | lista | se conserva la secuencia |
+| Consulta por nombre | diccionario | clave normalizada |
+| Etiquetas únicas | conjunto | no acepta duplicados |
+| Resultado fijo nombre-cantidad | tupla | no requiere modificación |
+
+2. Diseñe `normalize_name` y escriba tres entradas que deberían colisionar.
+3. Redacte una assertion de invariante: el número de claves debe igualar el número de
+   nombres normalizados distintos.
+4. Prediga por qué ordenar directamente la lista del llamador puede ser una sorpresa.
+
+**Punto de control.** La pareja debe poder reconstruir el conteo de un ejemplo a mano y
+explicar el desempate sin ejecutar código.
+
+## Laboratorio: appGame-F04 adaptado, catálogo y búsqueda
+
+**Objetivo.** Crear un análisis local de frecuencias, filtrado de *stopwords*, un top-k
+determinista con `heapq.nlargest` y una búsqueda segura para orientar el diseño del
+dominio.
+
+1. Use una lista de diez nombres sintéticos con mayúsculas, espacios, una cadena vacía y
+   dos *stopwords* definidas por el equipo.
+2. Construya un diccionario de frecuencias y un conjunto de nombres normalizados; filtre
+   las *stopwords* antes del conteo.
+3. Obtenga los tres primeros con `heapq.nlargest` y declare el desempate alfabético.
+   Compare con `sorted(...)`: prefiera ordenar para catálogos pequeños o resultados
+   completos; use top-k cuando solo interesen los primeros puestos.
+4. Implemente `find_quantity(catalog, name)` que retorne `None` si no existe y no cambie
+   el catálogo recibido.
+5. Registre una invariante, una salida y una decisión de estructura en el ADR de D3.
+
+```{python}
+def find_quantity(catalog: dict[str, int], name: str) -> int | None:
+    """Find a normalized item without changing the catalog."""
+    return catalog.get(name.strip().lower())
+
+catalog = {"cable": 3, "mouse": 2}
+before = catalog.copy()
+assert find_quantity(catalog, " CABLE ") == 3
+assert find_quantity(catalog, "keyboard") is None
+assert catalog == before
+print("search keeps catalog unchanged")
+```
+
+**Salida esperada:** `search keeps catalog unchanged`.
+
+::: {.callout-warning}
+## Caso defectuoso para observación dirigida
+
+```{python}
+#| eval: false
+def add_tag(tags: set[str], tag: str) -> set[str]:
+    tags.add(tag.lower())
+    return tags  # modifica la colección del llamador
+```
+
+Escriba primero una assertion que espere preservar `tags`; observe el fallo local y luego
+decida si el contrato debe mutar o devolver una copia. Documente la decisión, no solo la
+corrección.
+:::
+
+### Evidencia y rúbrica (100 puntos)
+
+| Criterio | Puntos | Evidencia |
+|---|---:|---|
+| Elección de estructuras justificada | 25 | tabla y defensa |
+| Frecuencias con normalización y desempate | 30 | assertions/salida |
+| Búsqueda e invariante sin mutación accidental | 25 | recibo y diff |
+| Proceso: captura, revisión y corrección propia | 20 | bitácora |
+
+## Tarea separada (2.5 h estimadas)
+
+Entregue una ampliación de catálogo con cinco búsquedas, dos casos no encontrados y una
+comparación de `sorted(...)` contra ordenar la colección original. Actualice el ADR con
+la invariante que protegerá D5 y presente las salidas esperadas. Esta evidencia enlaza
+estructuras con O4, no reemplaza las herramientas obligatorias posteriores.
+
+## Recapitulación y autoevaluación
+
+- ¿Qué estructura responde a una consulta por nombre y cuál documenta unicidad?
+- ¿Qué assertion detecta una mutación inesperada?
+- ¿Cómo se resuelve un empate de frecuencia de manera reproducible?
+
+**Hito Inventario Local:** existe un modelo de datos aún simple, normalizado en la entrada
+y protegido por una invariante. El siguiente día lo convertirá en entidades de dominio.
+Revise el [plan](../plan-del-curso.qmd) y el [mapa](../mapa-de-cobertura.qmd) para
+appGame-F04 y sus límites de alcance.

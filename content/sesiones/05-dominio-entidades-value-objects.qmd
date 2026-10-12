@@ -1,0 +1,312 @@
+---
+title: "Día 5: dominio, entidades y value objects"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+## Propósito y preparación
+
+**Audiencia.** Estudiantes que ya delimitaron capas y definieron invariantes de catálogo.
+**Prerrequisitos.** `dataclass`, funciones, diccionarios y composición básica. El cierre
+de este bloque produce M1: un dominio puro que puede evaluarse sin UI, SQLite ni paquetes
+adicionales.
+
+### Resultados de aprendizaje
+
+1. Diferenciar identidad de entidad y valor inmutable de value object.
+2. Implementar invariantes en una entidad `Item` con dataclasses y composición.
+3. Diseñar un caso de uso que delegue reglas al dominio (O1/O4).
+4. Preparar evidencia de M1 y una revisión para D6.
+
+### Agenda síncrona (180 min)
+
+| Bloque | Minutos | Producto observable |
+|---|---:|---|
+| Conceptos | 35 | Identidad, valor e invariante |
+| Ejemplos | 25 | `ItemName` e `Item` |
+| Práctica guiada | 45 | Casos de alta y ajuste |
+| Pausa | 10 | -- |
+| Laboratorio/taller | 55 | Dominio puro y M1 |
+| Cierre | 10 | Revisión y plan de prueba |
+
+## Conceptos esenciales
+
+Una **entidad** conserva identidad aunque cambie parte de su estado: un artículo puede
+mantener su `item_id` y ajustar cantidad. Un **value object** se compara por valor y debe
+ser válido al existir; `ItemName(" cable ")` normaliza o rechaza su contenido desde el
+inicio. `dataclass(frozen=True)` es apropiado para un valor estable, no para esconder una
+entidad que necesita evolucionar.
+
+La composición prefiere ensamblar responsabilidades pequeñas: `Item` contiene `ItemName`
+en vez de heredar comportamiento accidental. Encapsular no es volver todo privado; es
+ofrecer operaciones que preserven invariantes. Una aplicación futura solicitará “ajustar
+stock”; el dominio decide si esa operación es válida. Esto ilustra la **S** de SOLID:
+`Item` cambia por políticas de inventario, mientras repositorio, UI y persistencia cambian
+por responsabilidades distintas. Una `@property` comunica un hecho derivado como
+`is_out_of_stock` sin duplicar estado. Para campos mutables de una `dataclass`,
+`field(default_factory=set)` crea una colección por entidad y evita compartir etiquetas.
+`@dataclass(slots=True)` es legítimo cuando el modelo tiene atributos fijos: evita un
+`__dict__` por instancia y rechaza atributos nuevos por accidente. Limita la extensión
+dinámica, por lo que se aplica por necesidad medida, no como adorno.
+
+**Flashcards de repaso.** *Entidad*: identidad y ciclo de vida. *Value object*: igualdad por
+contenido y valor válido al construirlo. *Invariante*: condición que toda operación debe
+conservar. *Propiedad*: consulta derivada, no estado duplicado. *SOLID-S*: una razón de
+cambio por responsabilidad.
+
+::: {.callout-tip}
+## Alcance de hoy
+
+Reconozca, sin dominar producción hoy: una subclase hereda; `super()` delega en su base;
+el MRO es el orden de búsqueda; un `ABC` declara operaciones abstractas y `Protocol` (D3)
+describe una forma sin herencia obligatoria. `__dunder__`, mixins, MRO avanzado,
+descriptores y patrones como Observer pertenecen a la ruta complementaria POO. El
+decorador de reintentos también es complementario: no reemplaza el gate arquitectónico ni
+una regla del dominio.
+
+```{python}
+from abc import ABC, abstractmethod
+
+
+class Named(ABC):
+    """Reference-only ABC: recognize an abstract contract."""
+
+    @abstractmethod
+    def label(self) -> str: ...
+
+
+class InventoryBase:
+    """Tiny base used only to recognize inheritance syntax."""
+
+    name = "cable"
+
+
+class HighlightedItem(InventoryBase):
+    """Reference-only inheritance example; not a D5 production pattern."""
+
+    def label(self) -> str:
+        return f"highlight:{super().name}"
+
+
+assert issubclass(HighlightedItem, InventoryBase)
+assert "InventoryBase" in [base.__name__ for base in HighlightedItem.__mro__]
+print("inheritance reference recognized")
+```
+
+**Salida esperada:** `inheritance reference recognized`. El ejemplo nombra herencia,
+`super()` y MRO para lectura; D5 sigue prefiriendo composición y no exige una jerarquía.
+:::
+
+## Ejemplo trabajado: valor válido y entidad ajustable
+
+La anotación `int` no valida en tiempo de ejecución: `True` es una subclase de `int` y
+`2.5` puede colarse si solo se compara con cero. El contrato de Inventario Local acepta
+**solo enteros no booleanos**. Mantiene la política de permitir cero y rechazar cantidades
+negativas; los deltas pueden ser negativos, pero nunca pueden dejar la cantidad final bajo
+cero. Una entrada inválida no cambia el estado de la entidad.
+
+```{python}
+from dataclasses import dataclass, field
+from typing import Callable
+
+
+def validate_quantity(value: int, *, field: str, allow_negative: bool = False) -> int:
+    """Return an integer, optionally permitting a signed adjustment delta."""
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise TypeError(f"{field} must be an integer, not bool or fractional numeric")
+    if not allow_negative and value < 0:
+        raise ValueError(f"{field} cannot be negative")
+    return value
+
+
+@dataclass(frozen=True)
+class ItemName:
+    """Normalized nonempty item name."""
+
+    value: str
+
+    def __post_init__(self) -> None:
+        normalized = self.value.strip().lower()
+        if not normalized:
+            raise ValueError("item name cannot be empty")
+        object.__setattr__(self, "value", normalized)
+
+
+@dataclass(slots=True)
+class Item:
+    """Entity whose quantity is an integer and cannot become negative."""
+
+    item_id: str
+    name: ItemName
+    quantity: int
+    tags: set[str] = field(default_factory=set)
+
+    def __post_init__(self) -> None:
+        self.quantity = validate_quantity(self.quantity, field="quantity")
+
+    @property
+    def is_out_of_stock(self) -> bool:
+        """Return a derived fact without storing duplicate state."""
+        return self.quantity == 0
+
+    def adjust(self, delta: int) -> None:
+        """Apply an integer adjustment while preserving quantity and prior state."""
+        checked_delta = validate_quantity(delta, field="delta", allow_negative=True)
+        new_quantity = self.quantity + checked_delta
+        if new_quantity < 0:
+            raise ValueError("adjustment would make quantity negative")
+        self.quantity = new_quantity
+
+
+def assert_raises(error_type: type[Exception], action: Callable[[], object]) -> None:
+    """Assert a zero-argument action raises the requested exception type."""
+    try:
+        action()  # type: ignore[operator]
+    except error_type:
+        return
+    raise AssertionError(f"expected {error_type.__name__}")
+
+
+item = Item("sku-001", ItemName(" Cable "), 3)
+item.adjust(-2)
+assert item.name == ItemName("cable")
+assert item.quantity == 1
+assert_raises(TypeError, lambda: Item("sku-true", ItemName("mouse"), True))
+assert_raises(TypeError, lambda: Item("sku-false", ItemName("mouse"), False))
+assert_raises(TypeError, lambda: Item("sku-fraction", ItemName("mouse"), 2.5))
+for invalid in ("1", None, [], {}):
+    assert_raises(TypeError, lambda value=invalid: Item("sku-type", ItemName("mouse"), value))
+other_item = Item("sku-002", ItemName("mouse"), 0)
+assert not item.is_out_of_stock
+assert other_item.is_out_of_stock
+item.tags.add("hardware")
+assert other_item.tags == set()  # default_factory prevents shared mutable state.
+try:
+    item.temporary_note = "not allowed"  # type: ignore[attr-defined]
+except AttributeError:
+    pass
+else:
+    raise AssertionError("slots must reject undeclared attributes")
+before = item.quantity
+for invalid_delta in (False, -1.5, "2", None, [], {}):
+    assert_raises(TypeError, lambda value=invalid_delta: item.adjust(value))
+    assert item.quantity == before
+assert_raises(ValueError, lambda: item.adjust(-2))
+assert item.quantity == before
+print("sku-001: cable = 1; type and state boundaries protected")
+```
+
+**Salida esperada:** `sku-001: cable = 1; type and state boundaries protected`. La
+igualdad de `ItemName` depende del valor normalizado; `Item` conserva identidad separada
+de su cantidad y rechaza `bool` o fracciones antes de modificarla.
+
+## Práctica guiada: casos antes de implementar
+
+1. Escriba tres escenarios `Dado/Cuando/Entonces` para crear y ajustar un artículo.
+2. Clasifique cada dato: `item_id`, `ItemName`, `quantity`, etiqueta opcional.
+3. Añada una `@property` derivada (por ejemplo, `is_low_stock`) sin guardar una segunda
+   cantidad; escriba assertions para cero y uno.
+4. Prediga el resultado de ajustar `3` con `-4`; escriba la assertion que lo comprueba.
+5. Compruebe con dos instancias que `field(default_factory=set)` no comparte etiquetas y
+   prediga por qué `slots=True` rechaza una etiqueta de atributo no declarada.
+6. Reconozca en el ejemplo de referencia qué hace `super()` y qué lista devuelve
+   `__mro__`; explique por qué no se pide extender la jerarquía del proyecto.
+7. Diseñe un caso de aplicación `register_item(repository, item)` que use el puerto D3,
+   sin importar una base de datos.
+8. Intercambie escenarios con otra persona. Esa persona debe proponer un borde que pruebe
+   que el nombre se normaliza una sola vez.
+
+**Punto de control.** Antes del laboratorio, cada estudiante muestra una spec actualizada,
+un caso inválido y una explicación de por qué `ItemName` es un valor y `Item` una entidad.
+
+## Laboratorio: M1, dominio puro de Inventario Local
+
+**Objetivo.** Consolidar el dominio de D1--D5 y dejar evidencia verificable para la
+revisión D6. No se crean aún SQLite, interfaz ni un scaffold separado.
+
+1. Integre `ItemName` y `Item` dentro de la estructura que usted documentó en D3.
+2. Implemente `validate_quantity`, `adjust`, una `@property` derivada y un campo mutable
+   con `field(default_factory=...)`; justifique si `@dataclass(slots=True)` protege un
+   modelo de atributos fijos. Todos llevan docstrings PEP 257. Acepte solo `int`,
+   rechace explícitamente `bool`, fracciones, `str`, `None`, listas y diccionarios;
+   permita cero y rechace cantidad final negativa.
+3. Escriba assertions de constructor para entero válido, `True`, `False`, `2.5`, `str`,
+   `None`, lista, diccionario y `-1`; agregue ajustes con entero válido, los mismos tipos
+   inválidos y resultado negativo.
+4. Tras cada ajuste inválido, afirme que la cantidad sigue igual: el error no puede dejar
+   una mutación parcial.
+5. Registre un recibo con el comando ejecutado, salida y el archivo que cambia cada capa.
+6. Revise con un par que el dominio no importe infraestructura ni UI. Prepare el comando
+   de `import-linter` como gate pendiente, sin declararlo verde mientras no exista.
+
+```{python}
+def assert_rejected_adjustment() -> None:
+    """Demonstrate invariant and unchanged state after invalid adjustments."""
+    item = Item("sku-002", ItemName("mouse"), 1)
+    for invalid_delta, error_type in [(False, TypeError), (0.5, TypeError), (-2, ValueError)]:
+        before = item.quantity
+        assert_raises(error_type, lambda value=invalid_delta: item.adjust(value))
+        assert item.quantity == before
+
+
+assert_rejected_adjustment()
+print("domain invariant and unchanged state protected")
+```
+
+**Salida esperada:** `domain invariant and unchanged state protected`.
+
+```{python}
+#| eval: false
+# Variante defectuosa de laboratorio: úsela para observar RED antes de corregir.
+def adjust(self, delta: int) -> None:
+    self.quantity += delta  # acepta False/0.5 y puede dejar cantidad negativa
+```
+
+### Ciclo de regresión: RED y GREEN observables
+
+**RED.** Ejecute primero la assertion `Item("sku", ItemName("cable"), True)` contra
+la variante defectuosa: no eleva `TypeError`, por lo que la assertion de rechazo falla.
+Repita con `adjust(False)` y registre que el defecto acepta un booleano.
+
+**GREEN.** Restaure `validate_quantity`, ejecute las assertions del ejemplo y compruebe
+que `True`, `False` y fracciones elevan `TypeError`, que `-1` en el constructor eleva
+`ValueError`, y que cada ajuste inválido conserva `quantity` sin cambios.
+
+No entregue la variante defectuosa como solución ni sustituya la explicación por texto de
+agente.
+
+### Entrega y rúbrica M1 (100 puntos)
+
+| Criterio | Puntos | Evidencia |
+|---|---:|---|
+| Value object normaliza y rechaza valor vacío | 25 | assertions y salida |
+| Entidad conserva identidad e invariante | 30 | ajuste válido/invalidado |
+| Límites de capas y puerto documentados | 20 | diagrama/recibo |
+| Spec, revisión de par y explicación oral | 25 | `SPEC-001.md`, comentario y defensa |
+
+La captura debe mostrar una ejecución intermedia y el historial del terminal; adjunte una
+tabla de proceso con intento, error, diagnóstico y corrección. El docente puede pedir que
+modifique una entrada para comprobar comprensión propia.
+
+## Tarea separada (3 h estimadas)
+
+Prepare la revisión M1 para D6: agregue dos casos de borde, actualice el ADR, y escriba
+una nota de 200 palabras sobre qué parte del dominio puede probarse sin dependencias.
+Entregue la spec revisada, recibo Git, salida de assertions y una pregunta que llevaría a
+la revisión. Las herramientas `pytest`, Hypothesis y mutmut serán obligatorias en los
+días posteriores; no se afirma que estén disponibles hoy.
+
+## Recapitulación y autoevaluación
+
+- ¿Qué cambia sin cambiar la identidad de un `Item`?
+- ¿Por qué un `ItemName` inválido no debe existir siquiera temporalmente?
+- ¿Qué importación demostraría que la separación de capas se rompió?
+
+**Hito M1 — Inventario Local:** dominio puro con entidad, value object, invariantes y
+evidencia O1/O4. D6 inicia pruebas, cobertura y mutación; las diez sesiones restantes
+siguen pendientes. Consulte el [plan](../plan-del-curso.qmd) y el
+[mapa](../mapa-de-cobertura.qmd) para la continuidad curricular.
