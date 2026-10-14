@@ -1800,7 +1800,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ejemplo-trabajado-puerto-y-repository-mínimo-completo" class="level2">
 <h2 class="anchored" data-anchor-id="ejemplo-trabajado-puerto-y-repository-mínimo-completo">Ejemplo trabajado: puerto y Repository mínimo completo</h2>
 <p>El archivo <code>inventario_local/application/ports.py</code> contiene el puerto; el adaptador vive en <code>inventario_local/infrastructure/sqlite_repository.py</code>. Antes de crear el adaptador, extraiga <strong>sin cambiarlo</strong> el modelo de D5 a <code>inventario_local/domain/item.py</code>: <code>ItemName</code>, <code>Item</code>, <code>validate_quantity</code> y sus imports son el contrato que este código importa. Así, el ejemplo no crea un segundo <code>Item</code> con reglas más débiles. La columna adicional <code>tags_json</code> es necesaria porque <code>tags</code> forma parte del estado de <code>Item</code>; conserva una proyección JSON ordenada de ese <code>set</code> junto con las columnas existentes <code>item_id</code>, <code>name</code> y <code>quantity</code>. D10 reutiliza exactamente esta representación y esta interfaz.</p>
-<div id="f7917b87" class="cell">
+<div id="e45e09d7" class="cell">
 <div class="code-with-filename">
 
 </div>
@@ -1809,7 +1809,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejemplo-trabajado-integración-sqlite-real" class="level2">
 <h2 class="anchored" data-anchor-id="ejemplo-trabajado-integración-sqlite-real">Ejemplo trabajado: integración SQLite real</h2>
-<div id="601be54c" class="cell">
+<div id="53f3998d" class="cell">
 <div class="code-with-filename">
 
 </div>
