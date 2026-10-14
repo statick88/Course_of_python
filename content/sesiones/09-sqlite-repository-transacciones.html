@@ -8,7 +8,7 @@
 
 <meta name="description" content="Curso completo de programación Python para principiantes — 70+ desafíos prácticos, laboratorios interactivos y proyectos reales">
 
-<title>Día 9: SQLite, Repository y transacciones – Programación Python Fundamentos</title>
+<title>Día 9: SQLite, Repository y transacciones – Programacion en Python + AI</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -123,15 +123,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../../theme.scss">
 <link rel="stylesheet" href="../../css/styles.css">
-<meta property="og:title" content="Programación Python Fundamentos">
+<meta property="og:title" content="Programacion en Python + AI">
 <meta property="og:description" content="Curso completo de Python para principiantes con 70+ desafíos prácticos">
 <meta property="og:image" content="images/portada-python.svg">
-<meta property="og:site_name" content="Programación Python Fundamentos">
-<meta property="og:image:alt" content="Programación Python Fundamentos">
-<meta name="twitter:title" content="Programación Python Fundamentos">
+<meta property="og:site_name" content="Programacion en Python + AI">
+<meta property="og:image:alt" content="Programacion en Python + AI">
+<meta name="twitter:title" content="Programacion en Python + AI">
 <meta name="twitter:description" content="Curso completo de Python para principiantes">
 <meta name="twitter:image" content="images/portada-python.svg">
-<meta name="twitter:image:alt" content="Programación Python Fundamentos">
+<meta name="twitter:image:alt" content="Programacion en Python + AI">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -323,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <img src="../../images/python-logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Programación Python Fundamentos</a> 
+      <a href="../../">Programacion en Python + AI</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/statick88/course_of_python" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -413,7 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Python Fundamentos</span></a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programacion en Python + AI</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -1800,7 +1800,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ejemplo-trabajado-puerto-y-repository-mínimo-completo" class="level2">
 <h2 class="anchored" data-anchor-id="ejemplo-trabajado-puerto-y-repository-mínimo-completo">Ejemplo trabajado: puerto y Repository mínimo completo</h2>
 <p>El archivo <code>inventario_local/application/ports.py</code> contiene el puerto; el adaptador vive en <code>inventario_local/infrastructure/sqlite_repository.py</code>. Antes de crear el adaptador, extraiga <strong>sin cambiarlo</strong> el modelo de D5 a <code>inventario_local/domain/item.py</code>: <code>ItemName</code>, <code>Item</code>, <code>validate_quantity</code> y sus imports son el contrato que este código importa. Así, el ejemplo no crea un segundo <code>Item</code> con reglas más débiles. La columna adicional <code>tags_json</code> es necesaria porque <code>tags</code> forma parte del estado de <code>Item</code>; conserva una proyección JSON ordenada de ese <code>set</code> junto con las columnas existentes <code>item_id</code>, <code>name</code> y <code>quantity</code>. D10 reutiliza exactamente esta representación y esta interfaz.</p>
-<div id="e45e09d7" class="cell">
+<div id="2753857c" class="cell">
 <div class="code-with-filename">
 
 </div>
@@ -1809,7 +1809,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejemplo-trabajado-integración-sqlite-real" class="level2">
 <h2 class="anchored" data-anchor-id="ejemplo-trabajado-integración-sqlite-real">Ejemplo trabajado: integración SQLite real</h2>
-<div id="53f3998d" class="cell">
+<div id="533c158d" class="cell">
 <div class="code-with-filename">
 
 </div>

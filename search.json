@@ -2,21 +2,21 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Programación Python Fundamentos",
+    "title": "Programacion en Python + AI",
     "section": "",
     "text": "🐍 Bienvenido al Curso\nEste curso te lleva desde cero conocimiento de programación hasta escribir tus propios programas en Python. No necesitas experiencia previa — solo curiosidad y ganas de aprender.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programación Python Fundamentos</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programacion en Python + AI</span>"
     ]
   },
   {
     "objectID": "index.html#bienvenido-al-curso",
     "href": "index.html#bienvenido-al-curso",
-    "title": "Programación Python Fundamentos",
+    "title": "Programacion en Python + AI",
     "section": "",
     "text": "Ruta por proyecto: Inventario Local\nLa ruta intermedia Inventario Local ya dispone de las sesiones 1–10: especificación, Git, arquitectura, dominio, pruebas y persistencia SQLite/JSON. Requiere fundamentos de Python, Git y terminal; no sustituye la ruta inicial para principiantes que sigue disponible abajo y en el menú lateral.\n\nPlan del curso y evaluación\nMapa de cobertura\nComenzar la sesión 1\n\nEl plan describe 15 sesiones; las guías 11–15 y la ruta complementaria todavía están en preparación y no se presentan como material publicado.\n\n\n¿Qué vas a aprender?\n\n\n\nMódulo\nTema\nDesafíos\n\n\n\n\n1\nIntroducción a Python\n7\n\n\n2\nTipos de Datos y Variables\n7\n\n\n3\nEstructuras de Control\n8\n\n\n4\nFunciones\n8\n\n\n5\nListas y Tuplas\n7\n\n\n6\nDiccionarios y Sets\n7\n\n\n7\nManejo de Archivos\n7\n\n\n8\nMódulos y Paquetes\n7\n\n\n9\nBuenas Prácticas de Código\n7\n\n\n10\nProyecto Integrador\n5\n\n\n\nTotal: 70+ desafíos prácticos\n\n\nMetodología\nEste curso sigue la metodología Aprender Haciendo:\n\nTeoría mínima — Lo justo para entender el concepto\nDemostración — Código que puedes ejecutar y modificar\nDesafío — Problema real que debes resolver tú\nReflexión — ¿Qué aprendiste? ¿Qué harías diferente?\n\n\n“El código es comunicación. Si no puedes leerlo, no puedes mantenerlo.” — Diego Saavedra\n\n\n\nRequisitos\n\nComputadora con acceso a internet\nPython 3.8+ instalado\nEditor de texto (VS Code recomendado)\nGanas de aprender\n\n\n\n¿Cómo navegar?\nUsa el sidebar izquierdo para ir a cualquier módulo. Cada módulo tiene:\n\n📖 Lecciones — Contenido teórico con ejemplos\n💻 Laboratorios — Ejercicios paso a paso\n🏆 Desafíos — Problemas para resolver solo\n\n\nCurso desarrollado por Diego Saavedra para Abacom Capacitación y Servicios",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programación Python Fundamentos</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programacion en Python + AI</span>"
     ]
   },
   {
