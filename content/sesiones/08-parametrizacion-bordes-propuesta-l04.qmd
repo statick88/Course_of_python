@@ -1,0 +1,203 @@
+---
+title: "Día 8: parametrización, bordes y Propuesta-L04"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+## Propósito y preparación
+
+**Audiencia.** Estudiantes con una matriz de límites de D2 y contratos de D5--D7.
+**Prerrequisitos.** pytest, excepciones y límites inclusivos. D2 fue diagnóstico formativo:
+**Propuesta-L04 se califica sólo hoy**, con la evidencia 30/30.
+
+### Resultados de aprendizaje
+
+1. Expresar una matriz de decisiones con `pytest.mark.parametrize`.
+2. Diseñar casos bajo, en y sobre un límite.
+3. Distinguir reserva, ajuste y rechazo sin cambiar contratos existentes.
+4. Producir evidencia evaluable de Propuesta-L04.
+
+### Agenda síncrona (180 min)
+
+| Bloque | Minutos | Producto observable |
+|---|---:|---|
+| Conceptos | 35 | Matriz de borde completa |
+| Ejemplos | 25 | Test parametrizado verde |
+| Práctica guiada | 45 | RED de 30/30 y GREEN |
+| Pausa | 10 | -- |
+| Laboratorio/taller | 55 | Entrega L04 y revisión |
+| Cierre | 10 | Defensa de casos |
+
+## Conceptos esenciales
+
+Parametrizar evita duplicar la misma forma de prueba cuando cambian datos y resultados.
+No reemplaza el razonamiento: cada fila debe tener un nombre que explique su decisión. En
+un límite inclusivo, el trío más pequeño es «uno debajo, igual, uno encima»: 29/30, 30/30
+y 31/30. Agregue cero, negativo y tipos inválidos cuando pertenecen al contrato.
+
+Una reserva compara solicitud con disponibilidad; un ajuste aplica un delta firmado y no
+puede dejar el estado final negativo. Mantenga esos contratos separados: un test que llama
+un método real verifica un comportamiento; un fragmento aislado sólo ilustra sintaxis.
+
+## Ejemplo trabajado: matriz de reserva completa
+
+Guarde este archivo completo como `tests/test_reservations.py`; requiere una función
+`reserve_units` que devuelva el restante y use `ValueError` si la solicitud supera el
+stock. Las filas son independientes y el test ejecutable no depende de celdas anteriores.
+
+```{python}
+import pytest
+
+
+def reserve_units(available: int, requested: int) -> int:
+    """Return remaining stock when an inclusive reservation is valid."""
+    if requested < 0:
+        raise ValueError("requested units cannot be negative")
+    if requested > available:
+        raise ValueError("requested units exceed available stock")
+    return available - requested
+
+
+@pytest.mark.parametrize(
+    ("available", "requested", "remaining"),
+    [(30, 29, 1), (30, 30, 0), (0, 0, 0)],
+    ids=["below-limit", "exact-30-of-30", "empty-stock-zero-request"],
+)
+def test_reserve_returns_remaining(
+    available: int, requested: int, remaining: int
+) -> None:
+    """Accept valid reservations, including the inclusive boundary."""
+    assert reserve_units(available, requested) == remaining
+
+
+@pytest.mark.parametrize("requested", [31, 1])
+def test_reserve_rejects_request_above_available(requested: int) -> None:
+    """Reject requests that exceed a small or large available quantity."""
+    available = 30 if requested == 31 else 0
+    with pytest.raises(ValueError, match="exceed"):
+        reserve_units(available, requested)
+
+
+print("parameter matrix defined")
+```
+
+**Salida esperada:** `parameter matrix defined`. Al ejecutarlo con pytest, cada `id` hace
+visible qué fila falló; no use sólo números sin una decisión asociada.
+
+::: {.callout-warning}
+## RED deliberado: 30/30
+
+```{python}
+#| eval: false
+# Variante defectuosa para ejecutar antes de la corrección.
+def reserve_units(available: int, requested: int) -> int:
+    if requested >= available:
+        raise ValueError("requested units exceed available stock")
+    return available - requested
+
+assert reserve_units(30, 30) == 0  # RED previsto: el borde válido se rechaza
+```
+:::
+
+## Ejemplo trabajado: ajuste firmado sin parcialidad
+
+```{python}
+import pytest
+
+
+def adjust_units(quantity: int, delta: int) -> int:
+    """Return adjusted quantity while preserving a nonnegative result."""
+    if isinstance(quantity, bool) or not isinstance(quantity, int):
+        raise TypeError("quantity must be an integer")
+    if isinstance(delta, bool) or not isinstance(delta, int):
+        raise TypeError("delta must be an integer")
+    result = quantity + delta
+    if result < 0:
+        raise ValueError("adjustment would make quantity negative")
+    return result
+
+
+@pytest.mark.parametrize(
+    ("quantity", "delta", "expected"),
+    [(0, 0, 0), (1, -1, 0), (1, 2, 3)],
+    ids=["zero-stays-zero", "signed-delta-to-zero", "positive-increment"],
+)
+def test_adjust_accepts_valid_signed_deltas(
+    quantity: int, delta: int, expected: int
+) -> None:
+    assert adjust_units(quantity, delta) == expected
+
+
+def test_adjust_rejects_negative_final_state() -> None:
+    with pytest.raises(ValueError, match="negative"):
+        adjust_units(1, -2)
+
+
+print("adjustment matrix defined")
+```
+
+**Salida esperada:** `adjustment matrix defined`. En el objeto `Item` de M1, además
+compruebe que la excepción no alteró `quantity`; aquí la función pura no posee estado.
+
+## Práctica guiada
+
+1. Convierta la matriz D2 en filas que incluyan 29/30, 30/30 y 31/30.
+2. Ejecute la fila exacta contra `>=` y registre el fallo RED.
+3. Corrija a `>` y vuelva a ejecutar: GREEN debe aprobar las tres filas.
+4. Añada `0/0`, solicitud negativa y dos tipos inválidos coherentes con M1.
+5. Cree matrices distintas para reservar y ajustar; explique qué cambia en cada contrato.
+6. Intercambie matrices: el par debe encontrar una fila que detecte `<` frente a `<=`.
+
+## Laboratorio evaluado: Propuesta-L04
+
+**Pre-lab.** Lleve la matriz diagnóstica de D2 y marque qué evidencia era formativa. Desde
+la raíz del proyecto confirme `python -m pytest --version`; no cambie dependencias.
+
+**En laboratorio.**
+
+1. Implemente `tests/test_reservations.py` con ids descriptivos y por lo menos los casos
+   bajo/en/sobre el límite, cero y excepción sobre disponibilidad.
+2. Pruebe la variante `>=` con **exactamente 30/30** y guarde el RED. Corrija la regla,
+   ejecute el archivo completo y guarde GREEN.
+3. Añada matriz de `adjust` compatible con D5: enteros no booleanos, delta firmado válido,
+   resultado no negativo y error que no deja estado parcial cuando use una entidad.
+4. Entregue la tabla inicial anotada, tests, comandos/salidas, captura intermedia y una
+   explicación oral de por qué D2 no se califica otra vez.
+
+**Punto de control.** El docente selecciona una fila y pide cambiarla; el estudiante debe
+predecir la salida antes de ejecutar.
+
+**Post-lab.** Mantenga los tests como regresión para D9; no elimine el caso 30/30 tras
+obtener verde. Registre una revisión de par y cualquier corrección.
+
+### Rúbrica Propuesta-L04 (100 puntos)
+
+| Criterio | Puntos | Evidencia |
+|---|---:|---|
+| Matriz parametrizada legible e ids | 25 | archivo pytest |
+| Borde 29/30/31 y RED/GREEN 30/30 | 30 | recibos exactos |
+| Reserva, ajuste y errores compatibles M1 | 25 | tests y assertions |
+| Evidencia, proceso y defensa individual | 20 | tabla/captura/explicación |
+
+Esta es la única calificación de Propuesta-L04. Forma parte del 40 % global de
+laboratorios; D2 conserva sólo su función diagnóstica.
+
+## Tarea separada (2 h estimadas)
+
+Añada tres casos propios: un límite inferior, un tipo rechazado y una transición de estado.
+Entregue diff, salida de `python -m pytest -q`, bitácora y 150 palabras sobre la fila que
+mataría un `>=` accidental. Un par revisa nombres, decisiones y ausencia de filas
+redundantes antes de D9.
+
+## Lecturas y referencias
+
+- [Plan del curso](../plan-del-curso.qmd), Propuesta-L04 y calendario.
+- [Mapa de cobertura](../mapa-de-cobertura.qmd), D2 formativo y D8 evaluado.
+- Pytest documentation, *Parametrizing tests*.
+
+**Hito Inventario Local.** La matriz de límites queda como regresión. D9 introduce SQLite
+real sin reemplazar las pruebas de dominio.

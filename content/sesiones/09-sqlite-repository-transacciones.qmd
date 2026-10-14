@@ -1,0 +1,219 @@
+---
+title: "Día 9: SQLite, Repository y transacciones"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+## Propósito y preparación
+
+**Audiencia.** Estudiantes con dominio M1 y pruebas de bordes. **Prerrequisitos.**
+`Protocol` de D3, `Item`/`ItemName` de D5 y pytest. Trabaje desde la raíz de
+`inventario-local/`; la infraestructura implementa un puerto y nunca se importa desde el
+dominio o la aplicación. `sqlite3` es biblioteca estándar.
+
+### Resultados de aprendizaje
+
+1. Implementar un Repository SQLite mínimo detrás de un `Protocol`.
+2. Usar parámetros SQL ligados para datos con comillas.
+3. Delimitar una transacción y describir la propiedad de conexión.
+4. Preparar Propuesta-L06 y appGame-F07 sin adelantar herramientas complementarias.
+
+### Agenda síncrona (180 min)
+
+| Bloque | Minutos | Producto observable |
+|---|---:|---|
+| Conceptos | 35 | Dirección de dependencias |
+| Ejemplos | 25 | Repositorio y consulta ligada |
+| Práctica guiada | 45 | Test SQLite con comilla |
+| Pausa | 10 | -- |
+| Laboratorio/taller | 55 | Integración real y recibo |
+| Cierre | 10 | Revisión transaccional |
+
+## Conceptos esenciales
+
+Repository traduce un puerto de aplicación a almacenamiento; no mueve reglas de cantidad,
+nombre o estado al SQL. La dirección sigue siendo infraestructura → aplicación/domain:
+`SqliteItemRepository` puede importar `Item` y `ItemRepository`; el dominio no importa
+`sqlite3`. Una conexión posee una transacción y su duración debe ser explícita. Un helper
+llamado dentro de una transacción no debe hacer `commit()` accidental: el propietario del
+límite transaccional decide confirmar o revertir.
+
+SQL ligado usa `?` y una tupla de valores; no construya sentencias con interpolación de
+cadenas. El caso `O'Reilly` demuestra que la comilla es dato, no sintaxis. Esto también
+reduce riesgo de inyección. ORM/SQLAlchemy, savepoints, aislamiento avanzado, Alembic y
+Testcontainers están en la ruta complementaria, no en el núcleo de hoy.
+
+## Ejemplo trabajado: puerto y Repository mínimo completo
+
+El archivo `inventario_local/application/ports.py` contiene el puerto; el adaptador vive
+en `inventario_local/infrastructure/sqlite_repository.py`. Antes de crear el adaptador,
+extraiga **sin cambiarlo** el modelo de D5 a
+`inventario_local/domain/item.py`: `ItemName`, `Item`, `validate_quantity` y sus imports
+son el contrato que este código importa. Así, el ejemplo no crea un segundo `Item` con
+reglas más débiles. La columna adicional `tags_json` es necesaria porque `tags` forma
+parte del estado de `Item`; conserva una proyección JSON ordenada de ese `set` junto con
+las columnas existentes `item_id`, `name` y `quantity`. D10 reutiliza exactamente esta
+representación y esta interfaz.
+
+```{python}
+import json
+import sqlite3
+from typing import Protocol
+
+from inventario_local.domain.item import Item, ItemName, validate_quantity
+
+
+class ItemRepository(Protocol):
+    """Application port; it does not select SQLite."""
+
+    def save(self, item: Item) -> None: ...
+
+    def find(self, item_id: str) -> Item | None: ...
+
+
+class SqliteItemRepository:
+    """SQLite adapter whose caller owns transaction boundaries."""
+
+    def __init__(self, connection: sqlite3.Connection) -> None:
+        self._connection = connection
+        self._connection.execute(
+            "CREATE TABLE IF NOT EXISTS items ("
+            "item_id TEXT PRIMARY KEY, name TEXT NOT NULL, quantity INTEGER NOT NULL, "
+            "tags_json TEXT NOT NULL)"
+        )
+
+    @staticmethod
+    def _rehydrate(row: tuple[object, object, object, object]) -> Item:
+        """Rebuild an Item through the D5 constructors, rejecting corrupt storage."""
+        item_id, name, quantity, tags_json = row
+        if not isinstance(tags_json, str):
+            raise ValueError("stored tags must be JSON text")
+        try:
+            tags = json.loads(tags_json)
+        except json.JSONDecodeError as error:
+            raise ValueError("stored tags are not valid JSON") from error
+        if not isinstance(tags, list) or not all(isinstance(tag, str) for tag in tags):
+            raise ValueError("stored tags must be a list of strings")
+        if not isinstance(name, str):
+            raise TypeError("stored item name must be text")
+        return Item(item_id, ItemName(name), quantity, tags=set(tags))
+
+    def save(self, item: Item) -> None:
+        """Revalidate mutable D5 fields before bound SQL without committing."""
+        if not isinstance(item.name, ItemName):
+            raise TypeError("item name must be an ItemName")
+        quantity = validate_quantity(item.quantity, field="quantity")
+        if not all(isinstance(tag, str) for tag in item.tags):
+            raise TypeError("item tags must be strings")
+        self._connection.execute(
+            "INSERT INTO items (item_id, name, quantity, tags_json) VALUES (?, ?, ?, ?)",
+            (item.item_id, item.name.value, quantity, json.dumps(sorted(item.tags))),
+        )
+
+    def find(self, item_id: str) -> Item | None:
+        """Return a validated Item by primary key using a bound parameter."""
+        row = self._connection.execute(
+            "SELECT item_id, name, quantity, tags_json FROM items WHERE item_id = ?",
+            (item_id,),
+        ).fetchone()
+        return None if row is None else self._rehydrate(row)
+
+
+connection = sqlite3.connect(":memory:")
+repository: ItemRepository = SqliteItemRepository(connection)
+with connection:
+    repository.save(Item("sku-quote", ItemName("O'Reilly cable"), 2, {"hardware"}))
+loaded = repository.find("sku-quote")
+assert loaded == Item("sku-quote", ItemName("o'reilly cable"), 2, {"hardware"})
+connection.close()
+print("quoted name and complete item state persisted through bound SQL")
+```
+
+**Salida esperada:** `quoted name and complete item state persisted through bound SQL`. `with connection:` confirma
+si el bloque termina bien y revierte si eleva una excepción; `save` no confirma por sí solo.
+
+## Ejemplo trabajado: integración SQLite real
+
+```{python}
+import sqlite3
+
+from inventario_local.domain.item import Item, ItemName
+from inventario_local.infrastructure.sqlite_repository import SqliteItemRepository
+
+
+connection = sqlite3.connect(":memory:")
+repository = SqliteItemRepository(connection)
+with connection:
+    repository.save(Item("sku-1", ItemName("O'Reilly"), 1, {"cable"}))
+loaded = repository.find("sku-1")
+assert loaded is not None
+assert loaded.name == ItemName("o'reilly")
+assert loaded.quantity == 1
+assert loaded.tags == {"cable"}
+connection.close()
+print("real SQLite quoted-name integration passed")
+```
+
+**Salida esperada:** `real SQLite quoted-name integration passed`.
+
+## Práctica guiada
+
+1. Dibuje el puerto en `application/ports.py` y el adaptador en `infrastructure/`.
+2. Cree la tabla con `CREATE TABLE IF NOT EXISTS` y mantenga `commit` fuera de `save`.
+3. Guarde `O'Reilly cable`, lea con `SELECT ... WHERE item_id = ?` y afirme igualdad.
+4. Cambie temporalmente una operación posterior para provocar error dentro de `with
+   connection:`; prediga qué filas quedan confirmadas.
+5. Explique por qué abrir una conexión por helper puede dispersar propiedad transaccional.
+6. Revise que ni `domain` ni `application` importen SQLite.
+
+## Laboratorio: appGame-F07 y preparación Propuesta-L06
+
+**Pre-lab.** Revise D3 y defina el puerto sin copiar SQL al dominio. Cree un archivo SQLite
+de prueba en una carpeta temporal propia y responda: ¿quién decide el `commit`?
+
+**En laboratorio.**
+
+1. Implemente un Repository mínimo con `save` y `find`, usando conexión inyectada.
+2. Escriba un test de integración real con `sqlite3.connect(":memory:")` o un fichero
+   temporal propio. Inserte un nombre con comilla y recupérelo mediante parámetro ligado.
+3. Incluya una prueba que demuestra que el helper no confirma dentro de una transacción;
+   la prueba de rollback completo se realiza en D10.
+4. Ejecute `python -m pytest -q tests` y guarde salida. El motor SQLite real es la
+   evidencia, no una simulación de cursor.
+
+**Punto de control.** El docente pide señalar cada `?`, el valor ligado y el dueño de la
+transacción. Un test sólo es aceptable si la comilla llegó a SQLite real.
+
+**Post-lab.** Cierre conexiones y conserve únicamente fuentes, tests y recibos. No guarde
+bases con datos personales; use nombres sintéticos. Prepare una operación compuesta para
+D10, donde se verificará rollback con una lectura nueva.
+
+### Evidencia y rúbrica del laboratorio (100 puntos)
+
+| Criterio | Puntos | Evidencia |
+|---|---:|---|
+| Puerto y dirección de capas | 20 | diagrama/código |
+| Repository mínimo y PEP 8/257 | 25 | implementación |
+| SQL ligado y nombre con comilla | 30 | test SQLite real |
+| Propiedad explícita de transacción | 15 | prueba/explicación |
+| Recibo, proceso y defensa | 10 | comando/salida/captura |
+
+## Tarea separada (2.5 h estimadas)
+
+Entregue un test de integración con una comilla, un diagrama de capas y una operación de
+dos escrituras que pueda fallar en la segunda. Adjunte diff, salida real y 200 palabras
+sobre por qué `save()` no debe confirmar cuando participa en una transacción mayor. D10
+usará esa interfaz sin cambios inexplicados.
+
+## Lecturas y referencias
+
+- [Plan del curso](../plan-del-curso.qmd), Propuesta-L06.
+- [Mapa de cobertura](../mapa-de-cobertura.qmd), persistencia núcleo/complementaria.
+- Python documentation, `sqlite3` y *Using sqlite3 efficiently*.
+
+**Hito Inventario Local.** La infraestructura persiste datos sintéticos mediante SQL
+ligado. D10 comprobará atomicidad real y una exportación JSON controlada.

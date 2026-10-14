@@ -1,0 +1,213 @@
+---
+title: "Día 6: pytest, cobertura y mutación"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+## Propósito y preparación
+
+**Audiencia.** Estudiantes con el dominio M1 de Inventario Local. **Prerrequisitos.**
+Funciones, assertions, excepciones y los contratos de D5. Trabajaremos sobre una copia del
+proyecto del estudiante desde su raíz (`inventario-local/`); `tests/` contiene las pruebas y
+`inventario_local/domain/` el código. No ejecute ejemplos de appGame: appGame-F06 es sólo
+procedencia curricular.
+
+### Resultados de aprendizaje
+
+1. Escribir pruebas `pytest` que observen comportamiento y estado.
+2. Explicar por qué cobertura de líneas no equivale a confianza.
+3. Distinguir un mutante sobreviviente de una prueba que detecta el defecto.
+4. Preparar evidencia real de Propuesta-L01 y Propuesta-L03.
+
+### Agenda síncrona (180 min)
+
+| Bloque | Minutos | Producto observable |
+|---|---:|---|
+| Conceptos | 35 | Oráculo y mutante identificados |
+| Ejemplos | 25 | Prueba verde legible |
+| Práctica guiada | 45 | Assertion que mata un mutante |
+| Pausa | 10 | -- |
+| Laboratorio/taller | 55 | Recibo de pytest/mutación |
+| Cierre | 10 | Revisión de una assertion |
+
+## Conceptos esenciales
+
+Una prueba es una afirmación sobre una consecuencia observable, no una llamada que termina
+sin error. `pytest` descubre funciones `test_*`; una fixture entrega contexto repetible y
+un mock básico aísla una colaboración externa cuando esa colaboración no es objeto de la
+prueba. Para el dominio M1, priorice objetos reales: no haga mock de `Item.adjust` si se
+quiere comprobar su invariante.
+
+La cobertura de línea responde «¿se ejecutó esta línea?». No responde «¿la assertion
+habría fallado ante una decisión equivocada?». Mutación modifica una decisión pequeña
+(por ejemplo, `>` por `>=`) y ejecuta la suite. Un mutante **muerto** produjo un fallo
+esperado; uno **sobreviviente** señala una observación débil o un requisito no probado.
+Una cobertura medida al 100 % sólo debe declararse cuando la herramienta produjo ese
+recibo; el razonamiento de líneas de este documento es ilustrativo, no una medición.
+
+## Ejemplo trabajado: una suite verde puede ser débil
+
+El siguiente ejemplo completo se guarda como `tests/test_reserve.py` y se ejecuta desde la
+raíz con `python -m pytest -q`. La primera assertion recorre la línea de decisión, pero no
+distingue `>` de `>=`. La segunda afirma el límite contractual.
+
+```{python}
+def reserve_units(available: int, requested: int) -> int:
+    """Return stock remaining after a valid reservation."""
+    if requested > available:
+        raise ValueError("requested units exceed available stock")
+    return available - requested
+
+
+def test_weak_assertion_survives_boundary_mutant() -> None:
+    """This test passes even if > becomes >=."""
+    assert reserve_units(30, 29) == 1
+
+
+def test_limit_is_inclusive_and_kills_boundary_mutant() -> None:
+    """The exact boundary is business behavior, not an implementation detail."""
+    assert reserve_units(30, 30) == 0
+
+
+print("weak and boundary assertions defined")
+```
+
+**Salida esperada:** `weak and boundary assertions defined`. Si un mutante cambia la
+condición a `requested >= available`, `test_weak_assertion_survives_boundary_mutant`
+sigue verde; la segunda prueba falla porque `30/30` debe aceptarse. Eso demuestra el bug
+a pesar de que ambas versiones recorren la misma línea.
+
+::: {.callout-warning}
+## RED deliberado, no ejecutar durante render
+
+```{python}
+#| eval: false
+# Variante mutada: el límite válido se rechaza.
+def reserve_units(available: int, requested: int) -> int:
+    if requested >= available:
+        raise ValueError("requested units exceed available stock")
+    return available - requested
+
+assert reserve_units(30, 30) == 0  # RED previsto: ValueError
+```
+:::
+
+## Ejemplo trabajado: fixture y colaboración mínima
+
+Una fixture expresa preparación compartida; el repositorio falso sólo registra una llamada.
+No sustituye una integración SQLite, que llegará en D9.
+
+```{python}
+import pytest
+from dataclasses import dataclass
+
+
+@dataclass
+class Recorder:
+    """Minimal collaborator that records an item name."""
+    saved: list[str]
+
+    def save(self, name: str) -> None:
+        """Record a name for a focused application test."""
+        self.saved.append(name)
+
+
+@pytest.fixture
+def recorder() -> Recorder:
+    """Provide fresh state to every test."""
+    return Recorder(saved=[])
+
+
+def register_name(repository: Recorder, name: str) -> None:
+    """Store a normalized nonempty name."""
+    clean_name = name.strip().lower()
+    if not clean_name:
+        raise ValueError("name cannot be empty")
+    repository.save(clean_name)
+
+
+def test_register_name_uses_collaborator(recorder: Recorder) -> None:
+    register_name(recorder, " Cable ")
+    assert recorder.saved == ["cable"]
+
+
+print("fixture example is ready for pytest")
+```
+
+**Salida esperada:** `fixture example is ready for pytest`. En un archivo de pruebas quite
+el `print` si no aporta al recibo; la assertion, no el mock, describe el contrato.
+
+## Práctica guiada
+
+1. Liste qué assertion observa cada regla M1: tipo, `bool`, entero no negativo, delta
+   firmado y estado sin mutación parcial.
+2. Escriba primero `test_limit_is_inclusive...`; ejecútela contra la variante mutada y
+   registre RED.
+3. Restaure `>` y ejecute la prueba: GREEN debe terminar sin fallos.
+4. Proponga un mutante en `Item.adjust`: eliminar la comprobación de resultado negativo.
+   Escriba una prueba que conserve `quantity` cuando se rechaza `-2`.
+5. Marque una prueba como débil si sólo afirma que no hubo excepción sin observar resultado.
+6. Explique al par por qué un porcentaje alto de cobertura no es recibo de corrección.
+
+## Laboratorio: Propuesta-L01 y Propuesta-L03
+
+**Pre-lab (antes de clase).** Lea la documentación local de `pytest`; cree `tests/` y
+verifique `python --version`. Conteste: ¿qué diferencia hay entre cubrir una rama y
+observar su salida? Lleve una tabla con `29`, `30`, `31`.
+
+**En laboratorio.**
+
+1. Cree `tests/test_domain.py` contra las APIs M1 ya existentes. Compruebe `True`, `False`,
+   `2.5`, `"2"`, `None`, lista y diccionario con `pytest.raises(TypeError)`; compruebe
+   negativo con `ValueError`; compruebe ajuste negativo válido y ajuste que dejaría stock
+   bajo cero sin cambiar el estado.
+2. Añada los dos tests de reserva anteriores. Ejecute `python -m pytest -q` y guarde el
+   comando y salida reales.
+3. Instale o use `mutmut` sólo en un entorno autorizado por el docente. Ejecute su comando
+   documentado contra el módulo del dominio, guarde el recibo y calcule el resultado real.
+   La exigencia es **mutation score >= 80 %**, no una cifra inventada en esta guía.
+4. Para Propuesta-L03, muestre una prueba débil que sobreviva al mutante y la assertion de
+   `30/30` que lo detecta. No escriba «100 % cobertura» sin informe de cobertura real.
+
+**Punto de control.** El docente inspecciona un RED de la variante, un GREEN posterior y
+una assertion que comprueba estado, no sólo ejecución.
+
+**Post-lab.** Elimine sólo ficheros temporales propios, conserve tests, recibos y tabla de
+proceso. En una defensa de dos minutos explique qué observaba cada prueba y qué mutante
+habría sobrevivido.
+
+### Evidencia y rúbrica del laboratorio (100 puntos)
+
+| Criterio | Puntos | Evidencia |
+|---|---:|---|
+| Contratos M1 de tipo, valor y estado | 30 | tests con assertions significativas |
+| Borde 29/30/31 y RED/GREEN | 25 | recibos y tabla |
+| Propuesta-L01: análisis de mutantes | 25 | salida real y conclusión |
+| Propuesta-L03: cobertura frente a corrección | 10 | mutante sobreviviente y prueba fuerte |
+| Bitácora, revisión oral y estilo PEP 8/257 | 10 | diff, captura y defensa |
+
+La nota de este laboratorio pertenece al 40 % global de laboratorios; no se crean pesos
+nuevos. Captura una ejecución intermedia, historial del terminal y una tabla de intento,
+error, diagnóstico y corrección.
+
+## Tarea separada (2.5 h estimadas)
+
+Añada dos pruebas de regresión M1 y una breve revisión de un test generado por IA: señale
+qué comportamiento no observa y cómo lo corregiría. Entregue diff, comando/salida reales,
+recibo de mutación si la herramienta está disponible y 200 palabras sobre cobertura frente
+a confianza. La revisión se discute al inicio de D7.
+
+## Lecturas y referencias
+
+- [Plan del curso](../plan-del-curso.qmd), días 6--8 y Propuesta-L01/L03.
+- [Mapa de cobertura](../mapa-de-cobertura.qmd), núcleo de pruebas y frontera complementaria.
+- Pytest documentation, *Getting Started* y `pytest.raises`.
+- mutmut documentation, *Mutation testing*.
+
+**Hito Inventario Local.** M1 ahora tiene pruebas de comportamiento; Hypothesis y contratos
+de error continúan en D7. Pact, schema/API, TestClient y WebSocket son complementarios,
+no requisitos de este día.

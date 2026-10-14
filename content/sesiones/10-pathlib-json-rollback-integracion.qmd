@@ -1,0 +1,244 @@
+---
+title: "Día 10: pathlib, JSON, rollback e integración"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+## Propósito y preparación
+
+**Audiencia.** Estudiantes con el Repository SQLite de D9 y pruebas M1. **Prerrequisitos.**
+`pathlib`, context managers, JSON, parámetros SQL ligados y transacciones. Trabaje desde la
+raíz de `inventario-local/`; durante verificaciones de ficheros escriba sólo en un directorio
+temporal que usted posea.
+
+### Resultados de aprendizaje
+
+1. Exportar una vista controlada con `pathlib`, UTF-8 y `json`.
+2. Separar exportación JSON de persistencia y reglas del dominio.
+3. Probar rollback real con una lectura nueva y fila ausente.
+4. Integrar Propuesta-L06 y M2 sin prometer transacciones distribuidas.
+
+### Agenda síncrona (180 min)
+
+| Bloque | Minutos | Producto observable |
+|---|---:|---|
+| Conceptos | 35 | Límites DB/archivo explícitos |
+| Ejemplos | 25 | JSON controlado y rollback |
+| Práctica guiada | 45 | Falla, lectura nueva, ausencia |
+| Pausa | 10 | -- |
+| Laboratorio/taller | 55 | M2 y prueba integrada |
+| Cierre | 10 | Revisión de evidencia |
+
+## Conceptos esenciales
+
+`pathlib.Path` expresa rutas sin concatenación manual. Use una carpeta controlada, cree
+padres explícitamente, abra con `encoding="utf-8"` y use context managers. JSON es una
+exportación o intercambio de datos, no un reemplazo de SQLite ni un lugar para volver a
+implementar validaciones del dominio. Exportar sólo datos ya válidos evita que `bool`,
+tipos no serializables o estados inválidos rodeen sus reglas.
+
+Una transacción SQLite es atómica dentro de la base: o se confirman sus escrituras o una
+falla revierte el bloque. Para demostrar rollback, provoque una falla tras una escritura y
+abra una **conexión nueva** para afirmar que la fila no existe. Esto no vuelve atómica una
+escritura de archivo JSON: base y sistema de archivos no forman una transacción distribuida.
+Diseñe y comunique esos límites, no los oculte.
+
+## Ejemplo trabajado: exportación JSON controlada
+
+D9 conserva `item_id`, `name`, `quantity` y `tags_json`; para JSON la misma proyección
+completa se expresa como las claves exactas `item_id`, `name`, `quantity` y `tags`. La
+frontera acepta sólo una lista de diccionarios con esas claves: primero comprueba forma y
+tipos, luego crea `ItemName` e `Item` de D5 y finalmente escribe. Por ello una entrada
+inválida no crea directorios ni trunca un destino existente; tampoco se convierte un valor
+para ocultar un error.
+
+```{python}
+from pathlib import Path
+import json
+import tempfile
+
+from inventario_local.domain.item import Item, ItemName
+
+
+RECORD_KEYS = {"item_id", "name", "quantity", "tags"}
+
+
+def validate_export_records(records: object) -> list[Item]:
+    """Validate a complete JSON-shaped projection through the D5 constructors."""
+    if not isinstance(records, list):
+        raise TypeError("export records must be a list")
+    validated: list[Item] = []
+    for record in records:
+        if not isinstance(record, dict) or set(record) != RECORD_KEYS:
+            raise ValueError("each export record must have exactly the required keys")
+        item_id = record["item_id"]
+        name = record["name"]
+        quantity = record["quantity"]
+        tags = record["tags"]
+        if not isinstance(item_id, str) or not isinstance(name, str):
+            raise TypeError("item_id and name must be strings")
+        if isinstance(quantity, bool) or not isinstance(quantity, int):
+            raise TypeError("quantity must be a nonboolean integer")
+        if not isinstance(tags, list) or not all(isinstance(tag, str) for tag in tags):
+            raise TypeError("tags must be a list of strings")
+        validated.append(Item(item_id, ItemName(name), quantity, tags=set(tags)))
+    return validated
+
+
+def export_items(destination: Path, records: object) -> None:
+    """Validate first, then write a deterministic UTF-8 JSON item projection."""
+    items = validate_export_records(records)
+    projection = [
+        {
+            "item_id": item.item_id,
+            "name": item.name.value,
+            "quantity": item.quantity,
+            "tags": sorted(item.tags),
+        }
+        for item in items
+    ]
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with destination.open("w", encoding="utf-8") as output:
+        json.dump(projection, output, ensure_ascii=False, indent=2)
+
+
+with tempfile.TemporaryDirectory() as directory:
+    target = Path(directory) / "exports" / "items.json"
+    export_items(
+        target,
+        [{"item_id": "sku-1", "name": " Cable ", "quantity": 2, "tags": ["hardware"]}],
+    )
+    with target.open(encoding="utf-8") as source:
+        assert json.load(source) == [
+            {"item_id": "sku-1", "name": "cable", "quantity": 2, "tags": ["hardware"]}
+        ]
+print("controlled JSON export passed")
+```
+
+**Salida esperada:** `controlled JSON export passed`. El destino temporal es propiedad del
+proceso. La función protege el borde de exportación, pero la creación y el ajuste de `Item`
+siguen perteneciendo al dominio.
+
+::: {.callout-warning}
+## Fragmento RED: tipos y estados no pasan por JSON
+
+```{python}
+#| eval: false
+# Debe ejecutarse como prueba contra export_items, no durante render.
+export_items(Path("owned-temp/items.json"), [{"item_id": "sku", "name": "cable", "quantity": True, "tags": []}])
+# RED previsto: TypeError; bool no es una cantidad de dominio válida.
+```
+:::
+
+## Ejemplo trabajado: rollback comprobado con lectura nueva
+
+```{python}
+from pathlib import Path
+import sqlite3
+import tempfile
+
+from inventario_local.domain.item import Item, ItemName
+from inventario_local.infrastructure.sqlite_repository import SqliteItemRepository
+
+
+def save_then_fail(database_path: Path) -> None:
+    """Use the D9 Repository in one caller-owned transaction, then force rollback."""
+    connection = sqlite3.connect(database_path)
+    try:
+        repository = SqliteItemRepository(connection)
+        with connection:
+            repository.save(
+                Item("sku-rollback", ItemName("O'Reilly cable"), 1, {"hardware"})
+            )
+            raise RuntimeError("simulated second operation failure")
+    finally:
+        connection.close()
+
+
+with tempfile.TemporaryDirectory() as directory:
+    database_path = Path(directory) / "inventory.sqlite3"
+    setup = sqlite3.connect(database_path)
+    SqliteItemRepository(setup)
+    setup.commit()
+    setup.close()
+    try:
+        save_then_fail(database_path)
+    except RuntimeError:
+        pass
+    fresh_connection = sqlite3.connect(database_path)
+    fresh_repository = SqliteItemRepository(fresh_connection)
+    assert fresh_repository.find("sku-rollback") is None
+    fresh_connection.close()
+print("rollback verified by fresh read")
+```
+
+**Salida esperada:** `rollback verified by fresh read`. La segunda conexión es importante:
+comprueba el estado persistido tras la transacción, no sólo el estado de un cursor previo.
+
+## Práctica guiada
+
+1. Cree un `TemporaryDirectory` y una ruta `Path` propia; no escriba en carpetas ajenas.
+2. Exporte un registro de dominio ya válido con UTF-8 y vuelva a cargarlo con `json.load`.
+3. Pruebe JSON malformado con `json.JSONDecodeError`; no lo convierta en datos válidos.
+4. Pruebe `True`, fracción y cantidad negativa contra la frontera de exportación.
+5. Inserte con SQL ligado un nombre con comilla; inicie una operación compuesta y fuerce
+   una excepción tras la primera escritura.
+6. Abra una conexión nueva y afirme que la fila no existe. Explique por qué esto no cubre
+   atomicidad de la exportación de archivo.
+
+## Laboratorio: Propuesta-L06 y M2 SQLite
+
+**Pre-lab.** Lleve el Repository y el test con comilla de D9. Dibuje dos límites: datos
+válidos del dominio → SQLite, y datos ya válidos → JSON. Responda dónde termina cada
+transacción.
+
+**En laboratorio.**
+
+1. Mantenga la interfaz D9 (`save` sin `commit`, `find` ligado) y cree una operación
+   compuesta dentro de `with connection:`. Fuerce la segunda operación a fallar.
+2. Escriba integración real SQLite con ruta temporal: capture la excepción, abra una nueva
+   conexión y afirme que la primera fila está ausente. Incluya un nombre con comilla en una
+   operación verde independiente.
+3. Implemente `export_items` con `Path`, UTF-8, context manager y JSON. Compruebe salida,
+   JSON malformado al leer y tipos/estados inválidos; nunca use JSON para saltar la
+   construcción/validación del dominio.
+4. Ejecute `python -m pytest -q tests` y guarde comando, salida, RED controlado y GREEN.
+   No declare una transacción distribuida entre SQLite y JSON.
+
+**Punto de control.** El docente solicita explicar quién confirma la base, qué protege la
+lectura nueva y qué queda fuera del rollback de SQLite.
+
+**Post-lab.** Cierre conexiones, deje temporales fuera del repositorio y prepare el recibo
+M2. D11 será una actividad futura de UI; se nombra para continuidad, sin enlace a un
+archivo todavía no disponible.
+
+### Evidencia y rúbrica del laboratorio (100 puntos)
+
+| Criterio | Puntos | Evidencia |
+|---|---:|---|
+| SQL ligado, comilla y motor SQLite real | 25 | test de integración |
+| Rollback con falla y lectura nueva | 30 | test/recibo/fila ausente |
+| JSON/pathlib/UTF-8 y ficheros controlados | 20 | test temporal |
+| Límites de dominio, DB y archivo explicados | 15 | diagrama/defensa |
+| Proceso, revisión y PEP 8/257 | 10 | bitácora/captura |
+
+## Tarea separada (2.5 h estimadas)
+
+Entregue el test de rollback, una exportación JSON de datos válidos y tres pruebas de
+frontera (JSON malformado, tipo inválido y estado inválido). Adjunte diff, salida real,
+recibo M2 y 200 palabras que distingan atomicidad de base y exportación de archivo. La
+revisión ocurre antes de la actividad futura D11.
+
+## Lecturas y referencias
+
+- [Plan del curso](../plan-del-curso.qmd), calendario y Propuesta-L06.
+- [Mapa de cobertura](../mapa-de-cobertura.qmd), persistencia núcleo y rutas opcionales.
+- Python documentation, `pathlib`, `json`, `sqlite3` y context managers.
+
+**Hito M2 — Inventario Local.** Persistencia SQLite real, SQL ligado, rollback comprobado y
+exportación controlada quedan evidenciados. ORM, migraciones y Testcontainers siguen como
+complementarios; D11 continúa con UI en una guía futura.

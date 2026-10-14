@@ -1,0 +1,205 @@
+---
+title: "Día 7: propiedades, contratos y Hypothesis"
+lang: es
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+## Propósito y preparación
+
+**Audiencia.** Estudiantes que ya probaron ejemplos M1 con pytest. **Prerrequisitos.**
+`pytest.raises`, dataclasses, invariantes y la matriz de bordes. Trabaje desde la raíz de
+`inventario-local/`; añada pruebas en `tests/` sin ejecutar ejemplos de appGame-F06.
+
+### Resultados de aprendizaje
+
+1. Formular una propiedad sobre entradas válidas, no sólo una lista de ejemplos.
+2. Interpretar un contraejemplo reducido sin llamarlo prueba exhaustiva.
+3. Mantener el contrato observable `TypeError`/`ValueError` de M1.
+4. Diseñar una jerarquía aditiva de errores de negocio.
+
+### Agenda síncrona (180 min)
+
+| Bloque | Minutos | Producto observable |
+|---|---:|---|
+| Conceptos | 35 | Propiedad y dominio generador |
+| Ejemplos | 25 | Test determinista y contrato |
+| Práctica guiada | 45 | Contraejemplo explicado |
+| Pausa | 10 | -- |
+| Laboratorio/taller | 55 | Prueba Hypothesis y recibo |
+| Cierre | 10 | Defensa del contrato |
+
+## Conceptos esenciales
+
+Un ejemplo dice «para esta entrada ocurre esto». Una propiedad dice qué debe conservarse
+para muchas entradas generadas: por ejemplo, tras un delta entero válido, la cantidad sigue
+siendo un entero no negativo. Hypothesis genera entradas, encoge un fallo a un caso pequeño
+y lo presenta como contraejemplo. El encogimiento ayuda a diagnosticar; no convierte una
+prueba en demostración matemática. Si la dependencia no está instalada, registre
+**no ejecutado**: un bucle casero no sustituye Hypothesis.
+
+M1 conserva fronteras observables: tipos equivocados, incluido `bool`, elevan `TypeError`;
+valores de negocio inválidos elevan `ValueError`. Puede añadirse `InsufficientStockError`
+como subclase de `ValueError` para aportar significado sin reemplazar cada error existente.
+No capture `Exception` para traducir todo a un único mensaje: eso borra el contrato.
+
+## Ejemplo trabajado: propiedad con Hypothesis
+
+Este es un archivo completo llamado `tests/test_properties.py`. Requiere Hypothesis real;
+la celda no se ejecuta durante render. La fixture mínima es `Item`/`ItemName` del dominio
+M1, ya disponible antes de este archivo.
+
+```{python}
+#| eval: false
+from hypothesis import given, strategies as st
+from inventario_local.domain.item import Item, ItemName
+
+
+@given(quantity=st.integers(min_value=0), delta=st.integers(min_value=0))
+def test_positive_adjustment_preserves_nonnegative_integer(
+    quantity: int, delta: int
+) -> None:
+    """A valid nonnegative increment preserves the quantity invariant."""
+    item = Item("sku-property", ItemName("cable"), quantity)
+    item.adjust(delta)
+    assert item.quantity == quantity + delta
+    assert isinstance(item.quantity, int)
+    assert item.quantity >= 0
+```
+
+Ejecute `python -m pytest -q tests/test_properties.py` sólo con la dependencia instalada
+y guarde la salida real. Esta guía no informa una ejecución de Hypothesis ni compatibilidad
+con Python 3.15.
+
+## Ejemplo trabajado: contraejemplo determinista no sustituye Hypothesis
+
+Un contraejemplo manual comunica una decisión concreta y sí puede verificarse con la
+biblioteca estándar. No genera ni encoge casos.
+
+```{python}
+def accepts_exact_limit(requested: int, available: int) -> bool:
+    """Return whether a request is within an inclusive stock limit."""
+    return requested <= available
+
+
+assert accepts_exact_limit(30, 30) is True
+assert accepts_exact_limit(31, 30) is False
+print("deterministic boundary counterexample checked")
+```
+
+**Salida esperada:** `deterministic boundary counterexample checked`. Si una implementación
+usa `<`, `30/30` es el contraejemplo mínimo para la propiedad de límite inclusivo; aun así,
+no es una ejecución de Hypothesis.
+
+## Ejemplo trabajado: errores que preservan compatibilidad
+
+```{python}
+class InsufficientStockError(ValueError):
+    """Signal a business rejection while remaining compatible with ValueError."""
+
+
+def validate_quantity(value: int) -> int:
+    """Accept only nonboolean integers that are nonnegative."""
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise TypeError("quantity must be a nonboolean integer")
+    if value < 0:
+        raise ValueError("quantity cannot be negative")
+    return value
+
+
+def apply_delta(quantity: int, delta: int) -> int:
+    """Apply a signed integer delta without allowing negative final stock."""
+    checked_quantity = validate_quantity(quantity)
+    if isinstance(delta, bool) or not isinstance(delta, int):
+        raise TypeError("delta must be a nonboolean integer")
+    result = checked_quantity + delta
+    if result < 0:
+        raise InsufficientStockError("adjustment would make quantity negative")
+    return result
+
+
+assert apply_delta(3, -2) == 1
+try:
+    apply_delta(1, -2)
+except ValueError as error:
+    assert isinstance(error, InsufficientStockError)
+else:
+    raise AssertionError("negative final stock must be rejected")
+for wrong_type in (True, False, 2.5, "2", None, [], {}):
+    try:
+        validate_quantity(wrong_type)  # type: ignore[arg-type]
+    except TypeError:
+        pass
+    else:
+        raise AssertionError(f"wrong type accepted: {wrong_type!r}")
+print("error contracts preserved")
+```
+
+**Salida esperada:** `error contracts preserved`. La subclase es aditiva: quien ya espera
+`ValueError` sigue recibiendo uno; no obliga a sustituir cada `ValueError` de negocio.
+
+## Práctica guiada
+
+1. Escriba una propiedad para incrementos no negativos y otra para una reserva válida.
+2. Delimite generadores: no genere `bool` como entero válido y no oculte entradas inválidas
+   con filtros excesivos.
+3. Ejecute primero una variante con `<` contra el caso `30/30` y registre RED.
+4. Restaure `<=`, obtenga GREEN y explique el contraejemplo mínimo.
+5. Añada tests deterministas para `True`, `False`, fracción, cadena, `None`, lista y dict.
+6. Compruebe que `-1` de creación produce `ValueError`, que un delta firmado válido funciona
+y que un delta que deja negativo no cambia el objeto.
+
+## Laboratorio: Propuesta-L02 y Propuesta-L05
+
+**Pre-lab.** Lea el contrato M1 de D5 y redacte dos propiedades antes de escribir código.
+Prepare el entorno con la versión autorizada de Python y confirme si Hypothesis está
+instalado con `python -m pytest --help`; no instale nada sin autorización.
+
+**En laboratorio.**
+
+1. Cree una prueba Hypothesis de propiedad significativa y ejecútela si la herramienta está
+   disponible. Guarde versión, comando y salida; si falta, documente el bloqueo y conserve
+   la prueba para la siguiente sesión autorizada.
+2. Cree tests `pytest` deterministas para los contratos de error. Deben distinguir errores
+   de tipo de invalidez de negocio y comprobar estado sin cambio tras rechazo.
+3. Introduzca de forma temporal un `<` en la regla inclusiva. Ejecute el test de `30/30`
+   para RED; restaure `<=` y repita para GREEN.
+4. Defina una subclase de `ValueError` sólo donde añade significado; explique por qué es
+   compatible para consumidores que capturan `ValueError`.
+
+**Punto de control.** Muestre una propiedad escrita por usted, un contraejemplo reducido o
+determinista claramente etiquetado y una defensa de `TypeError` frente a `ValueError`.
+
+**Post-lab.** Conserve el archivo de pruebas, los recibos y una reflexión sobre un supuesto
+que Hypothesis podría desafiar. No sustituya su suite por Pact, schema, API/TestClient o
+WebSocket: esas rutas son complementarias según el mapa.
+
+### Evidencia y rúbrica del laboratorio (100 puntos)
+
+| Criterio | Puntos | Evidencia |
+|---|---:|---|
+| Propiedad acotada y generadores apropiados | 30 | test Hypothesis y recibo real/pending |
+| Contraejemplo y RED/GREEN explicado | 20 | variante y recibos |
+| Contratos de tipo, valor, estado y delta | 30 | tests pytest |
+| Jerarquía aditiva y explicación oral | 10 | código/defensa |
+| Bitácora y PEP 8/257 | 10 | diff y proceso |
+
+## Tarea separada (2.5 h estimadas)
+
+Escriba una segunda propiedad propuesta, pero no invente un recibo si Hypothesis falta.
+Entregue los tests deterministas de contratos, una tabla con tipo/resultado esperado y una
+nota de 200 palabras: qué encoge Hypothesis y qué no demuestra. Suba diff, salida real y
+revisión de un par para discutir en D8.
+
+## Lecturas y referencias
+
+- [Plan del curso](../plan-del-curso.qmd), Propuesta-L02 y L05.
+- [Mapa de cobertura](../mapa-de-cobertura.qmd), pruebas núcleo y complementos.
+- Hypothesis documentation, *Quickstart* y *strategies*.
+- Pytest documentation, `raises`.
+
+**Hito Inventario Local.** El dominio conserva contratos observables mientras se preparan
+casos parametrizados. La próxima guía califica Propuesta-L04 una única vez.
