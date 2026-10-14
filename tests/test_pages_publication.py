@@ -35,6 +35,18 @@ def test_sessions_are_rendered_and_legacy_chapters_remain():
     assert "sesiones 1–10" in home
 
 
+def test_home_displays_render_date_as_last_compilation():
+    source = (ROOT / "index.qmd").read_text(encoding="utf-8")
+    metadata = yaml.load(source.split("---", 2)[1], Loader=yaml.BaseLoader)
+    assert metadata["date"] == "today"
+    assert metadata["published-title"] == "Última compilación"
+    assert metadata["date-format"] == "YYYY-MM-DD"
+    assert metadata["title"] == "Programación Python Fundamentos"
+    assert metadata["author"] == "Diego Saavedra"
+    assert "scripts/render-date.lua" in metadata["filters"]
+    assert (ROOT / "scripts/render-date.lua").is_file()
+
+
 def test_exactly_one_main_deployer_and_pull_requests_only_validate():
     deployers = []
     for path in (ROOT / ".github/workflows").glob("*.yml"):

@@ -2,7 +2,11 @@
 title: "Programación Python Fundamentos"
 subtitle: "De cero a programador — Aprende Python con desafíos prácticos"
 author: "Diego Saavedra"
-date: "2026-04-03"
+date: today
+published-title: "Última compilación"
+date-format: "YYYY-MM-DD"
+filters:
+  - scripts/render-date.lua
 format:
   html:
     toc: false

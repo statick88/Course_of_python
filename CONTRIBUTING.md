@@ -50,6 +50,15 @@ fragmentos originales de las sesiones, renderiza HTML con `--no-execute` y
 publica el artefacto `docs` después de un push a `main`. Los pull requests
 verifican y renderizan, pero no despliegan.
 
+La portada muestra **Última compilación** en formato `YYYY-MM-DD`.
+El filtro de documento `scripts/render-date.lua`, configurado solo en
+`index.qmd`, calcula la fecha local del runner cuando Pandoc renderiza la
+portada. Evita mostrar literalmente `today` en el título del libro; no cambia
+la fecha de otros documentos. No es la publicación original ni la hora del
+despliegue.
+Un espejo en `gh-pages` debe usar el mismo artefacto desplegado por Actions;
+no regenere el HTML por separado para actualizar esa rama.
+
 Para comprobar cambios localmente en un entorno Python 3.14 aislado:
 
 ```bash
