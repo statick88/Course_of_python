@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#f8fafc" font-family="system-ui" font-size="18" font-weight="bold">Buenas Prácticas</text>
+  
+  <!-- PEP 8 badge -->
+  <rect x="40" y="65" width="140" height="50" rx="10" fill="#3b82f6"/>
+  <text x="110" y="87" text-anchor="middle" fill="white" font-family="system-ui" font-size="14" font-weight="bold">PEP 8</text>
+  <text x="110" y="105" text-anchor="middle" fill="#dbeafe" font-family="system-ui" font-size="10">Guía de estilo oficial</text>
+  
+  <!-- Clean code badge -->
+  <rect x="220" y="65" width="140" height="50" rx="10" fill="#10b981"/>
+  <text x="290" y="87" text-anchor="middle" fill="white" font-family="system-ui" font-size="14" font-weight="bold">Clean Code</text>
+  <text x="290" y="105" text-anchor="middle" fill="#d1fae5" font-family="system-ui" font-size="10">Código legible</text>
+  
+  <!-- Testing badge -->
+  <rect x="40" y="130" width="140" height="50" rx="10" fill="#f59e0b"/>
+  <text x="110" y="152" text-anchor="middle" fill="white" font-family="system-ui" font-size="14" font-weight="bold">Testing</text>
+  <text x="110" y="170" text-anchor="middle" fill="#fef3c7" font-family="system-ui" font-size="10">pytest · unittest</text>
+  
+  <!-- Documentation badge -->
+  <rect x="220" y="130" width="140" height="50" rx="10" fill="#8b5cf6"/>
+  <text x="290" y="152" text-anchor="middle" fill="white" font-family="system-ui" font-size="14" font-weight="bold">Documentación</text>
+  <text x="290" y="170" text-anchor="middle" fill="#ede9fe" font-family="system-ui" font-size="10">docstrings · README</text>
+  
+  <!-- Zen principles -->
+  <rect x="30" y="200" width="340" height="70" rx="10" fill="#334155"/>
+  <text x="200" y="222" text-anchor="middle" fill="#f8fafc" font-family="monospace" font-size="11">"Beautiful is better than ugly"</text>
+  <text x="200" y="240" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="11">"Simple is better than complex"</text>
+  <text x="200" y="258" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="11">"Readability counts"</text>
+  
+  <!-- Bottom note -->
+  <text x="200" y="290" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">flake8 · black · isort · mypy · pylint</text>
+</svg>

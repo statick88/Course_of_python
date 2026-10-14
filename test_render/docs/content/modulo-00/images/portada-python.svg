@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#002b36;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#073642;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b58900;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#268bd2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative code lines -->
+  <g opacity="0.08" font-family="monospace" font-size="14" fill="#93a1a1">
+    <text x="50" y="80">def aprender_python():</text>
+    <text x="80" y="110">    conocimiento = True</text>
+    <text x="80" y="140">    practica = 70  # desafios</text>
+    <text x="80" y="170">    return futuro</text>
+    <text x="50" y="220">if __name__ == "__main__":</text>
+    <text x="80" y="250">    aprender_python()</text>
+    <text x="50" y="300">print("Hola Mundo")</text>
+    <text x="50" y="350">for modulo in range(1, 11):</text>
+    <text x="80" y="380">    completar(modulo)</text>
+    <text x="50" y="430">try:</text>
+    <text x="80" y="460">    dominar_python()</text>
+    <text x="50" y="490">except Error:</text>
+    <text x="80" y="520">    seguir_intentando()</text>
+    <text x="50" y="570"># Zen de Python</text>
+    <text x="50" y="600">import this</text>
+  </g>
+
+  <!-- Python logo simplified -->
+  <g transform="translate(100, 180)" filter="url(#shadow)">
+    <circle cx="60" cy="60" r="50" fill="none" stroke="url(#accent)" stroke-width="3"/>
+    <text x="60" y="75" text-anchor="middle" font-family="monospace" font-size="48" font-weight="bold" fill="#b58900">Py</text>
+  </g>
+
+  <!-- Main content -->
+  <g transform="translate(280, 160)">
+    <!-- Badge -->
+    <rect x="0" y="0" width="180" height="36" rx="18" fill="#b58900" opacity="0.9"/>
+    <text x="90" y="24" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#002b36">ABACOM CAPACITACIÓN</text>
+
+    <!-- Title -->
+    <text x="0" y="80" font-family="sans-serif" font-size="52" font-weight="bold" fill="#ffffff">Programación Python</text>
+    <text x="0" y="140" font-family="sans-serif" font-size="52" font-weight="bold" fill="#ffffff">Fundamentos</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="200" font-family="sans-serif" font-size="24" fill="#93a1a1">De cero a programador</text>
+
+    <!-- Divider -->
+    <line x1="0" y1="230" x2="400" y2="230" stroke="url(#accent)" stroke-width="3"/>
+
+    <!-- Features -->
+    <text x="0" y="270" font-family="sans-serif" font-size="18" fill="#2aa198">✓ 10 módulos completos</text>
+    <text x="0" y="300" font-family="sans-serif" font-size="18" fill="#2aa198">✓ 70+ desafíos prácticos</text>
+    <text x="0" y="330" font-family="sans-serif" font-size="18" fill="#2aa198">✓ Laboratorios interactivos</text>
+    <text x="0" y="360" font-family="sans-serif" font-size="18" fill="#2aa198">✓ Quizzes de evaluación</text>
+
+    <!-- Author -->
+    <text x="0" y="420" font-family="sans-serif" font-size="16" fill="#93a1a1">Diego Saavedra — Instructor Principal</text>
+  </g>
+
+  <!-- Right side decorative elements -->
+  <g transform="translate(900, 200)" opacity="0.15">
+    <rect x="0" y="0" width="200" height="250" rx="8" fill="none" stroke="#b58900" stroke-width="2"/>
+    <text x="20" y="40" font-family="monospace" font-size="16" fill="#b58900">>>> print("Hola")</text>
+    <text x="20" y="70" font-family="monospace" font-size="16" fill="#2aa198">Hola</text>
+    <text x="20" y="110" font-family="monospace" font-size="16" fill="#b58900">>>> type(42)</text>
+    <text x="20" y="140" font-family="monospace" font-size="16" fill="#2aa198">&lt;class 'int'&gt;</text>
+    <text x="20" y="180" font-family="monospace" font-size="16" fill="#b58900">>>> 2 + 2</text>
+    <text x="20" y="210" font-family="monospace" font-size="16" fill="#2aa198">4</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="580" width="1200" height="50" fill="#002b36" opacity="0.8"/>
+  <text x="600" y="610" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#586e75">curso-python.abacom.ec  •  github.com/statick88/course_of_python</text>
+</svg>

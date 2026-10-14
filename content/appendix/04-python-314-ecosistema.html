@@ -1,0 +1,3101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Curso completo de programación Python para principiantes — 70+ desafíos prácticos, laboratorios interactivos y proyectos reales">
+
+<title>Apéndice C: Python 3.14 y el Ecosistema 2026 – Programación Python Fundamentos</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../content/appendix/05-git-github-con-python.html" rel="next">
+<link href="../../content/appendix/03-phase-final.html" rel="prev">
+<link href="../../images/python-logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-9f1eb111b14daeacd78bd44e27a8c88a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-32e0e0201004ae0f8f0547130c4a7158.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/quizdown-0.6.0/quizdown.js"></script>
+<script src="../../site_libs/quarto-contrib/quizdown-0.6.0/quizdownKatex.js"></script>
+<script src="../../site_libs/quarto-contrib/quizdown-0.6.0/quizdownHighlight.js"></script>
+<script src="../../site_libs/quarto-contrib/quizdown-0.6.0/quizdown-init.js"></script>
+<link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
+<script src="../../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
+<link href="../../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<link rel="stylesheet" href="../../theme.scss">
+<link rel="stylesheet" href="../../css/styles.css">
+<meta property="og:title" content="Programación Python Fundamentos">
+<meta property="og:description" content="Curso completo de Python para principiantes con 70+ desafíos prácticos">
+<meta property="og:image" content="images/portada-python.svg">
+<meta property="og:site_name" content="Programación Python Fundamentos">
+<meta property="og:image:alt" content="Programación Python Fundamentos">
+<meta name="twitter:title" content="Programación Python Fundamentos">
+<meta name="twitter:description" content="Curso completo de Python para principiantes">
+<meta name="twitter:image" content="images/portada-python.svg">
+<meta name="twitter:image:alt" content="Programación Python Fundamentos">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/appendix/01-ia-en-python.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../../content/appendix/04-python-314-ecosistema.html"><span class="chapter-title">Apéndice C: Python 3.14 y el Ecosistema 2026</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/python-logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../../images/python-logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Programación Python Fundamentos</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/statick88/course_of_python" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../../programacion_python_fundamentos.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../../programacion_python_fundamentos.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/01-cover.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Python Fundamentos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/02-dedicatoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Dedicatoria</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/03-prologo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Prólogo: Por qué este curso es diferente</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/04-prefacio.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PREFACIO DEL INSTRUCTOR</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/05-licencia.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Licencia CC BY-NC-SA 4.0</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../front-matter/06-agradecimientos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AGRADECIMIENTOS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../INICIO_RAPIDO.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Inicio Rápido — Programación Python Fundamentos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Python Fundamentos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sobre el Instructor</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../glosario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Glosario — Programación Python Fundamentos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../license.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Licencia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Inventario Local: sesiones 1–10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/plan-del-curso.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Plan del curso: Python orientado a proyecto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/mapa-de-cobertura.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mapa de cobertura y trazabilidad curricular</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/sesiones/01-especificacion-git-entorno.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Día 1: especificación, Git y entorno reproducible</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/sesiones/02-reglas-bordes-propuesta-l04.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Día 2: reglas, bordes y Propuesta-L04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/sesiones/03-arquitectura-cap as-import-linter.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Día 3: arquitectura por capas e import-linter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/sesiones/04-estructuras-invariantes-frecuencias.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Día 4: estructuras, invariantes y frecuencias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/sesiones/05-dominio-entidades-value-objects.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Día 5: dominio, entidades y value objects</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/sesiones/06-pruebas-mutacion-cobertura.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Día 6: pytest, cobertura y mutación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/sesiones/07-propiedades-contratos-hypothesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Día 7: propiedades, contratos y Hypothesis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/sesiones/08-parametrizacion-bordes-propuesta-l04.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Día 8: parametrización, bordes y Propuesta-L04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/sesiones/09-sqlite-repository-transacciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Día 9: SQLite, Repository y transacciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/sesiones/10-pathlib-json-rollback-integracion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Día 10: pathlib, JSON, rollback e integración</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 0: Pensamiento Computacional</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 0: Pensamiento Computacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/01-que-es-computacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">0.1 ¿Qué es computación? De recetas a algoritmos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/02-descomposicion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">0.2 Descomposición: dividir para conquistar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/03-patrones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">0.3 Patrones y abstracción</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/04-pseudocodigo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">0.4 Diseño de algoritmos: pseudocódigo antes que Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/05-evaluacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">0.5 Evaluación de enfores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 0: Pensamiento Computacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-00/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 0</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 1: Introducción a Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 1: Introducción a Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/01-que-es-python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 ¿Qué es Python?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/02-instalacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.2 Instalación y configuración del entorno</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/03-hola-mundo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.3 Tu primer programa: Hola Mundo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/04-variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.4 Variables: las cajas de la memoria</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/05-tipos-basicos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.5 Tipos de datos básicos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/06-input-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.6 Entrada y salida de datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-01-saludo-personalizado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Saludo personalizado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-02-calculadora-edad.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Calculadora de edad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-03-conversor-moneda.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Conversor de moneda</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-04-calculadora-imc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Calculadora de IMC</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-05-historia-interactiva.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Historia interactiva</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-06-formulario-contacto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Formulario de contacto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-01/desafio-07-mini-quiz.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Mini quiz de conocimientos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 2: Tipos de Datos y Variables</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 2: Tipos de Datos y Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/01-operadores-aritmeticos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Operadores aritméticos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/02-operadores-comparacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Operadores de comparación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/03-operadores-logicos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.3 Operadores lógicos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/04-casting-avanzado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Casting avanzado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/05-strings-avanzado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.5 Strings avanzado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-01-calculadora-propinas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Calculadora de propinas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-02-conversor-unidades.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Conversor de unidades</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-03-validador-edad.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Validador de edad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-04-generador-dni.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Generador de DNI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-05-cifrado-cesar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Cifrado César</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-06-analizador-texto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Analizador de texto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-02/desafio-07-mini-base-datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Mini base de datos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 3: Estructuras de Control</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 3: Estructuras de Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/01-if-else.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.1 if / else: el semáforo del código</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/02-if-anidado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.2 Decisiones anidadas: capas de lógica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/03-for-loop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.3 for: el bucle que cuenta por ti</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/04-while-loop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.4 while: repetir mientras se cumpla</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/05-break-continue.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.5 break y continue: control total del flujo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/06-comprension-listas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.6 Comprensión de listas: elegancia Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-01-par-o-impar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Par o impar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-02-tabla-multiplicar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Tabla de multiplicar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-03-fizzbuzz.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: FizzBuzz clásico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-04-adivina-numero.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Adivina el número</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-05-piedra-papel-tijera.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Piedra, papel o tijera</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-06-generador-contrasenas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Generador de contraseñas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-03/desafio-07-cajero-automatico.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Cajero automático</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 4: Funciones</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 4: Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/01-definir-funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.1 Definir funciones: tu primera multiherramienta</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/02-parametros-argumentos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.2 Parámetros y argumentos: la receta flexible</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/03-return.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.3 Return: el resultado que vuelve</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/04-scope-variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.4 Scope de variables: quién ve qué</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/05-funciones-lambda.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.5 Funciones lambda: el atajo elegante</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/06-funciones-recursivas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.6 Funciones recursivas: la función que se llama a sí misma</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 4: Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-01-saludo-funcion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Saludo con función</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-02-area-circulo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Área del círculo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-03-fahrenheit-celsius.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Conversor Fahrenheit ↔︎ Celsius</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-04-contador-vocales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Contador de vocales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-05-numero-primo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Verificar número primo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-06-fibonacci.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Secuencia de Fibonacci</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-04/desafio-07-calculadora-funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Calculadora con funciones</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 5: Listas y Tuplas</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 5: Listas y Tuplas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/01-crear-listas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.1 Crear listas: tu primera colección ordenada</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/02-indexar-slicing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.2 Indexar y slicing: encontrar lo que necesitas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/03-metodos-listas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.3 Métodos de listas: la navaja suiza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/04-iterar-listas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.4 Iterar listas: recorrer colecciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/05-tuplas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.5 Tuplas: datos que no cambian</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/06-listas-anidadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.6 Listas anidadas: más allá de una dimensión</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 5: Resumen y autoevaluación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-01-promedio-notas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Promedio de notas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-02-invertir-lista.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Invertir una lista</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-03-eliminar-duplicados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Eliminar duplicados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-04-estadisticas-lista.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Estadísticas de una lista</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-05-combinar-listas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Combinar listas ordenadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-06-matriz-operaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Operaciones con matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-05/desafio-07-gestor-inventario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Gestor de inventario</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 6: Diccionarios y Sets</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 6: Diccionarios y Sets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/01-crear-diccionarios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.1 Crear diccionarios: la agenda del programador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/02-acceder-modificar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.2 Acceder y modificar diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/03-iterar-diccionarios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.3 Iterar sobre diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/04-sets.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.4 Sets: colecciones sin duplicados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/05-diccionarios-anidados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.5 Diccionarios anidados y JSON</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-01-agenda-contactos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Agenda de contactos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-02-contador-palabras.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Contador de palabras</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-03-inventario-tienda.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Inventario de tienda</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-04-fusionar-diccionarios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Fusionar diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-05-votaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Sistema de votaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-06-base-datos-estudiantes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Base de datos de estudiantes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-06/desafio-07-analizador-votos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Analizador de votos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 7: Manejo de Archivos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 7: Manejo de Archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/01-abrir-cerrar-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.1 Abrir y cerrar archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/02-leer-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.2 Leer archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/03-escribir-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.3 Escribir archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/04-manejo-csv.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.4 Manejo de archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/05-manejo-json.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.5 Manejo de archivos JSON</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/06-pathlib.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.6 pathlib — Rutas modernas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-01-diario-personal.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Diario personal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-02-copiar-archivo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Copiar archivo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-03-log-analyzer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Log Analyzer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-04-csv-a-diccionario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: CSV a diccionario</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-05-configurador-json.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Configurador JSON</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-06-buscador-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Buscador de archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-07/desafio-07-gestor-contactos-csv.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Gestor de contactos CSV</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 8: Módulos y Paquetes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 8: Módulos y Paquetes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/01-importar-modulos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.1 Importar módulos: tu caja de herramientas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/02-modulos-estandar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.2 La biblioteca estándar: módulos que ya tienes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/03-crear-modulos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.3 Crear tus propios módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/04-paquetes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.4 Paquetes: organizar código profesionalmente</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/05-pip-paquetes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.5 pip: el gestor de paquetes de Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/06-entornos-virtuales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.6 Entornos virtuales: aislamiento seguro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/07-eficiencia-big-o.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.7 Eficiencia: ¿tu código escala?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-01-mi-primer-modulo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Mi primer módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-02-generador-fechas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Generador de fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-03-aleatorios-avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Aleatorios avanzados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-04-organizador-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Organizador de archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-05-api-clima.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: API del clima</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-06-web-scraper.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Web scraper</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-08/desafio-07-proyecto-modular.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Proyecto modular completo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 9: Buenas Prácticas</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 9: Buenas Prácticas en Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/01-pep8-estilo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.1 PEP 8: el estilo que une a la comunidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/02-nombres-descriptivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.2 Nombres descriptivos: código que habla</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/03-funciones-puras.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.3 Funciones puras: predecibles y testeables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/04-manejo-errores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.4 Manejo de errores: falla con elegancia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/05-documentacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.5 Documentación: tu yo del futuro te lo agradecerá</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/06-testing-basico.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9.6 Testing básico: confianza en tu código</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/99-resumen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resumen del Módulo 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-01-refactorizar-codigo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 1: Refactorizar código desordenado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-02-docstrings.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 2: Documentar funciones con docstrings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-03-validador-robusto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 3: Crear un validador de datos robusto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-04-test-calculadora.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 4: Escribir tests para una calculadora</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-05-linter-codigo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 5: Corregir errores de un linter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-06-refactorizar-proyecto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 6: Refactorizar un mini proyecto completo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-09/desafio-07-code-review.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desafío 7: Revisión de código (Code Review)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Módulo 10: Proyecto Integrador</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 10: Proyecto Integrador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-sistema-gestion-abacom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto: Sistema de Gestión Educativa ABACOM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/01-planificar-proyecto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.1 Planificar tu proyecto: del problema a la solución</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/02-estructura-proyecto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.2 Estructura profesional de un proyecto Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/03-proyecto-gestor-tareas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.3 Proyecto guiado: Gestor de Tareas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/04-proyecto-tienda-simple.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.4 Proyecto guiado: Tienda de Productos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/05-proyecto-analizador-datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.5 Proyecto guiado: Analizador de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/06-presentacion-proyecto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10.6 Presentar tu proyecto al mundo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/99-cierre-curso.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎓 Cierre del Curso: De Cero a Programador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/99_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Recursos del Módulo 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-01-gestor-tareas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto 1: Gestor de Tareas Personal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-02-tienda-productos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto 2: Tienda de Productos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-03-analizador-datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto 3: Analizador de Datos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-04-hangman.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto 4: Juego del Ahorcado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/modulo-10/proyecto-05-caesar-cipher.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto 5: Cifrado César y Criptoanálisis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Laboratorios Prácticos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorios Prácticos - Programación Python Fundamentos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab01-primer-programa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1: Tu primer programa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab02-variables-en-accion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2: Variables en acción</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab03-estructuras-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3: Estructuras de Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab04-funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 4: Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab05-listas-tuplas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 5: Listas y Tuplas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab06-diccionarios-sets.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 6: Diccionarios y Sets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab07-manejo-archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 7: Manejo de Archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab08-modulos-paquetes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 8: Módulos y Paquetes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab09-buenas-practicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 9: Buenas Prácticas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab10-proyecto-integrador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 10: Proyecto Integrador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab11-git-github-python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 11: Git y GitHub con Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Presentaciones (Reveal.js)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../presentaciones/modulo-0-pensamiento-computacional.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 0: Pensamiento Computacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../presentaciones/modulo-1-intro-python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo 1: Introducción a Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Evaluación: Quizzes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/evaluacion-diagnostico.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación de Diagnóstico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quizzes Interactivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 1 — Introducción a Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 2 — Tipos de Datos y Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 3 — Estructuras de Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 4 — Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 5 — Listas y Tuplas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 6 — Diccionarios y Sets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 7 — Manejo de Archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 8 — Módulos y Paquetes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 9 — Buenas Prácticas y Testing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-modulo-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Módulo 10 — Proyecto Final y Buenas Prácticas de Desarrollo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-anexo-git-github.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz: Anexo — Git y GitHub con Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz-avanzado-troubleshooting.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quiz Avanzado: Troubleshooting y Escenarios Reales</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+ <span class="menu-text">Tareas para Plataforma Q10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/01-ia-en-python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice A: Integración de IA en el Desarrollo Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/02-mcp-para-python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice B: Model Context Protocol (MCP) para Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/03-phase-final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase Final: Verificación y Checklist de Completitud</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/04-python-314-ecosistema.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Apéndice C: Python 3.14 y el Ecosistema 2026</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/05-git-github-con-python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice D: MiniCurso de Git y GitHub con Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/05-python-dev-vs-security.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice E: Python - Del Desarrollo a la Seguridad Ofensiva</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/appendix/06-ia-2026-opencode-agentes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice F: IA en 2026 — OpenCode, Agentes y SDD</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#apéndice-c-python-3.14-y-el-ecosistema-2026" id="toc-apéndice-c-python-3.14-y-el-ecosistema-2026" class="nav-link active" data-scroll-target="#apéndice-c-python-3.14-y-el-ecosistema-2026">Apéndice C: Python 3.14 y el Ecosistema 2026</a>
+  <ul class="collapse">
+  <li><a href="#python-3.14-lo-que-cambió-octubre-2025" id="toc-python-3.14-lo-que-cambió-octubre-2025" class="nav-link" data-scroll-target="#python-3.14-lo-que-cambió-octubre-2025">Python 3.14: Lo que cambió (Octubre 2025)</a></li>
+  <li><a href="#mensajes-de-error-inteligentes" id="toc-mensajes-de-error-inteligentes" class="nav-link" data-scroll-target="#mensajes-de-error-inteligentes">1. Mensajes de Error Inteligentes</a>
+  <ul class="collapse">
+  <li><a href="#por-qué-importa" id="toc-por-qué-importa" class="nav-link" data-scroll-target="#por-qué-importa">¿Por qué importa?</a></li>
+  <li><a href="#desafío-prueba-los-errores" id="toc-desafío-prueba-los-errores" class="nav-link" data-scroll-target="#desafío-prueba-los-errores">Desafío: Prueba los errores</a></li>
+  </ul></li>
+  <li><a href="#t-strings-template-strings-pep-750" id="toc-t-strings-template-strings-pep-750" class="nav-link" data-scroll-target="#t-strings-template-strings-pep-750">2. T-Strings (Template Strings) — PEP 750</a>
+  <ul class="collapse">
+  <li><a href="#el-problema-con-f-strings" id="toc-el-problema-con-f-strings" class="nav-link" data-scroll-target="#el-problema-con-f-strings">El problema con f-strings</a></li>
+  <li><a href="#la-solución-t-strings" id="toc-la-solución-t-strings" class="nav-link" data-scroll-target="#la-solución-t-strings">La solución: T-Strings</a></li>
+  <li><a href="#qué-son-exactamente" id="toc-qué-son-exactamente" class="nav-link" data-scroll-target="#qué-son-exactamente">¿Qué son exactamente?</a></li>
+  <li><a href="#analogía-del-mundo-real" id="toc-analogía-del-mundo-real" class="nav-link" data-scroll-target="#analogía-del-mundo-real">Analogía del mundo real</a></li>
+  </ul></li>
+  <li><a href="#anotaciones-diferidas-pep-649" id="toc-anotaciones-diferidas-pep-649" class="nav-link" data-scroll-target="#anotaciones-diferidas-pep-649">3. Anotaciones Diferidas — PEP 649</a>
+  <ul class="collapse">
+  <li><a href="#el-problema-anterior" id="toc-el-problema-anterior" class="nav-link" data-scroll-target="#el-problema-anterior">El problema anterior</a></li>
+  <li><a href="#ahora-python-3.14" id="toc-ahora-python-3.14" class="nav-link" data-scroll-target="#ahora-python-3.14">Ahora (Python 3.14)</a></li>
+  <li><a href="#cómo-funciona" id="toc-cómo-funciona" class="nav-link" data-scroll-target="#cómo-funciona">¿Cómo funciona?</a></li>
+  <li><a href="#por-qué-importa-1" id="toc-por-qué-importa-1" class="nav-link" data-scroll-target="#por-qué-importa-1">¿Por qué importa?</a></li>
+  </ul></li>
+  <li><a href="#repl-mejorado" id="toc-repl-mejorado" class="nav-link" data-scroll-target="#repl-mejorado">4. REPL Mejorado</a>
+  <ul class="collapse">
+  <li><a href="#lo-que-tenía-python-antes" id="toc-lo-que-tenía-python-antes" class="nav-link" data-scroll-target="#lo-que-tenía-python-antes">Lo que tenía Python antes</a></li>
+  <li><a href="#lo-que-tiene-ahora-python-3.14" id="toc-lo-que-tiene-ahora-python-3.14" class="nav-link" data-scroll-target="#lo-que-tiene-ahora-python-3.14">Lo que tiene ahora (Python 3.14)</a></li>
+  <li><a href="#features-nuevas" id="toc-features-nuevas" class="nav-link" data-scroll-target="#features-nuevas">Features nuevas</a></li>
+  <li><a href="#comparación-con-shells-externos" id="toc-comparación-con-shells-externos" class="nav-link" data-scroll-target="#comparación-con-shells-externos">Comparación con shells externos</a></li>
+  </ul></li>
+  <li><a href="#subinterpreters-paralelismo-real" id="toc-subinterpreters-paralelismo-real" class="nav-link" data-scroll-target="#subinterpreters-paralelismo-real">5. Subinterpreters — Paralelismo Real</a>
+  <ul class="collapse">
+  <li><a href="#el-problema-del-gil" id="toc-el-problema-del-gil" class="nav-link" data-scroll-target="#el-problema-del-gil">El problema del GIL</a></li>
+  <li><a href="#la-solución-subinterpreters" id="toc-la-solución-subinterpreters" class="nav-link" data-scroll-target="#la-solución-subinterpreters">La solución: Subinterpreters</a></li>
+  <li><a href="#comparación-de-opciones-de-paralelismo" id="toc-comparación-de-opciones-de-paralelismo" class="nav-link" data-scroll-target="#comparación-de-opciones-de-paralelismo">Comparación de opciones de paralelismo</a></li>
+  </ul></li>
+  <li><a href="#rendimiento-gc-incremental-jit-experimental" id="toc-rendimiento-gc-incremental-jit-experimental" class="nav-link" data-scroll-target="#rendimiento-gc-incremental-jit-experimental">6. Rendimiento: GC Incremental + JIT Experimental</a>
+  <ul class="collapse">
+  <li><a href="#garbage-collector-incremental" id="toc-garbage-collector-incremental" class="nav-link" data-scroll-target="#garbage-collector-incremental">Garbage Collector Incremental</a></li>
+  <li><a href="#jit-compiler-experimental" id="toc-jit-compiler-experimental" class="nav-link" data-scroll-target="#jit-compiler-experimental">JIT Compiler Experimental</a></li>
+  <li><a href="#benchmarks-python-3.14-vs-3.12" id="toc-benchmarks-python-3.14-vs-3.12" class="nav-link" data-scroll-target="#benchmarks-python-3.14-vs-3.12">Benchmarks (Python 3.14 vs 3.12)</a></li>
+  </ul></li>
+  <li><a href="#free-threading-python-sin-gil" id="toc-free-threading-python-sin-gil" class="nav-link" data-scroll-target="#free-threading-python-sin-gil">7. Free-Threading Python — Sin GIL</a>
+  <ul class="collapse">
+  <li><a href="#qué-es" id="toc-qué-es" class="nav-link" data-scroll-target="#qué-es">¿Qué es?</a></li>
+  <li><a href="#qué-cambia" id="toc-qué-cambia" class="nav-link" data-scroll-target="#qué-cambia">¿Qué cambia?</a></li>
+  <li><a href="#deberías-usarlo" id="toc-deberías-usarlo" class="nav-link" data-scroll-target="#deberías-usarlo">¿Deberías usarlo?</a></li>
+  </ul></li>
+  <li><a href="#debugger-remoto-pep-768" id="toc-debugger-remoto-pep-768" class="nav-link" data-scroll-target="#debugger-remoto-pep-768">8. Debugger Remoto — PEP 768</a>
+  <ul class="collapse">
+  <li><a href="#antes" id="toc-antes" class="nav-link" data-scroll-target="#antes">Antes</a></li>
+  <li><a href="#ahora" id="toc-ahora" class="nav-link" data-scroll-target="#ahora">Ahora</a></li>
+  </ul></li>
+  <li><a href="#compresión-zstandard-nativa" id="toc-compresión-zstandard-nativa" class="nav-link" data-scroll-target="#compresión-zstandard-nativa">9. Compresión Zstandard Nativa</a></li>
+  <li><a href="#uuid-v6-v7-v8" id="toc-uuid-v6-v7-v8" class="nav-link" data-scroll-target="#uuid-v6-v7-v8">10. UUID v6, v7, v8</a></li>
+  <li><a href="#ecosistema-python-2026-tendencias" id="toc-ecosistema-python-2026-tendencias" class="nav-link" data-scroll-target="#ecosistema-python-2026-tendencias">Ecosistema Python 2026: Tendencias</a>
+  <ul class="collapse">
+  <li><a href="#lo-que-está-de-moda" id="toc-lo-que-está-de-moda" class="nav-link" data-scroll-target="#lo-que-está-de-moda">Lo que está de moda</a></li>
+  <li><a href="#stack-recomendado-para-principiantes-2026" id="toc-stack-recomendado-para-principiantes-2026" class="nav-link" data-scroll-target="#stack-recomendado-para-principiantes-2026">Stack recomendado para principiantes (2026)</a></li>
+  <li><a href="#herramientas-de-ia-para-python" id="toc-herramientas-de-ia-para-python" class="nav-link" data-scroll-target="#herramientas-de-ia-para-python">Herramientas de IA para Python</a></li>
+  </ul></li>
+  <li><a href="#desafío-tu-código-en-python-3.14" id="toc-desafío-tu-código-en-python-3.14" class="nav-link" data-scroll-target="#desafío-tu-código-en-python-3.14">Desafío: Tu Código en Python 3.14</a>
+  <ul class="collapse">
+  <li><a href="#misión" id="toc-misión" class="nav-link" data-scroll-target="#misión">Misión</a></li>
+  </ul></li>
+  <li><a href="#línea-de-tiempo-de-versiones-python" id="toc-línea-de-tiempo-de-versiones-python" class="nav-link" data-scroll-target="#línea-de-tiempo-de-versiones-python">Línea de Tiempo de Versiones Python</a></li>
+  <li><a href="#recursos-oficiales" id="toc-recursos-oficiales" class="nav-link" data-scroll-target="#recursos-oficiales">Recursos Oficiales</a></li>
+  </ul></li>
+  <li>Code Appendix</li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/statick88/course_of_python/edit/main/content/appendix/04-python-314-ecosistema.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/appendix/01-ia-en-python.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../../content/appendix/04-python-314-ecosistema.html"><span class="chapter-title">Apéndice C: Python 3.14 y el Ecosistema 2026</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Apéndice C: Python 3.14 y el Ecosistema 2026</span></h1>
+<p class="subtitle lead">Lo último en Python — T-strings, JIT, Free-Threading y más</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="apéndice-c-python-3.14-y-el-ecosistema-2026" class="level1">
+<h1>Apéndice C: Python 3.14 y el Ecosistema 2026</h1>
+<blockquote class="blockquote">
+<p><strong>Fecha</strong>: Abril 2026<br>
+<strong>Fuente</strong>: Documentación oficial de Python (python.org), RealPython, Python Morsels<br>
+<strong>Objetivo</strong>: Conocer las características más recientes de Python y el ecosistema actual</p>
+</blockquote>
+<hr>
+<section id="python-3.14-lo-que-cambió-octubre-2025" class="level2">
+<h2 class="anchored" data-anchor-id="python-3.14-lo-que-cambió-octubre-2025">Python 3.14: Lo que cambió (Octubre 2025)</h2>
+<p>Python 3.14 es la versión estable actual (abril 2026). Trajo los cambios más significativos en años.</p>
+<blockquote class="blockquote">
+<p><strong>Nota del instructor</strong>: Aunque este curso enseña conceptos que aplican a cualquier versión, es útil conocer lo último. Algunas de estas funciones cambiarán cómo escribes Python en el futuro cercano.</p>
+</blockquote>
+<hr>
+</section>
+<section id="mensajes-de-error-inteligentes" class="level2">
+<h2 class="anchored" data-anchor-id="mensajes-de-error-inteligentes">1. Mensajes de Error Inteligentes</h2>
+<p><strong>Antes</strong> (Python 3.12 y anterior):</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> forr i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">SyntaxError</span>: invalid syntax</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Ahora</strong> (Python 3.14):</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> forr i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="pp">SyntaxError</span>: invalid syntax. Did you mean <span class="st">'for'</span>?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="por-qué-importa" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-importa">¿Por qué importa?</h3>
+<p>Python ahora <strong>detecta errores comunes</strong> y sugiere correcciones:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tu error</th>
+<th>Sugerencia de Python</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>forr</code></td>
+<td>Did you mean <code>for</code>?</td>
+</tr>
+<tr class="even">
+<td><code>pritn(x)</code></td>
+<td>Did you mean <code>print</code>?</td>
+</tr>
+<tr class="odd">
+<td><code>a, b = [1, 2, 3]</code></td>
+<td>too many values to unpack (expected 2, got 3)</td>
+</tr>
+<tr class="even">
+<td><code>lista.apend(x)</code></td>
+<td>Did you mean <code>lista.append</code>?</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="desafío-prueba-los-errores" class="level3">
+<h3 class="anchored" data-anchor-id="desafío-prueba-los-errores">Desafío: Prueba los errores</h3>
+<p>Abre tu terminal y prueba estos errores. Observa las sugerencias:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Error 1: Keyword typo</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>whlie <span class="va">True</span>:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Error 2: Method typo</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>[].apend(<span class="dv">1</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Error 3: Unpacking</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Error 4: Undefined method</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">"hello"</span>.uppr()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="t-strings-template-strings-pep-750" class="level2">
+<h2 class="anchored" data-anchor-id="t-strings-template-strings-pep-750">2. T-Strings (Template Strings) — PEP 750</h2>
+<section id="el-problema-con-f-strings" class="level3">
+<h3 class="anchored" data-anchor-id="el-problema-con-f-strings">El problema con f-strings</h3>
+<p>Las f-strings son geniales pero <strong>no puedes interceptar</strong> los valores interpolados:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="st">"' OR '1'='1"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="ss">f"SELECT * FROM users WHERE name = '</span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">'"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ¡SQL Injection! La f-string no te protege</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="la-solución-t-strings" class="level3">
+<h3 class="anchored" data-anchor-id="la-solución-t-strings">La solución: T-Strings</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string.templatelib <span class="im">import</span> Template</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> safe_query(name: <span class="bu">str</span>) <span class="op">-&gt;</span> Template:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">t"SELECT * FROM users WHERE name = </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna un objeto Template, NO un string</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>tpl <span class="op">=</span> safe_query(<span class="st">"' OR '1'='1"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Un procesador puede escapar o parametrizar automáticamente</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="qué-son-exactamente" class="level3">
+<h3 class="anchored" data-anchor-id="qué-son-exactamente">¿Qué son exactamente?</h3>
+<p>Las t-strings <strong>separan</strong> el texto estático de los valores interpolados:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string.templatelib <span class="im">import</span> Template</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> html_escape(value):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">str</span>(value).replace(<span class="st">"&lt;"</span>, <span class="st">"&amp;lt;"</span>).replace(<span class="st">"&gt;"</span>, <span class="st">"&amp;gt;"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> safe_html(name: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># El procesador recibe partes separadas</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># y puede escapar valores automáticamente</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> html_escape(name)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Uso futuro con custom processors</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="ss">t"&lt;h1&gt;Hola, </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">!&lt;/h1&gt;"</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># El processor escapa &lt;script&gt; tags automáticamente</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="analogía-del-mundo-real" class="level3">
+<h3 class="anchored" data-anchor-id="analogía-del-mundo-real">Analogía del mundo real</h3>
+<ul>
+<li><strong>f-string</strong>: Mezclar ingredientes y hornear → no puedes separarlos después</li>
+<li><strong>t-string</strong>: Receta con ingredientes separados → puedes modificar antes de mezclar</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="anotaciones-diferidas-pep-649" class="level2">
+<h2 class="anchored" data-anchor-id="anotaciones-diferidas-pep-649">3. Anotaciones Diferidas — PEP 649</h2>
+<section id="el-problema-anterior" class="level3">
+<h3 class="anchored" data-anchor-id="el-problema-anterior">El problema anterior</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python 3.13 y anterior</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Node:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="ex">connect</span>(<span class="va">self</span>, other: Node):  <span class="co"># NameError! Node no está definida aún</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Workaround necesario:</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Node:</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="ex">connect</span>(<span class="va">self</span>, other: <span class="st">"Node"</span>):  <span class="co"># Strings como workaround</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># O:</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> __future__ <span class="im">import</span> annotations  <span class="co"># Import mágico</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="ahora-python-3.14" class="level3">
+<h3 class="anchored" data-anchor-id="ahora-python-3.14">Ahora (Python 3.14)</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Funciona NATIVAMENTE sin quotes ni imports</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Node:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="ex">connect</span>(<span class="va">self</span>, other: Node):  <span class="co"># ✅ Sin error</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> LinkedList:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    head: Node  <span class="co"># ✅ Forward reference funciona</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Node:</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    value: <span class="bu">int</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">next</span>: Node <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="cómo-funciona" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-funciona">¿Cómo funciona?</h3>
+<p>Las anotaciones ahora son <strong>lazy</strong> (evaluación perezosa):</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> annotationlib</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Las anotaciones NO se evalúan al definir la clase</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Se evalúan SOLO cuando las pides:</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>hints <span class="op">=</span> annotationlib.get_annotations(Node, <span class="bu">format</span><span class="op">=</span>annotationlib.Format.FORWARDREF)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hints)  <span class="co"># {'value': int, 'next': Node | None}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="por-qué-importa-1" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-importa-1">¿Por qué importa?</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Beneficio</th>
+<th>Impacto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sin <code>NameError</code> por forward references</td>
+<td>Código más limpio</td>
+</tr>
+<tr class="even">
+<td>Sin <code>from __future__ import annotations</code></td>
+<td>Menos imports mágicos</td>
+</tr>
+<tr class="odd">
+<td>Mejor rendimiento al importar</td>
+<td>No evalúa expresiones pesadas</td>
+</tr>
+<tr class="even">
+<td>Type checkers funcionan mejor</td>
+<td>Acceso programático a tipos</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="repl-mejorado" class="level2">
+<h2 class="anchored" data-anchor-id="repl-mejorado">4. REPL Mejorado</h2>
+<section id="lo-que-tenía-python-antes" class="level3">
+<h3 class="anchored" data-anchor-id="lo-que-tenía-python-antes">Lo que tenía Python antes</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> calculate_total(items):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>...     total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>...     <span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>...         total <span class="op">+=</span> item.price</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>...     <span class="cf">return</span> total</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="co"># Todo en blanco y negro, sin autocompletado</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="lo-que-tiene-ahora-python-3.14" class="level3">
+<h3 class="anchored" data-anchor-id="lo-que-tiene-ahora-python-3.14">Lo que tiene ahora (Python 3.14)</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="co"># Syntax highlighting en tiempo real:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="co"># def se ve en morado, nombres en azul, tipos en verde</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> dat  <span class="co"># TAB → autocompleta a dataclasses, datetime, etc.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="features-nuevas" class="level3">
+<h3 class="anchored" data-anchor-id="features-nuevas">Features nuevas</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Syntax highlighting</strong></td>
+<td>Colores configurables con temas ANSI</td>
+</tr>
+<tr class="even">
+<td><strong>Autocompletado con TAB</strong></td>
+<td><code>import</code> + TAB muestra módulos disponibles</td>
+</tr>
+<tr class="odd">
+<td><strong>Historial persistente</strong></td>
+<td>Las sesiones anteriores se recuerdan</td>
+</tr>
+<tr class="even">
+<td><strong>Multiline editing</strong></td>
+<td>Editar múltiples líneas más fácilmente</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="comparación-con-shells-externos" class="level3">
+<h3 class="anchored" data-anchor-id="comparación-con-shells-externos">Comparación con shells externos</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Shell</th>
+<th>Syntax Highlighting</th>
+<th>Autocomplete</th>
+<th>Built-in</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Python 3.13 REPL</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>IPython</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌ (pip install)</td>
+</tr>
+<tr class="odd">
+<td><strong>Python 3.14 REPL</strong></td>
+<td><strong>✅</strong></td>
+<td><strong>✅</strong></td>
+<td><strong>✅</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="subinterpreters-paralelismo-real" class="level2">
+<h2 class="anchored" data-anchor-id="subinterpreters-paralelismo-real">5. Subinterpreters — Paralelismo Real</h2>
+<section id="el-problema-del-gil" class="level3">
+<h3 class="anchored" data-anchor-id="el-problema-del-gil">El problema del GIL</h3>
+<p>El <strong>Global Interpreter Lock (GIL)</strong> impide que múltiples threads ejecuten bytecode Python simultáneamente:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cpu_task():</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(i<span class="op">*</span>i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10_000_000</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># En Python con GIL: threads NO son paralelos realmente</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>threads <span class="op">=</span> [threading.Thread(target<span class="op">=</span>cpu_task) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)]</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> threads: t.start()  <span class="co"># Se turnan, NO corren juntos</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="la-solución-subinterpreters" class="level3">
+<h3 class="anchored" data-anchor-id="la-solución-subinterpreters">La solución: Subinterpreters</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> concurrent.futures <span class="im">import</span> InterpreterPoolExecutor</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cpu_task(n):</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(i <span class="op">*</span> i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Cada subinterpreter tiene su PROPIO GIL</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> InterpreterPoolExecutor(max_workers<span class="op">=</span><span class="dv">4</span>) <span class="im">as</span> pool:</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> <span class="bu">list</span>(pool.<span class="bu">map</span>(cpu_task, [<span class="dv">5_000_000</span>] <span class="op">*</span> <span class="dv">4</span>))</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ¡PARALELO REAL! 4x más rápido en CPU multi-core</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="comparación-de-opciones-de-paralelismo" class="level3">
+<h3 class="anchored" data-anchor-id="comparación-de-opciones-de-paralelismo">Comparación de opciones de paralelismo</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Enfoque</th>
+<th>Overhead</th>
+<th>Aislamiento</th>
+<th>Paralelismo real</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>threading</code></td>
+<td>Bajo</td>
+<td>Ninguno</td>
+<td>❌ (GIL)</td>
+</tr>
+<tr class="even">
+<td><code>multiprocessing</code></td>
+<td>Alto</td>
+<td>Total</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td><strong>Subinterpreters</strong></td>
+<td><strong>Medio</strong></td>
+<td><strong>Alto</strong></td>
+<td><strong>✅</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="rendimiento-gc-incremental-jit-experimental" class="level2">
+<h2 class="anchored" data-anchor-id="rendimiento-gc-incremental-jit-experimental">6. Rendimiento: GC Incremental + JIT Experimental</h2>
+<section id="garbage-collector-incremental" class="level3">
+<h3 class="anchored" data-anchor-id="garbage-collector-incremental">Garbage Collector Incremental</h3>
+<p><strong>Antes</strong>: GC detenía todo el programa para detectar ciclos → “micro-pausas”</p>
+<p><strong>Ahora</strong>: GC distribuye el trabajo en pasos pequeños → sin pausas notables</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># NO necesitas cambiar código</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Funciona automáticamente</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Node:</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.<span class="bu">next</span> <span class="op">=</span> <span class="va">None</span>  <span class="co"># Referencia circular potencial</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># GC incremental detecta ciclos sin pausar tu app</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="jit-compiler-experimental" class="level3">
+<h3 class="anchored" data-anchor-id="jit-compiler-experimental">JIT Compiler Experimental</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>BASH</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15" data-code-line-numbers=""><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Activar JIT (experimental)</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="va">PYTHON_JIT</span><span class="op">=</span>1 <span class="ex">python</span> mi_script.py</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># O con flag</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--enable-jit</span> mi_script.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar si JIT está activo</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> sys <span class="im">import</span> _jit</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"JIT available: </span><span class="sc">{</span>_jit<span class="sc">.</span>is_available()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"JIT active: </span><span class="sc">{</span>_jit<span class="sc">.</span>is_active()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ImportError</span>:</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"JIT no está compilado en esta versión"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="benchmarks-python-3.14-vs-3.12" class="level3">
+<h3 class="anchored" data-anchor-id="benchmarks-python-3.14-vs-3.12">Benchmarks (Python 3.14 vs 3.12)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operación</th>
+<th>Python 3.12</th>
+<th>Python 3.14</th>
+<th>Mejora</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Importar módulos</td>
+<td>1.0x</td>
+<td>1.15x</td>
+<td>+15%</td>
+</tr>
+<tr class="even">
+<td>String concat</td>
+<td>1.0x</td>
+<td>1.08x</td>
+<td>+8%</td>
+</tr>
+<tr class="odd">
+<td>GC latency</td>
+<td>Pausas 10ms</td>
+<td>&lt;1ms</td>
+<td><strong>10x</strong></td>
+</tr>
+<tr class="even">
+<td>Threading (GIL off)</td>
+<td>1x</td>
+<td>3.5x</td>
+<td><strong>3.5x</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="free-threading-python-sin-gil" class="level2">
+<h2 class="anchored" data-anchor-id="free-threading-python-sin-gil">7. Free-Threading Python — Sin GIL</h2>
+<section id="qué-es" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es">¿Qué es?</h3>
+<p>Python ahora se puede compilar <strong>sin el GIL</strong>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>BASH</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17" data-code-line-numbers=""><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compilar sin GIL</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--disable-gil</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="qué-cambia" class="level3">
+<h3 class="anchored" data-anchor-id="qué-cambia">¿Qué cambia?</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_data(chunk):</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.01</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(chunk)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Sin GIL: threads corren en PARALELO REAL</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> threading.ThreadPoolExecutor(max_workers<span class="op">=</span><span class="dv">4</span>) <span class="im">as</span> executor:</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> <span class="bu">list</span>(executor.<span class="bu">map</span>(process_data, chunks))</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4x más rápido en CPU de 4+ cores</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="deberías-usarlo" class="level3">
+<h3 class="anchored" data-anchor-id="deberías-usarlo">¿Deberías usarlo?</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Escenario</th>
+<th>Sin GIL</th>
+<th>Con GIL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CPU-bound multithread</td>
+<td>✅ 3-4x más rápido</td>
+<td>❌ Sin ganancia</td>
+</tr>
+<tr class="even">
+<td>Single-threaded</td>
+<td>⚠️ 5-10% más lento</td>
+<td>✅ Óptimo</td>
+</tr>
+<tr class="odd">
+<td>I/O-bound</td>
+<td>✅ Similar</td>
+<td>✅ Similar</td>
+</tr>
+<tr class="even">
+<td>Compatibilidad libs</td>
+<td>⚠️ Algunos no ready</td>
+<td>✅ Todos funcionan</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="debugger-remoto-pep-768" class="level2">
+<h2 class="anchored" data-anchor-id="debugger-remoto-pep-768">8. Debugger Remoto — PEP 768</h2>
+<section id="antes" class="level3">
+<h3 class="anchored" data-anchor-id="antes">Antes</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pdb<span class="op">;</span> pdb.set_trace()  <span class="co"># Hardcodeado en el código</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Necesitas reiniciar la app</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="ahora" class="level3">
+<h3 class="anchored" data-anchor-id="ahora">Ahora</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>BASH</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20" data-code-line-numbers=""><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjuntar a proceso en ejecución</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pdb <span class="at">-p</span> 12345  <span class="co"># PID del proceso</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Debug remoto</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Server:</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pdb <span class="at">--remote</span> localhost:5000 mi_app.py</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Cliente:</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pdb <span class="at">--connect</span> localhost:5000</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="compresión-zstandard-nativa" class="level2">
+<h2 class="anchored" data-anchor-id="compresión-zstandard-nativa">9. Compresión Zstandard Nativa</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Antes: pip install zstandard</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Ahora: built-in</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> compression.zstd</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprimir</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>compressor <span class="op">=</span> compression.zstd.ZstdCompressor()</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>compressed <span class="op">=</span> compressor.compress(<span class="st">b"Datos grandes aqu</span><span class="er">í</span><span class="st">..."</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Descomprimir</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>decompressor <span class="op">=</span> compression.zstd.ZstdDecompressor()</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> decompressor.decompress(compressed)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="co"># vs gzip: 20% más rápido en descompresión</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="uuid-v6-v7-v8" class="level2">
+<h2 class="anchored" data-anchor-id="uuid-v6-v7-v8">10. UUID v6, v7, v8</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> uuid</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># UUID v7: time-ordered, ideal para bases de datos</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>uuid_v7 <span class="op">=</span> uuid.uuid7()  <span class="co"># Nuevo en 3.14</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(uuid_v7)  <span class="co"># 01933b2e-...</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># UUID v6: alternative ordering</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>uuid_v6 <span class="op">=</span> uuid.uuid6()</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># v7 es mejor que v4 para índices de DB</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># - Time-ordered → inserts más rápidos en B-trees</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># - Mejor distribución que v1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="ecosistema-python-2026-tendencias" class="level2">
+<h2 class="anchored" data-anchor-id="ecosistema-python-2026-tendencias">Ecosistema Python 2026: Tendencias</h2>
+<section id="lo-que-está-de-moda" class="level3">
+<h3 class="anchored" data-anchor-id="lo-que-está-de-moda">Lo que está de moda</h3>
+<div class="line-block">Tecnología | Qué es | Por qué importa |</div>
+<p>|———–|——–|—————-|| | <strong>FastAPI</strong> | Web framework async | Reemplazó a Flask/Django en APIs nuevas | | <strong>Pydantic v3</strong> | Validación de datos | Estándar para APIs Python | | <strong>Ruff</strong> | Linter/formatter | 100x más rápido que flake8 + black | | <strong>uv</strong> | Package manager | Reemplazo de pip/venv, escrito en Rust | | <strong>MCP</strong> | Model Context Protocol | Conecta Python con herramientas IA | | <strong>Mojo</strong> | Superset de Python | 35,000x más rápido en ML, compatible con Python | | <strong>PyScript</strong> | Python en browser | Ejecuta Python directamente en HTML |</p>
+</section>
+<section id="stack-recomendado-para-principiantes-2026" class="level3">
+<h3 class="anchored" data-anchor-id="stack-recomendado-para-principiantes-2026">Stack recomendado para principiantes (2026)</h3>
+<pre data-code-line-numbers=""><code>Editor: VS Code + extensión Python
+Package manager: uv (reemplaza pip + venv)
+Linter: ruff (reemplaza flake8 + black + isort)
+Testing: pytest
+Web framework: FastAPI
+Data: pandas + polars (más rápido que pandas)
+AI: OpenAI SDK + MCP server</code></pre>
+</section>
+<section id="herramientas-de-ia-para-python" class="level3">
+<h3 class="anchored" data-anchor-id="herramientas-de-ia-para-python">Herramientas de IA para Python</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Herramienta</th>
+<th>Qué hace</th>
+<th>Integración</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GitHub Copilot</strong></td>
+<td>Autocompletado IA</td>
+<td>VS Code</td>
+</tr>
+<tr class="even">
+<td><strong>Claude Code</strong></td>
+<td>Agente de código</td>
+<td>Terminal</td>
+</tr>
+<tr class="odd">
+<td><strong>Qwen Code</strong></td>
+<td>CLI assistant</td>
+<td>Terminal</td>
+</tr>
+<tr class="even">
+<td><strong>MCP Servers</strong></td>
+<td>Conecta Python con IA</td>
+<td>Protocolo estándar</td>
+</tr>
+<tr class="odd">
+<td><strong>Cursor</strong></td>
+<td>Editor IA-first</td>
+<td>Fork de VS Code</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="desafío-tu-código-en-python-3.14" class="level2">
+<h2 class="anchored" data-anchor-id="desafío-tu-código-en-python-3.14">Desafío: Tu Código en Python 3.14</h2>
+<section id="misión" class="level3">
+<h3 class="anchored" data-anchor-id="misión">Misión</h3>
+<p>Reescribe este código de Python 3.12 usando features de 3.14:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python 3.12</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TreeNode:</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, val: <span class="bu">int</span>):</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.val <span class="op">=</span> val</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.left: <span class="st">"TreeNode"</span> <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.right: <span class="st">"TreeNode"</span> <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> insert(<span class="va">self</span>, val: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="st">"TreeNode"</span>:</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&lt;</span> <span class="va">self</span>.val:</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="va">self</span>.left <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.left <span class="op">=</span> TreeNode(val)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.left.insert(val)</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_query(table: <span class="bu">str</span>, conditions: <span class="bu">dict</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>    parts <span class="op">=</span> [<span class="ss">f"SELECT * FROM </span><span class="sc">{</span>table<span class="sc">}</span><span class="ss">"</span>]</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> conditions:</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>        where <span class="op">=</span> <span class="st">" AND "</span>.join(<span class="ss">f"</span><span class="sc">{</span>k<span class="sc">}</span><span class="ss"> = '</span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">'"</span> <span class="cf">for</span> k, v <span class="kw">in</span> conditions.items())</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>        parts.append(<span class="ss">f"WHERE </span><span class="sc">{</span>where<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">" "</span>.join(parts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+Ver solución en Python 3.14
+</summary>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PYTHON</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python 3.14: Sin __future__, forward refs nativas</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TreeNode:</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, val: <span class="bu">int</span>):</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.val <span class="op">=</span> val</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.left: TreeNode <span class="op">=</span> <span class="va">None</span>   <span class="co"># ✅ Sin quotes</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.right: TreeNode <span class="op">=</span> <span class="va">None</span>  <span class="co"># ✅ Sin quotes</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> insert(<span class="va">self</span>, val: <span class="bu">int</span>) <span class="op">-&gt;</span> TreeNode:</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&lt;</span> <span class="va">self</span>.val:</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="va">self</span>.left <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.left <span class="op">=</span> TreeNode(val)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.left.insert(val)</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="co"># T-strings para queries seguras (futuro)</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string.templatelib <span class="im">import</span> Template</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> safe_query(table: <span class="bu">str</span>, conditions: <span class="bu">dict</span>) <span class="op">-&gt;</span> Template:</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># t-string separa estructura de valores</span></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Un processor puede parametrizar automáticamente</span></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">t"SELECT * FROM </span><span class="sc">{</span>table<span class="sc">}</span><span class="ss"> WHERE </span><span class="sc">{</span>conditions<span class="sc">}</span><span class="ss">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<hr>
+</section>
+</section>
+<section id="línea-de-tiempo-de-versiones-python" class="level2">
+<h2 class="anchored" data-anchor-id="línea-de-tiempo-de-versiones-python">Línea de Tiempo de Versiones Python</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 22%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Versión</th>
+<th>Fecha</th>
+<th>Features clave</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3.12</td>
+<td>Oct 2023</td>
+<td>f-string mejorados, errores mejores</td>
+</tr>
+<tr class="even">
+<td>3.13</td>
+<td>Oct 2024</td>
+<td>Free-threading (experimental), JIT</td>
+</tr>
+<tr class="odd">
+<td><strong>3.14</strong></td>
+<td><strong>Oct 2025</strong></td>
+<td><strong>T-strings, deferred annotations, REPL mejorado, subinterpreters</strong></td>
+</tr>
+<tr class="even">
+<td>3.15</td>
+<td>Oct 2026</td>
+<td>(planeado) Pattern matching mejorado</td>
+</tr>
+<tr class="odd">
+<td>3.16</td>
+<td>Oct 2027</td>
+<td>(planeado) Más mejoras de rendimiento</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p><strong>Dato</strong>: Python lanza una versión mayor cada <strong>octubre</strong> desde 2020.</p>
+</blockquote>
+<hr>
+</section>
+<section id="recursos-oficiales" class="level2">
+<h2 class="anchored" data-anchor-id="recursos-oficiales">Recursos Oficiales</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Documentación oficial</strong></td>
+<td><a href="https://docs.python.org/3.14/" class="uri">https://docs.python.org/3.14/</a></td>
+</tr>
+<tr class="even">
+<td><strong>What’s New in 3.14</strong></td>
+<td><a href="https://docs.python.org/3.14/whatsnew/3.14.html" class="uri">https://docs.python.org/3.14/whatsnew/3.14.html</a></td>
+</tr>
+<tr class="odd">
+<td><strong>RealPython 3.14 Guide</strong></td>
+<td><a href="https://realpython.com/python314-new-features/" class="uri">https://realpython.com/python314-new-features/</a></td>
+</tr>
+<tr class="even">
+<td><strong>Python Morsels 3.14</strong></td>
+<td><a href="https://www.pythonmorsels.com/python314/" class="uri">https://www.pythonmorsels.com/python314/</a></td>
+</tr>
+<tr class="odd">
+<td><strong>PEP 750 (T-Strings)</strong></td>
+<td><a href="https://peps.python.org/pep-0750/" class="uri">https://peps.python.org/pep-0750/</a></td>
+</tr>
+<tr class="even">
+<td><strong>PEP 649 (Deferred Annotations)</strong></td>
+<td><a href="https://peps.python.org/pep-0649/" class="uri">https://peps.python.org/pep-0649/</a></td>
+</tr>
+<tr class="odd">
+<td><strong>PEP 768 (Debugger)</strong></td>
+<td><a href="https://peps.python.org/pep-0768/" class="uri">https://peps.python.org/pep-0768/</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote class="blockquote">
+<p><strong>Nota final</strong>: Este curso enseña <strong>fundamentos</strong> que aplican a cualquier versión de Python. Las features de 3.14 son <strong>complementarias</strong> — no reemplazan lo que aprendiste aquí.</p>
+</blockquote>
+<p><a href="../../content/appendix/01-ia-en-python.html">← Apéndice A: IA en Python</a> | <a href="../../content/appendix/02-mcp-para-python.html">← Apéndice B: MCP</a> | <a href="../../content/appendix/03-phase-final.html">Fase Final →</a></p>
+
+
+</section>
+</section>
+<section class="level1">
+<h1>Code Appendix</h1>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../content/appendix/03-phase-final.html" class="pagination-link" aria-label="Fase Final: Verificación y Checklist de Completitud">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Fase Final: Verificación y Checklist de Completitud</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../content/appendix/05-git-github-con-python.html" class="pagination-link" aria-label="Apéndice D: MiniCurso de Git y GitHub con Python">
+        <span class="nav-page-text"><span class="chapter-title">Apéndice D: MiniCurso de Git y GitHub con Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 <strong>Diego Saavedra</strong>. Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p>Material educativo para <strong>Abacom Capacitación y Servicios</strong></p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/statick88/course_of_python/edit/main/content/appendix/04-python-314-ecosistema.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/statick88/course_of_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
+</body></html>

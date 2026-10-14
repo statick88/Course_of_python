@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#f8fafc" font-family="system-ui" font-size="18" font-weight="bold">Proyecto Integrador</text>
+  
+  <!-- Puzzle pieces representing integration -->
+  <!-- Piece 1: Variables -->
+  <rect x="30" y="70" width="100" height="45" rx="8" fill="#3b82f6"/>
+  <text x="80" y="97" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Variables</text>
+  
+  <!-- Piece 2: Control -->
+  <rect x="145" y="70" width="100" height="45" rx="8" fill="#10b981"/>
+  <text x="195" y="97" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Control</text>
+  
+  <!-- Piece 3: Functions -->
+  <rect x="260" y="70" width="110" height="45" rx="8" fill="#8b5cf6"/>
+  <text x="315" y="97" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Funciones</text>
+  
+  <!-- Piece 4: Data structures -->
+  <rect x="30" y="130" width="100" height="45" rx="8" fill="#f59e0b"/>
+  <text x="80" y="157" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Datos</text>
+  
+  <!-- Piece 5: Files -->
+  <rect x="145" y="130" width="100" height="45" rx="8" fill="#ef4444"/>
+  <text x="195" y="157" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Archivos</text>
+  
+  <!-- Piece 6: Modules -->
+  <rect x="260" y="130" width="110" height="45" rx="8" fill="#06b6d4"/>
+  <text x="315" y="157" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Módulos</text>
+  
+  <!-- Arrows pointing down -->
+  <path d="M80 115 L80 130" stroke="#64748b" stroke-width="2"/>
+  <path d="M195 115 L195 130" stroke="#64748b" stroke-width="2"/>
+  <path d="M315 115 L315 130" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Final project box -->
+  <rect x="60" y="200" width="280" height="60" rx="12" fill="#1e293b" stroke="#f8fafc" stroke-width="3"/>
+  <text x="200" y="225" text-anchor="middle" fill="#f8fafc" font-family="system-ui" font-size="16" font-weight="bold">🚀 TU PROYECTO</text>
+  <text x="200" y="248" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="12">Aplicación completa en Python</text>
+  
+  <!-- Arrows to final -->
+  <path d="M80 175 L140 200" stroke="#64748b" stroke-width="1.5"/>
+  <path d="M195 175 L195 200" stroke="#64748b" stroke-width="1.5"/>
+  <path d="M315 175 L260 200" stroke="#64748b" stroke-width="1.5"/>
+  
+  <!-- Bottom note -->
+  <text x="200" y="290" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">Elige tu proyecto: Gestor de tareas · Tienda · Analizador de datos</text>
+</svg>
