@@ -41,6 +41,31 @@
 - **Nombres de archivo**: `kebab-case.qmd` para contenido, `snake_case.py` para código Python
 - **Commit messages**: Conventional Commits (`fix:`, `feat:`, `docs:`, `chore:`)
 
+## Verificación y publicación
+
+La publicación usa un único workflow: `.github/workflows/pages.yml`.
+En **Settings → Pages → Source** seleccione **GitHub Actions**; no publique
+la copia histórica de `main:/docs`. El workflow prueba las soluciones y los
+fragmentos originales de las sesiones, renderiza HTML con `--no-execute` y
+publica el artefacto `docs` después de un push a `main`. Los pull requests
+verifican y renderizan, pero no despliegan.
+
+Para comprobar cambios localmente en un entorno Python 3.14 aislado:
+
+```bash
+python3.14 -m venv .venv
+.venv/bin/python -m pip install pytest hypothesis PyYAML
+.venv/bin/python -m pytest -q tests
+quarto render --to html --no-execute
+```
+
+No confirme el entorno virtual ni los archivos generados por una comprobación.
+El render anterior actualiza `docs`: úselo en una copia de trabajo aislada si
+necesita conservar el resultado local existente. Añada toda sesión publicable a
+`book.chapters` en `_quarto.yml`; tener un archivo QMD no basta para publicarlo.
+Las sesiones 1–10 están disponibles; 11–15 y la ruta complementaria siguen en
+preparación. Mantenga accesibles los módulos iniciales al ampliar la ruta.
+
 ## Licencia
 
 Al contribuir, aceptas que tu contribución será licenciada bajo **CC BY-NC-SA 4.0**.

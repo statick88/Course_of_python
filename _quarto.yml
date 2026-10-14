@@ -94,6 +94,21 @@ book:
     - glosario.qmd
     - license.qmd
 
+    - part: "Inventario Local: sesiones 1–10"
+      chapters:
+        - content/plan-del-curso.qmd
+        - content/mapa-de-cobertura.qmd
+        - content/sesiones/01-especificacion-git-entorno.qmd
+        - content/sesiones/02-reglas-bordes-propuesta-l04.qmd
+        - content/sesiones/03-arquitectura-cap as-import-linter.qmd
+        - content/sesiones/04-estructuras-invariantes-frecuencias.qmd
+        - content/sesiones/05-dominio-entidades-value-objects.qmd
+        - content/sesiones/06-pruebas-mutacion-cobertura.qmd
+        - content/sesiones/07-propiedades-contratos-hypothesis.qmd
+        - content/sesiones/08-parametrizacion-bordes-propuesta-l04.qmd
+        - content/sesiones/09-sqlite-repository-transacciones.qmd
+        - content/sesiones/10-pathlib-json-rollback-integracion.qmd
+
     - part: "Módulo 0: Pensamiento Computacional"
       chapters:
         - content/modulo-00/index.qmd

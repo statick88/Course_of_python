@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -20,23 +22,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: Install verification dependencies
+        run: python -m pip install pytest hypothesis PyYAML
+
+      - name: Test reference solutions and exact session examples
+        run: python -m pytest -q tests
+
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: 1.9.37
-      
-      - name: Render Quarto
-        uses: quarto-dev/quarto-actions/render@v2
-        with:
-          to: html
-      
+
+      - name: Render static course without executing teaching examples
+        run: quarto render --to html --no-execute
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
