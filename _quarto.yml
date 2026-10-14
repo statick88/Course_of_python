@@ -10,7 +10,7 @@ project:
     - "recursos"
 
 book:
-  title: "Programación Python Fundamentos"
+  title: "Programacion en Python + AI"
   subtitle: "De cero a programador — Aprende Python con desafíos prácticos"
   author: "Diego Saavedra"
   output-file: "programacion_python_fundamentos"
@@ -56,14 +56,14 @@ book:
   # Open Graph / Social Media
   open-graph:
     image: images/portada-python.svg
-    image-alt: "Programación Python Fundamentos"
-    title: "Programación Python Fundamentos"
+    image-alt: "Programacion en Python + AI"
+    title: "Programacion en Python + AI"
     description: "Curso completo de Python para principiantes con 70+ desafíos prácticos"
 
   twitter-card:
     image: images/portada-python.svg
-    image-alt: "Programación Python Fundamentos"
-    title: "Programación Python Fundamentos"
+    image-alt: "Programacion en Python + AI"
+    title: "Programacion en Python + AI"
     description: "Curso completo de Python para principiantes"
     card-style: summary_large_image
 

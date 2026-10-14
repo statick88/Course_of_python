@@ -41,10 +41,24 @@ def test_home_displays_render_date_as_last_compilation():
     assert metadata["date"] == "today"
     assert metadata["published-title"] == "Última compilación"
     assert metadata["date-format"] == "YYYY-MM-DD"
-    assert metadata["title"] == "Programación Python Fundamentos"
+    assert metadata["title"] == config(ROOT / "_quarto.yml")["book"]["title"]
     assert metadata["author"] == "Diego Saavedra"
     assert "scripts/render-date.lua" in metadata["filters"]
     assert (ROOT / "scripts/render-date.lua").is_file()
+
+
+def test_course_title_is_consistent_in_home_book_and_social_metadata():
+    expected = "Programacion en Python + AI"
+    source = (ROOT / "index.qmd").read_text(encoding="utf-8")
+    metadata = yaml.load(source.split("---", 2)[1], Loader=yaml.BaseLoader)
+    book = config(ROOT / "_quarto.yml")["book"]
+    assert metadata["title"] == expected
+    assert book["title"] == expected
+    for social in ("open-graph", "twitter-card"):
+        assert book[social]["title"] == expected
+        assert book[social]["image-alt"] == expected
+    assert book["output-file"] == "programacion_python_fundamentos"
+    assert book["author"] == metadata["author"] == "Diego Saavedra"
 
 
 def test_exactly_one_main_deployer_and_pull_requests_only_validate():

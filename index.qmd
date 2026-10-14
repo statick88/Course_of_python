@@ -1,5 +1,5 @@
 ---
-title: "Programación Python Fundamentos"
+title: "Programacion en Python + AI"
 subtitle: "De cero a programador — Aprende Python con desafíos prácticos"
 author: "Diego Saavedra"
 date: today
