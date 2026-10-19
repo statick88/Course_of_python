@@ -1,7 +1,7 @@
 """Check the answer contract of the learner-facing Module 2 questionnaire."""
 
-from pathlib import Path
 import re
+from pathlib import Path
 
 SOURCE = Path(__file__).resolve().parents[1] / "quizzes/quiz-modulo-02.qmd"
 
@@ -33,13 +33,16 @@ def test_no_question_has_duplicate_visible_options():
 def test_complex_question_accepts_both_valid_constructions():
     title, options = next(item for item in questions() if "complejo" in item[0])
     assert complex(3, 4) == 3 + 4j
-    assert [label for mark, label in options if mark == "x"] == ["Ambos son válidos"], title
+    assert [label for mark, label in options if mark == "x"] == [
+        "Ambos son válidos"
+    ], title
 
 
 def test_scientific_notation_has_no_second_valid_notation_option():
     _, options = next(item for item in questions() if "notación científica" in item[0])
-    assert not any(mark == " " and label.strip("` ") in {"1e3", "1.0e3"}
-                   for mark, label in options)
+    assert not any(
+        mark == " " and label.strip("` ") in {"1e3", "1.0e3"} for mark, label in options
+    )
 
 
 def test_type_repr_is_code_not_raw_html():

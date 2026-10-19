@@ -1,9 +1,8 @@
-from pathlib import Path
-import re
 import os
+import re
 import subprocess
 import sys
-
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -47,7 +46,9 @@ def test_propinas_retains_float_learning_and_expected_amounts() -> None:
 
 def test_analizador_uses_documented_educational_token_and_separator_rules() -> None:
     texto = "Python es un lenguaje de programación versátil. Es fácil de aprender y muy poderoso."
-    result = run_snippet("content/modulo-02/desafio-06-analizador-texto.qmd", texto + "\n")
+    result = run_snippet(
+        "content/modulo-02/desafio-06-analizador-texto.qmd", texto + "\n"
+    )
 
     assert result.returncode == 0, result.stderr
     assert "Caracteres totales: 84" in result.stdout
@@ -56,9 +57,9 @@ def test_analizador_uses_documented_educational_token_and_separator_rules() -> N
     assert "Letra más frecuente: 'e' (10 veces)" in result.stdout
     assert "Porcentaje de vocales: 40.6%" in result.stdout
 
-    challenge = (
-        ROOT / "content/modulo-02/desafio-06-analizador-texto.qmd"
-    ).read_text(encoding="utf-8")
+    challenge = (ROOT / "content/modulo-02/desafio-06-analizador-texto.qmd").read_text(
+        encoding="utf-8"
+    )
     assert "Caracteres totales: 84" in challenge
     assert "Caracteres (sin espacios): 71" in challenge
     assert "Palabras: 14" in challenge
@@ -102,7 +103,9 @@ def test_contacto_names_the_inclusive_age_boundary() -> None:
     assert result.stderr == ""
 
 
-def run_cesar_function(message: str, displacement: int) -> subprocess.CompletedProcess[str]:
+def run_cesar_function(
+    message: str, displacement: int
+) -> subprocess.CompletedProcess[str]:
     source = snippet("content/modulo-02/desafio-05-cifrado-cesar.qmd")
     function_source = source.split('print("=== CIFRADO CÉSAR ===")')[0]
     return subprocess.run(
@@ -128,9 +131,7 @@ def test_cesar_only_shifts_ascii_letters_and_round_trips() -> None:
 
 
 def test_dni_accepts_eight_digits_and_instructor_uses_that_contract() -> None:
-    valid = run_snippet(
-        "content/modulo-02/desafio-04-generador-dni.qmd", "12345678\n"
-    )
+    valid = run_snippet("content/modulo-02/desafio-04-generador-dni.qmd", "12345678\n")
     invalid = run_snippet("content/modulo-02/desafio-04-generador-dni.qmd", "1234567\n")
 
     assert valid.returncode == 0, valid.stderr
@@ -166,11 +167,15 @@ def test_analyzer_punctuation_only_has_no_longest_word_or_traceback() -> None:
 
 
 def test_analyzer_frequency_ties_use_alphabetical_order() -> None:
-    result = run_snippet("content/modulo-02/desafio-06-analizador-texto.qmd", "bbb aaa\n")
+    result = run_snippet(
+        "content/modulo-02/desafio-06-analizador-texto.qmd", "bbb aaa\n"
+    )
     assert result.returncode == 0, result.stderr
     assert result.stderr == ""
     assert "Letra más frecuente: 'a' (3 veces)" in result.stdout
-    source = (ROOT / "content/modulo-02/desafio-06-analizador-texto.qmd").read_text(encoding="utf-8")
+    source = (ROOT / "content/modulo-02/desafio-06-analizador-texto.qmd").read_text(
+        encoding="utf-8"
+    )
     assert "orden alfabético" in source
 
 
@@ -182,5 +187,7 @@ def test_m1_m2_challenge_and_lab_navigation_targets_exist() -> None:
         ROOT / "labs/lab02-variables-en-accion.qmd",
     ]
     for source in sources:
-        for target in re.findall(r"\]\(([^)]+\.qmd)\)", source.read_text(encoding="utf-8")):
+        for target in re.findall(
+            r"\]\(([^)]+\.qmd)\)", source.read_text(encoding="utf-8")
+        ):
             assert (source.parent / target).resolve().is_file(), f"{source}: {target}"
