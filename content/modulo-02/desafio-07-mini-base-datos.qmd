@@ -161,4 +161,4 @@ if not encontrado:
 
 ---
 
-[← Desafío 6](desafio-06-analizador-texto.qmd) | [← Volver al Módulo 2](../index.qmd)
+[← Desafío 6](desafio-06-analizador-texto.qmd) | [← Volver al Módulo 2](index.qmd)

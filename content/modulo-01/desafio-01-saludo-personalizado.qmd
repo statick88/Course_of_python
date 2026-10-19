@@ -77,4 +77,4 @@ print(f"¡Bienvenido al sistema, {nombre}!")
 
 ---
 
-[← Volver al Módulo 1](../index.qmd) | [Desafío 2 →](02-calculadora-edad.qmd)
+[← Volver al Módulo 1](index.qmd) | [Desafío 2 →](desafio-02-calculadora-edad.qmd)

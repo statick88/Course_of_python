@@ -30,22 +30,24 @@ Crea un programa que analice un texto y calcule:
 Ingresa un texto: Python es un lenguaje de programación versátil. Es fácil de aprender y muy poderoso.
 
 --- Análisis ---
-Caracteres totales: 95
-Caracteres (sin espacios): 79
-Palabras: 15
+Caracteres totales: 84
+Caracteres (sin espacios): 71
+Palabras: 14
 Oraciones: 2
 Letra más frecuente: 'e' (10 veces)
-Porcentaje de vocales: 40.5%
+Porcentaje de vocales: 40.6%
 Palabra más larga: 'programación' (12 letras)
 ```
 
 ## Pista
 
 - Usa `len(texto)` para caracteres totales
-- Usa `texto.count(" ")` para contar espacios
-- Usa `texto.split()` para obtener la lista de palabras
-- Para oraciones, cuenta `.`, `!` y `?` con `.count()`
-- Para la letra más frecuente, recorre el texto y usa un diccionario o `.count()` para cada letra
+- Usa `.isspace()` para excluir espacios, tabulaciones y saltos de línea al contar caracteres sin espacios
+- Para este ejercicio, una palabra es un token separado por espacios o por separadores de puntuación (`.`, `!`, `?`, `,`); no estamos construyendo un sistema de procesamiento de lenguaje natural
+- Para este ejercicio, el contador de «oraciones» cuenta los signos `.`, `!` y `?`;
+  no hace análisis lingüístico: `?!` suma dos y un texto no vacío sin esos signos
+  cuenta como una oración
+- Para la letra más frecuente, recorre el texto y usa un diccionario o `.count()` para cada letra; en un empate, elige por orden alfabético
 - Las vocales son: `a, e, i, o, u` (y sus versiones mayúsculas)
 - Para la palabra más larga, usa `max()` con `key=len`
 
@@ -78,10 +80,14 @@ if not texto:
 else:
     # <2> Contar caracteres
     total_caracteres = len(texto)
-    sin_espacios = total_caracteres - texto.count(" ")
+    sin_espacios = sum(1 for caracter in texto if not caracter.isspace())
     
-    # <3> Contar palabras
-    palabras = texto.split()
+    # <3> Contar palabras como tokens educativos, separados por espacios o puntuación
+    separadores_puntuacion = ".!?,"
+    texto_para_palabras = texto
+    for separador in separadores_puntuacion:
+        texto_para_palabras = texto_para_palabras.replace(separador, " ")
+    palabras = texto_para_palabras.split()
     total_palabras = len(palabras)
     
     # <4> Contar oraciones
@@ -92,7 +98,7 @@ else:
     # <5> Letra más frecuente
     letras_solo = [c.lower() for c in texto if c.isalpha()]
     if letras_solo:
-        letra_mas_frecuente = max(set(letras_solo), key=letras_solo.count)
+        letra_mas_frecuente = max(sorted(set(letras_solo)), key=letras_solo.count)
         frecuencia = letras_solo.count(letra_mas_frecuente)
     else:
         letra_mas_frecuente = "N/A"
@@ -105,7 +111,8 @@ else:
     porcentaje_vocales = round((total_vocales / total_letras * 100), 1) if total_letras > 0 else 0
     
     # <7> Palabra más larga
-    palabra_larga = max(palabras, key=len)
+    palabra_larga = max(palabras, key=len) if palabras else ""
+    palabra_mostrada = palabra_larga or "N/A"
     
     # <8> Mostrar resultados
     print()
@@ -116,7 +123,7 @@ else:
     print(f"Oraciones: {oraciones}")
     print(f"Letra más frecuente: '{letra_mas_frecuente}' ({frecuencia} veces)")
     print(f"Porcentaje de vocales: {porcentaje_vocales}%")
-    print(f"Palabra más larga: '{palabra_larga}' ({len(palabra_larga)} letras)")
+    print(f"Palabra más larga: '{palabra_mostrada}' ({len(palabra_larga)} letras)")
 ```
 </details>
 

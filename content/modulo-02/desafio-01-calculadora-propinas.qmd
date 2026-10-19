@@ -31,9 +31,9 @@ Porcentaje de propina (10, 15, 20): 15
 Número de personas: 3
 
 --- Resultado ---
-Propina (15.0%): $12.83
-Total con propina: $98.33
-Cada persona paga: $32.78
+Propina (15.0%): $12.82
+Total con propina: $98.32
+Cada persona paga: $32.77
 ```
 
 ## Pista
@@ -41,6 +41,7 @@ Cada persona paga: $32.78
 - Convierte la entrada del usuario a `float` para la cuenta y a `int` para las personas
 - Calcula la propina: `total * (porcentaje / 100)`
 - Usa `round(valor, 2)` para redondear a 2 decimales
+- Los `float` son una aproximación binaria; aquí se aprende a formatear la salida con 2 decimales, no a manejar dinero profesional con `Decimal`
 - Usa f-strings con `:.2f` para formatear los montos
 
 ## Criterios de éxito
@@ -82,4 +83,4 @@ print(f"Cada persona paga: ${por_persona:.2f}")
 
 ---
 
-[← Volver al Módulo 2](../index.qmd) | [Desafío 2 →](desafio-02-conversor-unidades.qmd)
+[← Volver al Módulo 2](index.qmd) | [Desafío 2 →](desafio-02-conversor-unidades.qmd)

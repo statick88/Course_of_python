@@ -157,4 +157,4 @@ y `5 + 3` es el concepto más importante de este laboratorio.
 
 ---
 
-[← Laboratorio 1](01-primer-programa.qmd) | [← Volver al Módulo 1](../index.qmd)
+[← Laboratorio 1](lab01-primer-programa.qmd) | [← Volver al Módulo 1](../content/modulo-01/index.qmd)

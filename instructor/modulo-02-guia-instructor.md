@@ -15,9 +15,11 @@ Al finalizar este módulo, el estudiante será capaz de:
 - **Teoría**: 2 horas
 - **Práctica**: 3 horas
 - **Desafíos**: 2 horas
-- **Total**: 7 horas
+- **Total**: 6 horas
 
 ## Estructura de la Sesión
+
+Las tres sesiones suman 180 minutos de contenido esencial. Los desafíos se presentan y priorizan en clase; los que no alcancen ese tiempo se continúan de forma asíncrona, sin prometer completar los siete durante la jornada.
 
 ### Sesión 1: Operadores Básicos (2 horas)
 
@@ -101,16 +103,15 @@ print(f"Cada persona paga: ${por_persona:.2f}")
 ### Desafío 4: Generador de DNI
 
 ```python
-import random
+dni_input = input("Ingresa tu número de DNI (8 dígitos): ").strip()
 
-def generar_dni():
-    numero = random.randint(10000000, 99999999)
+if not dni_input.isdigit() or len(dni_input) != 8:
+    print("✗ Error: el DNI debe tener exactamente 8 dígitos numéricos.")
+else:
+    dni_numero = int(dni_input)
     letras = "TRWAGMYFPDXBNJZSQVHLCKE"
-    letra = letras[numero % 23]
-    return f"{numero}{letra}"
-
-dni = generar_dni()
-print(f"DNI generado: {dni}")
+    letra = letras[dni_numero % 23]
+    print(f"DNI completo: {dni_input}-{letra}")
 ```
 
 ### Desafío 5: Cifrado César

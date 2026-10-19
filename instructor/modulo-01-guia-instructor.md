@@ -15,9 +15,11 @@ Al finalizar este módulo, el estudiante será capaz de:
 - **Teoría**: 2 horas
 - **Práctica**: 3 horas
 - **Desafíos**: 2 horas
-- **Total**: 7 horas
+- **Total**: 6 horas
 
 ## Estructura de la Sesión
+
+Las tres sesiones suman 180 minutos de contenido esencial. Los desafíos se presentan y priorizan en clase; los que no alcancen ese tiempo se continúan de forma asíncrona, sin prometer completar los siete durante la jornada.
 
 ### Sesión 1: Fundamentos (2 horas)
 

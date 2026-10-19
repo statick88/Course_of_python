@@ -21,7 +21,7 @@ Crea un programa que:
 
 1. Pida el nombre del paciente
 2. Pida su edad actual
-3. Calcule en qué año nació (aproximadamente)
+3. Calcule en qué año nació aproximadamente (sin considerar si ya cumplió años en 2026)
 4. Determine si es mayor de edad (18+)
 5. Calcule cuántos años tendrá en 10 años
 6. Muestre un resumen completo
@@ -86,4 +86,4 @@ print(f"Edad en 10 años: {edad_futura} años")
 
 ---
 
-[← Desafío 1](01-saludo-personalizado.qmd) | [Desafío 3 →](03-conversor-moneda.qmd)
+[← Desafío 1](desafio-01-saludo-personalizado.qmd) | [Desafío 3 →](desafio-03-conversor-moneda.qmd)

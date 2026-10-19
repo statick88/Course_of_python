@@ -79,30 +79,33 @@ nombre = input("Nombre: ").strip()
 peso_kg = float(input("Peso (kg): "))
 estatura_m = float(input("Estatura (m): "))
 
-imc = peso_kg / (estatura_m ** 2)
-
-if imc < 18.5:
-    clasificacion = "Bajo peso"
-    recomendacion = "Consulta con un nutricionista para ganar peso saludablemente"
-elif imc < 25.0:
-    clasificacion = "Peso normal"
-    recomendacion = "¡Excelente! Mantén tus hábitos saludables"
-elif imc < 30.0:
-    clasificacion = "Sobrepeso"
-    recomendacion = "Consulta con un nutricionista para ajustar tu dieta"
+if estatura_m <= 0:
+    print("Error: la estatura debe ser mayor que cero.")
 else:
-    clasificacion = "Obesidad"
-    recomendacion = "Consulta con un médico para un plan de tratamiento"
+    imc = peso_kg / (estatura_m ** 2)
 
-print()
-print("--- Reporte de salud ---")
-print(f"Paciente: {nombre}")
-print(f"IMC: {imc:.2f}")
-print(f"Clasificación: {clasificacion}")
-print(f"Recomendación: {recomendacion}")
+    if imc < 18.5:
+        clasificacion = "Bajo peso"
+        recomendacion = "Consulta con un nutricionista para ganar peso saludablemente"
+    elif imc < 25.0:
+        clasificacion = "Peso normal"
+        recomendacion = "¡Excelente! Mantén tus hábitos saludables"
+    elif imc < 30.0:
+        clasificacion = "Sobrepeso"
+        recomendacion = "Consulta con un nutricionista para ajustar tu dieta"
+    else:
+        clasificacion = "Obesidad"
+        recomendacion = "Consulta con un médico para un plan de tratamiento"
+
+    print()
+    print("--- Reporte de salud ---")
+    print(f"Paciente: {nombre}")
+    print(f"IMC: {imc:.2f}")
+    print(f"Clasificación: {clasificacion}")
+    print(f"Recomendación: {recomendacion}")
 ```
 </details>
 
 ---
 
-[← Desafío 3](03-conversor-moneda.qmd) | [Desafío 5 →](05-historia-interactiva.qmd)
+[← Desafío 3](desafio-03-conversor-moneda.qmd) | [Desafío 5 →](desafio-05-historia-interactiva.qmd)

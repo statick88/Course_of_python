@@ -104,4 +104,4 @@ print("--- Fin del capítulo 1 ---")
 
 ---
 
-[← Desafío 4](04-calculadora-imc.qmd) | [Desafío 6 →](06-formulario-contacto.qmd)
+[← Desafío 4](desafio-04-calculadora-imc.qmd) | [Desafío 6 →](desafio-06-formulario-contacto.qmd)

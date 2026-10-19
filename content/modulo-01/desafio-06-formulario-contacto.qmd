@@ -44,7 +44,7 @@ Error: El teléfono solo debe contener números
 Teléfono: 0987654321
 
 Edad: 15
-Error: Debes ser mayor de 18 años
+Error: Debes tener al menos 18 años
 Edad: 28
 
 --- Datos registrados ---
@@ -110,7 +110,7 @@ while True:
         edad = int(input("Edad: "))
         if 18 <= edad <= 120:
             break
-        print("Error: Debes ser mayor de 18 años")
+        print("Error: Debes tener al menos 18 años")
     except ValueError:
         print("Error: Ingresa un número válido")
 
@@ -130,4 +130,4 @@ print(f"¡Gracias por registrarte, {primer_nombre}!")
 
 ---
 
-[← Desafío 5](05-historia-interactiva.qmd) | [Desafío 7 →](07-mini-quiz.qmd)
+[← Desafío 5](desafio-05-historia-interactiva.qmd) | [Desafío 7 →](desafio-07-mini-quiz.qmd)

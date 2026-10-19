@@ -36,6 +36,8 @@ Al completar este módulo, serás capaz de:
 | [6](desafio-06-formulario-contacto.qmd) | Formulario de contacto | ⭐⭐⭐ Difícil |
 | [7](desafio-07-mini-quiz.qmd) | Mini quiz de conocimientos | ⭐⭐⭐ Difícil |
 
+**Práctica para esta clase:** los desafíos 1, 2, 3 y 5 consolidan los contenidos del Módulo 1. Los desafíos 4, 6 y 7 usan `if`, `while` o `try/except`, que se verán en Módulo 3; son opcionales por ahora y conservan sus enlaces para retomarlos después.
+
 ---
 
 **Siguiente:** [1.1 ¿Qué es Python?](01-que-es-python.qmd)

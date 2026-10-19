@@ -16,7 +16,8 @@ Crea un programa que:
 
 1. Pida el nombre, año de nacimiento y email del usuario
 2. Valide que el año de nacimiento sea un número válido (4 dígitos)
-3. Calcule la edad exacta
+3. Calcule la edad aproximada por diferencia de años; sin día y mes de nacimiento
+   no se conoce la edad exacta
 4. Determine la categoría según la edad:
    - Menor de 13: "Niño"
    - 13 a 17: "Adolescente"
@@ -91,22 +92,31 @@ print(f"{'✓' if nombre_valido else '✗'} Nombre válido: {nombre if nombre_va
 anio_valido = anio_nacimiento_str.isdigit() and len(anio_nacimiento_str) == 4
 if anio_valido:
     anio_nacimiento = int(anio_nacimiento_str)
-    edad = ANIO_ACTUAL - anio_nacimiento
-    print(f"✓ Año válido: {anio_nacimiento}")
-    print(f"✓ Edad: {edad} años")
-    
-    # <4> Determinar categoría
-    if edad < 13:
-        categoria = "Niño"
-    elif 13 <= edad <= 17:
-        categoria = "Adolescente"
-    elif 18 <= edad <= 64:
-        categoria = "Adulto"
+    if anio_nacimiento == 0:
+        anio_valido = False
+        print("✗ Año inválido: debe ser mayor que 0")
+    elif anio_nacimiento > ANIO_ACTUAL:
+        anio_valido = False
+        print(f"✗ Año inválido: no puede ser posterior a {ANIO_ACTUAL}")
     else:
-        categoria = "Adulto mayor"
-    print(f"✓ Categoría: {categoria}")
-else:
-    print(f"✗ Año inválido: {anio_nacimiento_str}")
+        edad = ANIO_ACTUAL - anio_nacimiento
+        print(f"✓ Año válido: {anio_nacimiento}")
+        print(f"✓ Edad: {edad} años")
+
+        # <4> Determinar categoría
+        if edad < 13:
+            categoria = "Niño"
+        elif 13 <= edad <= 17:
+            categoria = "Adolescente"
+        elif 18 <= edad <= 64:
+            categoria = "Adulto"
+        else:
+            categoria = "Adulto mayor"
+        print(f"✓ Categoría: {categoria}")
+
+if not anio_valido:
+    if not (anio_nacimiento_str.isdigit() and len(anio_nacimiento_str) == 4):
+        print(f"✗ Año inválido: {anio_nacimiento_str}")
     edad = None
     categoria = "N/A"
 

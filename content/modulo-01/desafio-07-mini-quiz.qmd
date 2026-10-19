@@ -198,4 +198,4 @@ else:
 
 ---
 
-[← Desafío 6](06-formulario-contacto.qmd) | [← Volver al Módulo 1](../index.qmd)
+[← Desafío 6](desafio-06-formulario-contacto.qmd) | [← Volver al Módulo 1](index.qmd)

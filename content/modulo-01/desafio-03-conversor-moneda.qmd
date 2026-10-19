@@ -81,4 +81,4 @@ print(f"€{cantidad_eur:.2f} EUR = ${cantidad_usd_inversa:.2f} USD")
 
 ---
 
-[← Desafío 2](02-calculadora-edad.qmd) | [Desafío 4 →](04-calculadora-imc.qmd)
+[← Desafío 2](desafio-02-calculadora-edad.qmd) | [Desafío 4 →](desafio-04-calculadora-imc.qmd)

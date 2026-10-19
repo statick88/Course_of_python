@@ -138,4 +138,4 @@ Hola, Ana de Quito. ¡Bienvenido a Python!
 
 ---
 
-[Laboratorio 2 →](02-variables-en-accion.qmd) | [← Volver al Módulo 1](../index.qmd)
+[Laboratorio 2 →](lab02-variables-en-accion.qmd) | [← Volver al Módulo 1](../content/modulo-01/index.qmd)

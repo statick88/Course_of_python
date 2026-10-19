@@ -22,8 +22,8 @@ alfabeto
 5. También descifre el mensaje para verificar que funciona
 
 ### Reglas del cifrado:
-- Solo se desplazan las letras (a-z, A-Z)
-- Los espacios, números y signos de puntuación se mantienen igual
+- Solo se desplazan las letras ASCII `a-z` y `A-Z`
+- Los espacios, números, signos de puntuación y letras fuera del alfabeto ASCII (por ejemplo, `á` o `ñ`) se mantienen igual
 - El alfabeto es circular: después de la `z` viene la `a`
 - Se respeta mayúsculas y minúsculas
 
@@ -72,10 +72,10 @@ def cifrar_cesar(mensaje, desplazamiento):
     resultado = ""
     
     for caracter in mensaje:
-        if caracter.isupper():  # <1> Letra mayúscula
+        if "A" <= caracter <= "Z":  # <1> Letra ASCII mayúscula
             codigo = (ord(caracter) - ord("A") + desplazamiento) % 26
             resultado += chr(codigo + ord("A"))
-        elif caracter.islower():  # <2> Letra minúscula
+        elif "a" <= caracter <= "z":  # <2> Letra ASCII minúscula
             codigo = (ord(caracter) - ord("a") + desplazamiento) % 26
             resultado += chr(codigo + ord("a"))
         else:  # <3> No es letra (espacio, número, símbolo)
