@@ -1,0 +1,24 @@
+---
+title: "Quizdown fenced div fixture"
+---
+
+::: {.quizdown}
+
+### Primera pregunta
+
+- [x] `<class 'int'>`
+- [ ] `some_value`
+
+---
+
+### Segunda pregunta
+
+- [x] respuesta_correcta
+- [ ] respuesta_incorrecta
+
+```python
+print("{=html}")
+print("<code>literal</code>")
+```
+
+:::

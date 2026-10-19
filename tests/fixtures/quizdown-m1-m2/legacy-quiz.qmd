@@ -1,0 +1,10 @@
+---
+title: "Legacy Quizdown fixture"
+---
+
+```{.quizdown}
+# Legacy question
+
+1. [x] Correcta
+1. [ ] Incorrecta
+```
