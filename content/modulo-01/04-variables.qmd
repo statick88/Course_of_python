@@ -21,16 +21,17 @@ Python es diferente: es una **etiqueta** que le pones a un valor.
 # La etiqueta "edad" apunta al valor 25
 edad = 25 # <1>
 
-# Ahora "edad" apunta a 26. El 25 sigue existiendo,
-# pero ya nadie lo usa — Python lo limpia solo
+# La asignación siguiente hará que "edad" apunte a 26.
+# No determina cuándo se libera el objeto anterior.
 edad = 26 # <2>
 ```
 
 1. La variable `edad` es una etiqueta que apunta al valor `25`. En Python, las
 variables no almacenan valores, sino que los referencian.
 2. Al reasignar `edad = 26`, la etiqueta `edad` ahora apunta a un nuevo valor.
-El valor anterior (`25`) queda sin referencias y Python lo limpia
-automáticamente.
+Esto no garantiza que el objeto anterior quede sin referencias ni se libere
+de inmediato: la gestión de memoria depende de la implementación; algunos
+objetos, como enteros pequeños, pueden conservarse para reutilizarlos.
 
 > **Beautiful is better than ugly.** Un buen nombre hace que el código se lea como una oración.
 

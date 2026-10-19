@@ -13,11 +13,14 @@ execute:
 - Elegir y configurar un editor de código
 - Entender la diferencia entre terminal, intérprete y editor
 
+Si Python y VS Code ya están instalados y puedes ejecutar un archivo `.py`,
+pasa directamente a la lección Hola Mundo. IPython es un recurso opcional.
+
 ## Paso 1: Instalar Python
 
 ### En Windows
 
-```python
+```powershell
 # Verificar si Python está instalado en Windows
 python --version # <1>
 ```
@@ -41,7 +44,8 @@ desde cualquier terminal.
 python3 --version # <1>
 ```
 
-1. macOS incluye Python 2 por defecto, pero necesitamos Python 3.
+1. macOS moderno no incluye Python 2 por defecto. Comprueba si ya tienes
+Python 3 antes de instalarlo.
 
 **Instalación con Homebrew (recomendado):**
 
@@ -173,6 +177,9 @@ pip3 install ipython # <1>
 1. IPython se instala como cualquier otro paquete de Python usando pip.
 
 ### Usar IPython
+
+Los ejemplos con `?`, `%` y `<TAB>` se introducen en IPython: no son código
+para pegar en un archivo `.py` ni en el intérprete estándar de Python.
 
 ```bash
 # Iniciar IPython

@@ -140,16 +140,16 @@ completamente**.
 ```python
 # Esto es un comentario de una línea # <1>
 
-"""
-Esto es un comentario
-de múltiples líneas # <2>
-"""
+# Esto es un comentario
+# que continúa en otra línea # <2>
 
 print("Los comentarios no se imprimen")  # <3>
 ```
 
 1. Los comentarios de una línea comienzan con `#`.
-2. Los comentarios de múltiples líneas se escriben entre triple comillas `"""`.
+2. Para comentar varias líneas, inicia cada una con `#`. Las triples comillas
+`"""` delimitan una cadena de texto; al inicio de un módulo o una función puede
+ser su documentación (*docstring*), no un comentario.
 3. Los comentarios al final de la línea explican el código sin interferir con su
 ejecución.
 

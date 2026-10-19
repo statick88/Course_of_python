@@ -110,13 +110,14 @@ print(not False)  # True  <2>
 es_empleado = True
 es_visitante = False
 tiene_cita = True
+esta_acompanado = True
 es_horario_laboral = True
 
 # Regla 1: Los empleados siempre pueden entrar en horario laboral
 acceso_empleado = es_empleado and es_horario_laboral  # <1>
 
 # Regla 2: Los visitantes necesitan cita Y ser acompañados
-acceso_visitante = es_visitante and tiene_cita  # <2>
+acceso_visitante = es_visitante and tiene_cita and esta_acompanado  # <2>
 
 # Regla 3: Puede entrar si cumple regla 1 O regla 2
 puede_entrar = acceso_empleado or acceso_visitante  # <3>
@@ -125,9 +126,14 @@ print(puede_entrar)  # True
 
 1. `es_empleado and es_horario_laboral` → `True and True` = `True`. El empleado
 puede entrar.
-2. `es_visitante and tiene_cita` → `False and True` = `False`. No es visitante,
-así que esta regla no aplica.
+2. `es_visitante and tiene_cita and esta_acompanado` exige las tres condiciones.
+En este ejemplo no es visitante; una visita sin cita o sin acompañamiento tampoco
+cumpliría la regla.
 3. `True or False` → `True`. Basta con que una regla se cumpla.
+
+Los ejemplos posteriores con `def`, `return` o condicionales son ampliaciones
+guiadas para relacionar estas expresiones con funciones y control de flujo;
+no son requisito para la primera práctica de operadores.
 
 ## Evaluación de corto circuito — Python es eficiente
 

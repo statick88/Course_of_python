@@ -28,19 +28,23 @@ resta = a - b         # <2>
 multiplicacion = a * b # <3>
 division = a / b      # <4>
 division_entera = a // b # <5>
-modulo = a % b        # <6>
-potencia = a ** b     # <7>
+print(-5 // 2)         # <6> — -3: baja al entero menor, no hacia cero
+print(5.0 // 2)        # <7> — 2.0: con un float, el resultado también es float
+modulo = a % b         # <8>
+potencia = a ** b     # <9>
 ```
 
 1. `+` suma dos valores. `17 + 5 = 22`.
 2. `-` resta el segundo valor del primero. `17 - 5 = 12`.
 3. `*` multiplica dos valores. `17 * 5 = 85`.
 4. `/` divide y **siempre** devuelve un `float`. `17 / 5 = 3.4`.
-5. `//` divide y devuelve solo la parte entera (trunca, no redondea). `17 // 5 =
-3`.
-6. `%` devuelve el **residuo** de la división. `17 % 5 = 2` (porque 17 = 3×5 +
+5. `//` aplica división de piso: devuelve el entero menor o igual al resultado.
+`17 // 5 = 3`; con negativos, `-5 // 2 = -3`, no `-2`.
+6. El ejemplo negativo muestra que `//` baja al piso matemático.
+7. Si alguno de los operandos es `float`, `//` devuelve un `float`: `5.0 // 2 = 2.0`.
+8. `%` devuelve el **residuo** de la división. `17 % 5 = 2` (porque 17 = 3×5 +
 2).
-7. `**` eleva el primer número a la potencia del segundo. `17 ** 5 = 1,419,857`.
+9. `**` eleva el primer número a la potencia del segundo. `17 ** 5 = 1,419,857`.
 
 ## Tabla de referencia rápida
 
@@ -50,7 +54,7 @@ potencia = a ** b     # <7>
 | `-` | Resta | `10 - 3` | `7` | int |
 | `*` | Multiplicación | `10 * 3` | `30` | int |
 | `/` | División | `10 / 3` | `3.333...` | float |
-| `//` | División entera | `10 // 3` | `3` | int |
+| `//` | División de piso | `10 // 3` | `3` | int (o float si interviene un float) |
 | `%` | Módulo (residuo) | `10 % 3` | `1` | int |
 | `**` | Potencia | `10 ** 3` | `1000` | int |
 
@@ -64,7 +68,7 @@ diferente.
 precio_unitario = 100 / 3  # <1>
 print(precio_unitario)  # 33.333333333333336
 
-# 2. División entera (//) — trunca hacia abajo
+# 2. División de piso (//) — baja al entero menor o igual
 personas = 17
 porciones = 5
 porciones_por_persona = personas // porciones  # <2>
@@ -75,10 +79,10 @@ sobrante = personas % porciones  # <3>
 print(sobrante)  # 2
 ```
 
-1. `/` siempre devuelve un `float`. Útil cuando necesitas precisión decimal,
-como precios.
-2. `//` trunca (no redondea). `17 // 5 = 3`, no 4. Ideal para repartir cosas
-enteras.
+1. `/` entre estos números devuelve un `float`, una aproximación binaria;
+no garantiza precisión decimal exacta para precios.
+2. `//` aplica el piso matemático. `17 // 5 = 3`, no 4; con negativos,
+`-5 // 2 = -3`. Ideal para repartir cantidades enteras no negativas.
 3. `%` te dice cuánto sobra después de repartir. `17 % 5 = 2` (sobran 2
 porciones).
 
@@ -95,6 +99,7 @@ numero = 17
 es_par = numero % 2 == 0  # <1>
 print(es_par)  # False
 
+# Ampliación guiada: for/range/if se estudian en el módulo 3
 # ¿Cada cuántos pasos hacer algo? (ciclos)
 for minuto in range(1, 61):
     if minuto % 15 == 0:  # <2>
@@ -137,28 +142,39 @@ saldo = 1000
 
 # Forma larga
 saldo = saldo + 200   # <1>
+print(saldo)          # 1200
 
 # Forma corta (operador de asignación compuesta)
 saldo += 200          # <2> — Equivale a: saldo = saldo + 200
+print(saldo)          # 1400
 
 # Todos los operadores compuestos
 saldo -= 150   # saldo = saldo - 150 <3>
+print(saldo)   # 1250
 saldo *= 2     # saldo = saldo * 2 <4>
+print(saldo)   # 2500
 saldo /= 4     # saldo = saldo / 4 <5>
+print(saldo)   # 625.0
 saldo //= 3    # saldo = saldo // 3 <6>
+print(saldo)   # 208.0
 saldo %= 7     # saldo = saldo % 7 <7>
+print(saldo)   # 5.0
 saldo **= 2    # saldo = saldo ** 2 <8>
+print(saldo)   # 25.0
 ```
 
 1. `saldo = saldo + 200` funciona, pero repite el nombre de la variable.
 2. `saldo += 200` es más limpio y dice exactamente lo mismo: "suma 200 al
 saldo".
-3. `-=` resta y asigna. `1200 - 150 = 1050`.
-4. `*=` multiplica y asigna. `1050 * 2 = 2100`.
-5. `/=` divide y asigna. `2100 / 4 = 525.0` (devuelve float).
-6. `//=` divide entera y asigna. `525.0 // 3 = 175.0`.
-7. `%=` calcula módulo y asigna. `175.0 % 7 = 0.0`.
-8. `**=` eleva a potencia y asigna. `0.0 ** 2 = 0.0`.
+Las dos sumas se ejecutan consecutivamente: el saldo pasa de `1000` a `1200`
+y después a `1400`; son formas equivalentes, no operaciones que se cancelan.
+
+3. `-=` resta y asigna. `1400 - 150 = 1250`.
+4. `*=` multiplica y asigna. `1250 * 2 = 2500`.
+5. `/=` divide y asigna. `2500 / 4 = 625.0` (devuelve float).
+6. `//=` aplica división de piso y asigna. `625.0 // 3 = 208.0`.
+7. `%=` calcula módulo y asigna. `208.0 % 7 = 5.0`.
+8. `**=` eleva a potencia y asigna. `5.0 ** 2 = 25.0`.
 
 ## Precedencia de operadores — el orden importa
 
@@ -214,7 +230,8 @@ print(personas_por_equipo)  # 3
 
 1. `/` siempre devuelve `float`. No sirve para repartir cosas que deben ser
 enteras.
-2. `//` trunca al entero inferior. Perfecto para repartir personas, items, etc.
+2. `//` aplica piso hacia menos infinito; no es truncamiento hacia cero.
+Para cantidades enteras no negativas permite repartir grupos completos.
 
 ### ❌ Olvidar la precedencia de operadores
 

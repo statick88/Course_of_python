@@ -77,7 +77,7 @@ producto = 6 * 7
 resultado = 10 / 3 # <1>
 print(resultado)
 
-# División entera → devuelve solo la parte entera
+# División de piso → redondea hacia menos infinito
 resultado_entero = 10 // 3 # <2>
 print(resultado_entero)
 
@@ -88,15 +88,16 @@ print(residuo)
 
 1. `/` siempre devuelve un `float`, incluso si la división es exacta. `10 / 3` =
 `3.333...`.
-2. `//` devuelve solo la parte entera de la división. `10 // 3` = `3`.
+2. `//` aplica piso: `10 // 3` = `3`, pero `-10 // 3` = `-4`, no `-3`.
+Si interviene un float, el resultado también es float: `10.0 // 3` = `3.0`.
 3. `%` devuelve el residuo de la división. `10 % 3` = `1` (porque 10 = 3×3 + 1).
 
 > **Practicality beats purity.** Usa `/` cuando necesitas precisión y `//` cuando trabajas con cantidades discretas (como repartir items entre personas).
 
 ## Decimales (float): números con precisión
 
-Los floats son para medidas, dinero, promedios — cualquier cosa que necesite
-decimales.
+Los floats sirven para aproximar medidas y promedios con decimales. No
+representan todos los valores decimales de forma exacta.
 
 ```python
 # Usos naturales de los floats
@@ -115,21 +116,24 @@ Los floats no son perfectos. Esto es limitación de cómo las computadoras
 representan decimales:
 
 ```python
-# Esto parece raro, pero es normal en cualquier lenguaje
+# Esto ocurre con estas aproximaciones binarias de punto flotante
 resultado = 0.1 + 0.2 # <1>
 print(resultado)
 
-# Para dinero, usa redondeo explícito
+# Ejemplo educativo: redondear no elimina la aproximación binaria
 precio_total = round(19.99 * 1.15, 2) # <2>
 print(precio_total)
 ```
 
-1. `0.1 + 0.2` da `0.30000000000000004` en vez de `0.3`. Esto es normal en todos
-los lenguajes de programación.
-2. `round(valor, 2)` redondea a 2 decimales. Para dinero, siempre usa `round()`
-para evitar errores de precisión.
+1. Con estos floats binarios, `0.1 + 0.2` da `0.30000000000000004` en vez de
+`0.3`; no es una regla de todas las representaciones numéricas.
+2. `round(valor, 2)` redondea, pero no convierte un float en decimal exacto.
+En empates usa el par más cercano: `round(2.5)` es `2`.
 
-> **Errors should never pass silently.** Si trabajas con dinero, siempre redondea explícitamente. No asumas que los floats son exactos.
+> **Errors should never pass silently.** Los precios con float de este módulo
+> son ejemplos educativos. Para dinero exacto se usan unidades menores enteras
+> (por ejemplo, centavos) o `Decimal`, con una política explícita de redondeo;
+> esas herramientas no son requisito de esta clase.
 
 ## Texto (str): cadenas de caracteres
 

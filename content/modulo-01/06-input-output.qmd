@@ -12,6 +12,11 @@ execute:
 - Validar que los datos recibidos tienen el tipo correcto
 - Construir programas que interactúen de forma segura con el usuario
 
+Para la primera práctica, trabaja con `input()`, conversión explícita y `print()`.
+Los ejemplos con `if`, bucles y `try/except` son una ampliación guiada: la lógica
+retoma Pensamiento Computacional, pero su sintaxis se estudia en el módulo 3.
+No se exige todavía escribirlos de forma autónoma.
+
 ## La regla de oro: nunca confíes en la entrada
 
 > **Zero Trust aplicado a Python:** Todo lo que viene del usuario es texto, y todo texto es sospechoso hasta que lo valides.

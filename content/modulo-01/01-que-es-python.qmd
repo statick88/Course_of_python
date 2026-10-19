@@ -58,7 +58,8 @@ Python está en todas partes. Literalmente.
 
 ### 🤖 Inteligencia Artificial
 - **TensorFlow**, **PyTorch** — las bibliotecas de IA más usadas del mundo
-- ChatGPT, Midjourney, y todos los modelos de IA usan Python
+- Python se usa ampliamente para desarrollar y experimentar con modelos de IA;
+  no todos los modelos ni todos sus componentes están escritos en Python.
 
 ### 📊 Ciencia de Datos
 - **pandas**, **numpy**, **matplotlib** — análisis y visualización

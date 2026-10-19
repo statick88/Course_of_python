@@ -105,7 +105,7 @@ print(round(pi, 4))  # <2> — 3.1416
 nota = 8.7
 print(round(nota))   # <3> — 9 (redondea al entero más cercano)
 
-# Redondeo de dinero
+# Ejemplo educativo de un importe aproximado
 subtotal = 19.99
 impuesto = subtotal * 0.15  # 2.9985
 total = subtotal + impuesto  # 22.9885
@@ -118,7 +118,10 @@ decimales mantener.
 2. `round(pi, 4)` redondea a 4 decimales. `3.14159...` → `3.1416`.
 3. `round(nota)` sin segundo argumento redondea al entero más cercano. `8.7` →
 `9`.
-4. Para dinero, siempre redondea a 2 decimales para evitar errores de precisión.
+4. Redondear a 2 decimales no elimina la aproximación binaria de float.
+Para dinero exacto se usan centavos enteros o `Decimal` con una política de
+redondeo explícita. Aquí solo practicamos conversiones; no es un sistema financiero.
+En empates, `round()` elige el par más cercano: `round(2.5)` es `2`.
 
 ## Conversiones especiales — herramientas del taller
 
@@ -262,11 +265,11 @@ print(numero)  # 3
 ```python
 # str() — para humanos (legible)
 texto = str(3.14159)     # <1>
-print(texto)  # "3.14159"
+print(texto)  # 3.14159 (print no añade comillas)
 
 # repr() — para debugging (preciso)
 representacion = repr(3.14159)  # <2>
-print(representacion)  # "3.14159"
+print(representacion)  # 3.14159 (print no añade comillas)
 ```
 
 1. `str()` convierte a una representación legible para humanos.

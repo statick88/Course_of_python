@@ -99,7 +99,7 @@ frase = "Python es fácil y Python es divertido"
 
 # Buscar
 print(frase.find("Python"))     # <1> — 0 (primera aparición)
-print(frase.rfind("Python"))    # <2> — 20 (última aparición)
+print(frase.rfind("Python"))    # <2> — 18 (última aparición)
 print(frase.count("Python"))    # <3> — 2 (cuántas veces aparece)
 
 # Reemplazar
@@ -113,7 +113,7 @@ print(frase.endswith("divertido")) # <6> — True
 
 1. `.find("Python")` devuelve el índice de la primera aparición. `0` significa
 que empieza en la posición 0.
-2. `.rfind("Python")` busca desde el final (right find). Devuelve `20`, la
+2. `.rfind("Python")` busca desde el final (right find). Devuelve `18`, la
 posición de la segunda aparición.
 3. `.count("Python")` cuenta cuántas veces aparece la subcadena. `2`.
 4. `.replace("Python", "JavaScript")` reemplaza **todas** las apariciones. No
