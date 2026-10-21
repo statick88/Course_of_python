@@ -1,0 +1,124 @@
+---
+title: "Práctica ABP: Puesto de snacks de la feria"
+execute:
+  eval: false
+---
+
+Esta práctica conecta lo explicado, lo revisado y lo que debes demostrar con tres funciones pequeñas. No sustituye los 11 laboratorios numerados: es una práctica ABP complementaria que reúne M1–M2 y el `if`/`for` ya vistos de M3.
+
+## Ruta rápida
+
+1. Clona el repositorio de práctica o entra en tu clon personal limpio.
+2. Completa solamente los `TODO` del cuerpo de la función de cada etapa.
+3. Ejecuta la prueba docente de la etapa; al final ejecuta las 12 pruebas.
+4. Conserva evidencia de tu proceso y explica una decisión al docente.
+
+## Preparación
+
+Necesitas Python 3+ y biblioteca estándar; no instales paquetes ni uses `pip`.
+
+```bash
+python3 --version
+```
+
+Para un clon nuevo:
+
+```bash
+# Ejecuta estos comandos desde el directorio donde guardas tus proyectos.
+git clone https://github.com/statick88/Curso_python_octubre_2026.git
+cd Curso_python_octubre_2026
+```
+
+Si ya tienes un clon personal limpio, entra en él con `cd`; usa `git pull` solo cuando ese clon no tenga cambios personales pendientes. Todos los comandos de prueba de esta guía se ejecutan desde la raíz de ese repositorio, no desde la raíz del ebook.
+
+::: {.callout-note}
+## Alcance de conocimientos
+
+La firma de cada función está proporcionada por el docente. Trabajarás con `def`, parámetros y `return` ya presentes en los ejemplos; la enseñanza formal de funciones pertenece a M4. No se requiere `input()`, validación interactiva, `while`, archivos ni POO para esta práctica.
+:::
+
+## Mapa: explicar, revisar, practicar y evidenciar
+
+| Etapa | Explicar | Revisar | Practicar | Evidencia |
+|---|---|---|---|---|
+| [1: etiqueta](#sec-abp-etiqueta) | [entrada/salida y f-strings](../content/modulo-01/06-input-output.qmd), [strings](../content/modulo-02/05-strings-avanzado.qmd) y [def/return](../content/modulo-04/01-definir-funciones.qmd) | Identifica qué datos llegan y la diferencia entre mostrar y devolver ([`return`](../content/modulo-04/03-return.qmd)). | Construye una cadena exacta. | 3 pruebas en `OK`, un ejemplo propio y una explicación oral de `return`. |
+| [2: total](#sec-abp-total) | [aritmética](../content/modulo-02/01-operadores-aritmeticos.qmd), [`round`](../content/modulo-01/05-tipos-basicos.qmd) y [comparaciones](../content/modulo-02/02-operadores-comparacion.qmd) | Revisa multiplicación, `round(..., 2)` y los límites que ya garantiza el contrato. | Calcula y devuelve un total. | 4 pruebas en `OK`, un ejemplo propio y un caso de borde. |
+| [3: turnos](#sec-abp-turnos) | [`if`/`else`](../content/modulo-03/01-if-else.qmd), [`for`/`range`](../content/modulo-03/03-for-loop.qmd) y cadenas acumuladas. | Traza los turnos de 1 a `turnos` y decide cuándo se acabó el stock. | Genera un reporte con saltos de línea exactos. | 5 pruebas en `OK`, un ejemplo propio y explicación de la condición. |
+
+Las pruebas muestran conformidad con el contrato, no sustituyen la demostración de aprendizaje.
+
+## Archivos de la práctica
+
+Lee las instrucciones públicas del [README de `practicas`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/README.md). Cada etapa tiene un archivo de trabajo y una prueba docente; edita solo la función indicada por su `TODO`, nunca las pruebas.
+
+| Etapa | Archivo que editas | Prueba docente |
+|---|---|---|
+| 1 | [`etiqueta_pedido.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/etiqueta_pedido.py) | [`test_etiqueta_pedido.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_etiqueta_pedido.py) |
+| 2 | [`calcular_total.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/calcular_total.py) | [`test_calcular_total.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_calcular_total.py) |
+| 3 | [`reporte_turnos.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/reporte_turnos.py) | [`test_reporte_turnos.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_reporte_turnos.py) |
+
+## Etapa 1: etiqueta del pedido {#sec-abp-etiqueta}
+
+Completa `etiqueta_pedido(evento, producto, cantidad)`. Recibe `evento` y `producto` como cadenas no vacías **sin modificarlas**, y `cantidad` como entero mayor o igual que cero. Debe devolver exactamente una etiqueta como `'Feria | 3 x Jugo'`.
+
+No imprimas ni solicites datos: devuelve la cadena. Comprueba tu avance desde la raíz del repositorio de práctica:
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_etiqueta_pedido.py' -v
+```
+
+**Checkpoint:** 3 pruebas en `OK`. Prueba además un evento o producto con espacios para confirmar que se conservan tal como llegan.
+
+## Etapa 2: total del pedido {#sec-abp-total}
+
+Completa `calcular_total(precio_unitario, cantidad)`. El precio es `int` o `float` finito no negativo y la cantidad es un entero no negativo. Devuelve el producto redondeado a dos decimales: `(2.5, 3)` devuelve `7.5` y `(1.235, 3)` devuelve `3.71`.
+
+Los valores fuera de ese contrato no forman parte de esta actividad: no agregues una interfaz de entrada ni validación nueva.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_calcular_total.py' -v
+```
+
+**Checkpoint:** 4 pruebas en `OK`. Registra un ejemplo propio, por ejemplo con cantidad cero, y qué verificaste del redondeo.
+
+## Etapa 3: reporte de turnos {#sec-abp-turnos}
+
+Completa `reporte_turnos(turnos, stock)`. Ambos son enteros no negativos. Con `for`, `range`, `if` y una cadena acumuladora, genera una línea por cada turno de 1 a `turnos`: los primeros `min(stock, turnos)` dicen `Turno N: atendido`; el resto, `Turno N: sin stock`. **Cada línea** termina en `\n`; con cero turnos devuelve `''`.
+
+Para `reporte_turnos(4, 2)`, la salida tiene cuatro líneas: dos atendidas y dos sin stock. No uses `while`, `print()`, `input()`, archivos, listas por comprensión ni clases.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_reporte_turnos.py' -v
+```
+
+**Checkpoint:** 5 pruebas en `OK`. Explica qué comparación determina si un turno se atiende.
+
+## Pruebas y lectura de resultados
+
+Al inicio se descubren 12 pruebas: 3 + 4 + 5. Es normal obtener 14 fallos contando subpruebas, con código de salida 1, sin errores ni pruebas omitidas: las funciones aún devuelven el valor provisional. Esos fallos de aserción no son un defecto de instalación.
+
+Cuando termines las tres etapas, sin modificar los tests, ejecuta:
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_*.py' -v
+```
+
+El resultado esperado es 12 pruebas en `OK`. `unittest` y sus clases `TestCase` son infraestructura docente: no exigen dominio de POO. Las pruebas confirman el contrato público; la revisión oral confirma que comprendes tu código.
+
+## Entrega y revisión
+
+Entrega los tres archivos completados y estas evidencias:
+
+- Un registro breve: qué probaste, qué fallo viste y qué cambiaste.
+- Un ejemplo válido propio para cada función, incluido un caso límite.
+- Una demostración oral: explica por qué la función usa `return` y no `print()`.
+
+| Criterio | Puntos | Evidencia |
+|---|---:|---|
+| Etapa 1 | 20 | 3 pruebas de etiqueta en `OK`. |
+| Etapa 2 | 25 | 4 pruebas de total en `OK`. |
+| Etapa 3 | 30 | 5 pruebas de turnos en `OK`. |
+| Proceso y explicación oral | 15 | Registro breve y demostración razonada. |
+| Ejemplos propios y reflexión | 10 | Tres ejemplos válidos y respuestas claras. |
+
+Esta práctica introduce una aplicación conjunta; no significa que M1 y M2 estén completos. La validación de entradas con `input()`, `while`, archivos y POO se trabajará en actividades posteriores.

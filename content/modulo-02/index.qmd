@@ -23,6 +23,10 @@ Al completar este módulo, serás capaz de:
 | [2.5](05-strings-avanzado.qmd) | Strings avanzado: el taller de texto | 💻 Práctica |
 | [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
 
+## 🔗 Práctica conectada
+
+Usa formato de texto en la [etapa 1: etiqueta](../../labs/practica-abp-feria-snacks.qmd#sec-abp-etiqueta) y aritmética en la [etapa 2: total](../../labs/practica-abp-feria-snacks.qmd#sec-abp-total). En la segunda etapa calcula un total y devuélvelo redondeado; el contrato ya limita los datos válidos, por lo que no añade una actividad de validación interactiva.
+
 ## 🏆 Desafíos del Módulo
 
 | # | Desafío | Dificultad |

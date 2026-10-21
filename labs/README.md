@@ -8,6 +8,12 @@
 
 ## 📚 Índice de Laboratorios
 
+### Práctica ABP complementaria: Puesto de snacks de la feria
+- **Alcance:** M1–M2 y `if`/`for` ya vistos de M3
+- **Archivo:** [practica-abp-feria-snacks.qmd](practica-abp-feria-snacks.qmd)
+- **Propósito:** conectar explicación, revisión, práctica y evidencia con tres funciones guiadas por pruebas docentes.
+- **Nota:** complementa el recorrido transversal; no reemplaza ni renumera los 11 laboratorios.
+
 ### Laboratorio 1: Primer Programa
 - **Módulo:** 1 - Introducción a Python
 - **Duración:** 30 minutos

@@ -25,6 +25,10 @@ Al completar este módulo, serás capaz de:
 | [3.6](06-comprension-listas.qmd) | Comprensión de listas: elegancia Python | ✨ Avanzado |
 | [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
 
+## 🔗 Práctica conectada
+
+Tras estudiar `if` y `for`, aplica ambos en la [etapa 3 de la práctica ABP: reporte de turnos](../../labs/practica-abp-feria-snacks.qmd#sec-abp-turnos). Esta etapa usa solo esos conceptos ya vistos: no adelanta `while`, archivos ni POO.
+
 ## 🏆 Desafíos del Módulo
 
 | # | Desafío | Dificultad |

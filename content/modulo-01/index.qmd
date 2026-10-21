@@ -24,6 +24,10 @@ Al completar este módulo, serás capaz de:
 | [1.6](06-input-output.qmd) | Entrada y salida de datos | 💻 Práctica |
 | [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
 
+## 🔗 Práctica conectada
+
+Después de revisar entrada/salida y f-strings, prepara la [etapa 1 de la práctica ABP: etiqueta del pedido](../../labs/practica-abp-feria-snacks.qmd#sec-abp-etiqueta). La función ya trae su firma: concentra tu trabajo en devolver una etiqueta, sin `input()` ni `print()`.
+
 ## 🏆 Desafíos del Módulo
 
 | # | Desafío | Dificultad |
