@@ -26,7 +26,7 @@ Al completar este módulo, serás capaz de:
 
 ## 🔗 Práctica ABP independiente
 
-Realiza la [votación del club](../../labs/practicas-abp-modulos.qmd#m06) para contar votos, distinguir empates y usar un conjunto de candidatos sin modificar los datos recibidos.
+Realiza la práctica [¡Tu voto cuenta! Elige al representante](../../labs/practicas-abp-modulos.qmd#m06) para contar votos, distinguir empates y usar un conjunto de candidatos sin modificar los datos recibidos.
 
 ## 🏆 Desafíos del Módulo
 

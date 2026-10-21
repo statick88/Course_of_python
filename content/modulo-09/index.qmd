@@ -29,7 +29,7 @@ Al completar este módulo, serás capaz de:
 
 ## 🔗 Práctica ABP independiente
 
-Escribe tu propia suite de [pruebas de impuesto con `unittest`](../../labs/practicas-abp-modulos.qmd#m09). Es una alternativa acotada de biblioteca estándar que complementa la lección de `pytest`, no la reemplaza.
+Escribe tu propia suite de pruebas en [Cazadores de errores: prueba los impuestos](../../labs/practicas-abp-modulos.qmd#m09). Es una alternativa acotada de biblioteca estándar que complementa la lección de `pytest`, no la reemplaza.
 
 ## 🏆 Desafíos del Módulo
 

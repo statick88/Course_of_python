@@ -28,7 +28,7 @@ Al completar este módulo, serás capaz de:
 
 Después de revisar entrada/salida y f-strings, prepara la [etapa 1 de la práctica ABP: etiqueta del pedido](../../labs/practica-abp-feria-snacks.qmd#sec-abp-etiqueta). La función ya trae su firma: concentra tu trabajo en devolver una etiqueta, sin `input()` ni `print()`.
 
-Como práctica independiente del módulo, realiza la [tarjeta de presentación](../../labs/practicas-abp-modulos.qmd#m01): conserva el orden de entrada y la salida indicados, y deja la evidencia de tu ejecución.
+Como práctica independiente del módulo, realiza la práctica [¡Hola, equipo! Tu tarjeta de presentación](../../labs/practicas-abp-modulos.qmd#m01): conserva el orden de entrada y la salida indicados, y deja la evidencia de tu ejecución.
 
 ## 🏆 Desafíos del Módulo
 

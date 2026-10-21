@@ -28,7 +28,7 @@ Al completar este módulo, serás capaz de:
 
 ## 🔗 Práctica ABP independiente
 
-Aplica listas y tuplas en la [maleta](../../labs/practicas-abp-modulos.qmd#m05). Comprueba también que tu resultado nuevo no cambie ni comparta la lista de entrada.
+Aplica listas y tuplas en la práctica [La maleta inteligente: prepara tu aventura](../../labs/practicas-abp-modulos.qmd#m05). Comprueba también que tu resultado nuevo no cambie ni comparta la lista de entrada.
 
 ## 🏆 Desafíos del Módulo
 

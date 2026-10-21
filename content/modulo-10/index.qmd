@@ -27,7 +27,7 @@ Al completar este módulo, serás capaz de:
 
 ## 🔗 Práctica ABP independiente
 
-Integra lectura, resumen y guardado en la [biblioteca de lecturas](../../labs/practicas-abp-modulos.qmd#m10). Es un proyecto independiente: no importa TODOs de prácticas anteriores.
+Integra lectura, resumen y guardado en la práctica [Pasaporte lector: organiza tu biblioteca](../../labs/practicas-abp-modulos.qmd#m10). Es un proyecto independiente: no importa TODOs de prácticas anteriores.
 
 ## 🏆 Elige tu Desafío Final
 

@@ -29,7 +29,7 @@ Al completar este módulo, serás capaz de:
 
 ## 🔗 Práctica ABP independiente
 
-Trabaja la exportación pública de un paquete en [saludos](../../labs/practicas-abp-modulos.qmd#m08). Edita solo `formato.py`; el catálogo y `__init__.py` pertenecen al docente.
+Trabaja la exportación pública de un paquete en [La fábrica de saludos: crea tu paquete](../../labs/practicas-abp-modulos.qmd#m08). Edita solo `formato.py`; el catálogo y `__init__.py` pertenecen al docente.
 
 ## 🏆 Desafíos del Módulo
 

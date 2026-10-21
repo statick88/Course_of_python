@@ -1,5 +1,5 @@
 ---
-title: "Práctica ABP: Puesto de snacks de la feria"
+title: "La feria del sabor: tu puesto de snacks"
 execute:
   eval: false
 ---

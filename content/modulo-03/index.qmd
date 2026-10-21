@@ -29,7 +29,7 @@ Al completar este módulo, serás capaz de:
 
 Tras estudiar `if` y `for`, aplica ambos en la [etapa 3 de la práctica ABP: reporte de turnos](../../labs/practica-abp-feria-snacks.qmd#sec-abp-turnos). Esta etapa usa solo esos conceptos ya vistos: no adelanta `while`, archivos ni POO.
 
-La práctica independiente es el [reporte de paridad](../../labs/practicas-abp-modulos.qmd#m03): recorre el intervalo inclusivo y deja un trazado breve de tu decisión de control.
+La práctica independiente es la práctica [Detectives de números: pares e impares](../../labs/practicas-abp-modulos.qmd#m03): recorre el intervalo inclusivo y deja un trazado breve de tu decisión de control.
 
 ## 🏆 Desafíos del Módulo
 

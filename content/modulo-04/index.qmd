@@ -28,7 +28,7 @@ Al completar este módulo, serás capaz de:
 
 ## 🔗 Práctica ABP independiente
 
-Practica parámetros, valores por defecto y composición con el [recibo de envío](../../labs/practicas-abp-modulos.qmd#m04). El contrato pide valores devueltos: no agregues impresiones ni mutación.
+Practica parámetros, valores por defecto y composición con la práctica [Entrega especial: crea tu recibo de envío](../../labs/practicas-abp-modulos.qmd#m04). El contrato pide valores devueltos: no agregues impresiones ni mutación.
 
 ## 🏆 Desafíos del Módulo
 
