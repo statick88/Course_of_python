@@ -1,0 +1,152 @@
+---
+title: "Prácticas ABP independientes: M0–M10"
+execute:
+  eval: false
+---
+
+# Prácticas ABP independientes: M0–M10
+
+Cada práctica une **explicar → revisar → practicar → evidenciar** sin reemplazar los desafíos ni los laboratorios existentes. Trabaja en tu clon del repositorio de ejemplos; estos enlaces señalan la futura publicación y se validan localmente durante la preparación docente.
+
+## Antes de empezar
+
+Necesitas Python 3 y un clon del repositorio. Desde su raíz, descubre todas las pruebas docentes con:
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_*.py' -v
+```
+
+Las prácticas nuevas son andamios **RED**: antes de completar el artefacto del estudiante pueden fallar aserciones, sin errores de importación ni pruebas omitidas. Después de completar el contrato, las pruebas correspondientes deben quedar **GREEN**. El descubrimiento global incluye 58 métodos docentes: 46 nuevos con `test_m*.py` y 12 heredados de la feria. Para ejecutar solo la feria heredada, usa `-k TestEtapa`; sus tres comandos por archivo siguen vigentes en la [guía de snacks](practica-abp-feria-snacks.qmd).
+
+::: {.callout-note}
+## Qué se entrega
+
+Edita únicamente el artefacto señalado en cada módulo. Los archivos `test_m*.py`, los apoyos docentes y las guías sirven para revisar el contrato: no se modifican ni contienen una solución del estudiante.
+:::
+
+## M0 — Planificador de salida escolar {#m00}
+
+- **Objetivo:** planificar una salida con descomposición, pseudocódigo y una justificación razonada.
+- **Explicar y revisar:** [descomposición](../content/modulo-00/02-descomposicion.qmd), [patrones](../content/modulo-00/03-patrones.qmd), [pseudocódigo](../content/modulo-00/04-pseudocodigo.qmd) y [evaluación](../content/modulo-00/05-evaluacion.qmd).
+- **Practicar:** completa [`m00_planificador.md`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m00_planificador.md) y consulta la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m00_planificador.md). Es una práctica solo de Markdown, sin Python.
+- **Revisión docente:** [`test_m00_planificador.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m00_planificador.py) verifica estructura, no una única estrategia. La evidencia es el documento con problema, entradas, salidas, subproblemas, pseudocódigo, alternativas y justificación; el docente valora factibilidad y razonamiento.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m00_planificador.py' -v
+```
+
+## M1 — Tarjeta de presentación {#m01}
+
+- **Objetivo:** solicitar dos datos y producir la presentación con el contrato de salida exacto.
+- **Explicar y revisar:** [variables](../content/modulo-01/04-variables.qmd), [tipos básicos](../content/modulo-01/05-tipos-basicos.qmd) y [entrada/salida](../content/modulo-01/06-input-output.qmd).
+- **Practicar:** edita [`m01_tarjeta_presentacion.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m01_tarjeta_presentacion.py); consulta la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m01_tarjeta_presentacion.md).
+- **Revisión docente:** [`test_m01_tarjeta_presentacion.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m01_tarjeta_presentacion.py) comprueba los dos prompts, orden, salida y retorno. Conserva una ejecución propia y explica la diferencia entre entrada, salida y retorno.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m01_tarjeta_presentacion.py' -v
+```
+
+## M2 — Presupuesto de viaje {#m02}
+
+- **Objetivo:** convertir datos válidos y devolver un presupuesto con formato consistente.
+- **Explicar y revisar:** [aritmética](../content/modulo-02/01-operadores-aritmeticos.qmd), [casting](../content/modulo-02/04-casting-avanzado.qmd) y [strings](../content/modulo-02/05-strings-avanzado.qmd).
+- **Practicar:** edita [`m02_presupuesto_viaje.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m02_presupuesto_viaje.py); lee la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m02_presupuesto_viaje.md).
+- **Revisión docente:** [`test_m02_presupuesto_viaje.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m02_presupuesto_viaje.py) revisa conversión, normalización y formato. Aporta ejemplos de costo, cero y destino; no agrega interacción ni validación fuera del contrato.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m02_presupuesto_viaje.py' -v
+```
+
+## M3 — Reporte de paridad {#m03}
+
+- **Objetivo:** recorrer un intervalo inclusivo y reportar paridad sin efectos de salida.
+- **Explicar y revisar:** [`if`/`else`](../content/modulo-03/01-if-else.qmd), [`for`](../content/modulo-03/03-for-loop.qmd) y [`while`](../content/modulo-03/04-while-loop.qmd).
+- **Practicar:** edita [`m03_reporte_paridad.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m03_reporte_paridad.py); sigue la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m03_reporte_paridad.md).
+- **Revisión docente:** [`test_m03_reporte_paridad.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m03_reporte_paridad.py) cubre intervalo inclusivo, negativos, cero y límites. Guarda un trazado breve que justifique el `while` y la condición de paridad.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m03_reporte_paridad.py' -v
+```
+
+## M4 — Recibo de envío {#m04}
+
+- **Objetivo:** componer funciones de cálculo y presentación con parámetros y valores por defecto.
+- **Explicar y revisar:** [definir funciones](../content/modulo-04/01-definir-funciones.qmd), [parámetros](../content/modulo-04/02-parametros-argumentos.qmd) y [`return`](../content/modulo-04/03-return.qmd).
+- **Practicar:** edita [`m04_recibo_envio.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m04_recibo_envio.py); consulta la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m04_recibo_envio.md).
+- **Revisión docente:** [`test_m04_recibo_envio.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m04_recibo_envio.py) comprueba tarifa por defecto, argumentos posicionales/nombrados, cero y composición. Evidencia un caso de cada forma de llamada, sin imprimir ni mutar datos.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m04_recibo_envio.py' -v
+```
+
+## M5 — Maleta {#m05}
+
+- **Objetivo:** procesar colecciones conservando orden e inmutabilidad de las entradas.
+- **Explicar y revisar:** [listas](../content/modulo-05/01-crear-listas.qmd), [métodos](../content/modulo-05/03-metodos-listas.qmd), [iteración](../content/modulo-05/04-iterar-listas.qmd) y [tuplas](../content/modulo-05/05-tuplas.qmd).
+- **Practicar:** edita [`m05_maleta.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m05_maleta.py); usa la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m05_maleta.md).
+- **Revisión docente:** [`test_m05_maleta.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m05_maleta.py) revisa vacíos, orden, lista nueva y ausencia de mutación. Entrega un ejemplo que contraste la entrada con el resultado.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m05_maleta.py' -v
+```
+
+## M6 — Votación del club {#m06}
+
+- **Objetivo:** resumir votos y resolver un ganador único o empate con diccionarios y sets.
+- **Explicar y revisar:** [diccionarios](../content/modulo-06/01-crear-diccionarios.qmd), [recorrido](../content/modulo-06/03-iterar-diccionarios.qmd) y [sets](../content/modulo-06/04-sets.qmd).
+- **Practicar:** edita [`m06_votacion_club.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m06_votacion_club.py); revisa la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m06_votacion_club.md).
+- **Revisión docente:** [`test_m06_votacion_club.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m06_votacion_club.py) cubre duplicados, empate, vacío, igualdad independiente del orden y no mutación. Explica cómo distingues ganador único de empate.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m06_votacion_club.py' -v
+```
+
+## M7 — Exportar inventario {#m07}
+
+- **Objetivo:** transformar inventario CSV a JSON preservando datos y rechazos seguros.
+- **Explicar y revisar:** [lectura](../content/modulo-07/02-leer-archivos.qmd), [escritura](../content/modulo-07/03-escribir-archivos.qmd), [CSV](../content/modulo-07/04-manejo-csv.qmd) y [JSON](../content/modulo-07/05-manejo-json.qmd).
+- **Practicar:** edita [`m07_exportar_inventario.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m07_exportar_inventario.py); lee la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m07_exportar_inventario.md).
+- **Revisión docente:** [`test_m07_exportar_inventario.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m07_exportar_inventario.py) usa directorios temporales para CSV/JSON, errores de archivo y preservación. Son prerequisitos de lectura focalizados, no una afirmación de que ya dominaste M9; aporta una evidencia de archivo creado y una explicación de rechazo seguro.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m07_exportar_inventario.py' -v
+```
+
+## M8 — Saludos como paquete {#m08}
+
+- **Objetivo:** completar el formato interno que sostiene la exportación pública de un paquete.
+- **Explicar y revisar:** [importar módulos](../content/modulo-08/01-importar-modulos.qmd), [módulos propios](../content/modulo-08/03-crear-modulos.qmd) y [paquetes](../content/modulo-08/04-paquetes.qmd).
+- **Practicar:** edita **solo** [`m08_saludos/formato.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m08_saludos/formato.py); sigue la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m08_saludos.md). [`__init__.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m08_saludos/__init__.py) y [`catalogo.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m08_saludos/catalogo.py) son archivos docentes fijos.
+- **Revisión docente:** [`test_m08_saludos.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m08_saludos.py) importa la exportación pública del paquete. Conserva una demostración de los tres horarios; no instales paquetes ni cambies el catálogo.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m08_saludos.py' -v
+```
+
+## M9 — Pruebas de impuesto con `unittest` {#m09}
+
+- **Objetivo:** diseñar una suite que evidencie cálculo, borde, redondeo y error.
+- **Explicar y revisar:** [funciones puras](../content/modulo-09/03-funciones-puras.qmd), [errores](../content/modulo-09/04-manejo-errores.qmd) y [testing básico con pytest](../content/modulo-09/06-testing-basico.qmd).
+- **Practicar:** escribe, sin recibir aserciones resueltas, al menos cuatro métodos `unittest` significativos en [`m09_pruebas_impuesto.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m09_pruebas_impuesto.py); consulta la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m09_pruebas_impuesto.md). [`soporte_m09_impuestos.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/soporte_m09_impuestos.py) es docente.
+- **Revisión docente:** [`test_m09_pruebas_impuesto.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m09_pruebas_impuesto.py) ejecuta externamente tu suite y mutantes; revisa normal, cero, redondeo y excepción, sin `skip` ni expected failure. Es una alternativa acotada de biblioteca estándar: complementa, no reemplaza, la lección existente de `pytest`.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m09_pruebas_impuesto.py' -v
+```
+
+## M10 — Biblioteca: registro de lecturas {#m10}
+
+- **Objetivo:** integrar lectura, resumen y guardado JSON en un proyecto autónomo.
+- **Explicar y revisar:** [planificar](../content/modulo-10/01-planificar-proyecto.qmd), [estructura](../content/modulo-10/02-estructura-proyecto.qmd) y [presentación](../content/modulo-10/06-presentacion-proyecto.qmd).
+- **Practicar:** edita [`m10_biblioteca.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/m10_biblioteca.py); lee la [guía](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/guias/m10_biblioteca.md).
+- **Revisión docente:** [`test_m10_biblioteca.py`](https://github.com/statick88/Curso_python_octubre_2026/blob/main/practicas/test_m10_biblioteca.py) prueba lectura, resumen y reporte JSON con datos temporales. Es una integración independiente: no importa TODOs de prácticas anteriores. Los errores de archivo son lectura focalizada, no una certificación de dominio de M9; presenta tu flujo leer–resumir–guardar y la evidencia de no sobrescritura.
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m10_biblioteca.py' -v
+```
+
+## Evidencia y conversación
+
+Para cada módulo conserva el resultado del comando, un caso propio y una nota breve sobre una decisión. Las pruebas verifican contratos; la revisión humana pregunta por el proceso, los casos límite y las decisiones. No modifiques pruebas docentes para volverlas verdes.
+
+La [práctica de snacks](practica-abp-feria-snacks.qmd) continúa como opción integradora para M1–M3; no es requisito ni sustituto de estas prácticas independientes.

@@ -81,4 +81,8 @@ mayoría salta.
 
 ---
 
+## 🔗 Práctica ABP independiente
+
+Después de descomposición, patrones y pseudocódigo, completa el [planificador de salida escolar](../../labs/practicas-abp-modulos.qmd#m00). Es Markdown: las comprobaciones estructurales no califican tu razonamiento; lo revisas con el docente.
+
 [Unidad 0.1: ¿Qué es computación? →](01-que-es-computacion.qmd)

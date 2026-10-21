@@ -311,6 +311,7 @@ book:
     - part: "Laboratorios Prácticos"
       chapters:
         - labs/README.md
+        - labs/practicas-abp-modulos.qmd
         - labs/practica-abp-feria-snacks.qmd
         - labs/lab01-primer-programa.qmd
         - labs/lab02-variables-en-accion.qmd

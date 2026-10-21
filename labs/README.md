@@ -8,6 +8,12 @@
 
 ## 📚 Índice de Laboratorios
 
+### Prácticas ABP independientes: M0–M10
+- **Alcance:** una práctica por módulo, desde pensamiento computacional hasta integración.
+- **Archivo:** [practicas-abp-modulos.qmd](practicas-abp-modulos.qmd)
+- **Propósito:** enlazar qué se explica, qué se revisa, qué archivo se edita y qué evidencia se conversa con el docente.
+- **Nota:** los nuevos andamios empiezan en RED y quedan GREEN después de completar el contrato; no sustituyen desafíos, laboratorios ni la práctica de snacks.
+
 ### Práctica ABP complementaria: Puesto de snacks de la feria
 - **Alcance:** M1–M2 y `if`/`for` ya vistos de M3
 - **Archivo:** [practica-abp-feria-snacks.qmd](practica-abp-feria-snacks.qmd)

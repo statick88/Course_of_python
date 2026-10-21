@@ -25,6 +25,10 @@ Al completar este módulo, serás capaz de:
 | [10.6](06-presentacion-proyecto.qmd) | Presentar tu proyecto al mundo | 📋 Cierre |
 | [Cierre](99-cierre-curso.qmd) | Cierre del curso y próximos pasos | 🎓 Graduación |
 
+## 🔗 Práctica ABP independiente
+
+Integra lectura, resumen y guardado en la [biblioteca de lecturas](../../labs/practicas-abp-modulos.qmd#m10). Es un proyecto independiente: no importa TODOs de prácticas anteriores.
+
 ## 🏆 Elige tu Desafío Final
 
 Estos son los proyectos que construirás. **Elige UNO** según tu nivel de

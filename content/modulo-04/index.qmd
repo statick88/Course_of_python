@@ -26,6 +26,10 @@ Al completar este módulo, serás capaz de:
 | [4.6](06-funciones-recursivas.qmd) | Funciones recursivas: la función que se llama a sí misma | 📖 Teoría |
 | [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
 
+## 🔗 Práctica ABP independiente
+
+Practica parámetros, valores por defecto y composición con el [recibo de envío](../../labs/practicas-abp-modulos.qmd#m04). El contrato pide valores devueltos: no agregues impresiones ni mutación.
+
 ## 🏆 Desafíos del Módulo
 
 | # | Desafío | Dificultad |

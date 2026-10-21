@@ -27,6 +27,8 @@ Al completar este módulo, serás capaz de:
 
 Usa formato de texto en la [etapa 1: etiqueta](../../labs/practica-abp-feria-snacks.qmd#sec-abp-etiqueta) y aritmética en la [etapa 2: total](../../labs/practica-abp-feria-snacks.qmd#sec-abp-total). En la segunda etapa calcula un total y devuélvelo redondeado; el contrato ya limita los datos válidos, por lo que no añade una actividad de validación interactiva.
 
+Para la práctica independiente, sigue el [presupuesto de viaje](../../labs/practicas-abp-modulos.qmd#m02): convierte, normaliza y formatea según su contrato, sin añadir interacción fuera de alcance.
+
 ## 🏆 Desafíos del Módulo
 
 | # | Desafío | Dificultad |

@@ -24,6 +24,10 @@ Al completar este módulo, serás capaz de:
 | [6.5](05-diccionarios-anidados.qmd) | Diccionarios anidados y JSON | 💻 Práctica |
 | [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
 
+## 🔗 Práctica ABP independiente
+
+Realiza la [votación del club](../../labs/practicas-abp-modulos.qmd#m06) para contar votos, distinguir empates y usar un conjunto de candidatos sin modificar los datos recibidos.
+
 ## 🏆 Desafíos del Módulo
 
 | # | Desafío | Dificultad |

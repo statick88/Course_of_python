@@ -26,6 +26,10 @@ Al completar este módulo, serás capaz de:
 | [5.6](06-listas-anidadas.qmd) | Listas anidadas: más allá de una dimensión | 📖 Teoría |
 | [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
 
+## 🔗 Práctica ABP independiente
+
+Aplica listas y tuplas en la [maleta](../../labs/practicas-abp-modulos.qmd#m05). Comprueba también que tu resultado nuevo no cambie ni comparta la lista de entrada.
+
 ## 🏆 Desafíos del Módulo
 
 | # | Desafío | Dificultad |

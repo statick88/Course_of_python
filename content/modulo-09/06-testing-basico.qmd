@@ -238,6 +238,20 @@ def test_flujo_completo_de_compra():
 | Nombres genéricos | `test_1()`, `test_a()` | `test_sumar_positivos_devuelve_suma()` |
 | No testear errores | Solo testear el caso feliz | Testear casos límite y errores |
 
+## Alternativa acotada: `unittest` de la biblioteca estándar
+
+Esta lección sigue enseñando **pytest**. En la práctica independiente de [pruebas de impuesto con `unittest`](../../labs/practicas-abp-modulos.qmd#m09) usarás también el framework que viene con Python para leer una suite basada en `TestCase` y escribir tus propias aserciones.
+
+No copies una solución: plantea al menos cuatro métodos que cubran un caso normal, cero, redondeo y una excepción. El verificador docente ejecuta tu suite desde fuera y prueba mutantes; por eso una prueba que solo se ejecute no basta. El punto de partida puede estar RED hasta que escribas esas comprobaciones; tras completar el contrato debe quedar GREEN.
+
+Ejecuta el siguiente comando desde la raíz del **repositorio de ejemplos**, no desde el directorio del ebook:
+
+```bash
+python3 -m unittest discover -s practicas -p 'test_m09_pruebas_impuesto.py' -v
+```
+
+`unittest` complementa `pytest`; no sustituye sus ejemplos, parametrización ni desafíos de esta lección.
+
 ## Resumen
 
 | Concepto | Para qué sirve | Principio del Zen |

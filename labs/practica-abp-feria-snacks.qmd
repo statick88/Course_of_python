@@ -100,10 +100,10 @@ Al inicio se descubren 12 pruebas: 3 + 4 + 5. Es normal obtener 14 fallos contan
 Cuando termines las tres etapas, sin modificar los tests, ejecuta:
 
 ```bash
-python3 -m unittest discover -s practicas -p 'test_*.py' -v
+python3 -m unittest discover -s practicas -p 'test_*.py' -k TestEtapa -v
 ```
 
-El resultado esperado es 12 pruebas en `OK`. `unittest` y sus clases `TestCase` son infraestructura docente: no exigen dominio de POO. Las pruebas confirman el contrato público; la revisión oral confirma que comprendes tu código.
+El selector `-k TestEtapa` conserva esta ejecución en las 12 pruebas heredadas de la feria; el descubrimiento global incluye además las prácticas independientes. `unittest` y sus clases `TestCase` son infraestructura docente: no exigen dominio de POO. Las pruebas confirman el contrato público; la revisión oral confirma que comprendes tu código.
 
 ## Entrega y revisión
 

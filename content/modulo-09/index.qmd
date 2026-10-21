@@ -27,6 +27,10 @@ Al completar este módulo, serás capaz de:
 | [9.6](06-testing-basico.qmd) | Testing básico: confianza en tu código | 🚀 Acción |
 | [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
 
+## 🔗 Práctica ABP independiente
+
+Escribe tu propia suite de [pruebas de impuesto con `unittest`](../../labs/practicas-abp-modulos.qmd#m09). Es una alternativa acotada de biblioteca estándar que complementa la lección de `pytest`, no la reemplaza.
+
 ## 🏆 Desafíos del Módulo
 
 | # | Desafío | Dificultad |

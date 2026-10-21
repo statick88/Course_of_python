@@ -24,6 +24,10 @@ Al completar este módulo, serás capaz de:
 | [7.6](06-pathlib.qmd) | pathlib — rutas modernas | 🛠️ Herramienta |
 | [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
 
+## 🔗 Práctica ABP independiente
+
+Convierte un CSV en JSON con [exportar inventario](../../labs/practicas-abp-modulos.qmd#m07). Sus errores de archivo son lectura focalizada del contrato; no afirman que ya domines las pruebas de M9.
+
 ## 🏆 Desafíos del Módulo
 
 | # | Desafío | Dificultad |

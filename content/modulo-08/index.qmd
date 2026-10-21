@@ -27,6 +27,10 @@ Al completar este módulo, serás capaz de:
 | [8.6](06-entornos-virtuales.qmd) | Entornos virtuales: aislamiento seguro | 💻 Práctica |
 | [Resumen](99-resumen.qmd) | Resumen y autoevaluación | 📋 Cierre |
 
+## 🔗 Práctica ABP independiente
+
+Trabaja la exportación pública de un paquete en [saludos](../../labs/practicas-abp-modulos.qmd#m08). Edita solo `formato.py`; el catálogo y `__init__.py` pertenecen al docente.
+
 ## 🏆 Desafíos del Módulo
 
 | # | Desafío | Dificultad |
