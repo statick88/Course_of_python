@@ -35,13 +35,13 @@ para principiantes que sigue disponible abajo y en el menú lateral.
 El plan describe 15 sesiones; las guías 11–15 y la ruta complementaria todavía
 están en preparación y no se presentan como material publicado.
 
-### Curso independiente de inteligencia artificial
+### Presentación de inteligencia artificial
 
 [**Abrir la presentación: de la historia de la IA a los agentes**](https://statick88.github.io/ai-agentic-course/)
 
 Explora los fundamentos de IA, los LLM, agentes, skills y MCP, y las metodologías
 SDD, ODD y RDD, con una línea del tiempo interactiva y el ecosistema Gentle AI,
-Gentle Shell y Engram. Es una ruta complementaria e independiente del curso de Python.
+Gentle Shell y Engram. Una presentación complementaria al curso de Python.
 
 ### ¿Qué vas a aprender?
 
